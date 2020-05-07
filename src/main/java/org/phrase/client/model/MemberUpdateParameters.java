@@ -23,11 +23,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-07T19:00:45.425Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-07T22:37:49.262Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
@@ -43,7 +46,7 @@ public class MemberUpdateParameters {
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  private Object permissions;
+  private Map<String, String> permissions = null;
 
 
   public MemberUpdateParameters role(String role) {
@@ -115,9 +118,17 @@ public class MemberUpdateParameters {
   }
 
 
-  public MemberUpdateParameters permissions(Object permissions) {
+  public MemberUpdateParameters permissions(Map<String, String> permissions) {
     
     this.permissions = permissions;
+    return this;
+  }
+
+  public MemberUpdateParameters putPermissionsItem(String key, String permissionsItem) {
+    if (this.permissions == null) {
+      this.permissions = new HashMap<String, String>();
+    }
+    this.permissions.put(key, permissionsItem);
     return this;
   }
 
@@ -128,12 +139,12 @@ public class MemberUpdateParameters {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "{\"create_upload\":true,\"review_translations\":true}", value = "Additional permissions depending on member role. Available permissions are <code>create_upload</code> and <code>review_translations</code>")
 
-  public Object getPermissions() {
+  public Map<String, String> getPermissions() {
     return permissions;
   }
 
 
-  public void setPermissions(Object permissions) {
+  public void setPermissions(Map<String, String> permissions) {
     this.permissions = permissions;
   }
 

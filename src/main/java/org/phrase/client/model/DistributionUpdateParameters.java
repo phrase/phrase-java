@@ -24,12 +24,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * DistributionUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-07T19:00:45.425Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-07T22:37:49.262Z[Etc/UTC]")
 public class DistributionUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -45,7 +47,7 @@ public class DistributionUpdateParameters {
 
   public static final String SERIALIZED_NAME_FORMAT_OPTIONS = "format_options";
   @SerializedName(SERIALIZED_NAME_FORMAT_OPTIONS)
-  private Object formatOptions;
+  private Map<String, String> formatOptions = null;
 
   public static final String SERIALIZED_NAME_FALLBACK_TO_NON_REGIONAL_LOCALE = "fallback_to_non_regional_locale";
   @SerializedName(SERIALIZED_NAME_FALLBACK_TO_NON_REGIONAL_LOCALE)
@@ -137,9 +139,17 @@ public class DistributionUpdateParameters {
   }
 
 
-  public DistributionUpdateParameters formatOptions(Object formatOptions) {
+  public DistributionUpdateParameters formatOptions(Map<String, String> formatOptions) {
     
     this.formatOptions = formatOptions;
+    return this;
+  }
+
+  public DistributionUpdateParameters putFormatOptionsItem(String key, String formatOptionsItem) {
+    if (this.formatOptions == null) {
+      this.formatOptions = new HashMap<String, String>();
+    }
+    this.formatOptions.put(key, formatOptionsItem);
     return this;
   }
 
@@ -150,12 +160,12 @@ public class DistributionUpdateParameters {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "{xml:{enclose_in_cdata:'1'}}", value = "Additional formatting and render options. Only <code>enclose_in_cdata</code> is available for platform <code>android</code>.")
 
-  public Object getFormatOptions() {
+  public Map<String, String> getFormatOptions() {
     return formatOptions;
   }
 
 
-  public void setFormatOptions(Object formatOptions) {
+  public void setFormatOptions(Map<String, String> formatOptions) {
     this.formatOptions = formatOptions;
   }
 

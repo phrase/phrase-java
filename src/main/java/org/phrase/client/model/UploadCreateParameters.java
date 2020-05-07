@@ -24,11 +24,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * UploadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-07T19:00:45.425Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-07T22:37:49.262Z[Etc/UTC]")
 public class UploadCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -76,11 +79,11 @@ public class UploadCreateParameters {
 
   public static final String SERIALIZED_NAME_LOCALE_MAPPING = "locale_mapping";
   @SerializedName(SERIALIZED_NAME_LOCALE_MAPPING)
-  private Object localeMapping;
+  private Map<String, String> localeMapping = null;
 
   public static final String SERIALIZED_NAME_FORMAT_OPTIONS = "format_options";
   @SerializedName(SERIALIZED_NAME_FORMAT_OPTIONS)
-  private Object formatOptions;
+  private Map<String, String> formatOptions = null;
 
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
@@ -344,9 +347,17 @@ public class UploadCreateParameters {
   }
 
 
-  public UploadCreateParameters localeMapping(Object localeMapping) {
+  public UploadCreateParameters localeMapping(Map<String, String> localeMapping) {
     
     this.localeMapping = localeMapping;
+    return this;
+  }
+
+  public UploadCreateParameters putLocaleMappingItem(String key, String localeMappingItem) {
+    if (this.localeMapping == null) {
+      this.localeMapping = new HashMap<String, String>();
+    }
+    this.localeMapping.put(key, localeMappingItem);
     return this;
   }
 
@@ -357,19 +368,27 @@ public class UploadCreateParameters {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "{\"en\": \"2\"}", value = "Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.")
 
-  public Object getLocaleMapping() {
+  public Map<String, String> getLocaleMapping() {
     return localeMapping;
   }
 
 
-  public void setLocaleMapping(Object localeMapping) {
+  public void setLocaleMapping(Map<String, String> localeMapping) {
     this.localeMapping = localeMapping;
   }
 
 
-  public UploadCreateParameters formatOptions(Object formatOptions) {
+  public UploadCreateParameters formatOptions(Map<String, String> formatOptions) {
     
     this.formatOptions = formatOptions;
+    return this;
+  }
+
+  public UploadCreateParameters putFormatOptionsItem(String key, String formatOptionsItem) {
+    if (this.formatOptions == null) {
+      this.formatOptions = new HashMap<String, String>();
+    }
+    this.formatOptions.put(key, formatOptionsItem);
     return this;
   }
 
@@ -380,12 +399,12 @@ public class UploadCreateParameters {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "{\"foo\": \"bar\"}", value = "Additional options available for specific formats. See our format guide for complete list.")
 
-  public Object getFormatOptions() {
+  public Map<String, String> getFormatOptions() {
     return formatOptions;
   }
 
 
-  public void setFormatOptions(Object formatOptions) {
+  public void setFormatOptions(Map<String, String> formatOptions) {
     this.formatOptions = formatOptions;
   }
 

@@ -369,7 +369,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Map<String, String> formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -461,7 +461,7 @@ public class LocalesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Map<String, String> formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -509,7 +509,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void localeDownload(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
+    public void localeDownload(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Map<String, String> formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
         localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
     }
 
@@ -544,7 +544,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
+    public ApiResponse<Void> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Map<String, String> formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
         okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -581,7 +581,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Map<String, String> formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

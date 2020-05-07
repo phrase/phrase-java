@@ -93,7 +93,7 @@ public class LocalesApiTest {
         Boolean includeTranslatedKeys = null;
         Boolean keepNotranslateTags = null;
         Boolean convertEmoji = null;
-        Object formatOptions = null;
+        Map<String, String> formatOptions = null;
         String encoding = null;
         Boolean skipUnverifiedTranslations = null;
         Boolean includeUnverifiedTranslations = null;
