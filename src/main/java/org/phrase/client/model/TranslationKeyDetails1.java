@@ -28,7 +28,7 @@ import org.phrase.client.model.UserPreview;
 /**
  * TranslationKeyDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-15T11:50:19.716Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-15T12:01:57.118Z[Etc/UTC]")
 public class TranslationKeyDetails1 {
   public static final String SERIALIZED_NAME_NAME_PLURAL = "name_plural";
   @SerializedName(SERIALIZED_NAME_NAME_PLURAL)
