@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ScreenshotMarkerUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-15T12:25:27.144Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-15T12:29:46.440Z[Etc/UTC]")
 public class ScreenshotMarkerUpdateParameters {
   public static final String SERIALIZED_NAME_KEY_ID = "key_id";
   @SerializedName(SERIALIZED_NAME_KEY_ID)
