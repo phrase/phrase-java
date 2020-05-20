@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Glossary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-20T06:43:13.604Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-20T06:45:35.933Z[Etc/UTC]")
 public class Glossary {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
