@@ -35,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * TranslationDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-20T07:49:32.904Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-20T10:42:10.283Z[Etc/UTC]")
 public class TranslationDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
