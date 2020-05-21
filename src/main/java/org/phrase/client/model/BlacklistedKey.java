@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * BlacklistedKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T11:23:41.644Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T14:46:28.912Z[Etc/UTC]")
 public class BlacklistedKey {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
