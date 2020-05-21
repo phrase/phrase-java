@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ScreenshotMarker
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T14:46:28.912Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T15:00:18.569Z[Etc/UTC]")
 public class ScreenshotMarker {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
