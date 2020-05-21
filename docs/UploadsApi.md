@@ -20,12 +20,12 @@ Upload a new language file. Creates necessary resources in your project.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.UploadsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.UploadsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -124,12 +124,12 @@ View details and summary for a single upload.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.UploadsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.UploadsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -207,12 +207,12 @@ List all uploads for the given project.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.UploadsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.UploadsApi;
 
 public class Example {
   public static void main(String[] args) {

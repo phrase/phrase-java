@@ -22,12 +22,12 @@ Create a new screenshot.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.ScreenshotsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.ScreenshotsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -102,12 +102,12 @@ Delete an existing screenshot.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.ScreenshotsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.ScreenshotsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -182,12 +182,12 @@ Get details on a single screenshot for a given project.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.ScreenshotsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.ScreenshotsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -263,12 +263,12 @@ Update an existing screenshot.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.ScreenshotsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.ScreenshotsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -346,12 +346,12 @@ List all screenshots for the given project.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.ScreenshotsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.ScreenshotsApi;
 
 public class Example {
   public static void main(String[] args) {

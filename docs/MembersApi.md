@@ -21,12 +21,12 @@ Remove a user from the account. The user will be removed from the account but no
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.MembersApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.MembersApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -101,12 +101,12 @@ Get details on a single user in the account. Access token scope must include &lt
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.MembersApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.MembersApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -182,12 +182,12 @@ Update user permissions in the account. Developers and translators need &lt;code
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.MembersApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.MembersApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -265,12 +265,12 @@ Get all users active in the account. It also lists resources like projects and l
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.MembersApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.MembersApi;
 
 public class Example {
   public static void main(String[] args) {

@@ -27,12 +27,12 @@ Mark a job as completed.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -110,12 +110,12 @@ Create a new job.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -190,12 +190,12 @@ Delete an existing job.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -272,12 +272,12 @@ Add multiple keys to a existing job.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -355,12 +355,12 @@ Remove multiple keys from existing job.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -439,12 +439,12 @@ Mark a job as uncompleted.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -522,12 +522,12 @@ Get details on a single job for a given project.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -605,12 +605,12 @@ Starts an existing job in state draft.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -688,12 +688,12 @@ Update an existing job.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -771,12 +771,12 @@ List all jobs for the given project.
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.JobsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
 
 public class Example {
   public static void main(String[] args) {

@@ -23,12 +23,12 @@ Invite a person to an account. Developers and translators need &lt;code&gt;proje
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.InvitationsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.InvitationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -103,12 +103,12 @@ Delete an existing invitation (must not be accepted yet). Access token scope mus
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.InvitationsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.InvitationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -183,12 +183,12 @@ Resend the invitation email (must not be accepted yet). Access token scope must 
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.InvitationsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.InvitationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -264,12 +264,12 @@ Get details on a single invitation. Access token scope must include &lt;code&gt;
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.InvitationsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.InvitationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -345,12 +345,12 @@ Update an existing invitation (must not be accepted yet). The &lt;code&gt;email&
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.InvitationsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.InvitationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -428,12 +428,12 @@ List invitations for an account. It will also list the accessible resources like
 ### Example
 ```java
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.InvitationsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.InvitationsApi;
 
 public class Example {
   public static void main(String[] args) {

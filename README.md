@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-05-21T15:00:18.569Z[Etc/UTC]
+  - Build date: 2020-05-21T15:19:00.270Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -406,7 +406,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>org.phrase</groupId>
+  <groupId>com.phrase</groupId>
   <artifactId>phrase</artifactId>
   <version>1.0.0</version>
   <scope>compile</scope>
@@ -418,7 +418,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.phrase:phrase:1.0.0"
+compile "com.phrase:phrase:1.0.0"
 ```
 
 ### Others
@@ -441,12 +441,12 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```java
 
 // Import classes:
-import org.phrase.client.ApiClient;
-import org.phrase.client.ApiException;
-import org.phrase.client.Configuration;
-import org.phrase.client.auth.*;
-import org.phrase.client.models.*;
-import org.phrase.client.api.AccountsApi;
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.AccountsApi;
 
 public class Example {
   public static void main(String[] args) {
