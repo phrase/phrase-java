@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * BitbucketSync
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T10:06:13.174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T10:15:20.430Z[Etc/UTC]")
 public class BitbucketSync {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

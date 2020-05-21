@@ -30,7 +30,7 @@ import org.phrase.client.model.LocalePreview;
 /**
  * ProjectLocales1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T10:06:13.174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-21T10:15:20.430Z[Etc/UTC]")
 public class ProjectLocales1 {
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
