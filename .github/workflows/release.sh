@@ -11,14 +11,17 @@ echo "Build release $VERSION"
 # -----------
 
 echo "Setting up version"
-sed -e "s/1.0.0/${VERSION}/g" ./build.gradle > ./build.gradle.tmp
-rm ./build.gradle
-mv ./build.gradle.tmp ./build.gradle
+
+sed -e "s/1.0.0/${VERSION}/g" ./pom.xml > ./pom.xml.tmp
+rm ./pom.xml
+mv ./pom.xml.tmp ./pom.xml
 
 # -----------
 
-gradle wrapper
-./gradlew check assemble
+echo "Pushing the built jar to GitHub Package Registry"
+mvn -B deploy
+
+# -----------
 
 # Create release
 function create_release_data()
@@ -48,13 +51,9 @@ else
 fi
 
 echo "Uploading ${file}"
-file=build/libs/phrase-${VERSION}.jar
+file=target/phrase-${VERSION}.jar
 asset="https://uploads.github.com/repos/phrase/phrase-java/releases/${release_id}/assets?name=$(basename "$file")&access_token=${GITHUB_TOKEN}"
 curl --data-binary @"$file" -H "Content-Type: application/octet-stream" $asset > /dev/null
 echo Hash: $(sha256sum $file)
-
-
-echo "Pushing the built jar to GitHub Package Registry"
-gradle publish
 
 echo "Release successful"
