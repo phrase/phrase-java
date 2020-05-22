@@ -90,7 +90,7 @@ if(hasProperty('target') && target == 'android') {
 
     // install {
     //     repositories.mavenInstaller {
-    //         pom.artifactId = 'phrase'
+    //         pom.artifactId = 'phraseJava'
     //     }
     // }
 

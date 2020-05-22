@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.phrase</groupId>
-    <artifactId>phrase</artifactId>
+    <artifactId>phraseJava</artifactId>
     <packaging>jar</packaging>
-    <name>phrase</name>
+    <name>phraseJava</name>
     <version>1.0.0</version>
     <url>https://developers.phrase.com</url>
     <description>OpenAPI Java</description>
