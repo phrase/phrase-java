@@ -27,14 +27,14 @@ import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * TranslationDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class TranslationDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -258,7 +258,7 @@ public class TranslationDetails {
 
   public TranslationDetails addPlaceholdersItem(String placeholdersItem) {
     if (this.placeholders == null) {
-      this.placeholders = new ArrayList<String>();
+      this.placeholders = new ArrayList<>();
     }
     this.placeholders.add(placeholdersItem);
     return this;

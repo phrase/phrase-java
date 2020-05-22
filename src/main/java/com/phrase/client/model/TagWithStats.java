@@ -25,14 +25,14 @@ import com.phrase.client.model.TagWithStats1Statistics1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * TagWithStats
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class TagWithStats {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -155,7 +155,7 @@ public class TagWithStats {
 
   public TagWithStats addStatisticsItem(TagWithStats1Statistics1 statisticsItem) {
     if (this.statistics == null) {
-      this.statistics = new ArrayList<TagWithStats1Statistics1>();
+      this.statistics = new ArrayList<>();
     }
     this.statistics.add(statisticsItem);
     return this;

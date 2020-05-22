@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ProjectLocales1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class ProjectLocales1 {
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
@@ -44,7 +44,7 @@ public class ProjectLocales1 {
 
   public ProjectLocales1 addLocalesItem(LocalePreview localesItem) {
     if (this.locales == null) {
-      this.locales = new ArrayList<LocalePreview>();
+      this.locales = new ArrayList<>();
     }
     this.locales.add(localesItem);
     return this;

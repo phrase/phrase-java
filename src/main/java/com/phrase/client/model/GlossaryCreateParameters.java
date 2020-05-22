@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * GlossaryCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class GlossaryCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -97,7 +97,7 @@ public class GlossaryCreateParameters {
 
   public GlossaryCreateParameters addSpaceIdsItem(String spaceIdsItem) {
     if (this.spaceIds == null) {
-      this.spaceIds = new ArrayList<String>();
+      this.spaceIds = new ArrayList<>();
     }
     this.spaceIds.add(spaceIdsItem);
     return this;

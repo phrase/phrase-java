@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * JobKeysCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class JobKeysCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -70,7 +70,7 @@ public class JobKeysCreateParameters {
 
   public JobKeysCreateParameters addTranslationKeyIdsItem(String translationKeyIdsItem) {
     if (this.translationKeyIds == null) {
-      this.translationKeyIds = new ArrayList<String>();
+      this.translationKeyIds = new ArrayList<>();
     }
     this.translationKeyIds.add(translationKeyIdsItem);
     return this;

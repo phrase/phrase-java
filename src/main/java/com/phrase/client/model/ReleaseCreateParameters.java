@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ReleaseCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class ReleaseCreateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -74,7 +74,7 @@ public class ReleaseCreateParameters {
 
   public ReleaseCreateParameters addPlatformsItem(String platformsItem) {
     if (this.platforms == null) {
-      this.platforms = new ArrayList<String>();
+      this.platforms = new ArrayList<>();
     }
     this.platforms.add(platformsItem);
     return this;

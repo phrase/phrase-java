@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * JobDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class JobDetails1 {
   public static final String SERIALIZED_NAME_OWNER = "owner";
   @SerializedName(SERIALIZED_NAME_OWNER)
@@ -104,7 +104,7 @@ public class JobDetails1 {
 
   public JobDetails1 addLocalesItem(LocalePreview localesItem) {
     if (this.locales == null) {
-      this.locales = new ArrayList<LocalePreview>();
+      this.locales = new ArrayList<>();
     }
     this.locales.add(localesItem);
     return this;
@@ -135,7 +135,7 @@ public class JobDetails1 {
 
   public JobDetails1 addKeysItem(KeyPreview keysItem) {
     if (this.keys == null) {
-      this.keys = new ArrayList<KeyPreview>();
+      this.keys = new ArrayList<>();
     }
     this.keys.add(keysItem);
     return this;

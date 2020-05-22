@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class Member {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -152,7 +152,7 @@ public class Member {
 
   public Member addProjectsItem(ProjectLocales projectsItem) {
     if (this.projects == null) {
-      this.projects = new ArrayList<ProjectLocales>();
+      this.projects = new ArrayList<>();
     }
     this.projects.add(projectsItem);
     return this;

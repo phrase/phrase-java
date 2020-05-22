@@ -23,14 +23,14 @@ import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * Glossary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class Glossary {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -107,7 +107,7 @@ public class Glossary {
 
   public Glossary addProjectsItem(ProjectShort projectsItem) {
     if (this.projects == null) {
-      this.projects = new ArrayList<ProjectShort>();
+      this.projects = new ArrayList<>();
     }
     this.projects.add(projectsItem);
     return this;

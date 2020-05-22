@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
@@ -125,7 +125,7 @@ public class MemberUpdateParameters {
 
   public MemberUpdateParameters putPermissionsItem(String key, String permissionsItem) {
     if (this.permissions == null) {
-      this.permissions = new HashMap<String, String>();
+      this.permissions = new HashMap<>();
     }
     this.permissions.put(key, permissionsItem);
     return this;

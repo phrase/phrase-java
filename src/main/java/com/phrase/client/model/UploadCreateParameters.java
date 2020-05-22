@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * UploadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class UploadCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -354,7 +354,7 @@ public class UploadCreateParameters {
 
   public UploadCreateParameters putLocaleMappingItem(String key, String localeMappingItem) {
     if (this.localeMapping == null) {
-      this.localeMapping = new HashMap<String, String>();
+      this.localeMapping = new HashMap<>();
     }
     this.localeMapping.put(key, localeMappingItem);
     return this;
@@ -385,7 +385,7 @@ public class UploadCreateParameters {
 
   public UploadCreateParameters putFormatOptionsItem(String key, String formatOptionsItem) {
     if (this.formatOptions == null) {
-      this.formatOptions = new HashMap<String, String>();
+      this.formatOptions = new HashMap<>();
     }
     this.formatOptions.put(key, formatOptionsItem);
     return this;

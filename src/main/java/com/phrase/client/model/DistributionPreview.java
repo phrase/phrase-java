@@ -23,14 +23,14 @@ import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * DistributionPreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class DistributionPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -138,7 +138,7 @@ public class DistributionPreview {
 
   public DistributionPreview addPlatformsItem(String platformsItem) {
     if (this.platforms == null) {
-      this.platforms = new ArrayList<String>();
+      this.platforms = new ArrayList<>();
     }
     this.platforms.add(platformsItem);
     return this;

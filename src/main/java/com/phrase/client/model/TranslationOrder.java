@@ -24,14 +24,14 @@ import com.phrase.client.model.StyleguidePreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * TranslationOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class TranslationOrder {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -317,7 +317,7 @@ public class TranslationOrder {
 
   public TranslationOrder addTargetLocalesItem(LocalePreview targetLocalesItem) {
     if (this.targetLocales == null) {
-      this.targetLocales = new ArrayList<LocalePreview>();
+      this.targetLocales = new ArrayList<>();
     }
     this.targetLocales.add(targetLocalesItem);
     return this;

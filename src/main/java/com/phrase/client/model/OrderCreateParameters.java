@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * OrderCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class OrderCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -164,7 +164,7 @@ public class OrderCreateParameters {
 
   public OrderCreateParameters addTargetLocaleIdsItem(String targetLocaleIdsItem) {
     if (this.targetLocaleIds == null) {
-      this.targetLocaleIds = new ArrayList<String>();
+      this.targetLocaleIds = new ArrayList<>();
     }
     this.targetLocaleIds.add(targetLocaleIdsItem);
     return this;

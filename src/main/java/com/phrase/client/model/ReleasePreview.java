@@ -23,14 +23,14 @@ import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * ReleasePreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T08:26:40.196Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-22T10:11:12.951Z[Etc/UTC]")
 public class ReleasePreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -200,7 +200,7 @@ public class ReleasePreview {
 
   public ReleasePreview addPlatformsItem(String platformsItem) {
     if (this.platforms == null) {
-      this.platforms = new ArrayList<String>();
+      this.platforms = new ArrayList<>();
     }
     this.platforms.add(platformsItem);
     return this;
@@ -231,7 +231,7 @@ public class ReleasePreview {
 
   public ReleasePreview addEnvironmentsItem(String environmentsItem) {
     if (this.environments == null) {
-      this.environments = new ArrayList<String>();
+      this.environments = new ArrayList<>();
     }
     this.environments.add(environmentsItem);
     return this;
@@ -262,7 +262,7 @@ public class ReleasePreview {
 
   public ReleasePreview addLocaleCodesItem(String localeCodesItem) {
     if (this.localeCodes == null) {
-      this.localeCodes = new ArrayList<String>();
+      this.localeCodes = new ArrayList<>();
     }
     this.localeCodes.add(localeCodesItem);
     return this;
