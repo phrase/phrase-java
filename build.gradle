@@ -112,3 +112,22 @@ dependencies {
 javadoc {
     options.tags = [ "http.response.details:a:Http Response Details" ]
 }
+
+publishing {
+  publications {
+    myLibrary(MavenPublication) {
+      from components.java
+    }
+  }
+
+  repositories {
+    maven {
+      name = "GitHubPackages"
+      url = "https://maven.pkg.github.com/phrase/phrase-java"
+      credentials {
+        username = System.getenv("GITHUB_ACTOR")
+        password = System.getenv("GITHUB_TOKEN")
+      }
+    }
+  }
+}
