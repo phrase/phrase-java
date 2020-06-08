@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="localeCreate"></a>
 # **localeCreate**
-> localeCreate(projectId, localeCreateParameters, xPhraseAppOTP)
+> LocaleDetails localeCreate(projectId, localeCreateParameters, xPhraseAppOTP)
 
 Create a locale
 
@@ -51,7 +51,8 @@ public class Example {
     LocaleCreateParameters localeCreateParameters = new LocaleCreateParameters(); // LocaleCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.localeCreate(projectId, localeCreateParameters, xPhraseAppOTP);
+      LocaleDetails result = apiInstance.localeCreate(projectId, localeCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#localeCreate");
       System.err.println("Status code: " + e.getCode());
@@ -73,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**LocaleDetails**](LocaleDetails.md)
 
 ### Authorization
 
@@ -82,12 +83,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

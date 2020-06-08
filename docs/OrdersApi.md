@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 <a name="orderCreate"></a>
 # **orderCreate**
-> orderCreate(projectId, orderCreateParameters, xPhraseAppOTP)
+> TranslationOrder orderCreate(projectId, orderCreateParameters, xPhraseAppOTP)
 
 Create a new order
 
@@ -133,7 +133,8 @@ public class Example {
     OrderCreateParameters orderCreateParameters = new OrderCreateParameters(); // OrderCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.orderCreate(projectId, orderCreateParameters, xPhraseAppOTP);
+      TranslationOrder result = apiInstance.orderCreate(projectId, orderCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrdersApi#orderCreate");
       System.err.println("Status code: " + e.getCode());
@@ -155,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**TranslationOrder**](TranslationOrder.md)
 
 ### Authorization
 
@@ -164,12 +165,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

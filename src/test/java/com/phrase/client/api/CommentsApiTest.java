@@ -48,7 +48,7 @@ public class CommentsApiTest {
         String keyId = null;
         CommentCreateParameters commentCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.commentCreate(projectId, keyId, commentCreateParameters, xPhraseAppOTP);
+        Comment response = api.commentCreate(projectId, keyId, commentCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

@@ -47,7 +47,7 @@ public class GlossaryTermsApiTest {
         String glossaryId = null;
         GlossaryTermCreateParameters glossaryTermCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
+        GlossaryTerm response = api.glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

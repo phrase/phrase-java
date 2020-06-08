@@ -65,7 +65,7 @@ public class OrdersApiTest {
         String projectId = null;
         OrderCreateParameters orderCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.orderCreate(projectId, orderCreateParameters, xPhraseAppOTP);
+        TranslationOrder response = api.orderCreate(projectId, orderCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

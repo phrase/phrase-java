@@ -57,7 +57,7 @@ public class UploadsApiTest {
         String fileEncoding = null;
         Boolean autotranslate = null;
         Boolean markReviewed = null;
-        api.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed);
+        Upload response = api.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed);
 
         // TODO: test validations
     }

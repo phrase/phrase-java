@@ -47,7 +47,7 @@ public class LocalesApiTest {
         String projectId = null;
         LocaleCreateParameters localeCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.localeCreate(projectId, localeCreateParameters, xPhraseAppOTP);
+        LocaleDetails response = api.localeCreate(projectId, localeCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

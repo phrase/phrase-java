@@ -47,7 +47,7 @@ public class ScreenshotMarkersApiTest {
         String screenshotId = null;
         ScreenshotMarkerCreateParameters screenshotMarkerCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.screenshotMarkerCreate(projectId, screenshotId, screenshotMarkerCreateParameters, xPhraseAppOTP);
+        ScreenshotMarker response = api.screenshotMarkerCreate(projectId, screenshotId, screenshotMarkerCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

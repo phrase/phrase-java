@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="projectCreate"></a>
 # **projectCreate**
-> projectCreate(projectCreateParameters, xPhraseAppOTP)
+> ProjectDetails projectCreate(projectCreateParameters, xPhraseAppOTP)
 
 Create a project
 
@@ -49,7 +49,8 @@ public class Example {
     ProjectCreateParameters projectCreateParameters = new ProjectCreateParameters(); // ProjectCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.projectCreate(projectCreateParameters, xPhraseAppOTP);
+      ProjectDetails result = apiInstance.projectCreate(projectCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#projectCreate");
       System.err.println("Status code: " + e.getCode());
@@ -70,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**ProjectDetails**](ProjectDetails.md)
 
 ### Authorization
 
@@ -79,12 +80,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

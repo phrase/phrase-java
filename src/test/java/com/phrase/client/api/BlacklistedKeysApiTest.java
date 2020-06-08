@@ -46,7 +46,7 @@ public class BlacklistedKeysApiTest {
         String projectId = null;
         BlacklistedKeyCreateParameters blacklistedKeyCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP);
+        BlacklistedKey response = api.blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

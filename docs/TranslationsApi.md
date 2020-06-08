@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="translationCreate"></a>
 # **translationCreate**
-> translationCreate(projectId, translationCreateParameters, xPhraseAppOTP)
+> TranslationDetails translationCreate(projectId, translationCreateParameters, xPhraseAppOTP)
 
 Create a translation
 
@@ -62,7 +62,8 @@ public class Example {
     TranslationCreateParameters translationCreateParameters = new TranslationCreateParameters(); // TranslationCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.translationCreate(projectId, translationCreateParameters, xPhraseAppOTP);
+      TranslationDetails result = apiInstance.translationCreate(projectId, translationCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TranslationsApi#translationCreate");
       System.err.println("Status code: " + e.getCode());
@@ -84,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**TranslationDetails**](TranslationDetails.md)
 
 ### Authorization
 
@@ -93,12 +94,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

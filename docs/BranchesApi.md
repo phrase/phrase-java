@@ -95,7 +95,7 @@ null (empty response body)
 
 <a name="branchCreate"></a>
 # **branchCreate**
-> branchCreate(projectId, branchCreateParameters, xPhraseAppOTP)
+> Branch branchCreate(projectId, branchCreateParameters, xPhraseAppOTP)
 
 Create a branch
 
@@ -132,7 +132,8 @@ public class Example {
     BranchCreateParameters branchCreateParameters = new BranchCreateParameters(); // BranchCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.branchCreate(projectId, branchCreateParameters, xPhraseAppOTP);
+      Branch result = apiInstance.branchCreate(projectId, branchCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BranchesApi#branchCreate");
       System.err.println("Status code: " + e.getCode());
@@ -154,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Branch**](Branch.md)
 
 ### Authorization
 
@@ -163,12 +164,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

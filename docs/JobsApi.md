@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 <a name="jobCreate"></a>
 # **jobCreate**
-> jobCreate(projectId, jobCreateParameters, xPhraseAppOTP)
+> JobDetails jobCreate(projectId, jobCreateParameters, xPhraseAppOTP)
 
 Create a job
 
@@ -138,7 +138,8 @@ public class Example {
     JobCreateParameters jobCreateParameters = new JobCreateParameters(); // JobCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.jobCreate(projectId, jobCreateParameters, xPhraseAppOTP);
+      JobDetails result = apiInstance.jobCreate(projectId, jobCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobsApi#jobCreate");
       System.err.println("Status code: " + e.getCode());
@@ -160,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**JobDetails**](JobDetails.md)
 
 ### Authorization
 
@@ -169,12 +170,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

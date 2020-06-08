@@ -59,7 +59,7 @@ public class TranslationsApiTest {
         String projectId = null;
         TranslationCreateParameters translationCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.translationCreate(projectId, translationCreateParameters, xPhraseAppOTP);
+        TranslationDetails response = api.translationCreate(projectId, translationCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

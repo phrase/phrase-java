@@ -46,7 +46,7 @@ public class ProjectsApiTest {
     public void projectCreateTest() throws ApiException {
         ProjectCreateParameters projectCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.projectCreate(projectCreateParameters, xPhraseAppOTP);
+        ProjectDetails response = api.projectCreate(projectCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

@@ -47,7 +47,7 @@ public class DistributionsApiTest {
         String accountId = null;
         DistributionCreateParameters distributionCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP);
+        Distribution response = api.distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

@@ -46,7 +46,7 @@ public class WebhooksApiTest {
         String projectId = null;
         WebhookCreateParameters webhookCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.webhookCreate(projectId, webhookCreateParameters, xPhraseAppOTP);
+        Webhook response = api.webhookCreate(projectId, webhookCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

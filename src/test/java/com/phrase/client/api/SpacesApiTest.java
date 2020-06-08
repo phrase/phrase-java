@@ -48,7 +48,7 @@ public class SpacesApiTest {
         String accountId = null;
         SpaceCreateParameters spaceCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.spaceCreate(accountId, spaceCreateParameters, xPhraseAppOTP);
+        Space response = api.spaceCreate(accountId, spaceCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

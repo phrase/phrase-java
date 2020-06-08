@@ -48,7 +48,7 @@ public class GlossaryTermTranslationsApiTest {
         String termId = null;
         GlossaryTermTranslationCreateParameters glossaryTermTranslationCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP);
+        GlossaryTermTranslation response = api.glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

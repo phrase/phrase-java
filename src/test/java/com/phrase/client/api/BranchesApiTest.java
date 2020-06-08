@@ -65,7 +65,7 @@ public class BranchesApiTest {
         String projectId = null;
         BranchCreateParameters branchCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.branchCreate(projectId, branchCreateParameters, xPhraseAppOTP);
+        Branch response = api.branchCreate(projectId, branchCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

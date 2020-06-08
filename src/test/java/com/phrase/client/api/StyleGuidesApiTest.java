@@ -47,7 +47,7 @@ public class StyleGuidesApiTest {
         String projectId = null;
         StyleguideCreateParameters styleguideCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.styleguideCreate(projectId, styleguideCreateParameters, xPhraseAppOTP);
+        StyleguideDetails response = api.styleguideCreate(projectId, styleguideCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

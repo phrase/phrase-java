@@ -16,6 +16,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.model.Authorization;
 import com.phrase.client.model.AuthorizationCreateParameters;
 import com.phrase.client.model.AuthorizationUpdateParameters;
+import com.phrase.client.model.AuthorizationWithToken;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +46,7 @@ public class AuthorizationsApiTest {
     public void authorizationCreateTest() throws ApiException {
         AuthorizationCreateParameters authorizationCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.authorizationCreate(authorizationCreateParameters, xPhraseAppOTP);
+        AuthorizationWithToken response = api.authorizationCreate(authorizationCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

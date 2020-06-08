@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="glossaryTermCreate"></a>
 # **glossaryTermCreate**
-> glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP)
+> GlossaryTerm glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP)
 
 Create a glossary term
 
@@ -51,7 +51,8 @@ public class Example {
     GlossaryTermCreateParameters glossaryTermCreateParameters = new GlossaryTermCreateParameters(); // GlossaryTermCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
+      GlossaryTerm result = apiInstance.glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GlossaryTermsApi#glossaryTermCreate");
       System.err.println("Status code: " + e.getCode());
@@ -74,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**GlossaryTerm**](GlossaryTerm.md)
 
 ### Authorization
 
@@ -83,12 +84,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

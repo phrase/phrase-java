@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="screenshotCreate"></a>
 # **screenshotCreate**
-> screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP)
+> Screenshot screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP)
 
 Create a screenshot
 
@@ -50,7 +50,8 @@ public class Example {
     ScreenshotCreateParameters screenshotCreateParameters = new ScreenshotCreateParameters(); // ScreenshotCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP);
+      Screenshot result = apiInstance.screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotsApi#screenshotCreate");
       System.err.println("Status code: " + e.getCode());
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Screenshot**](Screenshot.md)
 
 ### Authorization
 
@@ -81,12 +82,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

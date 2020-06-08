@@ -65,7 +65,7 @@ public class GlossaryApiTest {
         String accountId = null;
         GlossaryCreateParameters glossaryCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.glossaryCreate(accountId, glossaryCreateParameters, xPhraseAppOTP);
+        Glossary response = api.glossaryCreate(accountId, glossaryCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

@@ -46,7 +46,7 @@ public class InvitationsApiTest {
         String accountId = null;
         InvitationCreateParameters invitationCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.invitationCreate(accountId, invitationCreateParameters, xPhraseAppOTP);
+        Invitation response = api.invitationCreate(accountId, invitationCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

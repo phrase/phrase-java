@@ -46,7 +46,7 @@ public class TagsApiTest {
         String projectId = null;
         TagCreateParameters tagCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.tagCreate(projectId, tagCreateParameters, xPhraseAppOTP);
+        TagWithStats response = api.tagCreate(projectId, tagCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

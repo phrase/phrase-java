@@ -149,7 +149,7 @@ public class JobLocalesApiTest {
         String jobId = null;
         JobLocalesCreateParameters jobLocalesCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.jobLocalesCreate(projectId, jobId, jobLocalesCreateParameters, xPhraseAppOTP);
+        JobLocale response = api.jobLocalesCreate(projectId, jobId, jobLocalesCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

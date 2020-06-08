@@ -46,7 +46,7 @@ public class ScreenshotsApiTest {
         String projectId = null;
         ScreenshotCreateParameters screenshotCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP);
+        Screenshot response = api.screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

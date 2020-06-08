@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="blacklistedKeyCreate"></a>
 # **blacklistedKeyCreate**
-> blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP)
+> BlacklistedKey blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP)
 
 Create a blacklisted key
 
@@ -50,7 +50,8 @@ public class Example {
     BlacklistedKeyCreateParameters blacklistedKeyCreateParameters = new BlacklistedKeyCreateParameters(); // BlacklistedKeyCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP);
+      BlacklistedKey result = apiInstance.blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BlacklistedKeysApi#blacklistedKeyCreate");
       System.err.println("Status code: " + e.getCode());
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**BlacklistedKey**](BlacklistedKey.md)
 
 ### Authorization
 
@@ -81,12 +82,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

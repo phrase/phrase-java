@@ -70,7 +70,7 @@ public class JobsApiTest {
         String projectId = null;
         JobCreateParameters jobCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.jobCreate(projectId, jobCreateParameters, xPhraseAppOTP);
+        JobDetails response = api.jobCreate(projectId, jobCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

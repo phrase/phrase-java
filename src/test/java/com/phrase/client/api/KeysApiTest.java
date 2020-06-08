@@ -51,7 +51,7 @@ public class KeysApiTest {
         String projectId = null;
         KeyCreateParameters keyCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.keyCreate(projectId, keyCreateParameters, xPhraseAppOTP);
+        TranslationKeyDetails response = api.keyCreate(projectId, keyCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

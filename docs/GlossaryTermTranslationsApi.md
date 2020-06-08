@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="glossaryTermTranslationCreate"></a>
 # **glossaryTermTranslationCreate**
-> glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP)
+> GlossaryTermTranslation glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP)
 
 Create a glossary term translation
 
@@ -50,7 +50,8 @@ public class Example {
     GlossaryTermTranslationCreateParameters glossaryTermTranslationCreateParameters = new GlossaryTermTranslationCreateParameters(); // GlossaryTermTranslationCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP);
+      GlossaryTermTranslation result = apiInstance.glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GlossaryTermTranslationsApi#glossaryTermTranslationCreate");
       System.err.println("Status code: " + e.getCode());
@@ -74,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**GlossaryTermTranslation**](GlossaryTermTranslation.md)
 
 ### Authorization
 
@@ -83,12 +84,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | The resource has been created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

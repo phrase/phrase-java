@@ -48,7 +48,7 @@ public class ReleasesApiTest {
         String distributionId = null;
         ReleaseCreateParameters releaseCreateParameters = null;
         String xPhraseAppOTP = null;
-        api.releaseCreate(accountId, distributionId, releaseCreateParameters, xPhraseAppOTP);
+        Release response = api.releaseCreate(accountId, distributionId, releaseCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
