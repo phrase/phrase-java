@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GlossaryApi {
+public class GlossariesApi {
     private ApiClient localVarApiClient;
 
-    public GlossaryApi() {
+    public GlossariesApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public GlossaryApi(ApiClient apiClient) {
+    public GlossariesApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 

@@ -25,12 +25,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for GlossaryApi
+ * API tests for GlossariesApi
  */
 @Ignore
-public class GlossaryApiTest {
+public class GlossariesApiTest {
 
-    private final GlossaryApi api = new GlossaryApi();
+    private final GlossariesApi api = new GlossariesApi();
 
     
     /**
