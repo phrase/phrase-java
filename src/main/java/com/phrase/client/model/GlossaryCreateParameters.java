@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * GlossaryCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-09T07:13:53.645Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-09T07:20:23.859Z[Etc/UTC]")
 public class GlossaryCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

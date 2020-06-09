@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GitlabSyncExport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-09T07:13:53.645Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-09T07:20:23.859Z[Etc/UTC]")
 public class GitlabSyncExport {
   public static final String SERIALIZED_NAME_MERGE_REQUEST_ID = "merge_request_id";
   @SerializedName(SERIALIZED_NAME_MERGE_REQUEST_ID)
