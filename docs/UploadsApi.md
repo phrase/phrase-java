@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed)
+> Upload uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed)
 
 Upload a new file
 
@@ -57,10 +57,12 @@ public class Example {
     Boolean skipUploadTags = true; // Boolean | Indicates whether the upload should not create upload tags.
     Boolean skipUnverification = true; // Boolean | Indicates whether the upload should unverify updated translations.
     String fileEncoding = "fileEncoding_example"; // String | Enforces a specific encoding on the file contents. Valid options are \\\"UTF-8\\\", \\\"UTF-16\\\" and \\\"ISO-8859-1\\\".
+    Object localeMapping = null; // Object | Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
+    Object formatOptions = null; // Object | Additional options available for specific formats. See our format guide for complete list.
     Boolean autotranslate = true; // Boolean | If set, translations for the uploaded language will be fetched automatically.
     Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
     try {
-      Upload result = apiInstance.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed);
+      Upload result = apiInstance.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
  **skipUploadTags** | **Boolean**| Indicates whether the upload should not create upload tags. | [optional]
  **skipUnverification** | **Boolean**| Indicates whether the upload should unverify updated translations. | [optional]
  **fileEncoding** | **String**| Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. | [optional]
+ **localeMapping** | [**Object**](Object.md)| Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. | [optional]
+ **formatOptions** | [**Object**](Object.md)| Additional options available for specific formats. See our format guide for complete list. | [optional]
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional]
  **markReviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. | [optional]
 
