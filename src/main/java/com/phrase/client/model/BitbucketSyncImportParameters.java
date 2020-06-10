@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BitbucketSyncImportParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-09T15:11:26.902Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-10T08:25:24.627Z[Etc/UTC]")
 public class BitbucketSyncImportParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
