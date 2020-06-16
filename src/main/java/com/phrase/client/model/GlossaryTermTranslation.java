@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * GlossaryTermTranslation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-12T08:57:01.849Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-16T14:42:53.153Z[Etc/UTC]")
 public class GlossaryTermTranslation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
