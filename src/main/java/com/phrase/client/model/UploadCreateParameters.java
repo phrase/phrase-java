@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UploadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-22T12:35:26.052Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-22T20:59:38.932Z[Etc/UTC]")
 public class UploadCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -143,11 +143,11 @@ public class UploadCreateParameters {
   }
 
    /**
-   * File format. Auto-detected when possible and not specified.
+   * File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
    * @return fileFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "json", value = "File format. Auto-detected when possible and not specified.")
+  @ApiModelProperty(example = "json", value = "File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.")
 
   public String getFileFormat() {
     return fileFormat;

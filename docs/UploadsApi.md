@@ -48,7 +48,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = "branch_example"; // String | specify the branch to use
     File file = new File("/path/to/file"); // File | File to be imported
-    String fileFormat = "fileFormat_example"; // String | File format. Auto-detected when possible and not specified.
+    String fileFormat = "fileFormat_example"; // String | File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
     String localeId = "localeId_example"; // String | Locale of the file's content. Can be the name or public id of the locale. Preferred is the public id.
     String tags = "tags_example"; // String | List of tags separated by comma to be associated with the new keys contained in the upload.
     Boolean updateTranslations = true; // Boolean | Indicates whether existing translations should be updated with the file content.
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **file** | **File**| File to be imported | [optional]
- **fileFormat** | **String**| File format. Auto-detected when possible and not specified. | [optional]
+ **fileFormat** | **String**| File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats. | [optional]
  **localeId** | **String**| Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. | [optional]
  **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional]
  **updateTranslations** | **Boolean**| Indicates whether existing translations should be updated with the file content. | [optional]
