@@ -456,6 +456,10 @@ paths:
       x-code-samples:
       - lang: Curl
         source: curl "https://api.phrase.com/formats"
+      - lang: CLI v2
+        source: |-
+          phrase formats list \
+          --access_token <token>
       - lang: CLI v1
         source: phraseapp formats list
       x-accepts: application/json
@@ -3002,6 +3006,11 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/distributions" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase distributions list \
+          --account_id <account_id> \
+          --access_token <token>
       - lang: CLI v1
         source: phraseapp distributions list
       x-accepts: application/json
@@ -3124,6 +3133,12 @@ paths:
             -X POST \
             -d '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase distributions create \
+          --account_id <account_id> \
+          --data '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp distribution create \
@@ -3211,6 +3226,12 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase distributions delete \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
         source: phraseapp distribution delete
       x-accepts: application/json
@@ -3291,6 +3312,12 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase distributions list \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
         source: phraseapp distribution show
       x-accepts: application/json
@@ -3421,6 +3448,13 @@ paths:
             -X PATCH \
             -d '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase distributions update \
+          --account_id <account_id> \
+          --id <id> \
+          --data '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp distribution update \
@@ -8183,6 +8217,11 @@ paths:
         source: |-
           curl "https://api.phrase.com/gitlab_syncs?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase git_lab_sync list \
+          --account_id <account_id>
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp gitlab_sync list \
@@ -8267,6 +8306,12 @@ paths:
             -X DELETE \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase git_lab_sync delete \
+          --account_id <account_id>
+          --id <id>
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp gitlab_sync delete \
@@ -8351,6 +8396,12 @@ paths:
         source: |-
           curl "https://api.phrase.com/gitlab_syncs/{id}?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase git_lab_sync show \
+          --account_id <account_id>
+          --id <id>
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp gitlab_sync show \
@@ -8465,6 +8516,14 @@ paths:
             -X PUT \
             -d '{"account_id":"abcd1234","phrase_project_code":"3456abcd","gitlab_project_id":12345,"gitlab_branch_name":"feature-development"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase git_lab_sync update \
+          --account_id abcd1234 \
+          --phrase_project_code 3456abcd \
+          --gitlab_project_id 12345 \
+          --gitlab_branch_name feature-development \
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp gitlab_sync update \
@@ -8566,6 +8625,12 @@ paths:
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase git_lab_sync import \
+          --data '{"account_id":"abcd1234"}' \
+          --gitlab_sync_id <id>
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp gitlab_sync import \
@@ -8661,10 +8726,16 @@ paths:
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase git_lab_sync export \
+          --gitlab_sync_id <id>
+          --data '{"account_id":"abcd1234"}' \
       - lang: CLI v1
         source: |-
           phraseapp gitlab_sync export \
           --account-id abcd1234
+          --access_token <token>
       x-contentType: application/json
       x-accepts: application/json
   /gitlab_syncs/{gitlab_sync_id}/history:
@@ -8771,6 +8842,12 @@ paths:
         source: |-
           curl "https://api.phrase.com/gitlab_syncs/{gitlab_sync_id}/history?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase git_lab_sync history \
+          --account_id <account_id>
+          --gitlab_sync_id <id>
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp gitlab_sync history \
