@@ -456,7 +456,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: curl "https://api.phrase.com/formats"
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp formats list
       x-accepts: application/json
   /projects/{project_id}/styleguides:
@@ -553,7 +553,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/styleguides" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp styleguides list
       x-accepts: application/json
     post:
@@ -699,7 +699,7 @@ paths:
             -X POST \
             -d '{"title":"Web application style guide","audience":"customer-facing","target_audience":"teenager","grammatical_person":"first_person_singular","vocabulary_type":"technical","business":"We are a travel site that helps customers find the best hotels and flights.","company_branding":"ACME Inc. should never be translated.","formatting":"Never use capital letters","glossary_terms":"Appartement, cabin, loft","grammar_consistency":"","literal_translation":"Neutral","overall_tone":"Tone should be fun and light","samples":"http://www.myexample.com/my/document/path/to/samples.pdf"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp styleguide create \
           --title "Web application style guide" \
@@ -792,7 +792,7 @@ paths:
           curl "https://api.phrase.com/projects/{project_id}/styleguides/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp styleguide delete
       x-accepts: application/json
     get:
@@ -872,7 +872,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/styleguides/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp styleguide show
       x-accepts: application/json
     patch:
@@ -1026,7 +1026,7 @@ paths:
             -X PATCH \
             -d '{"title":"Web application style guide","audience":"customer-facing","target_audience":"teenager","grammatical_person":"first_person_singular","vocabulary_type":"technical","business":"We are a travel site that helps customers find the best hotels and flights.","company_branding":"ACME Inc. should never be translated.","formatting":"Never use capital letters","glossary_terms":"Appartement, cabin, loft","grammar_consistency":"","literal_translation":"Neutral","overall_tone":"Tone should be fun and light","samples":"http://www.myexample.com/my/document/path/to/samples.pdf"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp styleguide update \
           --title "Web application style guide" \
@@ -1141,7 +1141,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/invitations" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp invitations list
       x-accepts: application/json
     post:
@@ -1255,7 +1255,7 @@ paths:
             -X POST \
             -d '{"email":"example@mail.com","role":"Developer","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","permissions":{"create_upload":true,"review_translations":true}}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp invitation create \
           --email example@mail.com \
@@ -1341,7 +1341,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/invitations/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp invitation delete
       x-accepts: application/json
     get:
@@ -1422,7 +1422,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/invitations/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp invitation show
       x-accepts: application/json
     patch:
@@ -1537,7 +1537,7 @@ paths:
             -X PATCH \
             -d '{"role":"Invitiation role","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","permissions":{"create_upload":true}}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp invitation update \
           --role "Invitiation role" \
@@ -1626,7 +1626,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/invitations/{id}/resend" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp invitation resend
       x-accepts: application/json
   /projects/{project_id}/screenshots/{id}/markers:
@@ -1731,7 +1731,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/screenshots/{id}/markers" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp screenshot_markers list
       x-accepts: application/json
   /projects/{project_id}/screenshots/{screenshot_id}/markers/{id}:
@@ -1820,7 +1820,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/screenshots/{screenshot_id}/markers/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp screenshot_marker show
       x-accepts: application/json
   /projects/{project_id}/screenshots/{screenshot_id}/markers:
@@ -1898,7 +1898,7 @@ paths:
           curl "https://api.phrase.com/projects/{project_id}/screenshots/{screenshot_id}/markers" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp screenshot_marker delete
       x-accepts: application/json
     patch:
@@ -2005,7 +2005,7 @@ paths:
             -X PATCH \
             -d '{"key_id":"abcd1234abcd1234abcd1234abcd1234","presentation":"{ \"x\": 100, \"y\": 100, \"w\": 100, \"h\": 100 }"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp screenshot_marker update \
           --key-id abcd1234abcd1234abcd1234abcd1234 \
@@ -2116,7 +2116,7 @@ paths:
             -X POST \
             -d '{"key_id":"abcd1234abcd1234abcd1234abcd1234","presentation":"{ \"x\": 100, \"y\": 100, \"w\": 100, \"h\": 100 }"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp screenshot_marker create \
           --key-id abcd1234abcd1234abcd1234abcd1234 \
@@ -2226,7 +2226,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/locales?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp locales list \
           --branch my-feature-branch
@@ -2356,7 +2356,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","name":"de","code":"de-DE","source_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp locale create \
           --branch my-feature-branch \
@@ -2451,7 +2451,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp locale delete \
           --branch my-feature-branch
@@ -2542,7 +2542,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/locales/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp locale show \
           --branch my-feature-branch
@@ -2680,7 +2680,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","name":"de","code":"de-DE","source_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp locale update \
           --branch my-feature-branch \
@@ -2900,7 +2900,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/locales/{id}/download?branch=my-feature-branch&file_format=yml&tags=feature1,feature2&tag=feature" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp locale download \
           --branch my-feature-branch \
@@ -3002,7 +3002,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/distributions" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp distributions list
       x-accepts: application/json
     post:
@@ -3124,7 +3124,7 @@ paths:
             -X POST \
             -d '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp distribution create \
           --name "My Android Distribution" \
@@ -3211,7 +3211,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp distribution delete
       x-accepts: application/json
     get:
@@ -3291,7 +3291,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp distribution show
       x-accepts: application/json
     patch:
@@ -3421,7 +3421,7 @@ paths:
             -X PATCH \
             -d '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp distribution update \
           --name "My Android Distribution" \
@@ -3535,7 +3535,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp releases list
       x-accepts: application/json
     post:
@@ -3643,7 +3643,7 @@ paths:
             -X POST \
             -d '{"description":"My first Release","platforms":["android","ios"],"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp release create \
           --description "My first Release" \
@@ -3734,7 +3734,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp release delete
       x-accepts: application/json
     get:
@@ -3822,7 +3822,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp release show
       x-accepts: application/json
     patch:
@@ -3938,7 +3938,7 @@ paths:
             -X PATCH \
             -d '{"description":"My first Release","platforms":["android","ios"],"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp release update \
           --description "My first Release" \
@@ -4033,7 +4033,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp release publish
       x-accepts: application/json
   /projects/{project_id}/jobs:
@@ -4167,7 +4167,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/jobs?branch=my-feature-branch&owned_by=abcd1234cdef1234abcd1234cdef1234&assigned_to=abcd1234cdef1234abcd1234cdef1234&state=completed" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp jobs list \
           --branch my-feature-branch \
@@ -4286,7 +4286,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","name":"de","briefing":"de-DE","due_date":"2017-08-15","tags":["myUploadTag"],"translation_key_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job create \
           --branch my-feature-branch \
@@ -4383,7 +4383,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job delete \
           --branch my-feature-branch
@@ -4474,7 +4474,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/jobs/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job show \
           --branch my-feature-branch
@@ -4584,7 +4584,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","name":"de","briefing":"de-DE","due_date":"2017-08-15"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job update \
           --branch my-feature-branch \
@@ -4687,7 +4687,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job start \
           --branch my-feature-branch
@@ -4787,7 +4787,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job complete \
           --branch my-feature-branch
@@ -4887,7 +4887,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job reopen \
           --branch my-feature-branch
@@ -4991,7 +4991,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch","translation_key_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job keys delete \
           --branch my-feature-branch \
@@ -5097,7 +5097,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","translation_key_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job keys create \
           --branch my-feature-branch \
@@ -5198,7 +5198,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/glossaries" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp glossaries list
       x-accepts: application/json
     post:
@@ -5299,7 +5299,7 @@ paths:
             -X POST \
             -d '{"name":"My glossary","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp glossary create \
           --name "My glossary" \
@@ -5382,7 +5382,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/glossaries/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp glossary delete
       x-accepts: application/json
     get:
@@ -5462,7 +5462,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/glossaries/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp glossary show
       x-accepts: application/json
     patch:
@@ -5571,7 +5571,7 @@ paths:
             -X PATCH \
             -d '{"name":"My glossary","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp glossary update \
           --name "My glossary" \
@@ -5665,7 +5665,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/authorizations" \
             -u USERNAME
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp authorizations list
       x-accepts: application/json
     post:
@@ -5760,7 +5760,7 @@ paths:
             -X POST \
             -d '{"note":"My Deploy Script","scopes":["read","write"],"expires_at":"2015-03-30T09:52:53Z"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp authorization create \
           --note "My Deploy Script" \
@@ -5836,7 +5836,7 @@ paths:
           curl "https://api.phrase.com/authorizations/{id}" \
             -u USERNAME \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp authorization delete
       x-accepts: application/json
     get:
@@ -5908,7 +5908,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/authorizations/{id}" \
             -u USERNAME
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp authorization show
       x-accepts: application/json
     patch:
@@ -6011,7 +6011,7 @@ paths:
             -X PATCH \
             -d '{"note":"My Deploy Script","scopes":["read","write"],"expires_at":"2015-03-30T09:52:53Z"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp authorization update \
           --note "My Deploy Script" \
@@ -6096,7 +6096,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/bitbucket_syncs?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp bitbucket_syncs list \
           --account-id abcd1234
@@ -6190,7 +6190,7 @@ paths:
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp bitbucket_sync export \
           --account-id abcd1234
@@ -6281,7 +6281,7 @@ paths:
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp bitbucket_sync import \
           --account-id abcd1234
@@ -6398,7 +6398,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comments list \
           --branch my-feature-branch
@@ -6500,7 +6500,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","message":"Some message..."}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comment create \
           --branch my-feature-branch \
@@ -6601,7 +6601,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comment delete \
           --branch my-feature-branch
@@ -6700,7 +6700,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comment show \
           --branch my-feature-branch
@@ -6810,7 +6810,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","message":"Some message..."}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comment update \
           --branch my-feature-branch \
@@ -6911,7 +6911,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comment mark unread \
           --branch my-feature-branch
@@ -7007,7 +7007,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}/read?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comment mark check \
           --branch my-feature-branch
@@ -7109,7 +7109,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp comment mark read \
           --branch my-feature-branch
@@ -7209,7 +7209,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/webhooks" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp webhooks list
       x-accepts: application/json
     post:
@@ -7309,7 +7309,7 @@ paths:
             -X POST \
             -d '{"callback_url":"http://example.com/hooks/phraseapp-notifications","description":"My webhook for chat notifications","events":"locales:create,translations:update"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp webhook create \
           --callback-url "http://example.com/hooks/phraseapp-notifications" \
@@ -7392,7 +7392,7 @@ paths:
           curl "https://api.phrase.com/projects/{project_id}/webhooks/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp webhook delete
       x-accepts: application/json
     get:
@@ -7472,7 +7472,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/webhooks/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp webhook show
       x-accepts: application/json
     patch:
@@ -7580,7 +7580,7 @@ paths:
             -X PATCH \
             -d '{"callback_url":"http://example.com/hooks/phraseapp-notifications","description":"My webhook for chat notifications","events":"locales:create,translations:update"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp webhook update \
           --callback-url "http://example.com/hooks/phraseapp-notifications" \
@@ -7663,7 +7663,7 @@ paths:
           curl "https://api.phrase.com/projects/{project_id}/webhooks/{id}/test" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp webhook test
       x-accepts: application/json
   /projects/{project_id}/uploads:
@@ -7769,7 +7769,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/uploads?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp uploads list \
           --branch my-feature-branch
@@ -7932,7 +7932,7 @@ paths:
             -F tags=awesome-feature,needs-proofreading \
             -F locale_mapping[en]=2 \
             -F format_options[foo]=bar
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp upload create \
           --branch my-feature-branch \
@@ -8031,7 +8031,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/uploads/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp upload show \
           --branch my-feature-branch
@@ -8113,7 +8113,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/gitlab_syncs?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp gitlab_sync list \
           --account-id abcd1234
@@ -8197,7 +8197,7 @@ paths:
             -X DELETE \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp gitlab_sync delete \
           --account-id abcd1234
@@ -8281,7 +8281,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/gitlab_syncs/{id}?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp gitlab_sync show \
           --account-id abcd1234
@@ -8395,7 +8395,7 @@ paths:
             -X PUT \
             -d '{"account_id":"abcd1234","phrase_project_code":"3456abcd","gitlab_project_id":12345,"gitlab_branch_name":"feature-development"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp gitlab_sync update \
           --account-id abcd1234 \
@@ -8496,7 +8496,7 @@ paths:
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp gitlab_sync import \
           --account-id abcd1234
@@ -8591,7 +8591,7 @@ paths:
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp gitlab_sync export \
           --account-id abcd1234
@@ -8701,7 +8701,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/gitlab_syncs/{gitlab_sync_id}/history?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp gitlab_sync history \
           --account-id abcd1234
@@ -8817,7 +8817,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/translations/{translation_id}/versions?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp versions list \
           --branch my-feature-branch
@@ -8917,7 +8917,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/translations/{translation_id}/versions/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp version show \
           --branch my-feature-branch
@@ -9028,7 +9028,7 @@ paths:
             -X POST \
             -d '{"locale_code":"en-US","content":"My translated term"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp glossary_term_translation create \
           --locale-code en-US \
@@ -9126,7 +9126,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp glossary_term_translation delete
       x-accepts: application/json
     patch:
@@ -9242,7 +9242,7 @@ paths:
             -X PATCH \
             -d '{"locale_code":"en-US","content":"My translated term"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp glossary_term_translation update \
           --locale-code en-US \
@@ -9335,7 +9335,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp projects list
       x-accepts: application/json
     post:
@@ -9443,7 +9443,7 @@ paths:
             -F shares_translation_memory=true \
             -F project_image=@/path/to/my/project-screenshot.png \
             -F account_id=abcd1234
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp project create \
           --name "My Android Project" \
@@ -9520,7 +9520,7 @@ paths:
           curl "https://api.phrase.com/projects/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp project delete
       x-accepts: application/json
     get:
@@ -9592,7 +9592,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp project show
       x-accepts: application/json
     patch:
@@ -9708,7 +9708,7 @@ paths:
             -F shares_translation_memory=true \
             -F project_image=@/path/to/my/project-screenshot.png \
             -F account_id=abcd1234
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp project update \
           --name "My Android Project" \
@@ -9829,7 +9829,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locales?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job_locales list \
           --branch my-feature-branch
@@ -9938,7 +9938,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","locale_id":"abcd1234cdef1234abcd1234cdef1234","user_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job_locales create \
           --branch my-feature-branch \
@@ -10041,7 +10041,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locale/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job_locale show \
           --branch my-feature-branch
@@ -10140,7 +10140,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job_locale delete \
           --branch my-feature-branch
@@ -10257,7 +10257,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","locale_id":"abcd1234cdef1234abcd1234cdef1234","user_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job_locale update \
           --branch my-feature-branch \
@@ -10367,7 +10367,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job_locale complete \
           --branch my-feature-branch
@@ -10475,7 +10475,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp job_locale reopen \
           --branch my-feature-branch
@@ -10575,7 +10575,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/branches" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp branches list
       x-accepts: application/json
     post:
@@ -10663,7 +10663,7 @@ paths:
             -X POST \
             -d '{"name":"my-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp branch create \
           --name my-branch
@@ -10744,7 +10744,7 @@ paths:
           curl "https://api.phrase.com/projects/{project_id}/branches/{name}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp branch delete
       x-accepts: application/json
     get:
@@ -10824,7 +10824,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/branches/{name}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp branch show
       x-accepts: application/json
     patch:
@@ -10920,7 +10920,7 @@ paths:
             -X PATCH \
             -d '{"name":"my-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp branch update \
           --name my-branch
@@ -11016,7 +11016,7 @@ paths:
             -X PATCH \
             -d '{"strategy":"use_master"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp branch merge \
           --strategy use_master
@@ -11096,7 +11096,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/branches/{name}/compare?name=my-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp branch compare \
           --name my-branch
@@ -11187,7 +11187,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp accounts list
       x-accepts: application/json
   /accounts/{id}:
@@ -11260,7 +11260,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp account show
       x-accepts: application/json
   /user:
@@ -11325,7 +11325,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/user" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp show user
       x-accepts: application/json
   /accounts/{account_id}/members:
@@ -11424,7 +11424,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/members" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp members list
       x-accepts: application/json
   /accounts/{account_id}/members/{id}:
@@ -11503,7 +11503,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/members/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp member delete
       x-accepts: application/json
     get:
@@ -11584,7 +11584,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/members/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp member show
       x-accepts: application/json
     patch:
@@ -11699,7 +11699,7 @@ paths:
             -X PATCH \
             -d '{"role":"Developer","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","permissions":{"create_upload":true,"review_translations":true}}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp member update \
           --role Developer \
@@ -11802,7 +11802,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/screenshots" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp screenshots list
       x-accepts: application/json
     post:
@@ -11899,7 +11899,7 @@ paths:
             -F name=A%20screenshot%20name \
             -F description=A%20screenshot%20description \
             -F filename=@/path/to/my/screenshot.png
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp screenshot create \
           --name "A screenshot name" \
@@ -11982,7 +11982,7 @@ paths:
           curl "https://api.phrase.com/projects/{project_id}/screenshots/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp screenshot delete
       x-accepts: application/json
     get:
@@ -12062,7 +12062,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/screenshots/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp screenshot show
       x-accepts: application/json
     patch:
@@ -12167,7 +12167,7 @@ paths:
             -F name=A%20screenshot%20name \
             -F description=A%20screenshot%20description \
             -F filename=@/path/to/my/screenshot.png
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp screenshot update \
           --name "A screenshot name" \
@@ -12277,7 +12277,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp glossary_terms list
       x-accepts: application/json
     post:
@@ -12386,7 +12386,7 @@ paths:
             -X POST \
             -d '{"term":"MyCompany","description":"Use this when refering to our company","translatable":true,"case_sensitive":true}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp glossary_term create \
           --term MyCompany \
@@ -12478,7 +12478,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp glossary_term delete
       x-accepts: application/json
     get:
@@ -12566,7 +12566,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp glossary_term show
       x-accepts: application/json
     patch:
@@ -12683,7 +12683,7 @@ paths:
             -X PATCH \
             -d '{"term":"MyCompany","description":"Use this when refering to our company","translatable":true,"case_sensitive":true}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp glossary_term update \
           --term MyCompany \
@@ -12795,7 +12795,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/tags?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp tags list \
           --branch my-feature-branch
@@ -12889,7 +12889,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","name":"my-feature"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp tag create \
           --branch my-feature-branch \
@@ -12982,7 +12982,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp tag delete \
           --branch my-feature-branch
@@ -13074,7 +13074,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/tags/{name}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp tag show \
           --branch my-feature-branch
@@ -13173,7 +13173,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp blacklisted_keys list
       x-accepts: application/json
     post:
@@ -13261,7 +13261,7 @@ paths:
             -X POST \
             -d '{"name":"date.formats.*"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp blacklisted_key create \
           --name 'date.formats.*'
@@ -13342,7 +13342,7 @@ paths:
           curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp blacklisted_key delete
       x-accepts: application/json
     get:
@@ -13423,7 +13423,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp blacklisted_key show
       x-accepts: application/json
     patch:
@@ -13519,7 +13519,7 @@ paths:
             -X PATCH \
             -d '{"name":"date.formats.*"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp blacklisted_key update \
           --name 'date.formats.*'
@@ -13628,7 +13628,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp keys delete \
           --branch my-feature-branch \
@@ -13775,7 +13775,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/keys?branch=my-feature-branch&sort=updated_at&order=desc&q=mykey*%20translated:true&locale_id=abcd1234abcd1234abcd1234abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp keys list \
           --branch my-feature-branch \
@@ -13938,7 +13938,7 @@ paths:
             -F tags=awesome-feature,needs-proofreading \
             -F max_characters_allowed=140 \
             -F screenshot=@/path/to/my/screenshot.png
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp key create \
           --branch my-feature-branch \
@@ -14078,7 +14078,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","sort":"updated_at","order":"desc","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp keys search \
           --branch my-feature-branch \
@@ -14174,7 +14174,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp key delete \
           --branch my-feature-branch
@@ -14265,7 +14265,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/keys/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp key show \
           --branch my-feature-branch
@@ -14432,7 +14432,7 @@ paths:
             -F tags=awesome-feature,needs-proofreading \
             -F max_characters_allowed=140 \
             -F screenshot=@/path/to/my/screenshot.png
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp key update \
           --branch my-feature-branch \
@@ -14545,7 +14545,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234","tags":"landing-page,release-1.2"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp keys tag \
           --branch my-feature-branch \
@@ -14654,7 +14654,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234","tags":"landing-page,release-1.2"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp keys untag \
           --branch my-feature-branch \
@@ -14766,7 +14766,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/orders?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp orders list \
           --branch my-feature-branch
@@ -14919,7 +14919,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","lsp":"textmaster","source_locale_id":"abcd1234abcd1234abcd1234abcd1234","target_locale_ids":["1234abcd1234abcd1234abcd1234abcd","abcd1234abcd1234abcd1234abcd1234"],"translation_type":"premium","tag":"my-awesome-feature","message":"Please make everything sound really nice :)","styleguide_id":"1234abcd1234abcd1234abcd1234abcd","category":"C021"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp order create \
           --branch my-feature-branch \
@@ -15019,7 +15019,7 @@ paths:
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp order delete \
           --branch my-feature-branch
@@ -15110,7 +15110,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/orders/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp order show \
           --branch my-feature-branch
@@ -15210,7 +15210,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp order confirm \
           --branch my-feature-branch
@@ -15310,7 +15310,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/spaces" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp spaces list
       x-accepts: application/json
     post:
@@ -15398,7 +15398,7 @@ paths:
             -X POST \
             -d '{"name":"My Android Projects"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp space create \
           --name "My Android Projects"
@@ -15479,7 +15479,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/spaces/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp space delete
       x-accepts: application/json
     get:
@@ -15559,7 +15559,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/spaces/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp space show
       x-accepts: application/json
     patch:
@@ -15655,7 +15655,7 @@ paths:
             -X PATCH \
             -d '{"name":"My Android Projects"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp space update \
           --name "My Android Projects"
@@ -15763,7 +15763,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/accounts/{account_id}/spaces/{space_id}/projects" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp spaces projects list
       x-accepts: application/json
     post:
@@ -15855,7 +15855,7 @@ paths:
             -X POST \
             -d '{"id":"a4b3c2d1"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp spaces projects create \
           --id a4b3c2d1
@@ -15944,7 +15944,7 @@ paths:
           curl "https://api.phrase.com/accounts/{account_id}/spaces/{space_id}/projects/{id}" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
-      - lang: CLI
+      - lang: CLI v1
         source: phraseapp spaces projects delete
       x-accepts: application/json
   /projects/{project_id}/translations:
@@ -16079,7 +16079,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations list \
           --branch my-feature-branch \
@@ -16204,7 +16204,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","locale_id":"abcd1234cdef1234abcd1234cdef1234","key_id":"abcd1234cdef1234abcd1234cdef1234","content":"My translation"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation create \
           --branch my-feature-branch \
@@ -16353,7 +16353,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/locales/{locale_id}/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations by_locale \
           --branch my-feature-branch \
@@ -16499,7 +16499,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations by_key \
           --branch my-feature-branch \
@@ -16633,7 +16633,7 @@ paths:
             -X POST \
             -d '{"branch":"my-feature-branch","sort":"updated_at","order":"desc","q":"PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations search \
           --branch my-feature-branch \
@@ -16729,7 +16729,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/projects/{project_id}/translations/{id}?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation show \
           --branch my-feature-branch
@@ -16850,7 +16850,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","content":"My translation"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation update \
           --branch my-feature-branch \
@@ -16951,7 +16951,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation verify \
           --branch my-feature-branch
@@ -17051,7 +17051,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation unverify \
           --branch my-feature-branch
@@ -17151,7 +17151,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation review \
           --branch my-feature-branch
@@ -17251,7 +17251,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation exclude \
           --branch my-feature-branch
@@ -17351,7 +17351,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translation include \
           --branch my-feature-branch
@@ -17456,7 +17456,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20unverified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations verify \
           --branch my-feature-branch \
@@ -17564,7 +17564,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20verified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations unverify \
           --branch my-feature-branch \
@@ -17663,7 +17663,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%reviewed:false%20tags:feature,center"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations review \
           --branch my-feature-branch \
@@ -17769,7 +17769,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20verified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations exclude \
           --branch my-feature-branch \
@@ -17877,7 +17877,7 @@ paths:
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20verified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
-      - lang: CLI
+      - lang: CLI v1
         source: |-
           phraseapp translations include \
           --branch my-feature-branch \
