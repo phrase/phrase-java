@@ -23,11 +23,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * UploadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-23T19:38:26.751Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-06-23T20:37:47.921Z[Etc/UTC]")
 public class UploadCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -75,11 +78,11 @@ public class UploadCreateParameters {
 
   public static final String SERIALIZED_NAME_LOCALE_MAPPING = "locale_mapping";
   @SerializedName(SERIALIZED_NAME_LOCALE_MAPPING)
-  private Object localeMapping;
+  private Map<String, String> localeMapping = null;
 
   public static final String SERIALIZED_NAME_FORMAT_OPTIONS = "format_options";
   @SerializedName(SERIALIZED_NAME_FORMAT_OPTIONS)
-  private Object formatOptions;
+  private Map<String, String> formatOptions = null;
 
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
@@ -143,11 +146,11 @@ public class UploadCreateParameters {
   }
 
    /**
-   * File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.
+   * File format. Auto-detected when possible and not specified.
    * @return fileFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "json", value = "File format. Auto-detected when possible and not specified. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats) for all supported file formats.")
+  @ApiModelProperty(example = "json", value = "File format. Auto-detected when possible and not specified.")
 
   public String getFileFormat() {
     return fileFormat;
@@ -343,9 +346,17 @@ public class UploadCreateParameters {
   }
 
 
-  public UploadCreateParameters localeMapping(Object localeMapping) {
+  public UploadCreateParameters localeMapping(Map<String, String> localeMapping) {
     
     this.localeMapping = localeMapping;
+    return this;
+  }
+
+  public UploadCreateParameters putLocaleMappingItem(String key, String localeMappingItem) {
+    if (this.localeMapping == null) {
+      this.localeMapping = new HashMap<>();
+    }
+    this.localeMapping.put(key, localeMappingItem);
     return this;
   }
 
@@ -356,19 +367,27 @@ public class UploadCreateParameters {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "{\"en\": \"2\"}", value = "Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.")
 
-  public Object getLocaleMapping() {
+  public Map<String, String> getLocaleMapping() {
     return localeMapping;
   }
 
 
-  public void setLocaleMapping(Object localeMapping) {
+  public void setLocaleMapping(Map<String, String> localeMapping) {
     this.localeMapping = localeMapping;
   }
 
 
-  public UploadCreateParameters formatOptions(Object formatOptions) {
+  public UploadCreateParameters formatOptions(Map<String, String> formatOptions) {
     
     this.formatOptions = formatOptions;
+    return this;
+  }
+
+  public UploadCreateParameters putFormatOptionsItem(String key, String formatOptionsItem) {
+    if (this.formatOptions == null) {
+      this.formatOptions = new HashMap<>();
+    }
+    this.formatOptions.put(key, formatOptionsItem);
     return this;
   }
 
@@ -379,12 +398,12 @@ public class UploadCreateParameters {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "{\"foo\": \"bar\"}", value = "Additional options available for specific formats. See our format guide for complete list.")
 
-  public Object getFormatOptions() {
+  public Map<String, String> getFormatOptions() {
     return formatOptions;
   }
 
 
-  public void setFormatOptions(Object formatOptions) {
+  public void setFormatOptions(Map<String, String> formatOptions) {
     this.formatOptions = formatOptions;
   }
 

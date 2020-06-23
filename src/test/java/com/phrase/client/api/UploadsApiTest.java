@@ -13,8 +13,8 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
-import java.io.File;
 import com.phrase.client.model.Upload;
+import com.phrase.client.model.UploadCreateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -43,23 +43,9 @@ public class UploadsApiTest {
     @Test
     public void uploadCreateTest() throws ApiException {
         String projectId = null;
+        UploadCreateParameters uploadCreateParameters = null;
         String xPhraseAppOTP = null;
-        String branch = null;
-        File file = null;
-        String fileFormat = null;
-        String localeId = null;
-        String tags = null;
-        Boolean updateTranslations = null;
-        Boolean updateDescriptions = null;
-        Boolean convertEmoji = null;
-        Boolean skipUploadTags = null;
-        Boolean skipUnverification = null;
-        String fileEncoding = null;
-        Object localeMapping = null;
-        Object formatOptions = null;
-        Boolean autotranslate = null;
-        Boolean markReviewed = null;
-        Upload response = api.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed);
+        Upload response = api.uploadCreate(projectId, uploadCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

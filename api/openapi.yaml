@@ -455,7 +455,7 @@ paths:
       - Formats
       x-code-samples:
       - lang: Curl
-        source: curl "https://api.phrase.com/formats"
+        source: curl "https://api.phrase.com/v2/formats"
       - lang: CLI v2
         source: |-
           phrase formats list \
@@ -555,10 +555,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/styleguides" \
+          curl "https://api.phrase.com/v2/projects/:project_id/styleguides" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase styleguides list \
+          --project_id <project_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp styleguides list
+        source: phraseapp styleguides list <project_id>
       x-accepts: application/json
     post:
       description: Create a new style guide.
@@ -698,14 +703,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/styleguides" \
+          curl "https://api.phrase.com/v2/projects/:project_id/styleguides" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"title":"Web application style guide","audience":"customer-facing","target_audience":"teenager","grammatical_person":"first_person_singular","vocabulary_type":"technical","business":"We are a travel site that helps customers find the best hotels and flights.","company_branding":"ACME Inc. should never be translated.","formatting":"Never use capital letters","glossary_terms":"Appartement, cabin, loft","grammar_consistency":"","literal_translation":"Neutral","overall_tone":"Tone should be fun and light","samples":"http://www.myexample.com/my/document/path/to/samples.pdf"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase styleguides create \
+          --project_id <project_id> \
+          --data '{"title":""Web application style guide"", "audience":"customer-facing", "target_audience":"teenager", "grammatical_person":"first_person_singular", "vocabulary_type":"technical", "business":""We are a travel site that helps customers find the best hotels and flights."", "company_branding":""ACME Inc. should never be translated."", "formatting":""Never use capital letters"", "glossary_terms":""Appartement, cabin, loft"", "grammar_consistency":"", "literal_translation":"Neutral", "overall_tone":""Tone should be fun and light"", "samples":""http://www.myexample.com/my/document/path/to/samples.pdf""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp styleguide create \
+          phraseapp styleguide create <project_id> \
           --title "Web application style guide" \
           --audience customer-facing \
           --target-audience teenager \
@@ -793,11 +804,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/styleguides/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/styleguides/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase styleguides delete \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp styleguide delete
+        source: phraseapp styleguide delete <project_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single style guide.
@@ -874,10 +891,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/styleguides/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/styleguides/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase styleguides show \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp styleguide show
+        source: phraseapp styleguide show <project_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing style guide.
@@ -1025,14 +1048,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/styleguides/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/styleguides/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"title":"Web application style guide","audience":"customer-facing","target_audience":"teenager","grammatical_person":"first_person_singular","vocabulary_type":"technical","business":"We are a travel site that helps customers find the best hotels and flights.","company_branding":"ACME Inc. should never be translated.","formatting":"Never use capital letters","glossary_terms":"Appartement, cabin, loft","grammar_consistency":"","literal_translation":"Neutral","overall_tone":"Tone should be fun and light","samples":"http://www.myexample.com/my/document/path/to/samples.pdf"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase styleguides update \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"title":""Web application style guide"", "audience":"customer-facing", "target_audience":"teenager", "grammatical_person":"first_person_singular", "vocabulary_type":"technical", "business":""We are a travel site that helps customers find the best hotels and flights."", "company_branding":""ACME Inc. should never be translated."", "formatting":""Never use capital letters"", "glossary_terms":""Appartement, cabin, loft"", "grammar_consistency":"", "literal_translation":"Neutral", "overall_tone":""Tone should be fun and light"", "samples":""http://www.myexample.com/my/document/path/to/samples.pdf""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp styleguide update \
+          phraseapp styleguide update <project_id> <id> \
           --title "Web application style guide" \
           --audience customer-facing \
           --target-audience teenager \
@@ -1143,10 +1173,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/invitations" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/invitations" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase invitations list \
+          --account_id <account_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp invitations list
+        source: phraseapp invitations list <account_id>
       x-accepts: application/json
     post:
       description: Invite a person to an account. Developers and translators need
@@ -1254,14 +1289,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/invitations" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/invitations" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"email":"example@mail.com","role":"Developer","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","permissions":{"create_upload":true,"review_translations":true}}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase invitations create \
+          --account_id <account_id> \
+          --data '{"email":"example@mail.com", "role":"Developer", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "permissions":"{"create_upload"=>true, "review_translations"=>true}"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp invitation create \
+          phraseapp invitation create <account_id> \
           --email example@mail.com \
           --role Developer \
           --project-ids abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235 \
@@ -1342,11 +1383,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/invitations/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/invitations/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase invitations delete \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp invitation delete
+        source: phraseapp invitation delete <account_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single invitation. Access token scope must include
@@ -1424,10 +1471,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/invitations/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/invitations/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase invitations show \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp invitation show
+        source: phraseapp invitation show <account_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing invitation (must not be accepted yet). The <code>email</code>
@@ -1536,14 +1589,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/invitations/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/invitations/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"role":"Invitiation role","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","permissions":{"create_upload":true}}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase invitations update \
+          --account_id <account_id> \
+          --id <id> \
+          --data '{"role":""Invitiation role"", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "permissions":"{"create_upload"=>true}"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp invitation update \
+          phraseapp invitation update <account_id> <id> \
           --role "Invitiation role" \
           --project-ids abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235 \
           --locale-ids abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235 \
@@ -1627,11 +1687,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/invitations/{id}/resend" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/invitations/:id/resend" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST
+      - lang: CLI v2
+        source: |-
+          phrase invitations resend \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp invitation resend
+        source: phraseapp invitation resend <account_id> <id>
       x-accepts: application/json
   /projects/{project_id}/screenshots/{id}/markers:
     get:
@@ -1733,10 +1799,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{id}/markers" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:id/markers" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase screenshot_markers list \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp screenshot_markers list
+        source: phraseapp screenshot_markers list <project_id> <id>
       x-accepts: application/json
   /projects/{project_id}/screenshots/{screenshot_id}/markers/{id}:
     get:
@@ -1822,10 +1894,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{screenshot_id}/markers/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:screenshot_id/markers/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase screenshot_markers show \
+          --project_id <project_id> \
+          --screenshot_id <screenshot_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp screenshot_marker show
+        source: phraseapp screenshot_marker show <project_id> <screenshot_id> <id>
       x-accepts: application/json
   /projects/{project_id}/screenshots/{screenshot_id}/markers:
     delete:
@@ -1899,11 +1978,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{screenshot_id}/markers" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:screenshot_id/markers" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase screenshot_markers delete \
+          --project_id <project_id> \
+          --screenshot_id <screenshot_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp screenshot_marker delete
+        source: phraseapp screenshot_marker delete <project_id> <screenshot_id>
       x-accepts: application/json
     patch:
       description: Update an existing screenshot marker.
@@ -2004,14 +2089,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{screenshot_id}/markers" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:screenshot_id/markers" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"key_id":"abcd1234abcd1234abcd1234abcd1234","presentation":"{ \"x\": 100, \"y\": 100, \"w\": 100, \"h\": 100 }"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase screenshot_markers update \
+          --project_id <project_id> \
+          --screenshot_id <screenshot_id> \
+          --data '{"key_id":"abcd1234abcd1234abcd1234abcd1234", "presentation":""{ "x": 100, "y": 100, "w": 100, "h": 100 }""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp screenshot_marker update \
+          phraseapp screenshot_marker update <project_id> <screenshot_id> \
           --key-id abcd1234abcd1234abcd1234abcd1234 \
           --presentation "{ "x": 100, "y": 100, "w": 100, "h": 100 }"
       x-contentType: application/json
@@ -2115,14 +2207,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{screenshot_id}/markers" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:screenshot_id/markers" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"key_id":"abcd1234abcd1234abcd1234abcd1234","presentation":"{ \"x\": 100, \"y\": 100, \"w\": 100, \"h\": 100 }"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase screenshot_markers create \
+          --project_id <project_id> \
+          --screenshot_id <screenshot_id> \
+          --data '{"key_id":"abcd1234abcd1234abcd1234abcd1234", "presentation":""{ "x": 100, "y": 100, "w": 100, "h": 100 }""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp screenshot_marker create \
+          phraseapp screenshot_marker create <project_id> <screenshot_id> \
           --key-id abcd1234abcd1234abcd1234abcd1234 \
           --presentation "{ "x": 100, "y": 100, "w": 100, "h": 100 }"
       x-contentType: application/json
@@ -2228,11 +2327,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/locales?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/locales?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase locales list \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp locales list \
+          phraseapp locales list <project_id> \
           --branch my-feature-branch
       x-accepts: application/json
     post:
@@ -2355,14 +2460,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/locales" \
+          curl "https://api.phrase.com/v2/projects/:project_id/locales" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","name":"de","code":"de-DE","source_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase locales create \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "name":"de", "code":"de-DE", "source_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp locale create \
+          phraseapp locale create <project_id> \
           --branch my-feature-branch \
           --name de \
           --code de-DE \
@@ -2450,14 +2561,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/locales/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/locales/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase locales delete \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp locale delete \
+          phraseapp locale delete <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     get:
@@ -2544,11 +2662,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/locales/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/locales/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase locales show \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp locale show \
+          phraseapp locale show <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     patch:
@@ -2679,14 +2804,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/locales/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/locales/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","name":"de","code":"de-DE","source_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase locales update \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch", "name":"de", "code":"de-DE", "source_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp locale update \
+          phraseapp locale update <project_id> <id> \
           --branch my-feature-branch \
           --name de \
           --code de-DE \
@@ -2731,8 +2863,8 @@ paths:
         schema:
           type: string
         style: form
-      - description: File format name. See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats)
-          for all supported file formats.
+      - description: File format name. See the format guide for all supported file
+          formats.
         example: yml
         explode: true
         in: query
@@ -2902,11 +3034,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/locales/{id}/download?branch=my-feature-branch&file_format=yml&tags=feature1,feature2&tag=feature" \
+          curl "https://api.phrase.com/v2/projects/:project_id/locales/:id/download?branch=my-feature-branch&file_format=yml&tags=feature1,feature2&tag=feature" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase locales download \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --file_format yml \
+          --tags feature1,feature2 \
+          --tag feature \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp locale download \
+          phraseapp locale download <project_id> <id> \
           --branch my-feature-branch \
           --file-format yml \
           --tags feature1,feature2 \
@@ -3004,7 +3146,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
@@ -3012,7 +3154,7 @@ paths:
           --account_id <account_id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp distributions list
+        source: phraseapp distributions list <account_id>
       x-accepts: application/json
     post:
       description: Create a new distribution.
@@ -3128,7 +3270,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
@@ -3137,11 +3279,11 @@ paths:
         source: |-
           phrase distributions create \
           --account_id <account_id> \
-          --data '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
+          --data '{"name":""My Android Distribution"", "project_id":"abcd1234abcd1234abcd1234", "platforms":""android,ios"", "format_options":""{xml:{enclose_in_cdata:'1'}}"", "fallback_to_non_regional_locale":"true", "fallback_to_default_locale":"true", "use_last_reviewed_version":"true"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp distribution create \
+          phraseapp distribution create <account_id> \
           --name "My Android Distribution" \
           --project-id abcd1234abcd1234abcd1234 \
           --platforms "android,ios" \
@@ -3223,7 +3365,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
       - lang: CLI v2
@@ -3233,7 +3375,7 @@ paths:
           --id <id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp distribution delete
+        source: phraseapp distribution delete <account_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single distribution.
@@ -3310,16 +3452,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase distributions list \
+          phrase distributions show \
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp distribution show
+        source: phraseapp distribution show <account_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing distribution.
@@ -3443,7 +3585,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
@@ -3453,11 +3595,11 @@ paths:
           phrase distributions update \
           --account_id <account_id> \
           --id <id> \
-          --data '{"name":"My Android Distribution","project_id":"abcd1234abcd1234abcd1234","platforms":["android","ios"],"format_options":"{xml:{enclose_in_cdata:'1'}}","fallback_to_non_regional_locale":true,"fallback_to_default_locale":true,"use_last_reviewed_version":true}' \
+          --data '{"name":""My Android Distribution"", "project_id":"abcd1234abcd1234abcd1234", "platforms":""android,ios"", "format_options":""{xml:{enclose_in_cdata:'1'}}"", "fallback_to_non_regional_locale":"true", "fallback_to_default_locale":"true", "use_last_reviewed_version":"true"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp distribution update \
+          phraseapp distribution update <account_id> <id> \
           --name "My Android Distribution" \
           --project-id abcd1234abcd1234abcd1234 \
           --platforms "android,ios" \
@@ -3567,10 +3709,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:distribution_id/releases" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase releases list \
+          --account_id <account_id> \
+          --distribution_id <distribution_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp releases list
+        source: phraseapp releases list <account_id> <distribution_id>
       x-accepts: application/json
     post:
       description: Create a new release.
@@ -3672,14 +3820,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:distribution_id/releases" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"description":"My first Release","platforms":["android","ios"],"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase releases create \
+          --account_id <account_id> \
+          --distribution_id <distribution_id> \
+          --data '{"description":""My first Release"", "platforms":""android,ios"", "branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp release create \
+          phraseapp release create <account_id> <distribution_id> \
           --description "My first Release" \
           --platforms "android,ios" \
           --branch my-feature-branch
@@ -3765,11 +3920,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:distribution_id/releases/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase releases delete \
+          --account_id <account_id> \
+          --distribution_id <distribution_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp release delete
+        source: phraseapp release delete <account_id> <distribution_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single release.
@@ -3854,10 +4016,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:distribution_id/releases/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase releases show \
+          --account_id <account_id> \
+          --distribution_id <distribution_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp release show
+        source: phraseapp release show <account_id> <distribution_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing release.
@@ -3967,14 +4136,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:distribution_id/releases/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"description":"My first Release","platforms":["android","ios"],"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase releases update \
+          --account_id <account_id> \
+          --distribution_id <distribution_id> \
+          --id <id> \
+          --data '{"description":""My first Release"", "platforms":""android,ios"", "branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp release update \
+          phraseapp release update <account_id> <distribution_id> <id> \
           --description "My first Release" \
           --platforms "android,ios" \
           --branch my-feature-branch
@@ -4064,11 +4241,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/distributions/:distribution_id/releases/:id/publish" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST
+      - lang: CLI v2
+        source: |-
+          phrase releases publish \
+          --account_id <account_id> \
+          --distribution_id <distribution_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp release publish
+        source: phraseapp release publish <account_id> <distribution_id> <id>
       x-accepts: application/json
   /projects/{project_id}/jobs:
     get:
@@ -4199,11 +4383,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs?branch=my-feature-branch&owned_by=abcd1234cdef1234abcd1234cdef1234&assigned_to=abcd1234cdef1234abcd1234cdef1234&state=completed" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs?branch=my-feature-branch&owned_by=abcd1234cdef1234abcd1234cdef1234&assigned_to=abcd1234cdef1234abcd1234cdef1234&state=completed" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase jobs list \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --owned_by abcd1234cdef1234abcd1234cdef1234 \
+          --assigned_to abcd1234cdef1234abcd1234cdef1234 \
+          --state completed \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp jobs list \
+          phraseapp jobs list <project_id> \
           --branch my-feature-branch \
           --owned-by abcd1234cdef1234abcd1234cdef1234 \
           --assigned-to abcd1234cdef1234abcd1234cdef1234 \
@@ -4315,14 +4508,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","name":"de","briefing":"de-DE","due_date":"2017-08-15","tags":["myUploadTag"],"translation_key_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs create \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "name":"de", "briefing":"de-DE", "due_date":"2017-08-15", "tags":""myUploadTag"", "translation_key_ids":""abcd1234cdef1234abcd1234cdef1234""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job create \
+          phraseapp job create <project_id> \
           --branch my-feature-branch \
           --name de \
           --briefing de-DE \
@@ -4412,14 +4611,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs delete \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job delete \
+          phraseapp job delete <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     get:
@@ -4506,11 +4712,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase jobs show \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job show \
+          phraseapp job show <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     patch:
@@ -4613,14 +4826,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","name":"de","briefing":"de-DE","due_date":"2017-08-15"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs update \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch", "name":"de", "briefing":"de-DE", "due_date":"2017-08-15"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job update \
+          phraseapp job update <project_id> <id> \
           --branch my-feature-branch \
           --name de \
           --briefing de-DE \
@@ -4716,14 +4936,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}/start" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id/start" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs start \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job start \
+          phraseapp job start <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -4816,14 +5043,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}/complete" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id/complete" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs complete \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job complete \
+          phraseapp job complete <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -4916,14 +5150,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}/reopen" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id/reopen" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs reopen \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job reopen \
+          phraseapp job reopen <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -5020,14 +5261,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}/keys" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id/keys" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch","translation_key_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs keys \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --translation_key_ids "abcd1234cdef1234abcd1234cdef1234" \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job keys delete \
+          phraseapp job keys delete <project_id> <id> \
           --branch my-feature-branch \
           --translation-key-ids "abcd1234cdef1234abcd1234cdef1234"
       x-accepts: application/json
@@ -5126,14 +5375,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{id}/keys" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:id/keys" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","translation_key_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase jobs keys \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch", "translation_key_ids":""abcd1234cdef1234abcd1234cdef1234""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job keys create \
+          phraseapp job keys create <project_id> <id> \
           --branch my-feature-branch \
           --translation-key-ids "abcd1234cdef1234abcd1234cdef1234"
       x-contentType: application/json
@@ -5230,15 +5486,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
           phrase glossaries list \
-          --account_id <account_id>
+          --account_id <account_id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp glossaries list
+        source: phraseapp glossaries list <account_id>
       x-accepts: application/json
     post:
       description: Create a new glossary.
@@ -5333,7 +5589,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"name":"My glossary","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
@@ -5341,12 +5597,12 @@ paths:
       - lang: CLI v2
         source: |-
           phrase glossaries create \
-          --data '{"name":"My glossary","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
-          --account_id <account_id>
+          --account_id <account_id> \
+          --data '{"name":""My glossary"", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids":""abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235""}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp glossary create \
+          phraseapp glossary create <account_id> \
           --name "My glossary" \
           --project-ids abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235 \
           --space-ids "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235"
@@ -5424,17 +5680,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
       - lang: CLI v2
         source: |-
           phrase glossaries delete \
-          --account_id <account_id>
-          --id <id>
+          --account_id <account_id> \
+          --id <id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp glossary delete
+        source: phraseapp glossary delete <account_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single glossary.
@@ -5511,16 +5767,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
           phrase glossaries show \
-          --account_id <account_id>
-          --id <id>
+          --account_id <account_id> \
+          --id <id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp glossary show
+        source: phraseapp glossary show <account_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing glossary.
@@ -5623,21 +5879,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"name":"My glossary","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase glossaries create \
-          --data '{"name":"My glossary","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
-          --account_id <account_id>
-          --id <id>
+          phrase glossaries update \
+          --account_id <account_id> \
+          --id <id> \
+          --data '{"name":""My glossary"", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids":""abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235""}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp glossary update \
+          phraseapp glossary update <account_id> <id> \
           --name "My glossary" \
           --project-ids abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235 \
           --space-ids "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235"
@@ -6158,11 +6414,11 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/bitbucket_syncs?account_id=abcd1234" \
+          curl "https://api.phrase.com/v2/bitbucket_syncs?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase bitbucket_syncs list \
+          phrase bitbucket_sync list \
           --account_id abcd1234 \
           --access_token <token>
       - lang: CLI v1
@@ -6254,7 +6510,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/bitbucket_syncs/{id}/export" \
+          curl "https://api.phrase.com/v2/bitbucket_syncs/:id/export" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"account_id":"abcd1234"}' \
@@ -6262,11 +6518,13 @@ paths:
       - lang: CLI v2
         source: |-
           phrase bitbucket_sync export \
-          --data '{"account_id": "abcd1234"}' \
           --id <id> \
+          --data '{"account_id":"abcd1234"}' \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp bitbucket_sync export --account-id abcd1234 <id>
+        source: |-
+          phraseapp bitbucket_sync export <id> \
+          --account-id abcd1234
       x-contentType: application/json
       x-accepts: application/json
   /bitbucket_syncs/{id}/import:
@@ -6349,7 +6607,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/bitbucket_syncs/{id}/import" \
+          curl "https://api.phrase.com/v2/bitbucket_syncs/:id/import" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"account_id":"abcd1234"}' \
@@ -6357,11 +6615,13 @@ paths:
       - lang: CLI v2
         source: |-
           phrase bitbucket_sync import \
-          --data '{"account_id": "abcd1234"}' \
           --id <id> \
+          --data '{"account_id":"abcd1234"}' \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp bitbucket_sync import --account-id abcd1234 <id>
+        source: |-
+          phraseapp bitbucket_sync import <id> \
+          --account-id abcd1234
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/{key_id}/comments:
@@ -6473,17 +6733,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
           phrase comments list \
           --project_id <project_id> \
           --key_id <key_id> \
+          --branch my-feature-branch \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comments list \
+          phraseapp comments list <project_id> <key_id> \
           --branch my-feature-branch
       x-accepts: application/json
     post:
@@ -6578,7 +6839,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","message":"Some message..."}' \
@@ -6588,11 +6849,11 @@ paths:
           phrase comments create \
           --project_id <project_id> \
           --key_id <key_id> \
-          --data '{"branch":"my-feature-branch","message":"Some message..."}' \
+          --data '{"branch":"my-feature-branch", "message":""Some message...""}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comment create \
+          phraseapp comment create <project_id> <key_id> \
           --branch my-feature-branch \
           --message "Some message..."
       x-contentType: application/json
@@ -6686,7 +6947,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
@@ -6697,10 +6958,11 @@ paths:
           --project_id <project_id> \
           --key_id <key_id> \
           --id <id> \
+          --branch my-feature-branch \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comment delete \
+          phraseapp comment delete <project_id> <key_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     get:
@@ -6795,7 +7057,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
@@ -6803,10 +7065,11 @@ paths:
           --project_id <project_id> \
           --key_id <key_id> \
           --id <id> \
+          --branch my-feature-branch \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comment show \
+          phraseapp comment show <project_id> <key_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     patch:
@@ -6909,7 +7172,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","message":"Some message..."}' \
@@ -6920,11 +7183,11 @@ paths:
           --project_id <project_id> \
           --key_id <key_id> \
           --id <id> \
-          --data '{"branch":"my-feature-branch","message":"Some message..."}' \
+          --data '{"branch":"my-feature-branch", "message":""Some message...""}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comment update \
+          phraseapp comment update <project_id> <key_id> <id> \
           --branch my-feature-branch \
           --message "Some message..."
       x-contentType: application/json
@@ -7018,21 +7281,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}/read" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:id/read" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase comments mark_unread \
+          phrase comments mark \
           --project_id <project_id> \
           --key_id <key_id> \
           --id <id> \
+          --branch my-feature-branch \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comment mark unread \
+          phraseapp comment mark unread <project_id> <key_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     get:
@@ -7124,18 +7388,19 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}/read?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:id/read?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase comments mark_check \
+          phrase comments mark \
           --project_id <project_id> \
           --key_id <key_id> \
           --id <id> \
+          --branch my-feature-branch \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comment mark check \
+          phraseapp comment mark check <project_id> <key_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     patch:
@@ -7230,14 +7495,14 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/comments/{id}/read" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:id/read" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase comments mark_read \
+          phrase comments mark \
           --project_id <project_id> \
           --key_id <key_id> \
           --id <id> \
@@ -7245,7 +7510,7 @@ paths:
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp comment mark read \
+          phraseapp comment mark read <project_id> <key_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -7341,10 +7606,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/webhooks" \
+          curl "https://api.phrase.com/v2/projects/:project_id/webhooks" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase webhooks list \
+          --project_id <project_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp webhooks list
+        source: phraseapp webhooks list <project_id>
       x-accepts: application/json
     post:
       description: Create a new webhook.
@@ -7438,14 +7708,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/webhooks" \
+          curl "https://api.phrase.com/v2/projects/:project_id/webhooks" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"callback_url":"http://example.com/hooks/phraseapp-notifications","description":"My webhook for chat notifications","events":"locales:create,translations:update"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase webhooks create \
+          --project_id <project_id> \
+          --data '{"callback_url":""http://example.com/hooks/phraseapp-notifications"", "description":""My webhook for chat notifications"", "events":""locales:create,translations:update""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp webhook create \
+          phraseapp webhook create <project_id> \
           --callback-url "http://example.com/hooks/phraseapp-notifications" \
           --description "My webhook for chat notifications" \
           --events "locales:create,translations:update"
@@ -7523,11 +7799,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/webhooks/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/webhooks/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase webhooks delete \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp webhook delete
+        source: phraseapp webhook delete <project_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single webhook.
@@ -7604,10 +7886,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/webhooks/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/webhooks/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase webhooks show \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp webhook show
+        source: phraseapp webhook show <project_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing webhook.
@@ -7709,14 +7997,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/webhooks/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/webhooks/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"callback_url":"http://example.com/hooks/phraseapp-notifications","description":"My webhook for chat notifications","events":"locales:create,translations:update"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase webhooks update \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"callback_url":""http://example.com/hooks/phraseapp-notifications"", "description":""My webhook for chat notifications"", "events":""locales:create,translations:update""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp webhook update \
+          phraseapp webhook update <project_id> <id> \
           --callback-url "http://example.com/hooks/phraseapp-notifications" \
           --description "My webhook for chat notifications" \
           --events "locales:create,translations:update"
@@ -7794,11 +8089,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/webhooks/{id}/test" \
+          curl "https://api.phrase.com/v2/projects/:project_id/webhooks/:id/test" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST
+      - lang: CLI v2
+        source: |-
+          phrase webhooks test \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp webhook test
+        source: phraseapp webhook test <project_id> <id>
       x-accepts: application/json
   /projects/{project_id}/uploads:
     get:
@@ -7901,11 +8202,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/uploads?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/uploads?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase uploads list \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp uploads list \
+          phraseapp uploads list <project_id> \
           --branch my-feature-branch
       x-accepts: application/json
     post:
@@ -7932,7 +8239,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/upload_create_parameters'
         content:
-          multipart/form-data:
+          application/json:
             schema:
               properties:
                 branch:
@@ -7945,8 +8252,6 @@ paths:
                   type: string
                 file_format:
                   description: File format. Auto-detected when possible and not specified.
-                    See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats)
-                    for all supported file formats.
                   example: json
                   type: string
                 locale_id:
@@ -7985,17 +8290,19 @@ paths:
                     Valid options are "UTF-8", "UTF-16" and "ISO-8859-1".
                   type: string
                 locale_mapping:
+                  additionalProperties:
+                    type: string
                   description: Optional, format specific mapping between locale names
                     and the columns the translations to those locales are contained
                     in.
                   example: '{"en": "2"}'
-                  properties: {}
                   type: object
                 format_options:
+                  additionalProperties:
+                    type: string
                   description: Additional options available for specific formats.
                     See our format guide for complete list.
                   example: '{"foo": "bar"}'
-                  properties: {}
                   type: object
                 autotranslate:
                   description: If set, translations for the uploaded language will
@@ -8056,7 +8363,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/uploads" \
+          curl "https://api.phrase.com/v2/projects/:project_id/uploads" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -F branch=my-feature-branch \
@@ -8066,9 +8373,15 @@ paths:
             -F tags=awesome-feature,needs-proofreading \
             -F locale_mapping[en]=2 \
             -F format_options[foo]=bar
+      - lang: CLI v2
+        source: |-
+          phrase uploads create \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "file":"/path/to/my/file.json", "file_format":"json", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "tags":"awesome-feature,needs-proofreading", "locale_mapping":""{"en": "2"}"", "format_options":""{"foo": "bar"}""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp upload create \
+          phraseapp upload create <project_id> \
           --branch my-feature-branch \
           --file /path/to/my/file.json \
           --file-format json \
@@ -8076,7 +8389,7 @@ paths:
           --tags awesome-feature,needs-proofreading \
           --locale-mapping "{"en": "2"}" \
           --format-options "{"foo": "bar"}"
-      x-contentType: multipart/form-data
+      x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/uploads/{id}:
     get:
@@ -8163,11 +8476,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/uploads/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/uploads/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase uploads show \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp upload show \
+          phraseapp upload show <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
   /gitlab_syncs:
@@ -8245,12 +8565,12 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/gitlab_syncs?account_id=abcd1234" \
+          curl "https://api.phrase.com/v2/gitlab_syncs?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase git_lab_sync list \
-          --account_id <account_id>
+          phrase gitlab_syncs list \
+          --account_id abcd1234 \
           --access_token <token>
       - lang: CLI v1
         source: |-
@@ -8331,20 +8651,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/gitlab_syncs/{id}" \
+          curl "https://api.phrase.com/v2/gitlab_syncs/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase git_lab_sync delete \
-          --account_id <account_id>
-          --id <id>
+          phrase gitlab_syncs delete \
+          --id <id> \
+          --account_id abcd1234 \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp gitlab_sync delete \
+          phraseapp gitlab_sync delete <id> \
           --account-id abcd1234
       x-accepts: application/json
     get:
@@ -8424,17 +8744,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/gitlab_syncs/{id}?account_id=abcd1234" \
+          curl "https://api.phrase.com/v2/gitlab_syncs/:id?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase git_lab_sync show \
-          --account_id <account_id>
-          --id <id>
+          phrase gitlab_syncs show \
+          --id <id> \
+          --account_id abcd1234 \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp gitlab_sync show \
+          phraseapp gitlab_sync show <id> \
           --account-id abcd1234
       x-accepts: application/json
     put:
@@ -8541,22 +8861,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/gitlab_syncs/{id}" \
+          curl "https://api.phrase.com/v2/gitlab_syncs/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PUT \
             -d '{"account_id":"abcd1234","phrase_project_code":"3456abcd","gitlab_project_id":12345,"gitlab_branch_name":"feature-development"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase git_lab_sync update \
-          --account_id abcd1234 \
-          --phrase_project_code 3456abcd \
-          --gitlab_project_id 12345 \
-          --gitlab_branch_name feature-development \
+          phrase gitlab_syncs update \
+          --id <id> \
+          --data '{"account_id":"abcd1234", "phrase_project_code":"3456abcd", "gitlab_project_id":"12345", "gitlab_branch_name":"feature-development"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp gitlab_sync update \
+          phraseapp gitlab_sync update <id> \
           --account-id abcd1234 \
           --phrase-project-code 3456abcd \
           --gitlab-project-id 12345 \
@@ -8650,20 +8968,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/gitlab_syncs/{gitlab_sync_id}/import" \
+          curl "https://api.phrase.com/v2/gitlab_syncs/:gitlab_sync_id/import" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase git_lab_sync import \
+          phrase gitlab_syncs import \
+          --gitlab_sync_id <gitlab_sync_id> \
           --data '{"account_id":"abcd1234"}' \
-          --gitlab_sync_id <id>
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp gitlab_sync import \
+          phraseapp gitlab_sync import <gitlab_sync_id> \
           --account-id abcd1234
       x-contentType: application/json
       x-accepts: application/json
@@ -8751,21 +9069,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/gitlab_syncs/{gitlab_sync_id}/export" \
+          curl "https://api.phrase.com/v2/gitlab_syncs/:gitlab_sync_id/export" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"account_id":"abcd1234"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase git_lab_sync export \
-          --gitlab_sync_id <id>
+          phrase gitlab_syncs export \
+          --gitlab_sync_id <gitlab_sync_id> \
           --data '{"account_id":"abcd1234"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp gitlab_sync export \
+          phraseapp gitlab_sync export <gitlab_sync_id> \
           --account-id abcd1234
-          --access_token <token>
       x-contentType: application/json
       x-accepts: application/json
   /gitlab_syncs/{gitlab_sync_id}/history:
@@ -8870,17 +9188,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/gitlab_syncs/{gitlab_sync_id}/history?account_id=abcd1234" \
+          curl "https://api.phrase.com/v2/gitlab_syncs/:gitlab_sync_id/history?account_id=abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase git_lab_sync history \
-          --account_id <account_id>
-          --gitlab_sync_id <id>
+          phrase gitlab_syncs history \
+          --gitlab_sync_id <gitlab_sync_id> \
+          --account_id abcd1234 \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp gitlab_sync history \
+          phraseapp gitlab_sync history <gitlab_sync_id> \
           --account-id abcd1234
       x-accepts: application/json
   /projects/{project_id}/translations/{translation_id}/versions:
@@ -8992,11 +9310,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{translation_id}/versions?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:translation_id/versions?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase versions list \
+          --project_id <project_id> \
+          --translation_id <translation_id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp versions list \
+          phraseapp versions list <project_id> <translation_id> \
           --branch my-feature-branch
       x-accepts: application/json
   /projects/{project_id}/translations/{translation_id}/versions/{id}:
@@ -9092,11 +9417,19 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{translation_id}/versions/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:translation_id/versions/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase versions show \
+          --project_id <project_id> \
+          --translation_id <translation_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp version show \
+          phraseapp version show <project_id> <translation_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations:
@@ -9200,14 +9533,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms/:term_id/translations" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"locale_code":"en-US","content":"My translated term"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase glossary_term_translations create \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --term_id <term_id> \
+          --data '{"locale_code":"en-US", "content":""My translated term""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp glossary_term_translation create \
+          phraseapp glossary_term_translation create <account_id> <glossary_id> <term_id> \
           --locale-code en-US \
           --content "My translated term"
       x-contentType: application/json
@@ -9300,11 +9641,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms/:term_id/translations/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase glossary_term_translations delete \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --term_id <term_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp glossary_term_translation delete
+        source: phraseapp glossary_term_translation delete <account_id> <glossary_id>
+          <term_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing glossary term translation.
@@ -9414,14 +9764,23 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms/:term_id/translations/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"locale_code":"en-US","content":"My translated term"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase glossary_term_translations update \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --term_id <term_id> \
+          --id <id> \
+          --data '{"locale_code":"en-US", "content":""My translated term""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp glossary_term_translation update \
+          phraseapp glossary_term_translation update <account_id> <glossary_id> <term_id> <id> \
           --locale-code en-US \
           --content "My translated term"
       x-contentType: application/json
@@ -9510,8 +9869,12 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects" \
+          curl "https://api.phrase.com/v2/projects" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase projects list \
+          --access_token <token>
       - lang: CLI v1
         source: phraseapp projects list
       x-accepts: application/json
@@ -9612,7 +9975,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects" \
+          curl "https://api.phrase.com/v2/projects" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -F name=My%20Android%20Project \
@@ -9620,6 +9983,11 @@ paths:
             -F shares_translation_memory=true \
             -F project_image=@/path/to/my/project-screenshot.png \
             -F account_id=abcd1234
+      - lang: CLI v2
+        source: |-
+          phrase projects create \
+          --data '{"name":""My Android Project"", "main_format":"yml", "shares_translation_memory":"true", "project_image":"/path/to/my/project-screenshot.png", "account_id":"abcd1234"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
           phraseapp project create \
@@ -9694,11 +10062,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{id}" \
+          curl "https://api.phrase.com/v2/projects/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase projects delete \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp project delete
+        source: phraseapp project delete <id>
       x-accepts: application/json
     get:
       description: Get details on a single project.
@@ -9767,10 +10140,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{id}" \
+          curl "https://api.phrase.com/v2/projects/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase projects show \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp project show
+        source: phraseapp project show <id>
       x-accepts: application/json
     patch:
       description: Update an existing project.
@@ -9877,7 +10255,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{id}" \
+          curl "https://api.phrase.com/v2/projects/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -F name=My%20Android%20Project \
@@ -9885,9 +10263,15 @@ paths:
             -F shares_translation_memory=true \
             -F project_image=@/path/to/my/project-screenshot.png \
             -F account_id=abcd1234
+      - lang: CLI v2
+        source: |-
+          phrase projects update \
+          --id <id> \
+          --data '{"name":""My Android Project"", "main_format":"yml", "shares_translation_memory":"true", "project_image":"/path/to/my/project-screenshot.png", "account_id":"abcd1234"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp project update \
+          phraseapp project update <id> \
           --name "My Android Project" \
           --main-format yml \
           --shares-translation-memory true \
@@ -10004,11 +10388,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locales?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:job_id/locales?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase job_locales list \
+          --project_id <project_id> \
+          --job_id <job_id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job_locales list \
+          phraseapp job_locales list <project_id> <job_id> \
           --branch my-feature-branch
       x-accepts: application/json
     post:
@@ -10110,14 +10501,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locales" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:job_id/locales" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","locale_id":"abcd1234cdef1234abcd1234cdef1234","user_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase job_locales create \
+          --project_id <project_id> \
+          --job_id <job_id> \
+          --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "user_ids":""abcd1234cdef1234abcd1234cdef1234""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job_locales create \
+          phraseapp job_locales create <project_id> <job_id> \
           --branch my-feature-branch \
           --locale-id abcd1234cdef1234abcd1234cdef1234 \
           --user-ids "abcd1234cdef1234abcd1234cdef1234"
@@ -10216,11 +10614,19 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locale/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:job_id/locale/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase job_locales show \
+          --project_id <project_id> \
+          --job_id <job_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job_locale show \
+          phraseapp job_locale show <project_id> <job_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locales/{id}:
@@ -10312,14 +10718,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locales/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:job_id/locales/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase job_locales delete \
+          --project_id <project_id> \
+          --job_id <job_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job_locale delete \
+          phraseapp job_locale delete <project_id> <job_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     patch:
@@ -10429,14 +10843,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locales/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:job_id/locales/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","locale_id":"abcd1234cdef1234abcd1234cdef1234","user_ids":["abcd1234cdef1234abcd1234cdef1234"]}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase job_locales update \
+          --project_id <project_id> \
+          --job_id <job_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "user_ids":""abcd1234cdef1234abcd1234cdef1234""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job_locale update \
+          phraseapp job_locale update <project_id> <job_id> <id> \
           --branch my-feature-branch \
           --locale-id abcd1234cdef1234abcd1234cdef1234 \
           --user-ids "abcd1234cdef1234abcd1234cdef1234"
@@ -10539,14 +10961,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locales/{id}/complete" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:job_id/locales/:id/complete" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase job_locales complete \
+          --project_id <project_id> \
+          --job_id <job_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job_locale complete \
+          phraseapp job_locale complete <project_id> <job_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -10647,14 +11077,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/jobs/{job_id}/locales/{id}/reopen" \
+          curl "https://api.phrase.com/v2/projects/:project_id/jobs/:job_id/locales/:id/reopen" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase job_locales reopen \
+          --project_id <project_id> \
+          --job_id <job_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp job_locale reopen \
+          phraseapp job_locale reopen <project_id> <job_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -10750,7 +11188,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/branches" \
+          curl "https://api.phrase.com/v2/projects/:project_id/branches" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
@@ -10758,7 +11196,7 @@ paths:
           --project_id <project_id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp branches list
+        source: phraseapp branches list <project_id>
       x-accepts: application/json
     post:
       description: Create a new branch.
@@ -10840,7 +11278,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/branches" \
+          curl "https://api.phrase.com/v2/projects/:project_id/branches" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"name":"my-branch"}' \
@@ -10848,12 +11286,12 @@ paths:
       - lang: CLI v2
         source: |-
           phrase branches create \
-          --data '{"name":"my-branch"}' \
           --project_id <project_id> \
+          --data '{"name":"my-branch"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp branch create \
+          phraseapp branch create <project_id> \
           --name my-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -10929,17 +11367,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/branches/{name}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/branches/:name" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
       - lang: CLI v2
         source: |-
           phrase branches delete \
-          --name my-branch \
           --project_id <project_id> \
+          --name <name> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp branch delete
+        source: phraseapp branch delete <project_id> <name>
       x-accepts: application/json
     get:
       description: Get details on a single branch for a given project.
@@ -11016,16 +11454,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/branches/{name}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/branches/:name" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
           phrase branches show \
-          --name branch-name \
           --project_id <project_id> \
+          --name <name> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp branch show
+        source: phraseapp branch show <project_id> <name>
       x-accepts: application/json
     patch:
       description: Update an existing branch.
@@ -11115,7 +11553,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/branches/{name}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/branches/:name" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"name":"my-branch"}' \
@@ -11123,13 +11561,13 @@ paths:
       - lang: CLI v2
         source: |-
           phrase branches update \
-          --name branch-name \
-          --data '{"name":"my-branch"}' \
           --project_id <project_id> \
+          --name <name> \
+          --data '{"name":"my-branch"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp branch update \
+          phraseapp branch update <project_id> <name> \
           --name my-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -11218,7 +11656,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/branches/{name}/merge" \
+          curl "https://api.phrase.com/v2/projects/:project_id/branches/:name/merge" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"strategy":"use_master"}' \
@@ -11226,12 +11664,13 @@ paths:
       - lang: CLI v2
         source: |-
           phrase branches merge \
-          --data '{"strategy":"use_master"}' \
           --project_id <project_id> \
+          --name <name> \
+          --data '{"strategy":"use_master"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp branch merge \
+          phraseapp branch merge <project_id> <name> \
           --strategy use_master
       x-contentType: application/json
       x-accepts: application/json
@@ -11307,17 +11746,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/branches/{name}/compare?name=my-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/branches/:name/compare?name=my-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
           phrase branches compare \
-          --name my-branch
           --project_id <project_id> \
+          --name <name> \
+          --name my-branch \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp branch compare \
+          phraseapp branch compare <project_id> <name> \
           --name my-branch
       x-accepts: application/json
   /accounts:
@@ -11404,10 +11844,12 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts" \
+          curl "https://api.phrase.com/v2/accounts" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
-        source: phrase accounts list --access_token <token>
+        source: |-
+          phrase accounts list \
+          --access_token <token>
       - lang: CLI v1
         source: phraseapp accounts list
       x-accepts: application/json
@@ -11479,15 +11921,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
           phrase accounts show \
-          --id <account_id> \
+          --id <id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp account show
+        source: phraseapp account show <id>
       x-accepts: application/json
   /user:
     get:
@@ -11549,8 +11991,12 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/user" \
+          curl "https://api.phrase.com/v2/user" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase shows user \
+          --access_token <token>
       - lang: CLI v1
         source: phraseapp show user
       x-accepts: application/json
@@ -11648,10 +12094,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/members" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/members" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase members list \
+          --account_id <account_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp members list
+        source: phraseapp members list <account_id>
       x-accepts: application/json
   /accounts/{account_id}/members/{id}:
     delete:
@@ -11726,11 +12177,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/members/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/members/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase members delete \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp member delete
+        source: phraseapp member delete <account_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single user in the account. Access token scope
@@ -11808,10 +12265,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/members/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/members/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase members show \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp member show
+        source: phraseapp member show <account_id> <id>
       x-accepts: application/json
     patch:
       description: Update user permissions in the account. Developers and translators
@@ -11920,14 +12383,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/members/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/members/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"role":"Developer","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","permissions":{"create_upload":true,"review_translations":true}}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase members update \
+          --account_id <account_id> \
+          --id <id> \
+          --data '{"role":"Developer", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "permissions":"{"create_upload"=>true, "review_translations"=>true}"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp member update \
+          phraseapp member update <account_id> <id> \
           --role Developer \
           --project-ids abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235 \
           --locale-ids abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235 \
@@ -12026,10 +12496,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase screenshots list \
+          --project_id <project_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp screenshots list
+        source: phraseapp screenshots list <project_id>
       x-accepts: application/json
     post:
       description: Create a new screenshot.
@@ -12119,15 +12594,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -F name=A%20screenshot%20name \
             -F description=A%20screenshot%20description \
             -F filename=@/path/to/my/screenshot.png
+      - lang: CLI v2
+        source: |-
+          phrase screenshots create \
+          --project_id <project_id> \
+          --data '{"name":""A screenshot name"", "description":""A screenshot description"", "filename":"/path/to/my/screenshot.png"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp screenshot create \
+          phraseapp screenshot create <project_id> \
           --name "A screenshot name" \
           --description "A screenshot description" \
           --filename /path/to/my/screenshot.png
@@ -12205,11 +12686,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase screenshots delete \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp screenshot delete
+        source: phraseapp screenshot delete <project_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single screenshot for a given project.
@@ -12286,10 +12773,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase screenshots show \
+          --project_id <project_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp screenshot show
+        source: phraseapp screenshot show <project_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing screenshot.
@@ -12387,15 +12880,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/screenshots/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -F name=A%20screenshot%20name \
             -F description=A%20screenshot%20description \
             -F filename=@/path/to/my/screenshot.png
+      - lang: CLI v2
+        source: |-
+          phrase screenshots update \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"name":""A screenshot name"", "description":""A screenshot description"", "filename":"/path/to/my/screenshot.png"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp screenshot update \
+          phraseapp screenshot update <project_id> <id> \
           --name "A screenshot name" \
           --description "A screenshot description" \
           --filename /path/to/my/screenshot.png
@@ -12501,10 +13001,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase glossary_terms list \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp glossary_terms list
+        source: phraseapp glossary_terms list <account_id> <glossary_id>
       x-accepts: application/json
     post:
       description: Create a new glossary term.
@@ -12607,14 +13113,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"term":"MyCompany","description":"Use this when refering to our company","translatable":true,"case_sensitive":true}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase glossary_terms create \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --data '{"term":"MyCompany", "description":""Use this when refering to our company"", "translatable":"true", "case_sensitive":"true"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp glossary_term create \
+          phraseapp glossary_term create <account_id> <glossary_id> \
           --term MyCompany \
           --description "Use this when refering to our company" \
           --translatable true \
@@ -12701,11 +13214,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase glossary_terms delete \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp glossary_term delete
+        source: phraseapp glossary_term delete <account_id> <glossary_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single glossary term.
@@ -12790,10 +13310,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase glossary_terms show \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp glossary_term show
+        source: phraseapp glossary_term show <account_id> <glossary_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing glossary term.
@@ -12904,14 +13431,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/glossaries/:glossary_id/terms/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"term":"MyCompany","description":"Use this when refering to our company","translatable":true,"case_sensitive":true}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase glossary_terms update \
+          --account_id <account_id> \
+          --glossary_id <glossary_id> \
+          --id <id> \
+          --data '{"term":"MyCompany", "description":""Use this when refering to our company"", "translatable":"true", "case_sensitive":"true"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp glossary_term update \
+          phraseapp glossary_term update <account_id> <glossary_id> <id> \
           --term MyCompany \
           --description "Use this when refering to our company" \
           --translatable true \
@@ -13019,11 +13554,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/tags?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/tags?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase tags list \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp tags list \
+          phraseapp tags list <project_id> \
           --branch my-feature-branch
       x-accepts: application/json
     post:
@@ -13110,14 +13651,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/tags" \
+          curl "https://api.phrase.com/v2/projects/:project_id/tags" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","name":"my-feature"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase tags create \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "name":"my-feature"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp tag create \
+          phraseapp tag create <project_id> \
           --branch my-feature-branch \
           --name my-feature
       x-contentType: application/json
@@ -13203,14 +13750,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/tags/{name}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/tags/:name" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase tags delete \
+          --project_id <project_id> \
+          --name <name> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp tag delete \
+          phraseapp tag delete <project_id> <name> \
           --branch my-feature-branch
       x-accepts: application/json
     get:
@@ -13298,11 +13852,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/tags/{name}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/tags/:name?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase tags show \
+          --project_id <project_id> \
+          --name <name> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp tag show \
+          phraseapp tag show <project_id> <name> \
           --branch my-feature-branch
       x-accepts: application/json
   /projects/{project_id}/blacklisted_keys:
@@ -13397,7 +13958,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys" \
+          curl "https://api.phrase.com/v2/projects/:project_id/blacklisted_keys" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
@@ -13405,7 +13966,7 @@ paths:
           --project_id <project_id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp blacklisted_keys list
+        source: phraseapp blacklisted_keys list <project_id>
       x-accepts: application/json
     post:
       description: Create a new rule for blacklisting keys.
@@ -13487,7 +14048,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys" \
+          curl "https://api.phrase.com/v2/projects/:project_id/blacklisted_keys" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"name":"date.formats.*"}' \
@@ -13495,12 +14056,12 @@ paths:
       - lang: CLI v2
         source: |-
           phrase blacklisted_keys create \
-          --data '{"name":"date.formats.*"}' \
           --project_id <project_id> \
+          --data '{"name":"'date.formats.*'"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp blacklisted_key create \
+          phraseapp blacklisted_key create <project_id> \
           --name 'date.formats.*'
       x-contentType: application/json
       x-accepts: application/json
@@ -13576,7 +14137,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/blacklisted_keys/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
       - lang: CLI v2
@@ -13586,7 +14147,7 @@ paths:
           --id <id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp blacklisted_key delete
+        source: phraseapp blacklisted_key delete <project_id> <id>
       x-accepts: application/json
     get:
       description: Get details on a single rule for blacklisting keys for a given
@@ -13664,7 +14225,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/blacklisted_keys/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
@@ -13673,7 +14234,7 @@ paths:
           --id <id> \
           --access_token <token>
       - lang: CLI v1
-        source: phraseapp blacklisted_key show
+        source: phraseapp blacklisted_key show <project_id> <id>
       x-accepts: application/json
     patch:
       description: Update an existing rule for blacklisting keys.
@@ -13763,21 +14324,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/blacklisted_keys/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/blacklisted_keys/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"name":"date.formats.*"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase blacklisted_keys show \
+          phrase blacklisted_keys update \
           --project_id <project_id> \
           --id <id> \
-          --data '{"name":"date.formats.*"}' \
+          --data '{"name":"'date.formats.*'"}' \
           --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp blacklisted_key update \
+          phraseapp blacklisted_key update <project_id> <id> \
           --name 'date.formats.*'
       x-contentType: application/json
       x-accepts: application/json
@@ -13879,14 +14440,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase keys delete \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --query 'mykey* translated:true' \
+          --locale_id abcd1234abcd1234abcd1234abcd1234 \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp keys delete \
+          phraseapp keys delete <project_id> \
           --branch my-feature-branch \
           --query 'mykey* translated:true' \
           --locale-id abcd1234abcd1234abcd1234abcd1234
@@ -14029,11 +14598,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys?branch=my-feature-branch&sort=updated_at&order=desc&q=mykey*%20translated:true&locale_id=abcd1234abcd1234abcd1234abcd1234" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys?branch=my-feature-branch&sort=updated_at&order=desc&q=mykey*%20translated:true&locale_id=abcd1234abcd1234abcd1234abcd1234" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase keys list \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --sort updated_at \
+          --order desc \
+          --query 'mykey* translated:true' \
+          --locale_id abcd1234abcd1234abcd1234abcd1234 \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp keys list \
+          phraseapp keys list <project_id> \
           --branch my-feature-branch \
           --sort updated_at \
           --order desc \
@@ -14183,7 +14762,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -F branch=my-feature-branch \
@@ -14194,9 +14773,15 @@ paths:
             -F tags=awesome-feature,needs-proofreading \
             -F max_characters_allowed=140 \
             -F screenshot=@/path/to/my/screenshot.png
+      - lang: CLI v2
+        source: |-
+          phrase keys create \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "name":"home.index.headline", "description":""Some description worth knowing..."", "name_plural":"home.index.headlines", "data_type":"number", "tags":"awesome-feature,needs-proofreading", "max_characters_allowed":"140", "screenshot":"/path/to/my/screenshot.png"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp key create \
+          phraseapp key create <project_id> \
           --branch my-feature-branch \
           --name home.index.headline \
           --description "Some description worth knowing..." \
@@ -14329,14 +14914,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/search" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/search" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","sort":"updated_at","order":"desc","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase keys search \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp keys search \
+          phraseapp keys search <project_id> \
           --branch my-feature-branch \
           --sort updated_at \
           --order desc \
@@ -14425,14 +15016,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase keys delete \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp key delete \
+          phraseapp key delete <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     get:
@@ -14519,11 +15117,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase keys show \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp key show \
+          phraseapp key show <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     patch:
@@ -14677,7 +15282,7 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -F branch=my-feature-branch \
@@ -14688,9 +15293,16 @@ paths:
             -F tags=awesome-feature,needs-proofreading \
             -F max_characters_allowed=140 \
             -F screenshot=@/path/to/my/screenshot.png
+      - lang: CLI v2
+        source: |-
+          phrase keys update \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch", "name":"home.index.headline", "description":""Some description worth knowing..."", "name_plural":"home.index.headlines", "data_type":"number", "tags":"awesome-feature,needs-proofreading", "max_characters_allowed":"140", "screenshot":"/path/to/my/screenshot.png"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp key update \
+          phraseapp key update <project_id> <id> \
           --branch my-feature-branch \
           --name home.index.headline \
           --description "Some description worth knowing..." \
@@ -14796,14 +15408,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/tag" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/tag" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234","tags":"landing-page,release-1.2"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase keys tag \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp keys tag \
+          phraseapp keys tag <project_id> \
           --branch my-feature-branch \
           --query 'mykey* translated:true' \
           --locale-id abcd1234abcd1234abcd1234abcd1234 \
@@ -14905,14 +15523,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/untag" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/untag" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"mykey* translated:true","locale_id":"abcd1234abcd1234abcd1234abcd1234","tags":"landing-page,release-1.2"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase keys untag \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp keys untag \
+          phraseapp keys untag <project_id> \
           --branch my-feature-branch \
           --query 'mykey* translated:true' \
           --locale-id abcd1234abcd1234abcd1234abcd1234 \
@@ -15020,11 +15644,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/orders?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/orders?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase orders list \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp orders list \
+          phraseapp orders list <project_id> \
           --branch my-feature-branch
       x-accepts: application/json
     post:
@@ -15170,14 +15800,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/orders" \
+          curl "https://api.phrase.com/v2/projects/:project_id/orders" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","lsp":"textmaster","source_locale_id":"abcd1234abcd1234abcd1234abcd1234","target_locale_ids":["1234abcd1234abcd1234abcd1234abcd","abcd1234abcd1234abcd1234abcd1234"],"translation_type":"premium","tag":"my-awesome-feature","message":"Please make everything sound really nice :)","styleguide_id":"1234abcd1234abcd1234abcd1234abcd","category":"C021"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase orders create \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "lsp":"textmaster", "source_locale_id":"abcd1234abcd1234abcd1234abcd1234", "target_locale_ids":""1234abcd1234abcd1234abcd1234abcd,abcd1234abcd1234abcd1234abcd1234"", "translation_type":"premium", "tag":"my-awesome-feature", "message":""Please make everything sound really nice :)"", "styleguide_id":"1234abcd1234abcd1234abcd1234abcd", "category":"C021"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp order create \
+          phraseapp order create <project_id> \
           --branch my-feature-branch \
           --lsp textmaster \
           --source-locale-id abcd1234abcd1234abcd1234abcd1234 \
@@ -15270,14 +15906,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/orders/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/orders/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase orders delete \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp order delete \
+          phraseapp order delete <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     get:
@@ -15364,11 +16007,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/orders/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/orders/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase orders show \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp order show \
+          phraseapp order show <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
   /projects/{project_id}/orders/{id}/confirm:
@@ -15461,14 +16111,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/orders/{id}/confirm" \
+          curl "https://api.phrase.com/v2/projects/:project_id/orders/:id/confirm" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase orders confirm \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp order confirm \
+          phraseapp order confirm <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -15564,10 +16221,15 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase spaces list \
+          --account_id <account_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp spaces list
+        source: phraseapp spaces list <account_id>
       x-accepts: application/json
     post:
       description: Create a new Space.
@@ -15649,14 +16311,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"name":"My Android Projects"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase spaces create \
+          --account_id <account_id> \
+          --data '{"name":""My Android Projects""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp space create \
+          phraseapp space create <account_id> \
           --name "My Android Projects"
       x-contentType: application/json
       x-accepts: application/json
@@ -15732,11 +16400,17 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase spaces delete \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp space delete
+        source: phraseapp space delete <account_id> <id>
       x-accepts: application/json
     get:
       description: Show the specified Space.
@@ -15813,10 +16487,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces/:id" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase spaces show \
+          --account_id <account_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp space show
+        source: phraseapp space show <account_id> <id>
       x-accepts: application/json
     patch:
       description: Update the specified Space.
@@ -15906,14 +16586,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"name":"My Android Projects"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase spaces update \
+          --account_id <account_id> \
+          --id <id> \
+          --data '{"name":""My Android Projects""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp space update \
+          phraseapp space update <account_id> <id> \
           --name "My Android Projects"
       x-contentType: application/json
       x-accepts: application/json
@@ -16017,10 +16704,16 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces/{space_id}/projects" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces/:space_id/projects" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase spaces projects \
+          --account_id <account_id> \
+          --space_id <space_id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp spaces projects list
+        source: phraseapp spaces projects list <account_id> <space_id>
       x-accepts: application/json
     post:
       description: Adds an existing project to the space.
@@ -16106,14 +16799,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces/{space_id}/projects" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces/:space_id/projects" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"id":"a4b3c2d1"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase spaces projects \
+          --account_id <account_id> \
+          --space_id <space_id> \
+          --data '{"id":"a4b3c2d1"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp spaces projects create \
+          phraseapp spaces projects create <account_id> <space_id> \
           --id a4b3c2d1
       x-contentType: application/json
       x-accepts: application/json
@@ -16197,11 +16897,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/accounts/{account_id}/spaces/{space_id}/projects/{id}" \
+          curl "https://api.phrase.com/v2/accounts/:account_id/spaces/:space_id/projects/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X DELETE
+      - lang: CLI v2
+        source: |-
+          phrase spaces projects \
+          --account_id <account_id> \
+          --space_id <space_id> \
+          --id <id> \
+          --access_token <token>
       - lang: CLI v1
-        source: phraseapp spaces projects delete
+        source: phraseapp spaces projects delete <account_id> <space_id> <id>
       x-accepts: application/json
   /projects/{project_id}/translations:
     get:
@@ -16333,11 +17040,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase translations list \
+          --project_id <project_id> \
+          --branch my-feature-branch \
+          --sort updated_at \
+          --order desc \
+          --query 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations list \
+          phraseapp translations list <project_id> \
           --branch my-feature-branch \
           --sort updated_at \
           --order desc \
@@ -16455,14 +17171,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","locale_id":"abcd1234cdef1234abcd1234cdef1234","key_id":"abcd1234cdef1234abcd1234cdef1234","content":"My translation"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations create \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "key_id":"abcd1234cdef1234abcd1234cdef1234", "content":""My translation""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation create \
+          phraseapp translation create <project_id> \
           --branch my-feature-branch \
           --locale-id abcd1234cdef1234abcd1234cdef1234 \
           --key-id abcd1234cdef1234abcd1234cdef1234 \
@@ -16607,11 +17329,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/locales/{locale_id}/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
+          curl "https://api.phrase.com/v2/projects/:project_id/locales/:locale_id/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase translations by_locale \
+          --project_id <project_id> \
+          --locale_id <locale_id> \
+          --branch my-feature-branch \
+          --sort updated_at \
+          --order desc \
+          --query 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations by_locale \
+          phraseapp translations by_locale <project_id> <locale_id> \
           --branch my-feature-branch \
           --sort updated_at \
           --order desc \
@@ -16753,11 +17485,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/keys/{key_id}/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/translations?branch=my-feature-branch&sort=updated_at&order=desc&q=PhraseApp*%2520unverified:true%2520excluded:true%2520tags:feature,center" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase translations by_key \
+          --project_id <project_id> \
+          --key_id <key_id> \
+          --branch my-feature-branch \
+          --sort updated_at \
+          --order desc \
+          --query 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations by_key \
+          phraseapp translations by_key <project_id> <key_id> \
           --branch my-feature-branch \
           --sort updated_at \
           --order desc \
@@ -16884,14 +17626,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/search" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/search" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
             -d '{"branch":"my-feature-branch","sort":"updated_at","order":"desc","q":"PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations search \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "query":"'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center'"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations search \
+          phraseapp translations search <project_id> \
           --branch my-feature-branch \
           --sort updated_at \
           --order desc \
@@ -16983,11 +17731,18 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{id}?branch=my-feature-branch" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:id?branch=my-feature-branch" \
             -u USERNAME_OR_ACCESS_TOKEN
+      - lang: CLI v2
+        source: |-
+          phrase translations show \
+          --project_id <project_id> \
+          --id <id> \
+          --branch my-feature-branch \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation show \
+          phraseapp translation show <project_id> <id> \
           --branch my-feature-branch
       x-accepts: application/json
     patch:
@@ -17101,14 +17856,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{id}" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","content":"My translation"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations update \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch", "content":""My translation""}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation update \
+          phraseapp translation update <project_id> <id> \
           --branch my-feature-branch \
           --content "My translation"
       x-contentType: application/json
@@ -17202,14 +17964,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{id}/verify" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:id/verify" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations verify \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation verify \
+          phraseapp translation verify <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -17302,14 +18071,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{id}/unverify" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:id/unverify" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations unverify \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation unverify \
+          phraseapp translation unverify <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -17402,14 +18178,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{id}/review" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:id/review" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations review \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation review \
+          phraseapp translation review <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -17502,14 +18285,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{id}/exclude" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:id/exclude" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations exclude \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation exclude \
+          phraseapp translation exclude <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -17602,14 +18392,21 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/{id}/include" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/:id/include" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations include \
+          --project_id <project_id> \
+          --id <id> \
+          --data '{"branch":"my-feature-branch"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translation include \
+          phraseapp translation include <project_id> <id> \
           --branch my-feature-branch
       x-contentType: application/json
       x-accepts: application/json
@@ -17707,14 +18504,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/verify" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/verify" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20unverified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations verify \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20unverified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations verify \
+          phraseapp translations verify <project_id> \
           --branch my-feature-branch \
           --query 'PhraseApp*%20unverified:true%20tags:feature,center' \
           --sort updated_at \
@@ -17815,14 +18618,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/unverify" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/unverify" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20verified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations unverify \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations unverify \
+          phraseapp translations unverify <project_id> \
           --branch my-feature-branch \
           --query 'PhraseApp*%20verified:true%20tags:feature,center' \
           --sort updated_at \
@@ -17914,14 +18723,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/review" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/review" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%reviewed:false%20tags:feature,center"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations review \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%reviewed:false%20tags:feature,center'"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations review \
+          phraseapp translations review <project_id> \
           --branch my-feature-branch \
           --query 'PhraseApp*%reviewed:false%20tags:feature,center'
       x-contentType: application/json
@@ -18020,14 +18835,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/exclude" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/exclude" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20verified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations exclude \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations exclude \
+          phraseapp translations exclude <project_id> \
           --branch my-feature-branch \
           --query 'PhraseApp*%20verified:true%20tags:feature,center' \
           --sort updated_at \
@@ -18128,14 +18949,20 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/projects/{project_id}/translations/include" \
+          curl "https://api.phrase.com/v2/projects/:project_id/translations/include" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X PATCH \
             -d '{"branch":"my-feature-branch","q":"PhraseApp*%20verified:true%20tags:feature,center","sort":"updated_at","order":"desc"}' \
             -H 'Content-Type: application/json'
+      - lang: CLI v2
+        source: |-
+          phrase translations include \
+          --project_id <project_id> \
+          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
+          --access_token <token>
       - lang: CLI v1
         source: |-
-          phraseapp translations include \
+          phraseapp translations include <project_id> \
           --branch my-feature-branch \
           --query 'PhraseApp*%20verified:true%20tags:feature,center' \
           --sort updated_at \
@@ -18651,7 +19478,7 @@ components:
       required: true
     upload_create_parameters:
       content:
-        multipart/form-data:
+        application/json:
           schema:
             $ref: '#/components/schemas/upload_create_parameters'
       required: true
@@ -20978,8 +21805,6 @@ components:
           type: string
         file_format:
           description: File format. Auto-detected when possible and not specified.
-            See the [format guide](https://help.phrase.com/help/supported-platforms-and-formats)
-            for all supported file formats.
           example: json
           type: string
         locale_id:
@@ -21016,16 +21841,18 @@ components:
             are "UTF-8", "UTF-16" and "ISO-8859-1".
           type: string
         locale_mapping:
+          additionalProperties:
+            type: string
           description: Optional, format specific mapping between locale names and
             the columns the translations to those locales are contained in.
           example: '{"en": "2"}'
-          properties: {}
           type: object
         format_options:
+          additionalProperties:
+            type: string
           description: Additional options available for specific formats. See our
             format guide for complete list.
           example: '{"foo": "bar"}'
-          properties: {}
           type: object
         autotranslate:
           description: If set, translations for the uploaded language will be fetched
