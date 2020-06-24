@@ -8239,7 +8239,7 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/upload_create_parameters'
         content:
-          application/json:
+          multipart/form-data:
             schema:
               properties:
                 branch:
@@ -8389,7 +8389,7 @@ paths:
           --tags awesome-feature,needs-proofreading \
           --locale-mapping "{"en": "2"}" \
           --format-options "{"foo": "bar"}"
-      x-contentType: application/json
+      x-contentType: multipart/form-data
       x-accepts: application/json
   /projects/{project_id}/uploads/{id}:
     get:
@@ -19478,7 +19478,7 @@ components:
       required: true
     upload_create_parameters:
       content:
-        application/json:
+        multipart/form-data:
           schema:
             $ref: '#/components/schemas/upload_create_parameters'
       required: true

@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import java.io.File;
 import com.phrase.client.model.Upload;
-import com.phrase.client.model.UploadCreateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -57,8 +57,20 @@ public class UploadsApi {
     /**
      * Build call for uploadCreate
      * @param projectId Project ID (required)
-     * @param uploadCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param file File to be imported (optional)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
+     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
+     * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
+     * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
+     * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
+     * @param convertEmoji This option is obsolete. Providing the option will cause a bad request error. (optional)
+     * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
+     * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
+     * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
+     * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -71,8 +83,8 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadCreateCall(String projectId, UploadCreateParameters uploadCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = uploadCreateParameters;
+    public okhttp3.Call uploadCreateCall(String projectId, String xPhraseAppOTP, String branch, File file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Boolean autotranslate, Boolean markReviewed, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/uploads"
@@ -87,6 +99,58 @@ public class UploadsApi {
 
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (branch != null) {
+            localVarFormParams.put("branch", branch);
+        }
+
+        if (file != null) {
+            localVarFormParams.put("file", file);
+        }
+
+        if (fileFormat != null) {
+            localVarFormParams.put("file_format", fileFormat);
+        }
+
+        if (localeId != null) {
+            localVarFormParams.put("locale_id", localeId);
+        }
+
+        if (tags != null) {
+            localVarFormParams.put("tags", tags);
+        }
+
+        if (updateTranslations != null) {
+            localVarFormParams.put("update_translations", updateTranslations);
+        }
+
+        if (updateDescriptions != null) {
+            localVarFormParams.put("update_descriptions", updateDescriptions);
+        }
+
+        if (convertEmoji != null) {
+            localVarFormParams.put("convert_emoji", convertEmoji);
+        }
+
+        if (skipUploadTags != null) {
+            localVarFormParams.put("skip_upload_tags", skipUploadTags);
+        }
+
+        if (skipUnverification != null) {
+            localVarFormParams.put("skip_unverification", skipUnverification);
+        }
+
+        if (fileEncoding != null) {
+            localVarFormParams.put("file_encoding", fileEncoding);
+        }
+
+        if (autotranslate != null) {
+            localVarFormParams.put("autotranslate", autotranslate);
+        }
+
+        if (markReviewed != null) {
+            localVarFormParams.put("mark_reviewed", markReviewed);
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -96,7 +160,7 @@ public class UploadsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -106,20 +170,15 @@ public class UploadsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadCreateValidateBeforeCall(String projectId, UploadCreateParameters uploadCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadCreateValidateBeforeCall(String projectId, String xPhraseAppOTP, String branch, File file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Boolean autotranslate, Boolean markReviewed, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
             throw new ApiException("Missing the required parameter 'projectId' when calling uploadCreate(Async)");
         }
         
-        // verify the required parameter 'uploadCreateParameters' is set
-        if (uploadCreateParameters == null) {
-            throw new ApiException("Missing the required parameter 'uploadCreateParameters' when calling uploadCreate(Async)");
-        }
-        
 
-        okhttp3.Call localVarCall = uploadCreateCall(projectId, uploadCreateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = uploadCreateCall(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed, _callback);
         return localVarCall;
 
     }
@@ -128,8 +187,20 @@ public class UploadsApi {
      * Upload a new file
      * Upload a new language file. Creates necessary resources in your project.
      * @param projectId Project ID (required)
-     * @param uploadCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param file File to be imported (optional)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
+     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
+     * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
+     * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
+     * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
+     * @param convertEmoji This option is obsolete. Providing the option will cause a bad request error. (optional)
+     * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
+     * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
+     * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
+     * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
      * @return Upload
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -141,8 +212,8 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Upload uploadCreate(String projectId, UploadCreateParameters uploadCreateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Upload> localVarResp = uploadCreateWithHttpInfo(projectId, uploadCreateParameters, xPhraseAppOTP);
+    public Upload uploadCreate(String projectId, String xPhraseAppOTP, String branch, File file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Boolean autotranslate, Boolean markReviewed) throws ApiException {
+        ApiResponse<Upload> localVarResp = uploadCreateWithHttpInfo(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed);
         return localVarResp.getData();
     }
 
@@ -150,8 +221,20 @@ public class UploadsApi {
      * Upload a new file
      * Upload a new language file. Creates necessary resources in your project.
      * @param projectId Project ID (required)
-     * @param uploadCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param file File to be imported (optional)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
+     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
+     * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
+     * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
+     * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
+     * @param convertEmoji This option is obsolete. Providing the option will cause a bad request error. (optional)
+     * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
+     * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
+     * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
+     * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
      * @return ApiResponse&lt;Upload&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -163,8 +246,8 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Upload> uploadCreateWithHttpInfo(String projectId, UploadCreateParameters uploadCreateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, uploadCreateParameters, xPhraseAppOTP, null);
+    public ApiResponse<Upload> uploadCreateWithHttpInfo(String projectId, String xPhraseAppOTP, String branch, File file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Boolean autotranslate, Boolean markReviewed) throws ApiException {
+        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed, null);
         Type localVarReturnType = new TypeToken<Upload>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -173,8 +256,20 @@ public class UploadsApi {
      * Upload a new file (asynchronously)
      * Upload a new language file. Creates necessary resources in your project.
      * @param projectId Project ID (required)
-     * @param uploadCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param file File to be imported (optional)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
+     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
+     * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
+     * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
+     * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
+     * @param convertEmoji This option is obsolete. Providing the option will cause a bad request error. (optional)
+     * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
+     * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
+     * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
+     * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -187,9 +282,9 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadCreateAsync(String projectId, UploadCreateParameters uploadCreateParameters, String xPhraseAppOTP, final ApiCallback<Upload> _callback) throws ApiException {
+    public okhttp3.Call uploadCreateAsync(String projectId, String xPhraseAppOTP, String branch, File file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Boolean autotranslate, Boolean markReviewed, final ApiCallback<Upload> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, uploadCreateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, autotranslate, markReviewed, _callback);
         Type localVarReturnType = new TypeToken<Upload>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
