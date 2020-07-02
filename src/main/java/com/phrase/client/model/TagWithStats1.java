@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * TagWithStats1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-02T10:19:06.249Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-02T10:22:24.915Z[Etc/UTC]")
 public class TagWithStats1 {
   public static final String SERIALIZED_NAME_STATISTICS = "statistics";
   @SerializedName(SERIALIZED_NAME_STATISTICS)

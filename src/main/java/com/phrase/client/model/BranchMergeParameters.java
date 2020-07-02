@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BranchMergeParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-02T10:19:06.249Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-02T10:22:24.915Z[Etc/UTC]")
 public class BranchMergeParameters {
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)

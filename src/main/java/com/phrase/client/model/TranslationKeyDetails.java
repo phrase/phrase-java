@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * TranslationKeyDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-02T10:19:06.249Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-02T10:22:24.915Z[Etc/UTC]")
 public class TranslationKeyDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
