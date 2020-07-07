@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TranslationsExcludeParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-07T11:37:50.265Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-07T11:44:21.147Z[Etc/UTC]")
 public class TranslationsExcludeParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
