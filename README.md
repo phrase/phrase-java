@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-07-17T07:24:25.426Z[Etc/UTC]
+  - Build date: 2020-07-17T14:06:02.201Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -446,7 +446,7 @@ The following qualifiers are supported in the query:<br />
 <li><code>excluded:{true|false}</code> for exclusion status</li>
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -555,7 +555,7 @@ The following qualifiers are supported in the query:<br />
 <li><code>excluded:{true|false}</code> for exclusion status</li>
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -649,7 +649,7 @@ The following qualifiers are supported in the query:<br />
 <li><code>excluded:{true|false}</code> for exclusion status</li>
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 <tr class=\"even\">
 <td><code>sort</code><br />
@@ -774,7 +774,7 @@ The following qualifiers are also supported in the search term:<br />
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 <tr class=\"even\">
 <td><code>locale_id</code></td>
@@ -875,7 +875,7 @@ The following qualifiers are also supported in the search term:<br />
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -967,7 +967,7 @@ The following qualifiers are also supported in the search term:<br />
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 <tr class=\"even\">
 <td><code>tags</code></td>
@@ -1075,7 +1075,7 @@ The following qualifiers are also supported in the search term:<br />
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 <tr class=\"even\">
 <td><code>tags</code></td>
@@ -1181,7 +1181,7 @@ The following qualifiers are also supported in the search term:<br />
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -1278,7 +1278,7 @@ The following qualifiers are also supported in the search term:<br />
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -1374,7 +1374,7 @@ The following qualifiers are also supported in the search term:<br />
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
 <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li>
 </ul>
-Find more examples <a href=\"#examples\">here</a>.</td>
+Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 </tr>
 </tbody>
 </table>
