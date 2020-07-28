@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * JobCompleteParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-22T13:36:30.193Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-28T11:05:34.190Z[Etc/UTC]")
 public class JobCompleteParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)

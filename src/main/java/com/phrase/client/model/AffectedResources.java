@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * AffectedResources
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-22T13:36:30.193Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-07-28T11:05:34.190Z[Etc/UTC]")
 public class AffectedResources {
   public static final String SERIALIZED_NAME_RECORDS_AFFECTED = "records_affected";
   @SerializedName(SERIALIZED_NAME_RECORDS_AFFECTED)
