@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-07-28T12:11:55.631Z[Etc/UTC]
+  - Build date: 2020-08-03T08:21:00.977Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1556,7 +1556,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phraseJava</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -1566,7 +1566,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phraseJava:1.0.0"
+compile "com.phrase:phraseJava:1.0.1"
 ```
 
 ### Others
@@ -1579,7 +1579,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/phraseJava-1.0.0.jar`
+* `target/phraseJava-1.0.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -1777,6 +1777,17 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**tagDelete**](docs/TagsApi.md#tagDelete) | **DELETE** /projects/{project_id}/tags/{name} | Delete a tag
 *TagsApi* | [**tagShow**](docs/TagsApi.md#tagShow) | **GET** /projects/{project_id}/tags/{name} | Get a single tag
 *TagsApi* | [**tagsList**](docs/TagsApi.md#tagsList) | **GET** /projects/{project_id}/tags | List tags
+*TeamsApi* | [**teamCreate**](docs/TeamsApi.md#teamCreate) | **POST** /accounts/{account_id}/teams | Create a Team
+*TeamsApi* | [**teamDelete**](docs/TeamsApi.md#teamDelete) | **DELETE** /accounts/{account_id}/teams/{team_id} | Delete Team
+*TeamsApi* | [**teamShow**](docs/TeamsApi.md#teamShow) | **GET** /accounts/{account_id}/teams/{team_id} | Get Team
+*TeamsApi* | [**teamUpdate**](docs/TeamsApi.md#teamUpdate) | **PATCH** /accounts/{account_id}/teams/{team_id} | Update Team
+*TeamsApi* | [**teamsList**](docs/TeamsApi.md#teamsList) | **GET** /accounts/{account_id}/teams | List Teams
+*TeamsApi* | [**teamsProjectsCreate**](docs/TeamsApi.md#teamsProjectsCreate) | **POST** /accounts/{account_id}/teams/{team_id}/projects | Add Project
+*TeamsApi* | [**teamsProjectsDelete**](docs/TeamsApi.md#teamsProjectsDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/projects/{id} | Remove Project
+*TeamsApi* | [**teamsSpacesCreate**](docs/TeamsApi.md#teamsSpacesCreate) | **POST** /accounts/{account_id}/teams/{team_id}/spaces | Add Space
+*TeamsApi* | [**teamsSpacesDelete**](docs/TeamsApi.md#teamsSpacesDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/spaces/{id} | Remove Space
+*TeamsApi* | [**teamsUsersCreate**](docs/TeamsApi.md#teamsUsersCreate) | **POST** /accounts/{account_id}/teams/{team_id}/users | Add User
+*TeamsApi* | [**teamsUsersDelete**](docs/TeamsApi.md#teamsUsersDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/users/{id} | Remove User
 *TranslationsApi* | [**translationCreate**](docs/TranslationsApi.md#translationCreate) | **POST** /projects/{project_id}/translations | Create a translation
 *TranslationsApi* | [**translationExclude**](docs/TranslationsApi.md#translationExclude) | **PATCH** /projects/{project_id}/translations/{id}/exclude | Exclude a translation from export
 *TranslationsApi* | [**translationInclude**](docs/TranslationsApi.md#translationInclude) | **PATCH** /projects/{project_id}/translations/{id}/include | Revoke exclusion of a translation in export
@@ -1923,6 +1934,13 @@ Class | Method | HTTP request | Description
  - [TagWithStats1](docs/TagWithStats1.md)
  - [TagWithStats1Statistics](docs/TagWithStats1Statistics.md)
  - [TagWithStats1Statistics1](docs/TagWithStats1Statistics1.md)
+ - [Team](docs/Team.md)
+ - [TeamCreateParameters](docs/TeamCreateParameters.md)
+ - [TeamDetail](docs/TeamDetail.md)
+ - [TeamUpdateParameters](docs/TeamUpdateParameters.md)
+ - [TeamsProjectsCreateParameters](docs/TeamsProjectsCreateParameters.md)
+ - [TeamsSpacesCreateParameters](docs/TeamsSpacesCreateParameters.md)
+ - [TeamsUsersCreateParameters](docs/TeamsUsersCreateParameters.md)
  - [Translation](docs/Translation.md)
  - [TranslationCreateParameters](docs/TranslationCreateParameters.md)
  - [TranslationDetails](docs/TranslationDetails.md)
