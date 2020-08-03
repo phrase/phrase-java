@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TeamsProjectsCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-03T08:35:48.224Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-03T08:52:37.418Z[Etc/UTC]")
 public class TeamsProjectsCreateParameters {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
