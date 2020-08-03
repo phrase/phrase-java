@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **projectImage** | [**File**](File.md) | Image to identify the project |  [optional]
 **removeProjectImage** | **Boolean** | Indicates whether the project image should be deleted. |  [optional]
 **accountId** | **String** | Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. |  [optional]
+**sourceProjectId** | **String** | When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params. |  [optional]
 
 
 

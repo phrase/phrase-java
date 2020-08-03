@@ -88,4 +88,12 @@ public class ProjectCreateParametersTest {
         // TODO: test accountId
     }
 
+    /**
+     * Test the property 'sourceProjectId'
+     */
+    @Test
+    public void sourceProjectIdTest() {
+        // TODO: test sourceProjectId
+    }
+
 }

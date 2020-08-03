@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-03T08:27:27.812Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-03T08:29:15.475Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -52,6 +52,10 @@ public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
   private String accountId;
+
+  public static final String SERIALIZED_NAME_SOURCE_PROJECT_ID = "source_project_id";
+  @SerializedName(SERIALIZED_NAME_SOURCE_PROJECT_ID)
+  private String sourceProjectId;
 
 
   public ProjectCreateParameters name(String name) {
@@ -192,6 +196,29 @@ public class ProjectCreateParameters {
   }
 
 
+  public ProjectCreateParameters sourceProjectId(String sourceProjectId) {
+    
+    this.sourceProjectId = sourceProjectId;
+    return this;
+  }
+
+   /**
+   * When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params.
+   * @return sourceProjectId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "abcd1234", value = "When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params.")
+
+  public String getSourceProjectId() {
+    return sourceProjectId;
+  }
+
+
+  public void setSourceProjectId(String sourceProjectId) {
+    this.sourceProjectId = sourceProjectId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -206,12 +233,13 @@ public class ProjectCreateParameters {
         Objects.equals(this.sharesTranslationMemory, projectCreateParameters.sharesTranslationMemory) &&
         Objects.equals(this.projectImage, projectCreateParameters.projectImage) &&
         Objects.equals(this.removeProjectImage, projectCreateParameters.removeProjectImage) &&
-        Objects.equals(this.accountId, projectCreateParameters.accountId);
+        Objects.equals(this.accountId, projectCreateParameters.accountId) &&
+        Objects.equals(this.sourceProjectId, projectCreateParameters.sourceProjectId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, mainFormat, sharesTranslationMemory, projectImage, removeProjectImage, accountId);
+    return Objects.hash(name, mainFormat, sharesTranslationMemory, projectImage, removeProjectImage, accountId, sourceProjectId);
   }
 
 
@@ -225,6 +253,7 @@ public class ProjectCreateParameters {
     sb.append("    projectImage: ").append(toIndentedString(projectImage)).append("\n");
     sb.append("    removeProjectImage: ").append(toIndentedString(removeProjectImage)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    sourceProjectId: ").append(toIndentedString(sourceProjectId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
