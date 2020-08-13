@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-13T14:32:06.331Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-13T18:32:01.775Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
