@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * Account
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-21T14:19:05.397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T10:00:47.126Z[Etc/UTC]")
 public class Account {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -36,6 +36,10 @@ public class Account {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  private String slug;
 
   public static final String SERIALIZED_NAME_COMPANY = "company";
   @SerializedName(SERIALIZED_NAME_COMPANY)
@@ -93,6 +97,29 @@ public class Account {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public Account slug(String slug) {
+    
+    this.slug = slug;
+    return this;
+  }
+
+   /**
+   * Get slug
+   * @return slug
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSlug() {
+    return slug;
+  }
+
+
+  public void setSlug(String slug) {
+    this.slug = slug;
   }
 
 
@@ -176,6 +203,7 @@ public class Account {
     Account account = (Account) o;
     return Objects.equals(this.id, account.id) &&
         Objects.equals(this.name, account.name) &&
+        Objects.equals(this.slug, account.slug) &&
         Objects.equals(this.company, account.company) &&
         Objects.equals(this.createdAt, account.createdAt) &&
         Objects.equals(this.updatedAt, account.updatedAt);
@@ -183,7 +211,7 @@ public class Account {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, company, createdAt, updatedAt);
+    return Objects.hash(id, name, slug, company, createdAt, updatedAt);
   }
 
 
@@ -193,6 +221,7 @@ public class Account {
     sb.append("class Account {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

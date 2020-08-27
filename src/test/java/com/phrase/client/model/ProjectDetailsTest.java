@@ -60,6 +60,14 @@ public class ProjectDetailsTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'mainFormat'
      */
     @Test
@@ -97,14 +105,6 @@ public class ProjectDetailsTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
-    }
-
-    /**
-     * Test the property 'slug'
-     */
-    @Test
-    public void slugTest() {
-        // TODO: test slug
     }
 
     /**

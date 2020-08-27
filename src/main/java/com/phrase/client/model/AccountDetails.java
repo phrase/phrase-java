@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
 /**
  * AccountDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-21T14:19:05.397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T10:00:47.126Z[Etc/UTC]")
 public class AccountDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -38,6 +38,10 @@ public class AccountDetails {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  private String slug;
 
   public static final String SERIALIZED_NAME_COMPANY = "company";
   @SerializedName(SERIALIZED_NAME_COMPANY)
@@ -50,10 +54,6 @@ public class AccountDetails {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  private String slug;
 
 
   public AccountDetails id(String id) {
@@ -99,6 +99,29 @@ public class AccountDetails {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public AccountDetails slug(String slug) {
+    
+    this.slug = slug;
+    return this;
+  }
+
+   /**
+   * Get slug
+   * @return slug
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSlug() {
+    return slug;
+  }
+
+
+  public void setSlug(String slug) {
+    this.slug = slug;
   }
 
 
@@ -171,29 +194,6 @@ public class AccountDetails {
   }
 
 
-  public AccountDetails slug(String slug) {
-    
-    this.slug = slug;
-    return this;
-  }
-
-   /**
-   * Get slug
-   * @return slug
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getSlug() {
-    return slug;
-  }
-
-
-  public void setSlug(String slug) {
-    this.slug = slug;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -205,15 +205,15 @@ public class AccountDetails {
     AccountDetails accountDetails = (AccountDetails) o;
     return Objects.equals(this.id, accountDetails.id) &&
         Objects.equals(this.name, accountDetails.name) &&
+        Objects.equals(this.slug, accountDetails.slug) &&
         Objects.equals(this.company, accountDetails.company) &&
         Objects.equals(this.createdAt, accountDetails.createdAt) &&
-        Objects.equals(this.updatedAt, accountDetails.updatedAt) &&
-        Objects.equals(this.slug, accountDetails.slug);
+        Objects.equals(this.updatedAt, accountDetails.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, company, createdAt, updatedAt, slug);
+    return Objects.hash(id, name, slug, company, createdAt, updatedAt);
   }
 
 
@@ -223,10 +223,10 @@ public class AccountDetails {
     sb.append("class AccountDetails {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("}");
     return sb.toString();
   }

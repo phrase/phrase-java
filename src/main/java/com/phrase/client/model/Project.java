@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * Project
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-21T14:19:05.397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T10:00:47.126Z[Etc/UTC]")
 public class Project {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -37,6 +37,10 @@ public class Project {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  private String slug;
 
   public static final String SERIALIZED_NAME_MAIN_FORMAT = "main_format";
   @SerializedName(SERIALIZED_NAME_MAIN_FORMAT)
@@ -102,6 +106,29 @@ public class Project {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public Project slug(String slug) {
+    
+    this.slug = slug;
+    return this;
+  }
+
+   /**
+   * Get slug
+   * @return slug
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSlug() {
+    return slug;
+  }
+
+
+  public void setSlug(String slug) {
+    this.slug = slug;
   }
 
 
@@ -231,6 +258,7 @@ public class Project {
     Project project = (Project) o;
     return Objects.equals(this.id, project.id) &&
         Objects.equals(this.name, project.name) &&
+        Objects.equals(this.slug, project.slug) &&
         Objects.equals(this.mainFormat, project.mainFormat) &&
         Objects.equals(this.projectImageUrl, project.projectImageUrl) &&
         Objects.equals(this.account, project.account) &&
@@ -240,7 +268,7 @@ public class Project {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, mainFormat, projectImageUrl, account, createdAt, updatedAt);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, account, createdAt, updatedAt);
   }
 
 
@@ -250,6 +278,7 @@ public class Project {
     sb.append("class Project {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
     sb.append("    projectImageUrl: ").append(toIndentedString(projectImageUrl)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");

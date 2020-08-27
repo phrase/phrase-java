@@ -30,7 +30,7 @@ import java.time.OffsetDateTime;
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-21T14:19:05.397Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-08-27T10:00:47.126Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -39,6 +39,10 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  private String slug;
 
   public static final String SERIALIZED_NAME_MAIN_FORMAT = "main_format";
   @SerializedName(SERIALIZED_NAME_MAIN_FORMAT)
@@ -59,10 +63,6 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  private String slug;
 
   public static final String SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY = "shares_translation_memory";
   @SerializedName(SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY)
@@ -112,6 +112,29 @@ public class ProjectDetails {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public ProjectDetails slug(String slug) {
+    
+    this.slug = slug;
+    return this;
+  }
+
+   /**
+   * Get slug
+   * @return slug
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSlug() {
+    return slug;
+  }
+
+
+  public void setSlug(String slug) {
+    this.slug = slug;
   }
 
 
@@ -230,29 +253,6 @@ public class ProjectDetails {
   }
 
 
-  public ProjectDetails slug(String slug) {
-    
-    this.slug = slug;
-    return this;
-  }
-
-   /**
-   * Get slug
-   * @return slug
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getSlug() {
-    return slug;
-  }
-
-
-  public void setSlug(String slug) {
-    this.slug = slug;
-  }
-
-
   public ProjectDetails sharesTranslationMemory(Boolean sharesTranslationMemory) {
     
     this.sharesTranslationMemory = sharesTranslationMemory;
@@ -287,18 +287,18 @@ public class ProjectDetails {
     ProjectDetails projectDetails = (ProjectDetails) o;
     return Objects.equals(this.id, projectDetails.id) &&
         Objects.equals(this.name, projectDetails.name) &&
+        Objects.equals(this.slug, projectDetails.slug) &&
         Objects.equals(this.mainFormat, projectDetails.mainFormat) &&
         Objects.equals(this.projectImageUrl, projectDetails.projectImageUrl) &&
         Objects.equals(this.account, projectDetails.account) &&
         Objects.equals(this.createdAt, projectDetails.createdAt) &&
         Objects.equals(this.updatedAt, projectDetails.updatedAt) &&
-        Objects.equals(this.slug, projectDetails.slug) &&
         Objects.equals(this.sharesTranslationMemory, projectDetails.sharesTranslationMemory);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, mainFormat, projectImageUrl, account, createdAt, updatedAt, slug, sharesTranslationMemory);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, account, createdAt, updatedAt, sharesTranslationMemory);
   }
 
 
@@ -308,12 +308,12 @@ public class ProjectDetails {
     sb.append("class ProjectDetails {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
     sb.append("    projectImageUrl: ").append(toIndentedString(projectImageUrl)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    sharesTranslationMemory: ").append(toIndentedString(sharesTranslationMemory)).append("\n");
     sb.append("}");
     return sb.toString();

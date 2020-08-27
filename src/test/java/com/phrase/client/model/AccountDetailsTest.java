@@ -59,6 +59,14 @@ public class AccountDetailsTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'company'
      */
     @Test
@@ -80,14 +88,6 @@ public class AccountDetailsTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
-    }
-
-    /**
-     * Test the property 'slug'
-     */
-    @Test
-    public void slugTest() {
-        // TODO: test slug
     }
 
 }
