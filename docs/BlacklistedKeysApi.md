@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 <a name="blacklistedKeysList"></a>
 # **blacklistedKeysList**
-> List&lt;BlacklistedKey&gt; blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage)
+> List&lt;BlacklistedKey&gt; blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage, branch)
 
 List blacklisted keys
 
@@ -375,8 +375,9 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 10; // Integer | allows you to specify a page size up to 100 items, 10 by default
+    String branch = my-feature-branch; // String | specify the branch to use
     try {
-      List<BlacklistedKey> result = apiInstance.blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage);
+      List<BlacklistedKey> result = apiInstance.blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BlacklistedKeysApi#blacklistedKeysList");
@@ -397,6 +398,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type
 

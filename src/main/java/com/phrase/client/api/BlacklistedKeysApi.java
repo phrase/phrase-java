@@ -629,6 +629,7 @@ public class BlacklistedKeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -641,7 +642,7 @@ public class BlacklistedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeysListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeysListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -656,6 +657,10 @@ public class BlacklistedKeysApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -684,7 +689,7 @@ public class BlacklistedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call blacklistedKeysListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call blacklistedKeysListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -692,7 +697,7 @@ public class BlacklistedKeysApi {
         }
         
 
-        okhttp3.Call localVarCall = blacklistedKeysListCall(projectId, xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = blacklistedKeysListCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
         return localVarCall;
 
     }
@@ -704,6 +709,7 @@ public class BlacklistedKeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @return List&lt;BlacklistedKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -715,8 +721,8 @@ public class BlacklistedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<BlacklistedKey> blacklistedKeysList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<BlacklistedKey>> localVarResp = blacklistedKeysListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage);
+    public List<BlacklistedKey> blacklistedKeysList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        ApiResponse<List<BlacklistedKey>> localVarResp = blacklistedKeysListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch);
         return localVarResp.getData();
     }
 
@@ -727,6 +733,7 @@ public class BlacklistedKeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;List&lt;BlacklistedKey&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -738,8 +745,8 @@ public class BlacklistedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<BlacklistedKey>> blacklistedKeysListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, null);
+    public ApiResponse<List<BlacklistedKey>> blacklistedKeysListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, null);
         Type localVarReturnType = new TypeToken<List<BlacklistedKey>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -751,6 +758,7 @@ public class BlacklistedKeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -763,9 +771,9 @@ public class BlacklistedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeysListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<BlacklistedKey>> _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeysListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<BlacklistedKey>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
         Type localVarReturnType = new TypeToken<List<BlacklistedKey>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

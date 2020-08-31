@@ -120,7 +120,8 @@ public class BlacklistedKeysApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<BlacklistedKey> response = api.blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage);
+        String branch = null;
+        List<BlacklistedKey> response = api.blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage, branch);
 
         // TODO: test validations
     }
