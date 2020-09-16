@@ -467,7 +467,7 @@ public class Example {
     String distributionId = "distributionId_example"; // String | Distribution ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 10; // Integer | allows you to specify a page size up to 100 items, 10 by default
+    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     try {
       List<ReleasePreview> result = apiInstance.releasesList(accountId, distributionId, xPhraseAppOTP, page, perPage);
       System.out.println(result);
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
  **distributionId** | **String**| Distribution ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional]
+ **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
 
 ### Return type
 

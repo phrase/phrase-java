@@ -379,7 +379,7 @@ public class Example {
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 10; // Integer | allows you to specify a page size up to 100 items, 10 by default
+    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     try {
       List<ScreenshotMarker> result = apiInstance.screenshotMarkersList(projectId, id, xPhraseAppOTP, page, perPage);
       System.out.println(result);
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional]
+ **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
 
 ### Return type
 

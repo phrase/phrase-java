@@ -559,7 +559,7 @@ public class Example {
     String jobId = "jobId_example"; // String | Job ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 10; // Integer | allows you to specify a page size up to 100 items, 10 by default
+    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     try {
       List<JobLocale> result = apiInstance.jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch);
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
  **jobId** | **String**| Job ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional]
+ **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type

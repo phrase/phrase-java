@@ -918,8 +918,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -1536,8 +1536,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -2162,8 +2162,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -2681,8 +2681,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -3508,8 +3508,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -4071,8 +4071,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -4708,8 +4708,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -5848,8 +5848,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -6345,8 +6345,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -7105,8 +7105,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -7987,8 +7987,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -8574,8 +8574,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -9563,8 +9563,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -9686,8 +9686,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -10254,8 +10254,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -10771,8 +10771,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -11580,8 +11580,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -12236,8 +12236,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -12486,8 +12486,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -12888,8 +12888,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -13393,8 +13393,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -13937,8 +13937,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -14350,8 +14350,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -14964,8 +14964,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -15307,8 +15307,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -16091,8 +16091,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -16677,8 +16677,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -17160,8 +17160,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -17458,8 +17458,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -18513,8 +18513,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -18812,8 +18812,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -18978,8 +18978,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -19139,8 +19139,8 @@ paths:
           type: integer
         style: form
       - allowEmptyValue: false
-        description: allows you to specify a page size up to 100 items, 10 by default
-        example: 10
+        description: allows you to specify a page size up to 100 items, 25 by default
+        example: 25
         explode: true
         in: query
         name: per_page
@@ -20822,8 +20822,8 @@ components:
       style: form
     per_page:
       allowEmptyValue: false
-      description: allows you to specify a page size up to 100 items, 10 by default
-      example: 10
+      description: allows you to specify a page size up to 100 items, 25 by default
+      example: 25
       explode: true
       in: query
       name: per_page

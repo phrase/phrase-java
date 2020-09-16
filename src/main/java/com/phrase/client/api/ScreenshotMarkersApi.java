@@ -649,7 +649,7 @@ public class ScreenshotMarkersApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -731,7 +731,7 @@ public class ScreenshotMarkersApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @return List&lt;ScreenshotMarker&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -755,7 +755,7 @@ public class ScreenshotMarkersApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @return ApiResponse&lt;List&lt;ScreenshotMarker&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -780,7 +780,7 @@ public class ScreenshotMarkersApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

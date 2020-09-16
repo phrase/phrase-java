@@ -338,7 +338,7 @@ public class GitLabSyncApi {
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -418,7 +418,7 @@ public class GitLabSyncApi {
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @return List&lt;GitlabSyncHistory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -442,7 +442,7 @@ public class GitLabSyncApi {
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @return ApiResponse&lt;List&lt;GitlabSyncHistory&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -467,7 +467,7 @@ public class GitLabSyncApi {
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 10 by default (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

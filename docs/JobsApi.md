@@ -799,7 +799,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 10; // Integer | allows you to specify a page size up to 100 items, 10 by default
+    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     String ownedBy = abcd1234cdef1234abcd1234cdef1234; // String | filter by user owning job
     String assignedTo = abcd1234cdef1234abcd1234cdef1234; // String | filter by user assigned to job
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 10 by default | [optional]
+ **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **ownedBy** | **String**| filter by user owning job | [optional]
  **assignedTo** | **String**| filter by user assigned to job | [optional]
