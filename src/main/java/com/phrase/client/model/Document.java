@@ -25,21 +25,17 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
- * GlossaryTermTranslation
+ * Document
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-23T15:06:52.182Z[Etc/UTC]")
-public class GlossaryTermTranslation {
+public class Document {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
-  public static final String SERIALIZED_NAME_LOCALE_CODE = "locale_code";
-  @SerializedName(SERIALIZED_NAME_LOCALE_CODE)
-  private String localeCode;
-
-  public static final String SERIALIZED_NAME_CONTENT = "content";
-  @SerializedName(SERIALIZED_NAME_CONTENT)
-  private String content;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -50,7 +46,7 @@ public class GlossaryTermTranslation {
   private OffsetDateTime updatedAt;
 
 
-  public GlossaryTermTranslation id(String id) {
+  public Document id(String id) {
     
     this.id = id;
     return this;
@@ -73,53 +69,30 @@ public class GlossaryTermTranslation {
   }
 
 
-  public GlossaryTermTranslation localeCode(String localeCode) {
+  public Document name(String name) {
     
-    this.localeCode = localeCode;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get localeCode
-   * @return localeCode
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getLocaleCode() {
-    return localeCode;
+  public String getName() {
+    return name;
   }
 
 
-  public void setLocaleCode(String localeCode) {
-    this.localeCode = localeCode;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public GlossaryTermTranslation content(String content) {
-    
-    this.content = content;
-    return this;
-  }
-
-   /**
-   * Get content
-   * @return content
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getContent() {
-    return content;
-  }
-
-
-  public void setContent(String content) {
-    this.content = content;
-  }
-
-
-  public GlossaryTermTranslation createdAt(OffsetDateTime createdAt) {
+  public Document createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -142,7 +115,7 @@ public class GlossaryTermTranslation {
   }
 
 
-  public GlossaryTermTranslation updatedAt(OffsetDateTime updatedAt) {
+  public Document updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -173,27 +146,25 @@ public class GlossaryTermTranslation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GlossaryTermTranslation glossaryTermTranslation = (GlossaryTermTranslation) o;
-    return Objects.equals(this.id, glossaryTermTranslation.id) &&
-        Objects.equals(this.localeCode, glossaryTermTranslation.localeCode) &&
-        Objects.equals(this.content, glossaryTermTranslation.content) &&
-        Objects.equals(this.createdAt, glossaryTermTranslation.createdAt) &&
-        Objects.equals(this.updatedAt, glossaryTermTranslation.updatedAt);
+    Document document = (Document) o;
+    return Objects.equals(this.id, document.id) &&
+        Objects.equals(this.name, document.name) &&
+        Objects.equals(this.createdAt, document.createdAt) &&
+        Objects.equals(this.updatedAt, document.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, localeCode, content, createdAt, updatedAt);
+    return Objects.hash(id, name, createdAt, updatedAt);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GlossaryTermTranslation {\n");
+    sb.append("class Document {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    localeCode: ").append(toIndentedString(localeCode)).append("\n");
-    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

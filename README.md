@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-09-16T11:23:31.824Z[Etc/UTC]
+  - Build date: 2020-09-23T15:06:52.182Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1671,6 +1671,7 @@ Class | Method | HTTP request | Description
 *DistributionsApi* | [**distributionShow**](docs/DistributionsApi.md#distributionShow) | **GET** /accounts/{account_id}/distributions/{id} | Get a single distribution
 *DistributionsApi* | [**distributionUpdate**](docs/DistributionsApi.md#distributionUpdate) | **PATCH** /accounts/{account_id}/distributions/{id} | Update a distribution
 *DistributionsApi* | [**distributionsList**](docs/DistributionsApi.md#distributionsList) | **GET** /accounts/{account_id}/distributions | List distributions
+*DocumentsApi* | [**documentsList**](docs/DocumentsApi.md#documentsList) | **GET** /projects/{project_id}/documents | List documents
 *FormatsApi* | [**formatsList**](docs/FormatsApi.md#formatsList) | **GET** /formats | List formats
 *GitLabSyncApi* | [**gitlabSyncDelete**](docs/GitLabSyncApi.md#gitlabSyncDelete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
 *GitLabSyncApi* | [**gitlabSyncExport**](docs/GitLabSyncApi.md#gitlabSyncExport) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
@@ -1850,6 +1851,7 @@ Class | Method | HTTP request | Description
  - [DistributionCreateParameters](docs/DistributionCreateParameters.md)
  - [DistributionPreview](docs/DistributionPreview.md)
  - [DistributionUpdateParameters](docs/DistributionUpdateParameters.md)
+ - [Document](docs/Document.md)
  - [Format](docs/Format.md)
  - [GitlabSync](docs/GitlabSync.md)
  - [GitlabSyncExport](docs/GitlabSyncExport.md)
