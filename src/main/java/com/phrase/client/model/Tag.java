@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * Tag
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-28T13:07:43.335Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-28T13:08:38.872Z[Etc/UTC]")
 public class Tag {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
