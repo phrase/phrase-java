@@ -32,6 +32,24 @@ public class DocumentsApiTest {
 
     
     /**
+     * Delete document
+     *
+     * Delete an existing document.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void documentDeleteTest() throws ApiException {
+        String projectId = null;
+        String id = null;
+        String xPhraseAppOTP = null;
+        api.documentDelete(projectId, id, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
      * List documents
      *
      * List all documents the current user has access to.
@@ -41,10 +59,11 @@ public class DocumentsApiTest {
      */
     @Test
     public void documentsListTest() throws ApiException {
+        String projectId = null;
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Document> response = api.documentsList(xPhraseAppOTP, page, perPage);
+        List<Document> response = api.documentsList(projectId, xPhraseAppOTP, page, perPage);
 
         // TODO: test validations
     }
