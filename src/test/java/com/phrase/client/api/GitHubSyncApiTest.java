@@ -14,6 +14,7 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.GithubSyncExportParameters;
+import com.phrase.client.model.GithubSyncImportParameters;
 import com.phrase.client.model.InlineResponse422;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -45,6 +46,23 @@ public class GitHubSyncApiTest {
         GithubSyncExportParameters githubSyncExportParameters = null;
         String xPhraseAppOTP = null;
         api.githubSyncExport(githubSyncExportParameters, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Import to Phrase from GitHub
+     *
+     * Import files to Phrase from your connected GitHub repository.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void githubSyncImportTest() throws ApiException {
+        GithubSyncImportParameters githubSyncImportParameters = null;
+        String xPhraseAppOTP = null;
+        api.githubSyncImport(githubSyncImportParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

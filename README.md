@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-10-01T14:49:04.833Z[Etc/UTC]
+  - Build date: 2020-10-02T10:05:57.400Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1675,6 +1675,7 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**documentsList**](docs/DocumentsApi.md#documentsList) | **GET** /projects/{project_id}/documents | List documents
 *FormatsApi* | [**formatsList**](docs/FormatsApi.md#formatsList) | **GET** /formats | List formats
 *GitHubSyncApi* | [**githubSyncExport**](docs/GitHubSyncApi.md#githubSyncExport) | **POST** /github_syncs/export | Export from Phrase to GitHub
+*GitHubSyncApi* | [**githubSyncImport**](docs/GitHubSyncApi.md#githubSyncImport) | **POST** /github_syncs/import | Import to Phrase from GitHub
 *GitLabSyncApi* | [**gitlabSyncDelete**](docs/GitLabSyncApi.md#gitlabSyncDelete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
 *GitLabSyncApi* | [**gitlabSyncExport**](docs/GitLabSyncApi.md#gitlabSyncExport) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
 *GitLabSyncApi* | [**gitlabSyncHistory**](docs/GitLabSyncApi.md#gitlabSyncHistory) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
@@ -1856,6 +1857,7 @@ Class | Method | HTTP request | Description
  - [Document](docs/Document.md)
  - [Format](docs/Format.md)
  - [GithubSyncExportParameters](docs/GithubSyncExportParameters.md)
+ - [GithubSyncImportParameters](docs/GithubSyncImportParameters.md)
  - [GitlabSync](docs/GitlabSync.md)
  - [GitlabSyncExport](docs/GitlabSyncExport.md)
  - [GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)

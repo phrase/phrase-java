@@ -27,6 +27,7 @@ import java.io.IOException;
 
 
 import com.phrase.client.model.GithubSyncExportParameters;
+import com.phrase.client.model.GithubSyncImportParameters;
 import com.phrase.client.model.InlineResponse422;
 
 import java.lang.reflect.Type;
@@ -181,6 +182,136 @@ public class GitHubSyncApi {
     public okhttp3.Call githubSyncExportAsync(GithubSyncExportParameters githubSyncExportParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = githubSyncExportValidateBeforeCall(githubSyncExportParameters, xPhraseAppOTP, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for githubSyncImport
+     * @param githubSyncImportParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call githubSyncImportCall(GithubSyncImportParameters githubSyncImportParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = githubSyncImportParameters;
+
+        // create path and map variables
+        String localVarPath = "/github_syncs/import";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call githubSyncImportValidateBeforeCall(GithubSyncImportParameters githubSyncImportParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'githubSyncImportParameters' is set
+        if (githubSyncImportParameters == null) {
+            throw new ApiException("Missing the required parameter 'githubSyncImportParameters' when calling githubSyncImport(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = githubSyncImportCall(githubSyncImportParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Import to Phrase from GitHub
+     * Import files to Phrase from your connected GitHub repository.
+     * @param githubSyncImportParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void githubSyncImport(GithubSyncImportParameters githubSyncImportParameters, String xPhraseAppOTP) throws ApiException {
+        githubSyncImportWithHttpInfo(githubSyncImportParameters, xPhraseAppOTP);
+    }
+
+    /**
+     * Import to Phrase from GitHub
+     * Import files to Phrase from your connected GitHub repository.
+     * @param githubSyncImportParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> githubSyncImportWithHttpInfo(GithubSyncImportParameters githubSyncImportParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = githubSyncImportValidateBeforeCall(githubSyncImportParameters, xPhraseAppOTP, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Import to Phrase from GitHub (asynchronously)
+     * Import files to Phrase from your connected GitHub repository.
+     * @param githubSyncImportParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call githubSyncImportAsync(GithubSyncImportParameters githubSyncImportParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = githubSyncImportValidateBeforeCall(githubSyncImportParameters, xPhraseAppOTP, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

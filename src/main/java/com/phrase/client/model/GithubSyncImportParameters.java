@@ -19,41 +19,40 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.LocaleStatistics;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * LocaleDetails1
+ * GithubSyncImportParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-02T10:05:57.400Z[Etc/UTC]")
-public class LocaleDetails1 {
-  public static final String SERIALIZED_NAME_STATISTICS = "statistics";
-  @SerializedName(SERIALIZED_NAME_STATISTICS)
-  private LocaleStatistics statistics;
+public class GithubSyncImportParameters {
+  public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
+  @SerializedName(SERIALIZED_NAME_PROJECT_ID)
+  private String projectId;
 
 
-  public LocaleDetails1 statistics(LocaleStatistics statistics) {
+  public GithubSyncImportParameters projectId(String projectId) {
     
-    this.statistics = statistics;
+    this.projectId = projectId;
     return this;
   }
 
    /**
-   * Get statistics
-   * @return statistics
+   * Project ID to specify the actual project the GitHub import should be triggered in.
+   * @return projectId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "abcd1234", value = "Project ID to specify the actual project the GitHub import should be triggered in.")
 
-  public LocaleStatistics getStatistics() {
-    return statistics;
+  public String getProjectId() {
+    return projectId;
   }
 
 
-  public void setStatistics(LocaleStatistics statistics) {
-    this.statistics = statistics;
+  public void setProjectId(String projectId) {
+    this.projectId = projectId;
   }
 
 
@@ -65,21 +64,21 @@ public class LocaleDetails1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LocaleDetails1 localeDetails1 = (LocaleDetails1) o;
-    return Objects.equals(this.statistics, localeDetails1.statistics);
+    GithubSyncImportParameters githubSyncImportParameters = (GithubSyncImportParameters) o;
+    return Objects.equals(this.projectId, githubSyncImportParameters.projectId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(statistics);
+    return Objects.hash(projectId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LocaleDetails1 {\n");
-    sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");
+    sb.append("class GithubSyncImportParameters {\n");
+    sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
