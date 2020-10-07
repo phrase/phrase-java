@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * GitlabSyncHistory
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-07T10:19:44.324Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-07T10:34:30.723Z[Etc/UTC]")
 public class GitlabSyncHistory {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
