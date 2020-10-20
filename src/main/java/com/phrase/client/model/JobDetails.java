@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-19T09:41:04.740Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-20T07:17:46.066Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -55,6 +55,10 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
+
+  public static final String SERIALIZED_NAME_TICKET_URL = "ticket_url";
+  @SerializedName(SERIALIZED_NAME_TICKET_URL)
+  private String ticketUrl;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -193,6 +197,29 @@ public class JobDetails {
 
   public void setState(String state) {
     this.state = state;
+  }
+
+
+  public JobDetails ticketUrl(String ticketUrl) {
+    
+    this.ticketUrl = ticketUrl;
+    return this;
+  }
+
+   /**
+   * Get ticketUrl
+   * @return ticketUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTicketUrl() {
+    return ticketUrl;
+  }
+
+
+  public void setTicketUrl(String ticketUrl) {
+    this.ticketUrl = ticketUrl;
   }
 
 
@@ -364,6 +391,7 @@ public class JobDetails {
         Objects.equals(this.briefing, jobDetails.briefing) &&
         Objects.equals(this.dueDate, jobDetails.dueDate) &&
         Objects.equals(this.state, jobDetails.state) &&
+        Objects.equals(this.ticketUrl, jobDetails.ticketUrl) &&
         Objects.equals(this.createdAt, jobDetails.createdAt) &&
         Objects.equals(this.updatedAt, jobDetails.updatedAt) &&
         Objects.equals(this.owner, jobDetails.owner) &&
@@ -374,7 +402,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, createdAt, updatedAt, owner, jobTagName, locales, keys);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, createdAt, updatedAt, owner, jobTagName, locales, keys);
   }
 
 
@@ -387,6 +415,7 @@ public class JobDetails {
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");

@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * JobUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-19T09:41:04.740Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-20T07:17:46.066Z[Etc/UTC]")
 public class JobUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -44,6 +44,10 @@ public class JobUpdateParameters {
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
   private OffsetDateTime dueDate;
+
+  public static final String SERIALIZED_NAME_TICKET_URL = "ticket_url";
+  @SerializedName(SERIALIZED_NAME_TICKET_URL)
+  private String ticketUrl;
 
 
   public JobUpdateParameters branch(String branch) {
@@ -138,6 +142,29 @@ public class JobUpdateParameters {
   }
 
 
+  public JobUpdateParameters ticketUrl(String ticketUrl) {
+    
+    this.ticketUrl = ticketUrl;
+    return this;
+  }
+
+   /**
+   * URL to a ticket for this job (e.g. Jira, Trello)
+   * @return ticketUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "https://example.atlassian.net/browse/FOO", value = "URL to a ticket for this job (e.g. Jira, Trello)")
+
+  public String getTicketUrl() {
+    return ticketUrl;
+  }
+
+
+  public void setTicketUrl(String ticketUrl) {
+    this.ticketUrl = ticketUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -150,12 +177,13 @@ public class JobUpdateParameters {
     return Objects.equals(this.branch, jobUpdateParameters.branch) &&
         Objects.equals(this.name, jobUpdateParameters.name) &&
         Objects.equals(this.briefing, jobUpdateParameters.briefing) &&
-        Objects.equals(this.dueDate, jobUpdateParameters.dueDate);
+        Objects.equals(this.dueDate, jobUpdateParameters.dueDate) &&
+        Objects.equals(this.ticketUrl, jobUpdateParameters.ticketUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, briefing, dueDate);
+    return Objects.hash(branch, name, briefing, dueDate, ticketUrl);
   }
 
 
@@ -167,6 +195,7 @@ public class JobUpdateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

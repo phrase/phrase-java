@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **briefing** | **String** |  |  [optional]
 **dueDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **state** | **String** |  |  [optional]
+**ticketUrl** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **owner** | [**UserPreview**](UserPreview.md) |  |  [optional]

@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * Job
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-19T09:41:04.740Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-20T07:17:46.066Z[Etc/UTC]")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -48,6 +48,10 @@ public class Job {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
+
+  public static final String SERIALIZED_NAME_TICKET_URL = "ticket_url";
+  @SerializedName(SERIALIZED_NAME_TICKET_URL)
+  private String ticketUrl;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -173,6 +177,29 @@ public class Job {
   }
 
 
+  public Job ticketUrl(String ticketUrl) {
+    
+    this.ticketUrl = ticketUrl;
+    return this;
+  }
+
+   /**
+   * Get ticketUrl
+   * @return ticketUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTicketUrl() {
+    return ticketUrl;
+  }
+
+
+  public void setTicketUrl(String ticketUrl) {
+    this.ticketUrl = ticketUrl;
+  }
+
+
   public Job createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -233,13 +260,14 @@ public class Job {
         Objects.equals(this.briefing, job.briefing) &&
         Objects.equals(this.dueDate, job.dueDate) &&
         Objects.equals(this.state, job.state) &&
+        Objects.equals(this.ticketUrl, job.ticketUrl) &&
         Objects.equals(this.createdAt, job.createdAt) &&
         Objects.equals(this.updatedAt, job.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, createdAt, updatedAt);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, createdAt, updatedAt);
   }
 
 
@@ -252,6 +280,7 @@ public class Job {
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

@@ -81,6 +81,14 @@ public class JobTest {
     }
 
     /**
+     * Test the property 'ticketUrl'
+     */
+    @Test
+    public void ticketUrlTest() {
+        // TODO: test ticketUrl
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

@@ -72,4 +72,12 @@ public class JobUpdateParametersTest {
         // TODO: test dueDate
     }
 
+    /**
+     * Test the property 'ticketUrl'
+     */
+    @Test
+    public void ticketUrlTest() {
+        // TODO: test ticketUrl
+    }
+
 }
