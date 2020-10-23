@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ticketUrl** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**project** | [**ProjectShort**](ProjectShort.md) |  |  [optional]
 
 
 

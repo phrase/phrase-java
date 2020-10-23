@@ -23,6 +23,7 @@ import com.phrase.client.model.Job;
 import com.phrase.client.model.JobDetails1;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.ProjectShort;
 import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,7 +35,7 @@ import java.util.List;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-20T07:43:49.268Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-23T09:34:02.646Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -67,6 +68,10 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_PROJECT = "project";
+  @SerializedName(SERIALIZED_NAME_PROJECT)
+  private ProjectShort project;
 
   public static final String SERIALIZED_NAME_OWNER = "owner";
   @SerializedName(SERIALIZED_NAME_OWNER)
@@ -269,6 +274,29 @@ public class JobDetails {
   }
 
 
+  public JobDetails project(ProjectShort project) {
+    
+    this.project = project;
+    return this;
+  }
+
+   /**
+   * Get project
+   * @return project
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ProjectShort getProject() {
+    return project;
+  }
+
+
+  public void setProject(ProjectShort project) {
+    this.project = project;
+  }
+
+
   public JobDetails owner(UserPreview owner) {
     
     this.owner = owner;
@@ -394,6 +422,7 @@ public class JobDetails {
         Objects.equals(this.ticketUrl, jobDetails.ticketUrl) &&
         Objects.equals(this.createdAt, jobDetails.createdAt) &&
         Objects.equals(this.updatedAt, jobDetails.updatedAt) &&
+        Objects.equals(this.project, jobDetails.project) &&
         Objects.equals(this.owner, jobDetails.owner) &&
         Objects.equals(this.jobTagName, jobDetails.jobTagName) &&
         Objects.equals(this.locales, jobDetails.locales) &&
@@ -402,7 +431,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, createdAt, updatedAt, owner, jobTagName, locales, keys);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, createdAt, updatedAt, project, owner, jobTagName, locales, keys);
   }
 
 
@@ -418,6 +447,7 @@ public class JobDetails {
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    jobTagName: ").append(toIndentedString(jobTagName)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");

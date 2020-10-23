@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ticketUrl** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**project** | [**ProjectShort**](ProjectShort.md) |  |  [optional]
 **owner** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **jobTagName** | **String** |  |  [optional]
 **locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]

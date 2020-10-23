@@ -21,6 +21,7 @@ import com.phrase.client.model.Job;
 import com.phrase.client.model.JobDetails1;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.ProjectShort;
 import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -109,6 +110,14 @@ public class JobDetailsTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
+    }
+
+    /**
+     * Test the property 'project'
+     */
+    @Test
+    public void projectTest() {
+        // TODO: test project
     }
 
     /**
