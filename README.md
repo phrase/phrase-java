@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-10-23T09:34:02.646Z[Etc/UTC]
+  - Build date: 2020-10-26T14:32:47.583Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1718,6 +1718,7 @@ Class | Method | HTTP request | Description
 *JobsApi* | [**jobShow**](docs/JobsApi.md#jobShow) | **GET** /projects/{project_id}/jobs/{id} | Get a single job
 *JobsApi* | [**jobStart**](docs/JobsApi.md#jobStart) | **POST** /projects/{project_id}/jobs/{id}/start | Start a job
 *JobsApi* | [**jobUpdate**](docs/JobsApi.md#jobUpdate) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
+*JobsApi* | [**jobsByAccount**](docs/JobsApi.md#jobsByAccount) | **GET** /accounts/{account_id}/jobs | List account jobs
 *JobsApi* | [**jobsList**](docs/JobsApi.md#jobsList) | **GET** /projects/{project_id}/jobs | List jobs
 *KeysApi* | [**keyCreate**](docs/KeysApi.md#keyCreate) | **POST** /projects/{project_id}/keys | Create a key
 *KeysApi* | [**keyDelete**](docs/KeysApi.md#keyDelete) | **DELETE** /projects/{project_id}/keys/{id} | Delete a key

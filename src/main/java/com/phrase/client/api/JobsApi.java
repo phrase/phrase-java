@@ -1398,6 +1398,177 @@ public class JobsApi {
         return localVarCall;
     }
     /**
+     * Build call for jobsByAccount
+     * @param accountId Account ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param ownedBy filter by user owning job (optional)
+     * @param assignedTo filter by user assigned to job (optional)
+     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobsByAccountCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/jobs"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (perPage != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (ownedBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("owned_by", ownedBy));
+        }
+
+        if (assignedTo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("assigned_to", assignedTo));
+        }
+
+        if (state != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("state", state));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call jobsByAccountValidateBeforeCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling jobsByAccount(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = jobsByAccountCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List account jobs
+     * List all jobs for the given account.
+     * @param accountId Account ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param ownedBy filter by user owning job (optional)
+     * @param assignedTo filter by user assigned to job (optional)
+     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @return List&lt;Job&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public List<Job> jobsByAccount(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state) throws ApiException {
+        ApiResponse<List<Job>> localVarResp = jobsByAccountWithHttpInfo(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List account jobs
+     * List all jobs for the given account.
+     * @param accountId Account ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param ownedBy filter by user owning job (optional)
+     * @param assignedTo filter by user assigned to job (optional)
+     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @return ApiResponse&lt;List&lt;Job&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Job>> jobsByAccountWithHttpInfo(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state) throws ApiException {
+        okhttp3.Call localVarCall = jobsByAccountValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, null);
+        Type localVarReturnType = new TypeToken<List<Job>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List account jobs (asynchronously)
+     * List all jobs for the given account.
+     * @param accountId Account ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param ownedBy filter by user owning job (optional)
+     * @param assignedTo filter by user assigned to job (optional)
+     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobsByAccountAsync(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, final ApiCallback<List<Job>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = jobsByAccountValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, _callback);
+        Type localVarReturnType = new TypeToken<List<Job>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for jobsList
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

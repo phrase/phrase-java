@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**jobShow**](JobsApi.md#jobShow) | **GET** /projects/{project_id}/jobs/{id} | Get a single job
 [**jobStart**](JobsApi.md#jobStart) | **POST** /projects/{project_id}/jobs/{id}/start | Start a job
 [**jobUpdate**](JobsApi.md#jobUpdate) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
+[**jobsByAccount**](JobsApi.md#jobsByAccount) | **GET** /accounts/{account_id}/jobs | List account jobs
 [**jobsList**](JobsApi.md#jobsList) | **GET** /projects/{project_id}/jobs | List jobs
 
 
@@ -757,6 +758,95 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
+<a name="jobsByAccount"></a>
+# **jobsByAccount**
+> List&lt;Job&gt; jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state)
+
+List account jobs
+
+List all jobs for the given account.
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Token.setApiKeyPrefix("Token");
+
+    JobsApi apiInstance = new JobsApi(defaultClient);
+    String accountId = "accountId_example"; // String | Account ID
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    Integer page = 1; // Integer | Page number
+    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    String ownedBy = abcd1234cdef1234abcd1234cdef1234; // String | filter by user owning job
+    String assignedTo = abcd1234cdef1234abcd1234cdef1234; // String | filter by user assigned to job
+    String state = completed; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    try {
+      List<Job> result = apiInstance.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling JobsApi#jobsByAccount");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **String**| Account ID |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **page** | **Integer**| Page number | [optional]
+ **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **ownedBy** | **String**| filter by user owning job | [optional]
+ **assignedTo** | **String**| filter by user assigned to job | [optional]
+ **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
+
+### Return type
+
+[**List&lt;Job&gt;**](Job.md)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

@@ -210,6 +210,28 @@ public class JobsApiTest {
     }
     
     /**
+     * List account jobs
+     *
+     * List all jobs for the given account.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void jobsByAccountTest() throws ApiException {
+        String accountId = null;
+        String xPhraseAppOTP = null;
+        Integer page = null;
+        Integer perPage = null;
+        String ownedBy = null;
+        String assignedTo = null;
+        String state = null;
+        List<Job> response = api.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state);
+
+        // TODO: test validations
+    }
+    
+    /**
      * List jobs
      *
      * List all jobs for the given project.
