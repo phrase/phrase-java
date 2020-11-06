@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 <a name="screenshotsList"></a>
 # **screenshotsList**
-> List&lt;Screenshot&gt; screenshotsList(projectId, xPhraseAppOTP, page, perPage)
+> List&lt;Screenshot&gt; screenshotsList(projectId, xPhraseAppOTP, page, perPage, keyId)
 
 List screenshots
 
@@ -375,8 +375,9 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    String keyId = abcd1234cdef1234abcd1234cdef1234; // String | filter by key
     try {
-      List<Screenshot> result = apiInstance.screenshotsList(projectId, xPhraseAppOTP, page, perPage);
+      List<Screenshot> result = apiInstance.screenshotsList(projectId, xPhraseAppOTP, page, perPage, keyId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotsApi#screenshotsList");
@@ -397,6 +398,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **keyId** | **String**| filter by key | [optional]
 
 ### Return type
 

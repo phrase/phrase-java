@@ -120,7 +120,8 @@ public class ScreenshotsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Screenshot> response = api.screenshotsList(projectId, xPhraseAppOTP, page, perPage);
+        String keyId = null;
+        List<Screenshot> response = api.screenshotsList(projectId, xPhraseAppOTP, page, perPage, keyId);
 
         // TODO: test validations
     }
