@@ -26,11 +26,15 @@ import java.io.IOException;
 /**
  * WebhookCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-16T16:05:03.439Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-18T08:19:10.715Z[Etc/UTC]")
 public class WebhookCreateParameters {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callback_url";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
   private String callbackUrl;
+
+  public static final String SERIALIZED_NAME_SECRET = "secret";
+  @SerializedName(SERIALIZED_NAME_SECRET)
+  private String secret;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -65,6 +69,29 @@ public class WebhookCreateParameters {
 
   public void setCallbackUrl(String callbackUrl) {
     this.callbackUrl = callbackUrl;
+  }
+
+
+  public WebhookCreateParameters secret(String secret) {
+    
+    this.secret = secret;
+    return this;
+  }
+
+   /**
+   * Webhook secret used to calculate signature. If empty, the default project secret will be used.
+   * @return secret
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "secr3t", value = "Webhook secret used to calculate signature. If empty, the default project secret will be used.")
+
+  public String getSecret() {
+    return secret;
+  }
+
+
+  public void setSecret(String secret) {
+    this.secret = secret;
   }
 
 
@@ -147,6 +174,7 @@ public class WebhookCreateParameters {
     }
     WebhookCreateParameters webhookCreateParameters = (WebhookCreateParameters) o;
     return Objects.equals(this.callbackUrl, webhookCreateParameters.callbackUrl) &&
+        Objects.equals(this.secret, webhookCreateParameters.secret) &&
         Objects.equals(this.description, webhookCreateParameters.description) &&
         Objects.equals(this.events, webhookCreateParameters.events) &&
         Objects.equals(this.active, webhookCreateParameters.active);
@@ -154,7 +182,7 @@ public class WebhookCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, description, events, active);
+    return Objects.hash(callbackUrl, secret, description, events, active);
   }
 
 
@@ -163,6 +191,7 @@ public class WebhookCreateParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebhookCreateParameters {\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
+    sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");

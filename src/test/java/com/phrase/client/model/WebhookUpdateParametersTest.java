@@ -48,6 +48,14 @@ public class WebhookUpdateParametersTest {
     }
 
     /**
+     * Test the property 'secret'
+     */
+    @Test
+    public void secretTest() {
+        // TODO: test secret
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test

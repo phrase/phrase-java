@@ -8415,6 +8415,11 @@ paths:
                   description: Callback URL to send requests to
                   example: http://example.com/hooks/phraseapp-notifications
                   type: string
+                secret:
+                  description: Webhook secret used to calculate signature. If empty,
+                    the default project secret will be used.
+                  example: secr3t
+                  type: string
                 description:
                   description: Webhook description
                   example: My webhook for chat notifications
@@ -8703,6 +8708,11 @@ paths:
                 callback_url:
                   description: Callback URL to send requests to
                   example: http://example.com/hooks/phraseapp-notifications
+                  type: string
+                secret:
+                  description: Webhook secret used to calculate signature. If empty,
+                    the default project secret will be used.
+                  example: secr3t
                   type: string
                 description:
                   description: Webhook description
@@ -24108,6 +24118,11 @@ components:
           description: Callback URL to send requests to
           example: http://example.com/hooks/phraseapp-notifications
           type: string
+        secret:
+          description: Webhook secret used to calculate signature. If empty, the default
+            project secret will be used.
+          example: secr3t
+          type: string
         description:
           description: Webhook description
           example: My webhook for chat notifications
@@ -24126,6 +24141,11 @@ components:
         callback_url:
           description: Callback URL to send requests to
           example: http://example.com/hooks/phraseapp-notifications
+          type: string
+        secret:
+          description: Webhook secret used to calculate signature. If empty, the default
+            project secret will be used.
+          example: secr3t
           type: string
         description:
           description: Webhook description
