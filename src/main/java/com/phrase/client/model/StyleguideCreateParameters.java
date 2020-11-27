@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * StyleguideCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-25T12:19:39.482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-27T14:53:45.721Z[Etc/UTC]")
 public class StyleguideCreateParameters {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
