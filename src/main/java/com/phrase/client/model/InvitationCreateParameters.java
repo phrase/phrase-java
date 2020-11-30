@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * InvitationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-30T12:02:01.406Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-30T12:04:53.528Z[Etc/UTC]")
 public class InvitationCreateParameters {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
