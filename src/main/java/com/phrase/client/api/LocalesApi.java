@@ -351,6 +351,7 @@ public class LocalesApi {
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
      * @param tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead (optional)
      * @param includeEmptyTranslations Indicates whether keys without translations should be included in the output as well. (optional)
+     * @param excludeEmptyZeroForms Indicates whether zero forms should be included when empty in pluralized keys. (optional)
      * @param includeTranslatedKeys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys. (optional)
      * @param keepNotranslateTags Indicates whether [NOTRANSLATE] tags should be kept. (optional)
      * @param convertEmoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively. (optional)
@@ -372,7 +373,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -400,6 +401,10 @@ public class LocalesApi {
 
         if (includeEmptyTranslations != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_empty_translations", includeEmptyTranslations));
+        }
+
+        if (excludeEmptyZeroForms != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("exclude_empty_zero_forms", excludeEmptyZeroForms));
         }
 
         if (includeTranslatedKeys != null) {
@@ -464,7 +469,7 @@ public class LocalesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -477,7 +482,7 @@ public class LocalesApi {
         }
         
 
-        okhttp3.Call localVarCall = localeDownloadCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, _callback);
+        okhttp3.Call localVarCall = localeDownloadCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, _callback);
         return localVarCall;
 
     }
@@ -493,6 +498,7 @@ public class LocalesApi {
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
      * @param tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead (optional)
      * @param includeEmptyTranslations Indicates whether keys without translations should be included in the output as well. (optional)
+     * @param excludeEmptyZeroForms Indicates whether zero forms should be included when empty in pluralized keys. (optional)
      * @param includeTranslatedKeys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys. (optional)
      * @param keepNotranslateTags Indicates whether [NOTRANSLATE] tags should be kept. (optional)
      * @param convertEmoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively. (optional)
@@ -512,8 +518,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void localeDownload(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
-        localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
+    public void localeDownload(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
+        localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
     }
 
     /**
@@ -527,6 +533,7 @@ public class LocalesApi {
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
      * @param tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead (optional)
      * @param includeEmptyTranslations Indicates whether keys without translations should be included in the output as well. (optional)
+     * @param excludeEmptyZeroForms Indicates whether zero forms should be included when empty in pluralized keys. (optional)
      * @param includeTranslatedKeys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys. (optional)
      * @param keepNotranslateTags Indicates whether [NOTRANSLATE] tags should be kept. (optional)
      * @param convertEmoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively. (optional)
@@ -547,8 +554,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
-        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, null);
+    public ApiResponse<Void> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
+        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -563,6 +570,7 @@ public class LocalesApi {
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
      * @param tag Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead (optional)
      * @param includeEmptyTranslations Indicates whether keys without translations should be included in the output as well. (optional)
+     * @param excludeEmptyZeroForms Indicates whether zero forms should be included when empty in pluralized keys. (optional)
      * @param includeTranslatedKeys Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys. (optional)
      * @param keepNotranslateTags Indicates whether [NOTRANSLATE] tags should be kept. (optional)
      * @param convertEmoji This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively. (optional)
@@ -584,9 +592,9 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, _callback);
+        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

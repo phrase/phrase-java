@@ -89,6 +89,7 @@ public class LocalesApiTest {
         String tags = null;
         String tag = null;
         Boolean includeEmptyTranslations = null;
+        Boolean excludeEmptyZeroForms = null;
         Boolean includeTranslatedKeys = null;
         Boolean keepNotranslateTags = null;
         Boolean convertEmoji = null;
@@ -98,7 +99,7 @@ public class LocalesApiTest {
         Boolean includeUnverifiedTranslations = null;
         Boolean useLastReviewedVersion = null;
         String fallbackLocaleId = null;
-        api.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
+        api.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
 
         // TODO: test validations
     }

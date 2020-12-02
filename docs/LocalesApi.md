@@ -177,7 +177,7 @@ null (empty response body)
 
 <a name="localeDownload"></a>
 # **localeDownload**
-> localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId)
+> localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId)
 
 Download a locale
 
@@ -218,6 +218,7 @@ public class Example {
     String tags = feature1,feature2; // String | Limit results to keys tagged with a list of comma separated tag names.
     String tag = feature; // String | Limit download to tagged keys. This parameter is deprecated. Please use the \"tags\" parameter instead
     Boolean includeEmptyTranslations = true; // Boolean | Indicates whether keys without translations should be included in the output as well.
+    Boolean excludeEmptyZeroForms = true; // Boolean | Indicates whether zero forms should be included when empty in pluralized keys.
     Boolean includeTranslatedKeys = true; // Boolean | Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
     Boolean keepNotranslateTags = true; // Boolean | Indicates whether [NOTRANSLATE] tags should be kept.
     Boolean convertEmoji = true; // Boolean | This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively.
@@ -228,7 +229,7 @@ public class Example {
     Boolean useLastReviewedVersion = true; // Boolean | If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
     String fallbackLocaleId = "fallbackLocaleId_example"; // String | If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to <code>true</code>.
     try {
-      apiInstance.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
+      apiInstance.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#localeDownload");
       System.err.println("Status code: " + e.getCode());
@@ -252,6 +253,7 @@ Name | Type | Description  | Notes
  **tags** | **String**| Limit results to keys tagged with a list of comma separated tag names. | [optional]
  **tag** | **String**| Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead | [optional]
  **includeEmptyTranslations** | **Boolean**| Indicates whether keys without translations should be included in the output as well. | [optional]
+ **excludeEmptyZeroForms** | **Boolean**| Indicates whether zero forms should be included when empty in pluralized keys. | [optional]
  **includeTranslatedKeys** | **Boolean**| Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys. | [optional]
  **keepNotranslateTags** | **Boolean**| Indicates whether [NOTRANSLATE] tags should be kept. | [optional]
  **convertEmoji** | **Boolean**| This option is obsolete. Projects that were created on or after Nov 29th 2019 or that did not contain emoji by then will not require this flag any longer since emoji are now supported natively. | [optional]
