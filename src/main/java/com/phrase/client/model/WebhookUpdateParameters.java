@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * WebhookUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-02T15:55:47.815Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T08:40:19.961Z[Etc/UTC]")
 public class WebhookUpdateParameters {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callback_url";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
@@ -47,6 +47,10 @@ public class WebhookUpdateParameters {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
+
+  public static final String SERIALIZED_NAME_INCLUDE_BRANCHES = "include_branches";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_BRANCHES)
+  private Boolean includeBranches;
 
 
   public WebhookUpdateParameters callbackUrl(String callbackUrl) {
@@ -164,6 +168,29 @@ public class WebhookUpdateParameters {
   }
 
 
+  public WebhookUpdateParameters includeBranches(Boolean includeBranches) {
+    
+    this.includeBranches = includeBranches;
+    return this;
+  }
+
+   /**
+   * If enabled, webhook will also be triggered for events from branches of the project specified.
+   * @return includeBranches
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "If enabled, webhook will also be triggered for events from branches of the project specified.")
+
+  public Boolean getIncludeBranches() {
+    return includeBranches;
+  }
+
+
+  public void setIncludeBranches(Boolean includeBranches) {
+    this.includeBranches = includeBranches;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -177,12 +204,13 @@ public class WebhookUpdateParameters {
         Objects.equals(this.secret, webhookUpdateParameters.secret) &&
         Objects.equals(this.description, webhookUpdateParameters.description) &&
         Objects.equals(this.events, webhookUpdateParameters.events) &&
-        Objects.equals(this.active, webhookUpdateParameters.active);
+        Objects.equals(this.active, webhookUpdateParameters.active) &&
+        Objects.equals(this.includeBranches, webhookUpdateParameters.includeBranches);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, secret, description, events, active);
+    return Objects.hash(callbackUrl, secret, description, events, active, includeBranches);
   }
 
 
@@ -195,6 +223,7 @@ public class WebhookUpdateParameters {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    includeBranches: ").append(toIndentedString(includeBranches)).append("\n");
     sb.append("}");
     return sb.toString();
   }

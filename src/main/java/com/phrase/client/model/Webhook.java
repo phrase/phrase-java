@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Webhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-02T15:55:47.815Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T08:40:19.961Z[Etc/UTC]")
 public class Webhook {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -50,6 +50,10 @@ public class Webhook {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
+
+  public static final String SERIALIZED_NAME_INCLUDE_BRANCHES = "include_branches";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_BRANCHES)
+  private Boolean includeBranches;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -183,6 +187,29 @@ public class Webhook {
   }
 
 
+  public Webhook includeBranches(Boolean includeBranches) {
+    
+    this.includeBranches = includeBranches;
+    return this;
+  }
+
+   /**
+   * Get includeBranches
+   * @return includeBranches
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIncludeBranches() {
+    return includeBranches;
+  }
+
+
+  public void setIncludeBranches(Boolean includeBranches) {
+    this.includeBranches = includeBranches;
+  }
+
+
   public Webhook createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -243,13 +270,14 @@ public class Webhook {
         Objects.equals(this.description, webhook.description) &&
         Objects.equals(this.events, webhook.events) &&
         Objects.equals(this.active, webhook.active) &&
+        Objects.equals(this.includeBranches, webhook.includeBranches) &&
         Objects.equals(this.createdAt, webhook.createdAt) &&
         Objects.equals(this.updatedAt, webhook.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, callbackUrl, description, events, active, createdAt, updatedAt);
+    return Objects.hash(id, callbackUrl, description, events, active, includeBranches, createdAt, updatedAt);
   }
 
 
@@ -262,6 +290,7 @@ public class Webhook {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    includeBranches: ").append(toIndentedString(includeBranches)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

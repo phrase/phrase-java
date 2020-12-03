@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **String** | Webhook description |  [optional]
 **events** | **String** | List of event names to trigger the webhook (separated by comma) |  [optional]
 **active** | **Boolean** | Whether webhook is active or inactive |  [optional]
+**includeBranches** | **Boolean** | If enabled, webhook will also be triggered for events from branches of the project specified. |  [optional]
 
 
 

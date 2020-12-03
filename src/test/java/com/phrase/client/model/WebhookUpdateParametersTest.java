@@ -79,4 +79,12 @@ public class WebhookUpdateParametersTest {
         // TODO: test active
     }
 
+    /**
+     * Test the property 'includeBranches'
+     */
+    @Test
+    public void includeBranchesTest() {
+        // TODO: test includeBranches
+    }
+
 }

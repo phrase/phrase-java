@@ -83,6 +83,14 @@ public class WebhookTest {
     }
 
     /**
+     * Test the property 'includeBranches'
+     */
+    @Test
+    public void includeBranchesTest() {
+        // TODO: test includeBranches
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
