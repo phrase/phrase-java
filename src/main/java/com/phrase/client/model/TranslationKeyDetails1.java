@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TranslationKeyDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T08:40:19.961Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T13:55:11.731Z[Etc/UTC]")
 public class TranslationKeyDetails1 {
   public static final String SERIALIZED_NAME_NAME_PLURAL = "name_plural";
   @SerializedName(SERIALIZED_NAME_NAME_PLURAL)

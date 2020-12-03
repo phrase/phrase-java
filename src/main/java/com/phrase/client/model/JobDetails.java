@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.BranchName;
 import com.phrase.client.model.Job;
 import com.phrase.client.model.JobDetails1;
 import com.phrase.client.model.KeyPreview;
@@ -35,7 +36,7 @@ import java.util.List;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T08:40:19.961Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T13:55:11.731Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -61,6 +62,14 @@ public class JobDetails {
   @SerializedName(SERIALIZED_NAME_TICKET_URL)
   private String ticketUrl;
 
+  public static final String SERIALIZED_NAME_PROJECT = "project";
+  @SerializedName(SERIALIZED_NAME_PROJECT)
+  private ProjectShort project;
+
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private BranchName branch;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
@@ -68,10 +77,6 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
-
-  public static final String SERIALIZED_NAME_PROJECT = "project";
-  @SerializedName(SERIALIZED_NAME_PROJECT)
-  private ProjectShort project;
 
   public static final String SERIALIZED_NAME_OWNER = "owner";
   @SerializedName(SERIALIZED_NAME_OWNER)
@@ -228,6 +233,52 @@ public class JobDetails {
   }
 
 
+  public JobDetails project(ProjectShort project) {
+    
+    this.project = project;
+    return this;
+  }
+
+   /**
+   * Get project
+   * @return project
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ProjectShort getProject() {
+    return project;
+  }
+
+
+  public void setProject(ProjectShort project) {
+    this.project = project;
+  }
+
+
+  public JobDetails branch(BranchName branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * Get branch
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BranchName getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(BranchName branch) {
+    this.branch = branch;
+  }
+
+
   public JobDetails createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -271,29 +322,6 @@ public class JobDetails {
 
   public void setUpdatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
-  }
-
-
-  public JobDetails project(ProjectShort project) {
-    
-    this.project = project;
-    return this;
-  }
-
-   /**
-   * Get project
-   * @return project
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ProjectShort getProject() {
-    return project;
-  }
-
-
-  public void setProject(ProjectShort project) {
-    this.project = project;
   }
 
 
@@ -420,9 +448,10 @@ public class JobDetails {
         Objects.equals(this.dueDate, jobDetails.dueDate) &&
         Objects.equals(this.state, jobDetails.state) &&
         Objects.equals(this.ticketUrl, jobDetails.ticketUrl) &&
+        Objects.equals(this.project, jobDetails.project) &&
+        Objects.equals(this.branch, jobDetails.branch) &&
         Objects.equals(this.createdAt, jobDetails.createdAt) &&
         Objects.equals(this.updatedAt, jobDetails.updatedAt) &&
-        Objects.equals(this.project, jobDetails.project) &&
         Objects.equals(this.owner, jobDetails.owner) &&
         Objects.equals(this.jobTagName, jobDetails.jobTagName) &&
         Objects.equals(this.locales, jobDetails.locales) &&
@@ -431,7 +460,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, createdAt, updatedAt, project, owner, jobTagName, locales, keys);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, locales, keys);
   }
 
 
@@ -445,9 +474,10 @@ public class JobDetails {
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
+    sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    jobTagName: ").append(toIndentedString(jobTagName)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ScreenshotCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T08:40:19.961Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T13:55:11.731Z[Etc/UTC]")
 public class ScreenshotCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.BranchName;
 import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,7 +29,7 @@ import java.time.OffsetDateTime;
 /**
  * Job
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T08:40:19.961Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T13:55:11.731Z[Etc/UTC]")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -54,6 +55,14 @@ public class Job {
   @SerializedName(SERIALIZED_NAME_TICKET_URL)
   private String ticketUrl;
 
+  public static final String SERIALIZED_NAME_PROJECT = "project";
+  @SerializedName(SERIALIZED_NAME_PROJECT)
+  private ProjectShort project;
+
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private BranchName branch;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
@@ -61,10 +70,6 @@ public class Job {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
-
-  public static final String SERIALIZED_NAME_PROJECT = "project";
-  @SerializedName(SERIALIZED_NAME_PROJECT)
-  private ProjectShort project;
 
 
   public Job id(String id) {
@@ -205,6 +210,52 @@ public class Job {
   }
 
 
+  public Job project(ProjectShort project) {
+    
+    this.project = project;
+    return this;
+  }
+
+   /**
+   * Get project
+   * @return project
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ProjectShort getProject() {
+    return project;
+  }
+
+
+  public void setProject(ProjectShort project) {
+    this.project = project;
+  }
+
+
+  public Job branch(BranchName branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * Get branch
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BranchName getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(BranchName branch) {
+    this.branch = branch;
+  }
+
+
   public Job createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -251,29 +302,6 @@ public class Job {
   }
 
 
-  public Job project(ProjectShort project) {
-    
-    this.project = project;
-    return this;
-  }
-
-   /**
-   * Get project
-   * @return project
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ProjectShort getProject() {
-    return project;
-  }
-
-
-  public void setProject(ProjectShort project) {
-    this.project = project;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -289,14 +317,15 @@ public class Job {
         Objects.equals(this.dueDate, job.dueDate) &&
         Objects.equals(this.state, job.state) &&
         Objects.equals(this.ticketUrl, job.ticketUrl) &&
+        Objects.equals(this.project, job.project) &&
+        Objects.equals(this.branch, job.branch) &&
         Objects.equals(this.createdAt, job.createdAt) &&
-        Objects.equals(this.updatedAt, job.updatedAt) &&
-        Objects.equals(this.project, job.project);
+        Objects.equals(this.updatedAt, job.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, createdAt, updatedAt, project);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt);
   }
 
 
@@ -310,9 +339,10 @@ public class Job {
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
+    sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("}");
     return sb.toString();
   }

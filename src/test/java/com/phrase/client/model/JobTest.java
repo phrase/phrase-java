@@ -17,6 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.BranchName;
 import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -90,6 +91,22 @@ public class JobTest {
     }
 
     /**
+     * Test the property 'project'
+     */
+    @Test
+    public void projectTest() {
+        // TODO: test project
+    }
+
+    /**
+     * Test the property 'branch'
+     */
+    @Test
+    public void branchTest() {
+        // TODO: test branch
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
@@ -103,14 +120,6 @@ public class JobTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
-    }
-
-    /**
-     * Test the property 'project'
-     */
-    @Test
-    public void projectTest() {
-        // TODO: test project
     }
 
 }

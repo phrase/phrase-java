@@ -19,51 +19,40 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.TagWithStats1Statistics1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * TagWithStats1
+ * BranchName
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T13:55:11.731Z[Etc/UTC]")
-public class TagWithStats1 {
-  public static final String SERIALIZED_NAME_STATISTICS = "statistics";
-  @SerializedName(SERIALIZED_NAME_STATISTICS)
-  private List<TagWithStats1Statistics1> statistics = null;
+public class BranchName {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
 
-  public TagWithStats1 statistics(List<TagWithStats1Statistics1> statistics) {
+  public BranchName name(String name) {
     
-    this.statistics = statistics;
-    return this;
-  }
-
-  public TagWithStats1 addStatisticsItem(TagWithStats1Statistics1 statisticsItem) {
-    if (this.statistics == null) {
-      this.statistics = new ArrayList<>();
-    }
-    this.statistics.add(statisticsItem);
+    this.name = name;
     return this;
   }
 
    /**
-   * Get statistics
-   * @return statistics
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<TagWithStats1Statistics1> getStatistics() {
-    return statistics;
+  public String getName() {
+    return name;
   }
 
 
-  public void setStatistics(List<TagWithStats1Statistics1> statistics) {
-    this.statistics = statistics;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -75,21 +64,21 @@ public class TagWithStats1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TagWithStats1 tagWithStats1 = (TagWithStats1) o;
-    return Objects.equals(this.statistics, tagWithStats1.statistics);
+    BranchName branchName = (BranchName) o;
+    return Objects.equals(this.name, branchName.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(statistics);
+    return Objects.hash(name);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TagWithStats1 {\n");
-    sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");
+    sb.append("class BranchName {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
