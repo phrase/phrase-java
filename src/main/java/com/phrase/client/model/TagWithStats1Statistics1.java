@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * TagWithStats1Statistics1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-03T13:57:34.075Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-04T08:04:53.679Z[Etc/UTC]")
 public class TagWithStats1Statistics1 {
   public static final String SERIALIZED_NAME_LOCALE = "locale";
   @SerializedName(SERIALIZED_NAME_LOCALE)
