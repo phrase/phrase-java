@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **job** | [**JobPreview**](JobPreview.md) |  |  [optional]
 **locale** | [**LocalePreview**](LocalePreview.md) |  |  [optional]
 **users** | [**List&lt;UserPreview&gt;**](UserPreview.md) |  |  [optional]
+**completed** | **Boolean** |  |  [optional]
 
 
 

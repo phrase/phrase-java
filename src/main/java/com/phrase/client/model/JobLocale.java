@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * JobLocale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-04T08:28:58.492Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-04T09:05:14.708Z[Etc/UTC]")
 public class JobLocale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -48,6 +48,10 @@ public class JobLocale {
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
   private List<UserPreview> users = null;
+
+  public static final String SERIALIZED_NAME_COMPLETED = "completed";
+  @SerializedName(SERIALIZED_NAME_COMPLETED)
+  private Boolean completed;
 
 
   public JobLocale id(String id) {
@@ -150,6 +154,29 @@ public class JobLocale {
   }
 
 
+  public JobLocale completed(Boolean completed) {
+    
+    this.completed = completed;
+    return this;
+  }
+
+   /**
+   * Get completed
+   * @return completed
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getCompleted() {
+    return completed;
+  }
+
+
+  public void setCompleted(Boolean completed) {
+    this.completed = completed;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -162,12 +189,13 @@ public class JobLocale {
     return Objects.equals(this.id, jobLocale.id) &&
         Objects.equals(this.job, jobLocale.job) &&
         Objects.equals(this.locale, jobLocale.locale) &&
-        Objects.equals(this.users, jobLocale.users);
+        Objects.equals(this.users, jobLocale.users) &&
+        Objects.equals(this.completed, jobLocale.completed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, job, locale, users);
+    return Objects.hash(id, job, locale, users, completed);
   }
 
 
@@ -179,6 +207,7 @@ public class JobLocale {
     sb.append("    job: ").append(toIndentedString(job)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("    completed: ").append(toIndentedString(completed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

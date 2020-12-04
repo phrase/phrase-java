@@ -76,4 +76,12 @@ public class JobLocaleTest {
         // TODO: test users
     }
 
+    /**
+     * Test the property 'completed'
+     */
+    @Test
+    public void completedTest() {
+        // TODO: test completed
+    }
+
 }
