@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * LocaleDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T13:21:53.289Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T15:20:12.417Z[Etc/UTC]")
 public class LocaleDetails1 {
   public static final String SERIALIZED_NAME_STATISTICS = "statistics";
   @SerializedName(SERIALIZED_NAME_STATISTICS)

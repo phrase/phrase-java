@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * UploadSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T13:21:53.289Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T15:20:12.417Z[Etc/UTC]")
 public class UploadSummary {
   public static final String SERIALIZED_NAME_LOCALES_CREATED = "locales_created";
   @SerializedName(SERIALIZED_NAME_LOCALES_CREATED)
