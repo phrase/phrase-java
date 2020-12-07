@@ -75,6 +75,14 @@ public class MemberTest {
     }
 
     /**
+     * Test the property 'defaultLocaleCodes'
+     */
+    @Test
+    public void defaultLocaleCodesTest() {
+        // TODO: test defaultLocaleCodes
+    }
+
+    /**
      * Test the property 'projects'
      */
     @Test

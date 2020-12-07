@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-04T09:06:52.333Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T08:08:23.602Z[Etc/UTC]")
 public class Member {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -46,6 +46,10 @@ public class Member {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   private String role;
+
+  public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
+  private List<String> defaultLocaleCodes = null;
 
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
@@ -144,6 +148,37 @@ public class Member {
   }
 
 
+  public Member defaultLocaleCodes(List<String> defaultLocaleCodes) {
+    
+    this.defaultLocaleCodes = defaultLocaleCodes;
+    return this;
+  }
+
+  public Member addDefaultLocaleCodesItem(String defaultLocaleCodesItem) {
+    if (this.defaultLocaleCodes == null) {
+      this.defaultLocaleCodes = new ArrayList<>();
+    }
+    this.defaultLocaleCodes.add(defaultLocaleCodesItem);
+    return this;
+  }
+
+   /**
+   * Get defaultLocaleCodes
+   * @return defaultLocaleCodes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getDefaultLocaleCodes() {
+    return defaultLocaleCodes;
+  }
+
+
+  public void setDefaultLocaleCodes(List<String> defaultLocaleCodes) {
+    this.defaultLocaleCodes = defaultLocaleCodes;
+  }
+
+
   public Member projects(List<ProjectLocales> projects) {
     
     this.projects = projects;
@@ -188,12 +223,13 @@ public class Member {
         Objects.equals(this.email, member.email) &&
         Objects.equals(this.username, member.username) &&
         Objects.equals(this.role, member.role) &&
+        Objects.equals(this.defaultLocaleCodes, member.defaultLocaleCodes) &&
         Objects.equals(this.projects, member.projects);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, username, role, projects);
+    return Objects.hash(id, email, username, role, defaultLocaleCodes, projects);
   }
 
 
@@ -205,6 +241,7 @@ public class Member {
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
     sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
     sb.append("}");
     return sb.toString();

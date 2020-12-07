@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +30,7 @@ import java.util.Map;
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-04T09:06:52.333Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-07T08:08:23.602Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
@@ -42,6 +43,10 @@ public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
   private String localeIds;
+
+  public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
+  private List<String> defaultLocaleCodes = null;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
@@ -117,6 +122,37 @@ public class MemberUpdateParameters {
   }
 
 
+  public MemberUpdateParameters defaultLocaleCodes(List<String> defaultLocaleCodes) {
+    
+    this.defaultLocaleCodes = defaultLocaleCodes;
+    return this;
+  }
+
+  public MemberUpdateParameters addDefaultLocaleCodesItem(String defaultLocaleCodesItem) {
+    if (this.defaultLocaleCodes == null) {
+      this.defaultLocaleCodes = new ArrayList<>();
+    }
+    this.defaultLocaleCodes.add(defaultLocaleCodesItem);
+    return this;
+  }
+
+   /**
+   * List of default locales for the user.
+   * @return defaultLocaleCodes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[\"en\",\"fi\"]", value = "List of default locales for the user.")
+
+  public List<String> getDefaultLocaleCodes() {
+    return defaultLocaleCodes;
+  }
+
+
+  public void setDefaultLocaleCodes(List<String> defaultLocaleCodes) {
+    this.defaultLocaleCodes = defaultLocaleCodes;
+  }
+
+
   public MemberUpdateParameters permissions(Map<String, String> permissions) {
     
     this.permissions = permissions;
@@ -160,12 +196,13 @@ public class MemberUpdateParameters {
     return Objects.equals(this.role, memberUpdateParameters.role) &&
         Objects.equals(this.projectIds, memberUpdateParameters.projectIds) &&
         Objects.equals(this.localeIds, memberUpdateParameters.localeIds) &&
+        Objects.equals(this.defaultLocaleCodes, memberUpdateParameters.defaultLocaleCodes) &&
         Objects.equals(this.permissions, memberUpdateParameters.permissions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(role, projectIds, localeIds, permissions);
+    return Objects.hash(role, projectIds, localeIds, defaultLocaleCodes, permissions);
   }
 
 
@@ -176,6 +213,7 @@ public class MemberUpdateParameters {
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
+    sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("}");
     return sb.toString();
