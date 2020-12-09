@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +65,14 @@ public class InvitationUpdateParametersTest {
     @Test
     public void localeIdsTest() {
         // TODO: test localeIds
+    }
+
+    /**
+     * Test the property 'defaultLocaleCodes'
+     */
+    @Test
+    public void defaultLocaleCodesTest() {
+        // TODO: test defaultLocaleCodes
     }
 
     /**

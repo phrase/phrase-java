@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **state** | **String** |  |  [optional]
 **projects** | [**List&lt;ProjectShort&gt;**](ProjectShort.md) |  |  [optional]
 **locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
+**defaultLocaleCodes** | **List&lt;String&gt;** |  |  [optional]
 **permissions** | [**Object**](.md) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

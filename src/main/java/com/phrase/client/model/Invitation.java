@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Invitation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T13:39:36.693Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:18:49.035Z[Etc/UTC]")
 public class Invitation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -56,6 +56,10 @@ public class Invitation {
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
   private List<LocalePreview> locales = null;
+
+  public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
+  private List<String> defaultLocaleCodes = null;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
@@ -228,6 +232,37 @@ public class Invitation {
   }
 
 
+  public Invitation defaultLocaleCodes(List<String> defaultLocaleCodes) {
+    
+    this.defaultLocaleCodes = defaultLocaleCodes;
+    return this;
+  }
+
+  public Invitation addDefaultLocaleCodesItem(String defaultLocaleCodesItem) {
+    if (this.defaultLocaleCodes == null) {
+      this.defaultLocaleCodes = new ArrayList<>();
+    }
+    this.defaultLocaleCodes.add(defaultLocaleCodesItem);
+    return this;
+  }
+
+   /**
+   * Get defaultLocaleCodes
+   * @return defaultLocaleCodes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getDefaultLocaleCodes() {
+    return defaultLocaleCodes;
+  }
+
+
+  public void setDefaultLocaleCodes(List<String> defaultLocaleCodes) {
+    this.defaultLocaleCodes = defaultLocaleCodes;
+  }
+
+
   public Invitation permissions(Object permissions) {
     
     this.permissions = permissions;
@@ -335,6 +370,7 @@ public class Invitation {
         Objects.equals(this.state, invitation.state) &&
         Objects.equals(this.projects, invitation.projects) &&
         Objects.equals(this.locales, invitation.locales) &&
+        Objects.equals(this.defaultLocaleCodes, invitation.defaultLocaleCodes) &&
         Objects.equals(this.permissions, invitation.permissions) &&
         Objects.equals(this.createdAt, invitation.createdAt) &&
         Objects.equals(this.updatedAt, invitation.updatedAt) &&
@@ -343,7 +379,7 @@ public class Invitation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, role, state, projects, locales, permissions, createdAt, updatedAt, acceptedAt);
+    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, createdAt, updatedAt, acceptedAt);
   }
 
 
@@ -357,6 +393,7 @@ public class Invitation {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
+    sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
