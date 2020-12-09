@@ -19,46 +19,38 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.oas_any_type_not_mapped;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.time.OffsetDateTime;
 
 /**
- * User
+ * MemberSpaces
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:21:36.209Z[Etc/UTC]")
-public class User {
+public class MemberSpaces {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
-
-  public static final String SERIALIZED_NAME_USERNAME = "username";
-  @SerializedName(SERIALIZED_NAME_USERNAME)
-  private String username;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
-  private String email;
-
-  public static final String SERIALIZED_NAME_POSITION = "position";
-  @SerializedName(SERIALIZED_NAME_POSITION)
-  private String position;
-
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private OffsetDateTime createdAt;
+  private oas_any_type_not_mapped createdAt = null;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  private OffsetDateTime updatedAt;
+  private oas_any_type_not_mapped updatedAt = null;
+
+  public static final String SERIALIZED_NAME_PROJECTS_COUNT = "projects_count";
+  @SerializedName(SERIALIZED_NAME_PROJECTS_COUNT)
+  private Integer projectsCount;
 
 
-  public User id(String id) {
+  public MemberSpaces id(String id) {
     
     this.id = id;
     return this;
@@ -81,30 +73,7 @@ public class User {
   }
 
 
-  public User username(String username) {
-    
-    this.username = username;
-    return this;
-  }
-
-   /**
-   * Get username
-   * @return username
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getUsername() {
-    return username;
-  }
-
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-
-  public User name(String name) {
+  public MemberSpaces name(String name) {
     
     this.name = name;
     return this;
@@ -127,53 +96,7 @@ public class User {
   }
 
 
-  public User email(String email) {
-    
-    this.email = email;
-    return this;
-  }
-
-   /**
-   * Get email
-   * @return email
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getEmail() {
-    return email;
-  }
-
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-
-  public User position(String position) {
-    
-    this.position = position;
-    return this;
-  }
-
-   /**
-   * Get position
-   * @return position
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getPosition() {
-    return position;
-  }
-
-
-  public void setPosition(String position) {
-    this.position = position;
-  }
-
-
-  public User createdAt(OffsetDateTime createdAt) {
+  public MemberSpaces createdAt(oas_any_type_not_mapped createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -186,17 +109,17 @@ public class User {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public OffsetDateTime getCreatedAt() {
+  public oas_any_type_not_mapped getCreatedAt() {
     return createdAt;
   }
 
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(oas_any_type_not_mapped createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public User updatedAt(OffsetDateTime updatedAt) {
+  public MemberSpaces updatedAt(oas_any_type_not_mapped updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -209,13 +132,36 @@ public class User {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public OffsetDateTime getUpdatedAt() {
+  public oas_any_type_not_mapped getUpdatedAt() {
     return updatedAt;
   }
 
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(oas_any_type_not_mapped updatedAt) {
     this.updatedAt = updatedAt;
+  }
+
+
+  public MemberSpaces projectsCount(Integer projectsCount) {
+    
+    this.projectsCount = projectsCount;
+    return this;
+  }
+
+   /**
+   * Get projectsCount
+   * @return projectsCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getProjectsCount() {
+    return projectsCount;
+  }
+
+
+  public void setProjectsCount(Integer projectsCount) {
+    this.projectsCount = projectsCount;
   }
 
 
@@ -227,33 +173,29 @@ public class User {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    User user = (User) o;
-    return Objects.equals(this.id, user.id) &&
-        Objects.equals(this.username, user.username) &&
-        Objects.equals(this.name, user.name) &&
-        Objects.equals(this.email, user.email) &&
-        Objects.equals(this.position, user.position) &&
-        Objects.equals(this.createdAt, user.createdAt) &&
-        Objects.equals(this.updatedAt, user.updatedAt);
+    MemberSpaces memberSpaces = (MemberSpaces) o;
+    return Objects.equals(this.id, memberSpaces.id) &&
+        Objects.equals(this.name, memberSpaces.name) &&
+        Objects.equals(this.createdAt, memberSpaces.createdAt) &&
+        Objects.equals(this.updatedAt, memberSpaces.updatedAt) &&
+        Objects.equals(this.projectsCount, memberSpaces.projectsCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, name, email, position, createdAt, updatedAt);
+    return Objects.hash(id, name, createdAt, updatedAt, projectsCount);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class User {\n");
+    sb.append("class MemberSpaces {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    projectsCount: ").append(toIndentedString(projectsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

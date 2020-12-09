@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:18:49.035Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:21:36.209Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
@@ -47,6 +47,10 @@ public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
   private List<String> defaultLocaleCodes = null;
+
+  public static final String SERIALIZED_NAME_SPACE_IDS = "space_ids";
+  @SerializedName(SERIALIZED_NAME_SPACE_IDS)
+  private List<String> spaceIds = null;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
@@ -153,6 +157,37 @@ public class MemberUpdateParameters {
   }
 
 
+  public MemberUpdateParameters spaceIds(List<String> spaceIds) {
+    
+    this.spaceIds = spaceIds;
+    return this;
+  }
+
+  public MemberUpdateParameters addSpaceIdsItem(String spaceIdsItem) {
+    if (this.spaceIds == null) {
+      this.spaceIds = new ArrayList<>();
+    }
+    this.spaceIds.add(spaceIdsItem);
+    return this;
+  }
+
+   /**
+   * List of spaces the user is assigned to.
+   * @return spaceIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[\"abcd1234abcd1234abcd1234\",\"abcd1234abcd1234abcd1235\"]", value = "List of spaces the user is assigned to.")
+
+  public List<String> getSpaceIds() {
+    return spaceIds;
+  }
+
+
+  public void setSpaceIds(List<String> spaceIds) {
+    this.spaceIds = spaceIds;
+  }
+
+
   public MemberUpdateParameters permissions(Map<String, String> permissions) {
     
     this.permissions = permissions;
@@ -197,12 +232,13 @@ public class MemberUpdateParameters {
         Objects.equals(this.projectIds, memberUpdateParameters.projectIds) &&
         Objects.equals(this.localeIds, memberUpdateParameters.localeIds) &&
         Objects.equals(this.defaultLocaleCodes, memberUpdateParameters.defaultLocaleCodes) &&
+        Objects.equals(this.spaceIds, memberUpdateParameters.spaceIds) &&
         Objects.equals(this.permissions, memberUpdateParameters.permissions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(role, projectIds, localeIds, defaultLocaleCodes, permissions);
+    return Objects.hash(role, projectIds, localeIds, defaultLocaleCodes, spaceIds, permissions);
   }
 
 
@@ -214,6 +250,7 @@ public class MemberUpdateParameters {
     sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
+    sb.append("    spaceIds: ").append(toIndentedString(spaceIds)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("}");
     return sb.toString();

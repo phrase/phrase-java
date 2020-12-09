@@ -17,6 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectLocales;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -75,6 +76,22 @@ public class MemberTest {
     }
 
     /**
+     * Test the property 'projects'
+     */
+    @Test
+    public void projectsTest() {
+        // TODO: test projects
+    }
+
+    /**
+     * Test the property 'permissions'
+     */
+    @Test
+    public void permissionsTest() {
+        // TODO: test permissions
+    }
+
+    /**
      * Test the property 'defaultLocaleCodes'
      */
     @Test
@@ -83,11 +100,11 @@ public class MemberTest {
     }
 
     /**
-     * Test the property 'projects'
+     * Test the property 'spaces'
      */
     @Test
-    public void projectsTest() {
-        // TODO: test projects
+    public void spacesTest() {
+        // TODO: test spaces
     }
 
 }

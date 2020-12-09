@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectLocales;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,7 +30,7 @@ import java.util.List;
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:18:49.035Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:21:36.209Z[Etc/UTC]")
 public class Member {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -47,13 +48,21 @@ public class Member {
   @SerializedName(SERIALIZED_NAME_ROLE)
   private String role;
 
+  public static final String SERIALIZED_NAME_PROJECTS = "projects";
+  @SerializedName(SERIALIZED_NAME_PROJECTS)
+  private List<ProjectLocales> projects = null;
+
+  public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
+  @SerializedName(SERIALIZED_NAME_PERMISSIONS)
+  private Object permissions;
+
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
   private List<String> defaultLocaleCodes = null;
 
-  public static final String SERIALIZED_NAME_PROJECTS = "projects";
-  @SerializedName(SERIALIZED_NAME_PROJECTS)
-  private List<ProjectLocales> projects = null;
+  public static final String SERIALIZED_NAME_SPACES = "spaces";
+  @SerializedName(SERIALIZED_NAME_SPACES)
+  private List<MemberSpaces> spaces = null;
 
 
   public Member id(String id) {
@@ -148,37 +157,6 @@ public class Member {
   }
 
 
-  public Member defaultLocaleCodes(List<String> defaultLocaleCodes) {
-    
-    this.defaultLocaleCodes = defaultLocaleCodes;
-    return this;
-  }
-
-  public Member addDefaultLocaleCodesItem(String defaultLocaleCodesItem) {
-    if (this.defaultLocaleCodes == null) {
-      this.defaultLocaleCodes = new ArrayList<>();
-    }
-    this.defaultLocaleCodes.add(defaultLocaleCodesItem);
-    return this;
-  }
-
-   /**
-   * Get defaultLocaleCodes
-   * @return defaultLocaleCodes
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<String> getDefaultLocaleCodes() {
-    return defaultLocaleCodes;
-  }
-
-
-  public void setDefaultLocaleCodes(List<String> defaultLocaleCodes) {
-    this.defaultLocaleCodes = defaultLocaleCodes;
-  }
-
-
   public Member projects(List<ProjectLocales> projects) {
     
     this.projects = projects;
@@ -210,6 +188,91 @@ public class Member {
   }
 
 
+  public Member permissions(Object permissions) {
+    
+    this.permissions = permissions;
+    return this;
+  }
+
+   /**
+   * Get permissions
+   * @return permissions
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getPermissions() {
+    return permissions;
+  }
+
+
+  public void setPermissions(Object permissions) {
+    this.permissions = permissions;
+  }
+
+
+  public Member defaultLocaleCodes(List<String> defaultLocaleCodes) {
+    
+    this.defaultLocaleCodes = defaultLocaleCodes;
+    return this;
+  }
+
+  public Member addDefaultLocaleCodesItem(String defaultLocaleCodesItem) {
+    if (this.defaultLocaleCodes == null) {
+      this.defaultLocaleCodes = new ArrayList<>();
+    }
+    this.defaultLocaleCodes.add(defaultLocaleCodesItem);
+    return this;
+  }
+
+   /**
+   * Get defaultLocaleCodes
+   * @return defaultLocaleCodes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getDefaultLocaleCodes() {
+    return defaultLocaleCodes;
+  }
+
+
+  public void setDefaultLocaleCodes(List<String> defaultLocaleCodes) {
+    this.defaultLocaleCodes = defaultLocaleCodes;
+  }
+
+
+  public Member spaces(List<MemberSpaces> spaces) {
+    
+    this.spaces = spaces;
+    return this;
+  }
+
+  public Member addSpacesItem(MemberSpaces spacesItem) {
+    if (this.spaces == null) {
+      this.spaces = new ArrayList<>();
+    }
+    this.spaces.add(spacesItem);
+    return this;
+  }
+
+   /**
+   * Get spaces
+   * @return spaces
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<MemberSpaces> getSpaces() {
+    return spaces;
+  }
+
+
+  public void setSpaces(List<MemberSpaces> spaces) {
+    this.spaces = spaces;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -223,13 +286,15 @@ public class Member {
         Objects.equals(this.email, member.email) &&
         Objects.equals(this.username, member.username) &&
         Objects.equals(this.role, member.role) &&
+        Objects.equals(this.projects, member.projects) &&
+        Objects.equals(this.permissions, member.permissions) &&
         Objects.equals(this.defaultLocaleCodes, member.defaultLocaleCodes) &&
-        Objects.equals(this.projects, member.projects);
+        Objects.equals(this.spaces, member.spaces);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, username, role, defaultLocaleCodes, projects);
+    return Objects.hash(id, email, username, role, projects, permissions, defaultLocaleCodes, spaces);
   }
 
 
@@ -241,8 +306,10 @@ public class Member {
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
-    sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
     sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
+    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
+    sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
     sb.append("}");
     return sb.toString();
   }

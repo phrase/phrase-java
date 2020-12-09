@@ -76,6 +76,14 @@ public class MemberUpdateParametersTest {
     }
 
     /**
+     * Test the property 'spaceIds'
+     */
+    @Test
+    public void spaceIdsTest() {
+        // TODO: test spaceIds
+    }
+
+    /**
      * Test the property 'permissions'
      */
     @Test
