@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -130,6 +131,14 @@ public class InvitationTest {
     @Test
     public void acceptedAtTest() {
         // TODO: test acceptedAt
+    }
+
+    /**
+     * Test the property 'spaces'
+     */
+    @Test
+    public void spacesTest() {
+        // TODO: test spaces
     }
 
 }

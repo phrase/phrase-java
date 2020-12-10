@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,7 +32,7 @@ import java.util.List;
 /**
  * Invitation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:21:36.209Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-10T08:33:05.578Z[Etc/UTC]")
 public class Invitation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -76,6 +77,10 @@ public class Invitation {
   public static final String SERIALIZED_NAME_ACCEPTED_AT = "accepted_at";
   @SerializedName(SERIALIZED_NAME_ACCEPTED_AT)
   private OffsetDateTime acceptedAt;
+
+  public static final String SERIALIZED_NAME_SPACES = "spaces";
+  @SerializedName(SERIALIZED_NAME_SPACES)
+  private List<MemberSpaces> spaces = null;
 
 
   public Invitation id(String id) {
@@ -355,6 +360,37 @@ public class Invitation {
   }
 
 
+  public Invitation spaces(List<MemberSpaces> spaces) {
+    
+    this.spaces = spaces;
+    return this;
+  }
+
+  public Invitation addSpacesItem(MemberSpaces spacesItem) {
+    if (this.spaces == null) {
+      this.spaces = new ArrayList<>();
+    }
+    this.spaces.add(spacesItem);
+    return this;
+  }
+
+   /**
+   * Get spaces
+   * @return spaces
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<MemberSpaces> getSpaces() {
+    return spaces;
+  }
+
+
+  public void setSpaces(List<MemberSpaces> spaces) {
+    this.spaces = spaces;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -374,12 +410,13 @@ public class Invitation {
         Objects.equals(this.permissions, invitation.permissions) &&
         Objects.equals(this.createdAt, invitation.createdAt) &&
         Objects.equals(this.updatedAt, invitation.updatedAt) &&
-        Objects.equals(this.acceptedAt, invitation.acceptedAt);
+        Objects.equals(this.acceptedAt, invitation.acceptedAt) &&
+        Objects.equals(this.spaces, invitation.spaces);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, createdAt, updatedAt, acceptedAt);
+    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, createdAt, updatedAt, acceptedAt, spaces);
   }
 
 
@@ -398,6 +435,7 @@ public class Invitation {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    acceptedAt: ").append(toIndentedString(acceptedAt)).append("\n");
+    sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **acceptedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**spaces** | [**List&lt;MemberSpaces&gt;**](MemberSpaces.md) |  |  [optional]
 
 
 

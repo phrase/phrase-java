@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * InvitationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-09T14:21:36.209Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-10T08:33:05.578Z[Etc/UTC]")
 public class InvitationCreateParameters {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -47,6 +47,10 @@ public class InvitationCreateParameters {
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
   private String localeIds;
+
+  public static final String SERIALIZED_NAME_SPACE_IDS = "space_ids";
+  @SerializedName(SERIALIZED_NAME_SPACE_IDS)
+  private List<String> spaceIds = null;
 
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
@@ -149,6 +153,37 @@ public class InvitationCreateParameters {
   }
 
 
+  public InvitationCreateParameters spaceIds(List<String> spaceIds) {
+    
+    this.spaceIds = spaceIds;
+    return this;
+  }
+
+  public InvitationCreateParameters addSpaceIdsItem(String spaceIdsItem) {
+    if (this.spaceIds == null) {
+      this.spaceIds = new ArrayList<>();
+    }
+    this.spaceIds.add(spaceIdsItem);
+    return this;
+  }
+
+   /**
+   * List of spaces the user is assigned to.
+   * @return spaceIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[\"abcd1234abcd1234abcd1234\",\"abcd1234abcd1234abcd1235\"]", value = "List of spaces the user is assigned to.")
+
+  public List<String> getSpaceIds() {
+    return spaceIds;
+  }
+
+
+  public void setSpaceIds(List<String> spaceIds) {
+    this.spaceIds = spaceIds;
+  }
+
+
   public InvitationCreateParameters defaultLocaleCodes(List<String> defaultLocaleCodes) {
     
     this.defaultLocaleCodes = defaultLocaleCodes;
@@ -224,13 +259,14 @@ public class InvitationCreateParameters {
         Objects.equals(this.role, invitationCreateParameters.role) &&
         Objects.equals(this.projectIds, invitationCreateParameters.projectIds) &&
         Objects.equals(this.localeIds, invitationCreateParameters.localeIds) &&
+        Objects.equals(this.spaceIds, invitationCreateParameters.spaceIds) &&
         Objects.equals(this.defaultLocaleCodes, invitationCreateParameters.defaultLocaleCodes) &&
         Objects.equals(this.permissions, invitationCreateParameters.permissions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, role, projectIds, localeIds, defaultLocaleCodes, permissions);
+    return Objects.hash(email, role, projectIds, localeIds, spaceIds, defaultLocaleCodes, permissions);
   }
 
 
@@ -242,6 +278,7 @@ public class InvitationCreateParameters {
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
+    sb.append("    spaceIds: ").append(toIndentedString(spaceIds)).append("\n");
     sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("}");

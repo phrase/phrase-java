@@ -68,6 +68,14 @@ public class InvitationUpdateParametersTest {
     }
 
     /**
+     * Test the property 'spaceIds'
+     */
+    @Test
+    public void spaceIdsTest() {
+        // TODO: test spaceIds
+    }
+
+    /**
      * Test the property 'defaultLocaleCodes'
      */
     @Test
