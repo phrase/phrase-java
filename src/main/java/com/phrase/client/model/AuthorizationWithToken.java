@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * AuthorizationWithToken
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-16T11:21:21.036Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-16T11:40:15.961Z[Etc/UTC]")
 public class AuthorizationWithToken {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
