@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BranchName
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-16T12:08:40.940Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-16T12:28:10.327Z[Etc/UTC]")
 public class BranchName {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
