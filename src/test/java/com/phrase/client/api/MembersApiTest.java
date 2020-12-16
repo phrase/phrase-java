@@ -14,7 +14,9 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.Member;
+import com.phrase.client.model.MemberProjectDetail;
 import com.phrase.client.model.MemberUpdateParameters;
+import com.phrase.client.model.MemberUpdateSettingsParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -83,6 +85,25 @@ public class MembersApiTest {
         MemberUpdateParameters memberUpdateParameters = null;
         String xPhraseAppOTP = null;
         Member response = api.memberUpdate(accountId, id, memberUpdateParameters, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a member&#39;s project settings
+     *
+     * Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void memberUpdateSettingsTest() throws ApiException {
+        String projectId = null;
+        String id = null;
+        MemberUpdateSettingsParameters memberUpdateSettingsParameters = null;
+        String xPhraseAppOTP = null;
+        MemberProjectDetail response = api.memberUpdateSettings(projectId, id, memberUpdateSettingsParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

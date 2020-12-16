@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-12-10T14:15:48.800Z[Etc/UTC]
+  - Build date: 2020-12-16T11:21:21.036Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1738,6 +1738,7 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**memberDelete**](docs/MembersApi.md#memberDelete) | **DELETE** /accounts/{account_id}/members/{id} | Remove a user from the account
 *MembersApi* | [**memberShow**](docs/MembersApi.md#memberShow) | **GET** /accounts/{account_id}/members/{id} | Get single member
 *MembersApi* | [**memberUpdate**](docs/MembersApi.md#memberUpdate) | **PATCH** /accounts/{account_id}/members/{id} | Update a member
+*MembersApi* | [**memberUpdateSettings**](docs/MembersApi.md#memberUpdateSettings) | **PATCH** /projects/{project_id}/members/{id} | Update a member&#39;s project settings
 *MembersApi* | [**membersList**](docs/MembersApi.md#membersList) | **GET** /accounts/{account_id}/members | List members
 *OrdersApi* | [**orderConfirm**](docs/OrdersApi.md#orderConfirm) | **PATCH** /projects/{project_id}/orders/{id}/confirm | Confirm an order
 *OrdersApi* | [**orderCreate**](docs/OrdersApi.md#orderCreate) | **POST** /projects/{project_id}/orders | Create a new order
@@ -1908,8 +1909,11 @@ Class | Method | HTTP request | Description
  - [LocaleStatistics](docs/LocaleStatistics.md)
  - [LocaleUpdateParameters](docs/LocaleUpdateParameters.md)
  - [Member](docs/Member.md)
+ - [MemberProjectDetail](docs/MemberProjectDetail.md)
+ - [MemberProjectDetailProjectRoles](docs/MemberProjectDetailProjectRoles.md)
  - [MemberSpaces](docs/MemberSpaces.md)
  - [MemberUpdateParameters](docs/MemberUpdateParameters.md)
+ - [MemberUpdateSettingsParameters](docs/MemberUpdateSettingsParameters.md)
  - [OrderConfirmParameters](docs/OrderConfirmParameters.md)
  - [OrderCreateParameters](docs/OrderCreateParameters.md)
  - [Project](docs/Project.md)

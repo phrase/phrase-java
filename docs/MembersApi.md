@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**memberDelete**](MembersApi.md#memberDelete) | **DELETE** /accounts/{account_id}/members/{id} | Remove a user from the account
 [**memberShow**](MembersApi.md#memberShow) | **GET** /accounts/{account_id}/members/{id} | Get single member
 [**memberUpdate**](MembersApi.md#memberUpdate) | **PATCH** /accounts/{account_id}/members/{id} | Update a member
+[**memberUpdateSettings**](MembersApi.md#memberUpdateSettings) | **PATCH** /projects/{project_id}/members/{id} | Update a member&#39;s project settings
 [**membersList**](MembersApi.md#membersList) | **GET** /accounts/{account_id}/members | List members
 
 
@@ -240,6 +241,91 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Member**](Member.md)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
+<a name="memberUpdateSettings"></a>
+# **memberUpdateSettings**
+> MemberProjectDetail memberUpdateSettings(projectId, id, memberUpdateSettingsParameters, xPhraseAppOTP)
+
+Update a member&#39;s project settings
+
+Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.MembersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Token.setApiKeyPrefix("Token");
+
+    MembersApi apiInstance = new MembersApi(defaultClient);
+    String projectId = "projectId_example"; // String | Project ID
+    String id = "id_example"; // String | ID
+    MemberUpdateSettingsParameters memberUpdateSettingsParameters = new MemberUpdateSettingsParameters(); // MemberUpdateSettingsParameters | 
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    try {
+      MemberProjectDetail result = apiInstance.memberUpdateSettings(projectId, id, memberUpdateSettingsParameters, xPhraseAppOTP);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MembersApi#memberUpdateSettings");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| Project ID |
+ **id** | **String**| ID |
+ **memberUpdateSettingsParameters** | [**MemberUpdateSettingsParameters**](MemberUpdateSettingsParameters.md)|  |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+
+### Return type
+
+[**MemberProjectDetail**](MemberProjectDetail.md)
 
 ### Authorization
 
