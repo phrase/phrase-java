@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * MemberUpdateSettingsParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-16T11:48:29.022Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-16T12:08:40.940Z[Etc/UTC]")
 public class MemberUpdateSettingsParameters {
   public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
   @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
