@@ -14,10 +14,12 @@ Name | Type | Description | Notes
 **locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
 **defaultLocaleCodes** | **List&lt;String&gt;** |  |  [optional]
 **permissions** | [**Object**](.md) |  |  [optional]
+**localeIds** | **List&lt;String&gt;** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **acceptedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **spaces** | [**List&lt;MemberSpaces&gt;**](MemberSpaces.md) |  |  [optional]
+**projectRole** | [**List&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  |  [optional]
 
 
 

@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.MemberProjectDetailProjectRoles;
 import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
@@ -110,6 +111,14 @@ public class InvitationTest {
     }
 
     /**
+     * Test the property 'localeIds'
+     */
+    @Test
+    public void localeIdsTest() {
+        // TODO: test localeIds
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
@@ -139,6 +148,14 @@ public class InvitationTest {
     @Test
     public void spacesTest() {
         // TODO: test spaces
+    }
+
+    /**
+     * Test the property 'projectRole'
+     */
+    @Test
+    public void projectRoleTest() {
+        // TODO: test projectRole
     }
 
 }

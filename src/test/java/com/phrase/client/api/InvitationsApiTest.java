@@ -17,6 +17,7 @@ import com.phrase.client.model.InlineResponse422;
 import com.phrase.client.model.Invitation;
 import com.phrase.client.model.InvitationCreateParameters;
 import com.phrase.client.model.InvitationUpdateParameters;
+import com.phrase.client.model.InvitationUpdateSettingsParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -121,6 +122,25 @@ public class InvitationsApiTest {
         InvitationUpdateParameters invitationUpdateParameters = null;
         String xPhraseAppOTP = null;
         Invitation response = api.invitationUpdate(accountId, id, invitationUpdateParameters, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a member&#39;s invitation access
+     *
+     * Update member&#39;s settings in the invitations. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void invitationUpdateSettingsTest() throws ApiException {
+        String projectId = null;
+        String id = null;
+        InvitationUpdateSettingsParameters invitationUpdateSettingsParameters = null;
+        String xPhraseAppOTP = null;
+        Invitation response = api.invitationUpdateSettings(projectId, id, invitationUpdateSettingsParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

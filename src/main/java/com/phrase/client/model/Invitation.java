@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.MemberProjectDetailProjectRoles;
 import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
@@ -32,7 +33,7 @@ import java.util.List;
 /**
  * Invitation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-16T12:28:10.327Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-23T12:27:03.174Z[Etc/UTC]")
 public class Invitation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -66,6 +67,10 @@ public class Invitation {
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
   private Object permissions;
 
+  public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
+  @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
+  private List<String> localeIds = null;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
@@ -81,6 +86,10 @@ public class Invitation {
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
   private List<MemberSpaces> spaces = null;
+
+  public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
+  @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
+  private List<MemberProjectDetailProjectRoles> projectRole = null;
 
 
   public Invitation id(String id) {
@@ -291,6 +300,37 @@ public class Invitation {
   }
 
 
+  public Invitation localeIds(List<String> localeIds) {
+    
+    this.localeIds = localeIds;
+    return this;
+  }
+
+  public Invitation addLocaleIdsItem(String localeIdsItem) {
+    if (this.localeIds == null) {
+      this.localeIds = new ArrayList<>();
+    }
+    this.localeIds.add(localeIdsItem);
+    return this;
+  }
+
+   /**
+   * Get localeIds
+   * @return localeIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getLocaleIds() {
+    return localeIds;
+  }
+
+
+  public void setLocaleIds(List<String> localeIds) {
+    this.localeIds = localeIds;
+  }
+
+
   public Invitation createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -391,6 +431,37 @@ public class Invitation {
   }
 
 
+  public Invitation projectRole(List<MemberProjectDetailProjectRoles> projectRole) {
+    
+    this.projectRole = projectRole;
+    return this;
+  }
+
+  public Invitation addProjectRoleItem(MemberProjectDetailProjectRoles projectRoleItem) {
+    if (this.projectRole == null) {
+      this.projectRole = new ArrayList<>();
+    }
+    this.projectRole.add(projectRoleItem);
+    return this;
+  }
+
+   /**
+   * Get projectRole
+   * @return projectRole
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<MemberProjectDetailProjectRoles> getProjectRole() {
+    return projectRole;
+  }
+
+
+  public void setProjectRole(List<MemberProjectDetailProjectRoles> projectRole) {
+    this.projectRole = projectRole;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -408,15 +479,17 @@ public class Invitation {
         Objects.equals(this.locales, invitation.locales) &&
         Objects.equals(this.defaultLocaleCodes, invitation.defaultLocaleCodes) &&
         Objects.equals(this.permissions, invitation.permissions) &&
+        Objects.equals(this.localeIds, invitation.localeIds) &&
         Objects.equals(this.createdAt, invitation.createdAt) &&
         Objects.equals(this.updatedAt, invitation.updatedAt) &&
         Objects.equals(this.acceptedAt, invitation.acceptedAt) &&
-        Objects.equals(this.spaces, invitation.spaces);
+        Objects.equals(this.spaces, invitation.spaces) &&
+        Objects.equals(this.projectRole, invitation.projectRole);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, createdAt, updatedAt, acceptedAt, spaces);
+    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, projectRole);
   }
 
 
@@ -432,10 +505,12 @@ public class Invitation {
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    acceptedAt: ").append(toIndentedString(acceptedAt)).append("\n");
     sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
+    sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
     sb.append("}");
     return sb.toString();
   }

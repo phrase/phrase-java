@@ -26,10 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * MemberUpdateSettingsParameters
+ * InvitationUpdateSettingsParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-12-23T12:27:03.174Z[Etc/UTC]")
-public class MemberUpdateSettingsParameters {
+public class InvitationUpdateSettingsParameters {
   public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
   @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
   private String projectRole;
@@ -39,7 +39,7 @@ public class MemberUpdateSettingsParameters {
   private List<String> localeIds = null;
 
 
-  public MemberUpdateSettingsParameters projectRole(String projectRole) {
+  public InvitationUpdateSettingsParameters projectRole(String projectRole) {
     
     this.projectRole = projectRole;
     return this;
@@ -62,13 +62,13 @@ public class MemberUpdateSettingsParameters {
   }
 
 
-  public MemberUpdateSettingsParameters localeIds(List<String> localeIds) {
+  public InvitationUpdateSettingsParameters localeIds(List<String> localeIds) {
     
     this.localeIds = localeIds;
     return this;
   }
 
-  public MemberUpdateSettingsParameters addLocaleIdsItem(String localeIdsItem) {
+  public InvitationUpdateSettingsParameters addLocaleIdsItem(String localeIdsItem) {
     if (this.localeIds == null) {
       this.localeIds = new ArrayList<>();
     }
@@ -101,9 +101,9 @@ public class MemberUpdateSettingsParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MemberUpdateSettingsParameters memberUpdateSettingsParameters = (MemberUpdateSettingsParameters) o;
-    return Objects.equals(this.projectRole, memberUpdateSettingsParameters.projectRole) &&
-        Objects.equals(this.localeIds, memberUpdateSettingsParameters.localeIds);
+    InvitationUpdateSettingsParameters invitationUpdateSettingsParameters = (InvitationUpdateSettingsParameters) o;
+    return Objects.equals(this.projectRole, invitationUpdateSettingsParameters.projectRole) &&
+        Objects.equals(this.localeIds, invitationUpdateSettingsParameters.localeIds);
   }
 
   @Override
@@ -115,7 +115,7 @@ public class MemberUpdateSettingsParameters {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MemberUpdateSettingsParameters {\n");
+    sb.append("class InvitationUpdateSettingsParameters {\n");
     sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("}");
