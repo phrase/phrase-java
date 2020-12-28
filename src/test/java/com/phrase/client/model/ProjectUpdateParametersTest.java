@@ -41,6 +41,14 @@ public class ProjectUpdateParametersTest {
     }
 
     /**
+     * Test the property 'accountId'
+     */
+    @Test
+    public void accountIdTest() {
+        // TODO: test accountId
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
@@ -81,11 +89,139 @@ public class ProjectUpdateParametersTest {
     }
 
     /**
-     * Test the property 'accountId'
+     * Test the property 'workflow'
      */
     @Test
-    public void accountIdTest() {
-        // TODO: test accountId
+    public void workflowTest() {
+        // TODO: test workflow
+    }
+
+    /**
+     * Test the property 'machineTranslationEnabled'
+     */
+    @Test
+    public void machineTranslationEnabledTest() {
+        // TODO: test machineTranslationEnabled
+    }
+
+    /**
+     * Test the property 'enableBranching'
+     */
+    @Test
+    public void enableBranchingTest() {
+        // TODO: test enableBranching
+    }
+
+    /**
+     * Test the property 'protectMasterBranch'
+     */
+    @Test
+    public void protectMasterBranchTest() {
+        // TODO: test protectMasterBranch
+    }
+
+    /**
+     * Test the property 'enableAllDataTypeTranslationKeysForTranslators'
+     */
+    @Test
+    public void enableAllDataTypeTranslationKeysForTranslatorsTest() {
+        // TODO: test enableAllDataTypeTranslationKeysForTranslators
+    }
+
+    /**
+     * Test the property 'enableIcuMessageFormat'
+     */
+    @Test
+    public void enableIcuMessageFormatTest() {
+        // TODO: test enableIcuMessageFormat
+    }
+
+    /**
+     * Test the property 'zeroPluralFormEnabled'
+     */
+    @Test
+    public void zeroPluralFormEnabledTest() {
+        // TODO: test zeroPluralFormEnabled
+    }
+
+    /**
+     * Test the property 'autotranslateEnabled'
+     */
+    @Test
+    public void autotranslateEnabledTest() {
+        // TODO: test autotranslateEnabled
+    }
+
+    /**
+     * Test the property 'autotranslateCheckNewTranslationKeys'
+     */
+    @Test
+    public void autotranslateCheckNewTranslationKeysTest() {
+        // TODO: test autotranslateCheckNewTranslationKeys
+    }
+
+    /**
+     * Test the property 'autotranslateCheckNewUploads'
+     */
+    @Test
+    public void autotranslateCheckNewUploadsTest() {
+        // TODO: test autotranslateCheckNewUploads
+    }
+
+    /**
+     * Test the property 'autotranslateCheckNewLocales'
+     */
+    @Test
+    public void autotranslateCheckNewLocalesTest() {
+        // TODO: test autotranslateCheckNewLocales
+    }
+
+    /**
+     * Test the property 'autotranslateMarkAsUnverified'
+     */
+    @Test
+    public void autotranslateMarkAsUnverifiedTest() {
+        // TODO: test autotranslateMarkAsUnverified
+    }
+
+    /**
+     * Test the property 'autotranslateUseMachineTranslation'
+     */
+    @Test
+    public void autotranslateUseMachineTranslationTest() {
+        // TODO: test autotranslateUseMachineTranslation
+    }
+
+    /**
+     * Test the property 'autotranslateUseTranslationMemory'
+     */
+    @Test
+    public void autotranslateUseTranslationMemoryTest() {
+        // TODO: test autotranslateUseTranslationMemory
+    }
+
+    /**
+     * Test the property 'smartSuggestEnabled'
+     */
+    @Test
+    public void smartSuggestEnabledTest() {
+        // TODO: test smartSuggestEnabled
+    }
+
+    /**
+     * Test the property 'smartSuggestUseGlossary'
+     */
+    @Test
+    public void smartSuggestUseGlossaryTest() {
+        // TODO: test smartSuggestUseGlossary
+    }
+
+    /**
+     * Test the property 'smartSuggestUseMachineTranslation'
+     */
+    @Test
+    public void smartSuggestUseMachineTranslationTest() {
+        // TODO: test smartSuggestUseMachineTranslation
     }
 
 }
