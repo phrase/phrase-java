@@ -29,7 +29,7 @@ import java.io.IOException;
 import com.phrase.client.model.Branch;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
-import com.phrase.client.model.BranchUpdateParameters;
+import com.phrase.client.model.BranchUpdateParameters1;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -761,7 +761,7 @@ public class BranchesApi {
      * Build call for branchUpdate
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param branchUpdateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -775,8 +775,8 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call branchUpdateCall(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = branchUpdateParameters;
+    public okhttp3.Call branchUpdateCall(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = branchUpdateParameters1;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/branches/{name}"
@@ -811,7 +811,7 @@ public class BranchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call branchUpdateValidateBeforeCall(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call branchUpdateValidateBeforeCall(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -823,13 +823,13 @@ public class BranchesApi {
             throw new ApiException("Missing the required parameter 'name' when calling branchUpdate(Async)");
         }
         
-        // verify the required parameter 'branchUpdateParameters' is set
-        if (branchUpdateParameters == null) {
-            throw new ApiException("Missing the required parameter 'branchUpdateParameters' when calling branchUpdate(Async)");
+        // verify the required parameter 'branchUpdateParameters1' is set
+        if (branchUpdateParameters1 == null) {
+            throw new ApiException("Missing the required parameter 'branchUpdateParameters1' when calling branchUpdate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = branchUpdateCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = branchUpdateCall(projectId, name, branchUpdateParameters1, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -839,7 +839,7 @@ public class BranchesApi {
      * Update an existing branch.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param branchUpdateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return Branch
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -852,8 +852,8 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Branch branchUpdate(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Branch> localVarResp = branchUpdateWithHttpInfo(projectId, name, branchUpdateParameters, xPhraseAppOTP);
+    public Branch branchUpdate(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<Branch> localVarResp = branchUpdateWithHttpInfo(projectId, name, branchUpdateParameters1, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -862,7 +862,7 @@ public class BranchesApi {
      * Update an existing branch.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param branchUpdateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Branch&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -875,8 +875,8 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Branch> branchUpdateWithHttpInfo(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, null);
+    public ApiResponse<Branch> branchUpdateWithHttpInfo(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters1, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<Branch>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -886,7 +886,7 @@ public class BranchesApi {
      * Update an existing branch.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param branchUpdateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -900,9 +900,9 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call branchUpdateAsync(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback<Branch> _callback) throws ApiException {
+    public okhttp3.Call branchUpdateAsync(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP, final ApiCallback<Branch> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters1, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<Branch>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1051,6 +1051,153 @@ public class BranchesApi {
 
         okhttp3.Call localVarCall = branchesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, _callback);
         Type localVarReturnType = new TypeToken<List<Branch>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for variablesList
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call variablesListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/variables"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (perPage != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call variablesListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling variablesList(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = variablesListCall(projectId, xPhraseAppOTP, page, perPage, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List variables
+     * List all variables for the current project.
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @return List&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public List<Object> variablesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        ApiResponse<List<Object>> localVarResp = variablesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List variables
+     * List all variables for the current project.
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @return ApiResponse&lt;List&lt;Object&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Object>> variablesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        okhttp3.Call localVarCall = variablesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, null);
+        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List variables (asynchronously)
+     * List all variables for the current project.
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call variablesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<Object>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = variablesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, _callback);
+        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

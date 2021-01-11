@@ -47,4 +47,12 @@ public class BranchUpdateParametersTest {
         // TODO: test name
     }
 
+    /**
+     * Test the property 'value'
+     */
+    @Test
+    public void valueTest() {
+        // TODO: test value
+    }
+
 }

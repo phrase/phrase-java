@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2020-12-28T08:42:48.947Z[Etc/UTC]
+  - Build date: 2021-01-11T15:57:14.455Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1658,6 +1658,7 @@ Class | Method | HTTP request | Description
 *BranchesApi* | [**branchShow**](docs/BranchesApi.md#branchShow) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
 *BranchesApi* | [**branchUpdate**](docs/BranchesApi.md#branchUpdate) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 *BranchesApi* | [**branchesList**](docs/BranchesApi.md#branchesList) | **GET** /projects/{project_id}/branches | List branches
+*BranchesApi* | [**variablesList**](docs/BranchesApi.md#variablesList) | **GET** /projects/{project_id}/variables | List variables
 *CommentsApi* | [**commentCreate**](docs/CommentsApi.md#commentCreate) | **POST** /projects/{project_id}/keys/{key_id}/comments | Create a comment
 *CommentsApi* | [**commentDelete**](docs/CommentsApi.md#commentDelete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{id} | Delete a comment
 *CommentsApi* | [**commentMarkCheck**](docs/CommentsApi.md#commentMarkCheck) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id}/read | Check if comment is read
@@ -1816,6 +1817,10 @@ Class | Method | HTTP request | Description
 *UploadsApi* | [**uploadShow**](docs/UploadsApi.md#uploadShow) | **GET** /projects/{project_id}/uploads/{id} | View upload details
 *UploadsApi* | [**uploadsList**](docs/UploadsApi.md#uploadsList) | **GET** /projects/{project_id}/uploads | List uploads
 *UsersApi* | [**showUser**](docs/UsersApi.md#showUser) | **GET** /user | Show current User
+*VariablesApi* | [**variableCreate**](docs/VariablesApi.md#variableCreate) | **POST** /projects/{project_id}/variables | Create a variable
+*VariablesApi* | [**variableDelete**](docs/VariablesApi.md#variableDelete) | **DELETE** /projects/{project_id}/variables/{name} | Delete a variable
+*VariablesApi* | [**variableShow**](docs/VariablesApi.md#variableShow) | **GET** /projects/{project_id}/variables/{name} | Get a single variable
+*VariablesApi* | [**variableUpdate**](docs/VariablesApi.md#variableUpdate) | **PATCH** /projects/{project_id}/variables/{name} | Update a variable
 *VersionsHistoryApi* | [**versionShow**](docs/VersionsHistoryApi.md#versionShow) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
 *VersionsHistoryApi* | [**versionsList**](docs/VersionsHistoryApi.md#versionsList) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
 *WebhooksApi* | [**webhookCreate**](docs/WebhooksApi.md#webhookCreate) | **POST** /projects/{project_id}/webhooks | Create a webhook
@@ -1850,6 +1855,7 @@ Class | Method | HTTP request | Description
  - [BranchMergeParameters](docs/BranchMergeParameters.md)
  - [BranchName](docs/BranchName.md)
  - [BranchUpdateParameters](docs/BranchUpdateParameters.md)
+ - [BranchUpdateParameters1](docs/BranchUpdateParameters1.md)
  - [Comment](docs/Comment.md)
  - [CommentCreateParameters](docs/CommentCreateParameters.md)
  - [CommentMarkReadParameters](docs/CommentMarkReadParameters.md)
@@ -1987,6 +1993,8 @@ Class | Method | HTTP request | Description
  - [UploadSummary](docs/UploadSummary.md)
  - [User](docs/User.md)
  - [UserPreview](docs/UserPreview.md)
+ - [Variable](docs/Variable.md)
+ - [VariableCreateParameters](docs/VariableCreateParameters.md)
  - [Webhook](docs/Webhook.md)
  - [WebhookCreateParameters](docs/WebhookCreateParameters.md)
  - [WebhookUpdateParameters](docs/WebhookUpdateParameters.md)

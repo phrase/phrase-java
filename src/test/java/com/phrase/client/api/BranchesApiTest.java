@@ -16,7 +16,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.model.Branch;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
-import com.phrase.client.model.BranchUpdateParameters;
+import com.phrase.client.model.BranchUpdateParameters1;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -137,9 +137,9 @@ public class BranchesApiTest {
     public void branchUpdateTest() throws ApiException {
         String projectId = null;
         String name = null;
-        BranchUpdateParameters branchUpdateParameters = null;
+        BranchUpdateParameters1 branchUpdateParameters1 = null;
         String xPhraseAppOTP = null;
-        Branch response = api.branchUpdate(projectId, name, branchUpdateParameters, xPhraseAppOTP);
+        Branch response = api.branchUpdate(projectId, name, branchUpdateParameters1, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -159,6 +159,25 @@ public class BranchesApiTest {
         Integer page = null;
         Integer perPage = null;
         List<Branch> response = api.branchesList(projectId, xPhraseAppOTP, page, perPage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List variables
+     *
+     * List all variables for the current project.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void variablesListTest() throws ApiException {
+        String projectId = null;
+        String xPhraseAppOTP = null;
+        Integer page = null;
+        Integer perPage = null;
+        List<Object> response = api.variablesList(projectId, xPhraseAppOTP, page, perPage);
 
         // TODO: test validations
     }
