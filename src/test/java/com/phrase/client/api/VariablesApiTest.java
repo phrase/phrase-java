@@ -106,4 +106,23 @@ public class VariablesApiTest {
         // TODO: test validations
     }
     
+    /**
+     * List variables
+     *
+     * List all variables for the current project.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void variablesListTest() throws ApiException {
+        String projectId = null;
+        String xPhraseAppOTP = null;
+        Integer page = null;
+        Integer perPage = null;
+        List<Object> response = api.variablesList(projectId, xPhraseAppOTP, page, perPage);
+
+        // TODO: test validations
+    }
+    
 }

@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-01-11T15:57:14.455Z[Etc/UTC]
+  - Build date: 2021-01-11T16:03:09.080Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1658,7 +1658,6 @@ Class | Method | HTTP request | Description
 *BranchesApi* | [**branchShow**](docs/BranchesApi.md#branchShow) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
 *BranchesApi* | [**branchUpdate**](docs/BranchesApi.md#branchUpdate) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 *BranchesApi* | [**branchesList**](docs/BranchesApi.md#branchesList) | **GET** /projects/{project_id}/branches | List branches
-*BranchesApi* | [**variablesList**](docs/BranchesApi.md#variablesList) | **GET** /projects/{project_id}/variables | List variables
 *CommentsApi* | [**commentCreate**](docs/CommentsApi.md#commentCreate) | **POST** /projects/{project_id}/keys/{key_id}/comments | Create a comment
 *CommentsApi* | [**commentDelete**](docs/CommentsApi.md#commentDelete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{id} | Delete a comment
 *CommentsApi* | [**commentMarkCheck**](docs/CommentsApi.md#commentMarkCheck) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id}/read | Check if comment is read
@@ -1821,6 +1820,7 @@ Class | Method | HTTP request | Description
 *VariablesApi* | [**variableDelete**](docs/VariablesApi.md#variableDelete) | **DELETE** /projects/{project_id}/variables/{name} | Delete a variable
 *VariablesApi* | [**variableShow**](docs/VariablesApi.md#variableShow) | **GET** /projects/{project_id}/variables/{name} | Get a single variable
 *VariablesApi* | [**variableUpdate**](docs/VariablesApi.md#variableUpdate) | **PATCH** /projects/{project_id}/variables/{name} | Update a variable
+*VariablesApi* | [**variablesList**](docs/VariablesApi.md#variablesList) | **GET** /projects/{project_id}/variables | List variables
 *VersionsHistoryApi* | [**versionShow**](docs/VersionsHistoryApi.md#versionShow) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
 *VersionsHistoryApi* | [**versionsList**](docs/VersionsHistoryApi.md#versionsList) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
 *WebhooksApi* | [**webhookCreate**](docs/WebhooksApi.md#webhookCreate) | **POST** /projects/{project_id}/webhooks | Create a webhook
