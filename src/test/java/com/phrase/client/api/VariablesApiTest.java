@@ -13,9 +13,9 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
-import com.phrase.client.model.BranchUpdateParameters;
 import com.phrase.client.model.Variable;
 import com.phrase.client.model.VariableCreateParameters;
+import com.phrase.client.model.VariableUpdateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -82,7 +82,7 @@ public class VariablesApiTest {
         String projectId = null;
         String name = null;
         String xPhraseAppOTP = null;
-        Object response = api.variableShow(projectId, name, xPhraseAppOTP);
+        Variable response = api.variableShow(projectId, name, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -99,9 +99,9 @@ public class VariablesApiTest {
     public void variableUpdateTest() throws ApiException {
         String projectId = null;
         String name = null;
-        BranchUpdateParameters branchUpdateParameters = null;
+        VariableUpdateParameters variableUpdateParameters = null;
         String xPhraseAppOTP = null;
-        Object response = api.variableUpdate(projectId, name, branchUpdateParameters, xPhraseAppOTP);
+        Variable response = api.variableUpdate(projectId, name, variableUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -120,7 +120,7 @@ public class VariablesApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Object> response = api.variablesList(projectId, xPhraseAppOTP, page, perPage);
+        List<Variable> response = api.variablesList(projectId, xPhraseAppOTP, page, perPage);
 
         // TODO: test validations
     }

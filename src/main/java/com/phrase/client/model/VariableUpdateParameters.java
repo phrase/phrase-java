@@ -24,27 +24,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * BranchUpdateParameters1
+ * VariableUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-11T16:03:09.080Z[Etc/UTC]")
-public class BranchUpdateParameters1 {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-13T12:48:35.364Z[Etc/UTC]")
+public class VariableUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private String value;
 
-  public BranchUpdateParameters1 name(String name) {
+
+  public VariableUpdateParameters name(String name) {
     
     this.name = name;
     return this;
   }
 
    /**
-   * Name of the branch
+   * Name of the variable
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-branch", value = "Name of the branch")
+  @ApiModelProperty(example = "MY_VARIABLE", value = "Name of the variable")
 
   public String getName() {
     return name;
@@ -56,6 +60,29 @@ public class BranchUpdateParameters1 {
   }
 
 
+  public VariableUpdateParameters value(String value) {
+    
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * Value of the variable
+   * @return value
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Hello World", value = "Value of the variable")
+
+  public String getValue() {
+    return value;
+  }
+
+
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -64,21 +91,23 @@ public class BranchUpdateParameters1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BranchUpdateParameters1 branchUpdateParameters1 = (BranchUpdateParameters1) o;
-    return Objects.equals(this.name, branchUpdateParameters1.name);
+    VariableUpdateParameters variableUpdateParameters = (VariableUpdateParameters) o;
+    return Objects.equals(this.name, variableUpdateParameters.name) &&
+        Objects.equals(this.value, variableUpdateParameters.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, value);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BranchUpdateParameters1 {\n");
+    sb.append("class VariableUpdateParameters {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

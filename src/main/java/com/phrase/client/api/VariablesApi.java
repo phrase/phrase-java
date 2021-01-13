@@ -26,9 +26,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.BranchUpdateParameters;
 import com.phrase.client.model.Variable;
 import com.phrase.client.model.VariableCreateParameters;
+import com.phrase.client.model.VariableUpdateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -409,7 +409,7 @@ public class VariablesApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Object
+     * @return Variable
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -420,8 +420,8 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object variableShow(String projectId, String name, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Object> localVarResp = variableShowWithHttpInfo(projectId, name, xPhraseAppOTP);
+    public Variable variableShow(String projectId, String name, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<Variable> localVarResp = variableShowWithHttpInfo(projectId, name, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -431,7 +431,7 @@ public class VariablesApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;Variable&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -442,9 +442,9 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> variableShowWithHttpInfo(String projectId, String name, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<Variable> variableShowWithHttpInfo(String projectId, String name, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = variableShowValidateBeforeCall(projectId, name, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<Variable>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -466,10 +466,10 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call variableShowAsync(String projectId, String name, String xPhraseAppOTP, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call variableShowAsync(String projectId, String name, String xPhraseAppOTP, final ApiCallback<Variable> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = variableShowValidateBeforeCall(projectId, name, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<Variable>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -477,7 +477,7 @@ public class VariablesApi {
      * Build call for variableUpdate
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param variableUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -491,8 +491,8 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call variableUpdateCall(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = branchUpdateParameters;
+    public okhttp3.Call variableUpdateCall(String projectId, String name, VariableUpdateParameters variableUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = variableUpdateParameters;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/variables/{name}"
@@ -527,7 +527,7 @@ public class VariablesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call variableUpdateValidateBeforeCall(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call variableUpdateValidateBeforeCall(String projectId, String name, VariableUpdateParameters variableUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -539,13 +539,13 @@ public class VariablesApi {
             throw new ApiException("Missing the required parameter 'name' when calling variableUpdate(Async)");
         }
         
-        // verify the required parameter 'branchUpdateParameters' is set
-        if (branchUpdateParameters == null) {
-            throw new ApiException("Missing the required parameter 'branchUpdateParameters' when calling variableUpdate(Async)");
+        // verify the required parameter 'variableUpdateParameters' is set
+        if (variableUpdateParameters == null) {
+            throw new ApiException("Missing the required parameter 'variableUpdateParameters' when calling variableUpdate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = variableUpdateCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = variableUpdateCall(projectId, name, variableUpdateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -555,9 +555,9 @@ public class VariablesApi {
      * Update an existing variable.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param variableUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Object
+     * @return Variable
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -568,8 +568,8 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object variableUpdate(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Object> localVarResp = variableUpdateWithHttpInfo(projectId, name, branchUpdateParameters, xPhraseAppOTP);
+    public Variable variableUpdate(String projectId, String name, VariableUpdateParameters variableUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<Variable> localVarResp = variableUpdateWithHttpInfo(projectId, name, variableUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -578,9 +578,9 @@ public class VariablesApi {
      * Update an existing variable.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param variableUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;Variable&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -591,9 +591,9 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> variableUpdateWithHttpInfo(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = variableUpdateValidateBeforeCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+    public ApiResponse<Variable> variableUpdateWithHttpInfo(String projectId, String name, VariableUpdateParameters variableUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = variableUpdateValidateBeforeCall(projectId, name, variableUpdateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<Variable>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -602,7 +602,7 @@ public class VariablesApi {
      * Update an existing variable.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters  (required)
+     * @param variableUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -616,10 +616,10 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call variableUpdateAsync(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call variableUpdateAsync(String projectId, String name, VariableUpdateParameters variableUpdateParameters, String xPhraseAppOTP, final ApiCallback<Variable> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = variableUpdateValidateBeforeCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        okhttp3.Call localVarCall = variableUpdateValidateBeforeCall(projectId, name, variableUpdateParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<Variable>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -704,7 +704,7 @@ public class VariablesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @return List&lt;Object&gt;
+     * @return List&lt;Variable&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -715,8 +715,8 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Object> variablesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = variablesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage);
+    public List<Variable> variablesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        ApiResponse<List<Variable>> localVarResp = variablesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage);
         return localVarResp.getData();
     }
 
@@ -727,7 +727,7 @@ public class VariablesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @return ApiResponse&lt;List&lt;Object&gt;&gt;
+     * @return ApiResponse&lt;List&lt;Variable&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -738,9 +738,9 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> variablesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+    public ApiResponse<List<Variable>> variablesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
         okhttp3.Call localVarCall = variablesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, null);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Variable>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -763,10 +763,10 @@ public class VariablesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call variablesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call variablesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<Variable>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = variablesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, _callback);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Variable>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

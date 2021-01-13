@@ -26,15 +26,11 @@ import java.io.IOException;
 /**
  * BranchUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-11T16:03:09.080Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-13T12:48:35.364Z[Etc/UTC]")
 public class BranchUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
-
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
-  private String value;
 
 
   public BranchUpdateParameters name(String name) {
@@ -44,11 +40,11 @@ public class BranchUpdateParameters {
   }
 
    /**
-   * Name of the variable
+   * Name of the branch
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "MY_VARIABLE", value = "Name of the variable")
+  @ApiModelProperty(example = "my-branch", value = "Name of the branch")
 
   public String getName() {
     return name;
@@ -57,29 +53,6 @@ public class BranchUpdateParameters {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-
-  public BranchUpdateParameters value(String value) {
-    
-    this.value = value;
-    return this;
-  }
-
-   /**
-   * Value of the variable
-   * @return value
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Hello World", value = "Value of the variable")
-
-  public String getValue() {
-    return value;
-  }
-
-
-  public void setValue(String value) {
-    this.value = value;
   }
 
 
@@ -92,13 +65,12 @@ public class BranchUpdateParameters {
       return false;
     }
     BranchUpdateParameters branchUpdateParameters = (BranchUpdateParameters) o;
-    return Objects.equals(this.name, branchUpdateParameters.name) &&
-        Objects.equals(this.value, branchUpdateParameters.value);
+    return Objects.equals(this.name, branchUpdateParameters.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, value);
+    return Objects.hash(name);
   }
 
 
@@ -107,7 +79,6 @@ public class BranchUpdateParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class BranchUpdateParameters {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

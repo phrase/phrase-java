@@ -29,7 +29,7 @@ import java.io.IOException;
 import com.phrase.client.model.Branch;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
-import com.phrase.client.model.BranchUpdateParameters1;
+import com.phrase.client.model.BranchUpdateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -761,7 +761,7 @@ public class BranchesApi {
      * Build call for branchUpdate
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters1  (required)
+     * @param branchUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -775,8 +775,8 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call branchUpdateCall(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = branchUpdateParameters1;
+    public okhttp3.Call branchUpdateCall(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = branchUpdateParameters;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/branches/{name}"
@@ -811,7 +811,7 @@ public class BranchesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call branchUpdateValidateBeforeCall(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call branchUpdateValidateBeforeCall(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -823,13 +823,13 @@ public class BranchesApi {
             throw new ApiException("Missing the required parameter 'name' when calling branchUpdate(Async)");
         }
         
-        // verify the required parameter 'branchUpdateParameters1' is set
-        if (branchUpdateParameters1 == null) {
-            throw new ApiException("Missing the required parameter 'branchUpdateParameters1' when calling branchUpdate(Async)");
+        // verify the required parameter 'branchUpdateParameters' is set
+        if (branchUpdateParameters == null) {
+            throw new ApiException("Missing the required parameter 'branchUpdateParameters' when calling branchUpdate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = branchUpdateCall(projectId, name, branchUpdateParameters1, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = branchUpdateCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -839,7 +839,7 @@ public class BranchesApi {
      * Update an existing branch.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters1  (required)
+     * @param branchUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return Branch
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -852,8 +852,8 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Branch branchUpdate(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Branch> localVarResp = branchUpdateWithHttpInfo(projectId, name, branchUpdateParameters1, xPhraseAppOTP);
+    public Branch branchUpdate(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<Branch> localVarResp = branchUpdateWithHttpInfo(projectId, name, branchUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -862,7 +862,7 @@ public class BranchesApi {
      * Update an existing branch.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters1  (required)
+     * @param branchUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Branch&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -875,8 +875,8 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Branch> branchUpdateWithHttpInfo(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters1, xPhraseAppOTP, null);
+    public ApiResponse<Branch> branchUpdateWithHttpInfo(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<Branch>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -886,7 +886,7 @@ public class BranchesApi {
      * Update an existing branch.
      * @param projectId Project ID (required)
      * @param name name (required)
-     * @param branchUpdateParameters1  (required)
+     * @param branchUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -900,9 +900,9 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call branchUpdateAsync(String projectId, String name, BranchUpdateParameters1 branchUpdateParameters1, String xPhraseAppOTP, final ApiCallback<Branch> _callback) throws ApiException {
+    public okhttp3.Call branchUpdateAsync(String projectId, String name, BranchUpdateParameters branchUpdateParameters, String xPhraseAppOTP, final ApiCallback<Branch> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters1, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = branchUpdateValidateBeforeCall(projectId, name, branchUpdateParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<Branch>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

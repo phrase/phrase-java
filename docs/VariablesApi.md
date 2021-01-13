@@ -174,7 +174,7 @@ null (empty response body)
 
 <a name="variableShow"></a>
 # **variableShow**
-> Object variableShow(projectId, name, xPhraseAppOTP)
+> Variable variableShow(projectId, name, xPhraseAppOTP)
 
 Get a single variable
 
@@ -211,7 +211,7 @@ public class Example {
     String name = "name_example"; // String | name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Object result = apiInstance.variableShow(projectId, name, xPhraseAppOTP);
+      Variable result = apiInstance.variableShow(projectId, name, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling VariablesApi#variableShow");
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Variable**](Variable.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 <a name="variableUpdate"></a>
 # **variableUpdate**
-> Object variableUpdate(projectId, name, branchUpdateParameters, xPhraseAppOTP)
+> Variable variableUpdate(projectId, name, variableUpdateParameters, xPhraseAppOTP)
 
 Update a variable
 
@@ -290,10 +290,10 @@ public class Example {
     VariablesApi apiInstance = new VariablesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String name = "name_example"; // String | name
-    BranchUpdateParameters branchUpdateParameters = new BranchUpdateParameters(); // BranchUpdateParameters | 
+    VariableUpdateParameters variableUpdateParameters = new VariableUpdateParameters(); // VariableUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Object result = apiInstance.variableUpdate(projectId, name, branchUpdateParameters, xPhraseAppOTP);
+      Variable result = apiInstance.variableUpdate(projectId, name, variableUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling VariablesApi#variableUpdate");
@@ -312,12 +312,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
  **name** | **String**| name |
- **branchUpdateParameters** | [**BranchUpdateParameters**](BranchUpdateParameters.md)|  |
+ **variableUpdateParameters** | [**VariableUpdateParameters**](VariableUpdateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
 
-**Object**
+[**Variable**](Variable.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 <a name="variablesList"></a>
 # **variablesList**
-> List&lt;Object&gt; variablesList(projectId, xPhraseAppOTP, page, perPage)
+> List&lt;Variable&gt; variablesList(projectId, xPhraseAppOTP, page, perPage)
 
 List variables
 
@@ -376,7 +376,7 @@ public class Example {
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     try {
-      List<Object> result = apiInstance.variablesList(projectId, xPhraseAppOTP, page, perPage);
+      List<Variable> result = apiInstance.variablesList(projectId, xPhraseAppOTP, page, perPage);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling VariablesApi#variablesList");
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;Variable&gt;**](Variable.md)
 
 ### Authorization
 

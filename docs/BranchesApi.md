@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 <a name="branchUpdate"></a>
 # **branchUpdate**
-> Branch branchUpdate(projectId, name, branchUpdateParameters1, xPhraseAppOTP)
+> Branch branchUpdate(projectId, name, branchUpdateParameters, xPhraseAppOTP)
 
 Update a branch
 
@@ -454,10 +454,10 @@ public class Example {
     BranchesApi apiInstance = new BranchesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String name = "name_example"; // String | name
-    BranchUpdateParameters1 branchUpdateParameters1 = new BranchUpdateParameters1(); // BranchUpdateParameters1 | 
+    BranchUpdateParameters branchUpdateParameters = new BranchUpdateParameters(); // BranchUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Branch result = apiInstance.branchUpdate(projectId, name, branchUpdateParameters1, xPhraseAppOTP);
+      Branch result = apiInstance.branchUpdate(projectId, name, branchUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BranchesApi#branchUpdate");
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
  **name** | **String**| name |
- **branchUpdateParameters1** | [**BranchUpdateParameters1**](BranchUpdateParameters1.md)|  |
+ **branchUpdateParameters** | [**BranchUpdateParameters**](BranchUpdateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type

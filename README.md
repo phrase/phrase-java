@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-01-11T16:03:09.080Z[Etc/UTC]
+  - Build date: 2021-01-13T12:48:35.364Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1855,7 +1855,6 @@ Class | Method | HTTP request | Description
  - [BranchMergeParameters](docs/BranchMergeParameters.md)
  - [BranchName](docs/BranchName.md)
  - [BranchUpdateParameters](docs/BranchUpdateParameters.md)
- - [BranchUpdateParameters1](docs/BranchUpdateParameters1.md)
  - [Comment](docs/Comment.md)
  - [CommentCreateParameters](docs/CommentCreateParameters.md)
  - [CommentMarkReadParameters](docs/CommentMarkReadParameters.md)
@@ -1995,6 +1994,7 @@ Class | Method | HTTP request | Description
  - [UserPreview](docs/UserPreview.md)
  - [Variable](docs/Variable.md)
  - [VariableCreateParameters](docs/VariableCreateParameters.md)
+ - [VariableUpdateParameters](docs/VariableUpdateParameters.md)
  - [Webhook](docs/Webhook.md)
  - [WebhookCreateParameters](docs/WebhookCreateParameters.md)
  - [WebhookUpdateParameters](docs/WebhookUpdateParameters.md)

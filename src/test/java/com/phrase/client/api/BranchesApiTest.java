@@ -16,7 +16,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.model.Branch;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
-import com.phrase.client.model.BranchUpdateParameters1;
+import com.phrase.client.model.BranchUpdateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -137,9 +137,9 @@ public class BranchesApiTest {
     public void branchUpdateTest() throws ApiException {
         String projectId = null;
         String name = null;
-        BranchUpdateParameters1 branchUpdateParameters1 = null;
+        BranchUpdateParameters branchUpdateParameters = null;
         String xPhraseAppOTP = null;
-        Branch response = api.branchUpdate(projectId, name, branchUpdateParameters1, xPhraseAppOTP);
+        Branch response = api.branchUpdate(projectId, name, branchUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

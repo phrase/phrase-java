@@ -26,17 +26,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for BranchUpdateParameters1
+ * Model tests for VariableUpdateParameters
  */
-public class BranchUpdateParameters1Test {
-    private final BranchUpdateParameters1 model = new BranchUpdateParameters1();
+public class VariableUpdateParametersTest {
+    private final VariableUpdateParameters model = new VariableUpdateParameters();
 
     /**
-     * Model tests for BranchUpdateParameters1
+     * Model tests for VariableUpdateParameters
      */
     @Test
-    public void testBranchUpdateParameters1() {
-        // TODO: test BranchUpdateParameters1
+    public void testVariableUpdateParameters() {
+        // TODO: test VariableUpdateParameters
     }
 
     /**
@@ -45,6 +45,14 @@ public class BranchUpdateParameters1Test {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'value'
+     */
+    @Test
+    public void valueTest() {
+        // TODO: test value
     }
 
 }
