@@ -27,8 +27,12 @@ import java.io.IOException;
 /**
  * ScreenshotUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-13T13:21:46.624Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-21T15:04:19.306Z[Etc/UTC]")
 public class ScreenshotUpdateParameters {
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -40,6 +44,29 @@ public class ScreenshotUpdateParameters {
   public static final String SERIALIZED_NAME_FILENAME = "filename";
   @SerializedName(SERIALIZED_NAME_FILENAME)
   private File filename;
+
+
+  public ScreenshotUpdateParameters branch(String branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * specify the branch to use
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
+
+  public String getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(String branch) {
+    this.branch = branch;
+  }
 
 
   public ScreenshotUpdateParameters name(String name) {
@@ -120,14 +147,15 @@ public class ScreenshotUpdateParameters {
       return false;
     }
     ScreenshotUpdateParameters screenshotUpdateParameters = (ScreenshotUpdateParameters) o;
-    return Objects.equals(this.name, screenshotUpdateParameters.name) &&
+    return Objects.equals(this.branch, screenshotUpdateParameters.branch) &&
+        Objects.equals(this.name, screenshotUpdateParameters.name) &&
         Objects.equals(this.description, screenshotUpdateParameters.description) &&
         Objects.equals(this.filename, screenshotUpdateParameters.filename);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, filename);
+    return Objects.hash(branch, name, description, filename);
   }
 
 
@@ -135,6 +163,7 @@ public class ScreenshotUpdateParameters {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScreenshotUpdateParameters {\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");

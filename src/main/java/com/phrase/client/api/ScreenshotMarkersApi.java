@@ -210,6 +210,7 @@ public class ScreenshotMarkersApi {
      * @param projectId Project ID (required)
      * @param screenshotId Screenshot ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -222,7 +223,7 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotMarkerDeleteCall(String projectId, String screenshotId, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call screenshotMarkerDeleteCall(String projectId, String screenshotId, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -232,6 +233,10 @@ public class ScreenshotMarkersApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -258,7 +263,7 @@ public class ScreenshotMarkersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call screenshotMarkerDeleteValidateBeforeCall(String projectId, String screenshotId, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call screenshotMarkerDeleteValidateBeforeCall(String projectId, String screenshotId, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -271,7 +276,7 @@ public class ScreenshotMarkersApi {
         }
         
 
-        okhttp3.Call localVarCall = screenshotMarkerDeleteCall(projectId, screenshotId, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = screenshotMarkerDeleteCall(projectId, screenshotId, xPhraseAppOTP, branch, _callback);
         return localVarCall;
 
     }
@@ -282,6 +287,7 @@ public class ScreenshotMarkersApi {
      * @param projectId Project ID (required)
      * @param screenshotId Screenshot ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -292,8 +298,8 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void screenshotMarkerDelete(String projectId, String screenshotId, String xPhraseAppOTP) throws ApiException {
-        screenshotMarkerDeleteWithHttpInfo(projectId, screenshotId, xPhraseAppOTP);
+    public void screenshotMarkerDelete(String projectId, String screenshotId, String xPhraseAppOTP, String branch) throws ApiException {
+        screenshotMarkerDeleteWithHttpInfo(projectId, screenshotId, xPhraseAppOTP, branch);
     }
 
     /**
@@ -302,6 +308,7 @@ public class ScreenshotMarkersApi {
      * @param projectId Project ID (required)
      * @param screenshotId Screenshot ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -313,8 +320,8 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> screenshotMarkerDeleteWithHttpInfo(String projectId, String screenshotId, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = screenshotMarkerDeleteValidateBeforeCall(projectId, screenshotId, xPhraseAppOTP, null);
+    public ApiResponse<Void> screenshotMarkerDeleteWithHttpInfo(String projectId, String screenshotId, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = screenshotMarkerDeleteValidateBeforeCall(projectId, screenshotId, xPhraseAppOTP, branch, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -324,6 +331,7 @@ public class ScreenshotMarkersApi {
      * @param projectId Project ID (required)
      * @param screenshotId Screenshot ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -336,9 +344,9 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotMarkerDeleteAsync(String projectId, String screenshotId, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call screenshotMarkerDeleteAsync(String projectId, String screenshotId, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = screenshotMarkerDeleteValidateBeforeCall(projectId, screenshotId, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = screenshotMarkerDeleteValidateBeforeCall(projectId, screenshotId, xPhraseAppOTP, branch, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -348,6 +356,7 @@ public class ScreenshotMarkersApi {
      * @param screenshotId Screenshot ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -360,7 +369,7 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotMarkerShowCall(String projectId, String screenshotId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call screenshotMarkerShowCall(String projectId, String screenshotId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -371,6 +380,10 @@ public class ScreenshotMarkersApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -397,7 +410,7 @@ public class ScreenshotMarkersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call screenshotMarkerShowValidateBeforeCall(String projectId, String screenshotId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call screenshotMarkerShowValidateBeforeCall(String projectId, String screenshotId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -415,7 +428,7 @@ public class ScreenshotMarkersApi {
         }
         
 
-        okhttp3.Call localVarCall = screenshotMarkerShowCall(projectId, screenshotId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = screenshotMarkerShowCall(projectId, screenshotId, id, xPhraseAppOTP, branch, _callback);
         return localVarCall;
 
     }
@@ -427,6 +440,7 @@ public class ScreenshotMarkersApi {
      * @param screenshotId Screenshot ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @return ScreenshotMarker
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -438,8 +452,8 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ScreenshotMarker screenshotMarkerShow(String projectId, String screenshotId, String id, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<ScreenshotMarker> localVarResp = screenshotMarkerShowWithHttpInfo(projectId, screenshotId, id, xPhraseAppOTP);
+    public ScreenshotMarker screenshotMarkerShow(String projectId, String screenshotId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        ApiResponse<ScreenshotMarker> localVarResp = screenshotMarkerShowWithHttpInfo(projectId, screenshotId, id, xPhraseAppOTP, branch);
         return localVarResp.getData();
     }
 
@@ -450,6 +464,7 @@ public class ScreenshotMarkersApi {
      * @param screenshotId Screenshot ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;ScreenshotMarker&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -461,8 +476,8 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<ScreenshotMarker> screenshotMarkerShowWithHttpInfo(String projectId, String screenshotId, String id, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = screenshotMarkerShowValidateBeforeCall(projectId, screenshotId, id, xPhraseAppOTP, null);
+    public ApiResponse<ScreenshotMarker> screenshotMarkerShowWithHttpInfo(String projectId, String screenshotId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = screenshotMarkerShowValidateBeforeCall(projectId, screenshotId, id, xPhraseAppOTP, branch, null);
         Type localVarReturnType = new TypeToken<ScreenshotMarker>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -474,6 +489,7 @@ public class ScreenshotMarkersApi {
      * @param screenshotId Screenshot ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -486,9 +502,9 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotMarkerShowAsync(String projectId, String screenshotId, String id, String xPhraseAppOTP, final ApiCallback<ScreenshotMarker> _callback) throws ApiException {
+    public okhttp3.Call screenshotMarkerShowAsync(String projectId, String screenshotId, String id, String xPhraseAppOTP, String branch, final ApiCallback<ScreenshotMarker> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = screenshotMarkerShowValidateBeforeCall(projectId, screenshotId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = screenshotMarkerShowValidateBeforeCall(projectId, screenshotId, id, xPhraseAppOTP, branch, _callback);
         Type localVarReturnType = new TypeToken<ScreenshotMarker>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -650,6 +666,7 @@ public class ScreenshotMarkersApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -662,7 +679,7 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotMarkersListCall(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call screenshotMarkersListCall(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -678,6 +695,10 @@ public class ScreenshotMarkersApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -706,7 +727,7 @@ public class ScreenshotMarkersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call screenshotMarkersListValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call screenshotMarkersListValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -719,7 +740,7 @@ public class ScreenshotMarkersApi {
         }
         
 
-        okhttp3.Call localVarCall = screenshotMarkersListCall(projectId, id, xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = screenshotMarkersListCall(projectId, id, xPhraseAppOTP, page, perPage, branch, _callback);
         return localVarCall;
 
     }
@@ -732,6 +753,7 @@ public class ScreenshotMarkersApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @return List&lt;ScreenshotMarker&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -743,8 +765,8 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<ScreenshotMarker> screenshotMarkersList(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<ScreenshotMarker>> localVarResp = screenshotMarkersListWithHttpInfo(projectId, id, xPhraseAppOTP, page, perPage);
+    public List<ScreenshotMarker> screenshotMarkersList(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        ApiResponse<List<ScreenshotMarker>> localVarResp = screenshotMarkersListWithHttpInfo(projectId, id, xPhraseAppOTP, page, perPage, branch);
         return localVarResp.getData();
     }
 
@@ -756,6 +778,7 @@ public class ScreenshotMarkersApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;List&lt;ScreenshotMarker&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -767,8 +790,8 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<ScreenshotMarker>> screenshotMarkersListWithHttpInfo(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        okhttp3.Call localVarCall = screenshotMarkersListValidateBeforeCall(projectId, id, xPhraseAppOTP, page, perPage, null);
+    public ApiResponse<List<ScreenshotMarker>> screenshotMarkersListWithHttpInfo(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        okhttp3.Call localVarCall = screenshotMarkersListValidateBeforeCall(projectId, id, xPhraseAppOTP, page, perPage, branch, null);
         Type localVarReturnType = new TypeToken<List<ScreenshotMarker>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -781,6 +804,7 @@ public class ScreenshotMarkersApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -793,9 +817,9 @@ public class ScreenshotMarkersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotMarkersListAsync(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<ScreenshotMarker>> _callback) throws ApiException {
+    public okhttp3.Call screenshotMarkersListAsync(String projectId, String id, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<ScreenshotMarker>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = screenshotMarkersListValidateBeforeCall(projectId, id, xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = screenshotMarkersListValidateBeforeCall(projectId, id, xPhraseAppOTP, page, perPage, branch, _callback);
         Type localVarReturnType = new TypeToken<List<ScreenshotMarker>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

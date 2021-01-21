@@ -41,6 +41,14 @@ public class ScreenshotCreateParametersTest {
     }
 
     /**
+     * Test the property 'branch'
+     */
+    @Test
+    public void branchTest() {
+        // TODO: test branch
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

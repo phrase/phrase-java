@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 <a name="screenshotMarkerDelete"></a>
 # **screenshotMarkerDelete**
-> screenshotMarkerDelete(projectId, screenshotId, xPhraseAppOTP)
+> screenshotMarkerDelete(projectId, screenshotId, xPhraseAppOTP, branch)
 
 Delete a screenshot marker
 
@@ -132,8 +132,9 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String screenshotId = "screenshotId_example"; // String | Screenshot ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = my-feature-branch; // String | specify the branch to use
     try {
-      apiInstance.screenshotMarkerDelete(projectId, screenshotId, xPhraseAppOTP);
+      apiInstance.screenshotMarkerDelete(projectId, screenshotId, xPhraseAppOTP, branch);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotMarkersApi#screenshotMarkerDelete");
       System.err.println("Status code: " + e.getCode());
@@ -152,6 +153,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **screenshotId** | **String**| Screenshot ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type
 
@@ -176,7 +178,7 @@ null (empty response body)
 
 <a name="screenshotMarkerShow"></a>
 # **screenshotMarkerShow**
-> ScreenshotMarker screenshotMarkerShow(projectId, screenshotId, id, xPhraseAppOTP)
+> ScreenshotMarker screenshotMarkerShow(projectId, screenshotId, id, xPhraseAppOTP, branch)
 
 Get a single screenshot marker
 
@@ -213,8 +215,9 @@ public class Example {
     String screenshotId = "screenshotId_example"; // String | Screenshot ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = my-feature-branch; // String | specify the branch to use
     try {
-      ScreenshotMarker result = apiInstance.screenshotMarkerShow(projectId, screenshotId, id, xPhraseAppOTP);
+      ScreenshotMarker result = apiInstance.screenshotMarkerShow(projectId, screenshotId, id, xPhraseAppOTP, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotMarkersApi#screenshotMarkerShow");
@@ -235,6 +238,7 @@ Name | Type | Description  | Notes
  **screenshotId** | **String**| Screenshot ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type
 
@@ -342,7 +346,7 @@ Name | Type | Description  | Notes
 
 <a name="screenshotMarkersList"></a>
 # **screenshotMarkersList**
-> List&lt;ScreenshotMarker&gt; screenshotMarkersList(projectId, id, xPhraseAppOTP, page, perPage)
+> List&lt;ScreenshotMarker&gt; screenshotMarkersList(projectId, id, xPhraseAppOTP, page, perPage, branch)
 
 List screenshot markers
 
@@ -380,8 +384,9 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    String branch = my-feature-branch; // String | specify the branch to use
     try {
-      List<ScreenshotMarker> result = apiInstance.screenshotMarkersList(projectId, id, xPhraseAppOTP, page, perPage);
+      List<ScreenshotMarker> result = apiInstance.screenshotMarkersList(projectId, id, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotMarkersApi#screenshotMarkersList");
@@ -403,6 +408,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type
 

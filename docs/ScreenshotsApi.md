@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="screenshotDelete"></a>
 # **screenshotDelete**
-> screenshotDelete(projectId, id, xPhraseAppOTP)
+> screenshotDelete(projectId, id, xPhraseAppOTP, branch)
 
 Delete a screenshot
 
@@ -130,8 +130,9 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = my-feature-branch; // String | specify the branch to use
     try {
-      apiInstance.screenshotDelete(projectId, id, xPhraseAppOTP);
+      apiInstance.screenshotDelete(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotsApi#screenshotDelete");
       System.err.println("Status code: " + e.getCode());
@@ -150,6 +151,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type
 
@@ -174,7 +176,7 @@ null (empty response body)
 
 <a name="screenshotShow"></a>
 # **screenshotShow**
-> Screenshot screenshotShow(projectId, id, xPhraseAppOTP)
+> Screenshot screenshotShow(projectId, id, xPhraseAppOTP, branch)
 
 Get a single screenshot
 
@@ -210,8 +212,9 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = my-feature-branch; // String | specify the branch to use
     try {
-      Screenshot result = apiInstance.screenshotShow(projectId, id, xPhraseAppOTP);
+      Screenshot result = apiInstance.screenshotShow(projectId, id, xPhraseAppOTP, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotsApi#screenshotShow");
@@ -231,6 +234,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type
 
@@ -338,7 +342,7 @@ Name | Type | Description  | Notes
 
 <a name="screenshotsList"></a>
 # **screenshotsList**
-> List&lt;Screenshot&gt; screenshotsList(projectId, xPhraseAppOTP, page, perPage, keyId)
+> List&lt;Screenshot&gt; screenshotsList(projectId, xPhraseAppOTP, page, perPage, branch, keyId)
 
 List screenshots
 
@@ -375,9 +379,10 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    String branch = my-feature-branch; // String | specify the branch to use
     String keyId = abcd1234cdef1234abcd1234cdef1234; // String | filter by key
     try {
-      List<Screenshot> result = apiInstance.screenshotsList(projectId, xPhraseAppOTP, page, perPage, keyId);
+      List<Screenshot> result = apiInstance.screenshotsList(projectId, xPhraseAppOTP, page, perPage, branch, keyId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotsApi#screenshotsList");
@@ -398,6 +403,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
  **keyId** | **String**| filter by key | [optional]
 
 ### Return type

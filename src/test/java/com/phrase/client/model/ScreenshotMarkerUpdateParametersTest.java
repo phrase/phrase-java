@@ -40,6 +40,14 @@ public class ScreenshotMarkerUpdateParametersTest {
     }
 
     /**
+     * Test the property 'branch'
+     */
+    @Test
+    public void branchTest() {
+        // TODO: test branch
+    }
+
+    /**
      * Test the property 'keyId'
      */
     @Test

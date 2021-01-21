@@ -65,7 +65,8 @@ public class ScreenshotMarkersApiTest {
         String projectId = null;
         String screenshotId = null;
         String xPhraseAppOTP = null;
-        api.screenshotMarkerDelete(projectId, screenshotId, xPhraseAppOTP);
+        String branch = null;
+        api.screenshotMarkerDelete(projectId, screenshotId, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -84,7 +85,8 @@ public class ScreenshotMarkersApiTest {
         String screenshotId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        ScreenshotMarker response = api.screenshotMarkerShow(projectId, screenshotId, id, xPhraseAppOTP);
+        String branch = null;
+        ScreenshotMarker response = api.screenshotMarkerShow(projectId, screenshotId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -123,7 +125,8 @@ public class ScreenshotMarkersApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<ScreenshotMarker> response = api.screenshotMarkersList(projectId, id, xPhraseAppOTP, page, perPage);
+        String branch = null;
+        List<ScreenshotMarker> response = api.screenshotMarkersList(projectId, id, xPhraseAppOTP, page, perPage, branch);
 
         // TODO: test validations
     }

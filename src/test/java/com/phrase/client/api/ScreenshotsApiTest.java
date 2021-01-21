@@ -64,7 +64,8 @@ public class ScreenshotsApiTest {
         String projectId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        api.screenshotDelete(projectId, id, xPhraseAppOTP);
+        String branch = null;
+        api.screenshotDelete(projectId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -82,7 +83,8 @@ public class ScreenshotsApiTest {
         String projectId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        Screenshot response = api.screenshotShow(projectId, id, xPhraseAppOTP);
+        String branch = null;
+        Screenshot response = api.screenshotShow(projectId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -120,8 +122,9 @@ public class ScreenshotsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
+        String branch = null;
         String keyId = null;
-        List<Screenshot> response = api.screenshotsList(projectId, xPhraseAppOTP, page, perPage, keyId);
+        List<Screenshot> response = api.screenshotsList(projectId, xPhraseAppOTP, page, perPage, branch, keyId);
 
         // TODO: test validations
     }

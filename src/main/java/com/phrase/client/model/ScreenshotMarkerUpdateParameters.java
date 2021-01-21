@@ -26,8 +26,12 @@ import java.io.IOException;
 /**
  * ScreenshotMarkerUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-13T13:21:46.624Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-21T15:04:19.306Z[Etc/UTC]")
 public class ScreenshotMarkerUpdateParameters {
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
+
   public static final String SERIALIZED_NAME_KEY_ID = "key_id";
   @SerializedName(SERIALIZED_NAME_KEY_ID)
   private String keyId;
@@ -35,6 +39,29 @@ public class ScreenshotMarkerUpdateParameters {
   public static final String SERIALIZED_NAME_PRESENTATION = "presentation";
   @SerializedName(SERIALIZED_NAME_PRESENTATION)
   private String presentation;
+
+
+  public ScreenshotMarkerUpdateParameters branch(String branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * specify the branch to use
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
+
+  public String getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(String branch) {
+    this.branch = branch;
+  }
 
 
   public ScreenshotMarkerUpdateParameters keyId(String keyId) {
@@ -92,13 +119,14 @@ public class ScreenshotMarkerUpdateParameters {
       return false;
     }
     ScreenshotMarkerUpdateParameters screenshotMarkerUpdateParameters = (ScreenshotMarkerUpdateParameters) o;
-    return Objects.equals(this.keyId, screenshotMarkerUpdateParameters.keyId) &&
+    return Objects.equals(this.branch, screenshotMarkerUpdateParameters.branch) &&
+        Objects.equals(this.keyId, screenshotMarkerUpdateParameters.keyId) &&
         Objects.equals(this.presentation, screenshotMarkerUpdateParameters.presentation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(keyId, presentation);
+    return Objects.hash(branch, keyId, presentation);
   }
 
 
@@ -106,6 +134,7 @@ public class ScreenshotMarkerUpdateParameters {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScreenshotMarkerUpdateParameters {\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
     sb.append("    presentation: ").append(toIndentedString(presentation)).append("\n");
     sb.append("}");
