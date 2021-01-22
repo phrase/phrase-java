@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.User;
+import com.phrase.client.model.CurrentUser;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -114,7 +114,7 @@ public class UsersApi {
      * Show current User
      * Show details for current User.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return User
+     * @return CurrentUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -125,8 +125,8 @@ public class UsersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public User showUser(String xPhraseAppOTP) throws ApiException {
-        ApiResponse<User> localVarResp = showUserWithHttpInfo(xPhraseAppOTP);
+    public CurrentUser showUser(String xPhraseAppOTP) throws ApiException {
+        ApiResponse<CurrentUser> localVarResp = showUserWithHttpInfo(xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -134,7 +134,7 @@ public class UsersApi {
      * Show current User
      * Show details for current User.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;User&gt;
+     * @return ApiResponse&lt;CurrentUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -145,9 +145,9 @@ public class UsersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<User> showUserWithHttpInfo(String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<CurrentUser> showUserWithHttpInfo(String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = showUserValidateBeforeCall(xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -167,10 +167,10 @@ public class UsersApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call showUserAsync(String xPhraseAppOTP, final ApiCallback<User> _callback) throws ApiException {
+    public okhttp3.Call showUserAsync(String xPhraseAppOTP, final ApiCallback<CurrentUser> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = showUserValidateBeforeCall(xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<CurrentUser>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -13,7 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
-import com.phrase.client.model.User;
+import com.phrase.client.model.CurrentUser;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -42,7 +42,7 @@ public class UsersApiTest {
     @Test
     public void showUserTest() throws ApiException {
         String xPhraseAppOTP = null;
-        User response = api.showUser(xPhraseAppOTP);
+        CurrentUser response = api.showUser(xPhraseAppOTP);
 
         // TODO: test validations
     }

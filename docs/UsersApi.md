@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="showUser"></a>
 # **showUser**
-> User showUser(xPhraseAppOTP)
+> CurrentUser showUser(xPhraseAppOTP)
 
 Show current User
 
@@ -44,7 +44,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      User result = apiInstance.showUser(xPhraseAppOTP);
+      CurrentUser result = apiInstance.showUser(xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#showUser");
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**CurrentUser**](CurrentUser.md)
 
 ### Authorization
 

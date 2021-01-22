@@ -19,33 +19,39 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Account;
-import com.phrase.client.model.AccountDetails1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
- * AccountDetails
+ * CurrentUser
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-01-22T08:09:17.702Z[Etc/UTC]")
-public class AccountDetails {
+public class CurrentUser {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
+
+  public static final String SERIALIZED_NAME_USERNAME = "username";
+  @SerializedName(SERIALIZED_NAME_USERNAME)
+  private String username;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  private String slug;
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
+  private String email;
 
-  public static final String SERIALIZED_NAME_COMPANY = "company";
-  @SerializedName(SERIALIZED_NAME_COMPANY)
-  private String company;
+  public static final String SERIALIZED_NAME_POSITION = "position";
+  @SerializedName(SERIALIZED_NAME_POSITION)
+  private String position;
+
+  public static final String SERIALIZED_NAME_LANGUAGE = "language";
+  @SerializedName(SERIALIZED_NAME_LANGUAGE)
+  private String language;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -56,7 +62,7 @@ public class AccountDetails {
   private OffsetDateTime updatedAt;
 
 
-  public AccountDetails id(String id) {
+  public CurrentUser id(String id) {
     
     this.id = id;
     return this;
@@ -79,7 +85,30 @@ public class AccountDetails {
   }
 
 
-  public AccountDetails name(String name) {
+  public CurrentUser username(String username) {
+    
+    this.username = username;
+    return this;
+  }
+
+   /**
+   * Get username
+   * @return username
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getUsername() {
+    return username;
+  }
+
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+
+  public CurrentUser name(String name) {
     
     this.name = name;
     return this;
@@ -102,53 +131,76 @@ public class AccountDetails {
   }
 
 
-  public AccountDetails slug(String slug) {
+  public CurrentUser email(String email) {
     
-    this.slug = slug;
+    this.email = email;
     return this;
   }
 
    /**
-   * Get slug
-   * @return slug
+   * Get email
+   * @return email
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getSlug() {
-    return slug;
+  public String getEmail() {
+    return email;
   }
 
 
-  public void setSlug(String slug) {
-    this.slug = slug;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
 
-  public AccountDetails company(String company) {
+  public CurrentUser position(String position) {
     
-    this.company = company;
+    this.position = position;
     return this;
   }
 
    /**
-   * Get company
-   * @return company
+   * Get position
+   * @return position
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getCompany() {
-    return company;
+  public String getPosition() {
+    return position;
   }
 
 
-  public void setCompany(String company) {
-    this.company = company;
+  public void setPosition(String position) {
+    this.position = position;
   }
 
 
-  public AccountDetails createdAt(OffsetDateTime createdAt) {
+  public CurrentUser language(String language) {
+    
+    this.language = language;
+    return this;
+  }
+
+   /**
+   * Get language
+   * @return language
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getLanguage() {
+    return language;
+  }
+
+
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
+
+  public CurrentUser createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -171,7 +223,7 @@ public class AccountDetails {
   }
 
 
-  public AccountDetails updatedAt(OffsetDateTime updatedAt) {
+  public CurrentUser updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -202,29 +254,33 @@ public class AccountDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccountDetails accountDetails = (AccountDetails) o;
-    return Objects.equals(this.id, accountDetails.id) &&
-        Objects.equals(this.name, accountDetails.name) &&
-        Objects.equals(this.slug, accountDetails.slug) &&
-        Objects.equals(this.company, accountDetails.company) &&
-        Objects.equals(this.createdAt, accountDetails.createdAt) &&
-        Objects.equals(this.updatedAt, accountDetails.updatedAt);
+    CurrentUser currentUser = (CurrentUser) o;
+    return Objects.equals(this.id, currentUser.id) &&
+        Objects.equals(this.username, currentUser.username) &&
+        Objects.equals(this.name, currentUser.name) &&
+        Objects.equals(this.email, currentUser.email) &&
+        Objects.equals(this.position, currentUser.position) &&
+        Objects.equals(this.language, currentUser.language) &&
+        Objects.equals(this.createdAt, currentUser.createdAt) &&
+        Objects.equals(this.updatedAt, currentUser.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, company, createdAt, updatedAt);
+    return Objects.hash(id, username, name, email, position, language, createdAt, updatedAt);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AccountDetails {\n");
+    sb.append("class CurrentUser {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
-    sb.append("    company: ").append(toIndentedString(company)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
