@@ -14,13 +14,13 @@ Method | HTTP request | Description
 [**translationVerify**](TranslationsApi.md#translationVerify) | **PATCH** /projects/{project_id}/translations/{id}/verify | Verify a translation
 [**translationsByKey**](TranslationsApi.md#translationsByKey) | **GET** /projects/{project_id}/keys/{key_id}/translations | List translations by key
 [**translationsByLocale**](TranslationsApi.md#translationsByLocale) | **GET** /projects/{project_id}/locales/{locale_id}/translations | List translations by locale
-[**translationsExclude**](TranslationsApi.md#translationsExclude) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
-[**translationsInclude**](TranslationsApi.md#translationsInclude) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
+[**translationsExcludeCollection**](TranslationsApi.md#translationsExcludeCollection) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
+[**translationsIncludeCollection**](TranslationsApi.md#translationsIncludeCollection) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
 [**translationsList**](TranslationsApi.md#translationsList) | **GET** /projects/{project_id}/translations | List all translations
-[**translationsReview**](TranslationsApi.md#translationsReview) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
+[**translationsReviewCollection**](TranslationsApi.md#translationsReviewCollection) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
 [**translationsSearch**](TranslationsApi.md#translationsSearch) | **POST** /projects/{project_id}/translations/search | Search translations
-[**translationsUnverify**](TranslationsApi.md#translationsUnverify) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
-[**translationsVerify**](TranslationsApi.md#translationsVerify) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
+[**translationsUnverifyCollection**](TranslationsApi.md#translationsUnverifyCollection) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
+[**translationsVerifyCollection**](TranslationsApi.md#translationsVerifyCollection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
 
 
 <a name="translationCreate"></a>
@@ -871,9 +871,9 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="translationsExclude"></a>
-# **translationsExclude**
-> AffectedCount translationsExclude(projectId, translationsExcludeParameters, xPhraseAppOTP)
+<a name="translationsExcludeCollection"></a>
+# **translationsExcludeCollection**
+> AffectedCount translationsExcludeCollection(projectId, translationsExcludeParameters, xPhraseAppOTP)
 
 Set exclude from export flag on translations selected by query
 
@@ -910,10 +910,10 @@ public class Example {
     TranslationsExcludeParameters translationsExcludeParameters = new TranslationsExcludeParameters(); // TranslationsExcludeParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      AffectedCount result = apiInstance.translationsExclude(projectId, translationsExcludeParameters, xPhraseAppOTP);
+      AffectedCount result = apiInstance.translationsExcludeCollection(projectId, translationsExcludeParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TranslationsApi#translationsExclude");
+      System.err.println("Exception when calling TranslationsApi#translationsExcludeCollection");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -952,9 +952,9 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="translationsInclude"></a>
-# **translationsInclude**
-> AffectedCount translationsInclude(projectId, translationsIncludeParameters, xPhraseAppOTP)
+<a name="translationsIncludeCollection"></a>
+# **translationsIncludeCollection**
+> AffectedCount translationsIncludeCollection(projectId, translationsIncludeParameters, xPhraseAppOTP)
 
 Remove exlude from import flag from translations selected by query
 
@@ -991,10 +991,10 @@ public class Example {
     TranslationsIncludeParameters translationsIncludeParameters = new TranslationsIncludeParameters(); // TranslationsIncludeParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      AffectedCount result = apiInstance.translationsInclude(projectId, translationsIncludeParameters, xPhraseAppOTP);
+      AffectedCount result = apiInstance.translationsIncludeCollection(projectId, translationsIncludeParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TranslationsApi#translationsInclude");
+      System.err.println("Exception when calling TranslationsApi#translationsIncludeCollection");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1124,9 +1124,9 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="translationsReview"></a>
-# **translationsReview**
-> AffectedCount translationsReview(projectId, translationsReviewParameters, xPhraseAppOTP)
+<a name="translationsReviewCollection"></a>
+# **translationsReviewCollection**
+> AffectedCount translationsReviewCollection(projectId, translationsReviewParameters, xPhraseAppOTP)
 
 Review translations selected by query
 
@@ -1163,10 +1163,10 @@ public class Example {
     TranslationsReviewParameters translationsReviewParameters = new TranslationsReviewParameters(); // TranslationsReviewParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      AffectedCount result = apiInstance.translationsReview(projectId, translationsReviewParameters, xPhraseAppOTP);
+      AffectedCount result = apiInstance.translationsReviewCollection(projectId, translationsReviewParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TranslationsApi#translationsReview");
+      System.err.println("Exception when calling TranslationsApi#translationsReviewCollection");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1290,9 +1290,9 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="translationsUnverify"></a>
-# **translationsUnverify**
-> AffectedCount translationsUnverify(projectId, translationsUnverifyParameters, xPhraseAppOTP)
+<a name="translationsUnverifyCollection"></a>
+# **translationsUnverifyCollection**
+> AffectedCount translationsUnverifyCollection(projectId, translationsUnverifyParameters, xPhraseAppOTP)
 
 Mark translations selected by query as unverified
 
@@ -1329,10 +1329,10 @@ public class Example {
     TranslationsUnverifyParameters translationsUnverifyParameters = new TranslationsUnverifyParameters(); // TranslationsUnverifyParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      AffectedCount result = apiInstance.translationsUnverify(projectId, translationsUnverifyParameters, xPhraseAppOTP);
+      AffectedCount result = apiInstance.translationsUnverifyCollection(projectId, translationsUnverifyParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TranslationsApi#translationsUnverify");
+      System.err.println("Exception when calling TranslationsApi#translationsUnverifyCollection");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1371,9 +1371,9 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="translationsVerify"></a>
-# **translationsVerify**
-> AffectedCount translationsVerify(projectId, translationsVerifyParameters, xPhraseAppOTP)
+<a name="translationsVerifyCollection"></a>
+# **translationsVerifyCollection**
+> AffectedCount translationsVerifyCollection(projectId, translationsVerifyParameters, xPhraseAppOTP)
 
 Verify translations selected by query
 
@@ -1410,10 +1410,10 @@ public class Example {
     TranslationsVerifyParameters translationsVerifyParameters = new TranslationsVerifyParameters(); // TranslationsVerifyParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      AffectedCount result = apiInstance.translationsVerify(projectId, translationsVerifyParameters, xPhraseAppOTP);
+      AffectedCount result = apiInstance.translationsVerifyCollection(projectId, translationsVerifyParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TranslationsApi#translationsVerify");
+      System.err.println("Exception when calling TranslationsApi#translationsVerifyCollection");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

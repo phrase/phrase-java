@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**keyDelete**](KeysApi.md#keyDelete) | **DELETE** /projects/{project_id}/keys/{id} | Delete a key
 [**keyShow**](KeysApi.md#keyShow) | **GET** /projects/{project_id}/keys/{id} | Get a single key
 [**keyUpdate**](KeysApi.md#keyUpdate) | **PATCH** /projects/{project_id}/keys/{id} | Update a key
-[**keysDelete**](KeysApi.md#keysDelete) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
+[**keysDeleteCollection**](KeysApi.md#keysDeleteCollection) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
 [**keysList**](KeysApi.md#keysList) | **GET** /projects/{project_id}/keys | List keys
 [**keysSearch**](KeysApi.md#keysSearch) | **POST** /projects/{project_id}/keys/search | Search keys
 [**keysTag**](KeysApi.md#keysTag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
@@ -344,9 +344,9 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="keysDelete"></a>
-# **keysDelete**
-> AffectedResources keysDelete(projectId, xPhraseAppOTP, branch, q, localeId)
+<a name="keysDeleteCollection"></a>
+# **keysDeleteCollection**
+> AffectedResources keysDeleteCollection(projectId, xPhraseAppOTP, branch, q, localeId)
 
 Delete collection of keys
 
@@ -385,10 +385,10 @@ public class Example {
     String q = mykey* translated:true; // String | Specify a query to do broad search for keys by name (including wildcards).<br><br> The following qualifiers are also supported in the search term:<br> <ul>   <li><code>ids:key_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>name:key_name</code> for text queries on exact key names - whitespaces need to be prefixed with a backspace (\\\"\\\\\\\")</li>   <li><code>tags:tag_name</code> to filter for keys with certain tags</li>   <li><code>translated:{true|false}</code> for translation status (also requires <code>locale_id</code> to be specified)</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li>   <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
     String localeId = abcd1234abcd1234abcd1234abcd1234; // String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     try {
-      AffectedResources result = apiInstance.keysDelete(projectId, xPhraseAppOTP, branch, q, localeId);
+      AffectedResources result = apiInstance.keysDeleteCollection(projectId, xPhraseAppOTP, branch, q, localeId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling KeysApi#keysDelete");
+      System.err.println("Exception when calling KeysApi#keysDeleteCollection");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

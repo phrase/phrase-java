@@ -645,7 +645,7 @@ public class KeysApi {
         return localVarCall;
     }
     /**
-     * Build call for keysDelete
+     * Build call for keysDeleteCollection
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
@@ -663,7 +663,7 @@ public class KeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keysDeleteCall(String projectId, String xPhraseAppOTP, String branch, String q, String localeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call keysDeleteCollectionCall(String projectId, String xPhraseAppOTP, String branch, String q, String localeId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -710,15 +710,15 @@ public class KeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call keysDeleteValidateBeforeCall(String projectId, String xPhraseAppOTP, String branch, String q, String localeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call keysDeleteCollectionValidateBeforeCall(String projectId, String xPhraseAppOTP, String branch, String q, String localeId, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling keysDelete(Async)");
+            throw new ApiException("Missing the required parameter 'projectId' when calling keysDeleteCollection(Async)");
         }
         
 
-        okhttp3.Call localVarCall = keysDeleteCall(projectId, xPhraseAppOTP, branch, q, localeId, _callback);
+        okhttp3.Call localVarCall = keysDeleteCollectionCall(projectId, xPhraseAppOTP, branch, q, localeId, _callback);
         return localVarCall;
 
     }
@@ -742,8 +742,8 @@ public class KeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public AffectedResources keysDelete(String projectId, String xPhraseAppOTP, String branch, String q, String localeId) throws ApiException {
-        ApiResponse<AffectedResources> localVarResp = keysDeleteWithHttpInfo(projectId, xPhraseAppOTP, branch, q, localeId);
+    public AffectedResources keysDeleteCollection(String projectId, String xPhraseAppOTP, String branch, String q, String localeId) throws ApiException {
+        ApiResponse<AffectedResources> localVarResp = keysDeleteCollectionWithHttpInfo(projectId, xPhraseAppOTP, branch, q, localeId);
         return localVarResp.getData();
     }
 
@@ -766,8 +766,8 @@ public class KeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AffectedResources> keysDeleteWithHttpInfo(String projectId, String xPhraseAppOTP, String branch, String q, String localeId) throws ApiException {
-        okhttp3.Call localVarCall = keysDeleteValidateBeforeCall(projectId, xPhraseAppOTP, branch, q, localeId, null);
+    public ApiResponse<AffectedResources> keysDeleteCollectionWithHttpInfo(String projectId, String xPhraseAppOTP, String branch, String q, String localeId) throws ApiException {
+        okhttp3.Call localVarCall = keysDeleteCollectionValidateBeforeCall(projectId, xPhraseAppOTP, branch, q, localeId, null);
         Type localVarReturnType = new TypeToken<AffectedResources>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -792,9 +792,9 @@ public class KeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keysDeleteAsync(String projectId, String xPhraseAppOTP, String branch, String q, String localeId, final ApiCallback<AffectedResources> _callback) throws ApiException {
+    public okhttp3.Call keysDeleteCollectionAsync(String projectId, String xPhraseAppOTP, String branch, String q, String localeId, final ApiCallback<AffectedResources> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = keysDeleteValidateBeforeCall(projectId, xPhraseAppOTP, branch, q, localeId, _callback);
+        okhttp3.Call localVarCall = keysDeleteCollectionValidateBeforeCall(projectId, xPhraseAppOTP, branch, q, localeId, _callback);
         Type localVarReturnType = new TypeToken<AffectedResources>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

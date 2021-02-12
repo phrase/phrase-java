@@ -254,11 +254,11 @@ public class TranslationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void translationsExcludeTest() throws ApiException {
+    public void translationsExcludeCollectionTest() throws ApiException {
         String projectId = null;
         TranslationsExcludeParameters translationsExcludeParameters = null;
         String xPhraseAppOTP = null;
-        AffectedCount response = api.translationsExclude(projectId, translationsExcludeParameters, xPhraseAppOTP);
+        AffectedCount response = api.translationsExcludeCollection(projectId, translationsExcludeParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -272,11 +272,11 @@ public class TranslationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void translationsIncludeTest() throws ApiException {
+    public void translationsIncludeCollectionTest() throws ApiException {
         String projectId = null;
         TranslationsIncludeParameters translationsIncludeParameters = null;
         String xPhraseAppOTP = null;
-        AffectedCount response = api.translationsInclude(projectId, translationsIncludeParameters, xPhraseAppOTP);
+        AffectedCount response = api.translationsIncludeCollection(projectId, translationsIncludeParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -313,11 +313,11 @@ public class TranslationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void translationsReviewTest() throws ApiException {
+    public void translationsReviewCollectionTest() throws ApiException {
         String projectId = null;
         TranslationsReviewParameters translationsReviewParameters = null;
         String xPhraseAppOTP = null;
-        AffectedCount response = api.translationsReview(projectId, translationsReviewParameters, xPhraseAppOTP);
+        AffectedCount response = api.translationsReviewCollection(projectId, translationsReviewParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -351,11 +351,11 @@ public class TranslationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void translationsUnverifyTest() throws ApiException {
+    public void translationsUnverifyCollectionTest() throws ApiException {
         String projectId = null;
         TranslationsUnverifyParameters translationsUnverifyParameters = null;
         String xPhraseAppOTP = null;
-        AffectedCount response = api.translationsUnverify(projectId, translationsUnverifyParameters, xPhraseAppOTP);
+        AffectedCount response = api.translationsUnverifyCollection(projectId, translationsUnverifyParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -369,11 +369,11 @@ public class TranslationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void translationsVerifyTest() throws ApiException {
+    public void translationsVerifyCollectionTest() throws ApiException {
         String projectId = null;
         TranslationsVerifyParameters translationsVerifyParameters = null;
         String xPhraseAppOTP = null;
-        AffectedCount response = api.translationsVerify(projectId, translationsVerifyParameters, xPhraseAppOTP);
+        AffectedCount response = api.translationsVerifyCollection(projectId, translationsVerifyParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

@@ -122,13 +122,13 @@ public class KeysApiTest {
      *          if the Api call fails
      */
     @Test
-    public void keysDeleteTest() throws ApiException {
+    public void keysDeleteCollectionTest() throws ApiException {
         String projectId = null;
         String xPhraseAppOTP = null;
         String branch = null;
         String q = null;
         String localeId = null;
-        AffectedResources response = api.keysDelete(projectId, xPhraseAppOTP, branch, q, localeId);
+        AffectedResources response = api.keysDeleteCollection(projectId, xPhraseAppOTP, branch, q, localeId);
 
         // TODO: test validations
     }

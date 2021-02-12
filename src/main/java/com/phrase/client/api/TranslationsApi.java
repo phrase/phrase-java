@@ -1636,7 +1636,7 @@ public class TranslationsApi {
         return localVarCall;
     }
     /**
-     * Build call for translationsExclude
+     * Build call for translationsExcludeCollection
      * @param projectId Project ID (required)
      * @param translationsExcludeParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -1652,7 +1652,7 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsExcludeCall(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translationsExcludeCollectionCall(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = translationsExcludeParameters;
 
         // create path and map variables
@@ -1687,20 +1687,20 @@ public class TranslationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translationsExcludeValidateBeforeCall(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translationsExcludeCollectionValidateBeforeCall(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling translationsExclude(Async)");
+            throw new ApiException("Missing the required parameter 'projectId' when calling translationsExcludeCollection(Async)");
         }
         
         // verify the required parameter 'translationsExcludeParameters' is set
         if (translationsExcludeParameters == null) {
-            throw new ApiException("Missing the required parameter 'translationsExcludeParameters' when calling translationsExclude(Async)");
+            throw new ApiException("Missing the required parameter 'translationsExcludeParameters' when calling translationsExcludeCollection(Async)");
         }
         
 
-        okhttp3.Call localVarCall = translationsExcludeCall(projectId, translationsExcludeParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsExcludeCollectionCall(projectId, translationsExcludeParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -1722,8 +1722,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public AffectedCount translationsExclude(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<AffectedCount> localVarResp = translationsExcludeWithHttpInfo(projectId, translationsExcludeParameters, xPhraseAppOTP);
+    public AffectedCount translationsExcludeCollection(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<AffectedCount> localVarResp = translationsExcludeCollectionWithHttpInfo(projectId, translationsExcludeParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -1744,8 +1744,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AffectedCount> translationsExcludeWithHttpInfo(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = translationsExcludeValidateBeforeCall(projectId, translationsExcludeParameters, xPhraseAppOTP, null);
+    public ApiResponse<AffectedCount> translationsExcludeCollectionWithHttpInfo(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = translationsExcludeCollectionValidateBeforeCall(projectId, translationsExcludeParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1768,15 +1768,15 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsExcludeAsync(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
+    public okhttp3.Call translationsExcludeCollectionAsync(String projectId, TranslationsExcludeParameters translationsExcludeParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translationsExcludeValidateBeforeCall(projectId, translationsExcludeParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsExcludeCollectionValidateBeforeCall(projectId, translationsExcludeParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for translationsInclude
+     * Build call for translationsIncludeCollection
      * @param projectId Project ID (required)
      * @param translationsIncludeParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -1792,7 +1792,7 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsIncludeCall(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translationsIncludeCollectionCall(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = translationsIncludeParameters;
 
         // create path and map variables
@@ -1827,20 +1827,20 @@ public class TranslationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translationsIncludeValidateBeforeCall(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translationsIncludeCollectionValidateBeforeCall(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling translationsInclude(Async)");
+            throw new ApiException("Missing the required parameter 'projectId' when calling translationsIncludeCollection(Async)");
         }
         
         // verify the required parameter 'translationsIncludeParameters' is set
         if (translationsIncludeParameters == null) {
-            throw new ApiException("Missing the required parameter 'translationsIncludeParameters' when calling translationsInclude(Async)");
+            throw new ApiException("Missing the required parameter 'translationsIncludeParameters' when calling translationsIncludeCollection(Async)");
         }
         
 
-        okhttp3.Call localVarCall = translationsIncludeCall(projectId, translationsIncludeParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsIncludeCollectionCall(projectId, translationsIncludeParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -1862,8 +1862,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public AffectedCount translationsInclude(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<AffectedCount> localVarResp = translationsIncludeWithHttpInfo(projectId, translationsIncludeParameters, xPhraseAppOTP);
+    public AffectedCount translationsIncludeCollection(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<AffectedCount> localVarResp = translationsIncludeCollectionWithHttpInfo(projectId, translationsIncludeParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -1884,8 +1884,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AffectedCount> translationsIncludeWithHttpInfo(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = translationsIncludeValidateBeforeCall(projectId, translationsIncludeParameters, xPhraseAppOTP, null);
+    public ApiResponse<AffectedCount> translationsIncludeCollectionWithHttpInfo(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = translationsIncludeCollectionValidateBeforeCall(projectId, translationsIncludeParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1908,9 +1908,9 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsIncludeAsync(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
+    public okhttp3.Call translationsIncludeCollectionAsync(String projectId, TranslationsIncludeParameters translationsIncludeParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translationsIncludeValidateBeforeCall(projectId, translationsIncludeParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsIncludeCollectionValidateBeforeCall(projectId, translationsIncludeParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2095,7 +2095,7 @@ public class TranslationsApi {
         return localVarCall;
     }
     /**
-     * Build call for translationsReview
+     * Build call for translationsReviewCollection
      * @param projectId Project ID (required)
      * @param translationsReviewParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -2111,7 +2111,7 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsReviewCall(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translationsReviewCollectionCall(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = translationsReviewParameters;
 
         // create path and map variables
@@ -2146,20 +2146,20 @@ public class TranslationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translationsReviewValidateBeforeCall(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translationsReviewCollectionValidateBeforeCall(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling translationsReview(Async)");
+            throw new ApiException("Missing the required parameter 'projectId' when calling translationsReviewCollection(Async)");
         }
         
         // verify the required parameter 'translationsReviewParameters' is set
         if (translationsReviewParameters == null) {
-            throw new ApiException("Missing the required parameter 'translationsReviewParameters' when calling translationsReview(Async)");
+            throw new ApiException("Missing the required parameter 'translationsReviewParameters' when calling translationsReviewCollection(Async)");
         }
         
 
-        okhttp3.Call localVarCall = translationsReviewCall(projectId, translationsReviewParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsReviewCollectionCall(projectId, translationsReviewParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -2181,8 +2181,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public AffectedCount translationsReview(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<AffectedCount> localVarResp = translationsReviewWithHttpInfo(projectId, translationsReviewParameters, xPhraseAppOTP);
+    public AffectedCount translationsReviewCollection(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<AffectedCount> localVarResp = translationsReviewCollectionWithHttpInfo(projectId, translationsReviewParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -2203,8 +2203,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AffectedCount> translationsReviewWithHttpInfo(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = translationsReviewValidateBeforeCall(projectId, translationsReviewParameters, xPhraseAppOTP, null);
+    public ApiResponse<AffectedCount> translationsReviewCollectionWithHttpInfo(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = translationsReviewCollectionValidateBeforeCall(projectId, translationsReviewParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2227,9 +2227,9 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsReviewAsync(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
+    public okhttp3.Call translationsReviewCollectionAsync(String projectId, TranslationsReviewParameters translationsReviewParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translationsReviewValidateBeforeCall(projectId, translationsReviewParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsReviewCollectionValidateBeforeCall(projectId, translationsReviewParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2391,7 +2391,7 @@ public class TranslationsApi {
         return localVarCall;
     }
     /**
-     * Build call for translationsUnverify
+     * Build call for translationsUnverifyCollection
      * @param projectId Project ID (required)
      * @param translationsUnverifyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -2407,7 +2407,7 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsUnverifyCall(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translationsUnverifyCollectionCall(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = translationsUnverifyParameters;
 
         // create path and map variables
@@ -2442,20 +2442,20 @@ public class TranslationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translationsUnverifyValidateBeforeCall(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translationsUnverifyCollectionValidateBeforeCall(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling translationsUnverify(Async)");
+            throw new ApiException("Missing the required parameter 'projectId' when calling translationsUnverifyCollection(Async)");
         }
         
         // verify the required parameter 'translationsUnverifyParameters' is set
         if (translationsUnverifyParameters == null) {
-            throw new ApiException("Missing the required parameter 'translationsUnverifyParameters' when calling translationsUnverify(Async)");
+            throw new ApiException("Missing the required parameter 'translationsUnverifyParameters' when calling translationsUnverifyCollection(Async)");
         }
         
 
-        okhttp3.Call localVarCall = translationsUnverifyCall(projectId, translationsUnverifyParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsUnverifyCollectionCall(projectId, translationsUnverifyParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -2477,8 +2477,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public AffectedCount translationsUnverify(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<AffectedCount> localVarResp = translationsUnverifyWithHttpInfo(projectId, translationsUnverifyParameters, xPhraseAppOTP);
+    public AffectedCount translationsUnverifyCollection(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<AffectedCount> localVarResp = translationsUnverifyCollectionWithHttpInfo(projectId, translationsUnverifyParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -2499,8 +2499,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AffectedCount> translationsUnverifyWithHttpInfo(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = translationsUnverifyValidateBeforeCall(projectId, translationsUnverifyParameters, xPhraseAppOTP, null);
+    public ApiResponse<AffectedCount> translationsUnverifyCollectionWithHttpInfo(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = translationsUnverifyCollectionValidateBeforeCall(projectId, translationsUnverifyParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2523,15 +2523,15 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsUnverifyAsync(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
+    public okhttp3.Call translationsUnverifyCollectionAsync(String projectId, TranslationsUnverifyParameters translationsUnverifyParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translationsUnverifyValidateBeforeCall(projectId, translationsUnverifyParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsUnverifyCollectionValidateBeforeCall(projectId, translationsUnverifyParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for translationsVerify
+     * Build call for translationsVerifyCollection
      * @param projectId Project ID (required)
      * @param translationsVerifyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -2547,7 +2547,7 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsVerifyCall(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translationsVerifyCollectionCall(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = translationsVerifyParameters;
 
         // create path and map variables
@@ -2582,20 +2582,20 @@ public class TranslationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translationsVerifyValidateBeforeCall(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translationsVerifyCollectionValidateBeforeCall(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling translationsVerify(Async)");
+            throw new ApiException("Missing the required parameter 'projectId' when calling translationsVerifyCollection(Async)");
         }
         
         // verify the required parameter 'translationsVerifyParameters' is set
         if (translationsVerifyParameters == null) {
-            throw new ApiException("Missing the required parameter 'translationsVerifyParameters' when calling translationsVerify(Async)");
+            throw new ApiException("Missing the required parameter 'translationsVerifyParameters' when calling translationsVerifyCollection(Async)");
         }
         
 
-        okhttp3.Call localVarCall = translationsVerifyCall(projectId, translationsVerifyParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsVerifyCollectionCall(projectId, translationsVerifyParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -2617,8 +2617,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public AffectedCount translationsVerify(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<AffectedCount> localVarResp = translationsVerifyWithHttpInfo(projectId, translationsVerifyParameters, xPhraseAppOTP);
+    public AffectedCount translationsVerifyCollection(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<AffectedCount> localVarResp = translationsVerifyCollectionWithHttpInfo(projectId, translationsVerifyParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -2639,8 +2639,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<AffectedCount> translationsVerifyWithHttpInfo(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = translationsVerifyValidateBeforeCall(projectId, translationsVerifyParameters, xPhraseAppOTP, null);
+    public ApiResponse<AffectedCount> translationsVerifyCollectionWithHttpInfo(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = translationsVerifyCollectionValidateBeforeCall(projectId, translationsVerifyParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2663,9 +2663,9 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsVerifyAsync(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
+    public okhttp3.Call translationsVerifyCollectionAsync(String projectId, TranslationsVerifyParameters translationsVerifyParameters, String xPhraseAppOTP, final ApiCallback<AffectedCount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translationsVerifyValidateBeforeCall(projectId, translationsVerifyParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = translationsVerifyCollectionValidateBeforeCall(projectId, translationsVerifyParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<AffectedCount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
