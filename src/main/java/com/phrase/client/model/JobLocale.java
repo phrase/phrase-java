@@ -25,13 +25,14 @@ import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * JobLocale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-02-18T13:21:18.349Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-02-22T08:23:41.068Z[Etc/UTC]")
 public class JobLocale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -52,6 +53,14 @@ public class JobLocale {
   public static final String SERIALIZED_NAME_COMPLETED = "completed";
   @SerializedName(SERIALIZED_NAME_COMPLETED)
   private Boolean completed;
+
+  public static final String SERIALIZED_NAME_TRANSLATION_COMPLETED_AT = "translation_completed_at";
+  @SerializedName(SERIALIZED_NAME_TRANSLATION_COMPLETED_AT)
+  private OffsetDateTime translationCompletedAt;
+
+  public static final String SERIALIZED_NAME_REVIEW_COMPLETED_AT = "review_completed_at";
+  @SerializedName(SERIALIZED_NAME_REVIEW_COMPLETED_AT)
+  private OffsetDateTime reviewCompletedAt;
 
 
   public JobLocale id(String id) {
@@ -177,6 +186,52 @@ public class JobLocale {
   }
 
 
+  public JobLocale translationCompletedAt(OffsetDateTime translationCompletedAt) {
+    
+    this.translationCompletedAt = translationCompletedAt;
+    return this;
+  }
+
+   /**
+   * Get translationCompletedAt
+   * @return translationCompletedAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getTranslationCompletedAt() {
+    return translationCompletedAt;
+  }
+
+
+  public void setTranslationCompletedAt(OffsetDateTime translationCompletedAt) {
+    this.translationCompletedAt = translationCompletedAt;
+  }
+
+
+  public JobLocale reviewCompletedAt(OffsetDateTime reviewCompletedAt) {
+    
+    this.reviewCompletedAt = reviewCompletedAt;
+    return this;
+  }
+
+   /**
+   * Get reviewCompletedAt
+   * @return reviewCompletedAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getReviewCompletedAt() {
+    return reviewCompletedAt;
+  }
+
+
+  public void setReviewCompletedAt(OffsetDateTime reviewCompletedAt) {
+    this.reviewCompletedAt = reviewCompletedAt;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -190,12 +245,14 @@ public class JobLocale {
         Objects.equals(this.job, jobLocale.job) &&
         Objects.equals(this.locale, jobLocale.locale) &&
         Objects.equals(this.users, jobLocale.users) &&
-        Objects.equals(this.completed, jobLocale.completed);
+        Objects.equals(this.completed, jobLocale.completed) &&
+        Objects.equals(this.translationCompletedAt, jobLocale.translationCompletedAt) &&
+        Objects.equals(this.reviewCompletedAt, jobLocale.reviewCompletedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, job, locale, users, completed);
+    return Objects.hash(id, job, locale, users, completed, translationCompletedAt, reviewCompletedAt);
   }
 
 
@@ -208,6 +265,8 @@ public class JobLocale {
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("    completed: ").append(toIndentedString(completed)).append("\n");
+    sb.append("    translationCompletedAt: ").append(toIndentedString(translationCompletedAt)).append("\n");
+    sb.append("    reviewCompletedAt: ").append(toIndentedString(reviewCompletedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

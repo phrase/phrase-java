@@ -23,6 +23,7 @@ import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Assert;
@@ -82,6 +83,22 @@ public class JobLocaleTest {
     @Test
     public void completedTest() {
         // TODO: test completed
+    }
+
+    /**
+     * Test the property 'translationCompletedAt'
+     */
+    @Test
+    public void translationCompletedAtTest() {
+        // TODO: test translationCompletedAt
+    }
+
+    /**
+     * Test the property 'reviewCompletedAt'
+     */
+    @Test
+    public void reviewCompletedAtTest() {
+        // TODO: test reviewCompletedAt
     }
 
 }

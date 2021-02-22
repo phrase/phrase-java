@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **locale** | [**LocalePreview**](LocalePreview.md) |  |  [optional]
 **users** | [**List&lt;UserPreview&gt;**](UserPreview.md) |  |  [optional]
 **completed** | **Boolean** |  |  [optional]
+**translationCompletedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**reviewCompletedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 
 
