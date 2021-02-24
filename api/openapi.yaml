@@ -3887,6 +3887,11 @@ paths:
         style: form
       responses:
         "200":
+          content:
+            '*':
+              schema:
+                format: binary
+                type: string
           description: OK
           headers:
             X-Rate-Limit-Limit:
@@ -3947,7 +3952,7 @@ paths:
           --file-format yml \
           --tags feature1,feature2 \
           --tag feature
-      x-accepts: application/json
+      x-accepts: '*'
   /accounts/{account_id}/distributions:
     get:
       description: List all distributions for the given account.

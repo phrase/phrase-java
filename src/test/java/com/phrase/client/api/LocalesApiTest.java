@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import java.io.File;
 import com.phrase.client.model.Locale;
 import com.phrase.client.model.LocaleCreateParameters;
 import com.phrase.client.model.LocaleDetails;
@@ -99,7 +100,7 @@ public class LocalesApiTest {
         Boolean includeUnverifiedTranslations = null;
         Boolean useLastReviewedVersion = null;
         String fallbackLocaleId = null;
-        api.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
+        File response = api.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
 
         // TODO: test validations
     }

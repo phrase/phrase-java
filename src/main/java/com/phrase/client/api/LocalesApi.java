@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import java.io.File;
 import com.phrase.client.model.Locale;
 import com.phrase.client.model.LocaleCreateParameters;
 import com.phrase.client.model.LocaleDetails;
@@ -451,7 +452,7 @@ public class LocalesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
-            
+            "*"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -508,6 +509,7 @@ public class LocalesApi {
      * @param includeUnverifiedTranslations if set to false unverified translations are excluded (optional)
      * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
+     * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -518,8 +520,9 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void localeDownload(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
-        localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
+    public File localeDownload(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
+        ApiResponse<File> localVarResp = localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
+        return localVarResp.getData();
     }
 
     /**
@@ -543,7 +546,7 @@ public class LocalesApi {
      * @param includeUnverifiedTranslations if set to false unverified translations are excluded (optional)
      * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -554,9 +557,10 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
+    public ApiResponse<File> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId) throws ApiException {
         okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -592,10 +596,11 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, final ApiCallback<File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
