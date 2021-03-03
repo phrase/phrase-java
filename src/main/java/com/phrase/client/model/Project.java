@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
+import com.phrase.client.model.Space1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,7 +29,7 @@ import java.time.OffsetDateTime;
 /**
  * Project
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-02-25T13:37:38.154Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-03T11:31:21.528Z[Etc/UTC]")
 public class Project {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -53,6 +54,10 @@ public class Project {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
   private Account account;
+
+  public static final String SERIALIZED_NAME_SPACE = "space";
+  @SerializedName(SERIALIZED_NAME_SPACE)
+  private Space1 space;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -201,6 +206,29 @@ public class Project {
   }
 
 
+  public Project space(Space1 space) {
+    
+    this.space = space;
+    return this;
+  }
+
+   /**
+   * Get space
+   * @return space
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Space1 getSpace() {
+    return space;
+  }
+
+
+  public void setSpace(Space1 space) {
+    this.space = space;
+  }
+
+
   public Project createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -262,13 +290,14 @@ public class Project {
         Objects.equals(this.mainFormat, project.mainFormat) &&
         Objects.equals(this.projectImageUrl, project.projectImageUrl) &&
         Objects.equals(this.account, project.account) &&
+        Objects.equals(this.space, project.space) &&
         Objects.equals(this.createdAt, project.createdAt) &&
         Objects.equals(this.updatedAt, project.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, account, createdAt, updatedAt);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, account, space, createdAt, updatedAt);
   }
 
 
@@ -282,6 +311,7 @@ public class Project {
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
     sb.append("    projectImageUrl: ").append(toIndentedString(projectImageUrl)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    sb.append("    space: ").append(toIndentedString(space)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

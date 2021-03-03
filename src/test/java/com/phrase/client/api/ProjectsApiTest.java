@@ -116,7 +116,8 @@ public class ProjectsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Project> response = api.projectsList(xPhraseAppOTP, page, perPage);
+        String sortBy = null;
+        List<Project> response = api.projectsList(xPhraseAppOTP, page, perPage, sortBy);
 
         // TODO: test validations
     }

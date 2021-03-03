@@ -22,12 +22,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 
 /**
- * LocalePreview
+ * Space1
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-03T11:31:21.528Z[Etc/UTC]")
-public class LocalePreview {
+public class Space1 {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -36,12 +37,20 @@ public class LocalePreview {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_PROJECTS_COUNT = "projects_count";
+  @SerializedName(SERIALIZED_NAME_PROJECTS_COUNT)
+  private Integer projectsCount;
 
 
-  public LocalePreview id(String id) {
+  public Space1 id(String id) {
     
     this.id = id;
     return this;
@@ -64,7 +73,7 @@ public class LocalePreview {
   }
 
 
-  public LocalePreview name(String name) {
+  public Space1 name(String name) {
     
     this.name = name;
     return this;
@@ -87,26 +96,72 @@ public class LocalePreview {
   }
 
 
-  public LocalePreview code(String code) {
+  public Space1 createdAt(OffsetDateTime createdAt) {
     
-    this.code = code;
+    this.createdAt = createdAt;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Get createdAt
+   * @return createdAt
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getCode() {
-    return code;
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
   }
 
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setCreatedAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public Space1 updatedAt(OffsetDateTime updatedAt) {
+    
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+   /**
+   * Get updatedAt
+   * @return updatedAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  public void setUpdatedAt(OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
+  public Space1 projectsCount(Integer projectsCount) {
+    
+    this.projectsCount = projectsCount;
+    return this;
+  }
+
+   /**
+   * Get projectsCount
+   * @return projectsCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getProjectsCount() {
+    return projectsCount;
+  }
+
+
+  public void setProjectsCount(Integer projectsCount) {
+    this.projectsCount = projectsCount;
   }
 
 
@@ -118,25 +173,29 @@ public class LocalePreview {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LocalePreview localePreview = (LocalePreview) o;
-    return Objects.equals(this.id, localePreview.id) &&
-        Objects.equals(this.name, localePreview.name) &&
-        Objects.equals(this.code, localePreview.code);
+    Space1 space1 = (Space1) o;
+    return Objects.equals(this.id, space1.id) &&
+        Objects.equals(this.name, space1.name) &&
+        Objects.equals(this.createdAt, space1.createdAt) &&
+        Objects.equals(this.updatedAt, space1.updatedAt) &&
+        Objects.equals(this.projectsCount, space1.projectsCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code);
+    return Objects.hash(id, name, createdAt, updatedAt, projectsCount);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LocalePreview {\n");
+    sb.append("class Space1 {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    projectsCount: ").append(toIndentedString(projectsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

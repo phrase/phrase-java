@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 <a name="projectsList"></a>
 # **projectsList**
-> List&lt;Project&gt; projectsList(xPhraseAppOTP, page, perPage)
+> List&lt;Project&gt; projectsList(xPhraseAppOTP, page, perPage, sortBy)
 
 List projects
 
@@ -366,8 +366,9 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    String sortBy = "sortBy_example"; // String | Sort projects. Valid options are \"name_asc\", \"name_desc\", \"updated_at_asc\", \"updated_at_desc\", \"space_asc\" and \"space_desc\".
     try {
-      List<Project> result = apiInstance.projectsList(xPhraseAppOTP, page, perPage);
+      List<Project> result = apiInstance.projectsList(xPhraseAppOTP, page, perPage, sortBy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#projectsList");
@@ -387,6 +388,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **sortBy** | **String**| Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. | [optional]
 
 ### Return type
 

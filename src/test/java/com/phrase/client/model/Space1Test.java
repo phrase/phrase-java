@@ -17,8 +17,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Account;
-import com.phrase.client.model.Space1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -29,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for Project
+ * Model tests for Space1
  */
-public class ProjectTest {
-    private final Project model = new Project();
+public class Space1Test {
+    private final Space1 model = new Space1();
 
     /**
-     * Model tests for Project
+     * Model tests for Space1
      */
     @Test
-    public void testProject() {
-        // TODO: test Project
+    public void testSpace1() {
+        // TODO: test Space1
     }
 
     /**
@@ -59,46 +57,6 @@ public class ProjectTest {
     }
 
     /**
-     * Test the property 'slug'
-     */
-    @Test
-    public void slugTest() {
-        // TODO: test slug
-    }
-
-    /**
-     * Test the property 'mainFormat'
-     */
-    @Test
-    public void mainFormatTest() {
-        // TODO: test mainFormat
-    }
-
-    /**
-     * Test the property 'projectImageUrl'
-     */
-    @Test
-    public void projectImageUrlTest() {
-        // TODO: test projectImageUrl
-    }
-
-    /**
-     * Test the property 'account'
-     */
-    @Test
-    public void accountTest() {
-        // TODO: test account
-    }
-
-    /**
-     * Test the property 'space'
-     */
-    @Test
-    public void spaceTest() {
-        // TODO: test space
-    }
-
-    /**
      * Test the property 'createdAt'
      */
     @Test
@@ -112,6 +70,14 @@ public class ProjectTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
+    }
+
+    /**
+     * Test the property 'projectsCount'
+     */
+    @Test
+    public void projectsCountTest() {
+        // TODO: test projectsCount
     }
 
 }

@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-02-25T13:37:38.154Z[Etc/UTC]
+  - Build date: 2021-03-03T11:31:21.528Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1943,6 +1943,7 @@ Class | Method | HTTP request | Description
  - [ScreenshotMarkerUpdateParameters](docs/ScreenshotMarkerUpdateParameters.md)
  - [ScreenshotUpdateParameters](docs/ScreenshotUpdateParameters.md)
  - [Space](docs/Space.md)
+ - [Space1](docs/Space1.md)
  - [SpaceCreateParameters](docs/SpaceCreateParameters.md)
  - [SpaceUpdateParameters](docs/SpaceUpdateParameters.md)
  - [SpacesProjectsCreateParameters](docs/SpacesProjectsCreateParameters.md)

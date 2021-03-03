@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **mainFormat** | **String** |  |  [optional]
 **projectImageUrl** | **String** |  |  [optional]
 **account** | [**Account**](Account.md) |  |  [optional]
+**space** | [**Space1**](Space1.md) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
