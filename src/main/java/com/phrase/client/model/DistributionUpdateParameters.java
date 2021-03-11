@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * DistributionUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-03T11:31:21.528Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-11T10:50:09.947400Z[Etc/UTC]")
 public class DistributionUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
