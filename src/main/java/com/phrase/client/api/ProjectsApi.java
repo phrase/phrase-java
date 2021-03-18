@@ -589,6 +589,7 @@ public class ProjectsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -602,7 +603,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call projectsListCall(String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call projectsListCall(String xPhraseAppOTP, Integer page, Integer perPage, String accountId, String sortBy, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -616,6 +617,10 @@ public class ProjectsApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (accountId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("account_id", accountId));
         }
 
         if (sortBy != null) {
@@ -648,10 +653,10 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call projectsListValidateBeforeCall(String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call projectsListValidateBeforeCall(String xPhraseAppOTP, Integer page, Integer perPage, String accountId, String sortBy, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = projectsListCall(xPhraseAppOTP, page, perPage, sortBy, _callback);
+        okhttp3.Call localVarCall = projectsListCall(xPhraseAppOTP, page, perPage, accountId, sortBy, _callback);
         return localVarCall;
 
     }
@@ -662,6 +667,7 @@ public class ProjectsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @return List&lt;Project&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -674,8 +680,8 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Project> projectsList(String xPhraseAppOTP, Integer page, Integer perPage, String sortBy) throws ApiException {
-        ApiResponse<List<Project>> localVarResp = projectsListWithHttpInfo(xPhraseAppOTP, page, perPage, sortBy);
+    public List<Project> projectsList(String xPhraseAppOTP, Integer page, Integer perPage, String accountId, String sortBy) throws ApiException {
+        ApiResponse<List<Project>> localVarResp = projectsListWithHttpInfo(xPhraseAppOTP, page, perPage, accountId, sortBy);
         return localVarResp.getData();
     }
 
@@ -685,6 +691,7 @@ public class ProjectsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @return ApiResponse&lt;List&lt;Project&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -697,8 +704,8 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Project>> projectsListWithHttpInfo(String xPhraseAppOTP, Integer page, Integer perPage, String sortBy) throws ApiException {
-        okhttp3.Call localVarCall = projectsListValidateBeforeCall(xPhraseAppOTP, page, perPage, sortBy, null);
+    public ApiResponse<List<Project>> projectsListWithHttpInfo(String xPhraseAppOTP, Integer page, Integer perPage, String accountId, String sortBy) throws ApiException {
+        okhttp3.Call localVarCall = projectsListValidateBeforeCall(xPhraseAppOTP, page, perPage, accountId, sortBy, null);
         Type localVarReturnType = new TypeToken<List<Project>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -709,6 +716,7 @@ public class ProjectsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -722,9 +730,9 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call projectsListAsync(String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, final ApiCallback<List<Project>> _callback) throws ApiException {
+    public okhttp3.Call projectsListAsync(String xPhraseAppOTP, Integer page, Integer perPage, String accountId, String sortBy, final ApiCallback<List<Project>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = projectsListValidateBeforeCall(xPhraseAppOTP, page, perPage, sortBy, _callback);
+        okhttp3.Call localVarCall = projectsListValidateBeforeCall(xPhraseAppOTP, page, perPage, accountId, sortBy, _callback);
         Type localVarReturnType = new TypeToken<List<Project>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
