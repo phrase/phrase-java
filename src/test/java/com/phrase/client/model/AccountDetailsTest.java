@@ -90,4 +90,12 @@ public class AccountDetailsTest {
         // TODO: test updatedAt
     }
 
+    /**
+     * Test the property 'companyLogoUrl'
+     */
+    @Test
+    public void companyLogoUrlTest() {
+        // TODO: test companyLogoUrl
+    }
+
 }

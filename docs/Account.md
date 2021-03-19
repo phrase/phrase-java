@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **company** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**companyLogoUrl** | **String** |  |  [optional]
 
 
 

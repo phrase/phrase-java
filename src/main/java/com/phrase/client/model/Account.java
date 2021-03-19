@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * Account
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-18T13:51:19.879015Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-03-19T06:35:07.265521Z[Etc/UTC]")
 public class Account {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -52,6 +52,10 @@ public class Account {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_COMPANY_LOGO_URL = "company_logo_url";
+  @SerializedName(SERIALIZED_NAME_COMPANY_LOGO_URL)
+  private String companyLogoUrl;
 
 
   public Account id(String id) {
@@ -192,6 +196,29 @@ public class Account {
   }
 
 
+  public Account companyLogoUrl(String companyLogoUrl) {
+    
+    this.companyLogoUrl = companyLogoUrl;
+    return this;
+  }
+
+   /**
+   * Get companyLogoUrl
+   * @return companyLogoUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCompanyLogoUrl() {
+    return companyLogoUrl;
+  }
+
+
+  public void setCompanyLogoUrl(String companyLogoUrl) {
+    this.companyLogoUrl = companyLogoUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -206,12 +233,13 @@ public class Account {
         Objects.equals(this.slug, account.slug) &&
         Objects.equals(this.company, account.company) &&
         Objects.equals(this.createdAt, account.createdAt) &&
-        Objects.equals(this.updatedAt, account.updatedAt);
+        Objects.equals(this.updatedAt, account.updatedAt) &&
+        Objects.equals(this.companyLogoUrl, account.companyLogoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, company, createdAt, updatedAt);
+    return Objects.hash(id, name, slug, company, createdAt, updatedAt, companyLogoUrl);
   }
 
 
@@ -225,6 +253,7 @@ public class Account {
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    companyLogoUrl: ").append(toIndentedString(companyLogoUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
