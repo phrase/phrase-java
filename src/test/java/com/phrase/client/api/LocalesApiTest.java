@@ -157,8 +157,9 @@ public class LocalesApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
+        String sortBy = null;
         String branch = null;
-        List<Locale> response = api.localesList(projectId, xPhraseAppOTP, page, perPage, branch);
+        List<Locale> response = api.localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch);
 
         // TODO: test validations
     }

@@ -908,6 +908,7 @@ public class LocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -921,7 +922,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localesListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call localesListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -936,6 +937,10 @@ public class LocalesApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (sortBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort_by", sortBy));
         }
 
         if (branch != null) {
@@ -968,7 +973,7 @@ public class LocalesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call localesListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call localesListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -976,7 +981,7 @@ public class LocalesApi {
         }
         
 
-        okhttp3.Call localVarCall = localesListCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
+        okhttp3.Call localVarCall = localesListCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, _callback);
         return localVarCall;
 
     }
@@ -988,6 +993,7 @@ public class LocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @return List&lt;Locale&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1000,8 +1006,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Locale> localesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        ApiResponse<List<Locale>> localVarResp = localesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch);
+    public List<Locale> localesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch) throws ApiException {
+        ApiResponse<List<Locale>> localVarResp = localesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, sortBy, branch);
         return localVarResp.getData();
     }
 
@@ -1012,6 +1018,7 @@ public class LocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;List&lt;Locale&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1024,8 +1031,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Locale>> localesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, null);
+    public ApiResponse<List<Locale>> localesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch) throws ApiException {
+        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, null);
         Type localVarReturnType = new TypeToken<List<Locale>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1037,6 +1044,7 @@ public class LocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1050,9 +1058,9 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<Locale>> _callback) throws ApiException {
+    public okhttp3.Call localesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, final ApiCallback<List<Locale>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
+        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, _callback);
         Type localVarReturnType = new TypeToken<List<Locale>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

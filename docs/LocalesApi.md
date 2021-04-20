@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 <a name="localesList"></a>
 # **localesList**
-> List&lt;Locale&gt; localesList(projectId, xPhraseAppOTP, page, perPage, branch)
+> List&lt;Locale&gt; localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch)
 
 List locales
 
@@ -491,9 +491,10 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    String sortBy = "sortBy_example"; // String | Sort locales. Valid options are \"name_asc\", \"name_desc\", \"default_asc\", \"default_desc\".
     String branch = my-feature-branch; // String | specify the branch to use
     try {
-      List<Locale> result = apiInstance.localesList(projectId, xPhraseAppOTP, page, perPage, branch);
+      List<Locale> result = apiInstance.localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#localesList");
@@ -514,6 +515,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **sortBy** | **String**| Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. | [optional]
  **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type
