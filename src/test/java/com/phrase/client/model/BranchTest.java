@@ -42,6 +42,22 @@ public class BranchTest {
     }
 
     /**
+     * Test the property 'baseProjectId'
+     */
+    @Test
+    public void baseProjectIdTest() {
+        // TODO: test baseProjectId
+    }
+
+    /**
+     * Test the property 'branchProjectId'
+     */
+    @Test
+    public void branchProjectIdTest() {
+        // TODO: test branchProjectId
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

@@ -28,8 +28,16 @@ import java.time.OffsetDateTime;
 /**
  * Branch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-07T06:58:19.588779Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T16:51:27.838641Z[Etc/UTC]")
 public class Branch {
+  public static final String SERIALIZED_NAME_BASE_PROJECT_ID = "base_project_id";
+  @SerializedName(SERIALIZED_NAME_BASE_PROJECT_ID)
+  private String baseProjectId;
+
+  public static final String SERIALIZED_NAME_BRANCH_PROJECT_ID = "branch_project_id";
+  @SerializedName(SERIALIZED_NAME_BRANCH_PROJECT_ID)
+  private String branchProjectId;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -57,6 +65,52 @@ public class Branch {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
+
+
+  public Branch baseProjectId(String baseProjectId) {
+    
+    this.baseProjectId = baseProjectId;
+    return this;
+  }
+
+   /**
+   * Get baseProjectId
+   * @return baseProjectId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getBaseProjectId() {
+    return baseProjectId;
+  }
+
+
+  public void setBaseProjectId(String baseProjectId) {
+    this.baseProjectId = baseProjectId;
+  }
+
+
+  public Branch branchProjectId(String branchProjectId) {
+    
+    this.branchProjectId = branchProjectId;
+    return this;
+  }
+
+   /**
+   * Get branchProjectId
+   * @return branchProjectId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getBranchProjectId() {
+    return branchProjectId;
+  }
+
+
+  public void setBranchProjectId(String branchProjectId) {
+    this.branchProjectId = branchProjectId;
+  }
 
 
   public Branch name(String name) {
@@ -229,7 +283,9 @@ public class Branch {
       return false;
     }
     Branch branch = (Branch) o;
-    return Objects.equals(this.name, branch.name) &&
+    return Objects.equals(this.baseProjectId, branch.baseProjectId) &&
+        Objects.equals(this.branchProjectId, branch.branchProjectId) &&
+        Objects.equals(this.name, branch.name) &&
         Objects.equals(this.createdAt, branch.createdAt) &&
         Objects.equals(this.updatedAt, branch.updatedAt) &&
         Objects.equals(this.mergedAt, branch.mergedAt) &&
@@ -240,7 +296,7 @@ public class Branch {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, createdAt, updatedAt, mergedAt, mergedBy, createdBy, state);
+    return Objects.hash(baseProjectId, branchProjectId, name, createdAt, updatedAt, mergedAt, mergedBy, createdBy, state);
   }
 
 
@@ -248,6 +304,8 @@ public class Branch {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Branch {\n");
+    sb.append("    baseProjectId: ").append(toIndentedString(baseProjectId)).append("\n");
+    sb.append("    branchProjectId: ").append(toIndentedString(branchProjectId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
