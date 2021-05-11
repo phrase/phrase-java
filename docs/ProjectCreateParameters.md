@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **removeProjectImage** | **Boolean** | Indicates whether the project image should be deleted. |  [optional]
 **accountId** | **String** | Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. |  [optional]
 **sourceProjectId** | **String** | When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params. |  [optional]
+**workflow** | **String** | (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. &lt;a href&#x3D;\&quot;https://help.phrase.com/help/advanced-review-workflow\&quot;&gt;Read more&lt;/a&gt; |  [optional]
 **machineTranslationEnabled** | **Boolean** | (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest |  [optional]
 **enableBranching** | **Boolean** | (Optional) Enable branching in the project |  [optional]
 **protectMasterBranch** | **Boolean** | (Optional) Protect the master branch in project where branching is enabled |  [optional]

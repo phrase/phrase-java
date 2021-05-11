@@ -97,6 +97,14 @@ public class ProjectCreateParametersTest {
     }
 
     /**
+     * Test the property 'workflow'
+     */
+    @Test
+    public void workflowTest() {
+        // TODO: test workflow
+    }
+
+    /**
      * Test the property 'machineTranslationEnabled'
      */
     @Test

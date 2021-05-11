@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-11T09:49:49.380123Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-11T15:15:16.949029Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -56,6 +56,10 @@ public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_SOURCE_PROJECT_ID = "source_project_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_PROJECT_ID)
   private String sourceProjectId;
+
+  public static final String SERIALIZED_NAME_WORKFLOW = "workflow";
+  @SerializedName(SERIALIZED_NAME_WORKFLOW)
+  private String workflow;
 
   public static final String SERIALIZED_NAME_MACHINE_TRANSLATION_ENABLED = "machine_translation_enabled";
   @SerializedName(SERIALIZED_NAME_MACHINE_TRANSLATION_ENABLED)
@@ -280,6 +284,29 @@ public class ProjectCreateParameters {
 
   public void setSourceProjectId(String sourceProjectId) {
     this.sourceProjectId = sourceProjectId;
+  }
+
+
+  public ProjectCreateParameters workflow(String workflow) {
+    
+    this.workflow = workflow;
+    return this;
+  }
+
+   /**
+   * (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. &lt;a href&#x3D;\&quot;https://help.phrase.com/help/advanced-review-workflow\&quot;&gt;Read more&lt;/a&gt;
+   * @return workflow
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "review", value = "(Optional) Review Workflow. \"simple\" / \"review\". <a href=\"https://help.phrase.com/help/advanced-review-workflow\">Read more</a>")
+
+  public String getWorkflow() {
+    return workflow;
+  }
+
+
+  public void setWorkflow(String workflow) {
+    this.workflow = workflow;
   }
 
 
@@ -667,6 +694,7 @@ public class ProjectCreateParameters {
         Objects.equals(this.removeProjectImage, projectCreateParameters.removeProjectImage) &&
         Objects.equals(this.accountId, projectCreateParameters.accountId) &&
         Objects.equals(this.sourceProjectId, projectCreateParameters.sourceProjectId) &&
+        Objects.equals(this.workflow, projectCreateParameters.workflow) &&
         Objects.equals(this.machineTranslationEnabled, projectCreateParameters.machineTranslationEnabled) &&
         Objects.equals(this.enableBranching, projectCreateParameters.enableBranching) &&
         Objects.equals(this.protectMasterBranch, projectCreateParameters.protectMasterBranch) &&
@@ -687,7 +715,7 @@ public class ProjectCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, mainFormat, sharesTranslationMemory, projectImage, removeProjectImage, accountId, sourceProjectId, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
+    return Objects.hash(name, mainFormat, sharesTranslationMemory, projectImage, removeProjectImage, accountId, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
   }
 
 
@@ -702,6 +730,7 @@ public class ProjectCreateParameters {
     sb.append("    removeProjectImage: ").append(toIndentedString(removeProjectImage)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    sourceProjectId: ").append(toIndentedString(sourceProjectId)).append("\n");
+    sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
     sb.append("    machineTranslationEnabled: ").append(toIndentedString(machineTranslationEnabled)).append("\n");
     sb.append("    enableBranching: ").append(toIndentedString(enableBranching)).append("\n");
     sb.append("    protectMasterBranch: ").append(toIndentedString(protectMasterBranch)).append("\n");
