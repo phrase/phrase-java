@@ -19,15 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.oas_any_type_not_mapped;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 
 /**
  * MemberSpaces
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T16:51:27.838641Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-11T09:21:53.640131Z[Etc/UTC]")
 public class MemberSpaces {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -39,11 +39,11 @@ public class MemberSpaces {
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private oas_any_type_not_mapped createdAt = null;
+  private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  private oas_any_type_not_mapped updatedAt = null;
+  private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_PROJECTS_COUNT = "projects_count";
   @SerializedName(SERIALIZED_NAME_PROJECTS_COUNT)
@@ -96,7 +96,7 @@ public class MemberSpaces {
   }
 
 
-  public MemberSpaces createdAt(oas_any_type_not_mapped createdAt) {
+  public MemberSpaces createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -109,17 +109,17 @@ public class MemberSpaces {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public oas_any_type_not_mapped getCreatedAt() {
+  public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
 
-  public void setCreatedAt(oas_any_type_not_mapped createdAt) {
+  public void setCreatedAt(OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public MemberSpaces updatedAt(oas_any_type_not_mapped updatedAt) {
+  public MemberSpaces updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -132,12 +132,12 @@ public class MemberSpaces {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public oas_any_type_not_mapped getUpdatedAt() {
+  public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
 
-  public void setUpdatedAt(oas_any_type_not_mapped updatedAt) {
+  public void setUpdatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

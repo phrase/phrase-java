@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
-**createdAt** | [**oas_any_type_not_mapped**](.md) |  |  [optional]
-**updatedAt** | [**oas_any_type_not_mapped**](.md) |  |  [optional]
+**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **projectsCount** | **Integer** |  |  [optional]
 
 
