@@ -24,35 +24,62 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TeamsUsersCreateParameters
+ * Subscription
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-21T08:32:21.623342Z[Etc/UTC]")
-public class TeamsUsersCreateParameters {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private String id;
+public class Subscription {
+  public static final String SERIALIZED_NAME_IS_CURRENT = "is_current";
+  @SerializedName(SERIALIZED_NAME_IS_CURRENT)
+  private Boolean isCurrent;
+
+  public static final String SERIALIZED_NAME_TRIAL_EXPIRED = "trial_expired";
+  @SerializedName(SERIALIZED_NAME_TRIAL_EXPIRED)
+  private Boolean trialExpired;
 
 
-  public TeamsUsersCreateParameters id(String id) {
+  public Subscription isCurrent(Boolean isCurrent) {
     
-    this.id = id;
+    this.isCurrent = isCurrent;
     return this;
   }
 
    /**
-   * User ID to add to the Team
-   * @return id
+   * Get isCurrent
+   * @return isCurrent
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "a4b3c2d1", value = "User ID to add to the Team")
+  @ApiModelProperty(value = "")
 
-  public String getId() {
-    return id;
+  public Boolean getIsCurrent() {
+    return isCurrent;
   }
 
 
-  public void setId(String id) {
-    this.id = id;
+  public void setIsCurrent(Boolean isCurrent) {
+    this.isCurrent = isCurrent;
+  }
+
+
+  public Subscription trialExpired(Boolean trialExpired) {
+    
+    this.trialExpired = trialExpired;
+    return this;
+  }
+
+   /**
+   * Get trialExpired
+   * @return trialExpired
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getTrialExpired() {
+    return trialExpired;
+  }
+
+
+  public void setTrialExpired(Boolean trialExpired) {
+    this.trialExpired = trialExpired;
   }
 
 
@@ -64,21 +91,23 @@ public class TeamsUsersCreateParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TeamsUsersCreateParameters teamsUsersCreateParameters = (TeamsUsersCreateParameters) o;
-    return Objects.equals(this.id, teamsUsersCreateParameters.id);
+    Subscription subscription = (Subscription) o;
+    return Objects.equals(this.isCurrent, subscription.isCurrent) &&
+        Objects.equals(this.trialExpired, subscription.trialExpired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(isCurrent, trialExpired);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TeamsUsersCreateParameters {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("class Subscription {\n");
+    sb.append("    isCurrent: ").append(toIndentedString(isCurrent)).append("\n");
+    sb.append("    trialExpired: ").append(toIndentedString(trialExpired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
 import com.phrase.client.model.AccountDetails1;
+import com.phrase.client.model.Subscription;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -96,6 +97,14 @@ public class AccountDetailsTest {
     @Test
     public void companyLogoUrlTest() {
         // TODO: test companyLogoUrl
+    }
+
+    /**
+     * Test the property 'subscription'
+     */
+    @Test
+    public void subscriptionTest() {
+        // TODO: test subscription
     }
 
 }
