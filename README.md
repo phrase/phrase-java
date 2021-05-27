@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-05-27T13:58:10.218658Z[Etc/UTC]
+  - Build date: 2021-05-27T14:41:01.383856Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -151,8 +151,6 @@ Please note that in HTTP headers, we will use the appropriate recommended date f
 
 ## Authentication
 
-<div class=\"alert alert-info\">For more detailed information on authentication, check out the <a href=\"#authentication\">API v2 Authentication Guide</a>.</div>
-
 There are two different ways to authenticate when performing API requests:
 
 * E-Mail and password
@@ -170,7 +168,7 @@ $ curl -u username:password \"https://api.phrase.com/v2/projects\"
 
 ### OAuth via Access Tokens
 
-You can create and manage access tokens in your [profile settings](https://app.phrase.com/settings/oauth_access_tokens) in Translation Center or via the [Authorizations API](#authorizations).
+You can create and manage access tokens in your [profile settings](https://app.phrase.com/settings/oauth_access_tokens) in Translation Center or via the [Authorizations API](#tag--Authorizations).
 
 Simply pass the access token as the username of your request:
 
@@ -183,8 +181,6 @@ or send the access token via the `Authorization` header field:
 ```
 $ curl -H \"Authorization: token ACCESS_TOKEN\" https://api.phrase.com/v2/projects
 ```
-
-For more detailed information on authentication, check out the <a href=\"#authentication\">API v2 Authentication Guide</a>.
 
 #### Send via parameter
 
@@ -366,7 +362,7 @@ myFunction({
 });
 ```
 
-To authenticate a JSONP request, you can send a valid [access token](#authentication) as the `?access_token` parameter along the request:
+To authenticate a JSONP request, you can send a valid [access token](#overview--oauth-via-access-tokens) as the `?access_token` parameter along the request:
 
 ```
 $ curl \"https://api.phrase.com/v2/projects?callback=myFunction&access_token=ACCESS-TOKEN\"
@@ -1190,8 +1186,8 @@ Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 
 #### Matches
 
-<span class=\"result-match\">**My dog** is lazy  
-</span> <span class=\"result-match\">**my dog** is lazy  
+<span class=\"result-match\">**My dog** is lazy
+</span> <span class=\"result-match\">**my dog** is lazy
 </span> <span class=\"result-match\">angry **dog** in **my** house</span>
 
 </div>
@@ -1287,8 +1283,8 @@ Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 
 #### Matches
 
-~~My dog is lazy~~  
-<span class=\"result-match\">**my dog is lazy**  
+~~My dog is lazy~~
+<span class=\"result-match\">**my dog is lazy**
 </span> ~~angry dog in my house~~
 
 </div>
@@ -1383,8 +1379,8 @@ Find more examples <a href=\"#overview--usage-examples\">here</a>.</td>
 
 #### Matches
 
-<span class=\"result-match\">My **dog is** lazy  
-</span> <span class=\"result-match\">my **dog is** lazy  
+<span class=\"result-match\">My **dog is** lazy
+</span> <span class=\"result-match\">my **dog is** lazy
 </span> ~~angry dog in my house~~
 
 </div>

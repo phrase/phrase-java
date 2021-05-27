@@ -214,7 +214,7 @@ public class Example {
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = my-feature-branch; // String | specify the branch to use
-    String fileFormat = yml; // String | File format name. See the format guide for all supported file formats.
+    String fileFormat = yml; // String | File format name. See the <a href=\"https://help.phrase.com/help/supported-platforms-and-formats\">format guide</a> for all supported file formats.
     String tags = feature1,feature2; // String | Limit results to keys tagged with a list of comma separated tag names.
     String tag = feature; // String | Limit download to tagged keys. This parameter is deprecated. Please use the \"tags\" parameter instead
     Boolean includeEmptyTranslations = true; // Boolean | Indicates whether keys without translations should be included in the output as well.
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
- **fileFormat** | **String**| File format name. See the format guide for all supported file formats. | [optional]
+ **fileFormat** | **String**| File format name. See the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/supported-platforms-and-formats\&quot;&gt;format guide&lt;/a&gt; for all supported file formats. | [optional]
  **tags** | **String**| Limit results to keys tagged with a list of comma separated tag names. | [optional]
  **tag** | **String**| Limit download to tagged keys. This parameter is deprecated. Please use the \&quot;tags\&quot; parameter instead | [optional]
  **includeEmptyTranslations** | **Boolean**| Indicates whether keys without translations should be included in the output as well. | [optional]
