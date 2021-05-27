@@ -44,7 +44,40 @@ public class NotificationGroupsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<NotificationGroupDetail> response = api.notificationGroupsList(xPhraseAppOTP, page, perPage);
+        List<Object> response = api.notificationGroupsList(xPhraseAppOTP, page, perPage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Mark all notification groups as read
+     *
+     * Mark all notification groups of the current user as read
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationGroupsMarkAllAsReadTest() throws ApiException {
+        String xPhraseAppOTP = null;
+        List<Object> response = api.notificationGroupsMarkAllAsRead(xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Mark a notification group as read
+     *
+     * Mark a notifications group of the current user as read
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationGroupsMarkAsReadTest() throws ApiException {
+        String id = null;
+        String xPhraseAppOTP = null;
+        NotificationGroupDetail response = api.notificationGroupsMarkAsRead(id, xPhraseAppOTP);
 
         // TODO: test validations
     }

@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-05-27T10:35:48.363633Z[Etc/UTC]
+  - Build date: 2021-05-27T12:25:49.166552Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1742,7 +1742,11 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**memberUpdateSettings**](docs/MembersApi.md#memberUpdateSettings) | **PATCH** /projects/{project_id}/members/{id} | Update a member&#39;s project settings
 *MembersApi* | [**membersList**](docs/MembersApi.md#membersList) | **GET** /accounts/{account_id}/members | List members
 *NotificationGroupsApi* | [**notificationGroupsList**](docs/NotificationGroupsApi.md#notificationGroupsList) | **GET** /notification_groups | List notification groups
+*NotificationGroupsApi* | [**notificationGroupsMarkAllAsRead**](docs/NotificationGroupsApi.md#notificationGroupsMarkAllAsRead) | **PATCH** /notification_groups/mark_all_as_read | Mark all notification groups as read
+*NotificationGroupsApi* | [**notificationGroupsMarkAsRead**](docs/NotificationGroupsApi.md#notificationGroupsMarkAsRead) | **PATCH** /notification_groups/{id}/mark_as_read | Mark a notification group as read
 *NotificationsApi* | [**notificationsList**](docs/NotificationsApi.md#notificationsList) | **GET** /notifications | List notifications
+*NotificationsApi* | [**notificationsMarkAllAsRead**](docs/NotificationsApi.md#notificationsMarkAllAsRead) | **POST** /notifications/mark_all_as_read | Mark all notifications as read
+*NotificationsApi* | [**notificationsShow**](docs/NotificationsApi.md#notificationsShow) | **GET** /notifications/{id} | Get a single notification
 *OrdersApi* | [**orderConfirm**](docs/OrdersApi.md#orderConfirm) | **PATCH** /projects/{project_id}/orders/{id}/confirm | Confirm an order
 *OrdersApi* | [**orderCreate**](docs/OrdersApi.md#orderCreate) | **POST** /projects/{project_id}/orders | Create a new order
 *OrdersApi* | [**orderDelete**](docs/OrdersApi.md#orderDelete) | **DELETE** /projects/{project_id}/orders/{id} | Cancel an order

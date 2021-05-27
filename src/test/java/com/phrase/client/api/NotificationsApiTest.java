@@ -44,7 +44,40 @@ public class NotificationsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Notification> response = api.notificationsList(xPhraseAppOTP, page, perPage);
+        List<Object> response = api.notificationsList(xPhraseAppOTP, page, perPage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Mark all notifications as read
+     *
+     * Mark all notifications of the current user as read
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationsMarkAllAsReadTest() throws ApiException {
+        String xPhraseAppOTP = null;
+        List<Object> response = api.notificationsMarkAllAsRead(xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get a single notification
+     *
+     * Get details on a single notification.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationsShowTest() throws ApiException {
+        String id = null;
+        String xPhraseAppOTP = null;
+        Notification response = api.notificationsShow(id, xPhraseAppOTP);
 
         // TODO: test validations
     }
