@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * User
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-21T08:32:21.623342Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T10:35:48.363633Z[Etc/UTC]")
 public class User {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -40,10 +40,6 @@ public class User {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
-
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
-  private String email;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
@@ -124,29 +120,6 @@ public class User {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-
-  public User email(String email) {
-    
-    this.email = email;
-    return this;
-  }
-
-   /**
-   * Get email
-   * @return email
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getEmail() {
-    return email;
-  }
-
-
-  public void setEmail(String email) {
-    this.email = email;
   }
 
 
@@ -231,7 +204,6 @@ public class User {
     return Objects.equals(this.id, user.id) &&
         Objects.equals(this.username, user.username) &&
         Objects.equals(this.name, user.name) &&
-        Objects.equals(this.email, user.email) &&
         Objects.equals(this.position, user.position) &&
         Objects.equals(this.createdAt, user.createdAt) &&
         Objects.equals(this.updatedAt, user.updatedAt);
@@ -239,7 +211,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, name, email, position, createdAt, updatedAt);
+    return Objects.hash(id, username, name, position, createdAt, updatedAt);
   }
 
 
@@ -250,7 +222,6 @@ public class User {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

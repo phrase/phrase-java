@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Subscription;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * Account
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-21T08:32:21.623342Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T10:35:48.363633Z[Etc/UTC]")
 public class Account {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -57,10 +56,6 @@ public class Account {
   public static final String SERIALIZED_NAME_COMPANY_LOGO_URL = "company_logo_url";
   @SerializedName(SERIALIZED_NAME_COMPANY_LOGO_URL)
   private String companyLogoUrl;
-
-  public static final String SERIALIZED_NAME_SUBSCRIPTION = "subscription";
-  @SerializedName(SERIALIZED_NAME_SUBSCRIPTION)
-  private Subscription subscription;
 
 
   public Account id(String id) {
@@ -224,29 +219,6 @@ public class Account {
   }
 
 
-  public Account subscription(Subscription subscription) {
-    
-    this.subscription = subscription;
-    return this;
-  }
-
-   /**
-   * Get subscription
-   * @return subscription
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Subscription getSubscription() {
-    return subscription;
-  }
-
-
-  public void setSubscription(Subscription subscription) {
-    this.subscription = subscription;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -262,13 +234,12 @@ public class Account {
         Objects.equals(this.company, account.company) &&
         Objects.equals(this.createdAt, account.createdAt) &&
         Objects.equals(this.updatedAt, account.updatedAt) &&
-        Objects.equals(this.companyLogoUrl, account.companyLogoUrl) &&
-        Objects.equals(this.subscription, account.subscription);
+        Objects.equals(this.companyLogoUrl, account.companyLogoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, company, createdAt, updatedAt, companyLogoUrl, subscription);
+    return Objects.hash(id, name, slug, company, createdAt, updatedAt, companyLogoUrl);
   }
 
 
@@ -283,7 +254,6 @@ public class Account {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    companyLogoUrl: ").append(toIndentedString(companyLogoUrl)).append("\n");
-    sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");
     sb.append("}");
     return sb.toString();
   }

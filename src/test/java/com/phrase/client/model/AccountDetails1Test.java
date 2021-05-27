@@ -17,6 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.Subscription;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -37,6 +38,14 @@ public class AccountDetails1Test {
     @Test
     public void testAccountDetails1() {
         // TODO: test AccountDetails1
+    }
+
+    /**
+     * Test the property 'subscription'
+     */
+    @Test
+    public void subscriptionTest() {
+        // TODO: test subscription
     }
 
     /**

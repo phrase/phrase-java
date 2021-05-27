@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.Subscription;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -26,11 +27,38 @@ import java.io.IOException;
 /**
  * AccountDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-21T08:32:21.623342Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T10:35:48.363633Z[Etc/UTC]")
 public class AccountDetails1 {
+  public static final String SERIALIZED_NAME_SUBSCRIPTION = "subscription";
+  @SerializedName(SERIALIZED_NAME_SUBSCRIPTION)
+  private Subscription subscription;
+
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
   private String slug;
+
+
+  public AccountDetails1 subscription(Subscription subscription) {
+    
+    this.subscription = subscription;
+    return this;
+  }
+
+   /**
+   * Get subscription
+   * @return subscription
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Subscription getSubscription() {
+    return subscription;
+  }
+
+
+  public void setSubscription(Subscription subscription) {
+    this.subscription = subscription;
+  }
 
 
   public AccountDetails1 slug(String slug) {
@@ -65,12 +93,13 @@ public class AccountDetails1 {
       return false;
     }
     AccountDetails1 accountDetails1 = (AccountDetails1) o;
-    return Objects.equals(this.slug, accountDetails1.slug);
+    return Objects.equals(this.subscription, accountDetails1.subscription) &&
+        Objects.equals(this.slug, accountDetails1.slug);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(slug);
+    return Objects.hash(subscription, slug);
   }
 
 
@@ -78,6 +107,7 @@ public class AccountDetails1 {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AccountDetails1 {\n");
+    sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("}");
     return sb.toString();

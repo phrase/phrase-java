@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-05-21T08:32:21.623342Z[Etc/UTC]
+  - Build date: 2021-05-27T10:35:48.363633Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1741,6 +1741,8 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**memberUpdate**](docs/MembersApi.md#memberUpdate) | **PATCH** /accounts/{account_id}/members/{id} | Update a member
 *MembersApi* | [**memberUpdateSettings**](docs/MembersApi.md#memberUpdateSettings) | **PATCH** /projects/{project_id}/members/{id} | Update a member&#39;s project settings
 *MembersApi* | [**membersList**](docs/MembersApi.md#membersList) | **GET** /accounts/{account_id}/members | List members
+*NotificationGroupsApi* | [**notificationGroupsList**](docs/NotificationGroupsApi.md#notificationGroupsList) | **GET** /notification_groups | List notification groups
+*NotificationsApi* | [**notificationsList**](docs/NotificationsApi.md#notificationsList) | **GET** /notifications | List notifications
 *OrdersApi* | [**orderConfirm**](docs/OrdersApi.md#orderConfirm) | **PATCH** /projects/{project_id}/orders/{id}/confirm | Confirm an order
 *OrdersApi* | [**orderCreate**](docs/OrdersApi.md#orderCreate) | **POST** /projects/{project_id}/orders | Create a new order
 *OrdersApi* | [**orderDelete**](docs/OrdersApi.md#orderDelete) | **DELETE** /projects/{project_id}/orders/{id} | Cancel an order
@@ -1922,6 +1924,9 @@ Class | Method | HTTP request | Description
  - [MemberSpaces](docs/MemberSpaces.md)
  - [MemberUpdateParameters](docs/MemberUpdateParameters.md)
  - [MemberUpdateSettingsParameters](docs/MemberUpdateSettingsParameters.md)
+ - [Notification](docs/Notification.md)
+ - [NotificationGroup](docs/NotificationGroup.md)
+ - [NotificationGroupDetail](docs/NotificationGroupDetail.md)
  - [OrderConfirmParameters](docs/OrderConfirmParameters.md)
  - [OrderCreateParameters](docs/OrderCreateParameters.md)
  - [Project](docs/Project.md)
