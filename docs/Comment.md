@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **user** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**mentionedUsers** | [**List&lt;UserPreview&gt;**](UserPreview.md) |  |  [optional]
 
 
 

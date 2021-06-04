@@ -24,11 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Comment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T14:41:01.383856Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-04T07:37:45.682388Z[Etc/UTC]")
 public class Comment {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -49,6 +51,10 @@ public class Comment {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_MENTIONED_USERS = "mentioned_users";
+  @SerializedName(SERIALIZED_NAME_MENTIONED_USERS)
+  private List<UserPreview> mentionedUsers = null;
 
 
   public Comment id(String id) {
@@ -166,6 +172,37 @@ public class Comment {
   }
 
 
+  public Comment mentionedUsers(List<UserPreview> mentionedUsers) {
+    
+    this.mentionedUsers = mentionedUsers;
+    return this;
+  }
+
+  public Comment addMentionedUsersItem(UserPreview mentionedUsersItem) {
+    if (this.mentionedUsers == null) {
+      this.mentionedUsers = new ArrayList<>();
+    }
+    this.mentionedUsers.add(mentionedUsersItem);
+    return this;
+  }
+
+   /**
+   * Get mentionedUsers
+   * @return mentionedUsers
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<UserPreview> getMentionedUsers() {
+    return mentionedUsers;
+  }
+
+
+  public void setMentionedUsers(List<UserPreview> mentionedUsers) {
+    this.mentionedUsers = mentionedUsers;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -179,12 +216,13 @@ public class Comment {
         Objects.equals(this.message, comment.message) &&
         Objects.equals(this.user, comment.user) &&
         Objects.equals(this.createdAt, comment.createdAt) &&
-        Objects.equals(this.updatedAt, comment.updatedAt);
+        Objects.equals(this.updatedAt, comment.updatedAt) &&
+        Objects.equals(this.mentionedUsers, comment.mentionedUsers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, message, user, createdAt, updatedAt);
+    return Objects.hash(id, message, user, createdAt, updatedAt, mentionedUsers);
   }
 
 
@@ -197,6 +235,7 @@ public class Comment {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    mentionedUsers: ").append(toIndentedString(mentionedUsers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

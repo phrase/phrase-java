@@ -22,6 +22,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -79,6 +81,14 @@ public class CommentTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
+    }
+
+    /**
+     * Test the property 'mentionedUsers'
+     */
+    @Test
+    public void mentionedUsersTest() {
+        // TODO: test mentionedUsers
     }
 
 }
