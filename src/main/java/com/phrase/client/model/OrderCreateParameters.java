@@ -28,11 +28,15 @@ import java.util.List;
 /**
  * OrderCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-04T07:37:45.682388Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-04T09:07:00.694138Z[Etc/UTC]")
 public class OrderCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
   private String branch;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_LSP = "lsp";
   @SerializedName(SERIALIZED_NAME_LSP)
@@ -107,6 +111,29 @@ public class OrderCreateParameters {
 
   public void setBranch(String branch) {
     this.branch = branch;
+  }
+
+
+  public OrderCreateParameters name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * the name of the order, default name is: Translation order from &#39;current datetime&#39;
+   * @return name
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Welcome message translations", value = "the name of the order, default name is: Translation order from 'current datetime'")
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -427,6 +454,7 @@ public class OrderCreateParameters {
     }
     OrderCreateParameters orderCreateParameters = (OrderCreateParameters) o;
     return Objects.equals(this.branch, orderCreateParameters.branch) &&
+        Objects.equals(this.name, orderCreateParameters.name) &&
         Objects.equals(this.lsp, orderCreateParameters.lsp) &&
         Objects.equals(this.sourceLocaleId, orderCreateParameters.sourceLocaleId) &&
         Objects.equals(this.targetLocaleIds, orderCreateParameters.targetLocaleIds) &&
@@ -444,7 +472,7 @@ public class OrderCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, lsp, sourceLocaleId, targetLocaleIds, translationType, tag, message, styleguideId, unverifyTranslationsUponDelivery, includeUntranslatedKeys, includeUnverifiedTranslations, category, quality, priority);
+    return Objects.hash(branch, name, lsp, sourceLocaleId, targetLocaleIds, translationType, tag, message, styleguideId, unverifyTranslationsUponDelivery, includeUntranslatedKeys, includeUnverifiedTranslations, category, quality, priority);
   }
 
 
@@ -453,6 +481,7 @@ public class OrderCreateParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrderCreateParameters {\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    lsp: ").append(toIndentedString(lsp)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    targetLocaleIds: ").append(toIndentedString(targetLocaleIds)).append("\n");

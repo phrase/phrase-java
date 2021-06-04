@@ -7,6 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use |  [optional]
+**name** | **String** | the name of the order, default name is: Translation order from &#39;current datetime&#39; |  [optional]
 **lsp** | **String** | Name of the LSP that should process this order. Can be one of gengo, textmaster. |  [optional]
 **sourceLocaleId** | **String** | Source locale for the order. Can be the name or public id of the source locale. Preferred is the public id. |  [optional]
 **targetLocaleIds** | **List&lt;String&gt;** | List of target locales you want the source content translate to. Can be the name or public id of the target locales. Preferred is the public id. |  [optional]

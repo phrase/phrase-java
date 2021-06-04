@@ -7,6 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  |  [optional]
+**name** | **String** |  |  [optional]
 **lsp** | **String** |  |  [optional]
 **amountInCents** | **Integer** |  |  [optional]
 **currency** | **String** |  |  [optional]

@@ -31,11 +31,15 @@ import java.util.List;
 /**
  * TranslationOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-04T07:37:45.682388Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-04T09:07:00.694138Z[Etc/UTC]")
 public class TranslationOrder {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_LSP = "lsp";
   @SerializedName(SERIALIZED_NAME_LSP)
@@ -122,6 +126,29 @@ public class TranslationOrder {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  public TranslationOrder name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -511,6 +538,7 @@ public class TranslationOrder {
     }
     TranslationOrder translationOrder = (TranslationOrder) o;
     return Objects.equals(this.id, translationOrder.id) &&
+        Objects.equals(this.name, translationOrder.name) &&
         Objects.equals(this.lsp, translationOrder.lsp) &&
         Objects.equals(this.amountInCents, translationOrder.amountInCents) &&
         Objects.equals(this.currency, translationOrder.currency) &&
@@ -531,7 +559,7 @@ public class TranslationOrder {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, lsp, amountInCents, currency, message, state, translationType, progressPercent, sourceLocale, targetLocales, tag, styleguide, unverifyTranslationsUponDelivery, quality, priority, createdAt, updatedAt);
+    return Objects.hash(id, name, lsp, amountInCents, currency, message, state, translationType, progressPercent, sourceLocale, targetLocales, tag, styleguide, unverifyTranslationsUponDelivery, quality, priority, createdAt, updatedAt);
   }
 
 
@@ -540,6 +568,7 @@ public class TranslationOrder {
     StringBuilder sb = new StringBuilder();
     sb.append("class TranslationOrder {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    lsp: ").append(toIndentedString(lsp)).append("\n");
     sb.append("    amountInCents: ").append(toIndentedString(amountInCents)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
