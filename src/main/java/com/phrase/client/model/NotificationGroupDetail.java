@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * NotificationGroupDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-04T09:07:00.694138Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-08T06:03:50.200282Z[Etc/UTC]")
 public class NotificationGroupDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -44,6 +44,10 @@ public class NotificationGroupDetail {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_NOTIFICATIONS_COUNT = "notifications_count";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATIONS_COUNT)
+  private Integer notificationsCount;
 
   public static final String SERIALIZED_NAME_LATEST_NOTIFICATION = "latest_notification";
   @SerializedName(SERIALIZED_NAME_LATEST_NOTIFICATION)
@@ -142,6 +146,29 @@ public class NotificationGroupDetail {
   }
 
 
+  public NotificationGroupDetail notificationsCount(Integer notificationsCount) {
+    
+    this.notificationsCount = notificationsCount;
+    return this;
+  }
+
+   /**
+   * Get notificationsCount
+   * @return notificationsCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getNotificationsCount() {
+    return notificationsCount;
+  }
+
+
+  public void setNotificationsCount(Integer notificationsCount) {
+    this.notificationsCount = notificationsCount;
+  }
+
+
   public NotificationGroupDetail latestNotification(Object latestNotification) {
     
     this.latestNotification = latestNotification;
@@ -178,12 +205,13 @@ public class NotificationGroupDetail {
         Objects.equals(this.eventName, notificationGroupDetail.eventName) &&
         Objects.equals(this.createdAt, notificationGroupDetail.createdAt) &&
         Objects.equals(this.updatedAt, notificationGroupDetail.updatedAt) &&
+        Objects.equals(this.notificationsCount, notificationGroupDetail.notificationsCount) &&
         Objects.equals(this.latestNotification, notificationGroupDetail.latestNotification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, eventName, createdAt, updatedAt, latestNotification);
+    return Objects.hash(id, eventName, createdAt, updatedAt, notificationsCount, latestNotification);
   }
 
 
@@ -195,6 +223,7 @@ public class NotificationGroupDetail {
     sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    notificationsCount: ").append(toIndentedString(notificationsCount)).append("\n");
     sb.append("    latestNotification: ").append(toIndentedString(latestNotification)).append("\n");
     sb.append("}");
     return sb.toString();

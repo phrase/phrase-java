@@ -73,6 +73,14 @@ public class NotificationGroupDetailTest {
     }
 
     /**
+     * Test the property 'notificationsCount'
+     */
+    @Test
+    public void notificationsCountTest() {
+        // TODO: test notificationsCount
+    }
+
+    /**
      * Test the property 'latestNotification'
      */
     @Test
