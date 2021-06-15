@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-06-08T06:03:50.200282Z[Etc/UTC]
+  - Build date: 2021-06-15T06:59:26.309075Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1726,6 +1726,7 @@ Class | Method | HTTP request | Description
 *KeysApi* | [**keysSearch**](docs/KeysApi.md#keysSearch) | **POST** /projects/{project_id}/keys/search | Search keys
 *KeysApi* | [**keysTag**](docs/KeysApi.md#keysTag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
 *KeysApi* | [**keysUntag**](docs/KeysApi.md#keysUntag) | **PATCH** /projects/{project_id}/keys/untag | Remove tags from collection of keys
+*LocalesApi* | [**accountLocales**](docs/LocalesApi.md#accountLocales) | **GET** /accounts/{account_id}/locales | List locales used in account
 *LocalesApi* | [**localeCreate**](docs/LocalesApi.md#localeCreate) | **POST** /projects/{project_id}/locales | Create a locale
 *LocalesApi* | [**localeDelete**](docs/LocalesApi.md#localeDelete) | **DELETE** /projects/{project_id}/locales/{id} | Delete a locale
 *LocalesApi* | [**localeDownload**](docs/LocalesApi.md#localeDownload) | **GET** /projects/{project_id}/locales/{id}/download | Download a locale
@@ -1916,6 +1917,7 @@ Class | Method | HTTP request | Description
  - [LocaleDetails](docs/LocaleDetails.md)
  - [LocaleDetails1](docs/LocaleDetails1.md)
  - [LocalePreview](docs/LocalePreview.md)
+ - [LocalePreview1](docs/LocalePreview1.md)
  - [LocaleStatistics](docs/LocaleStatistics.md)
  - [LocaleUpdateParameters](docs/LocaleUpdateParameters.md)
  - [Member](docs/Member.md)

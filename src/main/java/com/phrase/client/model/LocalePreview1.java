@@ -19,16 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.time.OffsetDateTime;
 
 /**
- * Space1
+ * LocalePreview1
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-15T06:59:26.309075Z[Etc/UTC]")
-public class Space1 {
+public class LocalePreview1 {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -37,20 +37,16 @@ public class Space1 {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private OffsetDateTime createdAt;
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private String code;
 
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  private OffsetDateTime updatedAt;
-
-  public static final String SERIALIZED_NAME_PROJECTS_COUNT = "projects_count";
-  @SerializedName(SERIALIZED_NAME_PROJECTS_COUNT)
-  private Integer projectsCount;
+  public static final String SERIALIZED_NAME_PROJECT = "project";
+  @SerializedName(SERIALIZED_NAME_PROJECT)
+  private ProjectShort project;
 
 
-  public Space1 id(String id) {
+  public LocalePreview1 id(String id) {
     
     this.id = id;
     return this;
@@ -73,7 +69,7 @@ public class Space1 {
   }
 
 
-  public Space1 name(String name) {
+  public LocalePreview1 name(String name) {
     
     this.name = name;
     return this;
@@ -96,72 +92,49 @@ public class Space1 {
   }
 
 
-  public Space1 createdAt(OffsetDateTime createdAt) {
+  public LocalePreview1 code(String code) {
     
-    this.createdAt = createdAt;
+    this.code = code;
     return this;
   }
 
    /**
-   * Get createdAt
-   * @return createdAt
+   * Get code
+   * @return code
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public OffsetDateTime getCreatedAt() {
-    return createdAt;
+  public String getCode() {
+    return code;
   }
 
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
-  public Space1 updatedAt(OffsetDateTime updatedAt) {
+  public LocalePreview1 project(ProjectShort project) {
     
-    this.updatedAt = updatedAt;
+    this.project = project;
     return this;
   }
 
    /**
-   * Get updatedAt
-   * @return updatedAt
+   * Get project
+   * @return project
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public OffsetDateTime getUpdatedAt() {
-    return updatedAt;
+  public ProjectShort getProject() {
+    return project;
   }
 
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
-  }
-
-
-  public Space1 projectsCount(Integer projectsCount) {
-    
-    this.projectsCount = projectsCount;
-    return this;
-  }
-
-   /**
-   * Get projectsCount
-   * @return projectsCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Integer getProjectsCount() {
-    return projectsCount;
-  }
-
-
-  public void setProjectsCount(Integer projectsCount) {
-    this.projectsCount = projectsCount;
+  public void setProject(ProjectShort project) {
+    this.project = project;
   }
 
 
@@ -173,29 +146,27 @@ public class Space1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Space1 space1 = (Space1) o;
-    return Objects.equals(this.id, space1.id) &&
-        Objects.equals(this.name, space1.name) &&
-        Objects.equals(this.createdAt, space1.createdAt) &&
-        Objects.equals(this.updatedAt, space1.updatedAt) &&
-        Objects.equals(this.projectsCount, space1.projectsCount);
+    LocalePreview1 localePreview1 = (LocalePreview1) o;
+    return Objects.equals(this.id, localePreview1.id) &&
+        Objects.equals(this.name, localePreview1.name) &&
+        Objects.equals(this.code, localePreview1.code) &&
+        Objects.equals(this.project, localePreview1.project);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdAt, updatedAt, projectsCount);
+    return Objects.hash(id, name, code, project);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Space1 {\n");
+    sb.append("class LocalePreview1 {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    projectsCount: ").append(toIndentedString(projectsCount)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("}");
     return sb.toString();
   }

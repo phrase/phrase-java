@@ -17,6 +17,7 @@ import java.io.File;
 import com.phrase.client.model.Locale;
 import com.phrase.client.model.LocaleCreateParameters;
 import com.phrase.client.model.LocaleDetails;
+import com.phrase.client.model.LocalePreview1;
 import com.phrase.client.model.LocaleUpdateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -34,6 +35,24 @@ public class LocalesApiTest {
 
     private final LocalesApi api = new LocalesApi();
 
+    
+    /**
+     * List locales used in account
+     *
+     * List all locales unique by locale code used across all projects within an account.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void accountLocalesTest() throws ApiException {
+        String xPhraseAppOTP = null;
+        Integer page = null;
+        Integer perPage = null;
+        List<LocalePreview1> response = api.accountLocales(xPhraseAppOTP, page, perPage);
+
+        // TODO: test validations
+    }
     
     /**
      * Create a locale
