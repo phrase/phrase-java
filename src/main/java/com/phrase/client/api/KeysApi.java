@@ -29,6 +29,8 @@ import java.io.IOException;
 import com.phrase.client.model.AffectedResources;
 import com.phrase.client.model.KeyCreateParameters;
 import com.phrase.client.model.KeyUpdateParameters;
+import com.phrase.client.model.KeysExcludeParameters;
+import com.phrase.client.model.KeysIncludeParameters;
 import com.phrase.client.model.KeysSearchParameters;
 import com.phrase.client.model.KeysTagParameters;
 import com.phrase.client.model.KeysUntagParameters;
@@ -795,6 +797,286 @@ public class KeysApi {
     public okhttp3.Call keysDeleteCollectionAsync(String projectId, String xPhraseAppOTP, String branch, String q, String localeId, final ApiCallback<AffectedResources> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = keysDeleteCollectionValidateBeforeCall(projectId, xPhraseAppOTP, branch, q, localeId, _callback);
+        Type localVarReturnType = new TypeToken<AffectedResources>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for keysExclude
+     * @param projectId Project ID (required)
+     * @param keysExcludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call keysExcludeCall(String projectId, KeysExcludeParameters keysExcludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = keysExcludeParameters;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/keys/exclude"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call keysExcludeValidateBeforeCall(String projectId, KeysExcludeParameters keysExcludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling keysExclude(Async)");
+        }
+        
+        // verify the required parameter 'keysExcludeParameters' is set
+        if (keysExcludeParameters == null) {
+            throw new ApiException("Missing the required parameter 'keysExcludeParameters' when calling keysExclude(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = keysExcludeCall(projectId, keysExcludeParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Exclude a locale on a collection of keys
+     * Exclude a locale on keys matching query. Same constraints as list.
+     * @param projectId Project ID (required)
+     * @param keysExcludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return AffectedResources
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public AffectedResources keysExclude(String projectId, KeysExcludeParameters keysExcludeParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<AffectedResources> localVarResp = keysExcludeWithHttpInfo(projectId, keysExcludeParameters, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Exclude a locale on a collection of keys
+     * Exclude a locale on keys matching query. Same constraints as list.
+     * @param projectId Project ID (required)
+     * @param keysExcludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;AffectedResources&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<AffectedResources> keysExcludeWithHttpInfo(String projectId, KeysExcludeParameters keysExcludeParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = keysExcludeValidateBeforeCall(projectId, keysExcludeParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<AffectedResources>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Exclude a locale on a collection of keys (asynchronously)
+     * Exclude a locale on keys matching query. Same constraints as list.
+     * @param projectId Project ID (required)
+     * @param keysExcludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call keysExcludeAsync(String projectId, KeysExcludeParameters keysExcludeParameters, String xPhraseAppOTP, final ApiCallback<AffectedResources> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = keysExcludeValidateBeforeCall(projectId, keysExcludeParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<AffectedResources>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for keysInclude
+     * @param projectId Project ID (required)
+     * @param keysIncludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call keysIncludeCall(String projectId, KeysIncludeParameters keysIncludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = keysIncludeParameters;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/keys/include"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call keysIncludeValidateBeforeCall(String projectId, KeysIncludeParameters keysIncludeParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling keysInclude(Async)");
+        }
+        
+        // verify the required parameter 'keysIncludeParameters' is set
+        if (keysIncludeParameters == null) {
+            throw new ApiException("Missing the required parameter 'keysIncludeParameters' when calling keysInclude(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = keysIncludeCall(projectId, keysIncludeParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Include a locale on a collection of keys
+     * Include a locale on keys matching query. Same constraints as list.
+     * @param projectId Project ID (required)
+     * @param keysIncludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return AffectedResources
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public AffectedResources keysInclude(String projectId, KeysIncludeParameters keysIncludeParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<AffectedResources> localVarResp = keysIncludeWithHttpInfo(projectId, keysIncludeParameters, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Include a locale on a collection of keys
+     * Include a locale on keys matching query. Same constraints as list.
+     * @param projectId Project ID (required)
+     * @param keysIncludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;AffectedResources&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<AffectedResources> keysIncludeWithHttpInfo(String projectId, KeysIncludeParameters keysIncludeParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = keysIncludeValidateBeforeCall(projectId, keysIncludeParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<AffectedResources>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Include a locale on a collection of keys (asynchronously)
+     * Include a locale on keys matching query. Same constraints as list.
+     * @param projectId Project ID (required)
+     * @param keysIncludeParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call keysIncludeAsync(String projectId, KeysIncludeParameters keysIncludeParameters, String xPhraseAppOTP, final ApiCallback<AffectedResources> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = keysIncludeValidateBeforeCall(projectId, keysIncludeParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<AffectedResources>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

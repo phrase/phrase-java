@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-06-15T10:01:59.772070Z[Etc/UTC]
+  - Build date: 2021-06-16T08:15:00.908668Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1722,6 +1722,8 @@ Class | Method | HTTP request | Description
 *KeysApi* | [**keyShow**](docs/KeysApi.md#keyShow) | **GET** /projects/{project_id}/keys/{id} | Get a single key
 *KeysApi* | [**keyUpdate**](docs/KeysApi.md#keyUpdate) | **PATCH** /projects/{project_id}/keys/{id} | Update a key
 *KeysApi* | [**keysDeleteCollection**](docs/KeysApi.md#keysDeleteCollection) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
+*KeysApi* | [**keysExclude**](docs/KeysApi.md#keysExclude) | **PATCH** /projects/{project_id}/keys/exclude | Exclude a locale on a collection of keys
+*KeysApi* | [**keysInclude**](docs/KeysApi.md#keysInclude) | **PATCH** /projects/{project_id}/keys/include | Include a locale on a collection of keys
 *KeysApi* | [**keysList**](docs/KeysApi.md#keysList) | **GET** /projects/{project_id}/keys | List keys
 *KeysApi* | [**keysSearch**](docs/KeysApi.md#keysSearch) | **POST** /projects/{project_id}/keys/search | Search keys
 *KeysApi* | [**keysTag**](docs/KeysApi.md#keysTag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
@@ -1909,6 +1911,8 @@ Class | Method | HTTP request | Description
  - [KeyCreateParameters](docs/KeyCreateParameters.md)
  - [KeyPreview](docs/KeyPreview.md)
  - [KeyUpdateParameters](docs/KeyUpdateParameters.md)
+ - [KeysExcludeParameters](docs/KeysExcludeParameters.md)
+ - [KeysIncludeParameters](docs/KeysIncludeParameters.md)
  - [KeysSearchParameters](docs/KeysSearchParameters.md)
  - [KeysTagParameters](docs/KeysTagParameters.md)
  - [KeysUntagParameters](docs/KeysUntagParameters.md)

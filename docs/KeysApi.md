@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**keyShow**](KeysApi.md#keyShow) | **GET** /projects/{project_id}/keys/{id} | Get a single key
 [**keyUpdate**](KeysApi.md#keyUpdate) | **PATCH** /projects/{project_id}/keys/{id} | Update a key
 [**keysDeleteCollection**](KeysApi.md#keysDeleteCollection) | **DELETE** /projects/{project_id}/keys | Delete collection of keys
+[**keysExclude**](KeysApi.md#keysExclude) | **PATCH** /projects/{project_id}/keys/exclude | Exclude a locale on a collection of keys
+[**keysInclude**](KeysApi.md#keysInclude) | **PATCH** /projects/{project_id}/keys/include | Include a locale on a collection of keys
 [**keysList**](KeysApi.md#keysList) | **GET** /projects/{project_id}/keys | List keys
 [**keysSearch**](KeysApi.md#keysSearch) | **POST** /projects/{project_id}/keys/search | Search keys
 [**keysTag**](KeysApi.md#keysTag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
@@ -419,6 +421,168 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
+<a name="keysExclude"></a>
+# **keysExclude**
+> AffectedResources keysExclude(projectId, keysExcludeParameters, xPhraseAppOTP)
+
+Exclude a locale on a collection of keys
+
+Exclude a locale on keys matching query. Same constraints as list.
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.KeysApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Token.setApiKeyPrefix("Token");
+
+    KeysApi apiInstance = new KeysApi(defaultClient);
+    String projectId = "projectId_example"; // String | Project ID
+    KeysExcludeParameters keysExcludeParameters = new KeysExcludeParameters(); // KeysExcludeParameters | 
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    try {
+      AffectedResources result = apiInstance.keysExclude(projectId, keysExcludeParameters, xPhraseAppOTP);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling KeysApi#keysExclude");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| Project ID |
+ **keysExcludeParameters** | [**KeysExcludeParameters**](KeysExcludeParameters.md)|  |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+
+### Return type
+
+[**AffectedResources**](AffectedResources.md)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
+<a name="keysInclude"></a>
+# **keysInclude**
+> AffectedResources keysInclude(projectId, keysIncludeParameters, xPhraseAppOTP)
+
+Include a locale on a collection of keys
+
+Include a locale on keys matching query. Same constraints as list.
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.KeysApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Token.setApiKeyPrefix("Token");
+
+    KeysApi apiInstance = new KeysApi(defaultClient);
+    String projectId = "projectId_example"; // String | Project ID
+    KeysIncludeParameters keysIncludeParameters = new KeysIncludeParameters(); // KeysIncludeParameters | 
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    try {
+      AffectedResources result = apiInstance.keysInclude(projectId, keysIncludeParameters, xPhraseAppOTP);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling KeysApi#keysInclude");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| Project ID |
+ **keysIncludeParameters** | [**KeysIncludeParameters**](KeysIncludeParameters.md)|  |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+
+### Return type
+
+[**AffectedResources**](AffectedResources.md)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

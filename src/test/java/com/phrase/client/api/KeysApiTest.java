@@ -16,6 +16,8 @@ import com.phrase.client.ApiException;
 import com.phrase.client.model.AffectedResources;
 import com.phrase.client.model.KeyCreateParameters;
 import com.phrase.client.model.KeyUpdateParameters;
+import com.phrase.client.model.KeysExcludeParameters;
+import com.phrase.client.model.KeysIncludeParameters;
 import com.phrase.client.model.KeysSearchParameters;
 import com.phrase.client.model.KeysTagParameters;
 import com.phrase.client.model.KeysUntagParameters;
@@ -129,6 +131,42 @@ public class KeysApiTest {
         String q = null;
         String localeId = null;
         AffectedResources response = api.keysDeleteCollection(projectId, xPhraseAppOTP, branch, q, localeId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Exclude a locale on a collection of keys
+     *
+     * Exclude a locale on keys matching query. Same constraints as list.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void keysExcludeTest() throws ApiException {
+        String projectId = null;
+        KeysExcludeParameters keysExcludeParameters = null;
+        String xPhraseAppOTP = null;
+        AffectedResources response = api.keysExclude(projectId, keysExcludeParameters, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Include a locale on a collection of keys
+     *
+     * Include a locale on keys matching query. Same constraints as list.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void keysIncludeTest() throws ApiException {
+        String projectId = null;
+        KeysIncludeParameters keysIncludeParameters = null;
+        String xPhraseAppOTP = null;
+        AffectedResources response = api.keysInclude(projectId, keysIncludeParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
