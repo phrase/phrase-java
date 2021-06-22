@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * JobDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-16T08:39:45.268144Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-22T15:22:26.709898Z[Etc/UTC]")
 public class JobDetails1 {
   public static final String SERIALIZED_NAME_OWNER = "owner";
   @SerializedName(SERIALIZED_NAME_OWNER)
