@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-06-22T15:22:26.709898Z[Etc/UTC]
+  - Build date: 2021-06-25T11:16:19.552883Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1772,6 +1772,7 @@ Class | Method | HTTP request | Description
 *ScreenshotsApi* | [**screenshotShow**](docs/ScreenshotsApi.md#screenshotShow) | **GET** /projects/{project_id}/screenshots/{id} | Get a single screenshot
 *ScreenshotsApi* | [**screenshotUpdate**](docs/ScreenshotsApi.md#screenshotUpdate) | **PATCH** /projects/{project_id}/screenshots/{id} | Update a screenshot
 *ScreenshotsApi* | [**screenshotsList**](docs/ScreenshotsApi.md#screenshotsList) | **GET** /projects/{project_id}/screenshots | List screenshots
+*SearchApi* | [**searchInAccount**](docs/SearchApi.md#searchInAccount) | **POST** /accounts/{account_id}/search | Search across projects
 *SpacesApi* | [**spaceCreate**](docs/SpacesApi.md#spaceCreate) | **POST** /accounts/{account_id}/spaces | Create a Space
 *SpacesApi* | [**spaceDelete**](docs/SpacesApi.md#spaceDelete) | **DELETE** /accounts/{account_id}/spaces/{id} | Delete Space
 *SpacesApi* | [**spaceShow**](docs/SpacesApi.md#spaceShow) | **GET** /accounts/{account_id}/spaces/{id} | Get Space
@@ -1841,6 +1842,7 @@ Class | Method | HTTP request | Description
  - [Account](docs/Account.md)
  - [AccountDetails](docs/AccountDetails.md)
  - [AccountDetails1](docs/AccountDetails1.md)
+ - [AccountSearchResult](docs/AccountSearchResult.md)
  - [AffectedCount](docs/AffectedCount.md)
  - [AffectedResources](docs/AffectedResources.md)
  - [Authorization](docs/Authorization.md)
@@ -1953,6 +1955,7 @@ Class | Method | HTTP request | Description
  - [ScreenshotMarkerCreateParameters](docs/ScreenshotMarkerCreateParameters.md)
  - [ScreenshotMarkerUpdateParameters](docs/ScreenshotMarkerUpdateParameters.md)
  - [ScreenshotUpdateParameters](docs/ScreenshotUpdateParameters.md)
+ - [SearchInAccountParameters](docs/SearchInAccountParameters.md)
  - [Space](docs/Space.md)
  - [Space1](docs/Space1.md)
  - [SpaceCreateParameters](docs/SpaceCreateParameters.md)
