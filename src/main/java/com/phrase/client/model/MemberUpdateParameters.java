@@ -30,8 +30,12 @@ import java.util.Map;
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-25T11:16:19.552883Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-30T08:27:40.793274Z[Etc/UTC]")
 public class MemberUpdateParameters {
+  public static final String SERIALIZED_NAME_STRATEGY = "strategy";
+  @SerializedName(SERIALIZED_NAME_STRATEGY)
+  private String strategy;
+
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   private String role;
@@ -57,6 +61,29 @@ public class MemberUpdateParameters {
   private Map<String, String> permissions = null;
 
 
+  public MemberUpdateParameters strategy(String strategy) {
+    
+    this.strategy = strategy;
+    return this;
+  }
+
+   /**
+   * Update strategy, can be any of set, add, remove. If provided, it will set, add or remove given spaces, projects and locale ids from users access list.
+   * @return strategy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "set", value = "Update strategy, can be any of set, add, remove. If provided, it will set, add or remove given spaces, projects and locale ids from users access list.")
+
+  public String getStrategy() {
+    return strategy;
+  }
+
+
+  public void setStrategy(String strategy) {
+    this.strategy = strategy;
+  }
+
+
   public MemberUpdateParameters role(String role) {
     
     this.role = role;
@@ -64,11 +91,11 @@ public class MemberUpdateParameters {
   }
 
    /**
-   * Member role, can be any of of Manager, Developer, Translator
+   * Member role, can be any of of Admin, ProjectManager, Developer, Designer, Translator
    * @return role
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Developer", value = "Member role, can be any of of Manager, Developer, Translator")
+  @ApiModelProperty(example = "Developer", value = "Member role, can be any of of Admin, ProjectManager, Developer, Designer, Translator")
 
   public String getRole() {
     return role;
@@ -228,7 +255,8 @@ public class MemberUpdateParameters {
       return false;
     }
     MemberUpdateParameters memberUpdateParameters = (MemberUpdateParameters) o;
-    return Objects.equals(this.role, memberUpdateParameters.role) &&
+    return Objects.equals(this.strategy, memberUpdateParameters.strategy) &&
+        Objects.equals(this.role, memberUpdateParameters.role) &&
         Objects.equals(this.projectIds, memberUpdateParameters.projectIds) &&
         Objects.equals(this.localeIds, memberUpdateParameters.localeIds) &&
         Objects.equals(this.defaultLocaleCodes, memberUpdateParameters.defaultLocaleCodes) &&
@@ -238,7 +266,7 @@ public class MemberUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(role, projectIds, localeIds, defaultLocaleCodes, spaceIds, permissions);
+    return Objects.hash(strategy, role, projectIds, localeIds, defaultLocaleCodes, spaceIds, permissions);
   }
 
 
@@ -246,6 +274,7 @@ public class MemberUpdateParameters {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MemberUpdateParameters {\n");
+    sb.append("    strategy: ").append(toIndentedString(strategy)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");

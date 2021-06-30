@@ -44,6 +44,14 @@ public class MemberUpdateParametersTest {
     }
 
     /**
+     * Test the property 'strategy'
+     */
+    @Test
+    public void strategyTest() {
+        // TODO: test strategy
+    }
+
+    /**
      * Test the property 'role'
      */
     @Test
