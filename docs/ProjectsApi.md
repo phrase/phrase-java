@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 <a name="projectsList"></a>
 # **projectsList**
-> List&lt;Project&gt; projectsList(xPhraseAppOTP, page, perPage, accountId, sortBy)
+> List&lt;Project&gt; projectsList(xPhraseAppOTP, page, perPage, accountId, sortBy, filters)
 
 List projects
 
@@ -368,8 +368,9 @@ public class Example {
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     String accountId = "accountId_example"; // String | Filter by Account ID
     String sortBy = "sortBy_example"; // String | Sort projects. Valid options are \"name_asc\", \"name_desc\", \"updated_at_asc\", \"updated_at_desc\", \"space_asc\" and \"space_desc\".
+    List<String> filters = favorites; // List<String> | Filter projects. Valid options are [\"favorites\"].
     try {
-      List<Project> result = apiInstance.projectsList(xPhraseAppOTP, page, perPage, accountId, sortBy);
+      List<Project> result = apiInstance.projectsList(xPhraseAppOTP, page, perPage, accountId, sortBy, filters);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#projectsList");
@@ -391,6 +392,7 @@ Name | Type | Description  | Notes
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
  **accountId** | **String**| Filter by Account ID | [optional]
  **sortBy** | **String**| Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. | [optional]
+ **filters** | [**List&lt;String&gt;**](String.md)| Filter projects. Valid options are [\&quot;favorites\&quot;]. | [optional]
 
 ### Return type
 

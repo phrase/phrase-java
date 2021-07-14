@@ -32,7 +32,7 @@ import java.time.OffsetDateTime;
 /**
  * TranslationVersionWithUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-09T09:48:28.652124Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-14T08:49:21.029883Z[Etc/UTC]")
 public class TranslationVersionWithUser {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
