@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-07-14T08:49:21.029883Z[Etc/UTC]
+  - Build date: 2021-07-15T14:21:47.395649Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -764,7 +764,7 @@ The following qualifiers are also supported in the search term:<br />
 
 <ul>
 <li><code>ids:key_id,...</code> for queries on a comma-separated list of ids</li>
-<li><code>name:key_name</code> for text queries on exact key names - whitespaces need to be prefixed with a backspace (\"\\\")</li>
+<li><code>name:key_name</code> for text queries on exact key names - spaces, commas, and colons need to be escaped with double backslashes</li>
 <li><code>tags:tag_name</code> to filter for keys with certain tags</li>
 <li><code>translated:{true|false}</code> for translation status (also requires <code>locale_id</code> to be specified)</li>
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
@@ -865,7 +865,7 @@ The following qualifiers are also supported in the search term:<br />
 
 <ul>
 <li><code>ids:key_id,...</code> for queries on a comma-separated list of ids</li>
-<li><code>name:key_name</code> for text queries on exact key names - whitespaces need to be prefixed with a backspace (\"\\\")</li>
+<li><code>name:key_name</code> for text queries on exact key names - spaces, commas, and colons need to be escaped with double backslashes</li>
 <li><code>tags:tag_name</code> to filter for keys with certain tags</li>
 <li><code>translated:{true|false}</code> for translation status (also requires <code>locale_id</code> to be specified)</li>
 <li><code>updated_at:{&gt;=|&lt;=}2013-02-21T00:00:00Z</code> for date range queries</li>
