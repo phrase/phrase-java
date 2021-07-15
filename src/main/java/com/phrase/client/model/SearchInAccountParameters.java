@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SearchInAccountParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-15T14:21:47.395649Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-15T14:27:24.652533Z[Etc/UTC]")
 public class SearchInAccountParameters {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
