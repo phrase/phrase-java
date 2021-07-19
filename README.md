@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-07-15T14:27:24.652533Z[Etc/UTC]
+  - Build date: 2021-07-19T12:59:09.034594Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1706,6 +1706,16 @@ Class | Method | HTTP request | Description
 *JobLocalesApi* | [**jobLocaleUpdate**](docs/JobLocalesApi.md#jobLocaleUpdate) | **PATCH** /projects/{project_id}/jobs/{job_id}/locales/{id} | Update a job locale
 *JobLocalesApi* | [**jobLocalesCreate**](docs/JobLocalesApi.md#jobLocalesCreate) | **POST** /projects/{project_id}/jobs/{job_id}/locales | Create a job locale
 *JobLocalesApi* | [**jobLocalesList**](docs/JobLocalesApi.md#jobLocalesList) | **GET** /projects/{project_id}/jobs/{job_id}/locales | List job locales
+*JobTemplateLocalesApi* | [**jobTemplateLocaleDelete**](docs/JobTemplateLocalesApi.md#jobTemplateLocaleDelete) | **DELETE** /projects/{project_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Delete a job template locale
+*JobTemplateLocalesApi* | [**jobTemplateLocaleShow**](docs/JobTemplateLocalesApi.md#jobTemplateLocaleShow) | **GET** /projects/{project_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Get a single job template locale
+*JobTemplateLocalesApi* | [**jobTemplateLocaleUpdate**](docs/JobTemplateLocalesApi.md#jobTemplateLocaleUpdate) | **PATCH** /projects/{project_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Update a job template locale
+*JobTemplateLocalesApi* | [**jobTemplateLocalesCreate**](docs/JobTemplateLocalesApi.md#jobTemplateLocalesCreate) | **POST** /projects/{project_id}/job_templates/{job_template_id}/locales | Create a job template locale
+*JobTemplateLocalesApi* | [**jobTemplateLocalesList**](docs/JobTemplateLocalesApi.md#jobTemplateLocalesList) | **GET** /projects/{project_id}/job_templates/{job_template_id}/locales | List job template locales
+*JobTemplatesApi* | [**jobTemplateCreate**](docs/JobTemplatesApi.md#jobTemplateCreate) | **POST** /projects/{project_id}/job_templates | Create a job template
+*JobTemplatesApi* | [**jobTemplateDelete**](docs/JobTemplatesApi.md#jobTemplateDelete) | **DELETE** /projects/{project_id}/job_templates/{id} | Delete a job template
+*JobTemplatesApi* | [**jobTemplateShow**](docs/JobTemplatesApi.md#jobTemplateShow) | **GET** /projects/{project_id}/job_templates/{id} | Get a single job template
+*JobTemplatesApi* | [**jobTemplateUpdate**](docs/JobTemplatesApi.md#jobTemplateUpdate) | **PATCH** /projects/{project_id}/job_templates/{id} | Update a job template
+*JobTemplatesApi* | [**jobTemplatesList**](docs/JobTemplatesApi.md#jobTemplatesList) | **GET** /projects/{project_id}/job_templates | List job templates
 *JobsApi* | [**jobComplete**](docs/JobsApi.md#jobComplete) | **POST** /projects/{project_id}/jobs/{id}/complete | Complete a job
 *JobsApi* | [**jobCreate**](docs/JobsApi.md#jobCreate) | **POST** /projects/{project_id}/jobs | Create a job
 *JobsApi* | [**jobDelete**](docs/JobsApi.md#jobDelete) | **DELETE** /projects/{project_id}/jobs/{id} | Delete a job
@@ -1909,6 +1919,14 @@ Class | Method | HTTP request | Description
  - [JobPreview](docs/JobPreview.md)
  - [JobReopenParameters](docs/JobReopenParameters.md)
  - [JobStartParameters](docs/JobStartParameters.md)
+ - [JobTemplate](docs/JobTemplate.md)
+ - [JobTemplateCreateParameters](docs/JobTemplateCreateParameters.md)
+ - [JobTemplateLocale](docs/JobTemplateLocale.md)
+ - [JobTemplateLocaleUpdateParameters](docs/JobTemplateLocaleUpdateParameters.md)
+ - [JobTemplateLocalesCreateParameters](docs/JobTemplateLocalesCreateParameters.md)
+ - [JobTemplatePreview](docs/JobTemplatePreview.md)
+ - [JobTemplateUpdateParameters](docs/JobTemplateUpdateParameters.md)
+ - [JobTemplateUserPreview](docs/JobTemplateUserPreview.md)
  - [JobUpdateParameters](docs/JobUpdateParameters.md)
  - [KeyCreateParameters](docs/KeyCreateParameters.md)
  - [KeyPreview](docs/KeyPreview.md)
