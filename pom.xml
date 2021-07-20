@@ -5,7 +5,7 @@
     <artifactId>phraseJava</artifactId>
     <packaging>jar</packaging>
     <name>phraseJava</name>
-    <version>1.0.2</version>
+    <version>1.1.0</version>
     <url>https://developers.phrase.com</url>
     <description>OpenAPI Java</description>
     <scm>
