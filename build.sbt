@@ -1,8 +1,8 @@
 lazy val root = (project in file(".")).
   settings(
     organization := "com.phrase",
-    name := "phraseJava",
-    version := "1.1.0",
+    name := "phrase-java",
+    version := "1.1.2",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
