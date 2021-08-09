@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-21T07:36:59.741837Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-09T05:39:30.882072Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -85,6 +85,10 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_JOB_TAG_NAME = "job_tag_name";
   @SerializedName(SERIALIZED_NAME_JOB_TAG_NAME)
   private String jobTagName;
+
+  public static final String SERIALIZED_NAME_SOURCE_LOCALE = "source_locale";
+  @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE)
+  private LocalePreview sourceLocale;
 
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
@@ -371,6 +375,29 @@ public class JobDetails {
   }
 
 
+  public JobDetails sourceLocale(LocalePreview sourceLocale) {
+    
+    this.sourceLocale = sourceLocale;
+    return this;
+  }
+
+   /**
+   * Get sourceLocale
+   * @return sourceLocale
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public LocalePreview getSourceLocale() {
+    return sourceLocale;
+  }
+
+
+  public void setSourceLocale(LocalePreview sourceLocale) {
+    this.sourceLocale = sourceLocale;
+  }
+
+
   public JobDetails locales(List<LocalePreview> locales) {
     
     this.locales = locales;
@@ -454,13 +481,14 @@ public class JobDetails {
         Objects.equals(this.updatedAt, jobDetails.updatedAt) &&
         Objects.equals(this.owner, jobDetails.owner) &&
         Objects.equals(this.jobTagName, jobDetails.jobTagName) &&
+        Objects.equals(this.sourceLocale, jobDetails.sourceLocale) &&
         Objects.equals(this.locales, jobDetails.locales) &&
         Objects.equals(this.keys, jobDetails.keys);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, locales, keys);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceLocale, locales, keys);
   }
 
 
@@ -480,6 +508,7 @@ public class JobDetails {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    jobTagName: ").append(toIndentedString(jobTagName)).append("\n");
+    sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
     sb.append("}");

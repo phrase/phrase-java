@@ -146,6 +146,14 @@ public class JobDetailsTest {
     }
 
     /**
+     * Test the property 'sourceLocale'
+     */
+    @Test
+    public void sourceLocaleTest() {
+        // TODO: test sourceLocale
+    }
+
+    /**
      * Test the property 'locales'
      */
     @Test

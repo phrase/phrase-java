@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * JobCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-21T07:36:59.741837Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-09T05:39:30.882072Z[Etc/UTC]")
 public class JobCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -38,6 +38,10 @@ public class JobCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
+  @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
+  private String sourceLocaleId;
 
   public static final String SERIALIZED_NAME_BRIEFING = "briefing";
   @SerializedName(SERIALIZED_NAME_BRIEFING)
@@ -103,6 +107,29 @@ public class JobCreateParameters {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public JobCreateParameters sourceLocaleId(String sourceLocaleId) {
+    
+    this.sourceLocaleId = sourceLocaleId;
+    return this;
+  }
+
+   /**
+   * The API id of the source language
+   * @return sourceLocaleId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "abcd1234cdef1234abcd1234cdef1234", value = "The API id of the source language")
+
+  public String getSourceLocaleId() {
+    return sourceLocaleId;
+  }
+
+
+  public void setSourceLocaleId(String sourceLocaleId) {
+    this.sourceLocaleId = sourceLocaleId;
   }
 
 
@@ -248,6 +275,7 @@ public class JobCreateParameters {
     JobCreateParameters jobCreateParameters = (JobCreateParameters) o;
     return Objects.equals(this.branch, jobCreateParameters.branch) &&
         Objects.equals(this.name, jobCreateParameters.name) &&
+        Objects.equals(this.sourceLocaleId, jobCreateParameters.sourceLocaleId) &&
         Objects.equals(this.briefing, jobCreateParameters.briefing) &&
         Objects.equals(this.dueDate, jobCreateParameters.dueDate) &&
         Objects.equals(this.ticketUrl, jobCreateParameters.ticketUrl) &&
@@ -257,7 +285,7 @@ public class JobCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, briefing, dueDate, ticketUrl, tags, translationKeyIds);
+    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds);
   }
 
 
@@ -267,6 +295,7 @@ public class JobCreateParameters {
     sb.append("class JobCreateParameters {\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");

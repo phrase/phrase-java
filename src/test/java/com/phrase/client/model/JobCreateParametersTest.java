@@ -59,6 +59,14 @@ public class JobCreateParametersTest {
     }
 
     /**
+     * Test the property 'sourceLocaleId'
+     */
+    @Test
+    public void sourceLocaleIdTest() {
+        // TODO: test sourceLocaleId
+    }
+
+    /**
      * Test the property 'briefing'
      */
     @Test
