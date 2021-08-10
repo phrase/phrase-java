@@ -60,6 +60,7 @@ public class LocalesApi {
 
     /**
      * Build call for accountLocales
+     * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
@@ -75,11 +76,12 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call accountLocalesCall(String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call accountLocalesCall(String id, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/locales";
+        String localVarPath = "/accounts/{account_id}/locales"
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -117,10 +119,15 @@ public class LocalesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call accountLocalesValidateBeforeCall(String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call accountLocalesValidateBeforeCall(String id, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling accountLocales(Async)");
+        }
         
 
-        okhttp3.Call localVarCall = accountLocalesCall(xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = accountLocalesCall(id, xPhraseAppOTP, page, perPage, _callback);
         return localVarCall;
 
     }
@@ -128,6 +135,7 @@ public class LocalesApi {
     /**
      * List locales used in account
      * List all locales unique by locale code used across all projects within an account.
+     * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
@@ -142,14 +150,15 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<LocalePreview1> accountLocales(String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<LocalePreview1>> localVarResp = accountLocalesWithHttpInfo(xPhraseAppOTP, page, perPage);
+    public List<LocalePreview1> accountLocales(String id, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        ApiResponse<List<LocalePreview1>> localVarResp = accountLocalesWithHttpInfo(id, xPhraseAppOTP, page, perPage);
         return localVarResp.getData();
     }
 
     /**
      * List locales used in account
      * List all locales unique by locale code used across all projects within an account.
+     * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
@@ -164,8 +173,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<LocalePreview1>> accountLocalesWithHttpInfo(String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        okhttp3.Call localVarCall = accountLocalesValidateBeforeCall(xPhraseAppOTP, page, perPage, null);
+    public ApiResponse<List<LocalePreview1>> accountLocalesWithHttpInfo(String id, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        okhttp3.Call localVarCall = accountLocalesValidateBeforeCall(id, xPhraseAppOTP, page, perPage, null);
         Type localVarReturnType = new TypeToken<List<LocalePreview1>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -173,6 +182,7 @@ public class LocalesApi {
     /**
      * List locales used in account (asynchronously)
      * List all locales unique by locale code used across all projects within an account.
+     * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
@@ -188,9 +198,9 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call accountLocalesAsync(String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<LocalePreview1>> _callback) throws ApiException {
+    public okhttp3.Call accountLocalesAsync(String id, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<LocalePreview1>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = accountLocalesValidateBeforeCall(xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = accountLocalesValidateBeforeCall(id, xPhraseAppOTP, page, perPage, _callback);
         Type localVarReturnType = new TypeToken<List<LocalePreview1>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

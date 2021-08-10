@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="accountLocales"></a>
 # **accountLocales**
-> List&lt;LocalePreview1&gt; accountLocales(xPhraseAppOTP, page, perPage)
+> List&lt;LocalePreview1&gt; accountLocales(id, xPhraseAppOTP, page, perPage)
 
 List locales used in account
 
@@ -48,11 +48,12 @@ public class Example {
     //Token.setApiKeyPrefix("Token");
 
     LocalesApi apiInstance = new LocalesApi(defaultClient);
+    String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     try {
-      List<LocalePreview1> result = apiInstance.accountLocales(xPhraseAppOTP, page, perPage);
+      List<LocalePreview1> result = apiInstance.accountLocales(id, xPhraseAppOTP, page, perPage);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#accountLocales");
@@ -69,6 +70,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]

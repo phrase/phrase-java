@@ -46,10 +46,11 @@ public class LocalesApiTest {
      */
     @Test
     public void accountLocalesTest() throws ApiException {
+        String id = null;
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<LocalePreview1> response = api.accountLocales(xPhraseAppOTP, page, perPage);
+        List<LocalePreview1> response = api.accountLocales(id, xPhraseAppOTP, page, perPage);
 
         // TODO: test validations
     }
