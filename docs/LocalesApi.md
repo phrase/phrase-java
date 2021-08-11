@@ -261,7 +261,7 @@ null (empty response body)
 
 <a name="localeDownload"></a>
 # **localeDownload**
-> File localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId)
+> File localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId)
 
 Download a locale
 
@@ -312,8 +312,9 @@ public class Example {
     Boolean includeUnverifiedTranslations = true; // Boolean | if set to false unverified translations are excluded
     Boolean useLastReviewedVersion = true; // Boolean | If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project.
     String fallbackLocaleId = "fallbackLocaleId_example"; // String | If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to <code>true</code>.
+    String sourceLocaleId = "sourceLocaleId_example"; // String | Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a <code>tag</code> parameter indicating a specific job.
     try {
-      File result = apiInstance.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId);
+      File result = apiInstance.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#localeDownload");
@@ -348,6 +349,7 @@ Name | Type | Description  | Notes
  **includeUnverifiedTranslations** | **Boolean**| if set to false unverified translations are excluded | [optional]
  **useLastReviewedVersion** | **Boolean**| If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. | [optional]
  **fallbackLocaleId** | **String**| If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. | [optional]
+ **sourceLocaleId** | **String**| Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. | [optional]
 
 ### Return type
 
