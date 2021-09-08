@@ -12,7 +12,7 @@
 
 package com.phrase.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-03T14:34:07.034672Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-08T13:02:45.700597Z[Etc/UTC]")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

@@ -26,23 +26,19 @@ import java.io.IOException;
 /**
  * TranslationsVerifyParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-03T14:34:07.034672Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-08T13:02:45.700597Z[Etc/UTC]")
 public class TranslationsVerifyParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
   private String branch;
 
+  public static final String SERIALIZED_NAME_LOCALE_ID = "locale_id";
+  @SerializedName(SERIALIZED_NAME_LOCALE_ID)
+  private String localeId;
+
   public static final String SERIALIZED_NAME_Q = "q";
   @SerializedName(SERIALIZED_NAME_Q)
   private String q;
-
-  public static final String SERIALIZED_NAME_SORT = "sort";
-  @SerializedName(SERIALIZED_NAME_SORT)
-  private String sort;
-
-  public static final String SERIALIZED_NAME_ORDER = "order";
-  @SerializedName(SERIALIZED_NAME_ORDER)
-  private String order;
 
 
   public TranslationsVerifyParameters branch(String branch) {
@@ -65,6 +61,29 @@ public class TranslationsVerifyParameters {
 
   public void setBranch(String branch) {
     this.branch = branch;
+  }
+
+
+  public TranslationsVerifyParameters localeId(String localeId) {
+    
+    this.localeId = localeId;
+    return this;
+  }
+
+   /**
+   * specify the locale of the translations to be verified
+   * @return localeId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "fc2f11dd6a658fa9652f6f0a9ebee688", value = "specify the locale of the translations to be verified")
+
+  public String getLocaleId() {
+    return localeId;
+  }
+
+
+  public void setLocaleId(String localeId) {
+    this.localeId = localeId;
   }
 
 
@@ -91,52 +110,6 @@ public class TranslationsVerifyParameters {
   }
 
 
-  public TranslationsVerifyParameters sort(String sort) {
-    
-    this.sort = sort;
-    return this;
-  }
-
-   /**
-   * Sort criteria. Can be one of: key_name, created_at, updated_at.
-   * @return sort
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "updated_at", value = "Sort criteria. Can be one of: key_name, created_at, updated_at.")
-
-  public String getSort() {
-    return sort;
-  }
-
-
-  public void setSort(String sort) {
-    this.sort = sort;
-  }
-
-
-  public TranslationsVerifyParameters order(String order) {
-    
-    this.order = order;
-    return this;
-  }
-
-   /**
-   * Order direction. Can be one of: asc, desc.
-   * @return order
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "desc", value = "Order direction. Can be one of: asc, desc.")
-
-  public String getOrder() {
-    return order;
-  }
-
-
-  public void setOrder(String order) {
-    this.order = order;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -147,14 +120,13 @@ public class TranslationsVerifyParameters {
     }
     TranslationsVerifyParameters translationsVerifyParameters = (TranslationsVerifyParameters) o;
     return Objects.equals(this.branch, translationsVerifyParameters.branch) &&
-        Objects.equals(this.q, translationsVerifyParameters.q) &&
-        Objects.equals(this.sort, translationsVerifyParameters.sort) &&
-        Objects.equals(this.order, translationsVerifyParameters.order);
+        Objects.equals(this.localeId, translationsVerifyParameters.localeId) &&
+        Objects.equals(this.q, translationsVerifyParameters.q);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, q, sort, order);
+    return Objects.hash(branch, localeId, q);
   }
 
 
@@ -163,9 +135,8 @@ public class TranslationsVerifyParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class TranslationsVerifyParameters {\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("    localeId: ").append(toIndentedString(localeId)).append("\n");
     sb.append("    q: ").append(toIndentedString(q)).append("\n");
-    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
-    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("}");
     return sb.toString();
   }

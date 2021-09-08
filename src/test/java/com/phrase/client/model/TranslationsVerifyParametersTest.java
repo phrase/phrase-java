@@ -48,27 +48,19 @@ public class TranslationsVerifyParametersTest {
     }
 
     /**
+     * Test the property 'localeId'
+     */
+    @Test
+    public void localeIdTest() {
+        // TODO: test localeId
+    }
+
+    /**
      * Test the property 'q'
      */
     @Test
     public void qTest() {
         // TODO: test q
-    }
-
-    /**
-     * Test the property 'sort'
-     */
-    @Test
-    public void sortTest() {
-        // TODO: test sort
-    }
-
-    /**
-     * Test the property 'order'
-     */
-    @Test
-    public void orderTest() {
-        // TODO: test order
     }
 
 }
