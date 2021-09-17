@@ -84,6 +84,14 @@ public class InvitationCreateParametersTest {
     }
 
     /**
+     * Test the property 'teamIds'
+     */
+    @Test
+    public void teamIdsTest() {
+        // TODO: test teamIds
+    }
+
+    /**
      * Test the property 'defaultLocaleCodes'
      */
     @Test
