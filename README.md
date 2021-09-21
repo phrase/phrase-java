@@ -2057,3 +2057,6 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 support@phrase.com
 
+## Get help / support
+
+Please contact [support@phrase.com](mailto:support@phrase.com?subject=[GitHub]%20phrase-java) and we can take more direct action toward finding a solution.
