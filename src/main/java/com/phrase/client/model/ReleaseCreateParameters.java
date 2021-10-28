@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ReleaseCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-05T12:08:13.290146Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-28T08:18:51.714981Z[Etc/UTC]")
 public class ReleaseCreateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -37,6 +37,10 @@ public class ReleaseCreateParameters {
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
   private List<String> platforms = null;
+
+  public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
+  @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
+  private List<String> localeIds = null;
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -97,6 +101,37 @@ public class ReleaseCreateParameters {
   }
 
 
+  public ReleaseCreateParameters localeIds(List<String> localeIds) {
+    
+    this.localeIds = localeIds;
+    return this;
+  }
+
+  public ReleaseCreateParameters addLocaleIdsItem(String localeIdsItem) {
+    if (this.localeIds == null) {
+      this.localeIds = new ArrayList<>();
+    }
+    this.localeIds.add(localeIdsItem);
+    return this;
+  }
+
+   /**
+   * List of locale ids that will be included in the release. If empty, distribution locales will be used
+   * @return localeIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\",\"fff565db236400772368235db2c6117e\"]", value = "List of locale ids that will be included in the release. If empty, distribution locales will be used")
+
+  public List<String> getLocaleIds() {
+    return localeIds;
+  }
+
+
+  public void setLocaleIds(List<String> localeIds) {
+    this.localeIds = localeIds;
+  }
+
+
   public ReleaseCreateParameters branch(String branch) {
     
     this.branch = branch;
@@ -131,12 +166,13 @@ public class ReleaseCreateParameters {
     ReleaseCreateParameters releaseCreateParameters = (ReleaseCreateParameters) o;
     return Objects.equals(this.description, releaseCreateParameters.description) &&
         Objects.equals(this.platforms, releaseCreateParameters.platforms) &&
+        Objects.equals(this.localeIds, releaseCreateParameters.localeIds) &&
         Objects.equals(this.branch, releaseCreateParameters.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, platforms, branch);
+    return Objects.hash(description, platforms, localeIds, branch);
   }
 
 
@@ -146,6 +182,7 @@ public class ReleaseCreateParameters {
     sb.append("class ReleaseCreateParameters {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
+    sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();

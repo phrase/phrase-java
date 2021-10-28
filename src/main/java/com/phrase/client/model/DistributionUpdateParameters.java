@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * DistributionUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-05T12:08:13.290146Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-28T08:18:51.714981Z[Etc/UTC]")
 public class DistributionUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -43,6 +43,10 @@ public class DistributionUpdateParameters {
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
   private List<String> platforms = null;
+
+  public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
+  @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
+  private List<String> localeIds = null;
 
   public static final String SERIALIZED_NAME_FORMAT_OPTIONS = "format_options";
   @SerializedName(SERIALIZED_NAME_FORMAT_OPTIONS)
@@ -135,6 +139,37 @@ public class DistributionUpdateParameters {
 
   public void setPlatforms(List<String> platforms) {
     this.platforms = platforms;
+  }
+
+
+  public DistributionUpdateParameters localeIds(List<String> localeIds) {
+    
+    this.localeIds = localeIds;
+    return this;
+  }
+
+  public DistributionUpdateParameters addLocaleIdsItem(String localeIdsItem) {
+    if (this.localeIds == null) {
+      this.localeIds = new ArrayList<>();
+    }
+    this.localeIds.add(localeIdsItem);
+    return this;
+  }
+
+   /**
+   * List of locale ids that will be part of distribution releases
+   * @return localeIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\",\"fff565db236400772368235db2c6117e\"]", value = "List of locale ids that will be part of distribution releases")
+
+  public List<String> getLocaleIds() {
+    return localeIds;
+  }
+
+
+  public void setLocaleIds(List<String> localeIds) {
+    this.localeIds = localeIds;
   }
 
 
@@ -250,6 +285,7 @@ public class DistributionUpdateParameters {
     return Objects.equals(this.name, distributionUpdateParameters.name) &&
         Objects.equals(this.projectId, distributionUpdateParameters.projectId) &&
         Objects.equals(this.platforms, distributionUpdateParameters.platforms) &&
+        Objects.equals(this.localeIds, distributionUpdateParameters.localeIds) &&
         Objects.equals(this.formatOptions, distributionUpdateParameters.formatOptions) &&
         Objects.equals(this.fallbackToNonRegionalLocale, distributionUpdateParameters.fallbackToNonRegionalLocale) &&
         Objects.equals(this.fallbackToDefaultLocale, distributionUpdateParameters.fallbackToDefaultLocale) &&
@@ -258,7 +294,7 @@ public class DistributionUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, projectId, platforms, formatOptions, fallbackToNonRegionalLocale, fallbackToDefaultLocale, useLastReviewedVersion);
+    return Objects.hash(name, projectId, platforms, localeIds, formatOptions, fallbackToNonRegionalLocale, fallbackToDefaultLocale, useLastReviewedVersion);
   }
 
 
@@ -269,6 +305,7 @@ public class DistributionUpdateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
+    sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    formatOptions: ").append(toIndentedString(formatOptions)).append("\n");
     sb.append("    fallbackToNonRegionalLocale: ").append(toIndentedString(fallbackToNonRegionalLocale)).append("\n");
     sb.append("    fallbackToDefaultLocale: ").append(toIndentedString(fallbackToDefaultLocale)).append("\n");

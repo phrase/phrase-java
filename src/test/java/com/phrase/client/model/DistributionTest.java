@@ -17,6 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
 import com.phrase.client.model.ReleasePreview;
 import io.swagger.annotations.ApiModel;
@@ -74,6 +75,14 @@ public class DistributionTest {
     @Test
     public void platformsTest() {
         // TODO: test platforms
+    }
+
+    /**
+     * Test the property 'locales'
+     */
+    @Test
+    public void localesTest() {
+        // TODO: test locales
     }
 
     /**

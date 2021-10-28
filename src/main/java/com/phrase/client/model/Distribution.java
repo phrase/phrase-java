@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
 import com.phrase.client.model.ReleasePreview;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +32,7 @@ import java.util.List;
 /**
  * Distribution
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-05T12:08:13.290146Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-28T08:18:51.714981Z[Etc/UTC]")
 public class Distribution {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -48,6 +49,10 @@ public class Distribution {
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
   private List<String> platforms = null;
+
+  public static final String SERIALIZED_NAME_LOCALES = "locales";
+  @SerializedName(SERIALIZED_NAME_LOCALES)
+  private List<LocalePreview> locales = null;
 
   public static final String SERIALIZED_NAME_RELEASES = "releases";
   @SerializedName(SERIALIZED_NAME_RELEASES)
@@ -162,6 +167,37 @@ public class Distribution {
   }
 
 
+  public Distribution locales(List<LocalePreview> locales) {
+    
+    this.locales = locales;
+    return this;
+  }
+
+  public Distribution addLocalesItem(LocalePreview localesItem) {
+    if (this.locales == null) {
+      this.locales = new ArrayList<>();
+    }
+    this.locales.add(localesItem);
+    return this;
+  }
+
+   /**
+   * Get locales
+   * @return locales
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<LocalePreview> getLocales() {
+    return locales;
+  }
+
+
+  public void setLocales(List<LocalePreview> locales) {
+    this.locales = locales;
+  }
+
+
   public Distribution releases(List<ReleasePreview> releases) {
     
     this.releases = releases;
@@ -252,6 +288,7 @@ public class Distribution {
         Objects.equals(this.name, distribution.name) &&
         Objects.equals(this.project, distribution.project) &&
         Objects.equals(this.platforms, distribution.platforms) &&
+        Objects.equals(this.locales, distribution.locales) &&
         Objects.equals(this.releases, distribution.releases) &&
         Objects.equals(this.createdAt, distribution.createdAt) &&
         Objects.equals(this.deletedAt, distribution.deletedAt);
@@ -259,7 +296,7 @@ public class Distribution {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, project, platforms, releases, createdAt, deletedAt);
+    return Objects.hash(id, name, project, platforms, locales, releases, createdAt, deletedAt);
   }
 
 
@@ -271,6 +308,7 @@ public class Distribution {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
+    sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("    releases: ").append(toIndentedString(releases)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");

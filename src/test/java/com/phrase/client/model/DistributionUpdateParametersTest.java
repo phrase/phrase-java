@@ -68,6 +68,14 @@ public class DistributionUpdateParametersTest {
     }
 
     /**
+     * Test the property 'localeIds'
+     */
+    @Test
+    public void localeIdsTest() {
+        // TODO: test localeIds
+    }
+
+    /**
      * Test the property 'formatOptions'
      */
     @Test
