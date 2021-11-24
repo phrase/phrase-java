@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * InlineResponse422Errors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-28T14:29:05.016764Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-24T13:45:28.339125Z[Etc/UTC]")
 public class InlineResponse422Errors {
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
