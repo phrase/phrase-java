@@ -20,25 +20,23 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for JobLocaleUpdateParameters
+ * Model tests for JobLocaleCompleteReviewParameters
  */
-public class JobLocaleUpdateParametersTest {
-    private final JobLocaleUpdateParameters model = new JobLocaleUpdateParameters();
+public class JobLocaleCompleteReviewParametersTest {
+    private final JobLocaleCompleteReviewParameters model = new JobLocaleCompleteReviewParameters();
 
     /**
-     * Model tests for JobLocaleUpdateParameters
+     * Model tests for JobLocaleCompleteReviewParameters
      */
     @Test
-    public void testJobLocaleUpdateParameters() {
-        // TODO: test JobLocaleUpdateParameters
+    public void testJobLocaleCompleteReviewParameters() {
+        // TODO: test JobLocaleCompleteReviewParameters
     }
 
     /**
@@ -47,30 +45,6 @@ public class JobLocaleUpdateParametersTest {
     @Test
     public void branchTest() {
         // TODO: test branch
-    }
-
-    /**
-     * Test the property 'localeId'
-     */
-    @Test
-    public void localeIdTest() {
-        // TODO: test localeId
-    }
-
-    /**
-     * Test the property 'userIds'
-     */
-    @Test
-    public void userIdsTest() {
-        // TODO: test userIds
-    }
-
-    /**
-     * Test the property 'reviewerIds'
-     */
-    @Test
-    public void reviewerIdsTest() {
-        // TODO: test reviewerIds
     }
 
 }

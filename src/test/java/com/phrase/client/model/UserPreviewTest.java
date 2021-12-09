@@ -63,4 +63,12 @@ public class UserPreviewTest {
         // TODO: test name
     }
 
+    /**
+     * Test the property 'role'
+     */
+    @Test
+    public void roleTest() {
+        // TODO: test role
+    }
+
 }

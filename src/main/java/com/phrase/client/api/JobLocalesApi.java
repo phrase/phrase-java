@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import com.phrase.client.model.JobLocale;
 import com.phrase.client.model.JobLocaleCompleteParameters;
+import com.phrase.client.model.JobLocaleCompleteReviewParameters;
 import com.phrase.client.model.JobLocaleReopenParameters;
 import com.phrase.client.model.JobLocaleUpdateParameters;
 import com.phrase.client.model.JobLocalesCreateParameters;
@@ -213,6 +214,166 @@ public class JobLocalesApi {
     public okhttp3.Call jobLocaleCompleteAsync(String projectId, String jobId, String id, JobLocaleCompleteParameters jobLocaleCompleteParameters, String xPhraseAppOTP, final ApiCallback<JobLocale> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobLocaleCompleteValidateBeforeCall(projectId, jobId, id, jobLocaleCompleteParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<JobLocale>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for jobLocaleCompleteReview
+     * @param projectId Project ID (required)
+     * @param jobId Job ID (required)
+     * @param id ID (required)
+     * @param jobLocaleCompleteReviewParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobLocaleCompleteReviewCall(String projectId, String jobId, String id, JobLocaleCompleteReviewParameters jobLocaleCompleteReviewParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = jobLocaleCompleteReviewParameters;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "job_id" + "\\}", localVarApiClient.escapeString(jobId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call jobLocaleCompleteReviewValidateBeforeCall(String projectId, String jobId, String id, JobLocaleCompleteReviewParameters jobLocaleCompleteReviewParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling jobLocaleCompleteReview(Async)");
+        }
+        
+        // verify the required parameter 'jobId' is set
+        if (jobId == null) {
+            throw new ApiException("Missing the required parameter 'jobId' when calling jobLocaleCompleteReview(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling jobLocaleCompleteReview(Async)");
+        }
+        
+        // verify the required parameter 'jobLocaleCompleteReviewParameters' is set
+        if (jobLocaleCompleteReviewParameters == null) {
+            throw new ApiException("Missing the required parameter 'jobLocaleCompleteReviewParameters' when calling jobLocaleCompleteReview(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = jobLocaleCompleteReviewCall(projectId, jobId, id, jobLocaleCompleteReviewParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Review a job locale
+     * Mark job locale as reviewed.
+     * @param projectId Project ID (required)
+     * @param jobId Job ID (required)
+     * @param id ID (required)
+     * @param jobLocaleCompleteReviewParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return JobLocale
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public JobLocale jobLocaleCompleteReview(String projectId, String jobId, String id, JobLocaleCompleteReviewParameters jobLocaleCompleteReviewParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<JobLocale> localVarResp = jobLocaleCompleteReviewWithHttpInfo(projectId, jobId, id, jobLocaleCompleteReviewParameters, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Review a job locale
+     * Mark job locale as reviewed.
+     * @param projectId Project ID (required)
+     * @param jobId Job ID (required)
+     * @param id ID (required)
+     * @param jobLocaleCompleteReviewParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;JobLocale&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<JobLocale> jobLocaleCompleteReviewWithHttpInfo(String projectId, String jobId, String id, JobLocaleCompleteReviewParameters jobLocaleCompleteReviewParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = jobLocaleCompleteReviewValidateBeforeCall(projectId, jobId, id, jobLocaleCompleteReviewParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<JobLocale>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Review a job locale (asynchronously)
+     * Mark job locale as reviewed.
+     * @param projectId Project ID (required)
+     * @param jobId Job ID (required)
+     * @param id ID (required)
+     * @param jobLocaleCompleteReviewParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobLocaleCompleteReviewAsync(String projectId, String jobId, String id, JobLocaleCompleteReviewParameters jobLocaleCompleteReviewParameters, String xPhraseAppOTP, final ApiCallback<JobLocale> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = jobLocaleCompleteReviewValidateBeforeCall(projectId, jobId, id, jobLocaleCompleteReviewParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<JobLocale>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

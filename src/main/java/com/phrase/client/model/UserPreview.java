@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * UserPreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-24T13:45:28.339125Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-09T13:36:45.350883Z[Etc/UTC]")
 public class UserPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -39,6 +39,10 @@ public class UserPreview {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_ROLE = "role";
+  @SerializedName(SERIALIZED_NAME_ROLE)
+  private String role;
 
 
   public UserPreview id(String id) {
@@ -110,6 +114,29 @@ public class UserPreview {
   }
 
 
+  public UserPreview role(String role) {
+    
+    this.role = role;
+    return this;
+  }
+
+   /**
+   * Get role
+   * @return role
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getRole() {
+    return role;
+  }
+
+
+  public void setRole(String role) {
+    this.role = role;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -121,12 +148,13 @@ public class UserPreview {
     UserPreview userPreview = (UserPreview) o;
     return Objects.equals(this.id, userPreview.id) &&
         Objects.equals(this.username, userPreview.username) &&
-        Objects.equals(this.name, userPreview.name);
+        Objects.equals(this.name, userPreview.name) &&
+        Objects.equals(this.role, userPreview.role);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, name);
+    return Objects.hash(id, username, name, role);
   }
 
 
@@ -137,6 +165,7 @@ public class UserPreview {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
   }

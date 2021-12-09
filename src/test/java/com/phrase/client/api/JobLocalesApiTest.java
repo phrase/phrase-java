@@ -15,6 +15,7 @@ package com.phrase.client.api;
 import com.phrase.client.ApiException;
 import com.phrase.client.model.JobLocale;
 import com.phrase.client.model.JobLocaleCompleteParameters;
+import com.phrase.client.model.JobLocaleCompleteReviewParameters;
 import com.phrase.client.model.JobLocaleReopenParameters;
 import com.phrase.client.model.JobLocaleUpdateParameters;
 import com.phrase.client.model.JobLocalesCreateParameters;
@@ -51,6 +52,26 @@ public class JobLocalesApiTest {
         JobLocaleCompleteParameters jobLocaleCompleteParameters = null;
         String xPhraseAppOTP = null;
         JobLocale response = api.jobLocaleComplete(projectId, jobId, id, jobLocaleCompleteParameters, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Review a job locale
+     *
+     * Mark job locale as reviewed.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void jobLocaleCompleteReviewTest() throws ApiException {
+        String projectId = null;
+        String jobId = null;
+        String id = null;
+        JobLocaleCompleteReviewParameters jobLocaleCompleteReviewParameters = null;
+        String xPhraseAppOTP = null;
+        JobLocale response = api.jobLocaleCompleteReview(projectId, jobId, id, jobLocaleCompleteReviewParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

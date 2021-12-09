@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-11-24T13:45:28.339125Z[Etc/UTC]
+  - Build date: 2021-12-09T13:36:45.350883Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1700,6 +1700,7 @@ Class | Method | HTTP request | Description
 *InvitationsApi* | [**invitationUpdateSettings**](docs/InvitationsApi.md#invitationUpdateSettings) | **PATCH** /projects/{project_id}/invitations/{id} | Update a member&#39;s invitation access
 *InvitationsApi* | [**invitationsList**](docs/InvitationsApi.md#invitationsList) | **GET** /accounts/{account_id}/invitations | List invitations
 *JobLocalesApi* | [**jobLocaleComplete**](docs/JobLocalesApi.md#jobLocaleComplete) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete | Complete a job locale
+*JobLocalesApi* | [**jobLocaleCompleteReview**](docs/JobLocalesApi.md#jobLocaleCompleteReview) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review | Review a job locale
 *JobLocalesApi* | [**jobLocaleDelete**](docs/JobLocalesApi.md#jobLocaleDelete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Delete a job locale
 *JobLocalesApi* | [**jobLocaleReopen**](docs/JobLocalesApi.md#jobLocaleReopen) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/reopen | Reopen a job locale
 *JobLocalesApi* | [**jobLocaleShow**](docs/JobLocalesApi.md#jobLocaleShow) | **GET** /projects/{project_id}/jobs/{job_id}/locale/{id} | Get a single job locale
@@ -1913,6 +1914,7 @@ Class | Method | HTTP request | Description
  - [JobKeysCreateParameters](docs/JobKeysCreateParameters.md)
  - [JobLocale](docs/JobLocale.md)
  - [JobLocaleCompleteParameters](docs/JobLocaleCompleteParameters.md)
+ - [JobLocaleCompleteReviewParameters](docs/JobLocaleCompleteReviewParameters.md)
  - [JobLocaleReopenParameters](docs/JobLocaleReopenParameters.md)
  - [JobLocaleUpdateParameters](docs/JobLocaleUpdateParameters.md)
  - [JobLocalesCreateParameters](docs/JobLocalesCreateParameters.md)

@@ -65,4 +65,12 @@ public class JobLocalesCreateParametersTest {
         // TODO: test userIds
     }
 
+    /**
+     * Test the property 'reviewerIds'
+     */
+    @Test
+    public void reviewerIdsTest() {
+        // TODO: test reviewerIds
+    }
+
 }

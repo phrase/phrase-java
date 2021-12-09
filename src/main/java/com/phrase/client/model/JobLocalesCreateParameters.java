@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * JobLocalesCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-24T13:45:28.339125Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-09T13:36:45.350883Z[Etc/UTC]")
 public class JobLocalesCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -41,6 +41,10 @@ public class JobLocalesCreateParameters {
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
   private List<String> userIds = null;
+
+  public static final String SERIALIZED_NAME_REVIEWER_IDS = "reviewer_ids";
+  @SerializedName(SERIALIZED_NAME_REVIEWER_IDS)
+  private List<String> reviewerIds = null;
 
 
   public JobLocalesCreateParameters branch(String branch) {
@@ -104,11 +108,11 @@ public class JobLocalesCreateParameters {
   }
 
    /**
-   * Array of user ids to be assigned to the job locale
+   * Array of user ids to be assigned to the job locale as translators
    * @return userIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "Array of user ids to be assigned to the job locale")
+  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "Array of user ids to be assigned to the job locale as translators")
 
   public List<String> getUserIds() {
     return userIds;
@@ -117,6 +121,37 @@ public class JobLocalesCreateParameters {
 
   public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
+  }
+
+
+  public JobLocalesCreateParameters reviewerIds(List<String> reviewerIds) {
+    
+    this.reviewerIds = reviewerIds;
+    return this;
+  }
+
+  public JobLocalesCreateParameters addReviewerIdsItem(String reviewerIdsItem) {
+    if (this.reviewerIds == null) {
+      this.reviewerIds = new ArrayList<>();
+    }
+    this.reviewerIds.add(reviewerIdsItem);
+    return this;
+  }
+
+   /**
+   * Array of reviewer ids to be assigned to the job locale as reviewers
+   * @return reviewerIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "Array of reviewer ids to be assigned to the job locale as reviewers")
+
+  public List<String> getReviewerIds() {
+    return reviewerIds;
+  }
+
+
+  public void setReviewerIds(List<String> reviewerIds) {
+    this.reviewerIds = reviewerIds;
   }
 
 
@@ -131,12 +166,13 @@ public class JobLocalesCreateParameters {
     JobLocalesCreateParameters jobLocalesCreateParameters = (JobLocalesCreateParameters) o;
     return Objects.equals(this.branch, jobLocalesCreateParameters.branch) &&
         Objects.equals(this.localeId, jobLocalesCreateParameters.localeId) &&
-        Objects.equals(this.userIds, jobLocalesCreateParameters.userIds);
+        Objects.equals(this.userIds, jobLocalesCreateParameters.userIds) &&
+        Objects.equals(this.reviewerIds, jobLocalesCreateParameters.reviewerIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, localeId, userIds);
+    return Objects.hash(branch, localeId, userIds, reviewerIds);
   }
 
 
@@ -147,6 +183,7 @@ public class JobLocalesCreateParameters {
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    localeId: ").append(toIndentedString(localeId)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("    reviewerIds: ").append(toIndentedString(reviewerIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

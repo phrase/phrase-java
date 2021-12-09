@@ -24,35 +24,35 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GithubSyncImportParameters
+ * JobLocaleCompleteReviewParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-09T13:36:45.350883Z[Etc/UTC]")
-public class GithubSyncImportParameters {
-  public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
-  @SerializedName(SERIALIZED_NAME_PROJECT_ID)
-  private String projectId;
+public class JobLocaleCompleteReviewParameters {
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
 
 
-  public GithubSyncImportParameters projectId(String projectId) {
+  public JobLocaleCompleteReviewParameters branch(String branch) {
     
-    this.projectId = projectId;
+    this.branch = branch;
     return this;
   }
 
    /**
-   * Project ID to specify the actual project the GitHub import should be triggered in.
-   * @return projectId
+   * specify the branch to use
+   * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234", value = "Project ID to specify the actual project the GitHub import should be triggered in.")
+  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
-  public String getProjectId() {
-    return projectId;
+  public String getBranch() {
+    return branch;
   }
 
 
-  public void setProjectId(String projectId) {
-    this.projectId = projectId;
+  public void setBranch(String branch) {
+    this.branch = branch;
   }
 
 
@@ -64,21 +64,21 @@ public class GithubSyncImportParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GithubSyncImportParameters githubSyncImportParameters = (GithubSyncImportParameters) o;
-    return Objects.equals(this.projectId, githubSyncImportParameters.projectId);
+    JobLocaleCompleteReviewParameters jobLocaleCompleteReviewParameters = (JobLocaleCompleteReviewParameters) o;
+    return Objects.equals(this.branch, jobLocaleCompleteReviewParameters.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(projectId);
+    return Objects.hash(branch);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GithubSyncImportParameters {\n");
-    sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+    sb.append("class JobLocaleCompleteReviewParameters {\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();
   }
