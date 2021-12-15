@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2021-12-09T13:36:45.350883Z[Etc/UTC]
+  - Build date: 2021-12-15T08:23:58.279420Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1692,6 +1692,7 @@ Class | Method | HTTP request | Description
 *GlossaryTermsApi* | [**glossaryTermShow**](docs/GlossaryTermsApi.md#glossaryTermShow) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single glossary term
 *GlossaryTermsApi* | [**glossaryTermUpdate**](docs/GlossaryTermsApi.md#glossaryTermUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a glossary term
 *GlossaryTermsApi* | [**glossaryTermsList**](docs/GlossaryTermsApi.md#glossaryTermsList) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List glossary terms
+*IcuApi* | [**icuSkeleton**](docs/IcuApi.md#icuSkeleton) | **POST** /icu/skeleton | Build icu skeletons
 *InvitationsApi* | [**invitationCreate**](docs/InvitationsApi.md#invitationCreate) | **POST** /accounts/{account_id}/invitations | Create a new invitation
 *InvitationsApi* | [**invitationDelete**](docs/InvitationsApi.md#invitationDelete) | **DELETE** /accounts/{account_id}/invitations/{id} | Delete an invitation
 *InvitationsApi* | [**invitationResend**](docs/InvitationsApi.md#invitationResend) | **POST** /accounts/{account_id}/invitations/{id}/resend | Resend an invitation
@@ -1900,6 +1901,8 @@ Class | Method | HTTP request | Description
  - [GlossaryTermTranslationUpdateParameters](docs/GlossaryTermTranslationUpdateParameters.md)
  - [GlossaryTermUpdateParameters](docs/GlossaryTermUpdateParameters.md)
  - [GlossaryUpdateParameters](docs/GlossaryUpdateParameters.md)
+ - [Icu](docs/Icu.md)
+ - [IcuSkeletonParameters](docs/IcuSkeletonParameters.md)
  - [InlineResponse422](docs/InlineResponse422.md)
  - [InlineResponse422Errors](docs/InlineResponse422Errors.md)
  - [Invitation](docs/Invitation.md)
