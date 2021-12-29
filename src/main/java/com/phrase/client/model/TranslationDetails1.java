@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TranslationDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-29T13:20:55.522375Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-29T13:54:24.676955Z[Etc/UTC]")
 public class TranslationDetails1 {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
