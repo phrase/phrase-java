@@ -45,6 +45,10 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
@@ -79,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token)
+[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -128,6 +132,10 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     OrderCreateParameters orderCreateParameters = new OrderCreateParameters(); // OrderCreateParameters | 
@@ -160,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token)
+[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -209,6 +217,10 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
@@ -242,7 +254,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token)
+[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -291,6 +303,10 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
@@ -325,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token)
+[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -374,6 +390,10 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
     OrdersApi apiInstance = new OrdersApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -410,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token)
+[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

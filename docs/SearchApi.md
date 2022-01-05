@@ -41,6 +41,10 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
+    // Configure HTTP bearer authorization: bearerAuth
+    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+    bearerAuth.setBearerToken("BEARER TOKEN");
+
     SearchApi apiInstance = new SearchApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     SearchInAccountParameters searchInAccountParameters = new SearchInAccountParameters(); // SearchInAccountParameters | 
@@ -73,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token)
+[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
