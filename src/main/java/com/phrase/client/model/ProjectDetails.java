@@ -23,6 +23,7 @@ import com.phrase.client.model.Account;
 import com.phrase.client.model.Project;
 import com.phrase.client.model.ProjectDetails1;
 import com.phrase.client.model.Space1;
+import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -31,7 +32,7 @@ import java.time.OffsetDateTime;
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-05T10:03:42.673594Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-12T15:47:09.127559Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -60,6 +61,10 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_SPACE = "space";
   @SerializedName(SERIALIZED_NAME_SPACE)
   private Space1 space;
+
+  public static final String SERIALIZED_NAME_POINT_OF_CONTACT = "point_of_contact";
+  @SerializedName(SERIALIZED_NAME_POINT_OF_CONTACT)
+  private UserPreview pointOfContact;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -235,6 +240,29 @@ public class ProjectDetails {
   }
 
 
+  public ProjectDetails pointOfContact(UserPreview pointOfContact) {
+    
+    this.pointOfContact = pointOfContact;
+    return this;
+  }
+
+   /**
+   * Get pointOfContact
+   * @return pointOfContact
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public UserPreview getPointOfContact() {
+    return pointOfContact;
+  }
+
+
+  public void setPointOfContact(UserPreview pointOfContact) {
+    this.pointOfContact = pointOfContact;
+  }
+
+
   public ProjectDetails createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -320,6 +348,7 @@ public class ProjectDetails {
         Objects.equals(this.projectImageUrl, projectDetails.projectImageUrl) &&
         Objects.equals(this.account, projectDetails.account) &&
         Objects.equals(this.space, projectDetails.space) &&
+        Objects.equals(this.pointOfContact, projectDetails.pointOfContact) &&
         Objects.equals(this.createdAt, projectDetails.createdAt) &&
         Objects.equals(this.updatedAt, projectDetails.updatedAt) &&
         Objects.equals(this.sharesTranslationMemory, projectDetails.sharesTranslationMemory);
@@ -327,7 +356,7 @@ public class ProjectDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, account, space, createdAt, updatedAt, sharesTranslationMemory);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory);
   }
 
 
@@ -342,6 +371,7 @@ public class ProjectDetails {
     sb.append("    projectImageUrl: ").append(toIndentedString(projectImageUrl)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    space: ").append(toIndentedString(space)).append("\n");
+    sb.append("    pointOfContact: ").append(toIndentedString(pointOfContact)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    sharesTranslationMemory: ").append(toIndentedString(sharesTranslationMemory)).append("\n");

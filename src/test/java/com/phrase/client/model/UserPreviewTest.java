@@ -64,11 +64,11 @@ public class UserPreviewTest {
     }
 
     /**
-     * Test the property 'role'
+     * Test the property 'gravatarUid'
      */
     @Test
-    public void roleTest() {
-        // TODO: test role
+    public void gravatarUidTest() {
+        // TODO: test gravatarUid
     }
 
 }

@@ -19,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
 import com.phrase.client.model.Space1;
+import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -96,6 +97,14 @@ public class ProjectTest {
     @Test
     public void spaceTest() {
         // TODO: test space
+    }
+
+    /**
+     * Test the property 'pointOfContact'
+     */
+    @Test
+    public void pointOfContactTest() {
+        // TODO: test pointOfContact
     }
 
     /**

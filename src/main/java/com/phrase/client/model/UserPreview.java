@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * UserPreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-05T10:03:42.673594Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-12T15:47:09.127559Z[Etc/UTC]")
 public class UserPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -40,9 +40,9 @@ public class UserPreview {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_ROLE = "role";
-  @SerializedName(SERIALIZED_NAME_ROLE)
-  private String role;
+  public static final String SERIALIZED_NAME_GRAVATAR_UID = "gravatar_uid";
+  @SerializedName(SERIALIZED_NAME_GRAVATAR_UID)
+  private String gravatarUid;
 
 
   public UserPreview id(String id) {
@@ -114,26 +114,26 @@ public class UserPreview {
   }
 
 
-  public UserPreview role(String role) {
+  public UserPreview gravatarUid(String gravatarUid) {
     
-    this.role = role;
+    this.gravatarUid = gravatarUid;
     return this;
   }
 
    /**
-   * Get role
-   * @return role
+   * Get gravatarUid
+   * @return gravatarUid
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getRole() {
-    return role;
+  public String getGravatarUid() {
+    return gravatarUid;
   }
 
 
-  public void setRole(String role) {
-    this.role = role;
+  public void setGravatarUid(String gravatarUid) {
+    this.gravatarUid = gravatarUid;
   }
 
 
@@ -149,12 +149,12 @@ public class UserPreview {
     return Objects.equals(this.id, userPreview.id) &&
         Objects.equals(this.username, userPreview.username) &&
         Objects.equals(this.name, userPreview.name) &&
-        Objects.equals(this.role, userPreview.role);
+        Objects.equals(this.gravatarUid, userPreview.gravatarUid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, name, role);
+    return Objects.hash(id, username, name, gravatarUid);
   }
 
 
@@ -165,7 +165,7 @@ public class UserPreview {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("    gravatarUid: ").append(toIndentedString(gravatarUid)).append("\n");
     sb.append("}");
     return sb.toString();
   }
