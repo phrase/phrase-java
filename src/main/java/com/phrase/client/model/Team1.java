@@ -19,19 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.ProjectShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Glossary
+ * Team1
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-13T10:36:52.427191Z[Etc/UTC]")
-public class Glossary {
+public class Team1 {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -39,10 +36,6 @@ public class Glossary {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
-
-  public static final String SERIALIZED_NAME_PROJECTS = "projects";
-  @SerializedName(SERIALIZED_NAME_PROJECTS)
-  private List<ProjectShort> projects = null;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -53,7 +46,7 @@ public class Glossary {
   private OffsetDateTime updatedAt;
 
 
-  public Glossary id(String id) {
+  public Team1 id(String id) {
     
     this.id = id;
     return this;
@@ -76,7 +69,7 @@ public class Glossary {
   }
 
 
-  public Glossary name(String name) {
+  public Team1 name(String name) {
     
     this.name = name;
     return this;
@@ -99,38 +92,7 @@ public class Glossary {
   }
 
 
-  public Glossary projects(List<ProjectShort> projects) {
-    
-    this.projects = projects;
-    return this;
-  }
-
-  public Glossary addProjectsItem(ProjectShort projectsItem) {
-    if (this.projects == null) {
-      this.projects = new ArrayList<>();
-    }
-    this.projects.add(projectsItem);
-    return this;
-  }
-
-   /**
-   * Get projects
-   * @return projects
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<ProjectShort> getProjects() {
-    return projects;
-  }
-
-
-  public void setProjects(List<ProjectShort> projects) {
-    this.projects = projects;
-  }
-
-
-  public Glossary createdAt(OffsetDateTime createdAt) {
+  public Team1 createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -153,7 +115,7 @@ public class Glossary {
   }
 
 
-  public Glossary updatedAt(OffsetDateTime updatedAt) {
+  public Team1 updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -184,27 +146,25 @@ public class Glossary {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Glossary glossary = (Glossary) o;
-    return Objects.equals(this.id, glossary.id) &&
-        Objects.equals(this.name, glossary.name) &&
-        Objects.equals(this.projects, glossary.projects) &&
-        Objects.equals(this.createdAt, glossary.createdAt) &&
-        Objects.equals(this.updatedAt, glossary.updatedAt);
+    Team1 team1 = (Team1) o;
+    return Objects.equals(this.id, team1.id) &&
+        Objects.equals(this.name, team1.name) &&
+        Objects.equals(this.createdAt, team1.createdAt) &&
+        Objects.equals(this.updatedAt, team1.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, projects, createdAt, updatedAt);
+    return Objects.hash(id, name, createdAt, updatedAt);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Glossary {\n");
+    sb.append("class Team1 {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

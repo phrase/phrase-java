@@ -19,9 +19,11 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectLocales;
+import com.phrase.client.model.Team1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Assert;
@@ -68,6 +70,22 @@ public class MemberTest {
     }
 
     /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    public void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'lastActivityAt'
+     */
+    @Test
+    public void lastActivityAtTest() {
+        // TODO: test lastActivityAt
+    }
+
+    /**
      * Test the property 'role'
      */
     @Test
@@ -97,6 +115,14 @@ public class MemberTest {
     @Test
     public void defaultLocaleCodesTest() {
         // TODO: test defaultLocaleCodes
+    }
+
+    /**
+     * Test the property 'teams'
+     */
+    @Test
+    public void teamsTest() {
+        // TODO: test teams
     }
 
     /**

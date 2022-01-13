@@ -21,16 +21,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectLocales;
+import com.phrase.client.model.Team1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-12T15:47:09.127559Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-13T10:36:52.427191Z[Etc/UTC]")
 public class Member {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -43,6 +45,14 @@ public class Member {
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
   private String username;
+
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_LAST_ACTIVITY_AT = "last_activity_at";
+  @SerializedName(SERIALIZED_NAME_LAST_ACTIVITY_AT)
+  private OffsetDateTime lastActivityAt;
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
@@ -59,6 +69,10 @@ public class Member {
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
   private List<String> defaultLocaleCodes = null;
+
+  public static final String SERIALIZED_NAME_TEAMS = "teams";
+  @SerializedName(SERIALIZED_NAME_TEAMS)
+  private List<Team1> teams = null;
 
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
@@ -131,6 +145,52 @@ public class Member {
 
   public void setUsername(String username) {
     this.username = username;
+  }
+
+
+  public Member createdAt(OffsetDateTime createdAt) {
+    
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * Get createdAt
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+
+  public void setCreatedAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public Member lastActivityAt(OffsetDateTime lastActivityAt) {
+    
+    this.lastActivityAt = lastActivityAt;
+    return this;
+  }
+
+   /**
+   * Get lastActivityAt
+   * @return lastActivityAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public OffsetDateTime getLastActivityAt() {
+    return lastActivityAt;
+  }
+
+
+  public void setLastActivityAt(OffsetDateTime lastActivityAt) {
+    this.lastActivityAt = lastActivityAt;
   }
 
 
@@ -242,6 +302,37 @@ public class Member {
   }
 
 
+  public Member teams(List<Team1> teams) {
+    
+    this.teams = teams;
+    return this;
+  }
+
+  public Member addTeamsItem(Team1 teamsItem) {
+    if (this.teams == null) {
+      this.teams = new ArrayList<>();
+    }
+    this.teams.add(teamsItem);
+    return this;
+  }
+
+   /**
+   * Get teams
+   * @return teams
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<Team1> getTeams() {
+    return teams;
+  }
+
+
+  public void setTeams(List<Team1> teams) {
+    this.teams = teams;
+  }
+
+
   public Member spaces(List<MemberSpaces> spaces) {
     
     this.spaces = spaces;
@@ -285,16 +376,19 @@ public class Member {
     return Objects.equals(this.id, member.id) &&
         Objects.equals(this.email, member.email) &&
         Objects.equals(this.username, member.username) &&
+        Objects.equals(this.createdAt, member.createdAt) &&
+        Objects.equals(this.lastActivityAt, member.lastActivityAt) &&
         Objects.equals(this.role, member.role) &&
         Objects.equals(this.projects, member.projects) &&
         Objects.equals(this.permissions, member.permissions) &&
         Objects.equals(this.defaultLocaleCodes, member.defaultLocaleCodes) &&
+        Objects.equals(this.teams, member.teams) &&
         Objects.equals(this.spaces, member.spaces);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, username, role, projects, permissions, defaultLocaleCodes, spaces);
+    return Objects.hash(id, email, username, createdAt, lastActivityAt, role, projects, permissions, defaultLocaleCodes, teams, spaces);
   }
 
 
@@ -305,10 +399,13 @@ public class Member {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    lastActivityAt: ").append(toIndentedString(lastActivityAt)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
     sb.append("}");
     return sb.toString();
