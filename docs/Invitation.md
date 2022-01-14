@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **acceptedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **spaces** | [**List&lt;MemberSpaces&gt;**](MemberSpaces.md) |  |  [optional]
+**teams** | [**List&lt;Items&gt;**](Items.md) |  |  [optional]
 **projectRole** | [**List&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  |  [optional]
 
 

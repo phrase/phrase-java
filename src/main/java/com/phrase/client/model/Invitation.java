@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.Items;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.MemberProjectDetailProjectRoles;
 import com.phrase.client.model.MemberSpaces;
@@ -33,7 +34,7 @@ import java.util.List;
 /**
  * Invitation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-13T14:47:35.268098Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-14T11:55:08.943962Z[Etc/UTC]")
 public class Invitation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -86,6 +87,10 @@ public class Invitation {
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
   private List<MemberSpaces> spaces = null;
+
+  public static final String SERIALIZED_NAME_TEAMS = "teams";
+  @SerializedName(SERIALIZED_NAME_TEAMS)
+  private List<Items> teams = null;
 
   public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
   @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
@@ -431,6 +436,37 @@ public class Invitation {
   }
 
 
+  public Invitation teams(List<Items> teams) {
+    
+    this.teams = teams;
+    return this;
+  }
+
+  public Invitation addTeamsItem(Items teamsItem) {
+    if (this.teams == null) {
+      this.teams = new ArrayList<>();
+    }
+    this.teams.add(teamsItem);
+    return this;
+  }
+
+   /**
+   * Get teams
+   * @return teams
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<Items> getTeams() {
+    return teams;
+  }
+
+
+  public void setTeams(List<Items> teams) {
+    this.teams = teams;
+  }
+
+
   public Invitation projectRole(List<MemberProjectDetailProjectRoles> projectRole) {
     
     this.projectRole = projectRole;
@@ -484,12 +520,13 @@ public class Invitation {
         Objects.equals(this.updatedAt, invitation.updatedAt) &&
         Objects.equals(this.acceptedAt, invitation.acceptedAt) &&
         Objects.equals(this.spaces, invitation.spaces) &&
+        Objects.equals(this.teams, invitation.teams) &&
         Objects.equals(this.projectRole, invitation.projectRole);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, projectRole);
+    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, teams, projectRole);
   }
 
 
@@ -510,6 +547,7 @@ public class Invitation {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    acceptedAt: ").append(toIndentedString(acceptedAt)).append("\n");
     sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
     sb.append("}");
     return sb.toString();
