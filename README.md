@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2022-01-17T08:13:15.439615Z[Etc/UTC]
+  - Build date: 2022-01-17T09:30:50.442038Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1490,10 +1490,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     AccountsApi apiInstance = new AccountsApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -1940,10 +1936,6 @@ Authentication schemes defined for the API:
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
-
-### bearerAuth
-
-- **Type**: HTTP basic authentication
 
 
 ## Recommendation

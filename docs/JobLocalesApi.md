@@ -48,10 +48,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -88,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -137,10 +133,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -177,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -226,10 +218,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -265,7 +253,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -314,10 +302,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -354,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -403,10 +387,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -443,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -492,10 +472,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -532,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -581,10 +557,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -619,7 +591,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -668,10 +640,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     JobLocalesApi apiInstance = new JobLocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
@@ -710,7 +678,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 

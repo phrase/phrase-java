@@ -47,10 +47,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -82,7 +78,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -131,10 +127,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String gitlabSyncId = "gitlabSyncId_example"; // String | Gitlab Sync ID
     GitlabSyncExportParameters gitlabSyncExportParameters = new GitlabSyncExportParameters(); // GitlabSyncExportParameters | 
@@ -167,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -216,10 +208,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String gitlabSyncId = "gitlabSyncId_example"; // String | Gitlab Sync ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -256,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -305,10 +293,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String gitlabSyncId = "gitlabSyncId_example"; // String | Gitlab Sync ID
     GitlabSyncImportParameters gitlabSyncImportParameters = new GitlabSyncImportParameters(); // GitlabSyncImportParameters | 
@@ -341,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -390,10 +374,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String accountId = abcd1234; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
@@ -424,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -473,10 +453,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -509,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -558,10 +534,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -600,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 

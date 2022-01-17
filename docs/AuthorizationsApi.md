@@ -45,10 +45,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     AuthorizationsApi apiInstance = new AuthorizationsApi(defaultClient);
     AuthorizationCreateParameters authorizationCreateParameters = new AuthorizationCreateParameters(); // AuthorizationCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -79,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -128,10 +124,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     AuthorizationsApi apiInstance = new AuthorizationsApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -161,7 +153,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -210,10 +202,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     AuthorizationsApi apiInstance = new AuthorizationsApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -244,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -293,10 +281,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     AuthorizationsApi apiInstance = new AuthorizationsApi(defaultClient);
     String id = "id_example"; // String | ID
     AuthorizationUpdateParameters authorizationUpdateParameters = new AuthorizationUpdateParameters(); // AuthorizationUpdateParameters | 
@@ -329,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -378,10 +362,6 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    // Configure HTTP bearer authorization: bearerAuth
-    HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-    bearerAuth.setBearerToken("BEARER TOKEN");
-
     AuthorizationsApi apiInstance = new AuthorizationsApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
@@ -414,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Token](../README.md#Token), [bearerAuth](../README.md#bearerAuth)
+[Basic](../README.md#Basic), [Token](../README.md#Token)
 
 ### HTTP request headers
 

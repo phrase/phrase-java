@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Subscription
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-17T08:13:15.439615Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-17T09:30:50.442038Z[Etc/UTC]")
 public class Subscription {
   public static final String SERIALIZED_NAME_IS_CURRENT = "is_current";
   @SerializedName(SERIALIZED_NAME_IS_CURRENT)
