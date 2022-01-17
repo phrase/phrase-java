@@ -17,32 +17,27 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.LocalePreview;
-import com.phrase.client.model.ProjectLocales1;
-import com.phrase.client.model.ProjectMemberSpecific;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for ProjectLocales
+ * Model tests for ProjectMemberSpecific
  */
-public class ProjectLocalesTest {
-    private final ProjectLocales model = new ProjectLocales();
+public class ProjectMemberSpecificTest {
+    private final ProjectMemberSpecific model = new ProjectMemberSpecific();
 
     /**
-     * Model tests for ProjectLocales
+     * Model tests for ProjectMemberSpecific
      */
     @Test
-    public void testProjectLocales() {
-        // TODO: test ProjectLocales
+    public void testProjectMemberSpecific() {
+        // TODO: test ProjectMemberSpecific
     }
 
     /**
@@ -91,14 +86,6 @@ public class ProjectLocalesTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
-    }
-
-    /**
-     * Test the property 'locales'
-     */
-    @Test
-    public void localesTest() {
-        // TODO: test locales
     }
 
 }

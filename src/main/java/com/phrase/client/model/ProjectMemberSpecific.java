@@ -25,33 +25,25 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
- * CurrentUser
+ * ProjectMemberSpecific
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-17T08:13:15.439615Z[Etc/UTC]")
-public class CurrentUser {
+public class ProjectMemberSpecific {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
-
-  public static final String SERIALIZED_NAME_USERNAME = "username";
-  @SerializedName(SERIALIZED_NAME_USERNAME)
-  private String username;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
-  private String email;
+  public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
+  @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
+  private String projectRole;
 
-  public static final String SERIALIZED_NAME_POSITION = "position";
-  @SerializedName(SERIALIZED_NAME_POSITION)
-  private String position;
-
-  public static final String SERIALIZED_NAME_LANGUAGE = "language";
-  @SerializedName(SERIALIZED_NAME_LANGUAGE)
-  private String language;
+  public static final String SERIALIZED_NAME_MAIN_FORMAT = "main_format";
+  @SerializedName(SERIALIZED_NAME_MAIN_FORMAT)
+  private String mainFormat;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -62,7 +54,7 @@ public class CurrentUser {
   private OffsetDateTime updatedAt;
 
 
-  public CurrentUser id(String id) {
+  public ProjectMemberSpecific id(String id) {
     
     this.id = id;
     return this;
@@ -85,30 +77,7 @@ public class CurrentUser {
   }
 
 
-  public CurrentUser username(String username) {
-    
-    this.username = username;
-    return this;
-  }
-
-   /**
-   * Get username
-   * @return username
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getUsername() {
-    return username;
-  }
-
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-
-  public CurrentUser name(String name) {
+  public ProjectMemberSpecific name(String name) {
     
     this.name = name;
     return this;
@@ -131,76 +100,53 @@ public class CurrentUser {
   }
 
 
-  public CurrentUser email(String email) {
+  public ProjectMemberSpecific projectRole(String projectRole) {
     
-    this.email = email;
+    this.projectRole = projectRole;
     return this;
   }
 
    /**
-   * Get email
-   * @return email
+   * Get projectRole
+   * @return projectRole
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getEmail() {
-    return email;
+  public String getProjectRole() {
+    return projectRole;
   }
 
 
-  public void setEmail(String email) {
-    this.email = email;
+  public void setProjectRole(String projectRole) {
+    this.projectRole = projectRole;
   }
 
 
-  public CurrentUser position(String position) {
+  public ProjectMemberSpecific mainFormat(String mainFormat) {
     
-    this.position = position;
+    this.mainFormat = mainFormat;
     return this;
   }
 
    /**
-   * Get position
-   * @return position
+   * Get mainFormat
+   * @return mainFormat
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getPosition() {
-    return position;
+  public String getMainFormat() {
+    return mainFormat;
   }
 
 
-  public void setPosition(String position) {
-    this.position = position;
+  public void setMainFormat(String mainFormat) {
+    this.mainFormat = mainFormat;
   }
 
 
-  public CurrentUser language(String language) {
-    
-    this.language = language;
-    return this;
-  }
-
-   /**
-   * Get language
-   * @return language
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getLanguage() {
-    return language;
-  }
-
-
-  public void setLanguage(String language) {
-    this.language = language;
-  }
-
-
-  public CurrentUser createdAt(OffsetDateTime createdAt) {
+  public ProjectMemberSpecific createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -223,7 +169,7 @@ public class CurrentUser {
   }
 
 
-  public CurrentUser updatedAt(OffsetDateTime updatedAt) {
+  public ProjectMemberSpecific updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -254,33 +200,29 @@ public class CurrentUser {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CurrentUser currentUser = (CurrentUser) o;
-    return Objects.equals(this.id, currentUser.id) &&
-        Objects.equals(this.username, currentUser.username) &&
-        Objects.equals(this.name, currentUser.name) &&
-        Objects.equals(this.email, currentUser.email) &&
-        Objects.equals(this.position, currentUser.position) &&
-        Objects.equals(this.language, currentUser.language) &&
-        Objects.equals(this.createdAt, currentUser.createdAt) &&
-        Objects.equals(this.updatedAt, currentUser.updatedAt);
+    ProjectMemberSpecific projectMemberSpecific = (ProjectMemberSpecific) o;
+    return Objects.equals(this.id, projectMemberSpecific.id) &&
+        Objects.equals(this.name, projectMemberSpecific.name) &&
+        Objects.equals(this.projectRole, projectMemberSpecific.projectRole) &&
+        Objects.equals(this.mainFormat, projectMemberSpecific.mainFormat) &&
+        Objects.equals(this.createdAt, projectMemberSpecific.createdAt) &&
+        Objects.equals(this.updatedAt, projectMemberSpecific.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, name, email, position, language, createdAt, updatedAt);
+    return Objects.hash(id, name, projectRole, mainFormat, createdAt, updatedAt);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CurrentUser {\n");
+    sb.append("class ProjectMemberSpecific {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
+    sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

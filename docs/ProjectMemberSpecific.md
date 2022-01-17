@@ -1,6 +1,6 @@
 
 
-# ProjectLocales
+# ProjectMemberSpecific
 
 ## Properties
 
@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **mainFormat** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
 
 
 

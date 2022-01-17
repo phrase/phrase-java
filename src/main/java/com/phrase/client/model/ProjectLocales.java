@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectLocales1;
-import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.ProjectMemberSpecific;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * ProjectLocales
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-14T11:55:08.943962Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-17T08:13:15.439615Z[Etc/UTC]")
 public class ProjectLocales {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -41,6 +41,10 @@ public class ProjectLocales {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
+  @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
+  private String projectRole;
 
   public static final String SERIALIZED_NAME_MAIN_FORMAT = "main_format";
   @SerializedName(SERIALIZED_NAME_MAIN_FORMAT)
@@ -102,6 +106,29 @@ public class ProjectLocales {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public ProjectLocales projectRole(String projectRole) {
+    
+    this.projectRole = projectRole;
+    return this;
+  }
+
+   /**
+   * Get projectRole
+   * @return projectRole
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getProjectRole() {
+    return projectRole;
+  }
+
+
+  public void setProjectRole(String projectRole) {
+    this.projectRole = projectRole;
   }
 
 
@@ -216,6 +243,7 @@ public class ProjectLocales {
     ProjectLocales projectLocales = (ProjectLocales) o;
     return Objects.equals(this.id, projectLocales.id) &&
         Objects.equals(this.name, projectLocales.name) &&
+        Objects.equals(this.projectRole, projectLocales.projectRole) &&
         Objects.equals(this.mainFormat, projectLocales.mainFormat) &&
         Objects.equals(this.createdAt, projectLocales.createdAt) &&
         Objects.equals(this.updatedAt, projectLocales.updatedAt) &&
@@ -224,7 +252,7 @@ public class ProjectLocales {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, mainFormat, createdAt, updatedAt, locales);
+    return Objects.hash(id, name, projectRole, mainFormat, createdAt, updatedAt, locales);
   }
 
 
@@ -234,6 +262,7 @@ public class ProjectLocales {
     sb.append("class ProjectLocales {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
