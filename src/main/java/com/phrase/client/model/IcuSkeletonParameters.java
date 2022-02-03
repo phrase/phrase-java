@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * IcuSkeletonParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-27T08:58:25.618898Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-03T16:06:44.305729Z[Etc/UTC]")
 public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -37,6 +37,10 @@ public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_LOCALE_CODES = "locale_codes";
   @SerializedName(SERIALIZED_NAME_LOCALE_CODES)
   private List<String> localeCodes = null;
+
+  public static final String SERIALIZED_NAME_KEEP_CONTENT = "keep_content";
+  @SerializedName(SERIALIZED_NAME_KEEP_CONTENT)
+  private Boolean keepContent;
 
   public static final String SERIALIZED_NAME_ZERO_FORM_ENABLED = "zero_form_enabled";
   @SerializedName(SERIALIZED_NAME_ZERO_FORM_ENABLED)
@@ -97,6 +101,29 @@ public class IcuSkeletonParameters {
   }
 
 
+  public IcuSkeletonParameters keepContent(Boolean keepContent) {
+    
+    this.keepContent = keepContent;
+    return this;
+  }
+
+   /**
+   * Keep the content and add missing plural forms for each locale
+   * @return keepContent
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Keep the content and add missing plural forms for each locale")
+
+  public Boolean getKeepContent() {
+    return keepContent;
+  }
+
+
+  public void setKeepContent(Boolean keepContent) {
+    this.keepContent = keepContent;
+  }
+
+
   public IcuSkeletonParameters zeroFormEnabled(Boolean zeroFormEnabled) {
     
     this.zeroFormEnabled = zeroFormEnabled;
@@ -131,12 +158,13 @@ public class IcuSkeletonParameters {
     IcuSkeletonParameters icuSkeletonParameters = (IcuSkeletonParameters) o;
     return Objects.equals(this.content, icuSkeletonParameters.content) &&
         Objects.equals(this.localeCodes, icuSkeletonParameters.localeCodes) &&
+        Objects.equals(this.keepContent, icuSkeletonParameters.keepContent) &&
         Objects.equals(this.zeroFormEnabled, icuSkeletonParameters.zeroFormEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content, localeCodes, zeroFormEnabled);
+    return Objects.hash(content, localeCodes, keepContent, zeroFormEnabled);
   }
 
 
@@ -146,6 +174,7 @@ public class IcuSkeletonParameters {
     sb.append("class IcuSkeletonParameters {\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    localeCodes: ").append(toIndentedString(localeCodes)).append("\n");
+    sb.append("    keepContent: ").append(toIndentedString(keepContent)).append("\n");
     sb.append("    zeroFormEnabled: ").append(toIndentedString(zeroFormEnabled)).append("\n");
     sb.append("}");
     return sb.toString();

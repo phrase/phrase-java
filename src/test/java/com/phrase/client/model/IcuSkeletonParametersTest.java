@@ -58,6 +58,14 @@ public class IcuSkeletonParametersTest {
     }
 
     /**
+     * Test the property 'keepContent'
+     */
+    @Test
+    public void keepContentTest() {
+        // TODO: test keepContent
+    }
+
+    /**
      * Test the property 'zeroFormEnabled'
      */
     @Test
