@@ -129,6 +129,14 @@ public class KeyCreateParametersTest {
     }
 
     /**
+     * Test the property 'defaultTranslationContent'
+     */
+    @Test
+    public void defaultTranslationContentTest() {
+        // TODO: test defaultTranslationContent
+    }
+
+    /**
      * Test the property 'xmlSpacePreserve'
      */
     @Test

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * KeyCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-04T10:18:38.658328Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-04T10:24:28.045944Z[Etc/UTC]")
 public class KeyCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -72,6 +72,10 @@ public class KeyCreateParameters {
   public static final String SERIALIZED_NAME_UNFORMATTED = "unformatted";
   @SerializedName(SERIALIZED_NAME_UNFORMATTED)
   private Boolean unformatted;
+
+  public static final String SERIALIZED_NAME_DEFAULT_TRANSLATION_CONTENT = "default_translation_content";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_TRANSLATION_CONTENT)
+  private String defaultTranslationContent;
 
   public static final String SERIALIZED_NAME_XML_SPACE_PRESERVE = "xml_space_preserve";
   @SerializedName(SERIALIZED_NAME_XML_SPACE_PRESERVE)
@@ -343,6 +347,29 @@ public class KeyCreateParameters {
   }
 
 
+  public KeyCreateParameters defaultTranslationContent(String defaultTranslationContent) {
+    
+    this.defaultTranslationContent = defaultTranslationContent;
+    return this;
+  }
+
+   /**
+   * Creates a translation in the default locale with the specified content
+   * @return defaultTranslationContent
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Default translation content", value = "Creates a translation in the default locale with the specified content")
+
+  public String getDefaultTranslationContent() {
+    return defaultTranslationContent;
+  }
+
+
+  public void setDefaultTranslationContent(String defaultTranslationContent) {
+    this.defaultTranslationContent = defaultTranslationContent;
+  }
+
+
   public KeyCreateParameters xmlSpacePreserve(Boolean xmlSpacePreserve) {
     
     this.xmlSpacePreserve = xmlSpacePreserve;
@@ -455,6 +482,7 @@ public class KeyCreateParameters {
         Objects.equals(this.screenshot, keyCreateParameters.screenshot) &&
         Objects.equals(this.removeScreenshot, keyCreateParameters.removeScreenshot) &&
         Objects.equals(this.unformatted, keyCreateParameters.unformatted) &&
+        Objects.equals(this.defaultTranslationContent, keyCreateParameters.defaultTranslationContent) &&
         Objects.equals(this.xmlSpacePreserve, keyCreateParameters.xmlSpacePreserve) &&
         Objects.equals(this.originalFile, keyCreateParameters.originalFile) &&
         Objects.equals(this.localizedFormatString, keyCreateParameters.localizedFormatString) &&
@@ -463,7 +491,7 @@ public class KeyCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, description, plural, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey);
+    return Objects.hash(branch, name, description, plural, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, defaultTranslationContent, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey);
   }
 
 
@@ -482,6 +510,7 @@ public class KeyCreateParameters {
     sb.append("    screenshot: ").append(toIndentedString(screenshot)).append("\n");
     sb.append("    removeScreenshot: ").append(toIndentedString(removeScreenshot)).append("\n");
     sb.append("    unformatted: ").append(toIndentedString(unformatted)).append("\n");
+    sb.append("    defaultTranslationContent: ").append(toIndentedString(defaultTranslationContent)).append("\n");
     sb.append("    xmlSpacePreserve: ").append(toIndentedString(xmlSpacePreserve)).append("\n");
     sb.append("    originalFile: ").append(toIndentedString(originalFile)).append("\n");
     sb.append("    localizedFormatString: ").append(toIndentedString(localizedFormatString)).append("\n");
