@@ -134,6 +134,25 @@ public class JobsApiTest {
     }
     
     /**
+     * Lock a job
+     *
+     * If you are the job owner, you may lock a job using this API request.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void jobLockTest() throws ApiException {
+        String projectId = null;
+        String id = null;
+        String xPhraseAppOTP = null;
+        String branch = null;
+        api.jobLock(projectId, id, xPhraseAppOTP, branch);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Reopen a job
      *
      * Mark a job as uncompleted.
@@ -186,6 +205,25 @@ public class JobsApiTest {
         JobStartParameters jobStartParameters = null;
         String xPhraseAppOTP = null;
         JobDetails response = api.jobStart(projectId, id, jobStartParameters, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Unlock a job
+     *
+     * If you are the job owner, you may unlock a locked job using this API request.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void jobUnlockTest() throws ApiException {
+        String projectId = null;
+        String id = null;
+        String xPhraseAppOTP = null;
+        String branch = null;
+        api.jobUnlock(projectId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }

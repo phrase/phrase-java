@@ -799,6 +799,151 @@ public class JobsApi {
         return localVarCall;
     }
     /**
+     * Build call for jobLock
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobLockCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/jobs/{id}/lock"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call jobLockValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling jobLock(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling jobLock(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = jobLockCall(projectId, id, xPhraseAppOTP, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Lock a job
+     * If you are the job owner, you may lock a job using this API request.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void jobLock(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        jobLockWithHttpInfo(projectId, id, xPhraseAppOTP, branch);
+    }
+
+    /**
+     * Lock a job
+     * If you are the job owner, you may lock a job using this API request.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> jobLockWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = jobLockValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Lock a job (asynchronously)
+     * If you are the job owner, you may lock a job using this API request.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobLockAsync(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = jobLockValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for jobReopen
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -1245,6 +1390,151 @@ public class JobsApi {
         okhttp3.Call localVarCall = jobStartValidateBeforeCall(projectId, id, jobStartParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<JobDetails>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for jobUnlock
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobUnlockCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/jobs/{id}/unlock"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call jobUnlockValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling jobUnlock(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling jobUnlock(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = jobUnlockCall(projectId, id, xPhraseAppOTP, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Unlock a job
+     * If you are the job owner, you may unlock a locked job using this API request.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void jobUnlock(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        jobUnlockWithHttpInfo(projectId, id, xPhraseAppOTP, branch);
+    }
+
+    /**
+     * Unlock a job
+     * If you are the job owner, you may unlock a locked job using this API request.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> jobUnlockWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = jobUnlockValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Unlock a job (asynchronously)
+     * If you are the job owner, you may unlock a locked job using this API request.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobUnlockAsync(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = jobUnlockValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**

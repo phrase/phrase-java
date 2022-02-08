@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2022-02-04T15:52:33.625132Z[Etc/UTC]
+  - Build date: 2022-02-08T08:58:37.373696Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1605,9 +1605,11 @@ Class | Method | HTTP request | Description
 *JobsApi* | [**jobDelete**](docs/JobsApi.md#jobDelete) | **DELETE** /projects/{project_id}/jobs/{id} | Delete a job
 *JobsApi* | [**jobKeysCreate**](docs/JobsApi.md#jobKeysCreate) | **POST** /projects/{project_id}/jobs/{id}/keys | Add keys to job
 *JobsApi* | [**jobKeysDelete**](docs/JobsApi.md#jobKeysDelete) | **DELETE** /projects/{project_id}/jobs/{id}/keys | Remove keys from job
+*JobsApi* | [**jobLock**](docs/JobsApi.md#jobLock) | **POST** /projects/{project_id}/jobs/{id}/lock | Lock a job
 *JobsApi* | [**jobReopen**](docs/JobsApi.md#jobReopen) | **POST** /projects/{project_id}/jobs/{id}/reopen | Reopen a job
 *JobsApi* | [**jobShow**](docs/JobsApi.md#jobShow) | **GET** /projects/{project_id}/jobs/{id} | Get a single job
 *JobsApi* | [**jobStart**](docs/JobsApi.md#jobStart) | **POST** /projects/{project_id}/jobs/{id}/start | Start a job
+*JobsApi* | [**jobUnlock**](docs/JobsApi.md#jobUnlock) | **POST** /projects/{project_id}/jobs/{id}/unlock | Unlock a job
 *JobsApi* | [**jobUpdate**](docs/JobsApi.md#jobUpdate) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
 *JobsApi* | [**jobsByAccount**](docs/JobsApi.md#jobsByAccount) | **GET** /accounts/{account_id}/jobs | List account jobs
 *JobsApi* | [**jobsList**](docs/JobsApi.md#jobsList) | **GET** /projects/{project_id}/jobs | List jobs

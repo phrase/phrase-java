@@ -9,9 +9,11 @@ Method | HTTP request | Description
 [**jobDelete**](JobsApi.md#jobDelete) | **DELETE** /projects/{project_id}/jobs/{id} | Delete a job
 [**jobKeysCreate**](JobsApi.md#jobKeysCreate) | **POST** /projects/{project_id}/jobs/{id}/keys | Add keys to job
 [**jobKeysDelete**](JobsApi.md#jobKeysDelete) | **DELETE** /projects/{project_id}/jobs/{id}/keys | Remove keys from job
+[**jobLock**](JobsApi.md#jobLock) | **POST** /projects/{project_id}/jobs/{id}/lock | Lock a job
 [**jobReopen**](JobsApi.md#jobReopen) | **POST** /projects/{project_id}/jobs/{id}/reopen | Reopen a job
 [**jobShow**](JobsApi.md#jobShow) | **GET** /projects/{project_id}/jobs/{id} | Get a single job
 [**jobStart**](JobsApi.md#jobStart) | **POST** /projects/{project_id}/jobs/{id}/start | Start a job
+[**jobUnlock**](JobsApi.md#jobUnlock) | **POST** /projects/{project_id}/jobs/{id}/unlock | Unlock a job
 [**jobUpdate**](JobsApi.md#jobUpdate) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
 [**jobsByAccount**](JobsApi.md#jobsByAccount) | **GET** /accounts/{account_id}/jobs | List account jobs
 [**jobsList**](JobsApi.md#jobsList) | **GET** /projects/{project_id}/jobs | List jobs
@@ -430,6 +432,88 @@ null (empty response body)
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
+<a name="jobLock"></a>
+# **jobLock**
+> jobLock(projectId, id, xPhraseAppOTP, branch)
+
+Lock a job
+
+If you are the job owner, you may lock a job using this API request.
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Token.setApiKeyPrefix("Token");
+
+    JobsApi apiInstance = new JobsApi(defaultClient);
+    String projectId = "projectId_example"; // String | Project ID
+    String id = "id_example"; // String | ID
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = my-feature-branch; // String | specify the branch to use
+    try {
+      apiInstance.jobLock(projectId, id, xPhraseAppOTP, branch);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling JobsApi#jobLock");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| Project ID |
+ **id** | **String**| ID |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | The resource was deleted successfully. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
 <a name="jobReopen"></a>
 # **jobReopen**
 > JobDetails jobReopen(projectId, id, jobReopenParameters, xPhraseAppOTP)
@@ -675,6 +759,88 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
+<a name="jobUnlock"></a>
+# **jobUnlock**
+> jobUnlock(projectId, id, xPhraseAppOTP, branch)
+
+Unlock a job
+
+If you are the job owner, you may unlock a locked job using this API request.
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.JobsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Token.setApiKeyPrefix("Token");
+
+    JobsApi apiInstance = new JobsApi(defaultClient);
+    String projectId = "projectId_example"; // String | Project ID
+    String id = "id_example"; // String | ID
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = my-feature-branch; // String | specify the branch to use
+    try {
+      apiInstance.jobUnlock(projectId, id, xPhraseAppOTP, branch);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling JobsApi#jobUnlock");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| Project ID |
+ **id** | **String**| ID |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | The resource was deleted successfully. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

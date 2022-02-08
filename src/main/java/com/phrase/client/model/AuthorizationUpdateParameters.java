@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * AuthorizationUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-04T15:52:33.625132Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-08T08:58:37.373696Z[Etc/UTC]")
 public class AuthorizationUpdateParameters {
   public static final String SERIALIZED_NAME_NOTE = "note";
   @SerializedName(SERIALIZED_NAME_NOTE)
