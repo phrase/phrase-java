@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * JobCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-01T15:34:14.870623Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-08T10:30:11.748387Z[Etc/UTC]")
 public class JobCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -62,6 +62,10 @@ public class JobCreateParameters {
   public static final String SERIALIZED_NAME_TRANSLATION_KEY_IDS = "translation_key_ids";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEY_IDS)
   private List<String> translationKeyIds = null;
+
+  public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
+  @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
+  private String jobTemplateId;
 
 
   public JobCreateParameters branch(String branch) {
@@ -264,6 +268,29 @@ public class JobCreateParameters {
   }
 
 
+  public JobCreateParameters jobTemplateId(String jobTemplateId) {
+    
+    this.jobTemplateId = jobTemplateId;
+    return this;
+  }
+
+   /**
+   * id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes.
+   * @return jobTemplateId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "abcd1234cdef1234abcd1234cdef1234", value = "id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes.")
+
+  public String getJobTemplateId() {
+    return jobTemplateId;
+  }
+
+
+  public void setJobTemplateId(String jobTemplateId) {
+    this.jobTemplateId = jobTemplateId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -280,12 +307,13 @@ public class JobCreateParameters {
         Objects.equals(this.dueDate, jobCreateParameters.dueDate) &&
         Objects.equals(this.ticketUrl, jobCreateParameters.ticketUrl) &&
         Objects.equals(this.tags, jobCreateParameters.tags) &&
-        Objects.equals(this.translationKeyIds, jobCreateParameters.translationKeyIds);
+        Objects.equals(this.translationKeyIds, jobCreateParameters.translationKeyIds) &&
+        Objects.equals(this.jobTemplateId, jobCreateParameters.jobTemplateId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds);
+    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds, jobTemplateId);
   }
 
 
@@ -301,6 +329,7 @@ public class JobCreateParameters {
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    translationKeyIds: ").append(toIndentedString(translationKeyIds)).append("\n");
+    sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

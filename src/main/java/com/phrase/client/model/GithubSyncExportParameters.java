@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GithubSyncExportParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-01T15:34:14.870623Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-08T10:30:11.748387Z[Etc/UTC]")
 public class GithubSyncExportParameters {
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)

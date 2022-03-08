@@ -106,4 +106,12 @@ public class JobCreateParametersTest {
         // TODO: test translationKeyIds
     }
 
+    /**
+     * Test the property 'jobTemplateId'
+     */
+    @Test
+    public void jobTemplateIdTest() {
+        // TODO: test jobTemplateId
+    }
+
 }

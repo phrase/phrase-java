@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * StyleguideDetails1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-01T15:34:14.870623Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-08T10:30:11.748387Z[Etc/UTC]")
 public class StyleguideDetails1 {
   public static final String SERIALIZED_NAME_PUBLIC_URL = "public_url";
   @SerializedName(SERIALIZED_NAME_PUBLIC_URL)
