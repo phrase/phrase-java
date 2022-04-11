@@ -19,7 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectLocales;
-import com.phrase.client.model.Team1;
+import com.phrase.client.model.TeamShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;

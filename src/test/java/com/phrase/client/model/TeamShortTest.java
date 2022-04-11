@@ -27,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for Team1
+ * Model tests for TeamShort
  */
-public class Team1Test {
-    private final Team1 model = new Team1();
+public class TeamShortTest {
+    private final TeamShort model = new TeamShort();
 
     /**
-     * Model tests for Team1
+     * Model tests for TeamShort
      */
     @Test
-    public void testTeam1() {
-        // TODO: test Team1
+    public void testTeamShort() {
+        // TODO: test TeamShort
     }
 
     /**

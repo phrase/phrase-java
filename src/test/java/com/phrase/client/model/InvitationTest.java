@@ -17,11 +17,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Items;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.MemberProjectDetailProjectRoles;
-import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.Space;
+import com.phrase.client.model.TeamShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -96,6 +96,14 @@ public class InvitationTest {
     }
 
     /**
+     * Test the property 'teams'
+     */
+    @Test
+    public void teamsTest() {
+        // TODO: test teams
+    }
+
+    /**
      * Test the property 'defaultLocaleCodes'
      */
     @Test
@@ -149,14 +157,6 @@ public class InvitationTest {
     @Test
     public void spacesTest() {
         // TODO: test spaces
-    }
-
-    /**
-     * Test the property 'teams'
-     */
-    @Test
-    public void teamsTest() {
-        // TODO: test teams
     }
 
     /**

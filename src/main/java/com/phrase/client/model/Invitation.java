@@ -19,11 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Items;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.MemberProjectDetailProjectRoles;
-import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.Space;
+import com.phrase.client.model.TeamShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * Invitation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-07T14:47:01.778327Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-11T09:06:41.362260Z[Etc/UTC]")
 public class Invitation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -59,6 +59,10 @@ public class Invitation {
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
   private List<LocalePreview> locales = null;
+
+  public static final String SERIALIZED_NAME_TEAMS = "teams";
+  @SerializedName(SERIALIZED_NAME_TEAMS)
+  private List<TeamShort> teams = null;
 
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
@@ -86,11 +90,7 @@ public class Invitation {
 
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
-  private List<MemberSpaces> spaces = null;
-
-  public static final String SERIALIZED_NAME_TEAMS = "teams";
-  @SerializedName(SERIALIZED_NAME_TEAMS)
-  private List<Items> teams = null;
+  private List<Space> spaces = null;
 
   public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
   @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
@@ -251,6 +251,37 @@ public class Invitation {
   }
 
 
+  public Invitation teams(List<TeamShort> teams) {
+    
+    this.teams = teams;
+    return this;
+  }
+
+  public Invitation addTeamsItem(TeamShort teamsItem) {
+    if (this.teams == null) {
+      this.teams = new ArrayList<>();
+    }
+    this.teams.add(teamsItem);
+    return this;
+  }
+
+   /**
+   * Get teams
+   * @return teams
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TeamShort> getTeams() {
+    return teams;
+  }
+
+
+  public void setTeams(List<TeamShort> teams) {
+    this.teams = teams;
+  }
+
+
   public Invitation defaultLocaleCodes(List<String> defaultLocaleCodes) {
     
     this.defaultLocaleCodes = defaultLocaleCodes;
@@ -405,13 +436,13 @@ public class Invitation {
   }
 
 
-  public Invitation spaces(List<MemberSpaces> spaces) {
+  public Invitation spaces(List<Space> spaces) {
     
     this.spaces = spaces;
     return this;
   }
 
-  public Invitation addSpacesItem(MemberSpaces spacesItem) {
+  public Invitation addSpacesItem(Space spacesItem) {
     if (this.spaces == null) {
       this.spaces = new ArrayList<>();
     }
@@ -426,44 +457,13 @@ public class Invitation {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<MemberSpaces> getSpaces() {
+  public List<Space> getSpaces() {
     return spaces;
   }
 
 
-  public void setSpaces(List<MemberSpaces> spaces) {
+  public void setSpaces(List<Space> spaces) {
     this.spaces = spaces;
-  }
-
-
-  public Invitation teams(List<Items> teams) {
-    
-    this.teams = teams;
-    return this;
-  }
-
-  public Invitation addTeamsItem(Items teamsItem) {
-    if (this.teams == null) {
-      this.teams = new ArrayList<>();
-    }
-    this.teams.add(teamsItem);
-    return this;
-  }
-
-   /**
-   * Get teams
-   * @return teams
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<Items> getTeams() {
-    return teams;
-  }
-
-
-  public void setTeams(List<Items> teams) {
-    this.teams = teams;
   }
 
 
@@ -513,6 +513,7 @@ public class Invitation {
         Objects.equals(this.state, invitation.state) &&
         Objects.equals(this.projects, invitation.projects) &&
         Objects.equals(this.locales, invitation.locales) &&
+        Objects.equals(this.teams, invitation.teams) &&
         Objects.equals(this.defaultLocaleCodes, invitation.defaultLocaleCodes) &&
         Objects.equals(this.permissions, invitation.permissions) &&
         Objects.equals(this.localeIds, invitation.localeIds) &&
@@ -520,13 +521,12 @@ public class Invitation {
         Objects.equals(this.updatedAt, invitation.updatedAt) &&
         Objects.equals(this.acceptedAt, invitation.acceptedAt) &&
         Objects.equals(this.spaces, invitation.spaces) &&
-        Objects.equals(this.teams, invitation.teams) &&
         Objects.equals(this.projectRole, invitation.projectRole);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, role, state, projects, locales, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, teams, projectRole);
+    return Objects.hash(id, email, role, state, projects, locales, teams, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, projectRole);
   }
 
 
@@ -540,6 +540,7 @@ public class Invitation {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    defaultLocaleCodes: ").append(toIndentedString(defaultLocaleCodes)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
@@ -547,7 +548,6 @@ public class Invitation {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    acceptedAt: ").append(toIndentedString(acceptedAt)).append("\n");
     sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
-    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
     sb.append("}");
     return sb.toString();

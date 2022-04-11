@@ -25,10 +25,10 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
- * Team1
+ * TeamShort
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-07T14:47:01.778327Z[Etc/UTC]")
-public class Team1 {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-11T09:06:41.362260Z[Etc/UTC]")
+public class TeamShort {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -46,7 +46,7 @@ public class Team1 {
   private OffsetDateTime updatedAt;
 
 
-  public Team1 id(String id) {
+  public TeamShort id(String id) {
     
     this.id = id;
     return this;
@@ -69,7 +69,7 @@ public class Team1 {
   }
 
 
-  public Team1 name(String name) {
+  public TeamShort name(String name) {
     
     this.name = name;
     return this;
@@ -92,7 +92,7 @@ public class Team1 {
   }
 
 
-  public Team1 createdAt(OffsetDateTime createdAt) {
+  public TeamShort createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -115,7 +115,7 @@ public class Team1 {
   }
 
 
-  public Team1 updatedAt(OffsetDateTime updatedAt) {
+  public TeamShort updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -146,11 +146,11 @@ public class Team1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Team1 team1 = (Team1) o;
-    return Objects.equals(this.id, team1.id) &&
-        Objects.equals(this.name, team1.name) &&
-        Objects.equals(this.createdAt, team1.createdAt) &&
-        Objects.equals(this.updatedAt, team1.updatedAt);
+    TeamShort teamShort = (TeamShort) o;
+    return Objects.equals(this.id, teamShort.id) &&
+        Objects.equals(this.name, teamShort.name) &&
+        Objects.equals(this.createdAt, teamShort.createdAt) &&
+        Objects.equals(this.updatedAt, teamShort.updatedAt);
   }
 
   @Override
@@ -162,7 +162,7 @@ public class Team1 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Team1 {\n");
+    sb.append("class TeamShort {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.MemberSpaces;
 import com.phrase.client.model.ProjectLocales;
-import com.phrase.client.model.Team1;
+import com.phrase.client.model.TeamShort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-07T14:47:01.778327Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-11T09:06:41.362260Z[Etc/UTC]")
 public class Member {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -72,7 +72,7 @@ public class Member {
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
-  private List<Team1> teams = null;
+  private List<TeamShort> teams = null;
 
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
@@ -302,13 +302,13 @@ public class Member {
   }
 
 
-  public Member teams(List<Team1> teams) {
+  public Member teams(List<TeamShort> teams) {
     
     this.teams = teams;
     return this;
   }
 
-  public Member addTeamsItem(Team1 teamsItem) {
+  public Member addTeamsItem(TeamShort teamsItem) {
     if (this.teams == null) {
       this.teams = new ArrayList<>();
     }
@@ -323,12 +323,12 @@ public class Member {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Team1> getTeams() {
+  public List<TeamShort> getTeams() {
     return teams;
   }
 
 
-  public void setTeams(List<Team1> teams) {
+  public void setTeams(List<TeamShort> teams) {
     this.teams = teams;
   }
 

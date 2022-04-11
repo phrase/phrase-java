@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **projects** | [**List&lt;ProjectLocales&gt;**](ProjectLocales.md) |  |  [optional]
 **permissions** | [**Object**](.md) |  |  [optional]
 **defaultLocaleCodes** | **List&lt;String&gt;** |  |  [optional]
-**teams** | [**List&lt;Team1&gt;**](Team1.md) |  |  [optional]
+**teams** | [**List&lt;TeamShort&gt;**](TeamShort.md) |  |  [optional]
 **spaces** | [**List&lt;MemberSpaces&gt;**](MemberSpaces.md) |  |  [optional]
 
 

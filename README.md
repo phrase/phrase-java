@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2022-04-07T14:47:01.778327Z[Etc/UTC]
+  - Build date: 2022-04-11T09:06:41.362260Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1434,7 +1434,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>1.3.0</version>
+  <version>1.4.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -1444,7 +1444,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:1.3.0"
+compile "com.phrase:phrase-java:1.4.0"
 ```
 
 ### Others
@@ -1457,7 +1457,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/phrase-java-1.3.0.jar`
+* `target/phrase-java-1.4.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -1883,9 +1883,9 @@ Class | Method | HTTP request | Description
  - [TagWithStats1Statistics](docs/TagWithStats1Statistics.md)
  - [TagWithStats1Statistics1](docs/TagWithStats1Statistics1.md)
  - [Team](docs/Team.md)
- - [Team1](docs/Team1.md)
  - [TeamCreateParameters](docs/TeamCreateParameters.md)
  - [TeamDetail](docs/TeamDetail.md)
+ - [TeamShort](docs/TeamShort.md)
  - [TeamUpdateParameters](docs/TeamUpdateParameters.md)
  - [TeamsProjectsCreateParameters](docs/TeamsProjectsCreateParameters.md)
  - [TeamsSpacesCreateParameters](docs/TeamsSpacesCreateParameters.md)
