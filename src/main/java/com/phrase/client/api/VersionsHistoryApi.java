@@ -301,7 +301,7 @@ public class VersionsHistoryApi {
 
     /**
      * List all versions
-     * List all versions for the given translation.
+     * List all changes done to a given translation.
      * @param projectId Project ID (required)
      * @param translationId Translation ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -326,7 +326,7 @@ public class VersionsHistoryApi {
 
     /**
      * List all versions
-     * List all versions for the given translation.
+     * List all changes done to a given translation.
      * @param projectId Project ID (required)
      * @param translationId Translation ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -352,7 +352,7 @@ public class VersionsHistoryApi {
 
     /**
      * List all versions (asynchronously)
-     * List all versions for the given translation.
+     * List all changes done to a given translation.
      * @param projectId Project ID (required)
      * @param translationId Translation ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

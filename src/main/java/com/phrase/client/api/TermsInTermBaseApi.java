@@ -26,9 +26,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.Glossary;
-import com.phrase.client.model.GlossaryCreateParameters;
-import com.phrase.client.model.GlossaryUpdateParameters;
+import com.phrase.client.model.GlossaryTerm;
+import com.phrase.client.model.GlossaryTermCreateParameters;
+import com.phrase.client.model.GlossaryTermUpdateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GlossariesApi {
+public class TermsInTermBaseApi {
     private ApiClient localVarApiClient;
 
-    public GlossariesApi() {
+    public TermsInTermBaseApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public GlossariesApi(ApiClient apiClient) {
+    public TermsInTermBaseApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -56,8 +56,617 @@ public class GlossariesApi {
     }
 
     /**
-     * Build call for glossariesList
+     * Build call for glossaryTermCreate
      * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermCreateCall(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = glossaryTermCreateParameters;
+
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call glossaryTermCreateValidateBeforeCall(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermCreate(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermCreate(Async)");
+        }
+        
+        // verify the required parameter 'glossaryTermCreateParameters' is set
+        if (glossaryTermCreateParameters == null) {
+            throw new ApiException("Missing the required parameter 'glossaryTermCreateParameters' when calling glossaryTermCreate(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = glossaryTermCreateCall(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Create a term
+     * Create a new term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return GlossaryTerm
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public GlossaryTerm glossaryTermCreate(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<GlossaryTerm> localVarResp = glossaryTermCreateWithHttpInfo(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create a term
+     * Create a new term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;GlossaryTerm&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<GlossaryTerm> glossaryTermCreateWithHttpInfo(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermCreateValidateBeforeCall(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create a term (asynchronously)
+     * Create a new term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermCreateAsync(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP, final ApiCallback<GlossaryTerm> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = glossaryTermCreateValidateBeforeCall(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for glossaryTermDelete
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermDeleteCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call glossaryTermDeleteValidateBeforeCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermDelete(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermDelete(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling glossaryTermDelete(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = glossaryTermDeleteCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Delete a term
+     * Delete an existing term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void glossaryTermDelete(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        glossaryTermDeleteWithHttpInfo(accountId, glossaryId, id, xPhraseAppOTP);
+    }
+
+    /**
+     * Delete a term
+     * Delete an existing term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> glossaryTermDeleteWithHttpInfo(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermDeleteValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete a term (asynchronously)
+     * Delete an existing term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermDeleteAsync(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = glossaryTermDeleteValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for glossaryTermShow
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermShowCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call glossaryTermShowValidateBeforeCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermShow(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermShow(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling glossaryTermShow(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = glossaryTermShowCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get a single term
+     * Get details for a single term in the term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return GlossaryTerm
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public GlossaryTerm glossaryTermShow(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<GlossaryTerm> localVarResp = glossaryTermShowWithHttpInfo(accountId, glossaryId, id, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get a single term
+     * Get details for a single term in the term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;GlossaryTerm&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<GlossaryTerm> glossaryTermShowWithHttpInfo(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermShowValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get a single term (asynchronously)
+     * Get details for a single term in the term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermShowAsync(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback<GlossaryTerm> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = glossaryTermShowValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for glossaryTermUpdate
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param glossaryTermUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermUpdateCall(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = glossaryTermUpdateParameters;
+
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call glossaryTermUpdateValidateBeforeCall(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermUpdate(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermUpdate(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling glossaryTermUpdate(Async)");
+        }
+        
+        // verify the required parameter 'glossaryTermUpdateParameters' is set
+        if (glossaryTermUpdateParameters == null) {
+            throw new ApiException("Missing the required parameter 'glossaryTermUpdateParameters' when calling glossaryTermUpdate(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = glossaryTermUpdateCall(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Update a term
+     * Update an existing term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param glossaryTermUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return GlossaryTerm
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public GlossaryTerm glossaryTermUpdate(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<GlossaryTerm> localVarResp = glossaryTermUpdateWithHttpInfo(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update a term
+     * Update an existing term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param glossaryTermUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;GlossaryTerm&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<GlossaryTerm> glossaryTermUpdateWithHttpInfo(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermUpdateValidateBeforeCall(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update a term (asynchronously)
+     * Update an existing term in a term base (previously: glossary).
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param id ID (required)
+     * @param glossaryTermUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call glossaryTermUpdateAsync(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP, final ApiCallback<GlossaryTerm> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = glossaryTermUpdateValidateBeforeCall(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for glossaryTermsList
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
@@ -73,12 +682,13 @@ public class GlossariesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossariesListCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call glossaryTermsListCall(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()));
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -116,27 +726,33 @@ public class GlossariesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossariesListValidateBeforeCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call glossaryTermsListValidateBeforeCall(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossariesList(Async)");
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermsList(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermsList(Async)");
         }
         
 
-        okhttp3.Call localVarCall = glossariesListCall(accountId, xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = glossaryTermsListCall(accountId, glossaryId, xPhraseAppOTP, page, perPage, _callback);
         return localVarCall;
 
     }
 
     /**
-     * List glossaries
-     * List all glossaries the current user has access to.
+     * List terms
+     * List all terms in term bases (previously: glossary) that the current user has access to.
      * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @return List&lt;Glossary&gt;
+     * @return List&lt;GlossaryTerm&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -147,19 +763,20 @@ public class GlossariesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Glossary> glossariesList(String accountId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<Glossary>> localVarResp = glossariesListWithHttpInfo(accountId, xPhraseAppOTP, page, perPage);
+    public List<GlossaryTerm> glossaryTermsList(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        ApiResponse<List<GlossaryTerm>> localVarResp = glossaryTermsListWithHttpInfo(accountId, glossaryId, xPhraseAppOTP, page, perPage);
         return localVarResp.getData();
     }
 
     /**
-     * List glossaries
-     * List all glossaries the current user has access to.
+     * List terms
+     * List all terms in term bases (previously: glossary) that the current user has access to.
      * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @return ApiResponse&lt;List&lt;Glossary&gt;&gt;
+     * @return ApiResponse&lt;List&lt;GlossaryTerm&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -170,16 +787,17 @@ public class GlossariesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Glossary>> glossariesListWithHttpInfo(String accountId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        okhttp3.Call localVarCall = glossariesListValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, null);
-        Type localVarReturnType = new TypeToken<List<Glossary>>(){}.getType();
+    public ApiResponse<List<GlossaryTerm>> glossaryTermsListWithHttpInfo(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermsListValidateBeforeCall(accountId, glossaryId, xPhraseAppOTP, page, perPage, null);
+        Type localVarReturnType = new TypeToken<List<GlossaryTerm>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List glossaries (asynchronously)
-     * List all glossaries the current user has access to.
+     * List terms (asynchronously)
+     * List all terms in term bases (previously: glossary) that the current user has access to.
      * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
@@ -195,578 +813,10 @@ public class GlossariesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossariesListAsync(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<Glossary>> _callback) throws ApiException {
+    public okhttp3.Call glossaryTermsListAsync(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<GlossaryTerm>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = glossariesListValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, _callback);
-        Type localVarReturnType = new TypeToken<List<Glossary>>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for glossaryCreate
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryCreateCall(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = glossaryCreateParameters;
-
-        // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryCreateValidateBeforeCall(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryCreate(Async)");
-        }
-        
-        // verify the required parameter 'glossaryCreateParameters' is set
-        if (glossaryCreateParameters == null) {
-            throw new ApiException("Missing the required parameter 'glossaryCreateParameters' when calling glossaryCreate(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = glossaryCreateCall(accountId, glossaryCreateParameters, xPhraseAppOTP, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Create a glossary
-     * Create a new glossary.
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Glossary
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public Glossary glossaryCreate(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Glossary> localVarResp = glossaryCreateWithHttpInfo(accountId, glossaryCreateParameters, xPhraseAppOTP);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Create a glossary
-     * Create a new glossary.
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Glossary&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Glossary> glossaryCreateWithHttpInfo(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryCreateValidateBeforeCall(accountId, glossaryCreateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Create a glossary (asynchronously)
-     * Create a new glossary.
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryCreateAsync(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP, final ApiCallback<Glossary> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = glossaryCreateValidateBeforeCall(accountId, glossaryCreateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for glossaryDelete
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryDeleteCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries/{id}"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryDeleteValidateBeforeCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryDelete(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling glossaryDelete(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = glossaryDeleteCall(accountId, id, xPhraseAppOTP, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Delete a glossary
-     * Delete an existing glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public void glossaryDelete(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        glossaryDeleteWithHttpInfo(accountId, id, xPhraseAppOTP);
-    }
-
-    /**
-     * Delete a glossary
-     * Delete an existing glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> glossaryDeleteWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryDeleteValidateBeforeCall(accountId, id, xPhraseAppOTP, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Delete a glossary (asynchronously)
-     * Delete an existing glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryDeleteAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = glossaryDeleteValidateBeforeCall(accountId, id, xPhraseAppOTP, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for glossaryShow
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryShowCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries/{id}"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryShowValidateBeforeCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryShow(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling glossaryShow(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = glossaryShowCall(accountId, id, xPhraseAppOTP, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Get a single glossary
-     * Get details on a single glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Glossary
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public Glossary glossaryShow(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Glossary> localVarResp = glossaryShowWithHttpInfo(accountId, id, xPhraseAppOTP);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Get a single glossary
-     * Get details on a single glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Glossary&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Glossary> glossaryShowWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryShowValidateBeforeCall(accountId, id, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Get a single glossary (asynchronously)
-     * Get details on a single glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryShowAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<Glossary> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = glossaryShowValidateBeforeCall(accountId, id, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for glossaryUpdate
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryUpdateCall(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = glossaryUpdateParameters;
-
-        // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries/{id}"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryUpdateValidateBeforeCall(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryUpdate(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling glossaryUpdate(Async)");
-        }
-        
-        // verify the required parameter 'glossaryUpdateParameters' is set
-        if (glossaryUpdateParameters == null) {
-            throw new ApiException("Missing the required parameter 'glossaryUpdateParameters' when calling glossaryUpdate(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = glossaryUpdateCall(accountId, id, glossaryUpdateParameters, xPhraseAppOTP, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Update a glossary
-     * Update an existing glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Glossary
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public Glossary glossaryUpdate(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Glossary> localVarResp = glossaryUpdateWithHttpInfo(accountId, id, glossaryUpdateParameters, xPhraseAppOTP);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Update a glossary
-     * Update an existing glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Glossary&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Glossary> glossaryUpdateWithHttpInfo(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryUpdateValidateBeforeCall(accountId, id, glossaryUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Update a glossary (asynchronously)
-     * Update an existing glossary.
-     * @param accountId Account ID (required)
-     * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossaryUpdateAsync(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP, final ApiCallback<Glossary> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = glossaryUpdateValidateBeforeCall(accountId, id, glossaryUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
+        okhttp3.Call localVarCall = glossaryTermsListValidateBeforeCall(accountId, glossaryId, xPhraseAppOTP, page, perPage, _callback);
+        Type localVarReturnType = new TypeToken<List<GlossaryTerm>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

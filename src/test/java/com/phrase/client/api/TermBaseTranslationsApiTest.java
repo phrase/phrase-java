@@ -25,18 +25,18 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for GlossaryTermTranslationsApi
+ * API tests for TermBaseTranslationsApi
  */
 @Ignore
-public class GlossaryTermTranslationsApiTest {
+public class TermBaseTranslationsApiTest {
 
-    private final GlossaryTermTranslationsApi api = new GlossaryTermTranslationsApi();
+    private final TermBaseTranslationsApi api = new TermBaseTranslationsApi();
 
     
     /**
-     * Create a glossary term translation
+     * Create a translation for a term
      *
-     * Create a new glossary term translation.
+     * Create a new translation for a term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -54,29 +54,9 @@ public class GlossaryTermTranslationsApiTest {
     }
     
     /**
-     * Delete a glossary term translation
+     * Update a translation for a term
      *
-     * Delete an existing glossary term translation.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void glossaryTermTranslationDeleteTest() throws ApiException {
-        String accountId = null;
-        String glossaryId = null;
-        String termId = null;
-        String id = null;
-        String xPhraseAppOTP = null;
-        api.glossaryTermTranslationDelete(accountId, glossaryId, termId, id, xPhraseAppOTP);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update a glossary term translation
-     *
-     * Update an existing glossary term translation.
+     * Update an existing translation for a term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails

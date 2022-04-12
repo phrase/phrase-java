@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Blacklisted key name |  [optional]
+**name** | **String** | Blocked key name |  [optional]
 
 
 

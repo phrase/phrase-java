@@ -1,23 +1,23 @@
-# GlossariesApi
+# TermsInTermBaseApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossariesList**](GlossariesApi.md#glossariesList) | **GET** /accounts/{account_id}/glossaries | List glossaries
-[**glossaryCreate**](GlossariesApi.md#glossaryCreate) | **POST** /accounts/{account_id}/glossaries | Create a glossary
-[**glossaryDelete**](GlossariesApi.md#glossaryDelete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a glossary
-[**glossaryShow**](GlossariesApi.md#glossaryShow) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single glossary
-[**glossaryUpdate**](GlossariesApi.md#glossaryUpdate) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a glossary
+[**glossaryTermCreate**](TermsInTermBaseApi.md#glossaryTermCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a term
+[**glossaryTermDelete**](TermsInTermBaseApi.md#glossaryTermDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a term
+[**glossaryTermShow**](TermsInTermBaseApi.md#glossaryTermShow) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single term
+[**glossaryTermUpdate**](TermsInTermBaseApi.md#glossaryTermUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a term
+[**glossaryTermsList**](TermsInTermBaseApi.md#glossaryTermsList) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List terms
 
 
-<a name="glossariesList"></a>
-# **glossariesList**
-> List&lt;Glossary&gt; glossariesList(accountId, xPhraseAppOTP, page, perPage)
+<a name="glossaryTermCreate"></a>
+# **glossaryTermCreate**
+> GlossaryTerm glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP)
 
-List glossaries
+Create a term
 
-List all glossaries the current user has access to.
+Create a new term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -27,7 +27,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.GlossariesApi;
+import com.phrase.client.api.TermsInTermBaseApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -45,16 +45,16 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    GlossariesApi apiInstance = new GlossariesApi(defaultClient);
+    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
+    String glossaryId = "glossaryId_example"; // String | Glossary ID
+    GlossaryTermCreateParameters glossaryTermCreateParameters = new GlossaryTermCreateParameters(); // GlossaryTermCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
     try {
-      List<Glossary> result = apiInstance.glossariesList(accountId, xPhraseAppOTP, page, perPage);
+      GlossaryTerm result = apiInstance.glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling GlossariesApi#glossariesList");
+      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermCreate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -69,94 +69,13 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
-
-### Return type
-
-[**List&lt;Glossary&gt;**](Glossary.md)
-
-### Authorization
-
-[Basic](../README.md#Basic), [Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  |
-**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
-**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
-**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
-
-<a name="glossaryCreate"></a>
-# **glossaryCreate**
-> Glossary glossaryCreate(accountId, glossaryCreateParameters, xPhraseAppOTP)
-
-Create a glossary
-
-Create a new glossary.
-
-### Example
-```java
-// Import classes:
-import com.phrase.client.ApiClient;
-import com.phrase.client.ApiException;
-import com.phrase.client.Configuration;
-import com.phrase.client.auth.*;
-import com.phrase.client.models.*;
-import com.phrase.client.api.GlossariesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.phrase.com/v2");
-    
-    // Configure HTTP basic authorization: Basic
-    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
-    Basic.setUsername("YOUR USERNAME");
-    Basic.setPassword("YOUR PASSWORD");
-
-    // Configure API key authorization: Token
-    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-    Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
-
-    GlossariesApi apiInstance = new GlossariesApi(defaultClient);
-    String accountId = "accountId_example"; // String | Account ID
-    GlossaryCreateParameters glossaryCreateParameters = new GlossaryCreateParameters(); // GlossaryCreateParameters | 
-    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    try {
-      Glossary result = apiInstance.glossaryCreate(accountId, glossaryCreateParameters, xPhraseAppOTP);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling GlossariesApi#glossaryCreate");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Account ID |
- **glossaryCreateParameters** | [**GlossaryCreateParameters**](GlossaryCreateParameters.md)|  |
+ **glossaryId** | **String**| Glossary ID |
+ **glossaryTermCreateParameters** | [**GlossaryTermCreateParameters**](GlossaryTermCreateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
 
-[**Glossary**](Glossary.md)
+[**GlossaryTerm**](GlossaryTerm.md)
 
 ### Authorization
 
@@ -175,13 +94,13 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="glossaryDelete"></a>
-# **glossaryDelete**
-> glossaryDelete(accountId, id, xPhraseAppOTP)
+<a name="glossaryTermDelete"></a>
+# **glossaryTermDelete**
+> glossaryTermDelete(accountId, glossaryId, id, xPhraseAppOTP)
 
-Delete a glossary
+Delete a term
 
-Delete an existing glossary.
+Delete an existing term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -191,7 +110,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.GlossariesApi;
+import com.phrase.client.api.TermsInTermBaseApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -209,14 +128,15 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    GlossariesApi apiInstance = new GlossariesApi(defaultClient);
+    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
+    String glossaryId = "glossaryId_example"; // String | Glossary ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.glossaryDelete(accountId, id, xPhraseAppOTP);
+      apiInstance.glossaryTermDelete(accountId, glossaryId, id, xPhraseAppOTP);
     } catch (ApiException e) {
-      System.err.println("Exception when calling GlossariesApi#glossaryDelete");
+      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -231,6 +151,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
+ **glossaryId** | **String**| Glossary ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
@@ -255,13 +176,13 @@ null (empty response body)
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="glossaryShow"></a>
-# **glossaryShow**
-> Glossary glossaryShow(accountId, id, xPhraseAppOTP)
+<a name="glossaryTermShow"></a>
+# **glossaryTermShow**
+> GlossaryTerm glossaryTermShow(accountId, glossaryId, id, xPhraseAppOTP)
 
-Get a single glossary
+Get a single term
 
-Get details on a single glossary.
+Get details for a single term in the term base (previously: glossary).
 
 ### Example
 ```java
@@ -271,7 +192,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.GlossariesApi;
+import com.phrase.client.api.TermsInTermBaseApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -289,15 +210,16 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    GlossariesApi apiInstance = new GlossariesApi(defaultClient);
+    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
+    String glossaryId = "glossaryId_example"; // String | Glossary ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Glossary result = apiInstance.glossaryShow(accountId, id, xPhraseAppOTP);
+      GlossaryTerm result = apiInstance.glossaryTermShow(accountId, glossaryId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling GlossariesApi#glossaryShow");
+      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermShow");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -312,12 +234,13 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
+ **glossaryId** | **String**| Glossary ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
 
-[**Glossary**](Glossary.md)
+[**GlossaryTerm**](GlossaryTerm.md)
 
 ### Authorization
 
@@ -336,13 +259,13 @@ Name | Type | Description  | Notes
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
-<a name="glossaryUpdate"></a>
-# **glossaryUpdate**
-> Glossary glossaryUpdate(accountId, id, glossaryUpdateParameters, xPhraseAppOTP)
+<a name="glossaryTermUpdate"></a>
+# **glossaryTermUpdate**
+> GlossaryTerm glossaryTermUpdate(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP)
 
-Update a glossary
+Update a term
 
-Update an existing glossary.
+Update an existing term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -352,7 +275,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.GlossariesApi;
+import com.phrase.client.api.TermsInTermBaseApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -370,16 +293,17 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    GlossariesApi apiInstance = new GlossariesApi(defaultClient);
+    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
+    String glossaryId = "glossaryId_example"; // String | Glossary ID
     String id = "id_example"; // String | ID
-    GlossaryUpdateParameters glossaryUpdateParameters = new GlossaryUpdateParameters(); // GlossaryUpdateParameters | 
+    GlossaryTermUpdateParameters glossaryTermUpdateParameters = new GlossaryTermUpdateParameters(); // GlossaryTermUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Glossary result = apiInstance.glossaryUpdate(accountId, id, glossaryUpdateParameters, xPhraseAppOTP);
+      GlossaryTerm result = apiInstance.glossaryTermUpdate(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling GlossariesApi#glossaryUpdate");
+      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermUpdate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -394,13 +318,14 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
+ **glossaryId** | **String**| Glossary ID |
  **id** | **String**| ID |
- **glossaryUpdateParameters** | [**GlossaryUpdateParameters**](GlossaryUpdateParameters.md)|  |
+ **glossaryTermUpdateParameters** | [**GlossaryTermUpdateParameters**](GlossaryTermUpdateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
 
-[**Glossary**](Glossary.md)
+[**GlossaryTerm**](GlossaryTerm.md)
 
 ### Authorization
 
@@ -415,6 +340,91 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
+<a name="glossaryTermsList"></a>
+# **glossaryTermsList**
+> List&lt;GlossaryTerm&gt; glossaryTermsList(accountId, glossaryId, xPhraseAppOTP, page, perPage)
+
+List terms
+
+List all terms in term bases (previously: glossary) that the current user has access to.
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.TermsInTermBaseApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Token.setApiKeyPrefix("Token");
+
+    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
+    String accountId = "accountId_example"; // String | Account ID
+    String glossaryId = "glossaryId_example"; // String | Glossary ID
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    Integer page = 1; // Integer | Page number
+    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    try {
+      List<GlossaryTerm> result = apiInstance.glossaryTermsList(accountId, glossaryId, xPhraseAppOTP, page, perPage);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermsList");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **String**| Account ID |
+ **glossaryId** | **String**| Glossary ID |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **page** | **Integer**| Page number | [optional]
+ **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+
+### Return type
+
+[**List&lt;GlossaryTerm&gt;**](GlossaryTerm.md)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

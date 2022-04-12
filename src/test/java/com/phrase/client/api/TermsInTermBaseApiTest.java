@@ -25,18 +25,18 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for GlossaryTermsApi
+ * API tests for TermsInTermBaseApi
  */
 @Ignore
-public class GlossaryTermsApiTest {
+public class TermsInTermBaseApiTest {
 
-    private final GlossaryTermsApi api = new GlossaryTermsApi();
+    private final TermsInTermBaseApi api = new TermsInTermBaseApi();
 
     
     /**
-     * Create a glossary term
+     * Create a term
      *
-     * Create a new glossary term.
+     * Create a new term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -53,9 +53,9 @@ public class GlossaryTermsApiTest {
     }
     
     /**
-     * Delete a glossary term
+     * Delete a term
      *
-     * Delete an existing glossary term.
+     * Delete an existing term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -72,9 +72,9 @@ public class GlossaryTermsApiTest {
     }
     
     /**
-     * Get a single glossary term
+     * Get a single term
      *
-     * Get details on a single glossary term.
+     * Get details for a single term in the term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -91,9 +91,9 @@ public class GlossaryTermsApiTest {
     }
     
     /**
-     * Update a glossary term
+     * Update a term
      *
-     * Update an existing glossary term.
+     * Update an existing term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -111,9 +111,9 @@ public class GlossaryTermsApiTest {
     }
     
     /**
-     * List glossary terms
+     * List terms
      *
-     * List all glossary terms the current user has access to.
+     * List all terms in term bases (previously: glossary) that the current user has access to.
      *
      * @throws ApiException
      *          if the Api call fails

@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BlacklistedKeysApi {
+public class BlockedKeysApi {
     private ApiClient localVarApiClient;
 
-    public BlacklistedKeysApi() {
+    public BlockedKeysApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public BlacklistedKeysApi(ApiClient apiClient) {
+    public BlockedKeysApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -127,7 +127,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Create a blacklisted key
-     * Create a new rule for blacklisting keys.
+     * Create a new rule for blocking keys.
      * @param projectId Project ID (required)
      * @param blacklistedKeyCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -149,7 +149,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Create a blacklisted key
-     * Create a new rule for blacklisting keys.
+     * Create a new rule for blocking keys.
      * @param projectId Project ID (required)
      * @param blacklistedKeyCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -172,7 +172,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Create a blacklisted key (asynchronously)
-     * Create a new rule for blacklisting keys.
+     * Create a new rule for blocking keys.
      * @param projectId Project ID (required)
      * @param blacklistedKeyCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -268,7 +268,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Delete a blacklisted key
-     * Delete an existing rule for blacklisting keys.
+     * Delete an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -288,7 +288,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Delete a blacklisted key
-     * Delete an existing rule for blacklisting keys.
+     * Delete an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -310,7 +310,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Delete a blacklisted key (asynchronously)
-     * Delete an existing rule for blacklisting keys.
+     * Delete an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -405,7 +405,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Get a single blacklisted key
-     * Get details on a single rule for blacklisting keys for a given project.
+     * Get details on a single rule for blocking keys for a given project.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -427,7 +427,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Get a single blacklisted key
-     * Get details on a single rule for blacklisting keys for a given project.
+     * Get details on a single rule for blocking keys for a given project.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -450,7 +450,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Get a single blacklisted key (asynchronously)
-     * Get details on a single rule for blacklisting keys for a given project.
+     * Get details on a single rule for blocking keys for a given project.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -552,7 +552,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Update a blacklisted key
-     * Update an existing rule for blacklisting keys.
+     * Update an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param blacklistedKeyUpdateParameters  (required)
@@ -575,7 +575,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Update a blacklisted key
-     * Update an existing rule for blacklisting keys.
+     * Update an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param blacklistedKeyUpdateParameters  (required)
@@ -599,7 +599,7 @@ public class BlacklistedKeysApi {
 
     /**
      * Update a blacklisted key (asynchronously)
-     * Update an existing rule for blacklisting keys.
+     * Update an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param blacklistedKeyUpdateParameters  (required)
@@ -704,7 +704,7 @@ public class BlacklistedKeysApi {
 
     /**
      * List blacklisted keys
-     * List all rules for blacklisting keys for the given project.
+     * List all rules for blocking keys for the given project.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -728,7 +728,7 @@ public class BlacklistedKeysApi {
 
     /**
      * List blacklisted keys
-     * List all rules for blacklisting keys for the given project.
+     * List all rules for blocking keys for the given project.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -753,7 +753,7 @@ public class BlacklistedKeysApi {
 
     /**
      * List blacklisted keys (asynchronously)
-     * List all rules for blacklisting keys for the given project.
+     * List all rules for blocking keys for the given project.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
