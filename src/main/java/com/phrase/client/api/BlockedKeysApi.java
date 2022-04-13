@@ -126,7 +126,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Create a blacklisted key
+     * Create a blocked key
      * Create a new rule for blocking keys.
      * @param projectId Project ID (required)
      * @param blacklistedKeyCreateParameters  (required)
@@ -148,7 +148,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Create a blacklisted key
+     * Create a blocked key
      * Create a new rule for blocking keys.
      * @param projectId Project ID (required)
      * @param blacklistedKeyCreateParameters  (required)
@@ -171,7 +171,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Create a blacklisted key (asynchronously)
+     * Create a blocked key (asynchronously)
      * Create a new rule for blocking keys.
      * @param projectId Project ID (required)
      * @param blacklistedKeyCreateParameters  (required)
@@ -267,7 +267,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Delete a blacklisted key
+     * Delete a blocked key
      * Delete an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -287,7 +287,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Delete a blacklisted key
+     * Delete a blocked key
      * Delete an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -309,7 +309,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Delete a blacklisted key (asynchronously)
+     * Delete a blocked key (asynchronously)
      * Delete an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -404,7 +404,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Get a single blacklisted key
+     * Get a single blocked key
      * Get details on a single rule for blocking keys for a given project.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -426,7 +426,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Get a single blacklisted key
+     * Get a single blocked key
      * Get details on a single rule for blocking keys for a given project.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -449,7 +449,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Get a single blacklisted key (asynchronously)
+     * Get a single blocked key (asynchronously)
      * Get details on a single rule for blocking keys for a given project.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -551,7 +551,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Update a blacklisted key
+     * Update a blocked key
      * Update an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -574,7 +574,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Update a blacklisted key
+     * Update a blocked key
      * Update an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -598,7 +598,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Update a blacklisted key (asynchronously)
+     * Update a blocked key (asynchronously)
      * Update an existing rule for blocking keys.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -703,7 +703,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * List blacklisted keys
+     * List blocked keys
      * List all rules for blocking keys for the given project.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -727,7 +727,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * List blacklisted keys
+     * List blocked keys
      * List all rules for blocking keys for the given project.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -752,7 +752,7 @@ public class BlockedKeysApi {
     }
 
     /**
-     * List blacklisted keys (asynchronously)
+     * List blocked keys (asynchronously)
      * List all rules for blocking keys for the given project.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

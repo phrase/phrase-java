@@ -1,14 +1,14 @@
-# TermBaseApi
+# TermBasesApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossariesList**](TermBaseApi.md#glossariesList) | **GET** /accounts/{account_id}/glossaries | List term bases
-[**glossaryCreate**](TermBaseApi.md#glossaryCreate) | **POST** /accounts/{account_id}/glossaries | Create a term base
-[**glossaryDelete**](TermBaseApi.md#glossaryDelete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
-[**glossaryShow**](TermBaseApi.md#glossaryShow) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single term base
-[**glossaryUpdate**](TermBaseApi.md#glossaryUpdate) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a term base
+[**glossariesList**](TermBasesApi.md#glossariesList) | **GET** /accounts/{account_id}/glossaries | List term bases
+[**glossaryCreate**](TermBasesApi.md#glossaryCreate) | **POST** /accounts/{account_id}/glossaries | Create a term base
+[**glossaryDelete**](TermBasesApi.md#glossaryDelete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
+[**glossaryShow**](TermBasesApi.md#glossaryShow) | **GET** /accounts/{account_id}/glossaries/{id} | Get a single term base
+[**glossaryUpdate**](TermBasesApi.md#glossaryUpdate) | **PATCH** /accounts/{account_id}/glossaries/{id} | Update a term base
 
 
 <a name="glossariesList"></a>
@@ -27,7 +27,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseApi;
+import com.phrase.client.api.TermBasesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -45,7 +45,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseApi apiInstance = new TermBaseApi(defaultClient);
+    TermBasesApi apiInstance = new TermBasesApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
@@ -54,7 +54,7 @@ public class Example {
       List<Glossary> result = apiInstance.glossariesList(accountId, xPhraseAppOTP, page, perPage);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseApi#glossariesList");
+      System.err.println("Exception when calling TermBasesApi#glossariesList");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -110,7 +110,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseApi;
+import com.phrase.client.api.TermBasesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -128,7 +128,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseApi apiInstance = new TermBaseApi(defaultClient);
+    TermBasesApi apiInstance = new TermBasesApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     GlossaryCreateParameters glossaryCreateParameters = new GlossaryCreateParameters(); // GlossaryCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -136,7 +136,7 @@ public class Example {
       Glossary result = apiInstance.glossaryCreate(accountId, glossaryCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseApi#glossaryCreate");
+      System.err.println("Exception when calling TermBasesApi#glossaryCreate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -191,7 +191,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseApi;
+import com.phrase.client.api.TermBasesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -209,14 +209,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseApi apiInstance = new TermBaseApi(defaultClient);
+    TermBasesApi apiInstance = new TermBasesApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
       apiInstance.glossaryDelete(accountId, id, xPhraseAppOTP);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseApi#glossaryDelete");
+      System.err.println("Exception when calling TermBasesApi#glossaryDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -271,7 +271,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseApi;
+import com.phrase.client.api.TermBasesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -289,7 +289,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseApi apiInstance = new TermBaseApi(defaultClient);
+    TermBasesApi apiInstance = new TermBasesApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -297,7 +297,7 @@ public class Example {
       Glossary result = apiInstance.glossaryShow(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseApi#glossaryShow");
+      System.err.println("Exception when calling TermBasesApi#glossaryShow");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -352,7 +352,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseApi;
+import com.phrase.client.api.TermBasesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -370,7 +370,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseApi apiInstance = new TermBaseApi(defaultClient);
+    TermBasesApi apiInstance = new TermBasesApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String id = "id_example"; // String | ID
     GlossaryUpdateParameters glossaryUpdateParameters = new GlossaryUpdateParameters(); // GlossaryUpdateParameters | 
@@ -379,7 +379,7 @@ public class Example {
       Glossary result = apiInstance.glossaryUpdate(accountId, id, glossaryUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseApi#glossaryUpdate");
+      System.err.println("Exception when calling TermBasesApi#glossaryUpdate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

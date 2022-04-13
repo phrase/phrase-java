@@ -1,11 +1,11 @@
-# VersionsHistoryApi
+# ChangesVersionsApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**versionShow**](VersionsHistoryApi.md#versionShow) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
-[**versionsList**](VersionsHistoryApi.md#versionsList) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
+[**versionShow**](ChangesVersionsApi.md#versionShow) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
+[**versionsList**](ChangesVersionsApi.md#versionsList) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
 
 
 <a name="versionShow"></a>
@@ -24,7 +24,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.VersionsHistoryApi;
+import com.phrase.client.api.ChangesVersionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -42,7 +42,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    VersionsHistoryApi apiInstance = new VersionsHistoryApi(defaultClient);
+    ChangesVersionsApi apiInstance = new ChangesVersionsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String translationId = "translationId_example"; // String | Translation ID
     String id = "id_example"; // String | ID
@@ -52,7 +52,7 @@ public class Example {
       TranslationVersionWithUser result = apiInstance.versionShow(projectId, translationId, id, xPhraseAppOTP, branch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling VersionsHistoryApi#versionShow");
+      System.err.println("Exception when calling ChangesVersionsApi#versionShow");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -109,7 +109,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.VersionsHistoryApi;
+import com.phrase.client.api.ChangesVersionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -127,7 +127,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    VersionsHistoryApi apiInstance = new VersionsHistoryApi(defaultClient);
+    ChangesVersionsApi apiInstance = new ChangesVersionsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String translationId = "translationId_example"; // String | Translation ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -138,7 +138,7 @@ public class Example {
       List<TranslationVersion> result = apiInstance.versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling VersionsHistoryApi#versionsList");
+      System.err.println("Exception when calling ChangesVersionsApi#versionsList");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

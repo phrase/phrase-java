@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * LocaleStatistics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T15:19:53.392470Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-13T09:20:23.389509Z[Etc/UTC]")
 public class LocaleStatistics {
   public static final String SERIALIZED_NAME_KEYS_TOTAL_COUNT = "keys_total_count";
   @SerializedName(SERIALIZED_NAME_KEYS_TOTAL_COUNT)

@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TermBaseApi {
+public class TermBasesApi {
     private ApiClient localVarApiClient;
 
-    public TermBaseApi() {
+    public TermBasesApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public TermBaseApi(ApiClient apiClient) {
+    public TermBasesApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 

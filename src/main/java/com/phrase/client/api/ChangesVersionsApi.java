@@ -35,14 +35,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class VersionsHistoryApi {
+public class ChangesVersionsApi {
     private ApiClient localVarApiClient;
 
-    public VersionsHistoryApi() {
+    public ChangesVersionsApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public VersionsHistoryApi(ApiClient apiClient) {
+    public ChangesVersionsApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 

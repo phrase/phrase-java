@@ -54,6 +54,26 @@ public class TermBaseTranslationsApiTest {
     }
     
     /**
+     * Delete a translation for a term
+     *
+     * Delete an existing translation of a term in a term base (previously: glossary).
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void glossaryTermTranslationDeleteTest() throws ApiException {
+        String accountId = null;
+        String glossaryId = null;
+        String termId = null;
+        String id = null;
+        String xPhraseAppOTP = null;
+        api.glossaryTermTranslationDelete(accountId, glossaryId, termId, id, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update a translation for a term
      *
      * Update an existing translation for a term in a term base (previously: glossary).

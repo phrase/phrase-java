@@ -25,12 +25,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for TermBaseApi
+ * API tests for TermBasesApi
  */
 @Ignore
-public class TermBaseApiTest {
+public class TermBasesApiTest {
 
-    private final TermBaseApi api = new TermBaseApi();
+    private final TermBasesApi api = new TermBasesApi();
 
     
     /**

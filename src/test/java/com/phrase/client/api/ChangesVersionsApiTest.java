@@ -24,12 +24,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for VersionsHistoryApi
+ * API tests for ChangesVersionsApi
  */
 @Ignore
-public class VersionsHistoryApiTest {
+public class ChangesVersionsApiTest {
 
-    private final VersionsHistoryApi api = new VersionsHistoryApi();
+    private final ChangesVersionsApi api = new ChangesVersionsApi();
 
     
     /**

@@ -34,7 +34,7 @@ public class BlockedKeysApiTest {
 
     
     /**
-     * Create a blacklisted key
+     * Create a blocked key
      *
      * Create a new rule for blocking keys.
      *
@@ -52,7 +52,7 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * Delete a blacklisted key
+     * Delete a blocked key
      *
      * Delete an existing rule for blocking keys.
      *
@@ -70,7 +70,7 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * Get a single blacklisted key
+     * Get a single blocked key
      *
      * Get details on a single rule for blocking keys for a given project.
      *
@@ -88,7 +88,7 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * Update a blacklisted key
+     * Update a blocked key
      *
      * Update an existing rule for blocking keys.
      *
@@ -107,7 +107,7 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * List blacklisted keys
+     * List blocked keys
      *
      * List all rules for blocking keys for the given project.
      *

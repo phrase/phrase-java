@@ -4,18 +4,18 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blacklistedKeyCreate**](BlockedKeysApi.md#blacklistedKeyCreate) | **POST** /projects/{project_id}/blacklisted_keys | Create a blacklisted key
-[**blacklistedKeyDelete**](BlockedKeysApi.md#blacklistedKeyDelete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blacklisted key
-[**blacklistedKeyShow**](BlockedKeysApi.md#blacklistedKeyShow) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blacklisted key
-[**blacklistedKeyUpdate**](BlockedKeysApi.md#blacklistedKeyUpdate) | **PATCH** /projects/{project_id}/blacklisted_keys/{id} | Update a blacklisted key
-[**blacklistedKeysList**](BlockedKeysApi.md#blacklistedKeysList) | **GET** /projects/{project_id}/blacklisted_keys | List blacklisted keys
+[**blacklistedKeyCreate**](BlockedKeysApi.md#blacklistedKeyCreate) | **POST** /projects/{project_id}/blacklisted_keys | Create a blocked key
+[**blacklistedKeyDelete**](BlockedKeysApi.md#blacklistedKeyDelete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blocked key
+[**blacklistedKeyShow**](BlockedKeysApi.md#blacklistedKeyShow) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blocked key
+[**blacklistedKeyUpdate**](BlockedKeysApi.md#blacklistedKeyUpdate) | **PATCH** /projects/{project_id}/blacklisted_keys/{id} | Update a blocked key
+[**blacklistedKeysList**](BlockedKeysApi.md#blacklistedKeysList) | **GET** /projects/{project_id}/blacklisted_keys | List blocked keys
 
 
 <a name="blacklistedKeyCreate"></a>
 # **blacklistedKeyCreate**
 > BlacklistedKey blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP)
 
-Create a blacklisted key
+Create a blocked key
 
 Create a new rule for blocking keys.
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 # **blacklistedKeyDelete**
 > blacklistedKeyDelete(projectId, id, xPhraseAppOTP)
 
-Delete a blacklisted key
+Delete a blocked key
 
 Delete an existing rule for blocking keys.
 
@@ -176,7 +176,7 @@ null (empty response body)
 # **blacklistedKeyShow**
 > BlacklistedKey blacklistedKeyShow(projectId, id, xPhraseAppOTP)
 
-Get a single blacklisted key
+Get a single blocked key
 
 Get details on a single rule for blocking keys for a given project.
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 # **blacklistedKeyUpdate**
 > BlacklistedKey blacklistedKeyUpdate(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP)
 
-Update a blacklisted key
+Update a blocked key
 
 Update an existing rule for blocking keys.
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 # **blacklistedKeysList**
 > List&lt;BlacklistedKey&gt; blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage, branch)
 
-List blacklisted keys
+List blocked keys
 
 List all rules for blocking keys for the given project.
 
