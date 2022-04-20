@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BlacklistedKeyCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-19T12:04:49.199028Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-20T14:03:26.812931Z[Etc/UTC]")
 public class BlacklistedKeyCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -40,11 +40,11 @@ public class BlacklistedKeyCreateParameters {
   }
 
    /**
-   * Blocked key name
+   * Blacklisted key name
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "date.formats.*", value = "Blocked key name")
+  @ApiModelProperty(example = "date.formats.*", value = "Blacklisted key name")
 
   public String getName() {
     return name;

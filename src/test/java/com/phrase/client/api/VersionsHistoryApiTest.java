@@ -24,12 +24,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for ChangesVersionsApi
+ * API tests for VersionsHistoryApi
  */
 @Ignore
-public class ChangesVersionsApiTest {
+public class VersionsHistoryApiTest {
 
-    private final ChangesVersionsApi api = new ChangesVersionsApi();
+    private final VersionsHistoryApi api = new VersionsHistoryApi();
 
     
     /**
@@ -55,7 +55,7 @@ public class ChangesVersionsApiTest {
     /**
      * List all versions
      *
-     * List all changes done to a given translation.
+     * List all versions for the given translation.
      *
      * @throws ApiException
      *          if the Api call fails

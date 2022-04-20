@@ -26,9 +26,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.Glossary;
-import com.phrase.client.model.GlossaryCreateParameters;
-import com.phrase.client.model.GlossaryUpdateParameters;
+import com.phrase.client.model.BlacklistedKey;
+import com.phrase.client.model.BlacklistedKeyCreateParameters;
+import com.phrase.client.model.BlacklistedKeyUpdateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TermBasesApi {
+public class BlacklistedKeysApi {
     private ApiClient localVarApiClient;
 
-    public TermBasesApi() {
+    public BlacklistedKeysApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public TermBasesApi(ApiClient apiClient) {
+    public BlacklistedKeysApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -56,156 +56,9 @@ public class TermBasesApi {
     }
 
     /**
-     * Build call for glossariesList
-     * @param accountId Account ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossariesListCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (page != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
-        }
-
-        if (perPage != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossariesListValidateBeforeCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossariesList(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = glossariesListCall(accountId, xPhraseAppOTP, page, perPage, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * List term bases
-     * List all term bases (previously: glossaries) the current user has access to.
-     * @param accountId Account ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @return List&lt;Glossary&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public List<Glossary> glossariesList(String accountId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<Glossary>> localVarResp = glossariesListWithHttpInfo(accountId, xPhraseAppOTP, page, perPage);
-        return localVarResp.getData();
-    }
-
-    /**
-     * List term bases
-     * List all term bases (previously: glossaries) the current user has access to.
-     * @param accountId Account ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @return ApiResponse&lt;List&lt;Glossary&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<List<Glossary>> glossariesListWithHttpInfo(String accountId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        okhttp3.Call localVarCall = glossariesListValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, null);
-        Type localVarReturnType = new TypeToken<List<Glossary>>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * List term bases (asynchronously)
-     * List all term bases (previously: glossaries) the current user has access to.
-     * @param accountId Account ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call glossariesListAsync(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<Glossary>> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = glossariesListValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, _callback);
-        Type localVarReturnType = new TypeToken<List<Glossary>>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for glossaryCreate
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
+     * Build call for blacklistedKeyCreate
+     * @param projectId Project ID (required)
+     * @param blacklistedKeyCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -219,12 +72,12 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryCreateCall(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = glossaryCreateParameters;
+    public okhttp3.Call blacklistedKeyCreateCall(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = blacklistedKeyCreateParameters;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()));
+        String localVarPath = "/projects/{project_id}/blacklisted_keys"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -254,31 +107,31 @@ public class TermBasesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryCreateValidateBeforeCall(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call blacklistedKeyCreateValidateBeforeCall(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryCreate(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyCreate(Async)");
         }
         
-        // verify the required parameter 'glossaryCreateParameters' is set
-        if (glossaryCreateParameters == null) {
-            throw new ApiException("Missing the required parameter 'glossaryCreateParameters' when calling glossaryCreate(Async)");
+        // verify the required parameter 'blacklistedKeyCreateParameters' is set
+        if (blacklistedKeyCreateParameters == null) {
+            throw new ApiException("Missing the required parameter 'blacklistedKeyCreateParameters' when calling blacklistedKeyCreate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = glossaryCreateCall(accountId, glossaryCreateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = blacklistedKeyCreateCall(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Create a term base
-     * Create a new term base (previously: glossary).
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
+     * Create a blacklisted key
+     * Create a new rule for blacklisting keys.
+     * @param projectId Project ID (required)
+     * @param blacklistedKeyCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Glossary
+     * @return BlacklistedKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -289,18 +142,18 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Glossary glossaryCreate(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Glossary> localVarResp = glossaryCreateWithHttpInfo(accountId, glossaryCreateParameters, xPhraseAppOTP);
+    public BlacklistedKey blacklistedKeyCreate(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<BlacklistedKey> localVarResp = blacklistedKeyCreateWithHttpInfo(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
     /**
-     * Create a term base
-     * Create a new term base (previously: glossary).
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
+     * Create a blacklisted key
+     * Create a new rule for blacklisting keys.
+     * @param projectId Project ID (required)
+     * @param blacklistedKeyCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Glossary&gt;
+     * @return ApiResponse&lt;BlacklistedKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -311,17 +164,17 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Glossary> glossaryCreateWithHttpInfo(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryCreateValidateBeforeCall(accountId, glossaryCreateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
+    public ApiResponse<BlacklistedKey> blacklistedKeyCreateWithHttpInfo(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = blacklistedKeyCreateValidateBeforeCall(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create a term base (asynchronously)
-     * Create a new term base (previously: glossary).
-     * @param accountId Account ID (required)
-     * @param glossaryCreateParameters  (required)
+     * Create a blacklisted key (asynchronously)
+     * Create a new rule for blacklisting keys.
+     * @param projectId Project ID (required)
+     * @param blacklistedKeyCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -335,16 +188,16 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryCreateAsync(String accountId, GlossaryCreateParameters glossaryCreateParameters, String xPhraseAppOTP, final ApiCallback<Glossary> _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeyCreateAsync(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP, final ApiCallback<BlacklistedKey> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = glossaryCreateValidateBeforeCall(accountId, glossaryCreateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
+        okhttp3.Call localVarCall = blacklistedKeyCreateValidateBeforeCall(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for glossaryDelete
-     * @param accountId Account ID (required)
+     * Build call for blacklistedKeyDelete
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
@@ -359,12 +212,12 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryDeleteCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeyDeleteCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries/{id}"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+        String localVarPath = "/projects/{project_id}/blacklisted_keys/{id}"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -395,28 +248,28 @@ public class TermBasesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryDeleteValidateBeforeCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call blacklistedKeyDeleteValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryDelete(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyDelete(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling glossaryDelete(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling blacklistedKeyDelete(Async)");
         }
         
 
-        okhttp3.Call localVarCall = glossaryDeleteCall(accountId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = blacklistedKeyDeleteCall(projectId, id, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Delete a term base
-     * Delete an existing term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Delete a blacklisted key
+     * Delete an existing rule for blacklisting keys.
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -429,14 +282,14 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void glossaryDelete(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        glossaryDeleteWithHttpInfo(accountId, id, xPhraseAppOTP);
+    public void blacklistedKeyDelete(String projectId, String id, String xPhraseAppOTP) throws ApiException {
+        blacklistedKeyDeleteWithHttpInfo(projectId, id, xPhraseAppOTP);
     }
 
     /**
-     * Delete a term base
-     * Delete an existing term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Delete a blacklisted key
+     * Delete an existing rule for blacklisting keys.
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -450,15 +303,15 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> glossaryDeleteWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryDeleteValidateBeforeCall(accountId, id, xPhraseAppOTP, null);
+    public ApiResponse<Void> blacklistedKeyDeleteWithHttpInfo(String projectId, String id, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = blacklistedKeyDeleteValidateBeforeCall(projectId, id, xPhraseAppOTP, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     * Delete a term base (asynchronously)
-     * Delete an existing term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Delete a blacklisted key (asynchronously)
+     * Delete an existing rule for blacklisting keys.
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -473,15 +326,15 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryDeleteAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeyDeleteAsync(String projectId, String id, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = glossaryDeleteValidateBeforeCall(accountId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = blacklistedKeyDeleteValidateBeforeCall(projectId, id, xPhraseAppOTP, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for glossaryShow
-     * @param accountId Account ID (required)
+     * Build call for blacklistedKeyShow
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
@@ -496,12 +349,12 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryShowCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeyShowCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries/{id}"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+        String localVarPath = "/projects/{project_id}/blacklisted_keys/{id}"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -532,31 +385,31 @@ public class TermBasesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryShowValidateBeforeCall(String accountId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call blacklistedKeyShowValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryShow(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyShow(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling glossaryShow(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling blacklistedKeyShow(Async)");
         }
         
 
-        okhttp3.Call localVarCall = glossaryShowCall(accountId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = blacklistedKeyShowCall(projectId, id, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Get a single term base
-     * Get details on a single term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Get a single blacklisted key
+     * Get details on a single rule for blacklisting keys for a given project.
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Glossary
+     * @return BlacklistedKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -567,18 +420,18 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Glossary glossaryShow(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Glossary> localVarResp = glossaryShowWithHttpInfo(accountId, id, xPhraseAppOTP);
+    public BlacklistedKey blacklistedKeyShow(String projectId, String id, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<BlacklistedKey> localVarResp = blacklistedKeyShowWithHttpInfo(projectId, id, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
     /**
-     * Get a single term base
-     * Get details on a single term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Get a single blacklisted key
+     * Get details on a single rule for blacklisting keys for a given project.
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Glossary&gt;
+     * @return ApiResponse&lt;BlacklistedKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -589,16 +442,16 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Glossary> glossaryShowWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryShowValidateBeforeCall(accountId, id, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
+    public ApiResponse<BlacklistedKey> blacklistedKeyShowWithHttpInfo(String projectId, String id, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = blacklistedKeyShowValidateBeforeCall(projectId, id, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get a single term base (asynchronously)
-     * Get details on a single term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Get a single blacklisted key (asynchronously)
+     * Get details on a single rule for blacklisting keys for a given project.
+     * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -613,18 +466,18 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryShowAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<Glossary> _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeyShowAsync(String projectId, String id, String xPhraseAppOTP, final ApiCallback<BlacklistedKey> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = glossaryShowValidateBeforeCall(accountId, id, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
+        okhttp3.Call localVarCall = blacklistedKeyShowValidateBeforeCall(projectId, id, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for glossaryUpdate
-     * @param accountId Account ID (required)
+     * Build call for blacklistedKeyUpdate
+     * @param projectId Project ID (required)
      * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
+     * @param blacklistedKeyUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -638,12 +491,12 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryUpdateCall(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = glossaryUpdateParameters;
+    public okhttp3.Call blacklistedKeyUpdateCall(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = blacklistedKeyUpdateParameters;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/glossaries/{id}"
-            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+        String localVarPath = "/projects/{project_id}/blacklisted_keys/{id}"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -674,37 +527,37 @@ public class TermBasesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call glossaryUpdateValidateBeforeCall(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call blacklistedKeyUpdateValidateBeforeCall(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'accountId' is set
-        if (accountId == null) {
-            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryUpdate(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyUpdate(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling glossaryUpdate(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling blacklistedKeyUpdate(Async)");
         }
         
-        // verify the required parameter 'glossaryUpdateParameters' is set
-        if (glossaryUpdateParameters == null) {
-            throw new ApiException("Missing the required parameter 'glossaryUpdateParameters' when calling glossaryUpdate(Async)");
+        // verify the required parameter 'blacklistedKeyUpdateParameters' is set
+        if (blacklistedKeyUpdateParameters == null) {
+            throw new ApiException("Missing the required parameter 'blacklistedKeyUpdateParameters' when calling blacklistedKeyUpdate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = glossaryUpdateCall(accountId, id, glossaryUpdateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = blacklistedKeyUpdateCall(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Update a term base
-     * Update an existing term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Update a blacklisted key
+     * Update an existing rule for blacklisting keys.
+     * @param projectId Project ID (required)
      * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
+     * @param blacklistedKeyUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Glossary
+     * @return BlacklistedKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -715,19 +568,19 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Glossary glossaryUpdate(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Glossary> localVarResp = glossaryUpdateWithHttpInfo(accountId, id, glossaryUpdateParameters, xPhraseAppOTP);
+    public BlacklistedKey blacklistedKeyUpdate(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<BlacklistedKey> localVarResp = blacklistedKeyUpdateWithHttpInfo(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
     /**
-     * Update a term base
-     * Update an existing term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Update a blacklisted key
+     * Update an existing rule for blacklisting keys.
+     * @param projectId Project ID (required)
      * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
+     * @param blacklistedKeyUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Glossary&gt;
+     * @return ApiResponse&lt;BlacklistedKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -738,18 +591,18 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Glossary> glossaryUpdateWithHttpInfo(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = glossaryUpdateValidateBeforeCall(accountId, id, glossaryUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
+    public ApiResponse<BlacklistedKey> blacklistedKeyUpdateWithHttpInfo(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = blacklistedKeyUpdateValidateBeforeCall(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update a term base (asynchronously)
-     * Update an existing term base (previously: glossary).
-     * @param accountId Account ID (required)
+     * Update a blacklisted key (asynchronously)
+     * Update an existing rule for blacklisting keys.
+     * @param projectId Project ID (required)
      * @param id ID (required)
-     * @param glossaryUpdateParameters  (required)
+     * @param blacklistedKeyUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -763,10 +616,165 @@ public class TermBasesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call glossaryUpdateAsync(String accountId, String id, GlossaryUpdateParameters glossaryUpdateParameters, String xPhraseAppOTP, final ApiCallback<Glossary> _callback) throws ApiException {
+    public okhttp3.Call blacklistedKeyUpdateAsync(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP, final ApiCallback<BlacklistedKey> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = glossaryUpdateValidateBeforeCall(accountId, id, glossaryUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Glossary>(){}.getType();
+        okhttp3.Call localVarCall = blacklistedKeyUpdateValidateBeforeCall(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for blacklistedKeysList
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call blacklistedKeysListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/blacklisted_keys"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (perPage != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call blacklistedKeysListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeysList(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = blacklistedKeysListCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List blacklisted keys
+     * List all rules for blacklisting keys for the given project.
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
+     * @return List&lt;BlacklistedKey&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public List<BlacklistedKey> blacklistedKeysList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        ApiResponse<List<BlacklistedKey>> localVarResp = blacklistedKeysListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List blacklisted keys
+     * List all rules for blacklisting keys for the given project.
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;List&lt;BlacklistedKey&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<BlacklistedKey>> blacklistedKeysListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, null);
+        Type localVarReturnType = new TypeToken<List<BlacklistedKey>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List blacklisted keys (asynchronously)
+     * List all rules for blacklisting keys for the given project.
+     * @param projectId Project ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call blacklistedKeysListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<BlacklistedKey>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
+        Type localVarReturnType = new TypeToken<List<BlacklistedKey>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

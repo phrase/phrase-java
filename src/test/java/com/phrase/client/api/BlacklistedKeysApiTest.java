@@ -25,18 +25,18 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for BlockedKeysApi
+ * API tests for BlacklistedKeysApi
  */
 @Ignore
-public class BlockedKeysApiTest {
+public class BlacklistedKeysApiTest {
 
-    private final BlockedKeysApi api = new BlockedKeysApi();
+    private final BlacklistedKeysApi api = new BlacklistedKeysApi();
 
     
     /**
-     * Create a blocked key
+     * Create a blacklisted key
      *
-     * Create a new rule for blocking keys.
+     * Create a new rule for blacklisting keys.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -52,9 +52,9 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * Delete a blocked key
+     * Delete a blacklisted key
      *
-     * Delete an existing rule for blocking keys.
+     * Delete an existing rule for blacklisting keys.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -70,9 +70,9 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * Get a single blocked key
+     * Get a single blacklisted key
      *
-     * Get details on a single rule for blocking keys for a given project.
+     * Get details on a single rule for blacklisting keys for a given project.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -88,9 +88,9 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * Update a blocked key
+     * Update a blacklisted key
      *
-     * Update an existing rule for blocking keys.
+     * Update an existing rule for blacklisting keys.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -107,9 +107,9 @@ public class BlockedKeysApiTest {
     }
     
     /**
-     * List blocked keys
+     * List blacklisted keys
      *
-     * List all rules for blocking keys for the given project.
+     * List all rules for blacklisting keys for the given project.
      *
      * @throws ApiException
      *          if the Api call fails

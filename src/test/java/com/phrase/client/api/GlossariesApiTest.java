@@ -25,18 +25,18 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for TermBasesApi
+ * API tests for GlossariesApi
  */
 @Ignore
-public class TermBasesApiTest {
+public class GlossariesApiTest {
 
-    private final TermBasesApi api = new TermBasesApi();
+    private final GlossariesApi api = new GlossariesApi();
 
     
     /**
-     * List term bases
+     * List glossaries
      *
-     * List all term bases (previously: glossaries) the current user has access to.
+     * List all glossaries the current user has access to.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -53,9 +53,9 @@ public class TermBasesApiTest {
     }
     
     /**
-     * Create a term base
+     * Create a glossary
      *
-     * Create a new term base (previously: glossary).
+     * Create a new glossary.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -71,9 +71,9 @@ public class TermBasesApiTest {
     }
     
     /**
-     * Delete a term base
+     * Delete a glossary
      *
-     * Delete an existing term base (previously: glossary).
+     * Delete an existing glossary.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -89,9 +89,9 @@ public class TermBasesApiTest {
     }
     
     /**
-     * Get a single term base
+     * Get a single glossary
      *
-     * Get details on a single term base (previously: glossary).
+     * Get details on a single glossary.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -107,9 +107,9 @@ public class TermBasesApiTest {
     }
     
     /**
-     * Update a term base
+     * Update a glossary
      *
-     * Update an existing term base (previously: glossary).
+     * Update an existing glossary.
      *
      * @throws ApiException
      *          if the Api call fails

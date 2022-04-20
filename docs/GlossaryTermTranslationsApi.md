@@ -1,21 +1,21 @@
-# TermBaseTranslationsApi
+# GlossaryTermTranslationsApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossaryTermTranslationCreate**](TermBaseTranslationsApi.md#glossaryTermTranslationCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations | Create a translation for a term
-[**glossaryTermTranslationDelete**](TermBaseTranslationsApi.md#glossaryTermTranslationDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Delete a translation for a term
-[**glossaryTermTranslationUpdate**](TermBaseTranslationsApi.md#glossaryTermTranslationUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Update a translation for a term
+[**glossaryTermTranslationCreate**](GlossaryTermTranslationsApi.md#glossaryTermTranslationCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations | Create a glossary term translation
+[**glossaryTermTranslationDelete**](GlossaryTermTranslationsApi.md#glossaryTermTranslationDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Delete a glossary term translation
+[**glossaryTermTranslationUpdate**](GlossaryTermTranslationsApi.md#glossaryTermTranslationUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Update a glossary term translation
 
 
 <a name="glossaryTermTranslationCreate"></a>
 # **glossaryTermTranslationCreate**
 > GlossaryTermTranslation glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP)
 
-Create a translation for a term
+Create a glossary term translation
 
-Create a new translation for a term in a term base (previously: glossary).
+Create a new glossary term translation.
 
 ### Example
 ```java
@@ -25,7 +25,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseTranslationsApi;
+import com.phrase.client.api.GlossaryTermTranslationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -43,7 +43,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseTranslationsApi apiInstance = new TermBaseTranslationsApi(defaultClient);
+    GlossaryTermTranslationsApi apiInstance = new GlossaryTermTranslationsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     String termId = "termId_example"; // String | Term ID
@@ -53,7 +53,7 @@ public class Example {
       GlossaryTermTranslation result = apiInstance.glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseTranslationsApi#glossaryTermTranslationCreate");
+      System.err.println("Exception when calling GlossaryTermTranslationsApi#glossaryTermTranslationCreate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -98,9 +98,9 @@ Name | Type | Description  | Notes
 # **glossaryTermTranslationDelete**
 > glossaryTermTranslationDelete(accountId, glossaryId, termId, id, xPhraseAppOTP)
 
-Delete a translation for a term
+Delete a glossary term translation
 
-Delete an existing translation of a term in a term base (previously: glossary).
+Delete an existing glossary term translation.
 
 ### Example
 ```java
@@ -110,7 +110,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseTranslationsApi;
+import com.phrase.client.api.GlossaryTermTranslationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -128,7 +128,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseTranslationsApi apiInstance = new TermBaseTranslationsApi(defaultClient);
+    GlossaryTermTranslationsApi apiInstance = new GlossaryTermTranslationsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     String termId = "termId_example"; // String | Term ID
@@ -137,7 +137,7 @@ public class Example {
     try {
       apiInstance.glossaryTermTranslationDelete(accountId, glossaryId, termId, id, xPhraseAppOTP);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseTranslationsApi#glossaryTermTranslationDelete");
+      System.err.println("Exception when calling GlossaryTermTranslationsApi#glossaryTermTranslationDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -182,9 +182,9 @@ null (empty response body)
 # **glossaryTermTranslationUpdate**
 > GlossaryTermTranslation glossaryTermTranslationUpdate(accountId, glossaryId, termId, id, glossaryTermTranslationUpdateParameters, xPhraseAppOTP)
 
-Update a translation for a term
+Update a glossary term translation
 
-Update an existing translation for a term in a term base (previously: glossary).
+Update an existing glossary term translation.
 
 ### Example
 ```java
@@ -194,7 +194,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermBaseTranslationsApi;
+import com.phrase.client.api.GlossaryTermTranslationsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -212,7 +212,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermBaseTranslationsApi apiInstance = new TermBaseTranslationsApi(defaultClient);
+    GlossaryTermTranslationsApi apiInstance = new GlossaryTermTranslationsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     String termId = "termId_example"; // String | Term ID
@@ -223,7 +223,7 @@ public class Example {
       GlossaryTermTranslation result = apiInstance.glossaryTermTranslationUpdate(accountId, glossaryId, termId, id, glossaryTermTranslationUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermBaseTranslationsApi#glossaryTermTranslationUpdate");
+      System.err.println("Exception when calling GlossaryTermTranslationsApi#glossaryTermTranslationUpdate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

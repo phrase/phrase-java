@@ -26,9 +26,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.BlacklistedKey;
-import com.phrase.client.model.BlacklistedKeyCreateParameters;
-import com.phrase.client.model.BlacklistedKeyUpdateParameters;
+import com.phrase.client.model.GlossaryTerm;
+import com.phrase.client.model.GlossaryTermCreateParameters;
+import com.phrase.client.model.GlossaryTermUpdateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BlockedKeysApi {
+public class GlossaryTermsApi {
     private ApiClient localVarApiClient;
 
-    public BlockedKeysApi() {
+    public GlossaryTermsApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public BlockedKeysApi(ApiClient apiClient) {
+    public GlossaryTermsApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -56,9 +56,10 @@ public class BlockedKeysApi {
     }
 
     /**
-     * Build call for blacklistedKeyCreate
-     * @param projectId Project ID (required)
-     * @param blacklistedKeyCreateParameters  (required)
+     * Build call for glossaryTermCreate
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -72,12 +73,13 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyCreateCall(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = blacklistedKeyCreateParameters;
+    public okhttp3.Call glossaryTermCreateCall(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = glossaryTermCreateParameters;
 
         // create path and map variables
-        String localVarPath = "/projects/{project_id}/blacklisted_keys"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -107,31 +109,37 @@ public class BlockedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call blacklistedKeyCreateValidateBeforeCall(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call glossaryTermCreateValidateBeforeCall(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyCreate(Async)");
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermCreate(Async)");
         }
         
-        // verify the required parameter 'blacklistedKeyCreateParameters' is set
-        if (blacklistedKeyCreateParameters == null) {
-            throw new ApiException("Missing the required parameter 'blacklistedKeyCreateParameters' when calling blacklistedKeyCreate(Async)");
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermCreate(Async)");
+        }
+        
+        // verify the required parameter 'glossaryTermCreateParameters' is set
+        if (glossaryTermCreateParameters == null) {
+            throw new ApiException("Missing the required parameter 'glossaryTermCreateParameters' when calling glossaryTermCreate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = blacklistedKeyCreateCall(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = glossaryTermCreateCall(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Create a blocked key
-     * Create a new rule for blocking keys.
-     * @param projectId Project ID (required)
-     * @param blacklistedKeyCreateParameters  (required)
+     * Create a glossary term
+     * Create a new glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return BlacklistedKey
+     * @return GlossaryTerm
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -142,18 +150,19 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public BlacklistedKey blacklistedKeyCreate(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<BlacklistedKey> localVarResp = blacklistedKeyCreateWithHttpInfo(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP);
+    public GlossaryTerm glossaryTermCreate(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<GlossaryTerm> localVarResp = glossaryTermCreateWithHttpInfo(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
     /**
-     * Create a blocked key
-     * Create a new rule for blocking keys.
-     * @param projectId Project ID (required)
-     * @param blacklistedKeyCreateParameters  (required)
+     * Create a glossary term
+     * Create a new glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;BlacklistedKey&gt;
+     * @return ApiResponse&lt;GlossaryTerm&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -164,17 +173,18 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<BlacklistedKey> blacklistedKeyCreateWithHttpInfo(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = blacklistedKeyCreateValidateBeforeCall(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
+    public ApiResponse<GlossaryTerm> glossaryTermCreateWithHttpInfo(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermCreateValidateBeforeCall(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create a blocked key (asynchronously)
-     * Create a new rule for blocking keys.
-     * @param projectId Project ID (required)
-     * @param blacklistedKeyCreateParameters  (required)
+     * Create a glossary term (asynchronously)
+     * Create a new glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
+     * @param glossaryTermCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -188,16 +198,17 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyCreateAsync(String projectId, BlacklistedKeyCreateParameters blacklistedKeyCreateParameters, String xPhraseAppOTP, final ApiCallback<BlacklistedKey> _callback) throws ApiException {
+    public okhttp3.Call glossaryTermCreateAsync(String accountId, String glossaryId, GlossaryTermCreateParameters glossaryTermCreateParameters, String xPhraseAppOTP, final ApiCallback<GlossaryTerm> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = blacklistedKeyCreateValidateBeforeCall(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
+        okhttp3.Call localVarCall = glossaryTermCreateValidateBeforeCall(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for blacklistedKeyDelete
-     * @param projectId Project ID (required)
+     * Build call for glossaryTermDelete
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
@@ -212,12 +223,13 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyDeleteCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call glossaryTermDeleteCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/projects/{project_id}/blacklisted_keys/{id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -248,28 +260,34 @@ public class BlockedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call blacklistedKeyDeleteValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call glossaryTermDeleteValidateBeforeCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyDelete(Async)");
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermDelete(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermDelete(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling blacklistedKeyDelete(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling glossaryTermDelete(Async)");
         }
         
 
-        okhttp3.Call localVarCall = blacklistedKeyDeleteCall(projectId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = glossaryTermDeleteCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Delete a blocked key
-     * Delete an existing rule for blocking keys.
-     * @param projectId Project ID (required)
+     * Delete a glossary term
+     * Delete an existing glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -282,14 +300,15 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void blacklistedKeyDelete(String projectId, String id, String xPhraseAppOTP) throws ApiException {
-        blacklistedKeyDeleteWithHttpInfo(projectId, id, xPhraseAppOTP);
+    public void glossaryTermDelete(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        glossaryTermDeleteWithHttpInfo(accountId, glossaryId, id, xPhraseAppOTP);
     }
 
     /**
-     * Delete a blocked key
-     * Delete an existing rule for blocking keys.
-     * @param projectId Project ID (required)
+     * Delete a glossary term
+     * Delete an existing glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -303,15 +322,16 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> blacklistedKeyDeleteWithHttpInfo(String projectId, String id, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = blacklistedKeyDeleteValidateBeforeCall(projectId, id, xPhraseAppOTP, null);
+    public ApiResponse<Void> glossaryTermDeleteWithHttpInfo(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermDeleteValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     * Delete a blocked key (asynchronously)
-     * Delete an existing rule for blocking keys.
-     * @param projectId Project ID (required)
+     * Delete a glossary term (asynchronously)
+     * Delete an existing glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -326,15 +346,16 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyDeleteAsync(String projectId, String id, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call glossaryTermDeleteAsync(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = blacklistedKeyDeleteValidateBeforeCall(projectId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = glossaryTermDeleteValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for blacklistedKeyShow
-     * @param projectId Project ID (required)
+     * Build call for glossaryTermShow
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
@@ -349,12 +370,13 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyShowCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call glossaryTermShowCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/projects/{project_id}/blacklisted_keys/{id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -385,31 +407,37 @@ public class BlockedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call blacklistedKeyShowValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call glossaryTermShowValidateBeforeCall(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyShow(Async)");
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermShow(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermShow(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling blacklistedKeyShow(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling glossaryTermShow(Async)");
         }
         
 
-        okhttp3.Call localVarCall = blacklistedKeyShowCall(projectId, id, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = glossaryTermShowCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Get a single blocked key
-     * Get details on a single rule for blocking keys for a given project.
-     * @param projectId Project ID (required)
+     * Get a single glossary term
+     * Get details on a single glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return BlacklistedKey
+     * @return GlossaryTerm
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -420,18 +448,19 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public BlacklistedKey blacklistedKeyShow(String projectId, String id, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<BlacklistedKey> localVarResp = blacklistedKeyShowWithHttpInfo(projectId, id, xPhraseAppOTP);
+    public GlossaryTerm glossaryTermShow(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<GlossaryTerm> localVarResp = glossaryTermShowWithHttpInfo(accountId, glossaryId, id, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
     /**
-     * Get a single blocked key
-     * Get details on a single rule for blocking keys for a given project.
-     * @param projectId Project ID (required)
+     * Get a single glossary term
+     * Get details on a single glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;BlacklistedKey&gt;
+     * @return ApiResponse&lt;GlossaryTerm&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -442,16 +471,17 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<BlacklistedKey> blacklistedKeyShowWithHttpInfo(String projectId, String id, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = blacklistedKeyShowValidateBeforeCall(projectId, id, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
+    public ApiResponse<GlossaryTerm> glossaryTermShowWithHttpInfo(String accountId, String glossaryId, String id, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermShowValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get a single blocked key (asynchronously)
-     * Get details on a single rule for blocking keys for a given project.
-     * @param projectId Project ID (required)
+     * Get a single glossary term (asynchronously)
+     * Get details on a single glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -466,18 +496,19 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyShowAsync(String projectId, String id, String xPhraseAppOTP, final ApiCallback<BlacklistedKey> _callback) throws ApiException {
+    public okhttp3.Call glossaryTermShowAsync(String accountId, String glossaryId, String id, String xPhraseAppOTP, final ApiCallback<GlossaryTerm> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = blacklistedKeyShowValidateBeforeCall(projectId, id, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
+        okhttp3.Call localVarCall = glossaryTermShowValidateBeforeCall(accountId, glossaryId, id, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for blacklistedKeyUpdate
-     * @param projectId Project ID (required)
+     * Build call for glossaryTermUpdate
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
-     * @param blacklistedKeyUpdateParameters  (required)
+     * @param glossaryTermUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -491,12 +522,13 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyUpdateCall(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = blacklistedKeyUpdateParameters;
+    public okhttp3.Call glossaryTermUpdateCall(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = glossaryTermUpdateParameters;
 
         // create path and map variables
-        String localVarPath = "/projects/{project_id}/blacklisted_keys/{id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -527,37 +559,43 @@ public class BlockedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call blacklistedKeyUpdateValidateBeforeCall(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call glossaryTermUpdateValidateBeforeCall(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeyUpdate(Async)");
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermUpdate(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermUpdate(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling blacklistedKeyUpdate(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling glossaryTermUpdate(Async)");
         }
         
-        // verify the required parameter 'blacklistedKeyUpdateParameters' is set
-        if (blacklistedKeyUpdateParameters == null) {
-            throw new ApiException("Missing the required parameter 'blacklistedKeyUpdateParameters' when calling blacklistedKeyUpdate(Async)");
+        // verify the required parameter 'glossaryTermUpdateParameters' is set
+        if (glossaryTermUpdateParameters == null) {
+            throw new ApiException("Missing the required parameter 'glossaryTermUpdateParameters' when calling glossaryTermUpdate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = blacklistedKeyUpdateCall(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = glossaryTermUpdateCall(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Update a blocked key
-     * Update an existing rule for blocking keys.
-     * @param projectId Project ID (required)
+     * Update a glossary term
+     * Update an existing glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
-     * @param blacklistedKeyUpdateParameters  (required)
+     * @param glossaryTermUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return BlacklistedKey
+     * @return GlossaryTerm
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -568,19 +606,20 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public BlacklistedKey blacklistedKeyUpdate(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<BlacklistedKey> localVarResp = blacklistedKeyUpdateWithHttpInfo(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP);
+    public GlossaryTerm glossaryTermUpdate(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<GlossaryTerm> localVarResp = glossaryTermUpdateWithHttpInfo(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
     /**
-     * Update a blocked key
-     * Update an existing rule for blocking keys.
-     * @param projectId Project ID (required)
+     * Update a glossary term
+     * Update an existing glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
-     * @param blacklistedKeyUpdateParameters  (required)
+     * @param glossaryTermUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;BlacklistedKey&gt;
+     * @return ApiResponse&lt;GlossaryTerm&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -591,18 +630,19 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<BlacklistedKey> blacklistedKeyUpdateWithHttpInfo(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = blacklistedKeyUpdateValidateBeforeCall(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
+    public ApiResponse<GlossaryTerm> glossaryTermUpdateWithHttpInfo(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermUpdateValidateBeforeCall(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update a blocked key (asynchronously)
-     * Update an existing rule for blocking keys.
-     * @param projectId Project ID (required)
+     * Update a glossary term (asynchronously)
+     * Update an existing glossary term.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param id ID (required)
-     * @param blacklistedKeyUpdateParameters  (required)
+     * @param glossaryTermUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -616,20 +656,20 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeyUpdateAsync(String projectId, String id, BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters, String xPhraseAppOTP, final ApiCallback<BlacklistedKey> _callback) throws ApiException {
+    public okhttp3.Call glossaryTermUpdateAsync(String accountId, String glossaryId, String id, GlossaryTermUpdateParameters glossaryTermUpdateParameters, String xPhraseAppOTP, final ApiCallback<GlossaryTerm> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = blacklistedKeyUpdateValidateBeforeCall(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<BlacklistedKey>(){}.getType();
+        okhttp3.Call localVarCall = glossaryTermUpdateValidateBeforeCall(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<GlossaryTerm>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for blacklistedKeysList
-     * @param projectId Project ID (required)
+     * Build call for glossaryTermsList
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -642,12 +682,13 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeysListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call glossaryTermsListCall(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/projects/{project_id}/blacklisted_keys"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
+        String localVarPath = "/accounts/{account_id}/glossaries/{glossary_id}/terms"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "glossary_id" + "\\}", localVarApiClient.escapeString(glossaryId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -657,10 +698,6 @@ public class BlockedKeysApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
-        }
-
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -689,28 +726,33 @@ public class BlockedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call blacklistedKeysListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call glossaryTermsListValidateBeforeCall(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling blacklistedKeysList(Async)");
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling glossaryTermsList(Async)");
+        }
+        
+        // verify the required parameter 'glossaryId' is set
+        if (glossaryId == null) {
+            throw new ApiException("Missing the required parameter 'glossaryId' when calling glossaryTermsList(Async)");
         }
         
 
-        okhttp3.Call localVarCall = blacklistedKeysListCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
+        okhttp3.Call localVarCall = glossaryTermsListCall(accountId, glossaryId, xPhraseAppOTP, page, perPage, _callback);
         return localVarCall;
 
     }
 
     /**
-     * List blocked keys
-     * List all rules for blocking keys for the given project.
-     * @param projectId Project ID (required)
+     * List glossary terms
+     * List all glossary terms the current user has access to.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @param branch specify the branch to use (optional)
-     * @return List&lt;BlacklistedKey&gt;
+     * @return List&lt;GlossaryTerm&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -721,20 +763,20 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<BlacklistedKey> blacklistedKeysList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        ApiResponse<List<BlacklistedKey>> localVarResp = blacklistedKeysListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch);
+    public List<GlossaryTerm> glossaryTermsList(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        ApiResponse<List<GlossaryTerm>> localVarResp = glossaryTermsListWithHttpInfo(accountId, glossaryId, xPhraseAppOTP, page, perPage);
         return localVarResp.getData();
     }
 
     /**
-     * List blocked keys
-     * List all rules for blocking keys for the given project.
-     * @param projectId Project ID (required)
+     * List glossary terms
+     * List all glossary terms the current user has access to.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;List&lt;BlacklistedKey&gt;&gt;
+     * @return ApiResponse&lt;List&lt;GlossaryTerm&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -745,20 +787,20 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<BlacklistedKey>> blacklistedKeysListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, null);
-        Type localVarReturnType = new TypeToken<List<BlacklistedKey>>(){}.getType();
+    public ApiResponse<List<GlossaryTerm>> glossaryTermsListWithHttpInfo(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        okhttp3.Call localVarCall = glossaryTermsListValidateBeforeCall(accountId, glossaryId, xPhraseAppOTP, page, perPage, null);
+        Type localVarReturnType = new TypeToken<List<GlossaryTerm>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List blocked keys (asynchronously)
-     * List all rules for blocking keys for the given project.
-     * @param projectId Project ID (required)
+     * List glossary terms (asynchronously)
+     * List all glossary terms the current user has access to.
+     * @param accountId Account ID (required)
+     * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
-     * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -771,10 +813,10 @@ public class BlockedKeysApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call blacklistedKeysListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<BlacklistedKey>> _callback) throws ApiException {
+    public okhttp3.Call glossaryTermsListAsync(String accountId, String glossaryId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<GlossaryTerm>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = blacklistedKeysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
-        Type localVarReturnType = new TypeToken<List<BlacklistedKey>>(){}.getType();
+        okhttp3.Call localVarCall = glossaryTermsListValidateBeforeCall(accountId, glossaryId, xPhraseAppOTP, page, perPage, _callback);
+        Type localVarReturnType = new TypeToken<List<GlossaryTerm>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

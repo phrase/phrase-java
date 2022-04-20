@@ -1,23 +1,23 @@
-# TermsInTermBaseApi
+# GlossaryTermsApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossaryTermCreate**](TermsInTermBaseApi.md#glossaryTermCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a term
-[**glossaryTermDelete**](TermsInTermBaseApi.md#glossaryTermDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a term
-[**glossaryTermShow**](TermsInTermBaseApi.md#glossaryTermShow) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single term
-[**glossaryTermUpdate**](TermsInTermBaseApi.md#glossaryTermUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a term
-[**glossaryTermsList**](TermsInTermBaseApi.md#glossaryTermsList) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List terms
+[**glossaryTermCreate**](GlossaryTermsApi.md#glossaryTermCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a glossary term
+[**glossaryTermDelete**](GlossaryTermsApi.md#glossaryTermDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a glossary term
+[**glossaryTermShow**](GlossaryTermsApi.md#glossaryTermShow) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single glossary term
+[**glossaryTermUpdate**](GlossaryTermsApi.md#glossaryTermUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a glossary term
+[**glossaryTermsList**](GlossaryTermsApi.md#glossaryTermsList) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List glossary terms
 
 
 <a name="glossaryTermCreate"></a>
 # **glossaryTermCreate**
 > GlossaryTerm glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP)
 
-Create a term
+Create a glossary term
 
-Create a new term in a term base (previously: glossary).
+Create a new glossary term.
 
 ### Example
 ```java
@@ -27,7 +27,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermsInTermBaseApi;
+import com.phrase.client.api.GlossaryTermsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -45,7 +45,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
+    GlossaryTermsApi apiInstance = new GlossaryTermsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     GlossaryTermCreateParameters glossaryTermCreateParameters = new GlossaryTermCreateParameters(); // GlossaryTermCreateParameters | 
@@ -54,7 +54,7 @@ public class Example {
       GlossaryTerm result = apiInstance.glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermCreate");
+      System.err.println("Exception when calling GlossaryTermsApi#glossaryTermCreate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -98,9 +98,9 @@ Name | Type | Description  | Notes
 # **glossaryTermDelete**
 > glossaryTermDelete(accountId, glossaryId, id, xPhraseAppOTP)
 
-Delete a term
+Delete a glossary term
 
-Delete an existing term in a term base (previously: glossary).
+Delete an existing glossary term.
 
 ### Example
 ```java
@@ -110,7 +110,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermsInTermBaseApi;
+import com.phrase.client.api.GlossaryTermsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -128,7 +128,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
+    GlossaryTermsApi apiInstance = new GlossaryTermsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     String id = "id_example"; // String | ID
@@ -136,7 +136,7 @@ public class Example {
     try {
       apiInstance.glossaryTermDelete(accountId, glossaryId, id, xPhraseAppOTP);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermDelete");
+      System.err.println("Exception when calling GlossaryTermsApi#glossaryTermDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -180,9 +180,9 @@ null (empty response body)
 # **glossaryTermShow**
 > GlossaryTerm glossaryTermShow(accountId, glossaryId, id, xPhraseAppOTP)
 
-Get a single term
+Get a single glossary term
 
-Get details for a single term in the term base (previously: glossary).
+Get details on a single glossary term.
 
 ### Example
 ```java
@@ -192,7 +192,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermsInTermBaseApi;
+import com.phrase.client.api.GlossaryTermsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -210,7 +210,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
+    GlossaryTermsApi apiInstance = new GlossaryTermsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     String id = "id_example"; // String | ID
@@ -219,7 +219,7 @@ public class Example {
       GlossaryTerm result = apiInstance.glossaryTermShow(accountId, glossaryId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermShow");
+      System.err.println("Exception when calling GlossaryTermsApi#glossaryTermShow");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -263,9 +263,9 @@ Name | Type | Description  | Notes
 # **glossaryTermUpdate**
 > GlossaryTerm glossaryTermUpdate(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP)
 
-Update a term
+Update a glossary term
 
-Update an existing term in a term base (previously: glossary).
+Update an existing glossary term.
 
 ### Example
 ```java
@@ -275,7 +275,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermsInTermBaseApi;
+import com.phrase.client.api.GlossaryTermsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -293,7 +293,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
+    GlossaryTermsApi apiInstance = new GlossaryTermsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     String id = "id_example"; // String | ID
@@ -303,7 +303,7 @@ public class Example {
       GlossaryTerm result = apiInstance.glossaryTermUpdate(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermUpdate");
+      System.err.println("Exception when calling GlossaryTermsApi#glossaryTermUpdate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -348,9 +348,9 @@ Name | Type | Description  | Notes
 # **glossaryTermsList**
 > List&lt;GlossaryTerm&gt; glossaryTermsList(accountId, glossaryId, xPhraseAppOTP, page, perPage)
 
-List terms
+List glossary terms
 
-List all terms in term bases (previously: glossary) that the current user has access to.
+List all glossary terms the current user has access to.
 
 ### Example
 ```java
@@ -360,7 +360,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.TermsInTermBaseApi;
+import com.phrase.client.api.GlossaryTermsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -378,7 +378,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    TermsInTermBaseApi apiInstance = new TermsInTermBaseApi(defaultClient);
+    GlossaryTermsApi apiInstance = new GlossaryTermsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String glossaryId = "glossaryId_example"; // String | Glossary ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -388,7 +388,7 @@ public class Example {
       List<GlossaryTerm> result = apiInstance.glossaryTermsList(accountId, glossaryId, xPhraseAppOTP, page, perPage);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TermsInTermBaseApi#glossaryTermsList");
+      System.err.println("Exception when calling GlossaryTermsApi#glossaryTermsList");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

@@ -35,14 +35,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ChangesVersionsApi {
+public class VersionsHistoryApi {
     private ApiClient localVarApiClient;
 
-    public ChangesVersionsApi() {
+    public VersionsHistoryApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public ChangesVersionsApi(ApiClient apiClient) {
+    public VersionsHistoryApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -301,7 +301,7 @@ public class ChangesVersionsApi {
 
     /**
      * List all versions
-     * List all changes done to a given translation.
+     * List all versions for the given translation.
      * @param projectId Project ID (required)
      * @param translationId Translation ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -326,7 +326,7 @@ public class ChangesVersionsApi {
 
     /**
      * List all versions
-     * List all changes done to a given translation.
+     * List all versions for the given translation.
      * @param projectId Project ID (required)
      * @param translationId Translation ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -352,7 +352,7 @@ public class ChangesVersionsApi {
 
     /**
      * List all versions (asynchronously)
-     * List all changes done to a given translation.
+     * List all versions for the given translation.
      * @param projectId Project ID (required)
      * @param translationId Translation ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

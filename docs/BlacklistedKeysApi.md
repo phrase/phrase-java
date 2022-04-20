@@ -1,23 +1,23 @@
-# BlockedKeysApi
+# BlacklistedKeysApi
 
 All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**blacklistedKeyCreate**](BlockedKeysApi.md#blacklistedKeyCreate) | **POST** /projects/{project_id}/blacklisted_keys | Create a blocked key
-[**blacklistedKeyDelete**](BlockedKeysApi.md#blacklistedKeyDelete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blocked key
-[**blacklistedKeyShow**](BlockedKeysApi.md#blacklistedKeyShow) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blocked key
-[**blacklistedKeyUpdate**](BlockedKeysApi.md#blacklistedKeyUpdate) | **PATCH** /projects/{project_id}/blacklisted_keys/{id} | Update a blocked key
-[**blacklistedKeysList**](BlockedKeysApi.md#blacklistedKeysList) | **GET** /projects/{project_id}/blacklisted_keys | List blocked keys
+[**blacklistedKeyCreate**](BlacklistedKeysApi.md#blacklistedKeyCreate) | **POST** /projects/{project_id}/blacklisted_keys | Create a blacklisted key
+[**blacklistedKeyDelete**](BlacklistedKeysApi.md#blacklistedKeyDelete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blacklisted key
+[**blacklistedKeyShow**](BlacklistedKeysApi.md#blacklistedKeyShow) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blacklisted key
+[**blacklistedKeyUpdate**](BlacklistedKeysApi.md#blacklistedKeyUpdate) | **PATCH** /projects/{project_id}/blacklisted_keys/{id} | Update a blacklisted key
+[**blacklistedKeysList**](BlacklistedKeysApi.md#blacklistedKeysList) | **GET** /projects/{project_id}/blacklisted_keys | List blacklisted keys
 
 
 <a name="blacklistedKeyCreate"></a>
 # **blacklistedKeyCreate**
 > BlacklistedKey blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP)
 
-Create a blocked key
+Create a blacklisted key
 
-Create a new rule for blocking keys.
+Create a new rule for blacklisting keys.
 
 ### Example
 ```java
@@ -27,7 +27,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.BlockedKeysApi;
+import com.phrase.client.api.BlacklistedKeysApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -45,7 +45,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    BlockedKeysApi apiInstance = new BlockedKeysApi(defaultClient);
+    BlacklistedKeysApi apiInstance = new BlacklistedKeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     BlacklistedKeyCreateParameters blacklistedKeyCreateParameters = new BlacklistedKeyCreateParameters(); // BlacklistedKeyCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -53,7 +53,7 @@ public class Example {
       BlacklistedKey result = apiInstance.blacklistedKeyCreate(projectId, blacklistedKeyCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BlockedKeysApi#blacklistedKeyCreate");
+      System.err.println("Exception when calling BlacklistedKeysApi#blacklistedKeyCreate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -96,9 +96,9 @@ Name | Type | Description  | Notes
 # **blacklistedKeyDelete**
 > blacklistedKeyDelete(projectId, id, xPhraseAppOTP)
 
-Delete a blocked key
+Delete a blacklisted key
 
-Delete an existing rule for blocking keys.
+Delete an existing rule for blacklisting keys.
 
 ### Example
 ```java
@@ -108,7 +108,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.BlockedKeysApi;
+import com.phrase.client.api.BlacklistedKeysApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -126,14 +126,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    BlockedKeysApi apiInstance = new BlockedKeysApi(defaultClient);
+    BlacklistedKeysApi apiInstance = new BlacklistedKeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
       apiInstance.blacklistedKeyDelete(projectId, id, xPhraseAppOTP);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BlockedKeysApi#blacklistedKeyDelete");
+      System.err.println("Exception when calling BlacklistedKeysApi#blacklistedKeyDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -176,9 +176,9 @@ null (empty response body)
 # **blacklistedKeyShow**
 > BlacklistedKey blacklistedKeyShow(projectId, id, xPhraseAppOTP)
 
-Get a single blocked key
+Get a single blacklisted key
 
-Get details on a single rule for blocking keys for a given project.
+Get details on a single rule for blacklisting keys for a given project.
 
 ### Example
 ```java
@@ -188,7 +188,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.BlockedKeysApi;
+import com.phrase.client.api.BlacklistedKeysApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -206,7 +206,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    BlockedKeysApi apiInstance = new BlockedKeysApi(defaultClient);
+    BlacklistedKeysApi apiInstance = new BlacklistedKeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
@@ -214,7 +214,7 @@ public class Example {
       BlacklistedKey result = apiInstance.blacklistedKeyShow(projectId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BlockedKeysApi#blacklistedKeyShow");
+      System.err.println("Exception when calling BlacklistedKeysApi#blacklistedKeyShow");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -257,9 +257,9 @@ Name | Type | Description  | Notes
 # **blacklistedKeyUpdate**
 > BlacklistedKey blacklistedKeyUpdate(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP)
 
-Update a blocked key
+Update a blacklisted key
 
-Update an existing rule for blocking keys.
+Update an existing rule for blacklisting keys.
 
 ### Example
 ```java
@@ -269,7 +269,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.BlockedKeysApi;
+import com.phrase.client.api.BlacklistedKeysApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -287,7 +287,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    BlockedKeysApi apiInstance = new BlockedKeysApi(defaultClient);
+    BlacklistedKeysApi apiInstance = new BlacklistedKeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     BlacklistedKeyUpdateParameters blacklistedKeyUpdateParameters = new BlacklistedKeyUpdateParameters(); // BlacklistedKeyUpdateParameters | 
@@ -296,7 +296,7 @@ public class Example {
       BlacklistedKey result = apiInstance.blacklistedKeyUpdate(projectId, id, blacklistedKeyUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BlockedKeysApi#blacklistedKeyUpdate");
+      System.err.println("Exception when calling BlacklistedKeysApi#blacklistedKeyUpdate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -340,9 +340,9 @@ Name | Type | Description  | Notes
 # **blacklistedKeysList**
 > List&lt;BlacklistedKey&gt; blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage, branch)
 
-List blocked keys
+List blacklisted keys
 
-List all rules for blocking keys for the given project.
+List all rules for blacklisting keys for the given project.
 
 ### Example
 ```java
@@ -352,7 +352,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.Configuration;
 import com.phrase.client.auth.*;
 import com.phrase.client.models.*;
-import com.phrase.client.api.BlockedKeysApi;
+import com.phrase.client.api.BlacklistedKeysApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -370,7 +370,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //Token.setApiKeyPrefix("Token");
 
-    BlockedKeysApi apiInstance = new BlockedKeysApi(defaultClient);
+    BlacklistedKeysApi apiInstance = new BlacklistedKeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
@@ -380,7 +380,7 @@ public class Example {
       List<BlacklistedKey> result = apiInstance.blacklistedKeysList(projectId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BlockedKeysApi#blacklistedKeysList");
+      System.err.println("Exception when calling BlacklistedKeysApi#blacklistedKeysList");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
