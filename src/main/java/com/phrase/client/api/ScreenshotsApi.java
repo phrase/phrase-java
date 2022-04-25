@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import java.io.File;
 import com.phrase.client.model.Screenshot;
-import com.phrase.client.model.ScreenshotCreateParameters;
 import com.phrase.client.model.ScreenshotUpdateParameters;
 
 import java.lang.reflect.Type;
@@ -58,8 +58,11 @@ public class ScreenshotsApi {
     /**
      * Build call for screenshotCreate
      * @param projectId Project ID (required)
-     * @param screenshotCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param name Name of the screenshot (optional)
+     * @param description Description of the screenshot (optional)
+     * @param filename Screenshot file (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -72,8 +75,8 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotCreateCall(String projectId, ScreenshotCreateParameters screenshotCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = screenshotCreateParameters;
+    public okhttp3.Call screenshotCreateCall(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/screenshots"
@@ -88,6 +91,22 @@ public class ScreenshotsApi {
 
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (branch != null) {
+            localVarFormParams.put("branch", branch);
+        }
+
+        if (name != null) {
+            localVarFormParams.put("name", name);
+        }
+
+        if (description != null) {
+            localVarFormParams.put("description", description);
+        }
+
+        if (filename != null) {
+            localVarFormParams.put("filename", filename);
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -97,7 +116,7 @@ public class ScreenshotsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -107,20 +126,15 @@ public class ScreenshotsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call screenshotCreateValidateBeforeCall(String projectId, ScreenshotCreateParameters screenshotCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call screenshotCreateValidateBeforeCall(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
             throw new ApiException("Missing the required parameter 'projectId' when calling screenshotCreate(Async)");
         }
         
-        // verify the required parameter 'screenshotCreateParameters' is set
-        if (screenshotCreateParameters == null) {
-            throw new ApiException("Missing the required parameter 'screenshotCreateParameters' when calling screenshotCreate(Async)");
-        }
-        
 
-        okhttp3.Call localVarCall = screenshotCreateCall(projectId, screenshotCreateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = screenshotCreateCall(projectId, xPhraseAppOTP, branch, name, description, filename, _callback);
         return localVarCall;
 
     }
@@ -129,8 +143,11 @@ public class ScreenshotsApi {
      * Create a screenshot
      * Create a new screenshot.
      * @param projectId Project ID (required)
-     * @param screenshotCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param name Name of the screenshot (optional)
+     * @param description Description of the screenshot (optional)
+     * @param filename Screenshot file (optional)
      * @return Screenshot
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -142,8 +159,8 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Screenshot screenshotCreate(String projectId, ScreenshotCreateParameters screenshotCreateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Screenshot> localVarResp = screenshotCreateWithHttpInfo(projectId, screenshotCreateParameters, xPhraseAppOTP);
+    public Screenshot screenshotCreate(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename) throws ApiException {
+        ApiResponse<Screenshot> localVarResp = screenshotCreateWithHttpInfo(projectId, xPhraseAppOTP, branch, name, description, filename);
         return localVarResp.getData();
     }
 
@@ -151,8 +168,11 @@ public class ScreenshotsApi {
      * Create a screenshot
      * Create a new screenshot.
      * @param projectId Project ID (required)
-     * @param screenshotCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param name Name of the screenshot (optional)
+     * @param description Description of the screenshot (optional)
+     * @param filename Screenshot file (optional)
      * @return ApiResponse&lt;Screenshot&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -164,8 +184,8 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Screenshot> screenshotCreateWithHttpInfo(String projectId, ScreenshotCreateParameters screenshotCreateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, screenshotCreateParameters, xPhraseAppOTP, null);
+    public ApiResponse<Screenshot> screenshotCreateWithHttpInfo(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename) throws ApiException {
+        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, name, description, filename, null);
         Type localVarReturnType = new TypeToken<Screenshot>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -174,8 +194,11 @@ public class ScreenshotsApi {
      * Create a screenshot (asynchronously)
      * Create a new screenshot.
      * @param projectId Project ID (required)
-     * @param screenshotCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param name Name of the screenshot (optional)
+     * @param description Description of the screenshot (optional)
+     * @param filename Screenshot file (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -188,9 +211,9 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotCreateAsync(String projectId, ScreenshotCreateParameters screenshotCreateParameters, String xPhraseAppOTP, final ApiCallback<Screenshot> _callback) throws ApiException {
+    public okhttp3.Call screenshotCreateAsync(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename, final ApiCallback<Screenshot> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, screenshotCreateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, name, description, filename, _callback);
         Type localVarReturnType = new TypeToken<Screenshot>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

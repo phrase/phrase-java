@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="screenshotCreate"></a>
 # **screenshotCreate**
-> Screenshot screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP)
+> Screenshot screenshotCreate(projectId, xPhraseAppOTP, branch, name, description, filename)
 
 Create a screenshot
 
@@ -47,10 +47,13 @@ public class Example {
 
     ScreenshotsApi apiInstance = new ScreenshotsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
-    ScreenshotCreateParameters screenshotCreateParameters = new ScreenshotCreateParameters(); // ScreenshotCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = "branch_example"; // String | specify the branch to use
+    String name = "name_example"; // String | Name of the screenshot
+    String description = "description_example"; // String | Description of the screenshot
+    File filename = new File("/path/to/file"); // File | Screenshot file
     try {
-      Screenshot result = apiInstance.screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP);
+      Screenshot result = apiInstance.screenshotCreate(projectId, xPhraseAppOTP, branch, name, description, filename);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotsApi#screenshotCreate");
@@ -68,8 +71,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
- **screenshotCreateParameters** | [**ScreenshotCreateParameters**](ScreenshotCreateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| specify the branch to use | [optional]
+ **name** | **String**| Name of the screenshot | [optional]
+ **description** | **String**| Description of the screenshot | [optional]
+ **filename** | **File**| Screenshot file | [optional]
 
 ### Return type
 
@@ -81,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details

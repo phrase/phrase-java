@@ -13,8 +13,8 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import java.io.File;
 import com.phrase.client.model.Screenshot;
-import com.phrase.client.model.ScreenshotCreateParameters;
 import com.phrase.client.model.ScreenshotUpdateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -44,9 +44,12 @@ public class ScreenshotsApiTest {
     @Test
     public void screenshotCreateTest() throws ApiException {
         String projectId = null;
-        ScreenshotCreateParameters screenshotCreateParameters = null;
         String xPhraseAppOTP = null;
-        Screenshot response = api.screenshotCreate(projectId, screenshotCreateParameters, xPhraseAppOTP);
+        String branch = null;
+        String name = null;
+        String description = null;
+        File filename = null;
+        Screenshot response = api.screenshotCreate(projectId, xPhraseAppOTP, branch, name, description, filename);
 
         // TODO: test validations
     }
