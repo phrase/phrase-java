@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * StyleguideCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-25T08:49:02.184989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-25T12:25:31.447683Z[Etc/UTC]")
 public class StyleguideCreateParameters {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -276,7 +276,7 @@ public class StyleguideCreateParameters {
    * @return glossaryTerms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Appartement, cabin, loft", value = "List of terms and/or phrases that need to be translated consistently.")
+  @ApiModelProperty(example = "Apartment, cabin, loft", value = "List of terms and/or phrases that need to be translated consistently.")
 
   public String getGlossaryTerms() {
     return glossaryTerms;
