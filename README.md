@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2022-05-27T14:17:09.689537Z[Etc/UTC]
+  - Build date: 2022-06-10T09:17:46.110239Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1582,6 +1582,11 @@ Class | Method | HTTP request | Description
 *InvitationsApi* | [**invitationUpdate**](docs/InvitationsApi.md#invitationUpdate) | **PATCH** /accounts/{account_id}/invitations/{id} | Update an invitation
 *InvitationsApi* | [**invitationUpdateSettings**](docs/InvitationsApi.md#invitationUpdateSettings) | **PATCH** /projects/{project_id}/invitations/{id} | Update a member&#39;s invitation access
 *InvitationsApi* | [**invitationsList**](docs/InvitationsApi.md#invitationsList) | **GET** /accounts/{account_id}/invitations | List invitations
+*JobCommentsApi* | [**jobCommentCreate**](docs/JobCommentsApi.md#jobCommentCreate) | **POST** /projects/{project_id}/jobs/{job_id}/comments | Create a job comment
+*JobCommentsApi* | [**jobCommentDelete**](docs/JobCommentsApi.md#jobCommentDelete) | **DELETE** /projects/{project_id}/jobs/{job_id}/comments/{id} | Delete a job comment
+*JobCommentsApi* | [**jobCommentShow**](docs/JobCommentsApi.md#jobCommentShow) | **GET** /projects/{project_id}/jobs/{job_id}/comments/{id} | Get a single job comment
+*JobCommentsApi* | [**jobCommentUpdate**](docs/JobCommentsApi.md#jobCommentUpdate) | **PATCH** /projects/{project_id}/jobs/{job_id}/comments/{id} | Update a job comment
+*JobCommentsApi* | [**jobCommentsList**](docs/JobCommentsApi.md#jobCommentsList) | **GET** /projects/{project_id}/jobs/{job_id}/comments | List job comments
 *JobLocalesApi* | [**jobLocaleComplete**](docs/JobLocalesApi.md#jobLocaleComplete) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete | Complete a job locale
 *JobLocalesApi* | [**jobLocaleCompleteReview**](docs/JobLocalesApi.md#jobLocaleCompleteReview) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review | Review a job locale
 *JobLocalesApi* | [**jobLocaleDelete**](docs/JobLocalesApi.md#jobLocaleDelete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Delete a job locale
@@ -1794,6 +1799,9 @@ Class | Method | HTTP request | Description
  - [InvitationUpdateParameters](docs/InvitationUpdateParameters.md)
  - [InvitationUpdateSettingsParameters](docs/InvitationUpdateSettingsParameters.md)
  - [Job](docs/Job.md)
+ - [JobComment](docs/JobComment.md)
+ - [JobCommentCreateParameters](docs/JobCommentCreateParameters.md)
+ - [JobCommentUpdateParameters](docs/JobCommentUpdateParameters.md)
  - [JobCompleteParameters](docs/JobCompleteParameters.md)
  - [JobCreateParameters](docs/JobCreateParameters.md)
  - [JobDetails](docs/JobDetails.md)
