@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * MemberSpaces
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-20T07:16:57.782768Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-20T09:20:09.939214Z[Etc/UTC]")
 public class MemberSpaces {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
