@@ -133,8 +133,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Create a glossary term
-     * Create a new glossary term.
+     * Create a term
+     * Create a new term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param glossaryTermCreateParameters  (required)
@@ -156,8 +156,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Create a glossary term
-     * Create a new glossary term.
+     * Create a term
+     * Create a new term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param glossaryTermCreateParameters  (required)
@@ -180,8 +180,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Create a glossary term (asynchronously)
-     * Create a new glossary term.
+     * Create a term (asynchronously)
+     * Create a new term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param glossaryTermCreateParameters  (required)
@@ -284,8 +284,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Delete a glossary term
-     * Delete an existing glossary term.
+     * Delete a term
+     * Delete an existing term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -305,8 +305,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Delete a glossary term
-     * Delete an existing glossary term.
+     * Delete a term
+     * Delete an existing term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -328,8 +328,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Delete a glossary term (asynchronously)
-     * Delete an existing glossary term.
+     * Delete a term (asynchronously)
+     * Delete an existing term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -431,8 +431,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Get a single glossary term
-     * Get details on a single glossary term.
+     * Get a single term
+     * Get details for a single term in the term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -454,8 +454,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Get a single glossary term
-     * Get details on a single glossary term.
+     * Get a single term
+     * Get details for a single term in the term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -478,8 +478,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Get a single glossary term (asynchronously)
-     * Get details on a single glossary term.
+     * Get a single term (asynchronously)
+     * Get details for a single term in the term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -588,8 +588,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Update a glossary term
-     * Update an existing glossary term.
+     * Update a term
+     * Update an existing term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -612,8 +612,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Update a glossary term
-     * Update an existing glossary term.
+     * Update a term
+     * Update an existing term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -637,8 +637,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * Update a glossary term (asynchronously)
-     * Update an existing glossary term.
+     * Update a term (asynchronously)
+     * Update an existing term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param id ID (required)
@@ -745,8 +745,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * List glossary terms
-     * List all glossary terms the current user has access to.
+     * List terms
+     * List all terms in term bases (previously: glossary) that the current user has access to.
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -769,8 +769,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * List glossary terms
-     * List all glossary terms the current user has access to.
+     * List terms
+     * List all terms in term bases (previously: glossary) that the current user has access to.
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -794,8 +794,8 @@ public class GlossaryTermsApi {
     }
 
     /**
-     * List glossary terms (asynchronously)
-     * List all glossary terms the current user has access to.
+     * List terms (asynchronously)
+     * List all terms in term bases (previously: glossary) that the current user has access to.
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

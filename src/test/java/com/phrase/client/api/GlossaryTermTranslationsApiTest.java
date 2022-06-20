@@ -34,9 +34,9 @@ public class GlossaryTermTranslationsApiTest {
 
     
     /**
-     * Create a glossary term translation
+     * Create a translation for a term
      *
-     * Create a new glossary term translation.
+     * Create a new translation for a term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -54,9 +54,9 @@ public class GlossaryTermTranslationsApiTest {
     }
     
     /**
-     * Delete a glossary term translation
+     * Delete a translation for a term
      *
-     * Delete an existing glossary term translation.
+     * Delete an existing translation of a term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -74,9 +74,9 @@ public class GlossaryTermTranslationsApiTest {
     }
     
     /**
-     * Update a glossary term translation
+     * Update a translation for a term
      *
-     * Update an existing glossary term translation.
+     * Update an existing translation for a term in a term base (previously: glossary).
      *
      * @throws ApiException
      *          if the Api call fails

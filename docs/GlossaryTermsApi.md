@@ -4,20 +4,20 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossaryTermCreate**](GlossaryTermsApi.md#glossaryTermCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a glossary term
-[**glossaryTermDelete**](GlossaryTermsApi.md#glossaryTermDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a glossary term
-[**glossaryTermShow**](GlossaryTermsApi.md#glossaryTermShow) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single glossary term
-[**glossaryTermUpdate**](GlossaryTermsApi.md#glossaryTermUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a glossary term
-[**glossaryTermsList**](GlossaryTermsApi.md#glossaryTermsList) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List glossary terms
+[**glossaryTermCreate**](GlossaryTermsApi.md#glossaryTermCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms | Create a term
+[**glossaryTermDelete**](GlossaryTermsApi.md#glossaryTermDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Delete a term
+[**glossaryTermShow**](GlossaryTermsApi.md#glossaryTermShow) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Get a single term
+[**glossaryTermUpdate**](GlossaryTermsApi.md#glossaryTermUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{id} | Update a term
+[**glossaryTermsList**](GlossaryTermsApi.md#glossaryTermsList) | **GET** /accounts/{account_id}/glossaries/{glossary_id}/terms | List terms
 
 
 <a name="glossaryTermCreate"></a>
 # **glossaryTermCreate**
 > GlossaryTerm glossaryTermCreate(accountId, glossaryId, glossaryTermCreateParameters, xPhraseAppOTP)
 
-Create a glossary term
+Create a term
 
-Create a new glossary term.
+Create a new term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -98,9 +98,9 @@ Name | Type | Description  | Notes
 # **glossaryTermDelete**
 > glossaryTermDelete(accountId, glossaryId, id, xPhraseAppOTP)
 
-Delete a glossary term
+Delete a term
 
-Delete an existing glossary term.
+Delete an existing term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -180,9 +180,9 @@ null (empty response body)
 # **glossaryTermShow**
 > GlossaryTerm glossaryTermShow(accountId, glossaryId, id, xPhraseAppOTP)
 
-Get a single glossary term
+Get a single term
 
-Get details on a single glossary term.
+Get details for a single term in the term base (previously: glossary).
 
 ### Example
 ```java
@@ -263,9 +263,9 @@ Name | Type | Description  | Notes
 # **glossaryTermUpdate**
 > GlossaryTerm glossaryTermUpdate(accountId, glossaryId, id, glossaryTermUpdateParameters, xPhraseAppOTP)
 
-Update a glossary term
+Update a term
 
-Update an existing glossary term.
+Update an existing term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -348,9 +348,9 @@ Name | Type | Description  | Notes
 # **glossaryTermsList**
 > List&lt;GlossaryTerm&gt; glossaryTermsList(accountId, glossaryId, xPhraseAppOTP, page, perPage)
 
-List glossary terms
+List terms
 
-List all glossary terms the current user has access to.
+List all terms in term bases (previously: glossary) that the current user has access to.
 
 ### Example
 ```java

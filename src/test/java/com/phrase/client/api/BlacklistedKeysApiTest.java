@@ -34,9 +34,9 @@ public class BlacklistedKeysApiTest {
 
     
     /**
-     * Create a blacklisted key
+     * Create a blocked key
      *
-     * Create a new rule for blacklisting keys.
+     * Create a new rule for blocking keys.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -52,9 +52,9 @@ public class BlacklistedKeysApiTest {
     }
     
     /**
-     * Delete a blacklisted key
+     * Delete a blocked key
      *
-     * Delete an existing rule for blacklisting keys.
+     * Delete an existing rule for blocking keys.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -70,9 +70,9 @@ public class BlacklistedKeysApiTest {
     }
     
     /**
-     * Get a single blacklisted key
+     * Get a single blocked key
      *
-     * Get details on a single rule for blacklisting keys for a given project.
+     * Get details on a single rule for blocking keys for a given project.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -88,9 +88,9 @@ public class BlacklistedKeysApiTest {
     }
     
     /**
-     * Update a blacklisted key
+     * Update a blocked key
      *
-     * Update an existing rule for blacklisting keys.
+     * Update an existing rule for blocking keys.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -107,9 +107,9 @@ public class BlacklistedKeysApiTest {
     }
     
     /**
-     * List blacklisted keys
+     * List blocked keys
      *
-     * List all rules for blacklisting keys for the given project.
+     * List all rules for blocking keys for the given project.
      *
      * @throws ApiException
      *          if the Api call fails

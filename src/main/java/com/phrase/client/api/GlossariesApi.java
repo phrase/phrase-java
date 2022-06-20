@@ -130,8 +130,8 @@ public class GlossariesApi {
     }
 
     /**
-     * List glossaries
-     * List all glossaries the current user has access to.
+     * List term bases
+     * List all term bases (previously: glossaries) the current user has access to.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -153,8 +153,8 @@ public class GlossariesApi {
     }
 
     /**
-     * List glossaries
-     * List all glossaries the current user has access to.
+     * List term bases
+     * List all term bases (previously: glossaries) the current user has access to.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -177,8 +177,8 @@ public class GlossariesApi {
     }
 
     /**
-     * List glossaries (asynchronously)
-     * List all glossaries the current user has access to.
+     * List term bases (asynchronously)
+     * List all term bases (previously: glossaries) the current user has access to.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -273,8 +273,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Create a glossary
-     * Create a new glossary.
+     * Create a term base
+     * Create a new term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -295,8 +295,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Create a glossary
-     * Create a new glossary.
+     * Create a term base
+     * Create a new term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -318,8 +318,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Create a glossary (asynchronously)
-     * Create a new glossary.
+     * Create a term base (asynchronously)
+     * Create a new term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -414,8 +414,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Delete a glossary
-     * Delete an existing glossary.
+     * Delete a term base
+     * Delete an existing term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -434,8 +434,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Delete a glossary
-     * Delete an existing glossary.
+     * Delete a term base
+     * Delete an existing term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -456,8 +456,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Delete a glossary (asynchronously)
-     * Delete an existing glossary.
+     * Delete a term base (asynchronously)
+     * Delete an existing term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -551,8 +551,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Get a single glossary
-     * Get details on a single glossary.
+     * Get a single term base
+     * Get details on a single term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -573,8 +573,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Get a single glossary
-     * Get details on a single glossary.
+     * Get a single term base
+     * Get details on a single term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -596,8 +596,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Get a single glossary (asynchronously)
-     * Get details on a single glossary.
+     * Get a single term base (asynchronously)
+     * Get details on a single term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -698,8 +698,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Update a glossary
-     * Update an existing glossary.
+     * Update a term base
+     * Update an existing term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param glossaryUpdateParameters  (required)
@@ -721,8 +721,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Update a glossary
-     * Update an existing glossary.
+     * Update a term base
+     * Update an existing term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param glossaryUpdateParameters  (required)
@@ -745,8 +745,8 @@ public class GlossariesApi {
     }
 
     /**
-     * Update a glossary (asynchronously)
-     * Update an existing glossary.
+     * Update a term base (asynchronously)
+     * Update an existing term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param glossaryUpdateParameters  (required)

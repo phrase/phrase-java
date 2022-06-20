@@ -140,8 +140,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Create a glossary term translation
-     * Create a new glossary term translation.
+     * Create a translation for a term
+     * Create a new translation for a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -164,8 +164,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Create a glossary term translation
-     * Create a new glossary term translation.
+     * Create a translation for a term
+     * Create a new translation for a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -189,8 +189,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Create a glossary term translation (asynchronously)
-     * Create a new glossary term translation.
+     * Create a translation for a term (asynchronously)
+     * Create a new translation for a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -301,8 +301,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Delete a glossary term translation
-     * Delete an existing glossary term translation.
+     * Delete a translation for a term
+     * Delete an existing translation of a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -323,8 +323,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Delete a glossary term translation
-     * Delete an existing glossary term translation.
+     * Delete a translation for a term
+     * Delete an existing translation of a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -347,8 +347,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Delete a glossary term translation (asynchronously)
-     * Delete an existing glossary term translation.
+     * Delete a translation for a term (asynchronously)
+     * Delete an existing translation of a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -464,8 +464,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Update a glossary term translation
-     * Update an existing glossary term translation.
+     * Update a translation for a term
+     * Update an existing translation for a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -489,8 +489,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Update a glossary term translation
-     * Update an existing glossary term translation.
+     * Update a translation for a term
+     * Update an existing translation for a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)
@@ -515,8 +515,8 @@ public class GlossaryTermTranslationsApi {
     }
 
     /**
-     * Update a glossary term translation (asynchronously)
-     * Update an existing glossary term translation.
+     * Update a translation for a term (asynchronously)
+     * Update an existing translation for a term in a term base (previously: glossary).
      * @param accountId Account ID (required)
      * @param glossaryId Glossary ID (required)
      * @param termId Term ID (required)

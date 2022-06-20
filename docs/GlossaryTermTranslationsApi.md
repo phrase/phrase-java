@@ -4,18 +4,18 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**glossaryTermTranslationCreate**](GlossaryTermTranslationsApi.md#glossaryTermTranslationCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations | Create a glossary term translation
-[**glossaryTermTranslationDelete**](GlossaryTermTranslationsApi.md#glossaryTermTranslationDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Delete a glossary term translation
-[**glossaryTermTranslationUpdate**](GlossaryTermTranslationsApi.md#glossaryTermTranslationUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Update a glossary term translation
+[**glossaryTermTranslationCreate**](GlossaryTermTranslationsApi.md#glossaryTermTranslationCreate) | **POST** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations | Create a translation for a term
+[**glossaryTermTranslationDelete**](GlossaryTermTranslationsApi.md#glossaryTermTranslationDelete) | **DELETE** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Delete a translation for a term
+[**glossaryTermTranslationUpdate**](GlossaryTermTranslationsApi.md#glossaryTermTranslationUpdate) | **PATCH** /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id} | Update a translation for a term
 
 
 <a name="glossaryTermTranslationCreate"></a>
 # **glossaryTermTranslationCreate**
 > GlossaryTermTranslation glossaryTermTranslationCreate(accountId, glossaryId, termId, glossaryTermTranslationCreateParameters, xPhraseAppOTP)
 
-Create a glossary term translation
+Create a translation for a term
 
-Create a new glossary term translation.
+Create a new translation for a term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -98,9 +98,9 @@ Name | Type | Description  | Notes
 # **glossaryTermTranslationDelete**
 > glossaryTermTranslationDelete(accountId, glossaryId, termId, id, xPhraseAppOTP)
 
-Delete a glossary term translation
+Delete a translation for a term
 
-Delete an existing glossary term translation.
+Delete an existing translation of a term in a term base (previously: glossary).
 
 ### Example
 ```java
@@ -182,9 +182,9 @@ null (empty response body)
 # **glossaryTermTranslationUpdate**
 > GlossaryTermTranslation glossaryTermTranslationUpdate(accountId, glossaryId, termId, id, glossaryTermTranslationUpdateParameters, xPhraseAppOTP)
 
-Update a glossary term translation
+Update a translation for a term
 
-Update an existing glossary term translation.
+Update an existing translation for a term in a term base (previously: glossary).
 
 ### Example
 ```java

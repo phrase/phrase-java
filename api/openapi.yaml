@@ -1496,34 +1496,14 @@ tags:
     </div>
   name: Branches
 - name: Comments
-- description: |
-    <div class="alert alert-info">
-      Note: Distributions API is still in beta and might be subject to change.
-      Distributions are part of Over The Air which is available in the <a href="https://phrase.com/pricing/" target="_blank">Lite, Pro and Exclusive plans</a>.
-    </div>
-  name: Distributions
+- name: Distributions
 - name: Documents
 - name: Formats
 - name: GitHub Sync
 - name: GitLab Sync
-- description: |
-    <div class="alert alert-info">
-      Note: Glossary API is still in beta and might be subject to change.
-      Glossaries are available in the <a href="https://phrase.com/pricing/" target="_blank">Pro Plan and higher</a>.
-    </div>
-  name: Glossaries
-- description: |
-    <div class="alert alert-info">
-      Note: Glossary API is still in beta and might be subject to change.
-      Glossaries are available in the <a href="https://phrase.com/pricing/" target="_blank">Pro Plan and higher</a>.
-    </div>
-  name: Glossary Terms
-- description: |
-    <div class="alert alert-info">
-      Note: Glossary API is still in beta and might be subject to change.
-      Glossaries are available in the <a href="https://phrase.com/pricing/" target="_blank">Pro Plan and higher</a>.
-    </div>
-  name: Glossary Term Translations
+- name: Glossaries
+- name: Glossary Terms
+- name: Glossary Term Translations
 - name: ICU
 - description: |
     With the invitation endpoint you can [manage and invite users](https://help.phrase.com/help/user-management) to Phrase via API. A user can have the role Manager, Developer or Translator each with its own access rights. Developers and translators need resources like projects and locales assigned in order to access them.
@@ -1592,12 +1572,7 @@ tags:
   name: Orders
 - name: Projects
 - name: Quality
-- description: |
-    <div class="alert alert-info">
-      Note: Releases API is still in beta and might be subject to change.
-      Releases are part of Over The Air which is available in the <a href="https://phrase.com/pricing/" target="_blank">Lite, Pro and Exclusive plans</a>.
-    </div>
-  name: Releases
+- name: Releases
 - name: Search
 - name: Screenshot Markers
 - name: Screenshots
@@ -8067,7 +8042,8 @@ paths:
       x-accepts: application/json
   /accounts/{account_id}/glossaries:
     get:
-      description: List all glossaries the current user has access to.
+      description: 'List all term bases (previously: glossaries) the current user
+        has access to.'
       operationId: glossaries/list
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -8151,7 +8127,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: List glossaries
+      summary: List term bases
       tags:
       - Glossaries
       x-code-samples:
@@ -8166,7 +8142,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     post:
-      description: Create a new glossary.
+      description: 'Create a new term base (previously: glossary).'
       operationId: glossary/create
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -8252,7 +8228,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Create a glossary
+      summary: Create a term base
       tags:
       - Glossaries
       x-code-samples:
@@ -8261,19 +8237,19 @@ paths:
           curl "https://api.phrase.com/v2/accounts/:account_id/glossaries" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X POST \
-            -d '{"name":"My glossary","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
+            -d '{"name":"My term base","project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235","space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"]}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
           phrase glossaries create \
           --account_id <account_id> \
-          --data '{"name": "My glossary", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids": "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235"}' \
+          --data '{"name":"My term base", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235"}' \
           --access_token <token>
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{id}:
     delete:
-      description: Delete an existing glossary.
+      description: 'Delete an existing term base (previously: glossary).'
       operationId: glossary/delete
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -8337,7 +8313,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Delete a glossary
+      summary: Delete a term base
       tags:
       - Glossaries
       x-code-samples:
@@ -8354,7 +8330,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     get:
-      description: Get details on a single glossary.
+      description: 'Get details on a single term base (previously: glossary).'
       operationId: glossary/show
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -8422,7 +8398,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Get a single glossary
+      summary: Get a single term base
       tags:
       - Glossaries
       x-code-samples:
@@ -8438,7 +8414,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     patch:
-      description: Update an existing glossary.
+      description: 'Update an existing term base (previously: glossary).'
       operationId: glossary/update
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -8532,7 +8508,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Update a glossary
+      summary: Update a term base
       tags:
       - Glossaries
       x-code-samples:
@@ -11949,7 +11925,7 @@ paths:
       x-accepts: application/json
   /projects/{project_id}/translations/{translation_id}/versions:
     get:
-      description: List all versions for the given translation.
+      description: List all changes done to a given translation.
       operationId: versions/list
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -12172,7 +12148,8 @@ paths:
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations:
     post:
-      description: Create a new glossary term translation.
+      description: 'Create a new translation for a term in a term base (previously:
+        glossary).'
       operationId: glossary_term_translation/create
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -12265,7 +12242,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Create a glossary term translation
+      summary: Create a translation for a term
       tags:
       - Glossary Term Translations
       x-code-samples:
@@ -12288,7 +12265,8 @@ paths:
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}:
     delete:
-      description: Delete an existing glossary term translation.
+      description: 'Delete an existing translation of a term in a term base (previously:
+        glossary).'
       operationId: glossary_term_translation/delete
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -12368,7 +12346,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Delete a glossary term translation
+      summary: Delete a translation for a term
       tags:
       - Glossary Term Translations
       x-code-samples:
@@ -12387,7 +12365,8 @@ paths:
           --access_token <token>
       x-accepts: application/json
     patch:
-      description: Update an existing glossary term translation.
+      description: 'Update an existing translation for a term in a term base (previously:
+        glossary).'
       operationId: glossary_term_translation/update
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -12488,7 +12467,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Update a glossary term translation
+      summary: Update a translation for a term
       tags:
       - Glossary Term Translations
       x-code-samples:
@@ -17125,7 +17104,8 @@ paths:
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms:
     get:
-      description: List all glossary terms the current user has access to.
+      description: 'List all terms in term bases (previously: glossary) that the current
+        user has access to.'
       operationId: glossary_terms/list
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -17217,7 +17197,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: List glossary terms
+      summary: List terms
       tags:
       - Glossary Terms
       x-code-samples:
@@ -17233,7 +17213,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     post:
-      description: Create a new glossary term.
+      description: 'Create a new term in a term base (previously: glossary).'
       operationId: glossary_term/create
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -17327,7 +17307,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Create a glossary term
+      summary: Create a term
       tags:
       - Glossary Terms
       x-code-samples:
@@ -17349,7 +17329,7 @@ paths:
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms/{id}:
     delete:
-      description: Delete an existing glossary term.
+      description: 'Delete an existing term in a term base (previously: glossary).'
       operationId: glossary_term/delete
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -17421,7 +17401,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Delete a glossary term
+      summary: Delete a term
       tags:
       - Glossary Terms
       x-code-samples:
@@ -17439,7 +17419,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     get:
-      description: Get details on a single glossary term.
+      description: 'Get details for a single term in the term base (previously: glossary).'
       operationId: glossary_term/show
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -17515,7 +17495,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Get a single glossary term
+      summary: Get a single term
       tags:
       - Glossary Terms
       x-code-samples:
@@ -17532,7 +17512,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     patch:
-      description: Update an existing glossary term.
+      description: 'Update an existing term in a term base (previously: glossary).'
       operationId: glossary_term/update
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -17634,7 +17614,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Update a glossary term
+      summary: Update a term
       tags:
       - Glossary Terms
       x-code-samples:
@@ -18053,7 +18033,7 @@ paths:
       x-accepts: application/json
   /projects/{project_id}/blacklisted_keys:
     get:
-      description: List all rules for blacklisting keys for the given project.
+      description: List all rules for blocking keys for the given project.
       operationId: blacklisted_keys/list
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -18146,7 +18126,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: List blacklisted keys
+      summary: List blocked keys
       tags:
       - Blacklisted Keys
       x-code-samples:
@@ -18161,7 +18141,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     post:
-      description: Create a new rule for blacklisting keys.
+      description: Create a new rule for blocking keys.
       operationId: blacklisted_key/create
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -18187,7 +18167,7 @@ paths:
             schema:
               properties:
                 name:
-                  description: Blacklisted key name
+                  description: Blocked key name
                   example: date.formats.*
                   type: string
               title: blacklisted_key/create/parameters
@@ -18234,7 +18214,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Create a blacklisted key
+      summary: Create a blocked key
       tags:
       - Blacklisted Keys
       x-code-samples:
@@ -18255,7 +18235,7 @@ paths:
       x-accepts: application/json
   /projects/{project_id}/blacklisted_keys/{id}:
     delete:
-      description: Delete an existing rule for blacklisting keys.
+      description: Delete an existing rule for blocking keys.
       operationId: blacklisted_key/delete
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -18319,7 +18299,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Delete a blacklisted key
+      summary: Delete a blocked key
       tags:
       - Blacklisted Keys
       x-code-samples:
@@ -18336,8 +18316,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     get:
-      description: Get details on a single rule for blacklisting keys for a given
-        project.
+      description: Get details on a single rule for blocking keys for a given project.
       operationId: blacklisted_key/show
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -18405,7 +18384,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Get a single blacklisted key
+      summary: Get a single blocked key
       tags:
       - Blacklisted Keys
       x-code-samples:
@@ -18421,7 +18400,7 @@ paths:
           --access_token <token>
       x-accepts: application/json
     patch:
-      description: Update an existing rule for blacklisting keys.
+      description: Update an existing rule for blocking keys.
       operationId: blacklisted_key/update
       parameters:
       - description: Two-Factor-Authentication token (optional)
@@ -18455,7 +18434,7 @@ paths:
             schema:
               properties:
                 name:
-                  description: Blacklisted key name
+                  description: Blocked key name
                   example: date.formats.*
                   type: string
               title: blacklisted_key/update/parameters
@@ -18502,7 +18481,7 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Remaining'
             X-Rate-Limit-Reset:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
-      summary: Update a blacklisted key
+      summary: Update a blocked key
       tags:
       - Blacklisted Keys
       x-code-samples:
@@ -29806,7 +29785,7 @@ components:
     blacklisted_key_create_parameters:
       properties:
         name:
-          description: Blacklisted key name
+          description: Blocked key name
           example: date.formats.*
           type: string
       title: blacklisted_key/create/parameters
@@ -29814,7 +29793,7 @@ components:
     blacklisted_key_update_parameters:
       properties:
         name:
-          description: Blacklisted key name
+          description: Blocked key name
           example: date.formats.*
           type: string
       title: blacklisted_key/update/parameters

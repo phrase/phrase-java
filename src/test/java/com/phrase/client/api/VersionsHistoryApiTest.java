@@ -55,7 +55,7 @@ public class VersionsHistoryApiTest {
     /**
      * List all versions
      *
-     * List all versions for the given translation.
+     * List all changes done to a given translation.
      *
      * @throws ApiException
      *          if the Api call fails
