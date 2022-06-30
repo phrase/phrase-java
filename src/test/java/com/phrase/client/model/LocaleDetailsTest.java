@@ -111,6 +111,14 @@ public class LocaleDetailsTest {
     }
 
     /**
+     * Test the property 'fallbackLocale'
+     */
+    @Test
+    public void fallbackLocaleTest() {
+        // TODO: test fallbackLocale
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

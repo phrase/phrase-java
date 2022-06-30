@@ -84,6 +84,14 @@ public class DistributionUpdateParametersTest {
     }
 
     /**
+     * Test the property 'fallbackLocalesEnabled'
+     */
+    @Test
+    public void fallbackLocalesEnabledTest() {
+        // TODO: test fallbackLocalesEnabled
+    }
+
+    /**
      * Test the property 'fallbackToNonRegionalLocale'
      */
     @Test

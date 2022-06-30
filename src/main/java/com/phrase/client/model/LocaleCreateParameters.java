@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * LocaleCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-23T09:42:29.203861Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-30T08:10:59.598406Z[Etc/UTC]")
 public class LocaleCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -55,6 +55,10 @@ public class LocaleCreateParameters {
   public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
   private String sourceLocaleId;
+
+  public static final String SERIALIZED_NAME_FALLBACK_LOCALE_ID = "fallback_locale_id";
+  @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALE_ID)
+  private String fallbackLocaleId;
 
   public static final String SERIALIZED_NAME_UNVERIFY_NEW_TRANSLATIONS = "unverify_new_translations";
   @SerializedName(SERIALIZED_NAME_UNVERIFY_NEW_TRANSLATIONS)
@@ -230,6 +234,29 @@ public class LocaleCreateParameters {
   }
 
 
+  public LocaleCreateParameters fallbackLocaleId(String fallbackLocaleId) {
+    
+    this.fallbackLocaleId = fallbackLocaleId;
+    return this;
+  }
+
+   /**
+   * Fallback locale for empty translations. Can be a locale name or id.
+   * @return fallbackLocaleId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "abcd1234abcd1234abcd1234abcd1234", value = "Fallback locale for empty translations. Can be a locale name or id.")
+
+  public String getFallbackLocaleId() {
+    return fallbackLocaleId;
+  }
+
+
+  public void setFallbackLocaleId(String fallbackLocaleId) {
+    this.fallbackLocaleId = fallbackLocaleId;
+  }
+
+
   public LocaleCreateParameters unverifyNewTranslations(Boolean unverifyNewTranslations) {
     
     this.unverifyNewTranslations = unverifyNewTranslations;
@@ -315,6 +342,7 @@ public class LocaleCreateParameters {
         Objects.equals(this.main, localeCreateParameters.main) &&
         Objects.equals(this.rtl, localeCreateParameters.rtl) &&
         Objects.equals(this.sourceLocaleId, localeCreateParameters.sourceLocaleId) &&
+        Objects.equals(this.fallbackLocaleId, localeCreateParameters.fallbackLocaleId) &&
         Objects.equals(this.unverifyNewTranslations, localeCreateParameters.unverifyNewTranslations) &&
         Objects.equals(this.unverifyUpdatedTranslations, localeCreateParameters.unverifyUpdatedTranslations) &&
         Objects.equals(this.autotranslate, localeCreateParameters.autotranslate);
@@ -322,7 +350,7 @@ public class LocaleCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, code, _default, main, rtl, sourceLocaleId, unverifyNewTranslations, unverifyUpdatedTranslations, autotranslate);
+    return Objects.hash(branch, name, code, _default, main, rtl, sourceLocaleId, fallbackLocaleId, unverifyNewTranslations, unverifyUpdatedTranslations, autotranslate);
   }
 
 
@@ -337,6 +365,7 @@ public class LocaleCreateParameters {
     sb.append("    main: ").append(toIndentedString(main)).append("\n");
     sb.append("    rtl: ").append(toIndentedString(rtl)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
+    sb.append("    fallbackLocaleId: ").append(toIndentedString(fallbackLocaleId)).append("\n");
     sb.append("    unverifyNewTranslations: ").append(toIndentedString(unverifyNewTranslations)).append("\n");
     sb.append("    unverifyUpdatedTranslations: ").append(toIndentedString(unverifyUpdatedTranslations)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");

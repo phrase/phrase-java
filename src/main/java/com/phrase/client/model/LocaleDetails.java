@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * LocaleDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-23T09:42:29.203861Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-30T08:10:59.598406Z[Etc/UTC]")
 public class LocaleDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -66,6 +66,10 @@ public class LocaleDetails {
   public static final String SERIALIZED_NAME_SOURCE_LOCALE = "source_locale";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE)
   private LocalePreview sourceLocale;
+
+  public static final String SERIALIZED_NAME_FALLBACK_LOCALE = "fallback_locale";
+  @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALE)
+  private LocalePreview fallbackLocale;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -272,6 +276,29 @@ public class LocaleDetails {
   }
 
 
+  public LocaleDetails fallbackLocale(LocalePreview fallbackLocale) {
+    
+    this.fallbackLocale = fallbackLocale;
+    return this;
+  }
+
+   /**
+   * Get fallbackLocale
+   * @return fallbackLocale
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public LocalePreview getFallbackLocale() {
+    return fallbackLocale;
+  }
+
+
+  public void setFallbackLocale(LocalePreview fallbackLocale) {
+    this.fallbackLocale = fallbackLocale;
+  }
+
+
   public LocaleDetails createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -358,6 +385,7 @@ public class LocaleDetails {
         Objects.equals(this.rtl, localeDetails.rtl) &&
         Objects.equals(this.pluralForms, localeDetails.pluralForms) &&
         Objects.equals(this.sourceLocale, localeDetails.sourceLocale) &&
+        Objects.equals(this.fallbackLocale, localeDetails.fallbackLocale) &&
         Objects.equals(this.createdAt, localeDetails.createdAt) &&
         Objects.equals(this.updatedAt, localeDetails.updatedAt) &&
         Objects.equals(this.statistics, localeDetails.statistics);
@@ -365,7 +393,7 @@ public class LocaleDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, sourceLocale, createdAt, updatedAt, statistics);
+    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, sourceLocale, fallbackLocale, createdAt, updatedAt, statistics);
   }
 
 
@@ -381,6 +409,7 @@ public class LocaleDetails {
     sb.append("    rtl: ").append(toIndentedString(rtl)).append("\n");
     sb.append("    pluralForms: ").append(toIndentedString(pluralForms)).append("\n");
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
+    sb.append("    fallbackLocale: ").append(toIndentedString(fallbackLocale)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");

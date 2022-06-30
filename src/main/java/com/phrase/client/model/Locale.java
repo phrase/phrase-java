@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Locale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-23T09:42:29.203861Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-30T08:10:59.598406Z[Etc/UTC]")
 public class Locale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -63,6 +63,10 @@ public class Locale {
   public static final String SERIALIZED_NAME_SOURCE_LOCALE = "source_locale";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE)
   private LocalePreview sourceLocale;
+
+  public static final String SERIALIZED_NAME_FALLBACK_LOCALE = "fallback_locale";
+  @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALE)
+  private LocalePreview fallbackLocale;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -265,6 +269,29 @@ public class Locale {
   }
 
 
+  public Locale fallbackLocale(LocalePreview fallbackLocale) {
+    
+    this.fallbackLocale = fallbackLocale;
+    return this;
+  }
+
+   /**
+   * Get fallbackLocale
+   * @return fallbackLocale
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public LocalePreview getFallbackLocale() {
+    return fallbackLocale;
+  }
+
+
+  public void setFallbackLocale(LocalePreview fallbackLocale) {
+    this.fallbackLocale = fallbackLocale;
+  }
+
+
   public Locale createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -328,13 +355,14 @@ public class Locale {
         Objects.equals(this.rtl, locale.rtl) &&
         Objects.equals(this.pluralForms, locale.pluralForms) &&
         Objects.equals(this.sourceLocale, locale.sourceLocale) &&
+        Objects.equals(this.fallbackLocale, locale.fallbackLocale) &&
         Objects.equals(this.createdAt, locale.createdAt) &&
         Objects.equals(this.updatedAt, locale.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, sourceLocale, createdAt, updatedAt);
+    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, sourceLocale, fallbackLocale, createdAt, updatedAt);
   }
 
 
@@ -350,6 +378,7 @@ public class Locale {
     sb.append("    rtl: ").append(toIndentedString(rtl)).append("\n");
     sb.append("    pluralForms: ").append(toIndentedString(pluralForms)).append("\n");
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
+    sb.append("    fallbackLocale: ").append(toIndentedString(fallbackLocale)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

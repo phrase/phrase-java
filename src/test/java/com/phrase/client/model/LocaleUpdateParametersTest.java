@@ -96,6 +96,14 @@ public class LocaleUpdateParametersTest {
     }
 
     /**
+     * Test the property 'fallbackLocaleId'
+     */
+    @Test
+    public void fallbackLocaleIdTest() {
+        // TODO: test fallbackLocaleId
+    }
+
+    /**
      * Test the property 'unverifyNewTranslations'
      */
     @Test

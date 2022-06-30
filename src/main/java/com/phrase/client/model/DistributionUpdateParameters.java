@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * DistributionUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-23T09:42:29.203861Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-30T08:10:59.598406Z[Etc/UTC]")
 public class DistributionUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -51,6 +51,10 @@ public class DistributionUpdateParameters {
   public static final String SERIALIZED_NAME_FORMAT_OPTIONS = "format_options";
   @SerializedName(SERIALIZED_NAME_FORMAT_OPTIONS)
   private Map<String, String> formatOptions = null;
+
+  public static final String SERIALIZED_NAME_FALLBACK_LOCALES_ENABLED = "fallback_locales_enabled";
+  @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALES_ENABLED)
+  private Boolean fallbackLocalesEnabled;
 
   public static final String SERIALIZED_NAME_FALLBACK_TO_NON_REGIONAL_LOCALE = "fallback_to_non_regional_locale";
   @SerializedName(SERIALIZED_NAME_FALLBACK_TO_NON_REGIONAL_LOCALE)
@@ -204,6 +208,29 @@ public class DistributionUpdateParameters {
   }
 
 
+  public DistributionUpdateParameters fallbackLocalesEnabled(Boolean fallbackLocalesEnabled) {
+    
+    this.fallbackLocalesEnabled = fallbackLocalesEnabled;
+    return this;
+  }
+
+   /**
+   * Use fallback locale if there is no translation in the current locale.
+   * @return fallbackLocalesEnabled
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "true", value = "Use fallback locale if there is no translation in the current locale.")
+
+  public Boolean getFallbackLocalesEnabled() {
+    return fallbackLocalesEnabled;
+  }
+
+
+  public void setFallbackLocalesEnabled(Boolean fallbackLocalesEnabled) {
+    this.fallbackLocalesEnabled = fallbackLocalesEnabled;
+  }
+
+
   public DistributionUpdateParameters fallbackToNonRegionalLocale(Boolean fallbackToNonRegionalLocale) {
     
     this.fallbackToNonRegionalLocale = fallbackToNonRegionalLocale;
@@ -287,6 +314,7 @@ public class DistributionUpdateParameters {
         Objects.equals(this.platforms, distributionUpdateParameters.platforms) &&
         Objects.equals(this.localeIds, distributionUpdateParameters.localeIds) &&
         Objects.equals(this.formatOptions, distributionUpdateParameters.formatOptions) &&
+        Objects.equals(this.fallbackLocalesEnabled, distributionUpdateParameters.fallbackLocalesEnabled) &&
         Objects.equals(this.fallbackToNonRegionalLocale, distributionUpdateParameters.fallbackToNonRegionalLocale) &&
         Objects.equals(this.fallbackToDefaultLocale, distributionUpdateParameters.fallbackToDefaultLocale) &&
         Objects.equals(this.useLastReviewedVersion, distributionUpdateParameters.useLastReviewedVersion);
@@ -294,7 +322,7 @@ public class DistributionUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, projectId, platforms, localeIds, formatOptions, fallbackToNonRegionalLocale, fallbackToDefaultLocale, useLastReviewedVersion);
+    return Objects.hash(name, projectId, platforms, localeIds, formatOptions, fallbackLocalesEnabled, fallbackToNonRegionalLocale, fallbackToDefaultLocale, useLastReviewedVersion);
   }
 
 
@@ -307,6 +335,7 @@ public class DistributionUpdateParameters {
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    formatOptions: ").append(toIndentedString(formatOptions)).append("\n");
+    sb.append("    fallbackLocalesEnabled: ").append(toIndentedString(fallbackLocalesEnabled)).append("\n");
     sb.append("    fallbackToNonRegionalLocale: ").append(toIndentedString(fallbackToNonRegionalLocale)).append("\n");
     sb.append("    fallbackToDefaultLocale: ").append(toIndentedString(fallbackToDefaultLocale)).append("\n");
     sb.append("    useLastReviewedVersion: ").append(toIndentedString(useLastReviewedVersion)).append("\n");
