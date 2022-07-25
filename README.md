@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2022-07-25T12:42:02.636220Z[Etc/UTC]
+  - Build date: 2022-07-25T12:52:16.313432Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1434,7 +1434,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>1.4.1</version>
+  <version>1.5.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -1444,7 +1444,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:1.4.1"
+compile "com.phrase:phrase-java:1.5.0"
 ```
 
 ### Others
@@ -1457,7 +1457,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/phrase-java-1.4.1.jar`
+* `target/phrase-java-1.5.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
