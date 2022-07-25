@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2022-07-21T05:10:29.770909Z[Etc/UTC]
+  - Build date: 2022-07-25T12:42:02.636220Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -1730,6 +1730,9 @@ Class | Method | HTTP request | Description
 *VariablesApi* | [**variablesList**](docs/VariablesApi.md#variablesList) | **GET** /projects/{project_id}/variables | List variables
 *VersionsHistoryApi* | [**versionShow**](docs/VersionsHistoryApi.md#versionShow) | **GET** /projects/{project_id}/translations/{translation_id}/versions/{id} | Get a single version
 *VersionsHistoryApi* | [**versionsList**](docs/VersionsHistoryApi.md#versionsList) | **GET** /projects/{project_id}/translations/{translation_id}/versions | List all versions
+*WebhookDeliveriesApi* | [**webhookDeliveriesList**](docs/WebhookDeliveriesApi.md#webhookDeliveriesList) | **GET** /projects/{project_id}/webhooks/{webhook_id}/deliveries | List webhook deliveries
+*WebhookDeliveriesApi* | [**webhookDeliveriesRedeliver**](docs/WebhookDeliveriesApi.md#webhookDeliveriesRedeliver) | **POST** /projects/{project_id}/webhooks/{webhook_id}/deliveries/{id}/redeliver | Redeliver a single webhook delivery
+*WebhookDeliveriesApi* | [**webhookDeliveriesShow**](docs/WebhookDeliveriesApi.md#webhookDeliveriesShow) | **GET** /projects/{project_id}/webhooks/{webhook_id}/deliveries/{id} | Get a single webhook delivery
 *WebhooksApi* | [**webhookCreate**](docs/WebhooksApi.md#webhookCreate) | **POST** /projects/{project_id}/webhooks | Create a webhook
 *WebhooksApi* | [**webhookDelete**](docs/WebhooksApi.md#webhookDelete) | **DELETE** /projects/{project_id}/webhooks/{id} | Delete a webhook
 *WebhooksApi* | [**webhookShow**](docs/WebhooksApi.md#webhookShow) | **GET** /projects/{project_id}/webhooks/{id} | Get a single webhook
@@ -1931,6 +1934,7 @@ Class | Method | HTTP request | Description
  - [VariableUpdateParameters](docs/VariableUpdateParameters.md)
  - [Webhook](docs/Webhook.md)
  - [WebhookCreateParameters](docs/WebhookCreateParameters.md)
+ - [WebhookDelivery](docs/WebhookDelivery.md)
  - [WebhookUpdateParameters](docs/WebhookUpdateParameters.md)
 
 
