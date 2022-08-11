@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BranchMergeParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-11T05:14:58.151363Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-11T06:40:55.753519Z[Etc/UTC]")
 public class BranchMergeParameters {
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)
@@ -40,11 +40,11 @@ public class BranchMergeParameters {
   }
 
    /**
-   * strategy used for merge blocking, use_master or use_branch
+   * strategy used for merge blocking, use_main or use_branch
    * @return strategy
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "use_master", value = "strategy used for merge blocking, use_master or use_branch")
+  @ApiModelProperty(example = "use_main", value = "strategy used for merge blocking, use_main or use_branch")
 
   public String getStrategy() {
     return strategy;
