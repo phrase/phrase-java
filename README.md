@@ -2,7 +2,7 @@
 
 Phrase API Reference
 - API version: 2.0.0
-  - Build date: 2022-08-11T08:44:06.018677Z[Etc/UTC]
+  - Build date: 2022-08-16T07:54:29.282329Z[Etc/UTC]
 
 Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
 
@@ -13,6 +13,22 @@ https://api.phrase.com/v2/
 ```
 
 The API is only accessible via HTTPS, the base URL is <code>https://api.phrase.com/</code>, and the current version is <code>v2</code> which results in the base URL for all requests: <code>https://api.phrase.com/v2/</code>.
+
+## Datacenters
+
+The API is only accessible via HTTPS and the current version is <code>v2</code>, which results in a URL like: <code>https://api.phrase.com/v2/</code> depending on the datacenter.
+
+### EU Datacenter
+```
+https://api.phrase.com/v2/
+```
+
+This is the default datacenter.
+
+### US Datacenter
+```
+https://api.us.app.phrase.com/v2/
+```
 
 ## Usage
 
@@ -1506,6 +1522,28 @@ public class Example {
   }
 }
 
+```
+
+## Datacenters
+
+The API is only accessible via HTTPS and the current version is <code>v2</code>, which results in a base URL like: <code>https://api.phrase.com/v2</code> depending on the datacenter.
+
+### EU Datacenter
+```
+https://api.phrase.com/v2
+```
+
+This is the default datacenter.
+
+### US Datacenter
+```
+https://us.api.phrase.com/v2/
+```
+
+### Specifying US Datacenter
+You can use the US datacenter by setting the following:
+```
+defaultClient.setBasePath("https://api.us.app.phrase.com/v2/");
 ```
 
 ## Documentation for API Endpoints
