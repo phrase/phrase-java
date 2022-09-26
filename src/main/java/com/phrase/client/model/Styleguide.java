@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * Styleguide
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-26T09:58:31.583107Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-26T10:21:12.378643Z[Etc/UTC]")
 public class Styleguide {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

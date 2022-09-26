@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ScreenshotMarkerCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-26T09:58:31.583107Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-26T10:21:12.378643Z[Etc/UTC]")
 public class ScreenshotMarkerCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
