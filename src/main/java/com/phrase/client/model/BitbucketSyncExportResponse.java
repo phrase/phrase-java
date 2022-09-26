@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BitbucketSyncExportResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-26T09:52:26.119496Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-26T09:52:38.950997Z[Etc/UTC]")
 public class BitbucketSyncExportResponse {
   public static final String SERIALIZED_NAME_STATUS_PATH = "status_path";
   @SerializedName(SERIALIZED_NAME_STATUS_PATH)
