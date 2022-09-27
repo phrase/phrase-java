@@ -1,5 +1,5 @@
 /*
- * Phrase API Reference
+ * Phrase Strings API Reference
  *
  * The version of the OpenAPI document: 2.0.0
  * Contact: support@phrase.com
@@ -55,9 +55,9 @@ public class GitLabSyncApiTest {
     }
     
     /**
-     * Export from Phrase to GitLab
+     * Export from Phrase Strings to GitLab
      *
-     * Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -95,7 +95,7 @@ public class GitLabSyncApiTest {
     /**
      * Import from GitLab to Phrase
      *
-     * Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -113,7 +113,7 @@ public class GitLabSyncApiTest {
     /**
      * List GitLab syncs
      *
-     * List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+     * List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
      *
      * @throws ApiException
      *          if the Api call fails

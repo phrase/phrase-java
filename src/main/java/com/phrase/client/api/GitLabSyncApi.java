@@ -1,5 +1,5 @@
 /*
- * Phrase API Reference
+ * Phrase Strings API Reference
  *
  * The version of the OpenAPI document: 2.0.0
  * Contact: support@phrase.com
@@ -264,8 +264,8 @@ public class GitLabSyncApi {
     }
 
     /**
-     * Export from Phrase to GitLab
-     * Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export from Phrase Strings to GitLab
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -286,8 +286,8 @@ public class GitLabSyncApi {
     }
 
     /**
-     * Export from Phrase to GitLab
-     * Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export from Phrase Strings to GitLab
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -309,8 +309,8 @@ public class GitLabSyncApi {
     }
 
     /**
-     * Export from Phrase to GitLab (asynchronously)
-     * Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export from Phrase Strings to GitLab (asynchronously)
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -560,7 +560,7 @@ public class GitLabSyncApi {
 
     /**
      * Import from GitLab to Phrase
-     * Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -582,7 +582,7 @@ public class GitLabSyncApi {
 
     /**
      * Import from GitLab to Phrase
-     * Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -605,7 +605,7 @@ public class GitLabSyncApi {
 
     /**
      * Import from GitLab to Phrase (asynchronously)
-     * Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -692,7 +692,7 @@ public class GitLabSyncApi {
 
     /**
      * List GitLab syncs
-     * List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+     * List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @return List&lt;GitlabSync&gt;
@@ -713,7 +713,7 @@ public class GitLabSyncApi {
 
     /**
      * List GitLab syncs
-     * List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+     * List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @return ApiResponse&lt;List&lt;GitlabSync&gt;&gt;
@@ -735,7 +735,7 @@ public class GitLabSyncApi {
 
     /**
      * List GitLab syncs (asynchronously)
-     * List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+     * List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -901,7 +901,7 @@ public class GitLabSyncApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
-     * @param phraseProjectCode Code of the related Phrase Project. (optional)
+     * @param phraseProjectCode Code of the related Phrase Strings Project. (optional)
      * @param gitlabProjectId ID of the related GitLab Project. (optional)
      * @param gitlabBranchName Name of the GitLab Branch. (optional)
      * @param _callback Callback for upload/download progress
@@ -986,7 +986,7 @@ public class GitLabSyncApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
-     * @param phraseProjectCode Code of the related Phrase Project. (optional)
+     * @param phraseProjectCode Code of the related Phrase Strings Project. (optional)
      * @param gitlabProjectId ID of the related GitLab Project. (optional)
      * @param gitlabBranchName Name of the GitLab Branch. (optional)
      * @return GitlabSync
@@ -1011,7 +1011,7 @@ public class GitLabSyncApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
-     * @param phraseProjectCode Code of the related Phrase Project. (optional)
+     * @param phraseProjectCode Code of the related Phrase Strings Project. (optional)
      * @param gitlabProjectId ID of the related GitLab Project. (optional)
      * @param gitlabBranchName Name of the GitLab Branch. (optional)
      * @return ApiResponse&lt;GitlabSync&gt;
@@ -1037,7 +1037,7 @@ public class GitLabSyncApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. (optional)
-     * @param phraseProjectCode Code of the related Phrase Project. (optional)
+     * @param phraseProjectCode Code of the related Phrase Strings Project. (optional)
      * @param gitlabProjectId ID of the related GitLab Project. (optional)
      * @param gitlabBranchName Name of the GitLab Branch. (optional)
      * @param _callback The callback to be executed when the API call finishes

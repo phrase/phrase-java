@@ -1,5 +1,5 @@
 /*
- * Phrase API Reference
+ * Phrase Strings API Reference
  *
  * The version of the OpenAPI document: 2.0.0
  * Contact: support@phrase.com
@@ -127,8 +127,8 @@ public class BitbucketSyncApi {
     }
 
     /**
-     * Export from Phrase to Bitbucket
-     * Export translations from Phrase to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export from Phrase Strings to Bitbucket
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
      * @param id ID (required)
      * @param bitbucketSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -149,8 +149,8 @@ public class BitbucketSyncApi {
     }
 
     /**
-     * Export from Phrase to Bitbucket
-     * Export translations from Phrase to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export from Phrase Strings to Bitbucket
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
      * @param id ID (required)
      * @param bitbucketSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -172,8 +172,8 @@ public class BitbucketSyncApi {
     }
 
     /**
-     * Export from Phrase to Bitbucket (asynchronously)
-     * Export translations from Phrase to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export from Phrase Strings to Bitbucket (asynchronously)
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
      * @param id ID (required)
      * @param bitbucketSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -267,8 +267,8 @@ public class BitbucketSyncApi {
     }
 
     /**
-     * Import to Phrase from Bitbucket
-     * Import translations from Bitbucket to Phrase according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import to Phrase Strings from Bitbucket
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
      * @param id ID (required)
      * @param bitbucketSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -287,8 +287,8 @@ public class BitbucketSyncApi {
     }
 
     /**
-     * Import to Phrase from Bitbucket
-     * Import translations from Bitbucket to Phrase according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import to Phrase Strings from Bitbucket
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
      * @param id ID (required)
      * @param bitbucketSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -309,8 +309,8 @@ public class BitbucketSyncApi {
     }
 
     /**
-     * Import to Phrase from Bitbucket (asynchronously)
-     * Import translations from Bitbucket to Phrase according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import to Phrase Strings from Bitbucket (asynchronously)
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
      * @param id ID (required)
      * @param bitbucketSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -396,7 +396,7 @@ public class BitbucketSyncApi {
 
     /**
      * List Bitbucket syncs
-     * List all Bitbucket repositories for which synchronisation with Phrase is activated.
+     * List all Bitbucket repositories for which synchronisation with Phrase Strings is activated.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @return List&lt;BitbucketSync&gt;
@@ -417,7 +417,7 @@ public class BitbucketSyncApi {
 
     /**
      * List Bitbucket syncs
-     * List all Bitbucket repositories for which synchronisation with Phrase is activated.
+     * List all Bitbucket repositories for which synchronisation with Phrase Strings is activated.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @return ApiResponse&lt;List&lt;BitbucketSync&gt;&gt;
@@ -439,7 +439,7 @@ public class BitbucketSyncApi {
 
     /**
      * List Bitbucket syncs (asynchronously)
-     * List all Bitbucket repositories for which synchronisation with Phrase is activated.
+     * List all Bitbucket repositories for which synchronisation with Phrase Strings is activated.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param accountId Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts. (optional)
      * @param _callback The callback to be executed when the API call finishes

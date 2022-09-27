@@ -4,8 +4,8 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bitbucketSyncExport**](BitbucketSyncApi.md#bitbucketSyncExport) | **POST** /bitbucket_syncs/{id}/export | Export from Phrase to Bitbucket
-[**bitbucketSyncImport**](BitbucketSyncApi.md#bitbucketSyncImport) | **POST** /bitbucket_syncs/{id}/import | Import to Phrase from Bitbucket
+[**bitbucketSyncExport**](BitbucketSyncApi.md#bitbucketSyncExport) | **POST** /bitbucket_syncs/{id}/export | Export from Phrase Strings to Bitbucket
+[**bitbucketSyncImport**](BitbucketSyncApi.md#bitbucketSyncImport) | **POST** /bitbucket_syncs/{id}/import | Import to Phrase Strings from Bitbucket
 [**bitbucketSyncsList**](BitbucketSyncApi.md#bitbucketSyncsList) | **GET** /bitbucket_syncs | List Bitbucket syncs
 
 
@@ -13,9 +13,9 @@ Method | HTTP request | Description
 # **bitbucketSyncExport**
 > BitbucketSyncExportResponse bitbucketSyncExport(id, bitbucketSyncExportParameters, xPhraseAppOTP)
 
-Export from Phrase to Bitbucket
+Export from Phrase Strings to Bitbucket
 
-Export translations from Phrase to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
 
 ### Example
 ```java
@@ -94,9 +94,9 @@ Name | Type | Description  | Notes
 # **bitbucketSyncImport**
 > bitbucketSyncImport(id, bitbucketSyncImportParameters, xPhraseAppOTP)
 
-Import to Phrase from Bitbucket
+Import to Phrase Strings from Bitbucket
 
-Import translations from Bitbucket to Phrase according to the .phraseapp.yml file within the Bitbucket repository.
+Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
 
 ### Example
 ```java
@@ -176,7 +176,7 @@ null (empty response body)
 
 List Bitbucket syncs
 
-List all Bitbucket repositories for which synchronisation with Phrase is activated.
+List all Bitbucket repositories for which synchronisation with Phrase Strings is activated.
 
 ### Example
 ```java

@@ -1,5 +1,5 @@
 /*
- * Phrase API Reference
+ * Phrase Strings API Reference
  *
  * The version of the OpenAPI document: 2.0.0
  * Contact: support@phrase.com
@@ -34,9 +34,9 @@ public class GitHubSyncApiTest {
 
     
     /**
-     * Export from Phrase to GitHub
+     * Export from Phrase Strings to GitHub
      *
-     * Export translations from Phrase to GitHub according to the .phraseapp.yml file within the GitHub repository.
+     * Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -51,9 +51,9 @@ public class GitHubSyncApiTest {
     }
     
     /**
-     * Import to Phrase from GitHub
+     * Import to Phrase Strings from GitHub
      *
-     * Import files to Phrase from your connected GitHub repository.
+     * Import files to Phrase Strings from your connected GitHub repository.
      *
      * @throws ApiException
      *          if the Api call fails

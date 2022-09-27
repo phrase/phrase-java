@@ -1,5 +1,5 @@
 /*
- * Phrase API Reference
+ * Phrase Strings API Reference
  *
  * The version of the OpenAPI document: 2.0.0
  * Contact: support@phrase.com
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * LocaleCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-26T11:44:02.588543Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-27T06:17:11.672078Z[Etc/UTC]")
 public class LocaleCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -172,11 +172,11 @@ public class LocaleCreateParameters {
   }
 
    /**
-   * Indicates whether locale is a main locale. Main locales are part of the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/verification-and-proofreading\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Verification System&lt;/a&gt; feature.
+   * Indicates whether locale is a main locale. Main locales are part of the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784094755484\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Verification System&lt;/a&gt; feature.
    * @return main
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether locale is a main locale. Main locales are part of the <a href=\"https://help.phrase.com/help/verification-and-proofreading\" target=\"_blank\">Verification System</a> feature.")
+  @ApiModelProperty(value = "Indicates whether locale is a main locale. Main locales are part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Verification System</a> feature.")
 
   public Boolean getMain() {
     return main;
@@ -264,11 +264,11 @@ public class LocaleCreateParameters {
   }
 
    /**
-   * Indicates that new translations for this locale should be marked as unverified. Part of the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/verification-and-proofreading\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Advanced Workflows&lt;/a&gt; feature.
+   * Indicates that new translations for this locale should be marked as unverified. Part of the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784094755484\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Advanced Workflows&lt;/a&gt; feature.
    * @return unverifyNewTranslations
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates that new translations for this locale should be marked as unverified. Part of the <a href=\"https://help.phrase.com/help/verification-and-proofreading\" target=\"_blank\">Advanced Workflows</a> feature.")
+  @ApiModelProperty(value = "Indicates that new translations for this locale should be marked as unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.")
 
   public Boolean getUnverifyNewTranslations() {
     return unverifyNewTranslations;
@@ -287,11 +287,11 @@ public class LocaleCreateParameters {
   }
 
    /**
-   * Indicates that updated translations for this locale should be marked as unverified. Part of the &lt;a href&#x3D;\&quot;https://help.phrase.com/help/verification-and-proofreading\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Advanced Workflows&lt;/a&gt; feature.
+   * Indicates that updated translations for this locale should be marked as unverified. Part of the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784094755484\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Advanced Workflows&lt;/a&gt; feature.
    * @return unverifyUpdatedTranslations
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates that updated translations for this locale should be marked as unverified. Part of the <a href=\"https://help.phrase.com/help/verification-and-proofreading\" target=\"_blank\">Advanced Workflows</a> feature.")
+  @ApiModelProperty(value = "Indicates that updated translations for this locale should be marked as unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.")
 
   public Boolean getUnverifyUpdatedTranslations() {
     return unverifyUpdatedTranslations;

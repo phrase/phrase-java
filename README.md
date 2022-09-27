@@ -1,10 +1,10 @@
 # phrase-java
 
-Phrase API Reference
+Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2022-09-26T11:44:02.588543Z[Etc/UTC]
+  - Build date: 2022-09-27T06:17:11.672078Z[Etc/UTC]
 
-Phrase is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase for your account.
+Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
 ## API Endpoints
 
@@ -24,11 +24,11 @@ The API is only accessible via HTTPS and the current version is <code>v2</code>,
 
 ## Usage
 
-[curl](http://curl.haxx.se/) is used primarily to send requests to Phrase in the examples. On most you'll find a second variant using the [Phrase API v2 client](https://phrase.com/cli/) that might be more convenient to handle. For further information check its [documentation](https://help.phrase.com/help/phrase-in-your-terminal).
+[curl](http://curl.haxx.se/) is used primarily to send requests to Phrase Strings in the examples. On most you'll find a second variant using the [Phrase Strings API v2 client](https://phrase.com/cli/) that might be more convenient to handle. For further information check its [documentation](https://support.phrase.com/hc/en-us/articles/5808300599068).
 
 ## Use of HTTP Verbs
 
-Phrase API v2 tries to use the appropriate HTTP verb for accessing each endpoint according to REST specification where possible:
+Phrase Strings API v2 tries to use the appropriate HTTP verb for accessing each endpoint according to REST specification where possible:
 
 <div class=\"table-responsive\">
   <table class=\"basic-table\">
@@ -345,7 +345,7 @@ Status: 304 Not Modified
 
 ## JSONP
 
-The Phrase API supports [JSONP](http://en.wikipedia.org/wiki/JSONP) for all GET requests in order to deal with cross-domain request issues. Just send a `?callback` parameter along with the request to specify the Javascript function name to be called with the response content:
+The Phrase Strings API supports [JSONP](http://en.wikipedia.org/wiki/JSONP) for all GET requests in order to deal with cross-domain request issues. Just send a `?callback` parameter along with the request to specify the Javascript function name to be called with the response content:
 
 ```
 $ curl \"https://api.phrase.com/v2/projects?callback=myFunction\"
@@ -384,7 +384,7 @@ $ curl \"https://api.phrase.com/v2/projects?callback=myFunction&access_token=ACC
 
 ## Usage examples
 
-Learn how to work more efficiently with Phrase API v2 with these
+Learn how to work more efficiently with Phrase Strings API v2 with these
 workflow-oriented examples.
 
 </div>
@@ -1551,8 +1551,8 @@ Class | Method | HTTP request | Description
 *AuthorizationsApi* | [**authorizationShow**](docs/AuthorizationsApi.md#authorizationShow) | **GET** /authorizations/{id} | Get a single authorization
 *AuthorizationsApi* | [**authorizationUpdate**](docs/AuthorizationsApi.md#authorizationUpdate) | **PATCH** /authorizations/{id} | Update an authorization
 *AuthorizationsApi* | [**authorizationsList**](docs/AuthorizationsApi.md#authorizationsList) | **GET** /authorizations | List authorizations
-*BitbucketSyncApi* | [**bitbucketSyncExport**](docs/BitbucketSyncApi.md#bitbucketSyncExport) | **POST** /bitbucket_syncs/{id}/export | Export from Phrase to Bitbucket
-*BitbucketSyncApi* | [**bitbucketSyncImport**](docs/BitbucketSyncApi.md#bitbucketSyncImport) | **POST** /bitbucket_syncs/{id}/import | Import to Phrase from Bitbucket
+*BitbucketSyncApi* | [**bitbucketSyncExport**](docs/BitbucketSyncApi.md#bitbucketSyncExport) | **POST** /bitbucket_syncs/{id}/export | Export from Phrase Strings to Bitbucket
+*BitbucketSyncApi* | [**bitbucketSyncImport**](docs/BitbucketSyncApi.md#bitbucketSyncImport) | **POST** /bitbucket_syncs/{id}/import | Import to Phrase Strings from Bitbucket
 *BitbucketSyncApi* | [**bitbucketSyncsList**](docs/BitbucketSyncApi.md#bitbucketSyncsList) | **GET** /bitbucket_syncs | List Bitbucket syncs
 *BlacklistedKeysApi* | [**blacklistedKeyCreate**](docs/BlacklistedKeysApi.md#blacklistedKeyCreate) | **POST** /projects/{project_id}/blacklisted_keys | Create a blocked key
 *BlacklistedKeysApi* | [**blacklistedKeyDelete**](docs/BlacklistedKeysApi.md#blacklistedKeyDelete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blocked key
@@ -1582,10 +1582,10 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**documentDelete**](docs/DocumentsApi.md#documentDelete) | **DELETE** /projects/{project_id}/documents/{id} | Delete document
 *DocumentsApi* | [**documentsList**](docs/DocumentsApi.md#documentsList) | **GET** /projects/{project_id}/documents | List documents
 *FormatsApi* | [**formatsList**](docs/FormatsApi.md#formatsList) | **GET** /formats | List formats
-*GitHubSyncApi* | [**githubSyncExport**](docs/GitHubSyncApi.md#githubSyncExport) | **POST** /github_syncs/export | Export from Phrase to GitHub
-*GitHubSyncApi* | [**githubSyncImport**](docs/GitHubSyncApi.md#githubSyncImport) | **POST** /github_syncs/import | Import to Phrase from GitHub
+*GitHubSyncApi* | [**githubSyncExport**](docs/GitHubSyncApi.md#githubSyncExport) | **POST** /github_syncs/export | Export from Phrase Strings to GitHub
+*GitHubSyncApi* | [**githubSyncImport**](docs/GitHubSyncApi.md#githubSyncImport) | **POST** /github_syncs/import | Import to Phrase Strings from GitHub
 *GitLabSyncApi* | [**gitlabSyncDelete**](docs/GitLabSyncApi.md#gitlabSyncDelete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
-*GitLabSyncApi* | [**gitlabSyncExport**](docs/GitLabSyncApi.md#gitlabSyncExport) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
+*GitLabSyncApi* | [**gitlabSyncExport**](docs/GitLabSyncApi.md#gitlabSyncExport) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase Strings to GitLab
 *GitLabSyncApi* | [**gitlabSyncHistory**](docs/GitLabSyncApi.md#gitlabSyncHistory) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
 *GitLabSyncApi* | [**gitlabSyncImport**](docs/GitLabSyncApi.md#gitlabSyncImport) | **POST** /gitlab_syncs/{gitlab_sync_id}/import | Import from GitLab to Phrase
 *GitLabSyncApi* | [**gitlabSyncList**](docs/GitLabSyncApi.md#gitlabSyncList) | **GET** /gitlab_syncs | List GitLab syncs

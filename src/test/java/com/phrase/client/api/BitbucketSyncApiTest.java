@@ -1,5 +1,5 @@
 /*
- * Phrase API Reference
+ * Phrase Strings API Reference
  *
  * The version of the OpenAPI document: 2.0.0
  * Contact: support@phrase.com
@@ -35,9 +35,9 @@ public class BitbucketSyncApiTest {
 
     
     /**
-     * Export from Phrase to Bitbucket
+     * Export from Phrase Strings to Bitbucket
      *
-     * Export translations from Phrase to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -53,9 +53,9 @@ public class BitbucketSyncApiTest {
     }
     
     /**
-     * Import to Phrase from Bitbucket
+     * Import to Phrase Strings from Bitbucket
      *
-     * Import translations from Bitbucket to Phrase according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -73,7 +73,7 @@ public class BitbucketSyncApiTest {
     /**
      * List Bitbucket syncs
      *
-     * List all Bitbucket repositories for which synchronisation with Phrase is activated.
+     * List all Bitbucket repositories for which synchronisation with Phrase Strings is activated.
      *
      * @throws ApiException
      *          if the Api call fails

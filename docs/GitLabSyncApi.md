@@ -5,7 +5,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**gitlabSyncDelete**](GitLabSyncApi.md#gitlabSyncDelete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
-[**gitlabSyncExport**](GitLabSyncApi.md#gitlabSyncExport) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase to GitLab
+[**gitlabSyncExport**](GitLabSyncApi.md#gitlabSyncExport) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase Strings to GitLab
 [**gitlabSyncHistory**](GitLabSyncApi.md#gitlabSyncHistory) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
 [**gitlabSyncImport**](GitLabSyncApi.md#gitlabSyncImport) | **POST** /gitlab_syncs/{gitlab_sync_id}/import | Import from GitLab to Phrase
 [**gitlabSyncList**](GitLabSyncApi.md#gitlabSyncList) | **GET** /gitlab_syncs | List GitLab syncs
@@ -97,9 +97,9 @@ null (empty response body)
 # **gitlabSyncExport**
 > GitlabSyncExport gitlabSyncExport(gitlabSyncId, gitlabSyncExportParameters, xPhraseAppOTP)
 
-Export from Phrase to GitLab
+Export from Phrase Strings to GitLab
 
-Export translations from Phrase to GitLab according to the .phraseapp.yml file within the GitLab repository.
+Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
 
 ### Example
 ```java
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 Import from GitLab to Phrase
 
-Import translations from GitLab to Phrase according to the .phraseapp.yml file within the GitLab repository.
+Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
 
 ### Example
 ```java
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 List GitLab syncs
 
-List all GitLab Sync Settings for which synchronisation with Phrase and GitLab is activated.
+List all GitLab Sync Settings for which synchronisation with Phrase Strings and GitLab is activated.
 
 ### Example
 ```java
@@ -538,7 +538,7 @@ public class Example {
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String accountId = abcd1234; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-    String phraseProjectCode = 3456abcd; // String | Code of the related Phrase Project.
+    String phraseProjectCode = 3456abcd; // String | Code of the related Phrase Strings Project.
     Integer gitlabProjectId = 12345; // Integer | ID of the related GitLab Project.
     String gitlabBranchName = feature-development; // String | Name of the GitLab Branch.
     try {
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **accountId** | **String**| Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts. | [optional]
- **phraseProjectCode** | **String**| Code of the related Phrase Project. | [optional]
+ **phraseProjectCode** | **String**| Code of the related Phrase Strings Project. | [optional]
  **gitlabProjectId** | **Integer**| ID of the related GitLab Project. | [optional]
  **gitlabBranchName** | **String**| Name of the GitLab Branch. | [optional]
 

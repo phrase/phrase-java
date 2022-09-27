@@ -4,17 +4,17 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**githubSyncExport**](GitHubSyncApi.md#githubSyncExport) | **POST** /github_syncs/export | Export from Phrase to GitHub
-[**githubSyncImport**](GitHubSyncApi.md#githubSyncImport) | **POST** /github_syncs/import | Import to Phrase from GitHub
+[**githubSyncExport**](GitHubSyncApi.md#githubSyncExport) | **POST** /github_syncs/export | Export from Phrase Strings to GitHub
+[**githubSyncImport**](GitHubSyncApi.md#githubSyncImport) | **POST** /github_syncs/import | Import to Phrase Strings from GitHub
 
 
 <a name="githubSyncExport"></a>
 # **githubSyncExport**
 > githubSyncExport(githubSyncExportParameters, xPhraseAppOTP)
 
-Export from Phrase to GitHub
+Export from Phrase Strings to GitHub
 
-Export translations from Phrase to GitHub according to the .phraseapp.yml file within the GitHub repository.
+Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
 
 ### Example
 ```java
@@ -91,9 +91,9 @@ null (empty response body)
 # **githubSyncImport**
 > githubSyncImport(githubSyncImportParameters, xPhraseAppOTP)
 
-Import to Phrase from GitHub
+Import to Phrase Strings from GitHub
 
-Import files to Phrase from your connected GitHub repository.
+Import files to Phrase Strings from your connected GitHub repository.
 
 ### Example
 ```java
