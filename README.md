@@ -2,7 +2,7 @@
 
 Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2022-09-27T09:27:11.318693Z[Etc/UTC]
+  - Build date: 2022-09-30T13:49:51.025469Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -1722,9 +1722,9 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**tagShow**](docs/TagsApi.md#tagShow) | **GET** /projects/{project_id}/tags/{name} | Get a single tag
 *TagsApi* | [**tagsList**](docs/TagsApi.md#tagsList) | **GET** /projects/{project_id}/tags | List tags
 *TeamsApi* | [**teamCreate**](docs/TeamsApi.md#teamCreate) | **POST** /accounts/{account_id}/teams | Create a Team
-*TeamsApi* | [**teamDelete**](docs/TeamsApi.md#teamDelete) | **DELETE** /accounts/{account_id}/teams/{team_id} | Delete Team
-*TeamsApi* | [**teamShow**](docs/TeamsApi.md#teamShow) | **GET** /accounts/{account_id}/teams/{team_id} | Get Team
-*TeamsApi* | [**teamUpdate**](docs/TeamsApi.md#teamUpdate) | **PATCH** /accounts/{account_id}/teams/{team_id} | Update Team
+*TeamsApi* | [**teamDelete**](docs/TeamsApi.md#teamDelete) | **DELETE** /accounts/{account_id}/teams/{id} | Delete Team
+*TeamsApi* | [**teamShow**](docs/TeamsApi.md#teamShow) | **GET** /accounts/{account_id}/teams/{id} | Get Team
+*TeamsApi* | [**teamUpdate**](docs/TeamsApi.md#teamUpdate) | **PATCH** /accounts/{account_id}/teams/{id} | Update Team
 *TeamsApi* | [**teamsList**](docs/TeamsApi.md#teamsList) | **GET** /accounts/{account_id}/teams | List Teams
 *TeamsApi* | [**teamsProjectsCreate**](docs/TeamsApi.md#teamsProjectsCreate) | **POST** /accounts/{account_id}/teams/{team_id}/projects | Add Project
 *TeamsApi* | [**teamsProjectsDelete**](docs/TeamsApi.md#teamsProjectsDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/projects/{id} | Remove Project

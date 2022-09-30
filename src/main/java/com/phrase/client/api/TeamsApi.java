@@ -220,7 +220,7 @@ public class TeamsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/teams/{team_id}"
+        String localVarPath = "/accounts/{account_id}/teams/{id}"
             .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
@@ -357,7 +357,7 @@ public class TeamsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/teams/{team_id}"
+        String localVarPath = "/accounts/{account_id}/teams/{id}"
             .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
@@ -499,7 +499,7 @@ public class TeamsApi {
         Object localVarPostBody = teamUpdateParameters;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/teams/{team_id}"
+        String localVarPath = "/accounts/{account_id}/teams/{id}"
             .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 

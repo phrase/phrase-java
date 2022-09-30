@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * GlossaryTerm
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-27T09:27:11.318693Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-09-30T13:49:51.025469Z[Etc/UTC]")
 public class GlossaryTerm {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
