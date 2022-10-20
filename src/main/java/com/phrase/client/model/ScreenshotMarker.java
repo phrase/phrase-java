@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * ScreenshotMarker
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-17T15:00:34.947424Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-20T10:27:34.025298Z[Etc/UTC]")
 public class ScreenshotMarker {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
