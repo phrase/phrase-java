@@ -80,7 +80,7 @@ public class LocalesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/locales"
+        String localVarPath = "/accounts/{id}/locales"
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

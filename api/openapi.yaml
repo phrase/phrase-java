@@ -3976,7 +3976,7 @@ paths:
           --access_token <token>
       x-contentType: application/json
       x-accepts: application/json
-  /accounts/{account_id}/locales:
+  /accounts/{id}/locales:
     get:
       description: List all locales unique by locale code used across all projects
         within an account.

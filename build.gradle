@@ -6,7 +6,7 @@ apply plugin: 'java-library'
 apply plugin: 'maven-publish'
 
 group = 'com.phrase'
-version = '1.5.1'
+version = '1.5.2'
 
 buildscript {
     repositories {

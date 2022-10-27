@@ -2,7 +2,7 @@
 
 Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2022-10-25T10:58:30.660892Z[Etc/UTC]
+  - Build date: 2022-10-27T06:56:33.181457Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -1442,7 +1442,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>1.5.1</version>
+  <version>1.5.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -1452,7 +1452,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:1.5.1"
+compile "com.phrase:phrase-java:1.5.2"
 ```
 
 ### Others
@@ -1465,7 +1465,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/phrase-java-1.5.1.jar`
+* `target/phrase-java-1.5.2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -1659,7 +1659,7 @@ Class | Method | HTTP request | Description
 *KeysApi* | [**keysSearch**](docs/KeysApi.md#keysSearch) | **POST** /projects/{project_id}/keys/search | Search keys
 *KeysApi* | [**keysTag**](docs/KeysApi.md#keysTag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
 *KeysApi* | [**keysUntag**](docs/KeysApi.md#keysUntag) | **PATCH** /projects/{project_id}/keys/untag | Remove tags from collection of keys
-*LocalesApi* | [**accountLocales**](docs/LocalesApi.md#accountLocales) | **GET** /accounts/{account_id}/locales | List locales used in account
+*LocalesApi* | [**accountLocales**](docs/LocalesApi.md#accountLocales) | **GET** /accounts/{id}/locales | List locales used in account
 *LocalesApi* | [**localeCreate**](docs/LocalesApi.md#localeCreate) | **POST** /projects/{project_id}/locales | Create a locale
 *LocalesApi* | [**localeDelete**](docs/LocalesApi.md#localeDelete) | **DELETE** /projects/{project_id}/locales/{id} | Delete a locale
 *LocalesApi* | [**localeDownload**](docs/LocalesApi.md#localeDownload) | **GET** /projects/{project_id}/locales/{id}/download | Download a locale
