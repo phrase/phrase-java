@@ -588,7 +588,7 @@ public class ProjectsApi {
      * Build call for projectsList
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @param filters Filter projects. Valid options are [\&quot;favorites\&quot;]. (optional)
@@ -671,7 +671,7 @@ public class ProjectsApi {
      * List all projects the current user has access to.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @param filters Filter projects. Valid options are [\&quot;favorites\&quot;]. (optional)
@@ -696,7 +696,7 @@ public class ProjectsApi {
      * List all projects the current user has access to.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @param filters Filter projects. Valid options are [\&quot;favorites\&quot;]. (optional)
@@ -722,7 +722,7 @@ public class ProjectsApi {
      * List all projects the current user has access to.
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param accountId Filter by Account ID (optional)
      * @param sortBy Sort projects. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;updated_at_asc\&quot;, \&quot;updated_at_desc\&quot;, \&quot;space_asc\&quot; and \&quot;space_desc\&quot;. (optional)
      * @param filters Filter projects. Valid options are [\&quot;favorites\&quot;]. (optional)

@@ -63,7 +63,7 @@ public class LocalesApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -138,7 +138,7 @@ public class LocalesApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @return List&lt;LocalePreview1&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -161,7 +161,7 @@ public class LocalesApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @return ApiResponse&lt;List&lt;LocalePreview1&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -185,7 +185,7 @@ public class LocalesApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1063,7 +1063,7 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
@@ -1148,7 +1148,7 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @return List&lt;Locale&gt;
@@ -1173,7 +1173,7 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;List&lt;Locale&gt;&gt;
@@ -1199,7 +1199,7 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes

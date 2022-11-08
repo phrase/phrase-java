@@ -46,7 +46,7 @@ public class Example {
     NotificationGroupsApi apiInstance = new NotificationGroupsApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     try {
       List<Object> result = apiInstance.notificationGroupsList(xPhraseAppOTP, page, perPage);
       System.out.println(result);
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
 
 ### Return type
 

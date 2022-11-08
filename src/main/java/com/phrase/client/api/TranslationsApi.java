@@ -1263,7 +1263,7 @@ public class TranslationsApi {
      * @param keyId Translation Key ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1365,7 +1365,7 @@ public class TranslationsApi {
      * @param keyId Translation Key ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1393,7 +1393,7 @@ public class TranslationsApi {
      * @param keyId Translation Key ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1422,7 +1422,7 @@ public class TranslationsApi {
      * @param keyId Translation Key ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1452,7 +1452,7 @@ public class TranslationsApi {
      * @param localeId Locale ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1554,7 +1554,7 @@ public class TranslationsApi {
      * @param localeId Locale ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1582,7 +1582,7 @@ public class TranslationsApi {
      * @param localeId Locale ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1611,7 +1611,7 @@ public class TranslationsApi {
      * @param localeId Locale ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -1920,7 +1920,7 @@ public class TranslationsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -2015,7 +2015,7 @@ public class TranslationsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -2042,7 +2042,7 @@ public class TranslationsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -2070,7 +2070,7 @@ public class TranslationsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param sort Sort criteria. Can be one of: key_name, created_at, updated_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
@@ -2240,7 +2240,7 @@ public class TranslationsApi {
      * @param translationsSearchParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2321,7 +2321,7 @@ public class TranslationsApi {
      * @param translationsSearchParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @return List&lt;Translation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2345,7 +2345,7 @@ public class TranslationsApi {
      * @param translationsSearchParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @return ApiResponse&lt;List&lt;Translation&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2370,7 +2370,7 @@ public class TranslationsApi {
      * @param translationsSearchParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

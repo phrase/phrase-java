@@ -631,7 +631,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     String sort = updated_at; // String | Sort by field. Can be one of: name, created_at, updated_at.
     String order = desc; // String | Order direction. Can be one of: asc, desc.
@@ -658,7 +658,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **sort** | **String**| Sort by field. Can be one of: name, created_at, updated_at. | [optional]
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
@@ -725,7 +725,7 @@ public class Example {
     KeysSearchParameters keysSearchParameters = new KeysSearchParameters(); // KeysSearchParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     try {
       List<TranslationKey> result = apiInstance.keysSearch(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage);
       System.out.println(result);
@@ -748,7 +748,7 @@ Name | Type | Description  | Notes
  **keysSearchParameters** | [**KeysSearchParameters**](KeysSearchParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
 
 ### Return type
 

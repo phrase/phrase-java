@@ -667,7 +667,7 @@ public class ScreenshotsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param keyId filter by key (optional)
      * @param _callback Callback for upload/download progress
@@ -752,7 +752,7 @@ public class ScreenshotsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param keyId filter by key (optional)
      * @return List&lt;Screenshot&gt;
@@ -777,7 +777,7 @@ public class ScreenshotsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param keyId filter by key (optional)
      * @return ApiResponse&lt;List&lt;Screenshot&gt;&gt;
@@ -803,7 +803,7 @@ public class ScreenshotsApi {
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
      * @param keyId filter by key (optional)
      * @param _callback The callback to be executed when the API call finishes

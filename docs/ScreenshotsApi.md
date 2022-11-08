@@ -384,7 +384,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     String keyId = abcd1234cdef1234abcd1234cdef1234; // String | filter by key
     try {
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **keyId** | **String**| filter by key | [optional]
 

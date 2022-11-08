@@ -966,7 +966,7 @@ public class Example {
     String accountId = "accountId_example"; // String | Account ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String ownedBy = abcd1234cdef1234abcd1234cdef1234; // String | filter by user owning job
     String assignedTo = abcd1234cdef1234abcd1234cdef1234; // String | filter by user assigned to job
     String state = completed; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
@@ -991,7 +991,7 @@ Name | Type | Description  | Notes
  **accountId** | **String**| Account ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **ownedBy** | **String**| filter by user owning job | [optional]
  **assignedTo** | **String**| filter by user assigned to job | [optional]
  **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
@@ -1055,7 +1055,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     String ownedBy = abcd1234cdef1234abcd1234cdef1234; // String | filter by user owning job
     String assignedTo = abcd1234cdef1234abcd1234cdef1234; // String | filter by user assigned to job
@@ -1081,7 +1081,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **ownedBy** | **String**| filter by user owning job | [optional]
  **assignedTo** | **String**| filter by user assigned to job | [optional]

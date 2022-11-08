@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="notificationsList"></a>
 # **notificationsList**
-> List&lt;Object&gt; notificationsList(xPhraseAppOTP, page, perPage)
+> List&lt;Object&gt; notificationsList(xPhraseAppOTP, page, perPage, unseen)
 
 List notifications
 
@@ -46,9 +46,10 @@ public class Example {
     NotificationsApi apiInstance = new NotificationsApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    Boolean unseen = true; // Boolean | Include only unseen notifications
     try {
-      List<Object> result = apiInstance.notificationsList(xPhraseAppOTP, page, perPage);
+      List<Object> result = apiInstance.notificationsList(xPhraseAppOTP, page, perPage, unseen);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationsApi#notificationsList");
@@ -67,7 +68,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
+ **unseen** | **Boolean**| Include only unseen notifications | [optional]
 
 ### Return type
 

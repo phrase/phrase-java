@@ -57,7 +57,8 @@ public class NotificationsApi {
      * Build call for notificationsList
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param unseen Include only unseen notifications (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -70,7 +71,7 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call notificationsListCall(String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call notificationsListCall(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -84,6 +85,10 @@ public class NotificationsApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (unseen != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("unseen", unseen));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -112,10 +117,10 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call notificationsListValidateBeforeCall(String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call notificationsListValidateBeforeCall(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = notificationsListCall(xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = notificationsListCall(xPhraseAppOTP, page, perPage, unseen, _callback);
         return localVarCall;
 
     }
@@ -125,7 +130,8 @@ public class NotificationsApi {
      * List all notifications from the current user
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param unseen Include only unseen notifications (optional)
      * @return List&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -137,8 +143,8 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Object> notificationsList(String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = notificationsListWithHttpInfo(xPhraseAppOTP, page, perPage);
+    public List<Object> notificationsList(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen) throws ApiException {
+        ApiResponse<List<Object>> localVarResp = notificationsListWithHttpInfo(xPhraseAppOTP, page, perPage, unseen);
         return localVarResp.getData();
     }
 
@@ -147,7 +153,8 @@ public class NotificationsApi {
      * List all notifications from the current user
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param unseen Include only unseen notifications (optional)
      * @return ApiResponse&lt;List&lt;Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -159,8 +166,8 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> notificationsListWithHttpInfo(String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        okhttp3.Call localVarCall = notificationsListValidateBeforeCall(xPhraseAppOTP, page, perPage, null);
+    public ApiResponse<List<Object>> notificationsListWithHttpInfo(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen) throws ApiException {
+        okhttp3.Call localVarCall = notificationsListValidateBeforeCall(xPhraseAppOTP, page, perPage, unseen, null);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -170,7 +177,8 @@ public class NotificationsApi {
      * List all notifications from the current user
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
-     * @param perPage allows you to specify a page size up to 100 items, 25 by default (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param unseen Include only unseen notifications (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -183,9 +191,9 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call notificationsListAsync(String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call notificationsListAsync(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen, final ApiCallback<List<Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = notificationsListValidateBeforeCall(xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = notificationsListValidateBeforeCall(xPhraseAppOTP, page, perPage, unseen, _callback);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

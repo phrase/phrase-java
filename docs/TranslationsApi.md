@@ -724,7 +724,7 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     String sort = updated_at; // String | Sort criteria. Can be one of: key_name, created_at, updated_at.
     String order = desc; // String | Order direction. Can be one of: asc, desc.
@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
  **keyId** | **String**| Translation Key ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional]
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
@@ -817,7 +817,7 @@ public class Example {
     String localeId = "localeId_example"; // String | Locale ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     String sort = updated_at; // String | Sort criteria. Can be one of: key_name, created_at, updated_at.
     String order = desc; // String | Order direction. Can be one of: asc, desc.
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
  **localeId** | **String**| Locale ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional]
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
@@ -1071,7 +1071,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     String sort = updated_at; // String | Sort criteria. Can be one of: key_name, created_at, updated_at.
     String order = desc; // String | Order direction. Can be one of: asc, desc.
@@ -1097,7 +1097,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
  **sort** | **String**| Sort criteria. Can be one of: key_name, created_at, updated_at. | [optional]
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
@@ -1244,7 +1244,7 @@ public class Example {
     TranslationsSearchParameters translationsSearchParameters = new TranslationsSearchParameters(); // TranslationsSearchParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | allows you to specify a page size up to 100 items, 25 by default
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     try {
       List<Translation> result = apiInstance.translationsSearch(projectId, translationsSearchParameters, xPhraseAppOTP, page, perPage);
       System.out.println(result);
@@ -1267,7 +1267,7 @@ Name | Type | Description  | Notes
  **translationsSearchParameters** | [**TranslationsSearchParameters**](TranslationsSearchParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| allows you to specify a page size up to 100 items, 25 by default | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
 
 ### Return type
 
