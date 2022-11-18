@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GlossaryTermCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-17T13:17:05.076035Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-18T08:19:27.643328Z[Etc/UTC]")
 public class GlossaryTermCreateParameters {
   public static final String SERIALIZED_NAME_TERM = "term";
   @SerializedName(SERIALIZED_NAME_TERM)
