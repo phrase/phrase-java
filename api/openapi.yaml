@@ -1745,6 +1745,7 @@ paths:
           phrase icu skeleton \
           --data '{"content":"{number, plural, one {One} other {%{n}}}","locale_codes":["en"],"zero_form_enabled": true}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /formats:
@@ -1816,6 +1817,7 @@ paths:
         source: |-
           phrase formats list \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/documents:
     get:
@@ -1917,6 +1919,7 @@ paths:
           phrase documents list \
           --project_id <project_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/documents/{id}:
     delete:
@@ -2000,6 +2003,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/styleguides:
     get:
@@ -2101,6 +2105,7 @@ paths:
           phrase styleguides list \
           --project_id <project_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new style guide.
@@ -2251,6 +2256,7 @@ paths:
           --project_id <project_id> \
           --data '{"title": "Web application style guide", "audience":"customer-facing", "target_audience":"teenager", "grammatical_person":"first_person_singular", "vocabulary_type":"technical", "business": "We are a travel site that helps customers find the best hotels and flights.", "company_branding": "ACME Inc. should never be translated.", "formatting": "Never use capital letters", "glossary_terms": "Apartment, cabin, loft", "grammar_consistency":", "literal_translation":"Neutral", "overall_tone": "Tone should be fun and light", "samples": "http://www.myexample.com/my/document/path/to/samples.pdf"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/styleguides/{id}:
@@ -2334,6 +2340,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single style guide.
@@ -2418,6 +2425,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing style guide.
@@ -2577,6 +2585,7 @@ paths:
           --id <id> \
           --data '{"title": "Web application style guide", "audience":"customer-facing", "target_audience":"teenager", "grammatical_person":"first_person_singular", "vocabulary_type":"technical", "business": "We are a travel site that helps customers find the best hotels and flights.", "company_branding": "ACME Inc. should never be translated.", "formatting": "Never use capital letters", "glossary_terms": "Apartment, cabin, loft", "grammar_consistency":", "literal_translation":"Neutral", "overall_tone": "Tone should be fun and light", "samples": "http://www.myexample.com/my/document/path/to/samples.pdf"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/invitations:
@@ -2693,6 +2702,7 @@ paths:
           phrase invitations list \
           --account_id <account_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Invite a person to an account. Developers and translators need
@@ -2859,6 +2869,7 @@ paths:
           --account_id <account_id> \
           --data '{"email":"example@mail.com", "role":"Developer", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"],"team_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"], "default_locale_codes":["de","en"], "permissions":"{"create_upload"=>true, "review_translations"=>true}"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/invitations/{id}:
@@ -2954,6 +2965,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single invitation. Access token scope must include
@@ -3050,6 +3062,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing invitation (must not be accepted yet). The <code>email</code>
@@ -3205,6 +3218,7 @@ paths:
           --id <id> \
           --data '{"role": "Invitiation role", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"],"team_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"], "default_locale_codes":["de","en"], "permissions":"{"create_upload"=>true}"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/invitations/{id}/resend:
@@ -3304,6 +3318,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/invitations/{id}:
     patch:
@@ -3426,6 +3441,7 @@ paths:
           --id <id> \
           --data '{"project_role":"Developer","locale_ids":["fff565db236400772368235db2c6117e","fff565db236400772368235db2c6117f"]}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/screenshots/{id}/markers:
@@ -3547,6 +3563,7 @@ paths:
           --branch my-feature-branch \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/screenshots/{screenshot_id}/markers/{id}:
     get:
@@ -3651,6 +3668,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/screenshots/{screenshot_id}/markers:
     delete:
@@ -3745,6 +3763,7 @@ paths:
           --screenshot_id <screenshot_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing screenshot marker.
@@ -3861,6 +3880,7 @@ paths:
           --screenshot_id <screenshot_id> \
           --data '{"branch":"my-feature-branch", "key_id":"abcd1234abcd1234abcd1234abcd1234", "presentation": "{ "x": 100, "y": 100, "w": 100, "h": 100 }"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
     post:
@@ -3978,6 +3998,7 @@ paths:
           --screenshot_id <screenshot_id> \
           --data '{"branch":"my-feature-branch", "key_id":"abcd1234abcd1234abcd1234abcd1234", "presentation": "{ "x": 100, "y": 100, "w": 100, "h": 100 }"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{id}/locales:
@@ -4081,6 +4102,7 @@ paths:
           phrase accounts locales \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/locales:
     get:
@@ -4201,6 +4223,7 @@ paths:
           --project_id <project_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new locale.
@@ -4338,6 +4361,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "name":"de", "code":"de-DE", "source_locale_id":"abcd1234abcd1234abcd1234abcd1234", "fallback_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/locales/{id}:
@@ -4433,6 +4457,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single locale for a given project.
@@ -4527,6 +4552,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing locale.
@@ -4673,6 +4699,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "name":"de", "code":"de-DE", "source_locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/locales/{id}/download:
@@ -4920,6 +4947,7 @@ paths:
           --tags feature1,feature2 \
           --tag feature \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: '*'
   /accounts/{account_id}/distributions:
     get:
@@ -5021,6 +5049,7 @@ paths:
           phrase distributions list \
           --account_id <account_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new distribution.
@@ -5161,6 +5190,7 @@ paths:
           --account_id <account_id> \
           --data '{"name": "My Android Distribution", "project_id":"abcd1234abcd1234abcd1234", "platforms": "android,ios", "locale_ids":["fff565db236400772368235db2c6117e,abcd1234cdef1234abcd1234cdef1234"], "format_options": "{xml:{enclose_in_cdata:'1'}}", "fallback_to_non_regional_locale":true, "fallback_to_default_locale":true, "use_last_reviewed_version":true}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/distributions/{id}:
@@ -5244,6 +5274,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single distribution.
@@ -5328,6 +5359,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing distribution.
@@ -5477,6 +5509,7 @@ paths:
           --id <id> \
           --data '{"name": "My Android Distribution", "project_id":"abcd1234abcd1234abcd1234", "platforms": "android,ios", "locale_ids": "fff565db236400772368235db2c6117e,abcd1234cdef1234abcd1234cdef1234", "format_options": "{xml:{enclose_in_cdata:'1'}}", "fallback_to_non_regional_locale":true, "fallback_to_default_locale":true, "use_last_reviewed_version":true}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/distributions/{distribution_id}/releases:
@@ -5588,6 +5621,7 @@ paths:
           --account_id <account_id> \
           --distribution_id <distribution_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new release.
@@ -5710,6 +5744,7 @@ paths:
           --distribution_id <distribution_id> \
           --data '{"description": "My first Release", "platforms": "android,ios", "branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/distributions/{distribution_id}/releases/{id}:
@@ -5802,6 +5837,7 @@ paths:
           --distribution_id <distribution_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single release.
@@ -5895,6 +5931,7 @@ paths:
           --distribution_id <distribution_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing release.
@@ -6017,6 +6054,7 @@ paths:
           --id <id> \
           --data '{"description": "My first Release", "platforms": "android,ios", "branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish:
@@ -6113,6 +6151,7 @@ paths:
           --distribution_id <distribution_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/jobs:
     get:
@@ -6255,6 +6294,7 @@ paths:
           --assigned_to abcd1234cdef1234abcd1234cdef1234 \
           --state completed \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new job.
@@ -6387,6 +6427,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "name":"de", "briefing":"de-DE", "due_date":"2017-08-15", "ticket_url":"https://example.atlassian.net/browse/FOO", "tags": "myUploadTag", "translation_key_ids": "abcd1234cdef1234abcd1234cdef1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/jobs:
@@ -6520,6 +6561,7 @@ paths:
           --assigned_to abcd1234cdef1234abcd1234cdef1234 \
           --state completed \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/jobs/{id}:
     delete:
@@ -6614,6 +6656,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single job for a given project.
@@ -6708,6 +6751,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing job.
@@ -6825,6 +6869,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "name":"de", "briefing":"de-DE", "due_date":"2017-08-15", "ticket_url":"https://example.atlassian.net/browse/FOO"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{id}/start:
@@ -6928,6 +6973,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{id}/complete:
@@ -7031,6 +7077,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{id}/reopen:
@@ -7134,6 +7181,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{id}/lock:
@@ -7229,6 +7277,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/jobs/{id}/unlock:
     post:
@@ -7324,6 +7373,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/jobs/{id}/keys:
     delete:
@@ -7431,6 +7481,7 @@ paths:
           --branch my-feature-branch \
           --translation_key_ids "abcd1234cdef1234abcd1234cdef1234" \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Add multiple keys to a existing job.
@@ -7539,6 +7590,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "translation_key_ids": "abcd1234cdef1234abcd1234cdef1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/job_templates:
@@ -7651,6 +7703,7 @@ paths:
           --project_id <project_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new job template.
@@ -7778,6 +7831,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "name":"template", "briefing":"text"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/job_templates/{id}:
@@ -7873,6 +7927,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single job template for a given project.
@@ -7967,6 +8022,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing job template.
@@ -8078,6 +8134,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "name":"template", "briefing":"text"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/glossaries:
@@ -8181,6 +8238,7 @@ paths:
           phrase glossaries list \
           --account_id <account_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: 'Create a new term base (previously: glossary).'
@@ -8286,6 +8344,7 @@ paths:
           --account_id <account_id> \
           --data '{"name":"My term base", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{id}:
@@ -8369,6 +8428,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: 'Get details on a single term base (previously: glossary).'
@@ -8453,6 +8513,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: 'Update an existing term base (previously: glossary).'
@@ -8567,6 +8628,7 @@ paths:
           --id <id> \
           --data '{"name": "My glossary", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "space_ids": "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /authorizations:
@@ -8658,6 +8720,7 @@ paths:
             -u USERNAME
       - lang: CLI v2
         source: phrase authorizations list
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new authorization.
@@ -8755,6 +8818,7 @@ paths:
         source: |-
           phrase authorizations create \
           --data '{"note": "My Deploy Script", "scopes": "read,write", "expires_at": "2015-03-30T09:52:53Z"}'
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /authorizations/{id}:
@@ -8829,6 +8893,7 @@ paths:
         source: |-
           phrase authorizations delete \
           --id <id>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single authorization.
@@ -8903,6 +8968,7 @@ paths:
         source: |-
           phrase authorizations show \
           --id <id>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing authorization.
@@ -9009,6 +9075,7 @@ paths:
           phrase authorizations update \
           --id <id> \
           --data '{"note": "My Deploy Script", "scopes": "read,write", "expires_at": "2015-03-30T09:52:53Z"}'
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /bitbucket_syncs:
@@ -9093,6 +9160,7 @@ paths:
           phrase bitbucket_sync list \
           --account_id abcd1234 \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /bitbucket_syncs/{id}/export:
     post:
@@ -9189,6 +9257,7 @@ paths:
           --id <id> \
           --data '{"account_id":"abcd1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /bitbucket_syncs/{id}/import:
@@ -9282,6 +9351,7 @@ paths:
           --id <id> \
           --data '{"account_id":"abcd1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/{key_id}/comments:
@@ -9403,6 +9473,7 @@ paths:
           --key_id <key_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new comment for a key.
@@ -9508,6 +9579,7 @@ paths:
           --key_id <key_id> \
           --data '{"branch":"my-feature-branch", "message": "Some message..."}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/{key_id}/comments/{id}:
@@ -9612,6 +9684,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single comment.
@@ -9715,6 +9788,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing comment.
@@ -9829,6 +9903,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "message": "Some message..."}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/{key_id}/comments/{id}/read:
@@ -9933,6 +10008,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Check if comment was marked as read. Returns 204 if read, 404 if
@@ -10033,6 +10109,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Mark a comment as read.
@@ -10139,6 +10216,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/webhooks:
@@ -10241,6 +10319,7 @@ paths:
           phrase webhooks list \
           --project_id <project_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new webhook.
@@ -10354,6 +10433,7 @@ paths:
           --project_id <project_id> \
           --data '{"callback_url": "http://example.com/hooks/phraseapp-notifications", "description": "My webhook for chat notifications", "events": "locales:create,translations:update"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/webhooks/{id}:
@@ -10437,6 +10517,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single webhook.
@@ -10521,6 +10602,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing webhook.
@@ -10643,6 +10725,7 @@ paths:
           --id <id> \
           --data '{"callback_url": "http://example.com/hooks/phraseapp-notifications", "description": "My webhook for chat notifications", "events": "locales:create,translations:update"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/webhooks/{id}/test:
@@ -10726,6 +10809,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/uploads:
     get:
@@ -10837,6 +10921,7 @@ paths:
           --project_id <project_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Upload a new language file. Creates necessary resources in your
@@ -11006,6 +11091,7 @@ paths:
           --locale_mapping '{"en": "2"}' \
           --format_options '{"foo": "bar"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: multipart/form-data
       x-accepts: application/json
   /projects/{project_id}/uploads/{id}:
@@ -11102,6 +11188,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /github_syncs/export:
     post:
@@ -11194,6 +11281,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: UNAVAILABLE
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /github_syncs/import:
@@ -11286,6 +11374,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: UNAVAILABLE
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /gitlab_syncs:
@@ -11370,6 +11459,7 @@ paths:
           phrase gitlab_syncs list \
           --account_id abcd1234 \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /gitlab_syncs/{id}:
     delete:
@@ -11456,6 +11546,7 @@ paths:
           --id <id> \
           --account_id abcd1234 \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Shows a single GitLab Sync Setting.
@@ -11542,6 +11633,7 @@ paths:
           --id <id> \
           --account_id abcd1234 \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     put:
       description: Updates a single GitLab Sync Setting.
@@ -11658,6 +11750,7 @@ paths:
           --id <id> \
           --data '{"account_id":"abcd1234", "phrase_project_code":"3456abcd", "gitlab_project_id":"12345", "gitlab_branch_name":"feature-development"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /gitlab_syncs/{gitlab_sync_id}/import:
     post:
@@ -11758,6 +11851,7 @@ paths:
           --gitlab_sync_id <gitlab_sync_id> \
           --data '{"account_id":"abcd1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /gitlab_syncs/{gitlab_sync_id}/export:
@@ -11855,6 +11949,7 @@ paths:
           --gitlab_sync_id <gitlab_sync_id> \
           --data '{"account_id":"abcd1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /gitlab_syncs/{gitlab_sync_id}/history:
@@ -11968,6 +12063,7 @@ paths:
           --gitlab_sync_id <gitlab_sync_id> \
           --account_id abcd1234 \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/translations/{translation_id}/versions:
     get:
@@ -12088,6 +12184,7 @@ paths:
           --translation_id <translation_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/translations/{translation_id}/versions/{id}:
     get:
@@ -12192,6 +12289,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations:
     post:
@@ -12308,6 +12406,7 @@ paths:
           --term_id <term_id> \
           --data '{"locale_code":"en-US", "content": "My translated term"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms/{term_id}/translations/{id}:
@@ -12410,6 +12509,7 @@ paths:
           --term_id <term_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: 'Update an existing translation for a term in a term base (previously:
@@ -12534,6 +12634,7 @@ paths:
           --id <id> \
           --data '{"locale_code":"en-US", "content": "My translated term"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects:
@@ -12655,6 +12756,7 @@ paths:
         source: |-
           phrase projects list \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new project.
@@ -12850,6 +12952,7 @@ paths:
           phrase projects create \
           --data '{"name": "My Android Project", "main_format":"yml", "shares_translation_memory":"true"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{id}:
@@ -12924,6 +13027,7 @@ paths:
           phrase projects delete \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single project.
@@ -12999,6 +13103,7 @@ paths:
           phrase projects show \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing project.
@@ -13198,6 +13303,7 @@ paths:
           --id <id> \
           --data '{"name": "My Android Project", "main_format":"yml", "shares_translation_memory":true}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locales:
@@ -13319,6 +13425,7 @@ paths:
           --job_id <job_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new job locale.
@@ -13440,6 +13547,7 @@ paths:
           --job_id <job_id> \
           --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "user_ids": "abcd1234cdef1234abcd1234cdef1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locale/{id}:
@@ -13545,6 +13653,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locales/{id}:
     delete:
@@ -13648,6 +13757,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing job locale.
@@ -13777,6 +13887,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "user_ids": "abcd1234cdef1234abcd1234cdef1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locales/{id}/complete:
@@ -13889,6 +14000,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review:
@@ -14001,6 +14113,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locales/{id}/reopen:
@@ -14113,6 +14226,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/job_templates/{job_template_id}/locales:
@@ -14234,6 +14348,7 @@ paths:
           --job_template_id <job_template_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new job template locale.
@@ -14357,6 +14472,7 @@ paths:
           --job_template_id <job_template_id> \
           --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "user_ids": "abcd1234cdef1234abcd1234cdef1234", "reviewer_ids": "abcd1234cdef1234abcd1234cdef1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/job_templates/{job_template_id}/locales/{job_template_locale_id}:
@@ -14461,6 +14577,7 @@ paths:
           --job_template_locale_id <job_template_locale_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get a single job template locale for a given job template.
@@ -14564,6 +14681,7 @@ paths:
           --job_template_locale_id <job_template_locale_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing job template locale.
@@ -14696,6 +14814,7 @@ paths:
           --job_template_locale_id <job_template_locale_id> \
           --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "user_ids": "abcd1234cdef1234abcd1234cdef1234", "reviewer_ids": "abcd1234cdef1234abcd1234cdef1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/variables:
@@ -14798,6 +14917,7 @@ paths:
           phrase variables list \
           --project_id <project_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new variable.
@@ -14894,6 +15014,7 @@ paths:
           --project_id <project_id> \
           --data '{"name":"MY_VARIABLE", "value":"Hello World"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/variables/{name}:
@@ -14977,6 +15098,7 @@ paths:
           --project_id <project_id> \
           --name <name> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single variable for a given project.
@@ -15061,6 +15183,7 @@ paths:
           --project_id <project_id> \
           --name <name> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing variable.
@@ -15166,6 +15289,7 @@ paths:
           --name <name> \
           --data '{"name":"MY_VARIABLE","value":"Hello World"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/branches:
@@ -15268,6 +15392,7 @@ paths:
           phrase branches list \
           --project_id <project_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new branch.
@@ -15360,6 +15485,7 @@ paths:
           --project_id <project_id> \
           --data '{"name":"my-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/branches/{name}:
@@ -15443,6 +15569,7 @@ paths:
           --project_id <project_id> \
           --name <name> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single branch for a given project.
@@ -15527,6 +15654,7 @@ paths:
           --project_id <project_id> \
           --name <name> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing branch.
@@ -15628,6 +15756,7 @@ paths:
           --name <name> \
           --data '{"name":"my-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/branches/{name}/merge:
@@ -15727,6 +15856,7 @@ paths:
           --name <name> \
           --data '{"strategy":"use_main"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/branches/{name}/compare:
@@ -15810,6 +15940,7 @@ paths:
           --name <name> \
           --name my-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts:
     get:
@@ -15902,6 +16033,7 @@ paths:
         source: |-
           phrase accounts list \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{id}:
     get:
@@ -15978,6 +16110,7 @@ paths:
           phrase accounts show \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /user:
     get:
@@ -16045,6 +16178,7 @@ paths:
         source: |-
           phrase shows user \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{account_id}/members:
     get:
@@ -16159,6 +16293,7 @@ paths:
           phrase members list \
           --account_id <account_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{account_id}/members/{id}:
     delete:
@@ -16253,6 +16388,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single user in the account. Access token scope
@@ -16349,6 +16485,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update user permissions in the account. Developers and translators
@@ -16503,6 +16640,7 @@ paths:
           --id <id> \
           --data '{"role":"Developer", "strategy":"set", "project_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "locale_ids":"abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", "default_locale_codes":["de","en"], "space_ids":["abcd1234abcd1234abcd1234","abcd1234abcd1234abcd1235"], "permissions":"{"create_upload"=>true, "review_translations"=>true}"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/members/{id}:
@@ -16626,6 +16764,7 @@ paths:
           --id <id> \
           --data '{"project_role":"Developer","locale_ids":["fff565db236400772368235db2c6117e","fff565db236400772368235db2c6117f"]}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/screenshots:
@@ -16747,6 +16886,7 @@ paths:
           --project_id <project_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new screenshot.
@@ -16853,6 +16993,7 @@ paths:
           --project_id <project_id> \
           --branch "my-feature-branch" --name "A screenshot name" --description "A screenshot description" --filename "/path/to/my/screenshot.png" \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: multipart/form-data
       x-accepts: application/json
   /projects/{project_id}/screenshots/{id}:
@@ -16948,6 +17089,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single screenshot for a given project.
@@ -17042,6 +17184,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing screenshot.
@@ -17157,6 +17300,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "name": "A screenshot name", "description": "A screenshot description", "filename":"/path/to/my/screenshot.png"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms:
@@ -17269,6 +17413,7 @@ paths:
           --account_id <account_id> \
           --glossary_id <glossary_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: 'Create a new term in a term base (previously: glossary).'
@@ -17383,6 +17528,7 @@ paths:
           --glossary_id <glossary_id> \
           --data '{"term":"MyCompany", "description": "Use this when refering to our company", "translatable":true, "case_sensitive":true}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/glossaries/{glossary_id}/terms/{id}:
@@ -17475,6 +17621,7 @@ paths:
           --glossary_id <glossary_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: 'Get details for a single term in the term base (previously: glossary).'
@@ -17568,6 +17715,7 @@ paths:
           --glossary_id <glossary_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: 'Update an existing term in a term base (previously: glossary).'
@@ -17691,6 +17839,7 @@ paths:
           --id <id> \
           --data '{"term":"MyCompany", "description": "Use this when refering to our company", "translatable":true, "case_sensitive":true}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/tags:
@@ -17803,6 +17952,7 @@ paths:
           --project_id <project_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new tag.
@@ -17899,6 +18049,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "name":"my-feature"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/tags/{name}:
@@ -17994,6 +18145,7 @@ paths:
           --name <name> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details and progress information on a single tag for a given
@@ -18089,6 +18241,7 @@ paths:
           --name <name> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/blacklisted_keys:
     get:
@@ -18199,6 +18352,7 @@ paths:
           phrase blacklisted_keys list \
           --project_id <project_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new rule for blocking keys.
@@ -18291,6 +18445,7 @@ paths:
           --project_id <project_id> \
           --data '{"name":"'date.formats.*'"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/blacklisted_keys/{id}:
@@ -18374,6 +18529,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single rule for blocking keys for a given project.
@@ -18458,6 +18614,7 @@ paths:
           --project_id <project_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing rule for blocking keys.
@@ -18559,6 +18716,7 @@ paths:
           --id <id> \
           --data '{"name":"'date.formats.*'"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys:
@@ -18683,6 +18841,7 @@ paths:
           --query 'mykey* translated:true' \
           --locale_id abcd1234abcd1234abcd1234abcd1234 \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: List all keys for the given project. Alternatively you can POST
@@ -18846,6 +19005,7 @@ paths:
           --query 'mykey* translated:true' \
           --locale_id abcd1234abcd1234abcd1234abcd1234 \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new key.
@@ -19012,6 +19172,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "name":"home.index.headline", "description": "Some description worth knowing...", "name_plural":"home.index.headlines", "data_type":"number", "tags":"awesome-feature,needs-proofreading", "max_characters_allowed":"140", "screenshot":"/path/to/my/screenshot.png"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/search:
@@ -19157,6 +19318,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/{id}:
@@ -19252,6 +19414,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single key for a given project.
@@ -19346,6 +19509,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing key.
@@ -19516,6 +19680,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "name":"home.index.headline", "description": "Some description worth knowing...", "name_plural":"home.index.headlines", "data_type":"number", "tags":"awesome-feature,needs-proofreading", "max_characters_allowed":"140", "screenshot":"/path/to/my/screenshot.png"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/tag:
@@ -19635,6 +19800,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/untag:
@@ -19754,6 +19920,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/exclude:
@@ -19872,6 +20039,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "target_locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/keys/include:
@@ -19990,6 +20158,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "target_locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/orders:
@@ -20102,6 +20271,7 @@ paths:
           --project_id <project_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new order. Access token scope must include <code>orders.create</code>.
@@ -20262,6 +20432,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "name":"Welcome message translations", "lsp":"textmaster", "source_locale_id":"abcd1234abcd1234abcd1234abcd1234", "target_locale_ids": "1234abcd1234abcd1234abcd1234abcd,abcd1234abcd1234abcd1234abcd1234", "translation_type":"premium", "tag":"my-awesome-feature", "message": "Please make everything sound really nice :)", "styleguide_id":"1234abcd1234abcd1234abcd1234abcd", "category":"C021"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/orders/{id}:
@@ -20357,6 +20528,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single order.
@@ -20451,6 +20623,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/orders/{id}/confirm:
     patch:
@@ -20554,6 +20727,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/spaces:
@@ -20656,6 +20830,7 @@ paths:
           phrase spaces list \
           --account_id <account_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new Space.
@@ -20748,6 +20923,7 @@ paths:
           --account_id <account_id> \
           --data '{"name": "My Android Projects"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/spaces/{id}:
@@ -20831,6 +21007,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Show the specified Space.
@@ -20915,6 +21092,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update the specified Space.
@@ -21016,6 +21194,7 @@ paths:
           --id <id> \
           --data '{"name": "My Android Projects"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/spaces/{space_id}/projects:
@@ -21127,6 +21306,7 @@ paths:
           --account_id <account_id> \
           --space_id <space_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Adds an existing project to the space.
@@ -21224,6 +21404,7 @@ paths:
           --space_id <space_id> \
           --data '{"id":"a4b3c2d1"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/spaces/{space_id}/projects/{id}:
@@ -21316,6 +21497,7 @@ paths:
           --space_id <space_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{account_id}/teams:
     get:
@@ -21417,6 +21599,7 @@ paths:
           phrase teams list \
           --account_id <account_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new Team.
@@ -21509,6 +21692,7 @@ paths:
           --account_id <account_id> \
           --data '{"name": "German Translators"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/teams/{id}:
@@ -21592,6 +21776,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Show the specified Team.
@@ -21676,6 +21861,7 @@ paths:
           --account_id <account_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update the specified Team.
@@ -21777,6 +21963,7 @@ paths:
           --id <id> \
           --data '{"name": "German Translators"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/teams/{team_id}/projects:
@@ -21876,6 +22063,7 @@ paths:
           --team_id <team_id> \
           --data '{"id":"a4b3c2d1"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/teams/{team_id}/projects/{id}:
@@ -21968,6 +22156,7 @@ paths:
           --team_id <team_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{account_id}/teams/{team_id}/spaces:
     post:
@@ -22066,6 +22255,7 @@ paths:
           --team_id <team_id> \
           --data '{"id":"a4b3c2d1"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/teams/{team_id}/spaces/{id}:
@@ -22158,6 +22348,7 @@ paths:
           --team_id <team_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{account_id}/teams/{team_id}/users:
     post:
@@ -22256,6 +22447,7 @@ paths:
           --team_id <team_id> \
           --data '{"id":"a4b3c2d1"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /accounts/{account_id}/teams/{team_id}/users/{id}:
@@ -22348,6 +22540,7 @@ paths:
           --team_id <team_id> \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/translations:
     get:
@@ -22501,6 +22694,7 @@ paths:
           --order desc \
           --query 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a translation.
@@ -22625,6 +22819,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "locale_id":"abcd1234cdef1234abcd1234cdef1234", "key_id":"abcd1234cdef1234abcd1234cdef1234", "content": "My translation"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/locales/{locale_id}/translations:
@@ -22788,6 +22983,7 @@ paths:
           --order desc \
           --query 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/keys/{key_id}/translations:
     get:
@@ -22948,6 +23144,7 @@ paths:
           --order desc \
           --query 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/translations/search:
     post:
@@ -23090,6 +23287,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "query":"'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center'"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/{id}:
@@ -23186,6 +23384,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing translation.
@@ -23310,6 +23509,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch", "content": "My translation"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/{id}/verify:
@@ -23413,6 +23613,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/{id}/unverify:
@@ -23516,6 +23717,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/{id}/review:
@@ -23619,6 +23821,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/{id}/exclude:
@@ -23722,6 +23925,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/{id}/include:
@@ -23825,6 +24029,7 @@ paths:
           --id <id> \
           --data '{"branch":"my-feature-branch"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/verify:
@@ -23937,6 +24142,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20unverified:true%20tags:feature,center'"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/unverify:
@@ -24054,6 +24260,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/review:
@@ -24162,6 +24369,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%reviewed:false%20tags:feature,center'"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/exclude:
@@ -24279,6 +24487,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/translations/include:
@@ -24396,6 +24605,7 @@ paths:
           --project_id <project_id> \
           --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /notifications:
@@ -24498,6 +24708,7 @@ paths:
         source: |-
           phrase notifications list \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /notifications/mark_all_as_read:
     post:
@@ -24569,6 +24780,7 @@ paths:
         source: |-
           phrase notifications mark_all_as_read \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /notifications/{id}:
     get:
@@ -24656,6 +24868,7 @@ paths:
           phrase notifications show \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /notification_groups:
     get:
@@ -24748,6 +24961,7 @@ paths:
         source: |-
           phrase notification_groups list \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /notification_groups/mark_all_as_read:
     patch:
@@ -24819,6 +25033,7 @@ paths:
         source: |-
           phrase notification_groups mark_all_as_read \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /notification_groups/{id}/mark_as_read:
     patch:
@@ -24897,6 +25112,7 @@ paths:
           phrase notification_groups mark_as_read \
           --id <id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /accounts/{account_id}/search:
     post:
@@ -25004,6 +25220,7 @@ paths:
           --account_id <account_id> \
           --data '{"query":"keyword","locale_code": "de","page": 1,"per_page": 25}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/comments/{id}:
@@ -25108,6 +25325,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     get:
       description: Get details on a single job comment.
@@ -25211,6 +25429,7 @@ paths:
           --id <id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     patch:
       description: Update an existing job comment.
@@ -25321,6 +25540,7 @@ paths:
           --id <id> \
           --data '{"message": "Some message..."}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/comments:
@@ -25421,6 +25641,7 @@ paths:
           --job_id <key_id> \
           --branch my-feature-branch \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
     post:
       description: Create a new comment for a job.
@@ -25522,6 +25743,7 @@ paths:
           --job_id <job_id> \
           --data '{"message": "Some message..."}' \
           --access_token <token>
+      x-cli-version: "2.5"
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/webhooks/{webhook_id}/deliveries:
@@ -25620,6 +25842,7 @@ paths:
           --project_id <project_id> \
           --webhook_id <webhook_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/webhooks/{webhook_id}/deliveries/{id}:
     get:
@@ -25717,6 +25940,7 @@ paths:
           --webhook_id <webhook_id> \
           --id <delivery_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
   /projects/{project_id}/webhooks/{webhook_id}/deliveries/{id}/redeliver:
     post:
@@ -25813,6 +26037,7 @@ paths:
           --webhook_id <webhook_id> \
           --id <delivery_id> \
           --access_token <token>
+      x-cli-version: "2.5"
       x-accepts: application/json
 components:
   headers:
