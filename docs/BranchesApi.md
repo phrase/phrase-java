@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Compare branches
 
-Compare branch with main branch.
+Compare branch with main branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Comparing a branch may take several minutes depending on the project size.&lt;/i&gt;
 
 ### Example
 ```java
@@ -99,7 +99,7 @@ null (empty response body)
 
 Create a branch
 
-Create a new branch.
+Create a new branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Creating a new branch may take several minutes depending on the project size.&lt;/i&gt;
 
 ### Example
 ```java
@@ -260,7 +260,7 @@ null (empty response body)
 
 Merge a branch
 
-Merge an existing branch.
+Merge an existing branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Merging a branch may take several minutes depending on diff size.&lt;/i&gt;
 
 ### Example
 ```java

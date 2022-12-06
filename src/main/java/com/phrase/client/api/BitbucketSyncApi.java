@@ -128,7 +128,7 @@ public class BitbucketSyncApi {
 
     /**
      * Export from Phrase Strings to Bitbucket
-     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param id ID (required)
      * @param bitbucketSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -150,7 +150,7 @@ public class BitbucketSyncApi {
 
     /**
      * Export from Phrase Strings to Bitbucket
-     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param id ID (required)
      * @param bitbucketSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -173,7 +173,7 @@ public class BitbucketSyncApi {
 
     /**
      * Export from Phrase Strings to Bitbucket (asynchronously)
-     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param id ID (required)
      * @param bitbucketSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -268,7 +268,7 @@ public class BitbucketSyncApi {
 
     /**
      * Import to Phrase Strings from Bitbucket
-     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param id ID (required)
      * @param bitbucketSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -288,7 +288,7 @@ public class BitbucketSyncApi {
 
     /**
      * Import to Phrase Strings from Bitbucket
-     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param id ID (required)
      * @param bitbucketSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -310,7 +310,7 @@ public class BitbucketSyncApi {
 
     /**
      * Import to Phrase Strings from Bitbucket (asynchronously)
-     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param id ID (required)
      * @param bitbucketSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

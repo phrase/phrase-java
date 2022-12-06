@@ -84,7 +84,7 @@ public class TranslationsApiTest {
     }
     
     /**
-     * Revoke exclusion of a translation in export
+     * Include a translation
      *
      * Remove exclude from export flag from an existing translation.
      *
@@ -246,7 +246,7 @@ public class TranslationsApiTest {
     }
     
     /**
-     * Set exclude from export flag on translations selected by query
+     * Exclude translations by query
      *
      * Exclude translations matching query from locale export.
      *
@@ -264,7 +264,7 @@ public class TranslationsApiTest {
     }
     
     /**
-     * Remove exlude from import flag from translations selected by query
+     * Include translations by query
      *
      * Include translations matching query in locale export.
      *
@@ -343,7 +343,7 @@ public class TranslationsApiTest {
     }
     
     /**
-     * Mark translations selected by query as unverified
+     * Unverify translations by query
      *
      * Mark translations matching query as unverified.
      *
@@ -361,7 +361,7 @@ public class TranslationsApiTest {
     }
     
     /**
-     * Verify translations selected by query
+     * Verify translations by query
      *
      * Verify translations matching query.
      *

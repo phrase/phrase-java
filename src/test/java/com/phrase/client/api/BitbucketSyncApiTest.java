@@ -37,7 +37,7 @@ public class BitbucketSyncApiTest {
     /**
      * Export from Phrase Strings to Bitbucket
      *
-     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository.
+     * Export translations from Phrase Strings to Bitbucket according to the .phraseapp.yml file within the Bitbucket Repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      *
      * @throws ApiException
      *          if the Api call fails
@@ -55,7 +55,7 @@ public class BitbucketSyncApiTest {
     /**
      * Import to Phrase Strings from Bitbucket
      *
-     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository.
+     * Import translations from Bitbucket to Phrase Strings according to the .phraseapp.yml file within the Bitbucket repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      *
      * @throws ApiException
      *          if the Api call fails

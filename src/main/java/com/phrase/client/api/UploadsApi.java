@@ -382,7 +382,7 @@ public class UploadsApi {
     }
 
     /**
-     * View upload details
+     * Get a single upload
      * View details and summary for a single upload.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -405,7 +405,7 @@ public class UploadsApi {
     }
 
     /**
-     * View upload details
+     * Get a single upload
      * View details and summary for a single upload.
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -429,7 +429,7 @@ public class UploadsApi {
     }
 
     /**
-     * View upload details (asynchronously)
+     * Get a single upload (asynchronously)
      * View details and summary for a single upload.
      * @param projectId Project ID (required)
      * @param id ID (required)

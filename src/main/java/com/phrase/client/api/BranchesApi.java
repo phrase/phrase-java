@@ -129,7 +129,7 @@ public class BranchesApi {
 
     /**
      * Compare branches
-     * Compare branch with main branch.
+     * Compare branch with main branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Comparing a branch may take several minutes depending on the project size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -149,7 +149,7 @@ public class BranchesApi {
 
     /**
      * Compare branches
-     * Compare branch with main branch.
+     * Compare branch with main branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Comparing a branch may take several minutes depending on the project size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -171,7 +171,7 @@ public class BranchesApi {
 
     /**
      * Compare branches (asynchronously)
-     * Compare branch with main branch.
+     * Compare branch with main branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Comparing a branch may take several minutes depending on the project size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -265,7 +265,7 @@ public class BranchesApi {
 
     /**
      * Create a branch
-     * Create a new branch.
+     * Create a new branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Creating a new branch may take several minutes depending on the project size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param branchCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -287,7 +287,7 @@ public class BranchesApi {
 
     /**
      * Create a branch
-     * Create a new branch.
+     * Create a new branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Creating a new branch may take several minutes depending on the project size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param branchCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -310,7 +310,7 @@ public class BranchesApi {
 
     /**
      * Create a branch (asynchronously)
-     * Create a new branch.
+     * Create a new branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Creating a new branch may take several minutes depending on the project size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param branchCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -549,7 +549,7 @@ public class BranchesApi {
 
     /**
      * Merge a branch
-     * Merge an existing branch.
+     * Merge an existing branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Merging a branch may take several minutes depending on diff size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchMergeParameters  (required)
@@ -570,7 +570,7 @@ public class BranchesApi {
 
     /**
      * Merge a branch
-     * Merge an existing branch.
+     * Merge an existing branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Merging a branch may take several minutes depending on diff size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchMergeParameters  (required)
@@ -593,7 +593,7 @@ public class BranchesApi {
 
     /**
      * Merge a branch (asynchronously)
-     * Merge an existing branch.
+     * Merge an existing branch. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Merging a branch may take several minutes depending on diff size.&lt;/i&gt;
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchMergeParameters  (required)

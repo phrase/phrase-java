@@ -2,7 +2,7 @@
 
 Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2022-11-29T09:54:01.355435Z[Etc/UTC]
+  - Build date: 2022-12-06T15:16:42.807300Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -317,7 +317,7 @@ If you should need higher rate limits, [contact us](https://phrase.com/contact).
 
 ## Conditional GET requests / HTTP Caching
 
-<div class=\"alert alert-info\"><p><strong>Note:</strong> Conditional GET requests are currently only supported for <a href=\"#locales_download\">locales#download</a> and <a href=\"#translations_index\">translations#index</a></p></div>
+<div class=\"alert alert-info\"><p><i>Note: Conditional GET requests are currently only supported for <a href=\"#locales_download\">locales#download</a> and <a href=\"#translations_index\">translations#index</a></i></p></div>
 
 We will return an ETag or Last-Modified header with most GET requests. When you request a resource we recommend to store this value and submit them on subsequent requests as `If-Modified-Since` and `If-None-Match` headers. If the resource has not changed in the meantime, we will return the status `304 Not Modified` instead of rendering and returning the resource again. In most cases this is less time-consuming and makes your application/integration faster.
 
@@ -439,6 +439,7 @@ Default: asc</td>
 <span class=\"small\">optional</span></td>
 <td><code>string</code></td>
 <td>Specify a query to find translations by content (including wildcards).<br />
+<i>Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).</i>
 <br />
 The following qualifiers are supported in the query:<br />
 
@@ -538,6 +539,7 @@ Default: asc</td>
 <span class=\"small\">optional</span></td>
 <td><code>string</code></td>
 <td>Specify a query to find translations by content (including wildcards).<br />
+<br><i>Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).</i>
 <br />
 The following qualifiers are supported in the query:<br />
 
@@ -621,6 +623,7 @@ Verify all translations that are matching the query `my dog`.
 <span class=\"small\">optional</span></td>
 <td><code>string</code></td>
 <td>Specify a query to find translations by content (including wildcards).<br />
+<br><i>Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).</i>
 <br />
 The following qualifiers are supported in the query:<br />
 
@@ -1734,7 +1737,7 @@ Class | Method | HTTP request | Description
 *TeamsApi* | [**teamsUsersDelete**](docs/TeamsApi.md#teamsUsersDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/users/{id} | Remove User
 *TranslationsApi* | [**translationCreate**](docs/TranslationsApi.md#translationCreate) | **POST** /projects/{project_id}/translations | Create a translation
 *TranslationsApi* | [**translationExclude**](docs/TranslationsApi.md#translationExclude) | **PATCH** /projects/{project_id}/translations/{id}/exclude | Exclude a translation from export
-*TranslationsApi* | [**translationInclude**](docs/TranslationsApi.md#translationInclude) | **PATCH** /projects/{project_id}/translations/{id}/include | Revoke exclusion of a translation in export
+*TranslationsApi* | [**translationInclude**](docs/TranslationsApi.md#translationInclude) | **PATCH** /projects/{project_id}/translations/{id}/include | Include a translation
 *TranslationsApi* | [**translationReview**](docs/TranslationsApi.md#translationReview) | **PATCH** /projects/{project_id}/translations/{id}/review | Review a translation
 *TranslationsApi* | [**translationShow**](docs/TranslationsApi.md#translationShow) | **GET** /projects/{project_id}/translations/{id} | Get a single translation
 *TranslationsApi* | [**translationUnverify**](docs/TranslationsApi.md#translationUnverify) | **PATCH** /projects/{project_id}/translations/{id}/unverify | Mark a translation as unverified
@@ -1742,15 +1745,15 @@ Class | Method | HTTP request | Description
 *TranslationsApi* | [**translationVerify**](docs/TranslationsApi.md#translationVerify) | **PATCH** /projects/{project_id}/translations/{id}/verify | Verify a translation
 *TranslationsApi* | [**translationsByKey**](docs/TranslationsApi.md#translationsByKey) | **GET** /projects/{project_id}/keys/{key_id}/translations | List translations by key
 *TranslationsApi* | [**translationsByLocale**](docs/TranslationsApi.md#translationsByLocale) | **GET** /projects/{project_id}/locales/{locale_id}/translations | List translations by locale
-*TranslationsApi* | [**translationsExcludeCollection**](docs/TranslationsApi.md#translationsExcludeCollection) | **PATCH** /projects/{project_id}/translations/exclude | Set exclude from export flag on translations selected by query
-*TranslationsApi* | [**translationsIncludeCollection**](docs/TranslationsApi.md#translationsIncludeCollection) | **PATCH** /projects/{project_id}/translations/include | Remove exlude from import flag from translations selected by query
+*TranslationsApi* | [**translationsExcludeCollection**](docs/TranslationsApi.md#translationsExcludeCollection) | **PATCH** /projects/{project_id}/translations/exclude | Exclude translations by query
+*TranslationsApi* | [**translationsIncludeCollection**](docs/TranslationsApi.md#translationsIncludeCollection) | **PATCH** /projects/{project_id}/translations/include | Include translations by query
 *TranslationsApi* | [**translationsList**](docs/TranslationsApi.md#translationsList) | **GET** /projects/{project_id}/translations | List all translations
 *TranslationsApi* | [**translationsReviewCollection**](docs/TranslationsApi.md#translationsReviewCollection) | **PATCH** /projects/{project_id}/translations/review | Review translations selected by query
 *TranslationsApi* | [**translationsSearch**](docs/TranslationsApi.md#translationsSearch) | **POST** /projects/{project_id}/translations/search | Search translations
-*TranslationsApi* | [**translationsUnverifyCollection**](docs/TranslationsApi.md#translationsUnverifyCollection) | **PATCH** /projects/{project_id}/translations/unverify | Mark translations selected by query as unverified
-*TranslationsApi* | [**translationsVerifyCollection**](docs/TranslationsApi.md#translationsVerifyCollection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations selected by query
+*TranslationsApi* | [**translationsUnverifyCollection**](docs/TranslationsApi.md#translationsUnverifyCollection) | **PATCH** /projects/{project_id}/translations/unverify | Unverify translations by query
+*TranslationsApi* | [**translationsVerifyCollection**](docs/TranslationsApi.md#translationsVerifyCollection) | **PATCH** /projects/{project_id}/translations/verify | Verify translations by query
 *UploadsApi* | [**uploadCreate**](docs/UploadsApi.md#uploadCreate) | **POST** /projects/{project_id}/uploads | Upload a new file
-*UploadsApi* | [**uploadShow**](docs/UploadsApi.md#uploadShow) | **GET** /projects/{project_id}/uploads/{id} | View upload details
+*UploadsApi* | [**uploadShow**](docs/UploadsApi.md#uploadShow) | **GET** /projects/{project_id}/uploads/{id} | Get a single upload
 *UploadsApi* | [**uploadsList**](docs/UploadsApi.md#uploadsList) | **GET** /projects/{project_id}/uploads | List uploads
 *UsersApi* | [**showUser**](docs/UsersApi.md#showUser) | **GET** /user | Show current User
 *VariablesApi* | [**variableCreate**](docs/VariablesApi.md#variableCreate) | **POST** /projects/{project_id}/variables | Create a variable

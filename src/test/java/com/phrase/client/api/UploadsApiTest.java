@@ -65,7 +65,7 @@ public class UploadsApiTest {
     }
     
     /**
-     * View upload details
+     * Get a single upload
      *
      * View details and summary for a single upload.
      *

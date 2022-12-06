@@ -121,7 +121,7 @@ public class GitHubSyncApi {
 
     /**
      * Export from Phrase Strings to GitHub
-     * Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
+     * Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param githubSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -141,7 +141,7 @@ public class GitHubSyncApi {
 
     /**
      * Export from Phrase Strings to GitHub
-     * Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
+     * Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param githubSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -163,7 +163,7 @@ public class GitHubSyncApi {
 
     /**
      * Export from Phrase Strings to GitHub (asynchronously)
-     * Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
+     * Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param githubSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -251,7 +251,7 @@ public class GitHubSyncApi {
 
     /**
      * Import to Phrase Strings from GitHub
-     * Import files to Phrase Strings from your connected GitHub repository.
+     * Import files to Phrase Strings from your connected GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param githubSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -271,7 +271,7 @@ public class GitHubSyncApi {
 
     /**
      * Import to Phrase Strings from GitHub
-     * Import files to Phrase Strings from your connected GitHub repository.
+     * Import files to Phrase Strings from your connected GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param githubSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -293,7 +293,7 @@ public class GitHubSyncApi {
 
     /**
      * Import to Phrase Strings from GitHub (asynchronously)
-     * Import files to Phrase Strings from your connected GitHub repository.
+     * Import files to Phrase Strings from your connected GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param githubSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes

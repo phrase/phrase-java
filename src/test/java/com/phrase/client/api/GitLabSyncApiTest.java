@@ -57,7 +57,7 @@ public class GitLabSyncApiTest {
     /**
      * Export from Phrase Strings to GitLab
      *
-     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      *
      * @throws ApiException
      *          if the Api call fails
@@ -95,7 +95,7 @@ public class GitLabSyncApiTest {
     /**
      * Import from GitLab to Phrase
      *
-     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      *
      * @throws ApiException
      *          if the Api call fails

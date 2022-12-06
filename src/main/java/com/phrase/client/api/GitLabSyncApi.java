@@ -265,7 +265,7 @@ public class GitLabSyncApi {
 
     /**
      * Export from Phrase Strings to GitLab
-     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -287,7 +287,7 @@ public class GitLabSyncApi {
 
     /**
      * Export from Phrase Strings to GitLab
-     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -310,7 +310,7 @@ public class GitLabSyncApi {
 
     /**
      * Export from Phrase Strings to GitLab (asynchronously)
-     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository.
+     * Export translations from Phrase Strings to GitLab according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncExportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -560,7 +560,7 @@ public class GitLabSyncApi {
 
     /**
      * Import from GitLab to Phrase
-     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -582,7 +582,7 @@ public class GitLabSyncApi {
 
     /**
      * Import from GitLab to Phrase
-     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -605,7 +605,7 @@ public class GitLabSyncApi {
 
     /**
      * Import from GitLab to Phrase (asynchronously)
-     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository.
+     * Import translations from GitLab to Phrase Strings according to the .phraseapp.yml file within the GitLab repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
      * @param gitlabSyncId Gitlab Sync ID (required)
      * @param gitlabSyncImportParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

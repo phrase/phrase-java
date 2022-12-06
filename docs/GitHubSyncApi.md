@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Export from Phrase Strings to GitHub
 
-Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository.
+Export translations from Phrase Strings to GitHub according to the .phraseapp.yml file within the GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Export is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
 
 ### Example
 ```java
@@ -93,7 +93,7 @@ null (empty response body)
 
 Import to Phrase Strings from GitHub
 
-Import files to Phrase Strings from your connected GitHub repository.
+Import files to Phrase Strings from your connected GitHub repository. &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Import is done asynchronously and may take several seconds depending on the project size.&lt;/i&gt;
 
 ### Example
 ```java
