@@ -2,7 +2,7 @@
 
 Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2023-01-12T11:46:33.956914Z[Etc/UTC]
+  - Build date: 2023-01-12T12:19:50.025887Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
