@@ -12982,7 +12982,7 @@ paths:
           phrase projects create \
           --data '{"name": "My Android Project", "main_format":"yml", "shares_translation_memory":"true"}' \
           --access_token <token>
-      x-cli-version: "2.5"
+      x-cli-version: 2.6.3
       x-contentType: application/json
       x-accepts: application/json
   /projects/{id}:
@@ -13340,7 +13340,7 @@ paths:
           --id <id> \
           --data '{"name": "My Android Project", "main_format":"yml", "shares_translation_memory":true}' \
           --access_token <token>
-      x-cli-version: "2.5"
+      x-cli-version: 2.6.3
       x-contentType: application/json
       x-accepts: application/json
   /projects/{project_id}/jobs/{job_id}/locales:
