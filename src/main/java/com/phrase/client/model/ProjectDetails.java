@@ -32,7 +32,7 @@ import java.time.OffsetDateTime;
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-12T12:19:50.025887Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-13T10:52:41.848017Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -53,6 +53,10 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_PROJECT_IMAGE_URL = "project_image_url";
   @SerializedName(SERIALIZED_NAME_PROJECT_IMAGE_URL)
   private String projectImageUrl;
+
+  public static final String SERIALIZED_NAME_MEDIA = "media";
+  @SerializedName(SERIALIZED_NAME_MEDIA)
+  private String media;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -191,6 +195,29 @@ public class ProjectDetails {
 
   public void setProjectImageUrl(String projectImageUrl) {
     this.projectImageUrl = projectImageUrl;
+  }
+
+
+  public ProjectDetails media(String media) {
+    
+    this.media = media;
+    return this;
+  }
+
+   /**
+   * Get media
+   * @return media
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getMedia() {
+    return media;
+  }
+
+
+  public void setMedia(String media) {
+    this.media = media;
   }
 
 
@@ -346,6 +373,7 @@ public class ProjectDetails {
         Objects.equals(this.slug, projectDetails.slug) &&
         Objects.equals(this.mainFormat, projectDetails.mainFormat) &&
         Objects.equals(this.projectImageUrl, projectDetails.projectImageUrl) &&
+        Objects.equals(this.media, projectDetails.media) &&
         Objects.equals(this.account, projectDetails.account) &&
         Objects.equals(this.space, projectDetails.space) &&
         Objects.equals(this.pointOfContact, projectDetails.pointOfContact) &&
@@ -356,7 +384,7 @@ public class ProjectDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory);
   }
 
 
@@ -369,6 +397,7 @@ public class ProjectDetails {
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
     sb.append("    projectImageUrl: ").append(toIndentedString(projectImageUrl)).append("\n");
+    sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    space: ").append(toIndentedString(space)).append("\n");
     sb.append("    pointOfContact: ").append(toIndentedString(pointOfContact)).append("\n");

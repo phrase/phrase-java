@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-12T12:19:50.025887Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-13T10:52:41.848017Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -36,6 +36,10 @@ public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_MAIN_FORMAT = "main_format";
   @SerializedName(SERIALIZED_NAME_MAIN_FORMAT)
   private String mainFormat;
+
+  public static final String SERIALIZED_NAME_MEDIA = "media";
+  @SerializedName(SERIALIZED_NAME_MEDIA)
+  private String media;
 
   public static final String SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY = "shares_translation_memory";
   @SerializedName(SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY)
@@ -52,6 +56,10 @@ public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
   private String accountId;
+
+  public static final String SERIALIZED_NAME_POINT_OF_CONTACT = "point_of_contact";
+  @SerializedName(SERIALIZED_NAME_POINT_OF_CONTACT)
+  private String pointOfContact;
 
   public static final String SERIALIZED_NAME_SOURCE_PROJECT_ID = "source_project_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_PROJECT_ID)
@@ -172,6 +180,29 @@ public class ProjectCreateParameters {
   }
 
 
+  public ProjectCreateParameters media(String media) {
+    
+    this.media = media;
+    return this;
+  }
+
+   /**
+   * (Optional) Main technology stack used in the project. It affects for example the suggested placeholder style. Predefined values include: &#x60;Ruby&#x60;, &#x60;JavaScript&#x60;, &#x60;AngularJS&#x60;, &#x60;React&#x60;, &#x60;iOS&#x60;, &#x60;Android&#x60;, &#x60;Python&#x60;, &#x60;PHP&#x60;, &#x60;Java&#x60;, &#x60;Go&#x60;, &#x60;Windows Phone&#x60;, &#x60;Rails&#x60;, &#x60;Node.js&#x60;, &#x60;.NET&#x60;, &#x60;Django&#x60;, &#x60;Symfony&#x60;, &#x60;Yii Framework&#x60;, &#x60;Zend Framework&#x60;, &#x60;Apple App Store Description&#x60;, &#x60;Google Play Description&#x60;, but it can also take any other value.
+   * @return media
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Python", value = "(Optional) Main technology stack used in the project. It affects for example the suggested placeholder style. Predefined values include: `Ruby`, `JavaScript`, `AngularJS`, `React`, `iOS`, `Android`, `Python`, `PHP`, `Java`, `Go`, `Windows Phone`, `Rails`, `Node.js`, `.NET`, `Django`, `Symfony`, `Yii Framework`, `Zend Framework`, `Apple App Store Description`, `Google Play Description`, but it can also take any other value.")
+
+  public String getMedia() {
+    return media;
+  }
+
+
+  public void setMedia(String media) {
+    this.media = media;
+  }
+
+
   public ProjectCreateParameters sharesTranslationMemory(Boolean sharesTranslationMemory) {
     
     this.sharesTranslationMemory = sharesTranslationMemory;
@@ -261,6 +292,29 @@ public class ProjectCreateParameters {
 
   public void setAccountId(String accountId) {
     this.accountId = accountId;
+  }
+
+
+  public ProjectCreateParameters pointOfContact(String pointOfContact) {
+    
+    this.pointOfContact = pointOfContact;
+    return this;
+  }
+
+   /**
+   * (Optional) User ID of the point of contact for the project.
+   * @return pointOfContact
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "abcd1234", value = "(Optional) User ID of the point of contact for the project.")
+
+  public String getPointOfContact() {
+    return pointOfContact;
+  }
+
+
+  public void setPointOfContact(String pointOfContact) {
+    this.pointOfContact = pointOfContact;
   }
 
 
@@ -689,10 +743,12 @@ public class ProjectCreateParameters {
     ProjectCreateParameters projectCreateParameters = (ProjectCreateParameters) o;
     return Objects.equals(this.name, projectCreateParameters.name) &&
         Objects.equals(this.mainFormat, projectCreateParameters.mainFormat) &&
+        Objects.equals(this.media, projectCreateParameters.media) &&
         Objects.equals(this.sharesTranslationMemory, projectCreateParameters.sharesTranslationMemory) &&
         Objects.equals(this.projectImage, projectCreateParameters.projectImage) &&
         Objects.equals(this.removeProjectImage, projectCreateParameters.removeProjectImage) &&
         Objects.equals(this.accountId, projectCreateParameters.accountId) &&
+        Objects.equals(this.pointOfContact, projectCreateParameters.pointOfContact) &&
         Objects.equals(this.sourceProjectId, projectCreateParameters.sourceProjectId) &&
         Objects.equals(this.workflow, projectCreateParameters.workflow) &&
         Objects.equals(this.machineTranslationEnabled, projectCreateParameters.machineTranslationEnabled) &&
@@ -715,7 +771,7 @@ public class ProjectCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, mainFormat, sharesTranslationMemory, projectImage, removeProjectImage, accountId, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
+    return Objects.hash(name, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
   }
 
 
@@ -725,10 +781,12 @@ public class ProjectCreateParameters {
     sb.append("class ProjectCreateParameters {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
+    sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    sharesTranslationMemory: ").append(toIndentedString(sharesTranslationMemory)).append("\n");
     sb.append("    projectImage: ").append(toIndentedString(projectImage)).append("\n");
     sb.append("    removeProjectImage: ").append(toIndentedString(removeProjectImage)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    pointOfContact: ").append(toIndentedString(pointOfContact)).append("\n");
     sb.append("    sourceProjectId: ").append(toIndentedString(sourceProjectId)).append("\n");
     sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
     sb.append("    machineTranslationEnabled: ").append(toIndentedString(machineTranslationEnabled)).append("\n");

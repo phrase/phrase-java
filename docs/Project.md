@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **slug** | **String** |  |  [optional]
 **mainFormat** | **String** |  |  [optional]
 **projectImageUrl** | **String** |  |  [optional]
+**media** | **String** |  |  [optional]
 **account** | [**Account**](Account.md) |  |  [optional]
 **space** | [**Space1**](Space1.md) |  |  [optional]
 **pointOfContact** | [**UserPreview**](UserPreview.md) |  |  [optional]

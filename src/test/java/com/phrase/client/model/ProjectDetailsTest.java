@@ -86,6 +86,14 @@ public class ProjectDetailsTest {
     }
 
     /**
+     * Test the property 'media'
+     */
+    @Test
+    public void mediaTest() {
+        // TODO: test media
+    }
+
+    /**
      * Test the property 'account'
      */
     @Test

@@ -57,11 +57,27 @@ public class ProjectUpdateParametersTest {
     }
 
     /**
+     * Test the property 'pointOfContact'
+     */
+    @Test
+    public void pointOfContactTest() {
+        // TODO: test pointOfContact
+    }
+
+    /**
      * Test the property 'mainFormat'
      */
     @Test
     public void mainFormatTest() {
         // TODO: test mainFormat
+    }
+
+    /**
+     * Test the property 'media'
+     */
+    @Test
+    public void mediaTest() {
+        // TODO: test media
     }
 
     /**

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-12T12:19:50.025887Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-13T10:52:41.848017Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -37,9 +37,17 @@ public class ProjectUpdateParameters {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_POINT_OF_CONTACT = "point_of_contact";
+  @SerializedName(SERIALIZED_NAME_POINT_OF_CONTACT)
+  private String pointOfContact;
+
   public static final String SERIALIZED_NAME_MAIN_FORMAT = "main_format";
   @SerializedName(SERIALIZED_NAME_MAIN_FORMAT)
   private String mainFormat;
+
+  public static final String SERIALIZED_NAME_MEDIA = "media";
+  @SerializedName(SERIALIZED_NAME_MEDIA)
+  private Object media = null;
 
   public static final String SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY = "shares_translation_memory";
   @SerializedName(SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY)
@@ -168,6 +176,29 @@ public class ProjectUpdateParameters {
   }
 
 
+  public ProjectUpdateParameters pointOfContact(String pointOfContact) {
+    
+    this.pointOfContact = pointOfContact;
+    return this;
+  }
+
+   /**
+   * (Optional) User ID of the point of contact for the project. Pass &#x60;null&#x60; to unset.
+   * @return pointOfContact
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "abcd1234", value = "(Optional) User ID of the point of contact for the project. Pass `null` to unset.")
+
+  public String getPointOfContact() {
+    return pointOfContact;
+  }
+
+
+  public void setPointOfContact(String pointOfContact) {
+    this.pointOfContact = pointOfContact;
+  }
+
+
   public ProjectUpdateParameters mainFormat(String mainFormat) {
     
     this.mainFormat = mainFormat;
@@ -188,6 +219,29 @@ public class ProjectUpdateParameters {
 
   public void setMainFormat(String mainFormat) {
     this.mainFormat = mainFormat;
+  }
+
+
+  public ProjectUpdateParameters media(Object media) {
+    
+    this.media = media;
+    return this;
+  }
+
+   /**
+   * Get media
+   * @return media
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getMedia() {
+    return media;
+  }
+
+
+  public void setMedia(Object media) {
+    this.media = media;
   }
 
 
@@ -662,7 +716,9 @@ public class ProjectUpdateParameters {
     ProjectUpdateParameters projectUpdateParameters = (ProjectUpdateParameters) o;
     return Objects.equals(this.accountId, projectUpdateParameters.accountId) &&
         Objects.equals(this.name, projectUpdateParameters.name) &&
+        Objects.equals(this.pointOfContact, projectUpdateParameters.pointOfContact) &&
         Objects.equals(this.mainFormat, projectUpdateParameters.mainFormat) &&
+        Objects.equals(this.media, projectUpdateParameters.media) &&
         Objects.equals(this.sharesTranslationMemory, projectUpdateParameters.sharesTranslationMemory) &&
         Objects.equals(this.projectImage, projectUpdateParameters.projectImage) &&
         Objects.equals(this.removeProjectImage, projectUpdateParameters.removeProjectImage) &&
@@ -687,7 +743,7 @@ public class ProjectUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, name, mainFormat, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
+    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
   }
 
 
@@ -697,7 +753,9 @@ public class ProjectUpdateParameters {
     sb.append("class ProjectUpdateParameters {\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    pointOfContact: ").append(toIndentedString(pointOfContact)).append("\n");
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
+    sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    sharesTranslationMemory: ").append(toIndentedString(sharesTranslationMemory)).append("\n");
     sb.append("    projectImage: ").append(toIndentedString(projectImage)).append("\n");
     sb.append("    removeProjectImage: ").append(toIndentedString(removeProjectImage)).append("\n");

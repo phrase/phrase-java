@@ -57,6 +57,14 @@ public class ProjectCreateParametersTest {
     }
 
     /**
+     * Test the property 'media'
+     */
+    @Test
+    public void mediaTest() {
+        // TODO: test media
+    }
+
+    /**
      * Test the property 'sharesTranslationMemory'
      */
     @Test
@@ -86,6 +94,14 @@ public class ProjectCreateParametersTest {
     @Test
     public void accountIdTest() {
         // TODO: test accountId
+    }
+
+    /**
+     * Test the property 'pointOfContact'
+     */
+    @Test
+    public void pointOfContactTest() {
+        // TODO: test pointOfContact
     }
 
     /**
