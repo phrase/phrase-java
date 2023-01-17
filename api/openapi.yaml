@@ -4968,7 +4968,7 @@ paths:
           --tags feature1,feature2 \
           --tag feature \
           --access_token <token>
-      x-cli-version: "2.5"
+      x-cli-version: 2.6.4
       x-accepts: '*'
   /accounts/{account_id}/distributions:
     get:
@@ -22772,7 +22772,7 @@ paths:
           --order desc \
           --query 'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center' \
           --access_token <token>
-      x-cli-version: "2.5"
+      x-cli-version: 2.6.4
       x-accepts: application/json
     post:
       description: Create a translation.
