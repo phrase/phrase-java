@@ -293,13 +293,15 @@ public class TranslationsApiTest {
     public void translationsListTest() throws ApiException {
         String projectId = null;
         String xPhraseAppOTP = null;
+        String ifModifiedSince = null;
+        String ifNoneMatch = null;
         Integer page = null;
         Integer perPage = null;
         String branch = null;
         String sort = null;
         String order = null;
         String q = null;
-        List<Translation> response = api.translationsList(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q);
+        List<Translation> response = api.translationsList(projectId, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, page, perPage, branch, sort, order, q);
 
         // TODO: test validations
     }

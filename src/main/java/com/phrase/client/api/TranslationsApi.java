@@ -1919,6 +1919,8 @@ public class TranslationsApi {
      * Build call for translationsList
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
@@ -1937,7 +1939,7 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translationsListCall(String projectId, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, Integer page, Integer perPage, String branch, String sort, String order, String q, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1975,6 +1977,14 @@ public class TranslationsApi {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
         }
 
+        if (ifModifiedSince != null) {
+            localVarHeaderParams.put("If-Modified-Since", localVarApiClient.parameterToString(ifModifiedSince));
+        }
+
+        if (ifNoneMatch != null) {
+            localVarHeaderParams.put("If-None-Match", localVarApiClient.parameterToString(ifNoneMatch));
+        }
+
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1996,7 +2006,7 @@ public class TranslationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translationsListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translationsListValidateBeforeCall(String projectId, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, Integer page, Integer perPage, String branch, String sort, String order, String q, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -2004,7 +2014,7 @@ public class TranslationsApi {
         }
         
 
-        okhttp3.Call localVarCall = translationsListCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, _callback);
+        okhttp3.Call localVarCall = translationsListCall(projectId, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, page, perPage, branch, sort, order, q, _callback);
         return localVarCall;
 
     }
@@ -2014,6 +2024,8 @@ public class TranslationsApi {
      * List translations for the given project. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
@@ -2031,8 +2043,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Translation> translationsList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q) throws ApiException {
-        ApiResponse<List<Translation>> localVarResp = translationsListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q);
+    public List<Translation> translationsList(String projectId, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, Integer page, Integer perPage, String branch, String sort, String order, String q) throws ApiException {
+        ApiResponse<List<Translation>> localVarResp = translationsListWithHttpInfo(projectId, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, page, perPage, branch, sort, order, q);
         return localVarResp.getData();
     }
 
@@ -2041,6 +2053,8 @@ public class TranslationsApi {
      * List translations for the given project. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
@@ -2058,8 +2072,8 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Translation>> translationsListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q) throws ApiException {
-        okhttp3.Call localVarCall = translationsListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, null);
+    public ApiResponse<List<Translation>> translationsListWithHttpInfo(String projectId, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, Integer page, Integer perPage, String branch, String sort, String order, String q) throws ApiException {
+        okhttp3.Call localVarCall = translationsListValidateBeforeCall(projectId, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, page, perPage, branch, sort, order, q, null);
         Type localVarReturnType = new TypeToken<List<Translation>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2069,6 +2083,8 @@ public class TranslationsApi {
      * List translations for the given project. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
@@ -2087,9 +2103,9 @@ public class TranslationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call translationsListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, final ApiCallback<List<Translation>> _callback) throws ApiException {
+    public okhttp3.Call translationsListAsync(String projectId, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, Integer page, Integer perPage, String branch, String sort, String order, String q, final ApiCallback<List<Translation>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translationsListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, _callback);
+        okhttp3.Call localVarCall = translationsListValidateBeforeCall(projectId, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, page, perPage, branch, sort, order, q, _callback);
         Type localVarReturnType = new TypeToken<List<Translation>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -105,6 +105,8 @@ public class LocalesApiTest {
         String projectId = null;
         String id = null;
         String xPhraseAppOTP = null;
+        String ifModifiedSince = null;
+        String ifNoneMatch = null;
         String branch = null;
         String fileFormat = null;
         String tags = null;
@@ -121,7 +123,7 @@ public class LocalesApiTest {
         Boolean useLastReviewedVersion = null;
         String fallbackLocaleId = null;
         String sourceLocaleId = null;
-        File response = api.localeDownload(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId);
+        File response = api.localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId);
 
         // TODO: test validations
     }

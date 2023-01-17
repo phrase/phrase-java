@@ -495,6 +495,8 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param fileFormat File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for all supported file formats. (optional)
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
@@ -523,7 +525,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -602,6 +604,14 @@ public class LocalesApi {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
         }
 
+        if (ifModifiedSince != null) {
+            localVarHeaderParams.put("If-Modified-Since", localVarApiClient.parameterToString(ifModifiedSince));
+        }
+
+        if (ifNoneMatch != null) {
+            localVarHeaderParams.put("If-None-Match", localVarApiClient.parameterToString(ifNoneMatch));
+        }
+
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -623,7 +633,7 @@ public class LocalesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -636,7 +646,7 @@ public class LocalesApi {
         }
         
 
-        okhttp3.Call localVarCall = localeDownloadCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, _callback);
+        okhttp3.Call localVarCall = localeDownloadCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, _callback);
         return localVarCall;
 
     }
@@ -647,6 +657,8 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param fileFormat File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for all supported file formats. (optional)
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
@@ -674,8 +686,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public File localeDownload(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId) throws ApiException {
-        ApiResponse<File> localVarResp = localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId);
+    public File localeDownload(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId) throws ApiException {
+        ApiResponse<File> localVarResp = localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId);
         return localVarResp.getData();
     }
 
@@ -685,6 +697,8 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param fileFormat File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for all supported file formats. (optional)
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
@@ -712,8 +726,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<File> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId) throws ApiException {
-        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, null);
+    public ApiResponse<File> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId) throws ApiException {
+        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -724,6 +738,8 @@ public class LocalesApi {
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
+     * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param fileFormat File format name. See the &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;format guide&lt;/a&gt; for all supported file formats. (optional)
      * @param tags Limit results to keys tagged with a list of comma separated tag names. (optional)
@@ -752,9 +768,9 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, final ApiCallback<File> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, _callback);
+        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, _callback);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
