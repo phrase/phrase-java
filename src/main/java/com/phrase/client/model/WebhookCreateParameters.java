@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * WebhookCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-24T10:24:21.943186Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-30T10:16:56.457562Z[Etc/UTC]")
 public class WebhookCreateParameters {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callback_url";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
