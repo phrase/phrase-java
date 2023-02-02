@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * Variable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-01-30T10:16:56.457562Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-02T10:05:07.445528Z[Etc/UTC]")
 public class Variable {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
