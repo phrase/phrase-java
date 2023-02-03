@@ -87,7 +87,7 @@ public class JobCommentsApiTest {
         String id = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        Object response = api.jobCommentShow(projectId, jobId, id, xPhraseAppOTP, branch);
+        JobComment response = api.jobCommentShow(projectId, jobId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -107,7 +107,7 @@ public class JobCommentsApiTest {
         String id = null;
         JobCommentUpdateParameters jobCommentUpdateParameters = null;
         String xPhraseAppOTP = null;
-        Object response = api.jobCommentUpdate(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP);
+        JobComment response = api.jobCommentUpdate(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -126,7 +126,7 @@ public class JobCommentsApiTest {
         String jobId = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        List<Object> response = api.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch);
+        List<JobComment> response = api.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }

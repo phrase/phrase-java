@@ -45,7 +45,7 @@ public class NotificationsApiTest {
         Integer page = null;
         Integer perPage = null;
         Boolean unseen = null;
-        List<Object> response = api.notificationsList(xPhraseAppOTP, page, perPage, unseen);
+        List<Notification> response = api.notificationsList(xPhraseAppOTP, page, perPage, unseen);
 
         // TODO: test validations
     }
@@ -61,7 +61,7 @@ public class NotificationsApiTest {
     @Test
     public void notificationsMarkAllAsReadTest() throws ApiException {
         String xPhraseAppOTP = null;
-        List<Object> response = api.notificationsMarkAllAsRead(xPhraseAppOTP);
+        List<Notification> response = api.notificationsMarkAllAsRead(xPhraseAppOTP);
 
         // TODO: test validations
     }

@@ -31,17 +31,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for JobTemplateLocale
+ * Model tests for JobTemplateLocales
  */
-public class JobTemplateLocaleTest {
-    private final JobTemplateLocale model = new JobTemplateLocale();
+public class JobTemplateLocalesTest {
+    private final JobTemplateLocales model = new JobTemplateLocales();
 
     /**
-     * Model tests for JobTemplateLocale
+     * Model tests for JobTemplateLocales
      */
     @Test
-    public void testJobTemplateLocale() {
-        // TODO: test JobTemplateLocale
+    public void testJobTemplateLocales() {
+        // TODO: test JobTemplateLocales
     }
 
     /**

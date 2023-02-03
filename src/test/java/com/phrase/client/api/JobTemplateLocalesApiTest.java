@@ -13,8 +13,8 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
-import com.phrase.client.model.JobTemplateLocale;
 import com.phrase.client.model.JobTemplateLocaleUpdateParameters;
+import com.phrase.client.model.JobTemplateLocales;
 import com.phrase.client.model.JobTemplateLocalesCreateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -68,7 +68,7 @@ public class JobTemplateLocalesApiTest {
         String jobTemplateLocaleId = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        Object response = api.jobTemplateLocaleShow(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
+        JobTemplateLocales response = api.jobTemplateLocaleShow(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -88,7 +88,7 @@ public class JobTemplateLocalesApiTest {
         String jobTemplateLocaleId = null;
         JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters = null;
         String xPhraseAppOTP = null;
-        Object response = api.jobTemplateLocaleUpdate(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP);
+        JobTemplateLocales response = api.jobTemplateLocaleUpdate(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -107,7 +107,7 @@ public class JobTemplateLocalesApiTest {
         String jobTemplateId = null;
         JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters = null;
         String xPhraseAppOTP = null;
-        JobTemplateLocale response = api.jobTemplateLocalesCreate(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP);
+        JobTemplateLocales response = api.jobTemplateLocalesCreate(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -128,7 +128,7 @@ public class JobTemplateLocalesApiTest {
         Integer page = null;
         Integer perPage = null;
         String branch = null;
-        List<Object> response = api.jobTemplateLocalesList(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch);
+        List<JobTemplateLocales> response = api.jobTemplateLocalesList(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch);
 
         // TODO: test validations
     }

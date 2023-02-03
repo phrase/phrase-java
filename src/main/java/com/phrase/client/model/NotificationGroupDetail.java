@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.Notification;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * NotificationGroupDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-02T10:05:07.445528Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-03T08:35:48.645569Z[Etc/UTC]")
 public class NotificationGroupDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -51,7 +52,7 @@ public class NotificationGroupDetail {
 
   public static final String SERIALIZED_NAME_LATEST_NOTIFICATION = "latest_notification";
   @SerializedName(SERIALIZED_NAME_LATEST_NOTIFICATION)
-  private Object latestNotification = null;
+  private Notification latestNotification;
 
 
   public NotificationGroupDetail id(String id) {
@@ -169,7 +170,7 @@ public class NotificationGroupDetail {
   }
 
 
-  public NotificationGroupDetail latestNotification(Object latestNotification) {
+  public NotificationGroupDetail latestNotification(Notification latestNotification) {
     
     this.latestNotification = latestNotification;
     return this;
@@ -182,12 +183,12 @@ public class NotificationGroupDetail {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getLatestNotification() {
+  public Notification getLatestNotification() {
     return latestNotification;
   }
 
 
-  public void setLatestNotification(Object latestNotification) {
+  public void setLatestNotification(Notification latestNotification) {
     this.latestNotification = latestNotification;
   }
 

@@ -180,7 +180,7 @@ null (empty response body)
 
 <a name="jobCommentShow"></a>
 # **jobCommentShow**
-> Object jobCommentShow(projectId, jobId, id, xPhraseAppOTP, branch)
+> JobComment jobCommentShow(projectId, jobId, id, xPhraseAppOTP, branch)
 
 Get a single job comment
 
@@ -219,7 +219,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = my-feature-branch; // String | specify the branch to use
     try {
-      Object result = apiInstance.jobCommentShow(projectId, jobId, id, xPhraseAppOTP, branch);
+      JobComment result = apiInstance.jobCommentShow(projectId, jobId, id, xPhraseAppOTP, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobCommentsApi#jobCommentShow");
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**JobComment**](JobComment.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 <a name="jobCommentUpdate"></a>
 # **jobCommentUpdate**
-> Object jobCommentUpdate(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP)
+> JobComment jobCommentUpdate(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP)
 
 Update a job comment
 
@@ -304,7 +304,7 @@ public class Example {
     JobCommentUpdateParameters jobCommentUpdateParameters = new JobCommentUpdateParameters(); // JobCommentUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Object result = apiInstance.jobCommentUpdate(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP);
+      JobComment result = apiInstance.jobCommentUpdate(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobCommentsApi#jobCommentUpdate");
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**JobComment**](JobComment.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 <a name="jobCommentsList"></a>
 # **jobCommentsList**
-> List&lt;Object&gt; jobCommentsList(projectId, jobId, xPhraseAppOTP, branch)
+> List&lt;JobComment&gt; jobCommentsList(projectId, jobId, xPhraseAppOTP, branch)
 
 List job comments
 
@@ -388,7 +388,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = my-feature-branch; // String | specify the branch to use
     try {
-      List<Object> result = apiInstance.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch);
+      List<JobComment> result = apiInstance.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobCommentsApi#jobCommentsList");
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;JobComment&gt;**](JobComment.md)
 
 ### Authorization
 

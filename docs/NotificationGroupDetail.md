@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **notificationsCount** | **Integer** |  |  [optional]
-**latestNotification** | **Object** |  |  [optional]
+**latestNotification** | [**Notification**](Notification.md) |  |  [optional]
 
 
 

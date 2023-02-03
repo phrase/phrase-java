@@ -15,6 +15,7 @@ package com.phrase.client.api;
 import com.phrase.client.ApiException;
 import com.phrase.client.model.JobTemplate;
 import com.phrase.client.model.JobTemplateCreateParameters;
+import com.phrase.client.model.JobTemplateDetails;
 import com.phrase.client.model.JobTemplateUpdateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -46,7 +47,7 @@ public class JobTemplatesApiTest {
         String projectId = null;
         JobTemplateCreateParameters jobTemplateCreateParameters = null;
         String xPhraseAppOTP = null;
-        Object response = api.jobTemplateCreate(projectId, jobTemplateCreateParameters, xPhraseAppOTP);
+        JobTemplateDetails response = api.jobTemplateCreate(projectId, jobTemplateCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -71,25 +72,6 @@ public class JobTemplatesApiTest {
     }
     
     /**
-     * Get a single job template
-     *
-     * Get details on a single job template for a given project.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void jobTemplateShowTest() throws ApiException {
-        String projectId = null;
-        String id = null;
-        String xPhraseAppOTP = null;
-        String branch = null;
-        Object response = api.jobTemplateShow(projectId, id, xPhraseAppOTP, branch);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Update a job template
      *
      * Update an existing job template.
@@ -103,7 +85,7 @@ public class JobTemplatesApiTest {
         String id = null;
         JobTemplateUpdateParameters jobTemplateUpdateParameters = null;
         String xPhraseAppOTP = null;
-        Object response = api.jobTemplateUpdate(projectId, id, jobTemplateUpdateParameters, xPhraseAppOTP);
+        JobTemplateDetails response = api.jobTemplateUpdate(projectId, id, jobTemplateUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -124,6 +106,25 @@ public class JobTemplatesApiTest {
         Integer perPage = null;
         String branch = null;
         List<JobTemplate> response = api.jobTemplatesList(projectId, xPhraseAppOTP, page, perPage, branch);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get a single job template
+     *
+     * Get details on a single job template for a given project.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void jobTemplatesShowTest() throws ApiException {
+        String projectId = null;
+        String id = null;
+        String xPhraseAppOTP = null;
+        String branch = null;
+        JobTemplateDetails response = api.jobTemplatesShow(projectId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }

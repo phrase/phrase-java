@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="notificationsList"></a>
 # **notificationsList**
-> List&lt;Object&gt; notificationsList(xPhraseAppOTP, page, perPage, unseen)
+> List&lt;Notification&gt; notificationsList(xPhraseAppOTP, page, perPage, unseen)
 
 List notifications
 
@@ -49,7 +49,7 @@ public class Example {
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     Boolean unseen = true; // Boolean | Include only unseen notifications
     try {
-      List<Object> result = apiInstance.notificationsList(xPhraseAppOTP, page, perPage, unseen);
+      List<Notification> result = apiInstance.notificationsList(xPhraseAppOTP, page, perPage, unseen);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationsApi#notificationsList");
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;Notification&gt;**](Notification.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="notificationsMarkAllAsRead"></a>
 # **notificationsMarkAllAsRead**
-> List&lt;Object&gt; notificationsMarkAllAsRead(xPhraseAppOTP)
+> List&lt;Notification&gt; notificationsMarkAllAsRead(xPhraseAppOTP)
 
 Mark all notifications as read
 
@@ -129,7 +129,7 @@ public class Example {
     NotificationsApi apiInstance = new NotificationsApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      List<Object> result = apiInstance.notificationsMarkAllAsRead(xPhraseAppOTP);
+      List<Notification> result = apiInstance.notificationsMarkAllAsRead(xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationsApi#notificationsMarkAllAsRead");
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;Notification&gt;**](Notification.md)
 
 ### Authorization
 

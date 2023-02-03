@@ -1,6 +1,6 @@
 
 
-# JobTemplateLocale
+# JobTemplateLocales
 
 ## Properties
 

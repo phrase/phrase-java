@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.JobTemplateLocale;
 import com.phrase.client.model.JobTemplateLocaleUpdateParameters;
+import com.phrase.client.model.JobTemplateLocales;
 import com.phrase.client.model.JobTemplateLocalesCreateParameters;
 
 import java.lang.reflect.Type;
@@ -301,7 +301,7 @@ public class JobTemplateLocalesApi {
      * @param jobTemplateLocaleId Job Template Locale ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @return Object
+     * @return JobTemplateLocales
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -312,8 +312,8 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object jobTemplateLocaleShow(String projectId, String jobTemplateId, String jobTemplateLocaleId, String xPhraseAppOTP, String branch) throws ApiException {
-        ApiResponse<Object> localVarResp = jobTemplateLocaleShowWithHttpInfo(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
+    public JobTemplateLocales jobTemplateLocaleShow(String projectId, String jobTemplateId, String jobTemplateLocaleId, String xPhraseAppOTP, String branch) throws ApiException {
+        ApiResponse<JobTemplateLocales> localVarResp = jobTemplateLocaleShowWithHttpInfo(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
         return localVarResp.getData();
     }
 
@@ -325,7 +325,7 @@ public class JobTemplateLocalesApi {
      * @param jobTemplateLocaleId Job Template Locale ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;JobTemplateLocales&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -336,9 +336,9 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> jobTemplateLocaleShowWithHttpInfo(String projectId, String jobTemplateId, String jobTemplateLocaleId, String xPhraseAppOTP, String branch) throws ApiException {
+    public ApiResponse<JobTemplateLocales> jobTemplateLocaleShowWithHttpInfo(String projectId, String jobTemplateId, String jobTemplateLocaleId, String xPhraseAppOTP, String branch) throws ApiException {
         okhttp3.Call localVarCall = jobTemplateLocaleShowValidateBeforeCall(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateLocales>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -362,10 +362,10 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobTemplateLocaleShowAsync(String projectId, String jobTemplateId, String jobTemplateLocaleId, String xPhraseAppOTP, String branch, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call jobTemplateLocaleShowAsync(String projectId, String jobTemplateId, String jobTemplateLocaleId, String xPhraseAppOTP, String branch, final ApiCallback<JobTemplateLocales> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobTemplateLocaleShowValidateBeforeCall(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateLocales>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -461,7 +461,7 @@ public class JobTemplateLocalesApi {
      * @param jobTemplateLocaleId Job Template Locale ID (required)
      * @param jobTemplateLocaleUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Object
+     * @return JobTemplateLocales
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -472,8 +472,8 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object jobTemplateLocaleUpdate(String projectId, String jobTemplateId, String jobTemplateLocaleId, JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Object> localVarResp = jobTemplateLocaleUpdateWithHttpInfo(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP);
+    public JobTemplateLocales jobTemplateLocaleUpdate(String projectId, String jobTemplateId, String jobTemplateLocaleId, JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<JobTemplateLocales> localVarResp = jobTemplateLocaleUpdateWithHttpInfo(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -485,7 +485,7 @@ public class JobTemplateLocalesApi {
      * @param jobTemplateLocaleId Job Template Locale ID (required)
      * @param jobTemplateLocaleUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;JobTemplateLocales&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -496,9 +496,9 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> jobTemplateLocaleUpdateWithHttpInfo(String projectId, String jobTemplateId, String jobTemplateLocaleId, JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<JobTemplateLocales> jobTemplateLocaleUpdateWithHttpInfo(String projectId, String jobTemplateId, String jobTemplateLocaleId, JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = jobTemplateLocaleUpdateValidateBeforeCall(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateLocales>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -522,10 +522,10 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobTemplateLocaleUpdateAsync(String projectId, String jobTemplateId, String jobTemplateLocaleId, JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters, String xPhraseAppOTP, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call jobTemplateLocaleUpdateAsync(String projectId, String jobTemplateId, String jobTemplateLocaleId, JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters, String xPhraseAppOTP, final ApiCallback<JobTemplateLocales> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobTemplateLocaleUpdateValidateBeforeCall(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateLocales>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -613,7 +613,7 @@ public class JobTemplateLocalesApi {
      * @param jobTemplateId Job Template ID (required)
      * @param jobTemplateLocalesCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return JobTemplateLocale
+     * @return JobTemplateLocales
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -624,8 +624,8 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public JobTemplateLocale jobTemplateLocalesCreate(String projectId, String jobTemplateId, JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<JobTemplateLocale> localVarResp = jobTemplateLocalesCreateWithHttpInfo(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP);
+    public JobTemplateLocales jobTemplateLocalesCreate(String projectId, String jobTemplateId, JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<JobTemplateLocales> localVarResp = jobTemplateLocalesCreateWithHttpInfo(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -636,7 +636,7 @@ public class JobTemplateLocalesApi {
      * @param jobTemplateId Job Template ID (required)
      * @param jobTemplateLocalesCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;JobTemplateLocale&gt;
+     * @return ApiResponse&lt;JobTemplateLocales&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -647,9 +647,9 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<JobTemplateLocale> jobTemplateLocalesCreateWithHttpInfo(String projectId, String jobTemplateId, JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<JobTemplateLocales> jobTemplateLocalesCreateWithHttpInfo(String projectId, String jobTemplateId, JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = jobTemplateLocalesCreateValidateBeforeCall(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<JobTemplateLocale>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateLocales>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -672,10 +672,10 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobTemplateLocalesCreateAsync(String projectId, String jobTemplateId, JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters, String xPhraseAppOTP, final ApiCallback<JobTemplateLocale> _callback) throws ApiException {
+    public okhttp3.Call jobTemplateLocalesCreateAsync(String projectId, String jobTemplateId, JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters, String xPhraseAppOTP, final ApiCallback<JobTemplateLocales> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobTemplateLocalesCreateValidateBeforeCall(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<JobTemplateLocale>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateLocales>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -774,7 +774,7 @@ public class JobTemplateLocalesApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
-     * @return List&lt;Object&gt;
+     * @return List&lt;JobTemplateLocales&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -785,8 +785,8 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Object> jobTemplateLocalesList(String projectId, String jobTemplateId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = jobTemplateLocalesListWithHttpInfo(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch);
+    public List<JobTemplateLocales> jobTemplateLocalesList(String projectId, String jobTemplateId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        ApiResponse<List<JobTemplateLocales>> localVarResp = jobTemplateLocalesListWithHttpInfo(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch);
         return localVarResp.getData();
     }
 
@@ -799,7 +799,7 @@ public class JobTemplateLocalesApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;List&lt;Object&gt;&gt;
+     * @return ApiResponse&lt;List&lt;JobTemplateLocales&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -810,9 +810,9 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> jobTemplateLocalesListWithHttpInfo(String projectId, String jobTemplateId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+    public ApiResponse<List<JobTemplateLocales>> jobTemplateLocalesListWithHttpInfo(String projectId, String jobTemplateId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
         okhttp3.Call localVarCall = jobTemplateLocalesListValidateBeforeCall(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch, null);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<JobTemplateLocales>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -837,10 +837,10 @@ public class JobTemplateLocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobTemplateLocalesListAsync(String projectId, String jobTemplateId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call jobTemplateLocalesListAsync(String projectId, String jobTemplateId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<JobTemplateLocales>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobTemplateLocalesListValidateBeforeCall(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch, _callback);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<JobTemplateLocales>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

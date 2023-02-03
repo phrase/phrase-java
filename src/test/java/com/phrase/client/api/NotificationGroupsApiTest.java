@@ -44,7 +44,7 @@ public class NotificationGroupsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Object> response = api.notificationGroupsList(xPhraseAppOTP, page, perPage);
+        List<NotificationGroupDetail> response = api.notificationGroupsList(xPhraseAppOTP, page, perPage);
 
         // TODO: test validations
     }
@@ -60,7 +60,7 @@ public class NotificationGroupsApiTest {
     @Test
     public void notificationGroupsMarkAllAsReadTest() throws ApiException {
         String xPhraseAppOTP = null;
-        List<Object> response = api.notificationGroupsMarkAllAsRead(xPhraseAppOTP);
+        List<NotificationGroupDetail> response = api.notificationGroupsMarkAllAsRead(xPhraseAppOTP);
 
         // TODO: test validations
     }

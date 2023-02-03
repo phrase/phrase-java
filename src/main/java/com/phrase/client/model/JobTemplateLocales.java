@@ -29,10 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * JobTemplateLocale
+ * JobTemplateLocales
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-02T10:05:07.445528Z[Etc/UTC]")
-public class JobTemplateLocale {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-03T08:35:48.645569Z[Etc/UTC]")
+public class JobTemplateLocales {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -50,7 +50,7 @@ public class JobTemplateLocale {
   private List<JobTemplateUserPreview> users = null;
 
 
-  public JobTemplateLocale id(String id) {
+  public JobTemplateLocales id(String id) {
     
     this.id = id;
     return this;
@@ -73,7 +73,7 @@ public class JobTemplateLocale {
   }
 
 
-  public JobTemplateLocale jobTemplate(JobTemplatePreview jobTemplate) {
+  public JobTemplateLocales jobTemplate(JobTemplatePreview jobTemplate) {
     
     this.jobTemplate = jobTemplate;
     return this;
@@ -96,7 +96,7 @@ public class JobTemplateLocale {
   }
 
 
-  public JobTemplateLocale locale(LocalePreview locale) {
+  public JobTemplateLocales locale(LocalePreview locale) {
     
     this.locale = locale;
     return this;
@@ -119,13 +119,13 @@ public class JobTemplateLocale {
   }
 
 
-  public JobTemplateLocale users(List<JobTemplateUserPreview> users) {
+  public JobTemplateLocales users(List<JobTemplateUserPreview> users) {
     
     this.users = users;
     return this;
   }
 
-  public JobTemplateLocale addUsersItem(JobTemplateUserPreview usersItem) {
+  public JobTemplateLocales addUsersItem(JobTemplateUserPreview usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -158,11 +158,11 @@ public class JobTemplateLocale {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    JobTemplateLocale jobTemplateLocale = (JobTemplateLocale) o;
-    return Objects.equals(this.id, jobTemplateLocale.id) &&
-        Objects.equals(this.jobTemplate, jobTemplateLocale.jobTemplate) &&
-        Objects.equals(this.locale, jobTemplateLocale.locale) &&
-        Objects.equals(this.users, jobTemplateLocale.users);
+    JobTemplateLocales jobTemplateLocales = (JobTemplateLocales) o;
+    return Objects.equals(this.id, jobTemplateLocales.id) &&
+        Objects.equals(this.jobTemplate, jobTemplateLocales.jobTemplate) &&
+        Objects.equals(this.locale, jobTemplateLocales.locale) &&
+        Objects.equals(this.users, jobTemplateLocales.users);
   }
 
   @Override
@@ -174,7 +174,7 @@ public class JobTemplateLocale {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class JobTemplateLocale {\n");
+    sb.append("class JobTemplateLocales {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    jobTemplate: ").append(toIndentedString(jobTemplate)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");

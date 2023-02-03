@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="notificationGroupsList"></a>
 # **notificationGroupsList**
-> List&lt;Object&gt; notificationGroupsList(xPhraseAppOTP, page, perPage)
+> List&lt;NotificationGroupDetail&gt; notificationGroupsList(xPhraseAppOTP, page, perPage)
 
 List notification groups
 
@@ -48,7 +48,7 @@ public class Example {
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     try {
-      List<Object> result = apiInstance.notificationGroupsList(xPhraseAppOTP, page, perPage);
+      List<NotificationGroupDetail> result = apiInstance.notificationGroupsList(xPhraseAppOTP, page, perPage);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationGroupsApi#notificationGroupsList");
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;NotificationGroupDetail&gt;**](NotificationGroupDetail.md)
 
 ### Authorization
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 <a name="notificationGroupsMarkAllAsRead"></a>
 # **notificationGroupsMarkAllAsRead**
-> List&lt;Object&gt; notificationGroupsMarkAllAsRead(xPhraseAppOTP)
+> List&lt;NotificationGroupDetail&gt; notificationGroupsMarkAllAsRead(xPhraseAppOTP)
 
 Mark all notification groups as read
 
@@ -127,7 +127,7 @@ public class Example {
     NotificationGroupsApi apiInstance = new NotificationGroupsApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      List<Object> result = apiInstance.notificationGroupsMarkAllAsRead(xPhraseAppOTP);
+      List<NotificationGroupDetail> result = apiInstance.notificationGroupsMarkAllAsRead(xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationGroupsApi#notificationGroupsMarkAllAsRead");
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;NotificationGroupDetail&gt;**](NotificationGroupDetail.md)
 
 ### Authorization
 

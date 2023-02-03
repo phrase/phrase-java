@@ -132,7 +132,7 @@ public class NotificationsApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param unseen Include only unseen notifications (optional)
-     * @return List&lt;Object&gt;
+     * @return List&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -143,8 +143,8 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Object> notificationsList(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = notificationsListWithHttpInfo(xPhraseAppOTP, page, perPage, unseen);
+    public List<Notification> notificationsList(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen) throws ApiException {
+        ApiResponse<List<Notification>> localVarResp = notificationsListWithHttpInfo(xPhraseAppOTP, page, perPage, unseen);
         return localVarResp.getData();
     }
 
@@ -155,7 +155,7 @@ public class NotificationsApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param unseen Include only unseen notifications (optional)
-     * @return ApiResponse&lt;List&lt;Object&gt;&gt;
+     * @return ApiResponse&lt;List&lt;Notification&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -166,9 +166,9 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> notificationsListWithHttpInfo(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen) throws ApiException {
+    public ApiResponse<List<Notification>> notificationsListWithHttpInfo(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen) throws ApiException {
         okhttp3.Call localVarCall = notificationsListValidateBeforeCall(xPhraseAppOTP, page, perPage, unseen, null);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Notification>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -191,10 +191,10 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call notificationsListAsync(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call notificationsListAsync(String xPhraseAppOTP, Integer page, Integer perPage, Boolean unseen, final ApiCallback<List<Notification>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = notificationsListValidateBeforeCall(xPhraseAppOTP, page, perPage, unseen, _callback);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Notification>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -259,7 +259,7 @@ public class NotificationsApi {
      * Mark all notifications as read
      * Mark all notifications of the current user as read
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return List&lt;Object&gt;
+     * @return List&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -270,8 +270,8 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Object> notificationsMarkAllAsRead(String xPhraseAppOTP) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = notificationsMarkAllAsReadWithHttpInfo(xPhraseAppOTP);
+    public List<Notification> notificationsMarkAllAsRead(String xPhraseAppOTP) throws ApiException {
+        ApiResponse<List<Notification>> localVarResp = notificationsMarkAllAsReadWithHttpInfo(xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -279,7 +279,7 @@ public class NotificationsApi {
      * Mark all notifications as read
      * Mark all notifications of the current user as read
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;List&lt;Object&gt;&gt;
+     * @return ApiResponse&lt;List&lt;Notification&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -290,9 +290,9 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> notificationsMarkAllAsReadWithHttpInfo(String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<List<Notification>> notificationsMarkAllAsReadWithHttpInfo(String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = notificationsMarkAllAsReadValidateBeforeCall(xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Notification>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -312,10 +312,10 @@ public class NotificationsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call notificationsMarkAllAsReadAsync(String xPhraseAppOTP, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call notificationsMarkAllAsReadAsync(String xPhraseAppOTP, final ApiCallback<List<Notification>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = notificationsMarkAllAsReadValidateBeforeCall(xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Notification>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

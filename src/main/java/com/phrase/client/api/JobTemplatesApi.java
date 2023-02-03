@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import com.phrase.client.model.JobTemplate;
 import com.phrase.client.model.JobTemplateCreateParameters;
+import com.phrase.client.model.JobTemplateDetails;
 import com.phrase.client.model.JobTemplateUpdateParameters;
 
 import java.lang.reflect.Type;
@@ -131,7 +132,7 @@ public class JobTemplatesApi {
      * @param projectId Project ID (required)
      * @param jobTemplateCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Object
+     * @return JobTemplateDetails
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -142,8 +143,8 @@ public class JobTemplatesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object jobTemplateCreate(String projectId, JobTemplateCreateParameters jobTemplateCreateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Object> localVarResp = jobTemplateCreateWithHttpInfo(projectId, jobTemplateCreateParameters, xPhraseAppOTP);
+    public JobTemplateDetails jobTemplateCreate(String projectId, JobTemplateCreateParameters jobTemplateCreateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<JobTemplateDetails> localVarResp = jobTemplateCreateWithHttpInfo(projectId, jobTemplateCreateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -153,7 +154,7 @@ public class JobTemplatesApi {
      * @param projectId Project ID (required)
      * @param jobTemplateCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;JobTemplateDetails&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -164,9 +165,9 @@ public class JobTemplatesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> jobTemplateCreateWithHttpInfo(String projectId, JobTemplateCreateParameters jobTemplateCreateParameters, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<JobTemplateDetails> jobTemplateCreateWithHttpInfo(String projectId, JobTemplateCreateParameters jobTemplateCreateParameters, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = jobTemplateCreateValidateBeforeCall(projectId, jobTemplateCreateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateDetails>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -188,10 +189,10 @@ public class JobTemplatesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobTemplateCreateAsync(String projectId, JobTemplateCreateParameters jobTemplateCreateParameters, String xPhraseAppOTP, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call jobTemplateCreateAsync(String projectId, JobTemplateCreateParameters jobTemplateCreateParameters, String xPhraseAppOTP, final ApiCallback<JobTemplateDetails> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobTemplateCreateValidateBeforeCall(projectId, jobTemplateCreateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateDetails>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -341,155 +342,6 @@ public class JobTemplatesApi {
         return localVarCall;
     }
     /**
-     * Build call for jobTemplateShow
-     * @param projectId Project ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call jobTemplateShowCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/job_templates/{id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call jobTemplateShowValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling jobTemplateShow(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling jobTemplateShow(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = jobTemplateShowCall(projectId, id, xPhraseAppOTP, branch, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Get a single job template
-     * Get details on a single job template for a given project.
-     * @param projectId Project ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @return Object
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public Object jobTemplateShow(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        ApiResponse<Object> localVarResp = jobTemplateShowWithHttpInfo(projectId, id, xPhraseAppOTP, branch);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Get a single job template
-     * Get details on a single job template for a given project.
-     * @param projectId Project ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Object> jobTemplateShowWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        okhttp3.Call localVarCall = jobTemplateShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Get a single job template (asynchronously)
-     * Get details on a single job template for a given project.
-     * @param projectId Project ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call jobTemplateShowAsync(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Object> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = jobTemplateShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
      * Build call for jobTemplateUpdate
      * @param projectId Project ID (required)
      * @param id ID (required)
@@ -573,7 +425,7 @@ public class JobTemplatesApi {
      * @param id ID (required)
      * @param jobTemplateUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Object
+     * @return JobTemplateDetails
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -584,8 +436,8 @@ public class JobTemplatesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object jobTemplateUpdate(String projectId, String id, JobTemplateUpdateParameters jobTemplateUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Object> localVarResp = jobTemplateUpdateWithHttpInfo(projectId, id, jobTemplateUpdateParameters, xPhraseAppOTP);
+    public JobTemplateDetails jobTemplateUpdate(String projectId, String id, JobTemplateUpdateParameters jobTemplateUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<JobTemplateDetails> localVarResp = jobTemplateUpdateWithHttpInfo(projectId, id, jobTemplateUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -596,7 +448,7 @@ public class JobTemplatesApi {
      * @param id ID (required)
      * @param jobTemplateUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;JobTemplateDetails&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -607,9 +459,9 @@ public class JobTemplatesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> jobTemplateUpdateWithHttpInfo(String projectId, String id, JobTemplateUpdateParameters jobTemplateUpdateParameters, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<JobTemplateDetails> jobTemplateUpdateWithHttpInfo(String projectId, String id, JobTemplateUpdateParameters jobTemplateUpdateParameters, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = jobTemplateUpdateValidateBeforeCall(projectId, id, jobTemplateUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateDetails>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -632,10 +484,10 @@ public class JobTemplatesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobTemplateUpdateAsync(String projectId, String id, JobTemplateUpdateParameters jobTemplateUpdateParameters, String xPhraseAppOTP, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call jobTemplateUpdateAsync(String projectId, String id, JobTemplateUpdateParameters jobTemplateUpdateParameters, String xPhraseAppOTP, final ApiCallback<JobTemplateDetails> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobTemplateUpdateValidateBeforeCall(projectId, id, jobTemplateUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobTemplateDetails>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -791,6 +643,155 @@ public class JobTemplatesApi {
 
         okhttp3.Call localVarCall = jobTemplatesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, _callback);
         Type localVarReturnType = new TypeToken<List<JobTemplate>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for jobTemplatesShow
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobTemplatesShowCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/job_templates/{id}"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call jobTemplatesShowValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling jobTemplatesShow(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling jobTemplatesShow(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = jobTemplatesShowCall(projectId, id, xPhraseAppOTP, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get a single job template
+     * Get details on a single job template for a given project.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return JobTemplateDetails
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public JobTemplateDetails jobTemplatesShow(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        ApiResponse<JobTemplateDetails> localVarResp = jobTemplatesShowWithHttpInfo(projectId, id, xPhraseAppOTP, branch);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get a single job template
+     * Get details on a single job template for a given project.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;JobTemplateDetails&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<JobTemplateDetails> jobTemplatesShowWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = jobTemplatesShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, null);
+        Type localVarReturnType = new TypeToken<JobTemplateDetails>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get a single job template (asynchronously)
+     * Get details on a single job template for a given project.
+     * @param projectId Project ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jobTemplatesShowAsync(String projectId, String id, String xPhraseAppOTP, String branch, final ApiCallback<JobTemplateDetails> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = jobTemplatesShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, _callback);
+        Type localVarReturnType = new TypeToken<JobTemplateDetails>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

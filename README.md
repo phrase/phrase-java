@@ -2,7 +2,7 @@
 
 Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2023-02-02T10:05:07.445528Z[Etc/UTC]
+  - Build date: 2023-02-03T08:35:48.645569Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -1445,7 +1445,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>1.5.5</version>
+  <version>1.5.6</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -1455,7 +1455,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:1.5.5"
+compile "com.phrase:phrase-java:1.5.6"
 ```
 
 ### Others
@@ -1468,7 +1468,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/phrase-java-1.5.5.jar`
+* `target/phrase-java-1.5.6.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -1635,9 +1635,9 @@ Class | Method | HTTP request | Description
 *JobTemplateLocalesApi* | [**jobTemplateLocalesList**](docs/JobTemplateLocalesApi.md#jobTemplateLocalesList) | **GET** /projects/{project_id}/job_templates/{job_template_id}/locales | List job template locales
 *JobTemplatesApi* | [**jobTemplateCreate**](docs/JobTemplatesApi.md#jobTemplateCreate) | **POST** /projects/{project_id}/job_templates | Create a job template
 *JobTemplatesApi* | [**jobTemplateDelete**](docs/JobTemplatesApi.md#jobTemplateDelete) | **DELETE** /projects/{project_id}/job_templates/{id} | Delete a job template
-*JobTemplatesApi* | [**jobTemplateShow**](docs/JobTemplatesApi.md#jobTemplateShow) | **GET** /projects/{project_id}/job_templates/{id} | Get a single job template
 *JobTemplatesApi* | [**jobTemplateUpdate**](docs/JobTemplatesApi.md#jobTemplateUpdate) | **PATCH** /projects/{project_id}/job_templates/{id} | Update a job template
 *JobTemplatesApi* | [**jobTemplatesList**](docs/JobTemplatesApi.md#jobTemplatesList) | **GET** /projects/{project_id}/job_templates | List job templates
+*JobTemplatesApi* | [**jobTemplatesShow**](docs/JobTemplatesApi.md#jobTemplatesShow) | **GET** /projects/{project_id}/job_templates/{id} | Get a single job template
 *JobsApi* | [**jobComplete**](docs/JobsApi.md#jobComplete) | **POST** /projects/{project_id}/jobs/{id}/complete | Complete a job
 *JobsApi* | [**jobCreate**](docs/JobsApi.md#jobCreate) | **POST** /projects/{project_id}/jobs | Create a job
 *JobsApi* | [**jobDelete**](docs/JobsApi.md#jobDelete) | **DELETE** /projects/{project_id}/jobs/{id} | Delete a job
@@ -1854,8 +1854,10 @@ Class | Method | HTTP request | Description
  - [JobStartParameters](docs/JobStartParameters.md)
  - [JobTemplate](docs/JobTemplate.md)
  - [JobTemplateCreateParameters](docs/JobTemplateCreateParameters.md)
- - [JobTemplateLocale](docs/JobTemplateLocale.md)
+ - [JobTemplateDetails](docs/JobTemplateDetails.md)
+ - [JobTemplateDetails1](docs/JobTemplateDetails1.md)
  - [JobTemplateLocaleUpdateParameters](docs/JobTemplateLocaleUpdateParameters.md)
+ - [JobTemplateLocales](docs/JobTemplateLocales.md)
  - [JobTemplateLocalesCreateParameters](docs/JobTemplateLocalesCreateParameters.md)
  - [JobTemplatePreview](docs/JobTemplatePreview.md)
  - [JobTemplateUpdateParameters](docs/JobTemplateUpdateParameters.md)

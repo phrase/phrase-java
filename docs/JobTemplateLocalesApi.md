@@ -97,7 +97,7 @@ null (empty response body)
 
 <a name="jobTemplateLocaleShow"></a>
 # **jobTemplateLocaleShow**
-> Object jobTemplateLocaleShow(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch)
+> JobTemplateLocales jobTemplateLocaleShow(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch)
 
 Get a single job template locale
 
@@ -136,7 +136,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = my-feature-branch; // String | specify the branch to use
     try {
-      Object result = apiInstance.jobTemplateLocaleShow(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
+      JobTemplateLocales result = apiInstance.jobTemplateLocaleShow(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobTemplateLocalesApi#jobTemplateLocaleShow");
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**JobTemplateLocales**](JobTemplateLocales.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 <a name="jobTemplateLocaleUpdate"></a>
 # **jobTemplateLocaleUpdate**
-> Object jobTemplateLocaleUpdate(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP)
+> JobTemplateLocales jobTemplateLocaleUpdate(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP)
 
 Update a job template locale
 
@@ -221,7 +221,7 @@ public class Example {
     JobTemplateLocaleUpdateParameters jobTemplateLocaleUpdateParameters = new JobTemplateLocaleUpdateParameters(); // JobTemplateLocaleUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Object result = apiInstance.jobTemplateLocaleUpdate(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP);
+      JobTemplateLocales result = apiInstance.jobTemplateLocaleUpdate(projectId, jobTemplateId, jobTemplateLocaleId, jobTemplateLocaleUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobTemplateLocalesApi#jobTemplateLocaleUpdate");
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**JobTemplateLocales**](JobTemplateLocales.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 <a name="jobTemplateLocalesCreate"></a>
 # **jobTemplateLocalesCreate**
-> JobTemplateLocale jobTemplateLocalesCreate(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP)
+> JobTemplateLocales jobTemplateLocalesCreate(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP)
 
 Create a job template locale
 
@@ -305,7 +305,7 @@ public class Example {
     JobTemplateLocalesCreateParameters jobTemplateLocalesCreateParameters = new JobTemplateLocalesCreateParameters(); // JobTemplateLocalesCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      JobTemplateLocale result = apiInstance.jobTemplateLocalesCreate(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP);
+      JobTemplateLocales result = apiInstance.jobTemplateLocalesCreate(projectId, jobTemplateId, jobTemplateLocalesCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobTemplateLocalesApi#jobTemplateLocalesCreate");
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JobTemplateLocale**](JobTemplateLocale.md)
+[**JobTemplateLocales**](JobTemplateLocales.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 <a name="jobTemplateLocalesList"></a>
 # **jobTemplateLocalesList**
-> List&lt;Object&gt; jobTemplateLocalesList(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch)
+> List&lt;JobTemplateLocales&gt; jobTemplateLocalesList(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch)
 
 List job template locales
 
@@ -390,7 +390,7 @@ public class Example {
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
     try {
-      List<Object> result = apiInstance.jobTemplateLocalesList(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch);
+      List<JobTemplateLocales> result = apiInstance.jobTemplateLocalesList(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobTemplateLocalesApi#jobTemplateLocalesList");
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;JobTemplateLocales&gt;**](JobTemplateLocales.md)
 
 ### Authorization
 

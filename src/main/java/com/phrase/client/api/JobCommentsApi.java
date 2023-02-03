@@ -451,7 +451,7 @@ public class JobCommentsApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @return Object
+     * @return JobComment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -462,8 +462,8 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object jobCommentShow(String projectId, String jobId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        ApiResponse<Object> localVarResp = jobCommentShowWithHttpInfo(projectId, jobId, id, xPhraseAppOTP, branch);
+    public JobComment jobCommentShow(String projectId, String jobId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        ApiResponse<JobComment> localVarResp = jobCommentShowWithHttpInfo(projectId, jobId, id, xPhraseAppOTP, branch);
         return localVarResp.getData();
     }
 
@@ -475,7 +475,7 @@ public class JobCommentsApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;JobComment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -486,9 +486,9 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> jobCommentShowWithHttpInfo(String projectId, String jobId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+    public ApiResponse<JobComment> jobCommentShowWithHttpInfo(String projectId, String jobId, String id, String xPhraseAppOTP, String branch) throws ApiException {
         okhttp3.Call localVarCall = jobCommentShowValidateBeforeCall(projectId, jobId, id, xPhraseAppOTP, branch, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobComment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -512,10 +512,10 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobCommentShowAsync(String projectId, String jobId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call jobCommentShowAsync(String projectId, String jobId, String id, String xPhraseAppOTP, String branch, final ApiCallback<JobComment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobCommentShowValidateBeforeCall(projectId, jobId, id, xPhraseAppOTP, branch, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobComment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -611,7 +611,7 @@ public class JobCommentsApi {
      * @param id ID (required)
      * @param jobCommentUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Object
+     * @return JobComment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -622,8 +622,8 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Object jobCommentUpdate(String projectId, String keyId, String id, JobCommentUpdateParameters jobCommentUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Object> localVarResp = jobCommentUpdateWithHttpInfo(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP);
+    public JobComment jobCommentUpdate(String projectId, String keyId, String id, JobCommentUpdateParameters jobCommentUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<JobComment> localVarResp = jobCommentUpdateWithHttpInfo(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -635,7 +635,7 @@ public class JobCommentsApi {
      * @param id ID (required)
      * @param jobCommentUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;JobComment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -646,9 +646,9 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Object> jobCommentUpdateWithHttpInfo(String projectId, String keyId, String id, JobCommentUpdateParameters jobCommentUpdateParameters, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<JobComment> jobCommentUpdateWithHttpInfo(String projectId, String keyId, String id, JobCommentUpdateParameters jobCommentUpdateParameters, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = jobCommentUpdateValidateBeforeCall(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobComment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -672,10 +672,10 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobCommentUpdateAsync(String projectId, String keyId, String id, JobCommentUpdateParameters jobCommentUpdateParameters, String xPhraseAppOTP, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call jobCommentUpdateAsync(String projectId, String keyId, String id, JobCommentUpdateParameters jobCommentUpdateParameters, String xPhraseAppOTP, final ApiCallback<JobComment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobCommentUpdateValidateBeforeCall(projectId, keyId, id, jobCommentUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobComment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -762,7 +762,7 @@ public class JobCommentsApi {
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @return List&lt;Object&gt;
+     * @return List&lt;JobComment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -773,8 +773,8 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Object> jobCommentsList(String projectId, String jobId, String xPhraseAppOTP, String branch) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = jobCommentsListWithHttpInfo(projectId, jobId, xPhraseAppOTP, branch);
+    public List<JobComment> jobCommentsList(String projectId, String jobId, String xPhraseAppOTP, String branch) throws ApiException {
+        ApiResponse<List<JobComment>> localVarResp = jobCommentsListWithHttpInfo(projectId, jobId, xPhraseAppOTP, branch);
         return localVarResp.getData();
     }
 
@@ -785,7 +785,7 @@ public class JobCommentsApi {
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;List&lt;Object&gt;&gt;
+     * @return ApiResponse&lt;List&lt;JobComment&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -796,9 +796,9 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> jobCommentsListWithHttpInfo(String projectId, String jobId, String xPhraseAppOTP, String branch) throws ApiException {
+    public ApiResponse<List<JobComment>> jobCommentsListWithHttpInfo(String projectId, String jobId, String xPhraseAppOTP, String branch) throws ApiException {
         okhttp3.Call localVarCall = jobCommentsListValidateBeforeCall(projectId, jobId, xPhraseAppOTP, branch, null);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<JobComment>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -821,10 +821,10 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobCommentsListAsync(String projectId, String jobId, String xPhraseAppOTP, String branch, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call jobCommentsListAsync(String projectId, String jobId, String xPhraseAppOTP, String branch, final ApiCallback<List<JobComment>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jobCommentsListValidateBeforeCall(projectId, jobId, xPhraseAppOTP, branch, _callback);
-        Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<JobComment>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
