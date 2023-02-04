@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * KeysTagParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-03T12:13:50.183014Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-04T11:13:28.983261Z[Etc/UTC]")
 public class KeysTagParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
