@@ -19358,7 +19358,7 @@ paths:
         source: |-
           phrase keys search \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
+          --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "q":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -19840,7 +19840,7 @@ paths:
         source: |-
           phrase keys tag \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
+          --data '{"branch":"my-feature-branch", "q":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -19960,7 +19960,7 @@ paths:
         source: |-
           phrase keys untag \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
+          --data '{"branch":"my-feature-branch", "q":"'mykey* translated:true'", "locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -20079,7 +20079,7 @@ paths:
         source: |-
           phrase keys exclude \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "target_locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
+          --data '{"branch":"my-feature-branch", "q":"'mykey* translated:true'", "target_locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -20198,7 +20198,7 @@ paths:
         source: |-
           phrase keys include \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'mykey* translated:true'", "target_locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
+          --data '{"branch":"my-feature-branch", "q":"'mykey* translated:true'", "target_locale_id":"abcd1234abcd1234abcd1234abcd1234", "tags":"landing-page,release-1.2"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -23348,7 +23348,7 @@ paths:
         source: |-
           phrase translations search \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "query":"'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center'"}' \
+          --data '{"branch":"my-feature-branch", "sort":"updated_at", "order":"desc", "q":"'PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center'"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -24204,7 +24204,7 @@ paths:
         source: |-
           phrase translations verify-collection \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20unverified:true%20tags:feature,center'"}' \
+          --data '{"branch":"my-feature-branch", "q":"'PhraseApp*%20unverified:true%20tags:feature,center'"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -24323,7 +24323,7 @@ paths:
         source: |-
           phrase translations unverify-collection \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
+          --data '{"branch":"my-feature-branch", "q":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -24433,7 +24433,7 @@ paths:
         source: |-
           phrase translations review-collection \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%reviewed:false%20tags:feature,center'"}' \
+          --data '{"branch":"my-feature-branch", "q":"'PhraseApp*%reviewed:false%20tags:feature,center'"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -24552,7 +24552,7 @@ paths:
         source: |-
           phrase translations exclude-collection \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
+          --data '{"branch":"my-feature-branch", "q":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -24671,7 +24671,7 @@ paths:
         source: |-
           phrase translations include-collection \
           --project_id <project_id> \
-          --data '{"branch":"my-feature-branch", "query":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
+          --data '{"branch":"my-feature-branch", "q":"'PhraseApp*%20verified:true%20tags:feature,center'", "sort":"updated_at", "order":"desc"}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
@@ -25288,7 +25288,7 @@ paths:
         source: |-
           phrase search in_account \
           --account_id <account_id> \
-          --data '{"query":"keyword","locale_code": "de","page": 1,"per_page": 25}' \
+          --data '{"q":"keyword","locale_code": "de","page": 1,"per_page": 25}' \
           --access_token <token>
       x-cli-version: "2.5"
       x-contentType: application/json
