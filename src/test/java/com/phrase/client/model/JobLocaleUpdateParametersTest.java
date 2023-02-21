@@ -73,4 +73,20 @@ public class JobLocaleUpdateParametersTest {
         // TODO: test reviewerIds
     }
 
+    /**
+     * Test the property 'translatorTeamIds'
+     */
+    @Test
+    public void translatorTeamIdsTest() {
+        // TODO: test translatorTeamIds
+    }
+
+    /**
+     * Test the property 'reviewerTeamIds'
+     */
+    @Test
+    public void reviewerTeamIdsTest() {
+        // TODO: test reviewerTeamIds
+    }
+
 }

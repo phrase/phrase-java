@@ -19,7 +19,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.JobPreview;
 import com.phrase.client.model.LocalePreview;
-import com.phrase.client.model.UserPreview;
+import com.phrase.client.model.LocaleTeamPreview;
+import com.phrase.client.model.LocaleUserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -75,6 +76,14 @@ public class JobLocaleTest {
     @Test
     public void usersTest() {
         // TODO: test users
+    }
+
+    /**
+     * Test the property 'teams'
+     */
+    @Test
+    public void teamsTest() {
+        // TODO: test teams
     }
 
     /**

@@ -19,8 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.Items;
 import com.phrase.client.model.JobTemplatePreview;
-import com.phrase.client.model.JobTemplateUserPreview;
 import com.phrase.client.model.LocalePreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * JobTemplateLocales
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-20T08:12:32.140511Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T06:42:59.030740Z[Etc/UTC]")
 public class JobTemplateLocales {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -47,7 +47,11 @@ public class JobTemplateLocales {
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  private List<JobTemplateUserPreview> users = null;
+  private List<Items> users = null;
+
+  public static final String SERIALIZED_NAME_TEAMS = "teams";
+  @SerializedName(SERIALIZED_NAME_TEAMS)
+  private List<Items> teams = null;
 
 
   public JobTemplateLocales id(String id) {
@@ -119,13 +123,13 @@ public class JobTemplateLocales {
   }
 
 
-  public JobTemplateLocales users(List<JobTemplateUserPreview> users) {
+  public JobTemplateLocales users(List<Items> users) {
     
     this.users = users;
     return this;
   }
 
-  public JobTemplateLocales addUsersItem(JobTemplateUserPreview usersItem) {
+  public JobTemplateLocales addUsersItem(Items usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -140,13 +144,44 @@ public class JobTemplateLocales {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<JobTemplateUserPreview> getUsers() {
+  public List<Items> getUsers() {
     return users;
   }
 
 
-  public void setUsers(List<JobTemplateUserPreview> users) {
+  public void setUsers(List<Items> users) {
     this.users = users;
+  }
+
+
+  public JobTemplateLocales teams(List<Items> teams) {
+    
+    this.teams = teams;
+    return this;
+  }
+
+  public JobTemplateLocales addTeamsItem(Items teamsItem) {
+    if (this.teams == null) {
+      this.teams = new ArrayList<>();
+    }
+    this.teams.add(teamsItem);
+    return this;
+  }
+
+   /**
+   * Get teams
+   * @return teams
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<Items> getTeams() {
+    return teams;
+  }
+
+
+  public void setTeams(List<Items> teams) {
+    this.teams = teams;
   }
 
 
@@ -162,12 +197,13 @@ public class JobTemplateLocales {
     return Objects.equals(this.id, jobTemplateLocales.id) &&
         Objects.equals(this.jobTemplate, jobTemplateLocales.jobTemplate) &&
         Objects.equals(this.locale, jobTemplateLocales.locale) &&
-        Objects.equals(this.users, jobTemplateLocales.users);
+        Objects.equals(this.users, jobTemplateLocales.users) &&
+        Objects.equals(this.teams, jobTemplateLocales.teams);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, jobTemplate, locale, users);
+    return Objects.hash(id, jobTemplate, locale, users, teams);
   }
 
 
@@ -179,6 +215,7 @@ public class JobTemplateLocales {
     sb.append("    jobTemplate: ").append(toIndentedString(jobTemplate)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("}");
     return sb.toString();
   }

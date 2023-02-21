@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * JobTemplateUserPreview
+ * LocaleUserPreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-20T08:12:32.140511Z[Etc/UTC]")
-public class JobTemplateUserPreview {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T06:42:59.030740Z[Etc/UTC]")
+public class LocaleUserPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -45,7 +45,7 @@ public class JobTemplateUserPreview {
   private String role;
 
 
-  public JobTemplateUserPreview id(String id) {
+  public LocaleUserPreview id(String id) {
     
     this.id = id;
     return this;
@@ -68,7 +68,7 @@ public class JobTemplateUserPreview {
   }
 
 
-  public JobTemplateUserPreview username(String username) {
+  public LocaleUserPreview username(String username) {
     
     this.username = username;
     return this;
@@ -91,7 +91,7 @@ public class JobTemplateUserPreview {
   }
 
 
-  public JobTemplateUserPreview name(String name) {
+  public LocaleUserPreview name(String name) {
     
     this.name = name;
     return this;
@@ -114,7 +114,7 @@ public class JobTemplateUserPreview {
   }
 
 
-  public JobTemplateUserPreview role(String role) {
+  public LocaleUserPreview role(String role) {
     
     this.role = role;
     return this;
@@ -145,11 +145,11 @@ public class JobTemplateUserPreview {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    JobTemplateUserPreview jobTemplateUserPreview = (JobTemplateUserPreview) o;
-    return Objects.equals(this.id, jobTemplateUserPreview.id) &&
-        Objects.equals(this.username, jobTemplateUserPreview.username) &&
-        Objects.equals(this.name, jobTemplateUserPreview.name) &&
-        Objects.equals(this.role, jobTemplateUserPreview.role);
+    LocaleUserPreview localeUserPreview = (LocaleUserPreview) o;
+    return Objects.equals(this.id, localeUserPreview.id) &&
+        Objects.equals(this.username, localeUserPreview.username) &&
+        Objects.equals(this.name, localeUserPreview.name) &&
+        Objects.equals(this.role, localeUserPreview.role);
   }
 
   @Override
@@ -161,7 +161,7 @@ public class JobTemplateUserPreview {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class JobTemplateUserPreview {\n");
+    sb.append("class LocaleUserPreview {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

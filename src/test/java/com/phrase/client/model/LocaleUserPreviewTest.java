@@ -26,17 +26,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for JobTemplateUserPreview
+ * Model tests for LocaleUserPreview
  */
-public class JobTemplateUserPreviewTest {
-    private final JobTemplateUserPreview model = new JobTemplateUserPreview();
+public class LocaleUserPreviewTest {
+    private final LocaleUserPreview model = new LocaleUserPreview();
 
     /**
-     * Model tests for JobTemplateUserPreview
+     * Model tests for LocaleUserPreview
      */
     @Test
-    public void testJobTemplateUserPreview() {
-        // TODO: test JobTemplateUserPreview
+    public void testLocaleUserPreview() {
+        // TODO: test LocaleUserPreview
     }
 
     /**

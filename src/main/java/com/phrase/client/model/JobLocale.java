@@ -21,7 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.JobPreview;
 import com.phrase.client.model.LocalePreview;
-import com.phrase.client.model.UserPreview;
+import com.phrase.client.model.LocaleTeamPreview;
+import com.phrase.client.model.LocaleUserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -32,7 +33,7 @@ import java.util.List;
 /**
  * JobLocale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-20T08:12:32.140511Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T06:42:59.030740Z[Etc/UTC]")
 public class JobLocale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -48,7 +49,11 @@ public class JobLocale {
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  private List<UserPreview> users = null;
+  private List<LocaleUserPreview> users = null;
+
+  public static final String SERIALIZED_NAME_TEAMS = "teams";
+  @SerializedName(SERIALIZED_NAME_TEAMS)
+  private List<LocaleTeamPreview> teams = null;
 
   public static final String SERIALIZED_NAME_COMPLETED = "completed";
   @SerializedName(SERIALIZED_NAME_COMPLETED)
@@ -132,13 +137,13 @@ public class JobLocale {
   }
 
 
-  public JobLocale users(List<UserPreview> users) {
+  public JobLocale users(List<LocaleUserPreview> users) {
     
     this.users = users;
     return this;
   }
 
-  public JobLocale addUsersItem(UserPreview usersItem) {
+  public JobLocale addUsersItem(LocaleUserPreview usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -153,13 +158,44 @@ public class JobLocale {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<UserPreview> getUsers() {
+  public List<LocaleUserPreview> getUsers() {
     return users;
   }
 
 
-  public void setUsers(List<UserPreview> users) {
+  public void setUsers(List<LocaleUserPreview> users) {
     this.users = users;
+  }
+
+
+  public JobLocale teams(List<LocaleTeamPreview> teams) {
+    
+    this.teams = teams;
+    return this;
+  }
+
+  public JobLocale addTeamsItem(LocaleTeamPreview teamsItem) {
+    if (this.teams == null) {
+      this.teams = new ArrayList<>();
+    }
+    this.teams.add(teamsItem);
+    return this;
+  }
+
+   /**
+   * Get teams
+   * @return teams
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<LocaleTeamPreview> getTeams() {
+    return teams;
+  }
+
+
+  public void setTeams(List<LocaleTeamPreview> teams) {
+    this.teams = teams;
   }
 
 
@@ -245,6 +281,7 @@ public class JobLocale {
         Objects.equals(this.job, jobLocale.job) &&
         Objects.equals(this.locale, jobLocale.locale) &&
         Objects.equals(this.users, jobLocale.users) &&
+        Objects.equals(this.teams, jobLocale.teams) &&
         Objects.equals(this.completed, jobLocale.completed) &&
         Objects.equals(this.translationCompletedAt, jobLocale.translationCompletedAt) &&
         Objects.equals(this.reviewCompletedAt, jobLocale.reviewCompletedAt);
@@ -252,7 +289,7 @@ public class JobLocale {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, job, locale, users, completed, translationCompletedAt, reviewCompletedAt);
+    return Objects.hash(id, job, locale, users, teams, completed, translationCompletedAt, reviewCompletedAt);
   }
 
 
@@ -264,6 +301,7 @@ public class JobLocale {
     sb.append("    job: ").append(toIndentedString(job)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    completed: ").append(toIndentedString(completed)).append("\n");
     sb.append("    translationCompletedAt: ").append(toIndentedString(translationCompletedAt)).append("\n");
     sb.append("    reviewCompletedAt: ").append(toIndentedString(reviewCompletedAt)).append("\n");

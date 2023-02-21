@@ -2,7 +2,7 @@
 
 Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2023-02-20T08:12:32.140511Z[Etc/UTC]
+  - Build date: 2023-02-21T06:42:59.030740Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -1445,7 +1445,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>1.5.6</version>
+  <version>1.5.7</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -1455,7 +1455,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:1.5.6"
+compile "com.phrase:phrase-java:1.5.7"
 ```
 
 ### Others
@@ -1468,7 +1468,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/phrase-java-1.5.6.jar`
+* `target/phrase-java-1.5.7.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -1861,7 +1861,6 @@ Class | Method | HTTP request | Description
  - [JobTemplateLocalesCreateParameters](docs/JobTemplateLocalesCreateParameters.md)
  - [JobTemplatePreview](docs/JobTemplatePreview.md)
  - [JobTemplateUpdateParameters](docs/JobTemplateUpdateParameters.md)
- - [JobTemplateUserPreview](docs/JobTemplateUserPreview.md)
  - [JobUpdateParameters](docs/JobUpdateParameters.md)
  - [KeyCreateParameters](docs/KeyCreateParameters.md)
  - [KeyPreview](docs/KeyPreview.md)
@@ -1878,7 +1877,9 @@ Class | Method | HTTP request | Description
  - [LocalePreview](docs/LocalePreview.md)
  - [LocalePreview1](docs/LocalePreview1.md)
  - [LocaleStatistics](docs/LocaleStatistics.md)
+ - [LocaleTeamPreview](docs/LocaleTeamPreview.md)
  - [LocaleUpdateParameters](docs/LocaleUpdateParameters.md)
+ - [LocaleUserPreview](docs/LocaleUserPreview.md)
  - [Member](docs/Member.md)
  - [MemberProjectDetail](docs/MemberProjectDetail.md)
  - [MemberProjectDetailProjectRoles](docs/MemberProjectDetailProjectRoles.md)

@@ -17,31 +17,26 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Items;
-import com.phrase.client.model.JobTemplatePreview;
-import com.phrase.client.model.LocalePreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for JobTemplateLocales
+ * Model tests for LocaleTeamPreview
  */
-public class JobTemplateLocalesTest {
-    private final JobTemplateLocales model = new JobTemplateLocales();
+public class LocaleTeamPreviewTest {
+    private final LocaleTeamPreview model = new LocaleTeamPreview();
 
     /**
-     * Model tests for JobTemplateLocales
+     * Model tests for LocaleTeamPreview
      */
     @Test
-    public void testJobTemplateLocales() {
-        // TODO: test JobTemplateLocales
+    public void testLocaleTeamPreview() {
+        // TODO: test LocaleTeamPreview
     }
 
     /**
@@ -53,35 +48,19 @@ public class JobTemplateLocalesTest {
     }
 
     /**
-     * Test the property 'jobTemplate'
+     * Test the property 'name'
      */
     @Test
-    public void jobTemplateTest() {
-        // TODO: test jobTemplate
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'locale'
+     * Test the property 'role'
      */
     @Test
-    public void localeTest() {
-        // TODO: test locale
-    }
-
-    /**
-     * Test the property 'users'
-     */
-    @Test
-    public void usersTest() {
-        // TODO: test users
-    }
-
-    /**
-     * Test the property 'teams'
-     */
-    @Test
-    public void teamsTest() {
-        // TODO: test teams
+    public void roleTest() {
+        // TODO: test role
     }
 
 }

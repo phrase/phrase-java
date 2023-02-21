@@ -22,13 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.time.OffsetDateTime;
 
 /**
- * TeamShort
+ * LocaleTeamPreview
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T06:42:59.030740Z[Etc/UTC]")
-public class TeamShort {
+public class LocaleTeamPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -37,16 +36,12 @@ public class TeamShort {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private OffsetDateTime createdAt;
-
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  private OffsetDateTime updatedAt;
+  public static final String SERIALIZED_NAME_ROLE = "role";
+  @SerializedName(SERIALIZED_NAME_ROLE)
+  private String role;
 
 
-  public TeamShort id(String id) {
+  public LocaleTeamPreview id(String id) {
     
     this.id = id;
     return this;
@@ -69,7 +64,7 @@ public class TeamShort {
   }
 
 
-  public TeamShort name(String name) {
+  public LocaleTeamPreview name(String name) {
     
     this.name = name;
     return this;
@@ -92,49 +87,26 @@ public class TeamShort {
   }
 
 
-  public TeamShort createdAt(OffsetDateTime createdAt) {
+  public LocaleTeamPreview role(String role) {
     
-    this.createdAt = createdAt;
+    this.role = role;
     return this;
   }
 
    /**
-   * Get createdAt
-   * @return createdAt
+   * Get role
+   * @return role
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public OffsetDateTime getCreatedAt() {
-    return createdAt;
+  public String getRole() {
+    return role;
   }
 
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public TeamShort updatedAt(OffsetDateTime updatedAt) {
-    
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-   /**
-   * Get updatedAt
-   * @return updatedAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public OffsetDateTime getUpdatedAt() {
-    return updatedAt;
-  }
-
-
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setRole(String role) {
+    this.role = role;
   }
 
 
@@ -146,27 +118,25 @@ public class TeamShort {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TeamShort teamShort = (TeamShort) o;
-    return Objects.equals(this.id, teamShort.id) &&
-        Objects.equals(this.name, teamShort.name) &&
-        Objects.equals(this.createdAt, teamShort.createdAt) &&
-        Objects.equals(this.updatedAt, teamShort.updatedAt);
+    LocaleTeamPreview localeTeamPreview = (LocaleTeamPreview) o;
+    return Objects.equals(this.id, localeTeamPreview.id) &&
+        Objects.equals(this.name, localeTeamPreview.name) &&
+        Objects.equals(this.role, localeTeamPreview.role);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdAt, updatedAt);
+    return Objects.hash(id, name, role);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TeamShort {\n");
+    sb.append("class LocaleTeamPreview {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
   }
