@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * Branch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T11:09:31.849485Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T12:22:46.741384Z[Etc/UTC]")
 public class Branch {
   public static final String SERIALIZED_NAME_BASE_PROJECT_ID = "base_project_id";
   @SerializedName(SERIALIZED_NAME_BASE_PROJECT_ID)

@@ -19,9 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Items;
 import com.phrase.client.model.JobTemplatePreview;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.LocaleTeamPreview;
+import com.phrase.client.model.LocaleUserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -31,7 +32,7 @@ import java.util.List;
 /**
  * JobTemplateLocales
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-21T11:09:31.849485Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-02-23T12:22:46.741384Z[Etc/UTC]")
 public class JobTemplateLocales {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -47,11 +48,11 @@ public class JobTemplateLocales {
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  private List<Items> users = null;
+  private List<LocaleUserPreview> users = null;
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
-  private List<Items> teams = null;
+  private List<LocaleTeamPreview> teams = null;
 
 
   public JobTemplateLocales id(String id) {
@@ -123,13 +124,13 @@ public class JobTemplateLocales {
   }
 
 
-  public JobTemplateLocales users(List<Items> users) {
+  public JobTemplateLocales users(List<LocaleUserPreview> users) {
     
     this.users = users;
     return this;
   }
 
-  public JobTemplateLocales addUsersItem(Items usersItem) {
+  public JobTemplateLocales addUsersItem(LocaleUserPreview usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -144,23 +145,23 @@ public class JobTemplateLocales {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Items> getUsers() {
+  public List<LocaleUserPreview> getUsers() {
     return users;
   }
 
 
-  public void setUsers(List<Items> users) {
+  public void setUsers(List<LocaleUserPreview> users) {
     this.users = users;
   }
 
 
-  public JobTemplateLocales teams(List<Items> teams) {
+  public JobTemplateLocales teams(List<LocaleTeamPreview> teams) {
     
     this.teams = teams;
     return this;
   }
 
-  public JobTemplateLocales addTeamsItem(Items teamsItem) {
+  public JobTemplateLocales addTeamsItem(LocaleTeamPreview teamsItem) {
     if (this.teams == null) {
       this.teams = new ArrayList<>();
     }
@@ -175,12 +176,12 @@ public class JobTemplateLocales {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<Items> getTeams() {
+  public List<LocaleTeamPreview> getTeams() {
     return teams;
   }
 
 
-  public void setTeams(List<Items> teams) {
+  public void setTeams(List<LocaleTeamPreview> teams) {
     this.teams = teams;
   }
 
