@@ -2,7 +2,7 @@
 
 Phrase Strings API Reference
 - API version: 2.0.0
-  - Build date: 2023-02-27T15:58:36.949904Z[Etc/UTC]
+  - Build date: 2023-03-01T07:16:11.591102Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -1445,7 +1445,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>1.5.7</version>
+  <version>1.6.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -1455,7 +1455,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:1.5.7"
+compile "com.phrase:phrase-java:1.6.0"
 ```
 
 ### Others
@@ -1468,7 +1468,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/phrase-java-1.5.7.jar`
+* `target/phrase-java-1.6.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -1685,6 +1685,16 @@ Class | Method | HTTP request | Description
 *OrdersApi* | [**orderDelete**](docs/OrdersApi.md#orderDelete) | **DELETE** /projects/{project_id}/orders/{id} | Cancel an order
 *OrdersApi* | [**orderShow**](docs/OrdersApi.md#orderShow) | **GET** /projects/{project_id}/orders/{id} | Get a single order
 *OrdersApi* | [**ordersList**](docs/OrdersApi.md#ordersList) | **GET** /projects/{project_id}/orders | List orders
+*OrganizationJobTemplateLocalesApi* | [**organizationJobTemplateLocaleDelete**](docs/OrganizationJobTemplateLocalesApi.md#organizationJobTemplateLocaleDelete) | **DELETE** /accounts/{account_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Delete an organization job template locale
+*OrganizationJobTemplateLocalesApi* | [**organizationJobTemplateLocaleShow**](docs/OrganizationJobTemplateLocalesApi.md#organizationJobTemplateLocaleShow) | **GET** /accounts/{account_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Get a single organization job template locale
+*OrganizationJobTemplateLocalesApi* | [**organizationJobTemplateLocaleUpdate**](docs/OrganizationJobTemplateLocalesApi.md#organizationJobTemplateLocaleUpdate) | **PATCH** /accounts/{account_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Update an organization job template locale
+*OrganizationJobTemplateLocalesApi* | [**organizationJobTemplateLocalesCreate**](docs/OrganizationJobTemplateLocalesApi.md#organizationJobTemplateLocalesCreate) | **POST** /accounts/{account_id}/job_templates/{job_template_id}/locales | Create an organization job template locale
+*OrganizationJobTemplateLocalesApi* | [**organizationJobTemplateLocalesList**](docs/OrganizationJobTemplateLocalesApi.md#organizationJobTemplateLocalesList) | **GET** /accounts/{account_id}/job_templates/{job_template_id}/locales | List organization job template locales
+*OrganizationJobTemplatesApi* | [**organizationJobTemplateCreate**](docs/OrganizationJobTemplatesApi.md#organizationJobTemplateCreate) | **POST** /accounts/{account_id}/job_templates | Create an organization job template
+*OrganizationJobTemplatesApi* | [**organizationJobTemplateDelete**](docs/OrganizationJobTemplatesApi.md#organizationJobTemplateDelete) | **DELETE** /accounts/{account_id}/job_templates/{id} | Delete an organization job template
+*OrganizationJobTemplatesApi* | [**organizationJobTemplateUpdate**](docs/OrganizationJobTemplatesApi.md#organizationJobTemplateUpdate) | **PATCH** /accounts/{account_id}/job_templates/{id} | Update an organization job template
+*OrganizationJobTemplatesApi* | [**organizationJobTemplatesList**](docs/OrganizationJobTemplatesApi.md#organizationJobTemplatesList) | **GET** /accounts/{account_id}/job_templates | List organization job templates
+*OrganizationJobTemplatesApi* | [**organizationJobTemplatesShow**](docs/OrganizationJobTemplatesApi.md#organizationJobTemplatesShow) | **GET** /accounts/{account_id}/job_templates/{id} | Get a single organization job template
 *ProjectsApi* | [**projectCreate**](docs/ProjectsApi.md#projectCreate) | **POST** /projects | Create a project
 *ProjectsApi* | [**projectDelete**](docs/ProjectsApi.md#projectDelete) | **DELETE** /projects/{id} | Delete a project
 *ProjectsApi* | [**projectShow**](docs/ProjectsApi.md#projectShow) | **GET** /projects/{id} | Get a single project
@@ -1891,6 +1901,12 @@ Class | Method | HTTP request | Description
  - [NotificationGroupDetail](docs/NotificationGroupDetail.md)
  - [OrderConfirmParameters](docs/OrderConfirmParameters.md)
  - [OrderCreateParameters](docs/OrderCreateParameters.md)
+ - [OrganizationJobTemplate](docs/OrganizationJobTemplate.md)
+ - [OrganizationJobTemplateCreateParameters](docs/OrganizationJobTemplateCreateParameters.md)
+ - [OrganizationJobTemplateDetails](docs/OrganizationJobTemplateDetails.md)
+ - [OrganizationJobTemplateLocaleUpdateParameters](docs/OrganizationJobTemplateLocaleUpdateParameters.md)
+ - [OrganizationJobTemplateLocalesCreateParameters](docs/OrganizationJobTemplateLocalesCreateParameters.md)
+ - [OrganizationJobTemplateUpdateParameters](docs/OrganizationJobTemplateUpdateParameters.md)
  - [Project](docs/Project.md)
  - [ProjectCreateParameters](docs/ProjectCreateParameters.md)
  - [ProjectDetails](docs/ProjectDetails.md)
