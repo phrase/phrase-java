@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ReleaseCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-01T08:33:50.235792Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-20T12:21:44.145214Z[Etc/UTC]")
 public class ReleaseCreateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -41,6 +41,10 @@ public class ReleaseCreateParameters {
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
   private List<String> localeIds = null;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags = null;
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -132,6 +136,37 @@ public class ReleaseCreateParameters {
   }
 
 
+  public ReleaseCreateParameters tags(List<String> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public ReleaseCreateParameters addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Only include tagged keys in the release. For a key to be included it must be tagged with all tags provided
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[\"android\",\"feature1\"]", value = "Only include tagged keys in the release. For a key to be included it must be tagged with all tags provided")
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
+
   public ReleaseCreateParameters branch(String branch) {
     
     this.branch = branch;
@@ -167,12 +202,13 @@ public class ReleaseCreateParameters {
     return Objects.equals(this.description, releaseCreateParameters.description) &&
         Objects.equals(this.platforms, releaseCreateParameters.platforms) &&
         Objects.equals(this.localeIds, releaseCreateParameters.localeIds) &&
+        Objects.equals(this.tags, releaseCreateParameters.tags) &&
         Objects.equals(this.branch, releaseCreateParameters.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, platforms, localeIds, branch);
+    return Objects.hash(description, platforms, localeIds, tags, branch);
   }
 
 
@@ -183,6 +219,7 @@ public class ReleaseCreateParameters {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();

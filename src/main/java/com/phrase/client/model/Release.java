@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Release
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-01T08:33:50.235792Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-20T12:21:44.145214Z[Etc/UTC]")
 public class Release {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -64,6 +64,10 @@ public class Release {
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
   private List<LocalePreview> locales = null;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags = null;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
@@ -286,6 +290,37 @@ public class Release {
   }
 
 
+  public Release tags(List<String> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public Release addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Get tags
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
+
   public Release project(ProjectShort project) {
     
     this.project = project;
@@ -372,6 +407,7 @@ public class Release {
         Objects.equals(this.platforms, release.platforms) &&
         Objects.equals(this.environments, release.environments) &&
         Objects.equals(this.locales, release.locales) &&
+        Objects.equals(this.tags, release.tags) &&
         Objects.equals(this.project, release.project) &&
         Objects.equals(this.createdAt, release.createdAt) &&
         Objects.equals(this.updatedAt, release.updatedAt);
@@ -379,7 +415,7 @@ public class Release {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, appMinVersion, appMaxVersion, description, platforms, environments, locales, project, createdAt, updatedAt);
+    return Objects.hash(id, version, appMinVersion, appMaxVersion, description, platforms, environments, locales, tags, project, createdAt, updatedAt);
   }
 
 
@@ -395,6 +431,7 @@ public class Release {
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
     sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

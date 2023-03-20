@@ -108,6 +108,14 @@ public class ReleasePreviewTest {
     }
 
     /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
+    /**
      * Test the property 'project'
      */
     @Test

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * ReleasePreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-01T08:33:50.235792Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-20T12:21:44.145214Z[Etc/UTC]")
 public class ReleasePreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -63,6 +63,10 @@ public class ReleasePreview {
   public static final String SERIALIZED_NAME_LOCALE_CODES = "locale_codes";
   @SerializedName(SERIALIZED_NAME_LOCALE_CODES)
   private List<String> localeCodes = null;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags = null;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
@@ -285,6 +289,37 @@ public class ReleasePreview {
   }
 
 
+  public ReleasePreview tags(List<String> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public ReleasePreview addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Get tags
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
+
   public ReleasePreview project(ProjectShort project) {
     
     this.project = project;
@@ -371,6 +406,7 @@ public class ReleasePreview {
         Objects.equals(this.platforms, releasePreview.platforms) &&
         Objects.equals(this.environments, releasePreview.environments) &&
         Objects.equals(this.localeCodes, releasePreview.localeCodes) &&
+        Objects.equals(this.tags, releasePreview.tags) &&
         Objects.equals(this.project, releasePreview.project) &&
         Objects.equals(this.createdAt, releasePreview.createdAt) &&
         Objects.equals(this.updatedAt, releasePreview.updatedAt);
@@ -378,7 +414,7 @@ public class ReleasePreview {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, appMinVersion, appMaxVersion, description, platforms, environments, localeCodes, project, createdAt, updatedAt);
+    return Objects.hash(id, version, appMinVersion, appMaxVersion, description, platforms, environments, localeCodes, tags, project, createdAt, updatedAt);
   }
 
 
@@ -394,6 +430,7 @@ public class ReleasePreview {
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
     sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
     sb.append("    localeCodes: ").append(toIndentedString(localeCodes)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

@@ -66,6 +66,14 @@ public class ReleaseCreateParametersTest {
     }
 
     /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
+    /**
      * Test the property 'branch'
      */
     @Test
