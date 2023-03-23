@@ -73,4 +73,12 @@ public class IcuSkeletonParametersTest {
         // TODO: test zeroFormEnabled
     }
 
+    /**
+     * Test the property 'cldrVersion'
+     */
+    @Test
+    public void cldrVersionTest() {
+        // TODO: test cldrVersion
+    }
+
 }

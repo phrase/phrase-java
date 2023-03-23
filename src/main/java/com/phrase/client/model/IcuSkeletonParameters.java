@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * IcuSkeletonParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-20T15:55:42.137786Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-23T08:32:58.836790Z[Etc/UTC]")
 public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -45,6 +45,10 @@ public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_ZERO_FORM_ENABLED = "zero_form_enabled";
   @SerializedName(SERIALIZED_NAME_ZERO_FORM_ENABLED)
   private Boolean zeroFormEnabled;
+
+  public static final String SERIALIZED_NAME_CLDR_VERSION = "cldr_version";
+  @SerializedName(SERIALIZED_NAME_CLDR_VERSION)
+  private String cldrVersion;
 
 
   public IcuSkeletonParameters content(String content) {
@@ -147,6 +151,29 @@ public class IcuSkeletonParameters {
   }
 
 
+  public IcuSkeletonParameters cldrVersion(String cldrVersion) {
+    
+    this.cldrVersion = cldrVersion;
+    return this;
+  }
+
+   /**
+   * Strings supports two CLDR variants, when it comes to pluralization rules. \\ You can choose which one you want to use when constructing the skeletons. Possible values \\ are &#x60;legacy&#x60; and &#x60;cldr_41&#x60;. Default value is &#x60;legacy&#x60;.
+   * @return cldrVersion
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "cldr_41", value = "Strings supports two CLDR variants, when it comes to pluralization rules. \\ You can choose which one you want to use when constructing the skeletons. Possible values \\ are `legacy` and `cldr_41`. Default value is `legacy`.")
+
+  public String getCldrVersion() {
+    return cldrVersion;
+  }
+
+
+  public void setCldrVersion(String cldrVersion) {
+    this.cldrVersion = cldrVersion;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -159,12 +186,13 @@ public class IcuSkeletonParameters {
     return Objects.equals(this.content, icuSkeletonParameters.content) &&
         Objects.equals(this.localeCodes, icuSkeletonParameters.localeCodes) &&
         Objects.equals(this.keepContent, icuSkeletonParameters.keepContent) &&
-        Objects.equals(this.zeroFormEnabled, icuSkeletonParameters.zeroFormEnabled);
+        Objects.equals(this.zeroFormEnabled, icuSkeletonParameters.zeroFormEnabled) &&
+        Objects.equals(this.cldrVersion, icuSkeletonParameters.cldrVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content, localeCodes, keepContent, zeroFormEnabled);
+    return Objects.hash(content, localeCodes, keepContent, zeroFormEnabled, cldrVersion);
   }
 
 
@@ -176,6 +204,7 @@ public class IcuSkeletonParameters {
     sb.append("    localeCodes: ").append(toIndentedString(localeCodes)).append("\n");
     sb.append("    keepContent: ").append(toIndentedString(keepContent)).append("\n");
     sb.append("    zeroFormEnabled: ").append(toIndentedString(zeroFormEnabled)).append("\n");
+    sb.append("    cldrVersion: ").append(toIndentedString(cldrVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }
