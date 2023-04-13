@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ReleaseUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-03-23T08:32:58.836790Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-13T13:42:23.065462Z[Etc/UTC]")
 public class ReleaseUpdateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
