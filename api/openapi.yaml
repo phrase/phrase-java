@@ -25470,7 +25470,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase comments delete \
+          phrase job_comments delete \
           --project_id <project_id> \
           --job_id <key_id> \
           --id <id> \
@@ -25574,7 +25574,7 @@ paths:
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase comments show \
+          phrase job_comments show \
           --project_id <project_id> \
           --job_id <job_id> \
           --id <id> \
@@ -25685,7 +25685,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase comments update \
+          phrase job_comments update \
           --project_id <project_id> \
           --job_id <job_id> \
           --id <id> \
@@ -25787,7 +25787,7 @@ paths:
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase comments list \
+          phrase job_comments list \
           --project_id <project_id> \
           --job_id <key_id> \
           --branch my-feature-branch \
@@ -25889,7 +25889,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase comments create \
+          phrase job_comments create \
           --project_id <project_id> \
           --job_id <job_id> \
           --data '{"message": "Some message..."}' \

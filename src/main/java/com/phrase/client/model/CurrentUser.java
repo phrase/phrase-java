@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
 /**
  * CurrentUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-13T13:42:23.065462Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-14T12:55:26.422704Z[Etc/UTC]")
 public class CurrentUser {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
