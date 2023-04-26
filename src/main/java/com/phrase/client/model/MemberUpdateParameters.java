@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-14T12:55:26.422704Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T08:15:30.342352Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)
