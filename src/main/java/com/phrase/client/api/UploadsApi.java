@@ -72,7 +72,7 @@ public class UploadsApi {
      * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
-     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -212,7 +212,7 @@ public class UploadsApi {
      * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
-     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @return Upload
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -248,7 +248,7 @@ public class UploadsApi {
      * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
-     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @return ApiResponse&lt;Upload&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -285,7 +285,7 @@ public class UploadsApi {
      * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
-     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. (optional)
+     * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -60,7 +60,7 @@ public class Example {
     Object localeMapping = null; // Object | Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
     Object formatOptions = null; // Object | Additional options available for specific formats. See our format guide for complete list.
     Boolean autotranslate = true; // Boolean | If set, translations for the uploaded language will be fetched automatically.
-    Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
+    Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     try {
       Upload result = apiInstance.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed);
       System.out.println(result);
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
  **localeMapping** | [**Object**](Object.md)| Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. | [optional]
  **formatOptions** | [**Object**](Object.md)| Additional options available for specific formats. See our format guide for complete list. | [optional]
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional]
- **markReviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project. | [optional]
+ **markReviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional]
 
 ### Return type
 

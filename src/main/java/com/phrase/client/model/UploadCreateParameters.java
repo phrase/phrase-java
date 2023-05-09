@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UploadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-04T09:02:41.447059Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-09T09:11:05.888012Z[Etc/UTC]")
 public class UploadCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -419,11 +419,11 @@ public class UploadCreateParameters {
   }
 
    /**
-   * Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.
+   * Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
    * @return markReviewed
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow (currently beta) is enabled for the project.")
+  @ApiModelProperty(value = "Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.")
 
   public Boolean getMarkReviewed() {
     return markReviewed;

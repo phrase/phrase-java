@@ -510,7 +510,7 @@ public class LocalesApi {
      * @param encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;. (optional)
      * @param skipUnverifiedTranslations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;. (optional)
      * @param includeUnverifiedTranslations if set to false unverified translations are excluded (optional)
-     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. (optional)
+     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
      * @param _callback Callback for upload/download progress
@@ -672,7 +672,7 @@ public class LocalesApi {
      * @param encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;. (optional)
      * @param skipUnverifiedTranslations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;. (optional)
      * @param includeUnverifiedTranslations if set to false unverified translations are excluded (optional)
-     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. (optional)
+     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
      * @return File
@@ -712,7 +712,7 @@ public class LocalesApi {
      * @param encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;. (optional)
      * @param skipUnverifiedTranslations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;. (optional)
      * @param includeUnverifiedTranslations if set to false unverified translations are excluded (optional)
-     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. (optional)
+     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
      * @return ApiResponse&lt;File&gt;
@@ -753,7 +753,7 @@ public class LocalesApi {
      * @param encoding Enforces a specific encoding on the file contents. Valid options are \&quot;UTF-8\&quot;, \&quot;UTF-16\&quot; and \&quot;ISO-8859-1\&quot;. (optional)
      * @param skipUnverifiedTranslations Indicates whether the locale file should skip all unverified translations. This parameter is deprecated and should be replaced with &lt;code&gt;include_unverified_translations&lt;/code&gt;. (optional)
      * @param includeUnverifiedTranslations if set to false unverified translations are excluded (optional)
-     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow (currently in beta) is enabled for the project. (optional)
+     * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the public ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
      * @param _callback The callback to be executed when the API call finishes
