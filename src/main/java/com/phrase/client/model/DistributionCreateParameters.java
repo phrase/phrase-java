@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * DistributionCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-09T09:11:05.888012Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-10T15:01:11.521314Z[Etc/UTC]")
 public class DistributionCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -130,11 +130,11 @@ public class DistributionCreateParameters {
   }
 
    /**
-   * List of platforms the distribution should support.
+   * List of platforms the distribution should support. Valid values are: * &#x60;android&#x60; * &#x60;ios&#x60; * &#x60;flutter&#x60; * &#x60;i18next&#x60;
    * @return platforms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"android\",\"ios\"]", value = "List of platforms the distribution should support.")
+  @ApiModelProperty(example = "[\"android\",\"ios\"]", value = "List of platforms the distribution should support. Valid values are: * `android` * `ios` * `flutter` * `i18next`")
 
   public List<String> getPlatforms() {
     return platforms;
