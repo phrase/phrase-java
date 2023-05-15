@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-05-10T15:01:11.521314Z[Etc/UTC]
+- Build date: 2023-05-15T06:59:02.848073Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -202,12 +202,12 @@ Class | Method | HTTP request | Description
 *JobCommentsApi* | [**jobCommentsList**](docs/JobCommentsApi.md#jobCommentsList) | **GET** /projects/{project_id}/jobs/{job_id}/comments | List job comments
 *JobLocalesApi* | [**jobLocaleComplete**](docs/JobLocalesApi.md#jobLocaleComplete) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete | Complete a job locale
 *JobLocalesApi* | [**jobLocaleCompleteReview**](docs/JobLocalesApi.md#jobLocaleCompleteReview) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/complete_review | Review a job locale
-*JobLocalesApi* | [**jobLocaleDelete**](docs/JobLocalesApi.md#jobLocaleDelete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Delete a job locale
+*JobLocalesApi* | [**jobLocaleDelete**](docs/JobLocalesApi.md#jobLocaleDelete) | **DELETE** /projects/{project_id}/jobs/{job_id}/locales/{id} | Remove a target locale from a job
 *JobLocalesApi* | [**jobLocaleReopen**](docs/JobLocalesApi.md#jobLocaleReopen) | **POST** /projects/{project_id}/jobs/{job_id}/locales/{id}/reopen | Reopen a job locale
-*JobLocalesApi* | [**jobLocaleShow**](docs/JobLocalesApi.md#jobLocaleShow) | **GET** /projects/{project_id}/jobs/{job_id}/locales/{id} | Get a single job locale
-*JobLocalesApi* | [**jobLocaleUpdate**](docs/JobLocalesApi.md#jobLocaleUpdate) | **PATCH** /projects/{project_id}/jobs/{job_id}/locales/{id} | Update a job locale
-*JobLocalesApi* | [**jobLocalesCreate**](docs/JobLocalesApi.md#jobLocalesCreate) | **POST** /projects/{project_id}/jobs/{job_id}/locales | Create a job locale
-*JobLocalesApi* | [**jobLocalesList**](docs/JobLocalesApi.md#jobLocalesList) | **GET** /projects/{project_id}/jobs/{job_id}/locales | List job locales
+*JobLocalesApi* | [**jobLocaleShow**](docs/JobLocalesApi.md#jobLocaleShow) | **GET** /projects/{project_id}/jobs/{job_id}/locales/{id} | Show single job target locale
+*JobLocalesApi* | [**jobLocaleUpdate**](docs/JobLocalesApi.md#jobLocaleUpdate) | **PATCH** /projects/{project_id}/jobs/{job_id}/locales/{id} | Update a job target locale
+*JobLocalesApi* | [**jobLocalesCreate**](docs/JobLocalesApi.md#jobLocalesCreate) | **POST** /projects/{project_id}/jobs/{job_id}/locales | Add a target locale to a job
+*JobLocalesApi* | [**jobLocalesList**](docs/JobLocalesApi.md#jobLocalesList) | **GET** /projects/{project_id}/jobs/{job_id}/locales | List job target locales
 *JobTemplateLocalesApi* | [**jobTemplateLocaleDelete**](docs/JobTemplateLocalesApi.md#jobTemplateLocaleDelete) | **DELETE** /projects/{project_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Delete a job template locale
 *JobTemplateLocalesApi* | [**jobTemplateLocaleShow**](docs/JobTemplateLocalesApi.md#jobTemplateLocaleShow) | **GET** /projects/{project_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Get a single job template locale
 *JobTemplateLocalesApi* | [**jobTemplateLocaleUpdate**](docs/JobTemplateLocalesApi.md#jobTemplateLocaleUpdate) | **PATCH** /projects/{project_id}/job_templates/{job_template_id}/locales/{job_template_locale_id} | Update a job template locale

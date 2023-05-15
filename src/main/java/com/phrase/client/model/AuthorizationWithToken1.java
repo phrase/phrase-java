@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * AuthorizationWithToken1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-10T15:01:11.521314Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-15T06:59:02.848073Z[Etc/UTC]")
 public class AuthorizationWithToken1 {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)

@@ -77,9 +77,9 @@ public class JobLocalesApiTest {
     }
     
     /**
-     * Delete a job locale
+     * Remove a target locale from a job
      *
-     * Delete an existing job locale.
+     * Removes a target locale from a job.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -117,9 +117,9 @@ public class JobLocalesApiTest {
     }
     
     /**
-     * Get a single job locale
+     * Show single job target locale
      *
-     * Get a single job locale for a given job.
+     * Get a single target locale for a given job.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -137,9 +137,9 @@ public class JobLocalesApiTest {
     }
     
     /**
-     * Update a job locale
+     * Update a job target locale
      *
-     * Update an existing job locale.
+     * Update an existing job target locale.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -157,9 +157,9 @@ public class JobLocalesApiTest {
     }
     
     /**
-     * Create a job locale
+     * Add a target locale to a job
      *
-     * Create a new job locale.
+     * Adds a target locale to a job.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -176,9 +176,9 @@ public class JobLocalesApiTest {
     }
     
     /**
-     * List job locales
+     * List job target locales
      *
-     * List all job locales for a given job.
+     * List all target locales for a given job.
      *
      * @throws ApiException
      *          if the Api call fails

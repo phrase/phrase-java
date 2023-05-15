@@ -462,8 +462,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Delete a job locale
-     * Delete an existing job locale.
+     * Remove a target locale from a job
+     * Removes a target locale from a job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -484,8 +484,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Delete a job locale
-     * Delete an existing job locale.
+     * Remove a target locale from a job
+     * Removes a target locale from a job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -508,8 +508,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Delete a job locale (asynchronously)
-     * Delete an existing job locale.
+     * Remove a target locale from a job (asynchronously)
+     * Removes a target locale from a job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -777,8 +777,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Get a single job locale
-     * Get a single job locale for a given job.
+     * Show single job target locale
+     * Get a single target locale for a given job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -801,8 +801,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Get a single job locale
-     * Get a single job locale for a given job.
+     * Show single job target locale
+     * Get a single target locale for a given job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -826,8 +826,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Get a single job locale (asynchronously)
-     * Get a single job locale for a given job.
+     * Show single job target locale (asynchronously)
+     * Get a single target locale for a given job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -937,8 +937,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Update a job locale
-     * Update an existing job locale.
+     * Update a job target locale
+     * Update an existing job target locale.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -961,8 +961,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Update a job locale
-     * Update an existing job locale.
+     * Update a job target locale
+     * Update an existing job target locale.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -986,8 +986,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Update a job locale (asynchronously)
-     * Update an existing job locale.
+     * Update a job target locale (asynchronously)
+     * Update an existing job target locale.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param id ID (required)
@@ -1090,8 +1090,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Create a job locale
-     * Create a new job locale.
+     * Add a target locale to a job
+     * Adds a target locale to a job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param jobLocalesCreateParameters  (required)
@@ -1113,8 +1113,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Create a job locale
-     * Create a new job locale.
+     * Add a target locale to a job
+     * Adds a target locale to a job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param jobLocalesCreateParameters  (required)
@@ -1137,8 +1137,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * Create a job locale (asynchronously)
-     * Create a new job locale.
+     * Add a target locale to a job (asynchronously)
+     * Adds a target locale to a job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param jobLocalesCreateParameters  (required)
@@ -1249,8 +1249,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * List job locales
-     * List all job locales for a given job.
+     * List job target locales
+     * List all target locales for a given job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -1274,8 +1274,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * List job locales
-     * List all job locales for a given job.
+     * List job target locales
+     * List all target locales for a given job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -1300,8 +1300,8 @@ public class JobLocalesApi {
     }
 
     /**
-     * List job locales (asynchronously)
-     * List all job locales for a given job.
+     * List job target locales (asynchronously)
+     * List all target locales for a given job.
      * @param projectId Project ID (required)
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

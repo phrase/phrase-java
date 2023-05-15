@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * JobLocalesCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-10T15:01:11.521314Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-15T06:59:02.848073Z[Etc/UTC]")
 public class JobLocalesCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -85,10 +85,10 @@ public class JobLocalesCreateParameters {
   }
 
    /**
-   * locale id
+   * ID of a locale to be added
    * @return localeId
   **/
-  @ApiModelProperty(example = "abcd1234cdef1234abcd1234cdef1234", required = true, value = "locale id")
+  @ApiModelProperty(example = "abcd1234cdef1234abcd1234cdef1234", required = true, value = "ID of a locale to be added")
 
   public String getLocaleId() {
     return localeId;
