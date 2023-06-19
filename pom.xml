@@ -7,7 +7,7 @@
     <name>phrase-java</name>
     <version>1.9.0</version>
     <url>https://developers.phrase.com</url>
-    <description>OpenAPI Java</description>
+    <description>Java Client for Phrase Strings API</description>
     <scm>
         <connection>scm:git:git@github.com:phrase/openapi.git</connection>
         <developerConnection>scm:git:git@github.com:phrase/openapi.git</developerConnection>
