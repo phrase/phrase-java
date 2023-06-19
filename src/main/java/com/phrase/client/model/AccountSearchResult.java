@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * AccountSearchResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T12:35:01.213610Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T14:01:05.237373Z[Etc/UTC]")
 public class AccountSearchResult {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
