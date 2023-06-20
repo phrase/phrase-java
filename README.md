@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-06-20T14:52:08.601761Z[Etc/UTC]
+- Build date: 2023-06-20T14:56:11.944632Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -29,7 +29,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>1.9.3</version>
+  <version>1.9.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:1.9.3"
+compile "com.phrase:phrase-java:1.9.4"
 ```
 
 ### Others
@@ -52,7 +52,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/phrase-java-1.9.3.jar`
+- `target/phrase-java-1.9.4.jar`
 - `target/lib/*.jar`
 
 ### Github package repository
@@ -288,9 +288,9 @@ Class | Method | HTTP request | Description
 *SpacesApi* | [**spaceShow**](docs/SpacesApi.md#spaceShow) | **GET** /accounts/{account_id}/spaces/{id} | Get Space
 *SpacesApi* | [**spaceUpdate**](docs/SpacesApi.md#spaceUpdate) | **PATCH** /accounts/{account_id}/spaces/{id} | Update Space
 *SpacesApi* | [**spacesList**](docs/SpacesApi.md#spacesList) | **GET** /accounts/{account_id}/spaces | List Spaces
-*SpacesApi* | [**spacesProjectsCreate**](docs/SpacesApi.md#spacesProjectsCreate) | **POST** /accounts/{account_id}/spaces/{space_id}/projects | Add Project
-*SpacesApi* | [**spacesProjectsDelete**](docs/SpacesApi.md#spacesProjectsDelete) | **DELETE** /accounts/{account_id}/spaces/{space_id}/projects/{id} | Remove Project
-*SpacesApi* | [**spacesProjectsList**](docs/SpacesApi.md#spacesProjectsList) | **GET** /accounts/{account_id}/spaces/{space_id}/projects | List Projects
+*SpacesApi* | [**spacesProjectsCreate**](docs/SpacesApi.md#spacesProjectsCreate) | **POST** /accounts/{account_id}/spaces/{space_id}/projects | Add Project to Space
+*SpacesApi* | [**spacesProjectsDelete**](docs/SpacesApi.md#spacesProjectsDelete) | **DELETE** /accounts/{account_id}/spaces/{space_id}/projects/{id} | Remove Project from Space
+*SpacesApi* | [**spacesProjectsList**](docs/SpacesApi.md#spacesProjectsList) | **GET** /accounts/{account_id}/spaces/{space_id}/projects | List Projects in Space
 *StyleGuidesApi* | [**styleguideCreate**](docs/StyleGuidesApi.md#styleguideCreate) | **POST** /projects/{project_id}/styleguides | Create a style guide
 *StyleGuidesApi* | [**styleguideDelete**](docs/StyleGuidesApi.md#styleguideDelete) | **DELETE** /projects/{project_id}/styleguides/{id} | Delete a style guide
 *StyleGuidesApi* | [**styleguideShow**](docs/StyleGuidesApi.md#styleguideShow) | **GET** /projects/{project_id}/styleguides/{id} | Get a single style guide
@@ -305,8 +305,8 @@ Class | Method | HTTP request | Description
 *TeamsApi* | [**teamShow**](docs/TeamsApi.md#teamShow) | **GET** /accounts/{account_id}/teams/{id} | Get Team
 *TeamsApi* | [**teamUpdate**](docs/TeamsApi.md#teamUpdate) | **PATCH** /accounts/{account_id}/teams/{id} | Update Team
 *TeamsApi* | [**teamsList**](docs/TeamsApi.md#teamsList) | **GET** /accounts/{account_id}/teams | List Teams
-*TeamsApi* | [**teamsProjectsCreate**](docs/TeamsApi.md#teamsProjectsCreate) | **POST** /accounts/{account_id}/teams/{team_id}/projects | Add Project
-*TeamsApi* | [**teamsProjectsDelete**](docs/TeamsApi.md#teamsProjectsDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/projects/{id} | Remove Project
+*TeamsApi* | [**teamsProjectsCreate**](docs/TeamsApi.md#teamsProjectsCreate) | **POST** /accounts/{account_id}/teams/{team_id}/projects | Add Project to Team
+*TeamsApi* | [**teamsProjectsDelete**](docs/TeamsApi.md#teamsProjectsDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/projects/{id} | Remove Project from Team
 *TeamsApi* | [**teamsSpacesCreate**](docs/TeamsApi.md#teamsSpacesCreate) | **POST** /accounts/{account_id}/teams/{team_id}/spaces | Add Space
 *TeamsApi* | [**teamsSpacesDelete**](docs/TeamsApi.md#teamsSpacesDelete) | **DELETE** /accounts/{account_id}/teams/{team_id}/spaces/{id} | Remove Space
 *TeamsApi* | [**teamsUsersCreate**](docs/TeamsApi.md#teamsUsersCreate) | **POST** /accounts/{account_id}/teams/{team_id}/users | Add User

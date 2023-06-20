@@ -130,7 +130,7 @@ public class TeamsApiTest {
     }
     
     /**
-     * Add Project
+     * Add Project to Team
      *
      * Adds an existing project to the team.
      *
@@ -149,7 +149,7 @@ public class TeamsApiTest {
     }
     
     /**
-     * Remove Project
+     * Remove Project from Team
      *
      * Removes a specified project from the specified team.
      *
