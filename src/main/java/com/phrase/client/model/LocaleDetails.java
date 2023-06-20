@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * LocaleDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T14:01:05.237373Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-20T11:38:29.191786Z[Etc/UTC]")
 public class LocaleDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
