@@ -852,7 +852,7 @@ public class TeamsApi {
     }
 
     /**
-     * Add Project to Team
+     * Add Project
      * Adds an existing project to the team.
      * @param accountId Account ID (required)
      * @param teamId Team ID (required)
@@ -873,7 +873,7 @@ public class TeamsApi {
     }
 
     /**
-     * Add Project to Team
+     * Add Project
      * Adds an existing project to the team.
      * @param accountId Account ID (required)
      * @param teamId Team ID (required)
@@ -896,7 +896,7 @@ public class TeamsApi {
     }
 
     /**
-     * Add Project to Team (asynchronously)
+     * Add Project (asynchronously)
      * Adds an existing project to the team.
      * @param accountId Account ID (required)
      * @param teamId Team ID (required)
@@ -999,7 +999,7 @@ public class TeamsApi {
     }
 
     /**
-     * Remove Project from Team
+     * Remove Project
      * Removes a specified project from the specified team.
      * @param accountId Account ID (required)
      * @param teamId Team ID (required)
@@ -1020,7 +1020,7 @@ public class TeamsApi {
     }
 
     /**
-     * Remove Project from Team
+     * Remove Project
      * Removes a specified project from the specified team.
      * @param accountId Account ID (required)
      * @param teamId Team ID (required)
@@ -1043,7 +1043,7 @@ public class TeamsApi {
     }
 
     /**
-     * Remove Project from Team (asynchronously)
+     * Remove Project (asynchronously)
      * Removes a specified project from the specified team.
      * @param accountId Account ID (required)
      * @param teamId Team ID (required)

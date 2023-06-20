@@ -850,7 +850,7 @@ public class SpacesApi {
     }
 
     /**
-     * Add Project to Space
+     * Add Project
      * Adds an existing project to the space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -871,7 +871,7 @@ public class SpacesApi {
     }
 
     /**
-     * Add Project to Space
+     * Add Project
      * Adds an existing project to the space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -894,7 +894,7 @@ public class SpacesApi {
     }
 
     /**
-     * Add Project to Space (asynchronously)
+     * Add Project (asynchronously)
      * Adds an existing project to the space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -997,7 +997,7 @@ public class SpacesApi {
     }
 
     /**
-     * Remove Project from Space
+     * Remove Project
      * Removes a specified project from the specified space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -1018,7 +1018,7 @@ public class SpacesApi {
     }
 
     /**
-     * Remove Project from Space
+     * Remove Project
      * Removes a specified project from the specified space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -1041,7 +1041,7 @@ public class SpacesApi {
     }
 
     /**
-     * Remove Project from Space (asynchronously)
+     * Remove Project (asynchronously)
      * Removes a specified project from the specified space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -1147,7 +1147,7 @@ public class SpacesApi {
     }
 
     /**
-     * List Projects in Space
+     * List Projects
      * List all projects for the specified Space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -1171,7 +1171,7 @@ public class SpacesApi {
     }
 
     /**
-     * List Projects in Space
+     * List Projects
      * List all projects for the specified Space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)
@@ -1196,7 +1196,7 @@ public class SpacesApi {
     }
 
     /**
-     * List Projects in Space (asynchronously)
+     * List Projects (asynchronously)
      * List all projects for the specified Space.
      * @param accountId Account ID (required)
      * @param spaceId Space ID (required)

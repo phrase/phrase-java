@@ -128,7 +128,7 @@ public class SpacesApiTest {
     }
     
     /**
-     * Add Project to Space
+     * Add Project
      *
      * Adds an existing project to the space.
      *
@@ -147,7 +147,7 @@ public class SpacesApiTest {
     }
     
     /**
-     * Remove Project from Space
+     * Remove Project
      *
      * Removes a specified project from the specified space.
      *
@@ -166,7 +166,7 @@ public class SpacesApiTest {
     }
     
     /**
-     * List Projects in Space
+     * List Projects
      *
      * List all projects for the specified Space.
      *
