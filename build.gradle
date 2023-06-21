@@ -19,7 +19,7 @@ plugins {
 }
 
 group = 'com.phrase'
-version = '1.9.4'
+version = '1.9.5'
 
 java {
     withSourcesJar()
