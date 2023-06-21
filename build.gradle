@@ -123,8 +123,7 @@ javadoc {
 }
 
 signing {
-    def signingKey = System.getenv("GPG_KEY")
-    useInMemoryPgpKeys(signingKey, "")
+    useGpgCmd()
     sign(publishing.publications)
 }
 
