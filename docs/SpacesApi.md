@@ -9,9 +9,9 @@ Method | HTTP request | Description
 [**spaceShow**](SpacesApi.md#spaceShow) | **GET** /accounts/{account_id}/spaces/{id} | Get Space
 [**spaceUpdate**](SpacesApi.md#spaceUpdate) | **PATCH** /accounts/{account_id}/spaces/{id} | Update Space
 [**spacesList**](SpacesApi.md#spacesList) | **GET** /accounts/{account_id}/spaces | List Spaces
-[**spacesProjectsCreate**](SpacesApi.md#spacesProjectsCreate) | **POST** /accounts/{account_id}/spaces/{space_id}/projects | Add Project
-[**spacesProjectsDelete**](SpacesApi.md#spacesProjectsDelete) | **DELETE** /accounts/{account_id}/spaces/{space_id}/projects/{id} | Remove Project
-[**spacesProjectsList**](SpacesApi.md#spacesProjectsList) | **GET** /accounts/{account_id}/spaces/{space_id}/projects | List Projects
+[**spacesProjectsCreate**](SpacesApi.md#spacesProjectsCreate) | **POST** /accounts/{account_id}/spaces/{space_id}/projects | Add Project to Space
+[**spacesProjectsDelete**](SpacesApi.md#spacesProjectsDelete) | **DELETE** /accounts/{account_id}/spaces/{space_id}/projects/{id} | Remove Project from Space
+[**spacesProjectsList**](SpacesApi.md#spacesProjectsList) | **GET** /accounts/{account_id}/spaces/{space_id}/projects | List Projects in Space
 
 
 <a name="spaceCreate"></a>
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 # **spacesProjectsCreate**
 > spacesProjectsCreate(accountId, spaceId, spacesProjectsCreateParameters, xPhraseAppOTP)
 
-Add Project
+Add Project to Space
 
 Adds an existing project to the space.
 
@@ -508,7 +508,7 @@ null (empty response body)
 # **spacesProjectsDelete**
 > spacesProjectsDelete(accountId, spaceId, id, xPhraseAppOTP)
 
-Remove Project
+Remove Project from Space
 
 Removes a specified project from the specified space.
 
@@ -590,7 +590,7 @@ null (empty response body)
 # **spacesProjectsList**
 > List&lt;Project&gt; spacesProjectsList(accountId, spaceId, xPhraseAppOTP, page, perPage)
 
-List Projects
+List Projects in Space
 
 List all projects for the specified Space.
 
