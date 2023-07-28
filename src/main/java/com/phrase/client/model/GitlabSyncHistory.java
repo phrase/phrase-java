@@ -29,11 +29,11 @@ import java.util.List;
 /**
  * GitlabSyncHistory
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T13:46:51.421878Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-28T08:50:15.929274Z[Etc/UTC]")
 public class GitlabSyncHistory {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private Integer status;
+  private String status;
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
@@ -52,7 +52,7 @@ public class GitlabSyncHistory {
   private Object details;
 
 
-  public GitlabSyncHistory status(Integer status) {
+  public GitlabSyncHistory status(String status) {
     
     this.status = status;
     return this;
@@ -65,12 +65,12 @@ public class GitlabSyncHistory {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getStatus() {
+  public String getStatus() {
     return status;
   }
 
 
-  public void setStatus(Integer status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 

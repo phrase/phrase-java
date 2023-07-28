@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **Integer** |  |  [optional]
+**status** | **String** |  |  [optional]
 **action** | **String** |  |  [optional]
 **errors** | **List&lt;String&gt;** |  |  [optional]
 **date** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
