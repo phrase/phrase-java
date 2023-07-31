@@ -24,35 +24,62 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TranslationReviewParameters
+ * GitlabSyncHistoryErrors
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-31T07:09:41.620049Z[Etc/UTC]")
-public class TranslationReviewParameters {
-  public static final String SERIALIZED_NAME_BRANCH = "branch";
-  @SerializedName(SERIALIZED_NAME_BRANCH)
-  private String branch;
+public class GitlabSyncHistoryErrors {
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
+  private String error;
+
+  public static final String SERIALIZED_NAME_MESSAGE = "message";
+  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  private String message;
 
 
-  public TranslationReviewParameters branch(String branch) {
+  public GitlabSyncHistoryErrors error(String error) {
     
-    this.branch = branch;
+    this.error = error;
     return this;
   }
 
    /**
-   * specify the branch to use
-   * @return branch
+   * Get error
+   * @return error
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
+  @ApiModelProperty(value = "")
 
-  public String getBranch() {
-    return branch;
+  public String getError() {
+    return error;
   }
 
 
-  public void setBranch(String branch) {
-    this.branch = branch;
+  public void setError(String error) {
+    this.error = error;
+  }
+
+
+  public GitlabSyncHistoryErrors message(String message) {
+    
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Get message
+   * @return message
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getMessage() {
+    return message;
+  }
+
+
+  public void setMessage(String message) {
+    this.message = message;
   }
 
 
@@ -64,21 +91,23 @@ public class TranslationReviewParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TranslationReviewParameters translationReviewParameters = (TranslationReviewParameters) o;
-    return Objects.equals(this.branch, translationReviewParameters.branch);
+    GitlabSyncHistoryErrors gitlabSyncHistoryErrors = (GitlabSyncHistoryErrors) o;
+    return Objects.equals(this.error, gitlabSyncHistoryErrors.error) &&
+        Objects.equals(this.message, gitlabSyncHistoryErrors.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch);
+    return Objects.hash(error, message);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TranslationReviewParameters {\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("class GitlabSyncHistoryErrors {\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }

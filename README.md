@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-07-28T09:42:50.940478Z[Etc/UTC]
+- Build date: 2023-07-31T07:09:41.620049Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -392,6 +392,7 @@ Class | Method | HTTP request | Description
  - [GitlabSyncExport](docs/GitlabSyncExport.md)
  - [GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)
  - [GitlabSyncHistory](docs/GitlabSyncHistory.md)
+ - [GitlabSyncHistoryErrors](docs/GitlabSyncHistoryErrors.md)
  - [GitlabSyncImportParameters](docs/GitlabSyncImportParameters.md)
  - [Glossary](docs/Glossary.md)
  - [GlossaryCreateParameters](docs/GlossaryCreateParameters.md)

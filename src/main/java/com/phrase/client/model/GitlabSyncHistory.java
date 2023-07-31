@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.GitlabSyncHistoryErrors;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -29,7 +30,7 @@ import java.util.List;
 /**
  * GitlabSyncHistory
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-28T09:42:50.940478Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-31T07:09:41.620049Z[Etc/UTC]")
 public class GitlabSyncHistory {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -41,7 +42,7 @@ public class GitlabSyncHistory {
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<String> errors = null;
+  private List<GitlabSyncHistoryErrors> errors = null;
 
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)
@@ -98,13 +99,13 @@ public class GitlabSyncHistory {
   }
 
 
-  public GitlabSyncHistory errors(List<String> errors) {
+  public GitlabSyncHistory errors(List<GitlabSyncHistoryErrors> errors) {
     
     this.errors = errors;
     return this;
   }
 
-  public GitlabSyncHistory addErrorsItem(String errorsItem) {
+  public GitlabSyncHistory addErrorsItem(GitlabSyncHistoryErrors errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -119,12 +120,12 @@ public class GitlabSyncHistory {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<String> getErrors() {
+  public List<GitlabSyncHistoryErrors> getErrors() {
     return errors;
   }
 
 
-  public void setErrors(List<String> errors) {
+  public void setErrors(List<GitlabSyncHistoryErrors> errors) {
     this.errors = errors;
   }
 
