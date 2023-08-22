@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-08-01T12:13:28.716727Z[Etc/UTC]
+- Build date: 2023-08-22T09:36:28.230289Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -135,6 +135,10 @@ Class | Method | HTTP request | Description
 *BranchesApi* | [**branchShow**](docs/BranchesApi.md#branchShow) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
 *BranchesApi* | [**branchUpdate**](docs/BranchesApi.md#branchUpdate) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 *BranchesApi* | [**branchesList**](docs/BranchesApi.md#branchesList) | **GET** /projects/{project_id}/branches | List branches
+*CommentReactionsApi* | [**reactionCreate**](docs/CommentReactionsApi.md#reactionCreate) | **POST** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions | Create a reaction
+*CommentReactionsApi* | [**reactionDelete**](docs/CommentReactionsApi.md#reactionDelete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions/{id} | Delete a reaction
+*CommentReactionsApi* | [**reactionShow**](docs/CommentReactionsApi.md#reactionShow) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions/{id} | Get a single reaction
+*CommentReactionsApi* | [**reactionsList**](docs/CommentReactionsApi.md#reactionsList) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions | List reactions
 *CommentsApi* | [**commentCreate**](docs/CommentsApi.md#commentCreate) | **POST** /projects/{project_id}/keys/{key_id}/comments | Create a comment
 *CommentsApi* | [**commentDelete**](docs/CommentsApi.md#commentDelete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{id} | Delete a comment
 *CommentsApi* | [**commentMarkCheck**](docs/CommentsApi.md#commentMarkCheck) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id}/read | Check if comment is read
@@ -378,6 +382,7 @@ Class | Method | HTTP request | Description
  - [Comment](docs/Comment.md)
  - [CommentCreateParameters](docs/CommentCreateParameters.md)
  - [CommentMarkReadParameters](docs/CommentMarkReadParameters.md)
+ - [CommentReaction](docs/CommentReaction.md)
  - [CommentUpdateParameters](docs/CommentUpdateParameters.md)
  - [CurrentUser](docs/CurrentUser.md)
  - [Distribution](docs/Distribution.md)
