@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
 /**
  * JobTemplate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T09:36:28.230289Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T12:07:02.256673Z[Etc/UTC]")
 public class JobTemplate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
