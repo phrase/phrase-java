@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TagWithStats1Statistics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T10:10:19.990858Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T10:10:42.886140Z[Etc/UTC]")
 public class TagWithStats1Statistics {
   public static final String SERIALIZED_NAME_KEYS_TOTAL_COUNT = "keys_total_count";
   @SerializedName(SERIALIZED_NAME_KEYS_TOTAL_COUNT)

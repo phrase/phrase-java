@@ -32,7 +32,7 @@ import java.time.OffsetDateTime;
 /**
  * Notification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T10:10:19.990858Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T10:10:42.886140Z[Etc/UTC]")
 public class Notification {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
