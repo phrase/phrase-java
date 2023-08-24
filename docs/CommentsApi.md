@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="commentCreate"></a>
 # **commentCreate**
-> Comment commentCreate(projectId, keyId, commentCreateParameters, xPhraseAppOTP)
+> Comment commentCreate(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds)
 
 Create a comment
 
@@ -53,8 +53,10 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     CommentCreateParameters commentCreateParameters = new CommentCreateParameters(); // CommentCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String message = some message...; // String | specify the message for the comment
+    List<String> localeIds = someId; // List<String> | specify the locales for the comment
     try {
-      Comment result = apiInstance.commentCreate(projectId, keyId, commentCreateParameters, xPhraseAppOTP);
+      Comment result = apiInstance.commentCreate(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CommentsApi#commentCreate");
@@ -75,6 +77,8 @@ Name | Type | Description  | Notes
  **keyId** | **String**| Translation Key ID |
  **commentCreateParameters** | [**CommentCreateParameters**](CommentCreateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **message** | **String**| specify the message for the comment | [optional]
+ **localeIds** | [**List&lt;String&gt;**](String.md)| specify the locales for the comment | [optional]
 
 ### Return type
 

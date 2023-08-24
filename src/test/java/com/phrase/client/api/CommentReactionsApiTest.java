@@ -46,7 +46,8 @@ public class CommentReactionsApiTest {
         String commentId = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        CommentReaction response = api.reactionCreate(projectId, keyId, commentId, xPhraseAppOTP, branch);
+        String emoji = null;
+        CommentReaction response = api.reactionCreate(projectId, keyId, commentId, xPhraseAppOTP, branch, emoji);
 
         // TODO: test validations
     }

@@ -27,9 +27,6 @@ import java.io.IOException;
 
 
 import com.phrase.client.model.Comment;
-import com.phrase.client.model.CommentCreateParameters;
-import com.phrase.client.model.CommentMarkReadParameters;
-import com.phrase.client.model.CommentUpdateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -37,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CommentsApi {
+public class CommentRepliesApi {
     private ApiClient localVarApiClient;
 
-    public CommentsApi() {
+    public CommentRepliesApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public CommentsApi(ApiClient apiClient) {
+    public CommentRepliesApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -57,1115 +54,10 @@ public class CommentsApi {
     }
 
     /**
-     * Build call for commentCreate
+     * Build call for repliesList
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
-     * @param commentCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentCreateCall(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = commentCreateParameters;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (message != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("message", message));
-        }
-
-        if (localeIds != null) {
-            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "locale_ids", localeIds));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentCreateValidateBeforeCall(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentCreate(Async)");
-        }
-        
-        // verify the required parameter 'keyId' is set
-        if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentCreate(Async)");
-        }
-        
-        // verify the required parameter 'commentCreateParameters' is set
-        if (commentCreateParameters == null) {
-            throw new ApiException("Missing the required parameter 'commentCreateParameters' when calling commentCreate(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = commentCreateCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Create a comment
-     * Create a new comment for a key.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param commentCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
-     * @return Comment
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public Comment commentCreate(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds) throws ApiException {
-        ApiResponse<Comment> localVarResp = commentCreateWithHttpInfo(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Create a comment
-     * Create a new comment for a key.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param commentCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
-     * @return ApiResponse&lt;Comment&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Comment> commentCreateWithHttpInfo(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds) throws ApiException {
-        okhttp3.Call localVarCall = commentCreateValidateBeforeCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds, null);
-        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Create a comment (asynchronously)
-     * Create a new comment for a key.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param commentCreateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentCreateAsync(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds, final ApiCallback<Comment> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = commentCreateValidateBeforeCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds, _callback);
-        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for commentDelete
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentDeleteCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentDeleteValidateBeforeCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentDelete(Async)");
-        }
-        
-        // verify the required parameter 'keyId' is set
-        if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentDelete(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling commentDelete(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = commentDeleteCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Delete a comment
-     * Delete an existing comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public void commentDelete(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        commentDeleteWithHttpInfo(projectId, keyId, id, xPhraseAppOTP, branch);
-    }
-
-    /**
-     * Delete a comment
-     * Delete an existing comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> commentDeleteWithHttpInfo(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        okhttp3.Call localVarCall = commentDeleteValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Delete a comment (asynchronously)
-     * Delete an existing comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentDeleteAsync(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = commentDeleteValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for commentMarkCheck
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentMarkCheckCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{id}/read"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentMarkCheckValidateBeforeCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentMarkCheck(Async)");
-        }
-        
-        // verify the required parameter 'keyId' is set
-        if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentMarkCheck(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling commentMarkCheck(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = commentMarkCheckCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Check if comment is read
-     * Check if comment was marked as read. Returns 204 if read, 404 if unread.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public void commentMarkCheck(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        commentMarkCheckWithHttpInfo(projectId, keyId, id, xPhraseAppOTP, branch);
-    }
-
-    /**
-     * Check if comment is read
-     * Check if comment was marked as read. Returns 204 if read, 404 if unread.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> commentMarkCheckWithHttpInfo(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        okhttp3.Call localVarCall = commentMarkCheckValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Check if comment is read (asynchronously)
-     * Check if comment was marked as read. Returns 204 if read, 404 if unread.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentMarkCheckAsync(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = commentMarkCheckValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for commentMarkRead
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentMarkReadParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentMarkReadCall(String projectId, String keyId, String id, CommentMarkReadParameters commentMarkReadParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = commentMarkReadParameters;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{id}/read"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentMarkReadValidateBeforeCall(String projectId, String keyId, String id, CommentMarkReadParameters commentMarkReadParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentMarkRead(Async)");
-        }
-        
-        // verify the required parameter 'keyId' is set
-        if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentMarkRead(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling commentMarkRead(Async)");
-        }
-        
-        // verify the required parameter 'commentMarkReadParameters' is set
-        if (commentMarkReadParameters == null) {
-            throw new ApiException("Missing the required parameter 'commentMarkReadParameters' when calling commentMarkRead(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = commentMarkReadCall(projectId, keyId, id, commentMarkReadParameters, xPhraseAppOTP, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Mark a comment as read
-     * Mark a comment as read.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentMarkReadParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public void commentMarkRead(String projectId, String keyId, String id, CommentMarkReadParameters commentMarkReadParameters, String xPhraseAppOTP) throws ApiException {
-        commentMarkReadWithHttpInfo(projectId, keyId, id, commentMarkReadParameters, xPhraseAppOTP);
-    }
-
-    /**
-     * Mark a comment as read
-     * Mark a comment as read.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentMarkReadParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> commentMarkReadWithHttpInfo(String projectId, String keyId, String id, CommentMarkReadParameters commentMarkReadParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = commentMarkReadValidateBeforeCall(projectId, keyId, id, commentMarkReadParameters, xPhraseAppOTP, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Mark a comment as read (asynchronously)
-     * Mark a comment as read.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentMarkReadParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentMarkReadAsync(String projectId, String keyId, String id, CommentMarkReadParameters commentMarkReadParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = commentMarkReadValidateBeforeCall(projectId, keyId, id, commentMarkReadParameters, xPhraseAppOTP, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for commentMarkUnread
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentMarkUnreadCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{id}/read"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentMarkUnreadValidateBeforeCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentMarkUnread(Async)");
-        }
-        
-        // verify the required parameter 'keyId' is set
-        if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentMarkUnread(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling commentMarkUnread(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = commentMarkUnreadCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Mark a comment as unread
-     * Mark a comment as unread.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public void commentMarkUnread(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        commentMarkUnreadWithHttpInfo(projectId, keyId, id, xPhraseAppOTP, branch);
-    }
-
-    /**
-     * Mark a comment as unread
-     * Mark a comment as unread.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> commentMarkUnreadWithHttpInfo(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        okhttp3.Call localVarCall = commentMarkUnreadValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Mark a comment as unread (asynchronously)
-     * Mark a comment as unread.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentMarkUnreadAsync(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = commentMarkUnreadValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for commentShow
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentShowCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentShowValidateBeforeCall(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentShow(Async)");
-        }
-        
-        // verify the required parameter 'keyId' is set
-        if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentShow(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling commentShow(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = commentShowCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Get a single comment
-     * Get details on a single comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @return Comment
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public Comment commentShow(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        ApiResponse<Comment> localVarResp = commentShowWithHttpInfo(projectId, keyId, id, xPhraseAppOTP, branch);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Get a single comment
-     * Get details on a single comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;Comment&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Comment> commentShowWithHttpInfo(String projectId, String keyId, String id, String xPhraseAppOTP, String branch) throws ApiException {
-        okhttp3.Call localVarCall = commentShowValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, null);
-        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Get a single comment (asynchronously)
-     * Get details on a single comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentShowAsync(String projectId, String keyId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Comment> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = commentShowValidateBeforeCall(projectId, keyId, id, xPhraseAppOTP, branch, _callback);
-        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for commentUpdate
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentUpdateCall(String projectId, String keyId, String id, CommentUpdateParameters commentUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = commentUpdateParameters;
-
-        // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xPhraseAppOTP != null) {
-            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
-        }
-
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "Basic", "Token" };
-        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentUpdateValidateBeforeCall(String projectId, String keyId, String id, CommentUpdateParameters commentUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectId' is set
-        if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentUpdate(Async)");
-        }
-        
-        // verify the required parameter 'keyId' is set
-        if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentUpdate(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling commentUpdate(Async)");
-        }
-        
-        // verify the required parameter 'commentUpdateParameters' is set
-        if (commentUpdateParameters == null) {
-            throw new ApiException("Missing the required parameter 'commentUpdateParameters' when calling commentUpdate(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = commentUpdateCall(projectId, keyId, id, commentUpdateParameters, xPhraseAppOTP, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Update a comment
-     * Update an existing comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return Comment
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public Comment commentUpdate(String projectId, String keyId, String id, CommentUpdateParameters commentUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<Comment> localVarResp = commentUpdateWithHttpInfo(projectId, keyId, id, commentUpdateParameters, xPhraseAppOTP);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Update a comment
-     * Update an existing comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Comment&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public ApiResponse<Comment> commentUpdateWithHttpInfo(String projectId, String keyId, String id, CommentUpdateParameters commentUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = commentUpdateValidateBeforeCall(projectId, keyId, id, commentUpdateParameters, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Update a comment (asynchronously)
-     * Update an existing comment.
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
-     * @param id ID (required)
-     * @param commentUpdateParameters  (required)
-     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
-     </table>
-     */
-    public okhttp3.Call commentUpdateAsync(String projectId, String keyId, String id, CommentUpdateParameters commentUpdateParameters, String xPhraseAppOTP, final ApiCallback<Comment> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = commentUpdateValidateBeforeCall(projectId, keyId, id, commentUpdateParameters, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for commentsList
-     * @param projectId Project ID (required)
-     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1178,17 +70,19 @@ public class CommentsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call commentsListCall(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call repliesListCall(String projectId, String keyId, String commentId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments"
+        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies"
             .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
-            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()));
+            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
+            .replaceAll("\\{" + "comment_id" + "\\}", localVarApiClient.escapeString(commentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1230,29 +124,35 @@ public class CommentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentsListValidateBeforeCall(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call repliesListValidateBeforeCall(String projectId, String keyId, String commentId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
-            throw new ApiException("Missing the required parameter 'projectId' when calling commentsList(Async)");
+            throw new ApiException("Missing the required parameter 'projectId' when calling repliesList(Async)");
         }
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling commentsList(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling repliesList(Async)");
+        }
+        
+        // verify the required parameter 'commentId' is set
+        if (commentId == null) {
+            throw new ApiException("Missing the required parameter 'commentId' when calling repliesList(Async)");
         }
         
 
-        okhttp3.Call localVarCall = commentsListCall(projectId, keyId, xPhraseAppOTP, page, perPage, branch, _callback);
+        okhttp3.Call localVarCall = repliesListCall(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch, _callback);
         return localVarCall;
 
     }
 
     /**
-     * List comments
-     * List all comments for a key.
+     * List replies
+     * List all replies for a comment.
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1264,20 +164,22 @@ public class CommentsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Comment> commentsList(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        ApiResponse<List<Comment>> localVarResp = commentsListWithHttpInfo(projectId, keyId, xPhraseAppOTP, page, perPage, branch);
+    public List<Comment> repliesList(String projectId, String keyId, String commentId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        ApiResponse<List<Comment>> localVarResp = repliesListWithHttpInfo(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch);
         return localVarResp.getData();
     }
 
     /**
-     * List comments
-     * List all comments for a key.
+     * List replies
+     * List all replies for a comment.
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1289,21 +191,23 @@ public class CommentsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Comment>> commentsListWithHttpInfo(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        okhttp3.Call localVarCall = commentsListValidateBeforeCall(projectId, keyId, xPhraseAppOTP, page, perPage, branch, null);
+    public ApiResponse<List<Comment>> repliesListWithHttpInfo(String projectId, String keyId, String commentId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
+        okhttp3.Call localVarCall = repliesListValidateBeforeCall(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch, null);
         Type localVarReturnType = new TypeToken<List<Comment>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List comments (asynchronously)
-     * List all comments for a key.
+     * List replies (asynchronously)
+     * List all replies for a comment.
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1316,14 +220,866 @@ public class CommentsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call commentsListAsync(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<Comment>> _callback) throws ApiException {
+    public okhttp3.Call repliesListAsync(String projectId, String keyId, String commentId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<Comment>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = commentsListValidateBeforeCall(projectId, keyId, xPhraseAppOTP, page, perPage, branch, _callback);
+        okhttp3.Call localVarCall = repliesListValidateBeforeCall(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch, _callback);
         Type localVarReturnType = new TypeToken<List<Comment>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for replyCreate
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param message specify the message for the comment (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyCreateCall(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
+            .replaceAll("\\{" + "comment_id" + "\\}", localVarApiClient.escapeString(commentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        if (message != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("message", message));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call replyCreateValidateBeforeCall(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling replyCreate(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            throw new ApiException("Missing the required parameter 'keyId' when calling replyCreate(Async)");
+        }
+        
+        // verify the required parameter 'commentId' is set
+        if (commentId == null) {
+            throw new ApiException("Missing the required parameter 'commentId' when calling replyCreate(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = replyCreateCall(projectId, keyId, commentId, xPhraseAppOTP, branch, message, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Create a reply
+     * Create a new reply for a comment.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param message specify the message for the comment (optional)
+     * @return Comment
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public Comment replyCreate(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message) throws ApiException {
+        ApiResponse<Comment> localVarResp = replyCreateWithHttpInfo(projectId, keyId, commentId, xPhraseAppOTP, branch, message);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create a reply
+     * Create a new reply for a comment.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param message specify the message for the comment (optional)
+     * @return ApiResponse&lt;Comment&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Comment> replyCreateWithHttpInfo(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message) throws ApiException {
+        okhttp3.Call localVarCall = replyCreateValidateBeforeCall(projectId, keyId, commentId, xPhraseAppOTP, branch, message, null);
+        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create a reply (asynchronously)
+     * Create a new reply for a comment.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param message specify the message for the comment (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyCreateAsync(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message, final ApiCallback<Comment> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = replyCreateValidateBeforeCall(projectId, keyId, commentId, xPhraseAppOTP, branch, message, _callback);
+        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for replyDelete
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyDeleteCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
+            .replaceAll("\\{" + "comment_id" + "\\}", localVarApiClient.escapeString(commentId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call replyDeleteValidateBeforeCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling replyDelete(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            throw new ApiException("Missing the required parameter 'keyId' when calling replyDelete(Async)");
+        }
+        
+        // verify the required parameter 'commentId' is set
+        if (commentId == null) {
+            throw new ApiException("Missing the required parameter 'commentId' when calling replyDelete(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling replyDelete(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = replyDeleteCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Delete a reply
+     * Delete an existing reply.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void replyDelete(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        replyDeleteWithHttpInfo(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
+    }
+
+    /**
+     * Delete a reply
+     * Delete an existing reply.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> replyDeleteWithHttpInfo(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = replyDeleteValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete a reply (asynchronously)
+     * Delete an existing reply.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyDeleteAsync(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = replyDeleteValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for replyMarkAsRead
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyMarkAsReadCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}/mark_as_read"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
+            .replaceAll("\\{" + "comment_id" + "\\}", localVarApiClient.escapeString(commentId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call replyMarkAsReadValidateBeforeCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling replyMarkAsRead(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            throw new ApiException("Missing the required parameter 'keyId' when calling replyMarkAsRead(Async)");
+        }
+        
+        // verify the required parameter 'commentId' is set
+        if (commentId == null) {
+            throw new ApiException("Missing the required parameter 'commentId' when calling replyMarkAsRead(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling replyMarkAsRead(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = replyMarkAsReadCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Mark a reply as read
+     * Mark a reply as read.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void replyMarkAsRead(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        replyMarkAsReadWithHttpInfo(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
+    }
+
+    /**
+     * Mark a reply as read
+     * Mark a reply as read.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> replyMarkAsReadWithHttpInfo(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = replyMarkAsReadValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Mark a reply as read (asynchronously)
+     * Mark a reply as read.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyMarkAsReadAsync(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = replyMarkAsReadValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for replyMarkAsUnread
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyMarkAsUnreadCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}/mark_as_unread"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
+            .replaceAll("\\{" + "comment_id" + "\\}", localVarApiClient.escapeString(commentId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call replyMarkAsUnreadValidateBeforeCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling replyMarkAsUnread(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            throw new ApiException("Missing the required parameter 'keyId' when calling replyMarkAsUnread(Async)");
+        }
+        
+        // verify the required parameter 'commentId' is set
+        if (commentId == null) {
+            throw new ApiException("Missing the required parameter 'commentId' when calling replyMarkAsUnread(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling replyMarkAsUnread(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = replyMarkAsUnreadCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Mark a reply as unread
+     * Mark a reply as unread.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void replyMarkAsUnread(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        replyMarkAsUnreadWithHttpInfo(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
+    }
+
+    /**
+     * Mark a reply as unread
+     * Mark a reply as unread.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> replyMarkAsUnreadWithHttpInfo(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = replyMarkAsUnreadValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Mark a reply as unread (asynchronously)
+     * Mark a reply as unread.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> The resource was deleted successfully. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyMarkAsUnreadAsync(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = replyMarkAsUnreadValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for replyShow
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyShowCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "key_id" + "\\}", localVarApiClient.escapeString(keyId.toString()))
+            .replaceAll("\\{" + "comment_id" + "\\}", localVarApiClient.escapeString(commentId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call replyShowValidateBeforeCall(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling replyShow(Async)");
+        }
+        
+        // verify the required parameter 'keyId' is set
+        if (keyId == null) {
+            throw new ApiException("Missing the required parameter 'keyId' when calling replyShow(Async)");
+        }
+        
+        // verify the required parameter 'commentId' is set
+        if (commentId == null) {
+            throw new ApiException("Missing the required parameter 'commentId' when calling replyShow(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling replyShow(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = replyShowCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get a single reply
+     * Get details on a single reply.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return Comment
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public Comment replyShow(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        ApiResponse<Comment> localVarResp = replyShowWithHttpInfo(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get a single reply
+     * Get details on a single reply.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @return ApiResponse&lt;Comment&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Comment> replyShowWithHttpInfo(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = replyShowValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, null);
+        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get a single reply (asynchronously)
+     * Get details on a single reply.
+     * @param projectId Project ID (required)
+     * @param keyId Translation Key ID (required)
+     * @param commentId Comment ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch specify the branch to use (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call replyShowAsync(String projectId, String keyId, String commentId, String id, String xPhraseAppOTP, String branch, final ApiCallback<Comment> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = replyShowValidateBeforeCall(projectId, keyId, commentId, id, xPhraseAppOTP, branch, _callback);
+        Type localVarReturnType = new TypeToken<Comment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

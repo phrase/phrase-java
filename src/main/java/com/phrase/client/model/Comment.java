@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.UserPreview;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,7 +31,7 @@ import java.util.List;
 /**
  * Comment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T08:11:44.487392Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T10:04:52.282094Z[Etc/UTC]")
 public class Comment {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -39,6 +40,10 @@ public class Comment {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
+
+  public static final String SERIALIZED_NAME_HAS_REPLIES = "has_replies";
+  @SerializedName(SERIALIZED_NAME_HAS_REPLIES)
+  private Boolean hasReplies;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
@@ -55,6 +60,10 @@ public class Comment {
   public static final String SERIALIZED_NAME_MENTIONED_USERS = "mentioned_users";
   @SerializedName(SERIALIZED_NAME_MENTIONED_USERS)
   private List<UserPreview> mentionedUsers = null;
+
+  public static final String SERIALIZED_NAME_LOCALES = "locales";
+  @SerializedName(SERIALIZED_NAME_LOCALES)
+  private List<LocalePreview> locales = null;
 
 
   public Comment id(String id) {
@@ -100,6 +109,29 @@ public class Comment {
 
   public void setMessage(String message) {
     this.message = message;
+  }
+
+
+  public Comment hasReplies(Boolean hasReplies) {
+    
+    this.hasReplies = hasReplies;
+    return this;
+  }
+
+   /**
+   * Get hasReplies
+   * @return hasReplies
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getHasReplies() {
+    return hasReplies;
+  }
+
+
+  public void setHasReplies(Boolean hasReplies) {
+    this.hasReplies = hasReplies;
   }
 
 
@@ -203,6 +235,37 @@ public class Comment {
   }
 
 
+  public Comment locales(List<LocalePreview> locales) {
+    
+    this.locales = locales;
+    return this;
+  }
+
+  public Comment addLocalesItem(LocalePreview localesItem) {
+    if (this.locales == null) {
+      this.locales = new ArrayList<>();
+    }
+    this.locales.add(localesItem);
+    return this;
+  }
+
+   /**
+   * Get locales
+   * @return locales
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<LocalePreview> getLocales() {
+    return locales;
+  }
+
+
+  public void setLocales(List<LocalePreview> locales) {
+    this.locales = locales;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -214,15 +277,17 @@ public class Comment {
     Comment comment = (Comment) o;
     return Objects.equals(this.id, comment.id) &&
         Objects.equals(this.message, comment.message) &&
+        Objects.equals(this.hasReplies, comment.hasReplies) &&
         Objects.equals(this.user, comment.user) &&
         Objects.equals(this.createdAt, comment.createdAt) &&
         Objects.equals(this.updatedAt, comment.updatedAt) &&
-        Objects.equals(this.mentionedUsers, comment.mentionedUsers);
+        Objects.equals(this.mentionedUsers, comment.mentionedUsers) &&
+        Objects.equals(this.locales, comment.locales);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, message, user, createdAt, updatedAt, mentionedUsers);
+    return Objects.hash(id, message, hasReplies, user, createdAt, updatedAt, mentionedUsers, locales);
   }
 
 
@@ -232,10 +297,12 @@ public class Comment {
     sb.append("class Comment {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    hasReplies: ").append(toIndentedString(hasReplies)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    mentionedUsers: ").append(toIndentedString(mentionedUsers)).append("\n");
+    sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-08-24T08:11:44.487392Z[Etc/UTC]
+- Build date: 2023-08-24T10:04:52.282094Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -139,6 +139,12 @@ Class | Method | HTTP request | Description
 *CommentReactionsApi* | [**reactionDelete**](docs/CommentReactionsApi.md#reactionDelete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions/{id} | Delete a reaction
 *CommentReactionsApi* | [**reactionShow**](docs/CommentReactionsApi.md#reactionShow) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions/{id} | Get a single reaction
 *CommentReactionsApi* | [**reactionsList**](docs/CommentReactionsApi.md#reactionsList) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/reactions | List reactions
+*CommentRepliesApi* | [**repliesList**](docs/CommentRepliesApi.md#repliesList) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies | List replies
+*CommentRepliesApi* | [**replyCreate**](docs/CommentRepliesApi.md#replyCreate) | **POST** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies | Create a reply
+*CommentRepliesApi* | [**replyDelete**](docs/CommentRepliesApi.md#replyDelete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id} | Delete a reply
+*CommentRepliesApi* | [**replyMarkAsRead**](docs/CommentRepliesApi.md#replyMarkAsRead) | **PATCH** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}/mark_as_read | Mark a reply as read
+*CommentRepliesApi* | [**replyMarkAsUnread**](docs/CommentRepliesApi.md#replyMarkAsUnread) | **PATCH** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id}/mark_as_unread | Mark a reply as unread
+*CommentRepliesApi* | [**replyShow**](docs/CommentRepliesApi.md#replyShow) | **GET** /projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies/{id} | Get a single reply
 *CommentsApi* | [**commentCreate**](docs/CommentsApi.md#commentCreate) | **POST** /projects/{project_id}/keys/{key_id}/comments | Create a comment
 *CommentsApi* | [**commentDelete**](docs/CommentsApi.md#commentDelete) | **DELETE** /projects/{project_id}/keys/{key_id}/comments/{id} | Delete a comment
 *CommentsApi* | [**commentMarkCheck**](docs/CommentsApi.md#commentMarkCheck) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id}/read | Check if comment is read
