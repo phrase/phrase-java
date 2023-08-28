@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * MemberProjectDetailProjectRoles
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-28T12:53:36.818230Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-28T12:54:01.699117Z[Etc/UTC]")
 public class MemberProjectDetailProjectRoles {
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
