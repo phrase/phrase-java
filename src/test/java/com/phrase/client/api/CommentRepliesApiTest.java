@@ -14,6 +14,7 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.Comment;
+import com.phrase.client.model.RepliesListParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -44,11 +45,14 @@ public class CommentRepliesApiTest {
         String projectId = null;
         String keyId = null;
         String commentId = null;
+        RepliesListParameters repliesListParameters = null;
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
         String branch = null;
-        List<Comment> response = api.repliesList(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch);
+        String query = null;
+        List<String> filters = null;
+        List<Comment> response = api.repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters);
 
         // TODO: test validations
     }

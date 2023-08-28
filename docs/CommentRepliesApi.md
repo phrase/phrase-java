@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="repliesList"></a>
 # **repliesList**
-> List&lt;Comment&gt; repliesList(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch)
+> List&lt;Comment&gt; repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters)
 
 List replies
 
@@ -50,12 +50,15 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String keyId = "keyId_example"; // String | Translation Key ID
     String commentId = "commentId_example"; // String | Comment ID
+    RepliesListParameters repliesListParameters = new RepliesListParameters(); // RepliesListParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
+    String query = Some comment content; // String | Search query for comment messages
+    List<String> filters = ["read","unread"]; // List<String> | Specify the filter for the comments
     try {
-      List<Comment> result = apiInstance.repliesList(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch);
+      List<Comment> result = apiInstance.repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CommentRepliesApi#repliesList");
@@ -75,10 +78,13 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **keyId** | **String**| Translation Key ID |
  **commentId** | **String**| Comment ID |
+ **repliesListParameters** | [**RepliesListParameters**](RepliesListParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
+ **query** | **String**| Search query for comment messages | [optional]
+ **filters** | [**List&lt;String&gt;**](String.md)| Specify the filter for the comments | [optional]
 
 ### Return type
 
@@ -90,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

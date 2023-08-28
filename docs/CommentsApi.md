@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 <a name="commentsList"></a>
 # **commentsList**
-> List&lt;Comment&gt; commentsList(projectId, keyId, xPhraseAppOTP, page, perPage, branch)
+> List&lt;Comment&gt; commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters)
 
 List comments
 
@@ -644,12 +644,16 @@ public class Example {
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String keyId = "keyId_example"; // String | Translation Key ID
+    CommentsListParameters commentsListParameters = new CommentsListParameters(); // CommentsListParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = my-feature-branch; // String | specify the branch to use
+    String query = Some comment content; // String | Search query for comment messages
+    List<String> localeIds = ["someId"]; // List<String> | Search comments by their assigned locales
+    List<String> filters = ["read","unread"]; // List<String> | Specify the filter for the comments
     try {
-      List<Comment> result = apiInstance.commentsList(projectId, keyId, xPhraseAppOTP, page, perPage, branch);
+      List<Comment> result = apiInstance.commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CommentsApi#commentsList");
@@ -668,10 +672,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
  **keyId** | **String**| Translation Key ID |
+ **commentsListParameters** | [**CommentsListParameters**](CommentsListParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
+ **query** | **String**| Search query for comment messages | [optional]
+ **localeIds** | [**List&lt;String&gt;**](String.md)| Search comments by their assigned locales | [optional]
+ **filters** | [**List&lt;String&gt;**](String.md)| Specify the filter for the comments | [optional]
 
 ### Return type
 
@@ -683,7 +691,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

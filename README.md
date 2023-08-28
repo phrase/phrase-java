@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-08-24T12:09:08.830583Z[Etc/UTC]
+- Build date: 2023-08-28T12:43:24.841960Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -390,6 +390,7 @@ Class | Method | HTTP request | Description
  - [CommentMarkReadParameters](docs/CommentMarkReadParameters.md)
  - [CommentReaction](docs/CommentReaction.md)
  - [CommentUpdateParameters](docs/CommentUpdateParameters.md)
+ - [CommentsListParameters](docs/CommentsListParameters.md)
  - [CurrentUser](docs/CurrentUser.md)
  - [Distribution](docs/Distribution.md)
  - [DistributionCreateParameters](docs/DistributionCreateParameters.md)
@@ -498,6 +499,7 @@ Class | Method | HTTP request | Description
  - [ReleaseCreateParameters](docs/ReleaseCreateParameters.md)
  - [ReleasePreview](docs/ReleasePreview.md)
  - [ReleaseUpdateParameters](docs/ReleaseUpdateParameters.md)
+ - [RepliesListParameters](docs/RepliesListParameters.md)
  - [Screenshot](docs/Screenshot.md)
  - [ScreenshotCreateParameters](docs/ScreenshotCreateParameters.md)
  - [ScreenshotMarker](docs/ScreenshotMarker.md)

@@ -9438,6 +9438,73 @@ paths:
         schema:
           type: string
         style: form
+      - description: Search query for comment messages
+        example: Some comment content
+        explode: true
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Search comments by their assigned locales
+        example:
+        - someId
+        explode: true
+        in: query
+        name: locale_ids
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      - description: Specify the filter for the comments
+        explode: true
+        in: query
+        name: filters
+        required: false
+        schema:
+          example:
+          - read
+          - unread
+          items:
+            type: string
+          type: array
+        style: form
+      requestBody:
+        $ref: '#/components/requestBodies/comments_list_parameters'
+        content:
+          application/json:
+            schema:
+              properties:
+                branch:
+                  description: Specify the branch to use
+                  example: my-feature-branch
+                  type: string
+                query:
+                  description: Search query for comment messages
+                  example: Some comment content
+                  type: string
+                locale_ids:
+                  description: Search comments by their assigned locales
+                  example:
+                  - someId
+                  - otherId
+                  items:
+                    type: string
+                  type: array
+                filters:
+                  description: Specify filters to find comments by
+                  example:
+                  - read
+                  - unread
+                  items:
+                    type: string
+                  type: array
+              title: comments/list/parameters
+              type: object
+        required: true
       responses:
         "200":
           content:
@@ -9489,16 +9556,22 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments?branch=my-feature-branch" \
-            -u USERNAME_OR_ACCESS_TOKEN
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments?branch=my-feature-branch&filters=unread&query=something&locale_ids=someId" \
+            -u USERNAME_OR_ACCESS_TOKEN \
+            -X GET \
+            -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
           phrase comments list \
           --project_id <project_id> \
           --key_id <key_id> \
-          --branch my-feature-branch \
+          --branch "my-feature-branch" \
+          --filters unread \
+          --query "Some comment content" \
+          --locale_ids someId \
           --access_token <token>
       x-cli-version: "2.5"
+      x-contentType: application/json
       x-accepts: application/json
     post:
       description: Create a new comment for a key.
@@ -10845,6 +10918,53 @@ paths:
         schema:
           type: string
         style: form
+      - description: Search query for comment messages
+        example: Some comment content
+        explode: true
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Specify the filter for the comments
+        explode: true
+        in: query
+        name: filters
+        required: false
+        schema:
+          example:
+          - read
+          - unread
+          items:
+            type: string
+          type: array
+        style: form
+      requestBody:
+        $ref: '#/components/requestBodies/replies_list_parameters'
+        content:
+          application/json:
+            schema:
+              properties:
+                branch:
+                  description: Specify the branch to use
+                  example: my-feature-branch
+                  type: string
+                query:
+                  description: Search query for comment messages
+                  example: Some comment content
+                  type: string
+                filters:
+                  description: Specify filters to find comments by
+                  example:
+                  - read
+                  - unread
+                  items:
+                    type: string
+                  type: array
+              title: replies/list/parameters
+              type: object
+        required: true
       responses:
         "200":
           content:
@@ -10905,10 +11025,9 @@ paths:
       x-code-samples:
       - lang: Curl
         source: |-
-          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:comment_id/replies" \
+          curl "https://api.phrase.com/v2/projects/:project_id/keys/:key_id/comments/:comment_id/replies?branch=my-feature-branch&filters=unread&query=something" \
             -u USERNAME_OR_ACCESS_TOKEN \
             -X GET \
-            -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
@@ -10916,9 +11035,12 @@ paths:
           --project_id <project_id> \
           --key_id <key_id> \
           --comment_id <comment_id> \
-          --data '{"branch":"my-feature-branch"]}' \
+          --branch "my-feature-branch" \
+          --filters unread \
+          --query "Some comment content" \
           --access_token <token>
       x-cli-version: "2.10"
+      x-contentType: application/json
       x-accepts: application/json
     post:
       description: Create a new reply for a comment.
@@ -28834,6 +28956,12 @@ components:
         type: string
       style: form
   requestBodies:
+    comments_list_parameters:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/comments_list_parameters'
+      required: true
     member_update_settings_parameters:
       content:
         application/json:
@@ -29415,6 +29543,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/job_locale_reopen_parameters'
+      required: true
+    replies_list_parameters:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/replies_list_parameters'
       required: true
     icu_skeleton_parameters:
       content:
@@ -32609,6 +32743,34 @@ components:
           type: string
       title: bitbucket_sync/import/parameters
       type: object
+    comments_list_parameters:
+      properties:
+        branch:
+          description: Specify the branch to use
+          example: my-feature-branch
+          type: string
+        query:
+          description: Search query for comment messages
+          example: Some comment content
+          type: string
+        locale_ids:
+          description: Search comments by their assigned locales
+          example:
+          - someId
+          - otherId
+          items:
+            type: string
+          type: array
+        filters:
+          description: Specify filters to find comments by
+          example:
+          - read
+          - unread
+          items:
+            type: string
+          type: array
+      title: comments/list/parameters
+      type: object
     comment_create_parameters:
       properties:
         branch:
@@ -32640,6 +32802,26 @@ components:
           example: my-feature-branch
           type: string
       title: comment/mark/read/parameters
+      type: object
+    replies_list_parameters:
+      properties:
+        branch:
+          description: Specify the branch to use
+          example: my-feature-branch
+          type: string
+        query:
+          description: Search query for comment messages
+          example: Some comment content
+          type: string
+        filters:
+          description: Specify filters to find comments by
+          example:
+          - read
+          - unread
+          items:
+            type: string
+          type: array
+      title: replies/list/parameters
       type: object
     webhook_create_parameters:
       properties:
