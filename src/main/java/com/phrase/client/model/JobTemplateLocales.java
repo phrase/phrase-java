@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * JobTemplateLocales
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-29T13:52:04.005045Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-06T12:05:21.628755Z[Etc/UTC]")
 public class JobTemplateLocales {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

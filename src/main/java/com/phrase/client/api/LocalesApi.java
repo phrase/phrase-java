@@ -348,7 +348,7 @@ public class LocalesApi {
     /**
      * Build call for localeDelete
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
@@ -425,7 +425,7 @@ public class LocalesApi {
      * Delete a locale
      * Delete an existing locale.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -446,7 +446,7 @@ public class LocalesApi {
      * Delete a locale
      * Delete an existing locale.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -469,7 +469,7 @@ public class LocalesApi {
      * Delete a locale (asynchronously)
      * Delete an existing locale.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -493,7 +493,7 @@ public class LocalesApi {
     /**
      * Build call for localeDownload
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
@@ -655,7 +655,7 @@ public class LocalesApi {
      * Download a locale
      * Download a locale in a specific file format.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
@@ -695,7 +695,7 @@ public class LocalesApi {
      * Download a locale
      * Download a locale in a specific file format.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
@@ -736,7 +736,7 @@ public class LocalesApi {
      * Download a locale (asynchronously)
      * Download a locale in a specific file format.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param ifModifiedSince Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
      * @param ifNoneMatch ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) (optional)
@@ -778,7 +778,7 @@ public class LocalesApi {
     /**
      * Build call for localeShow
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
@@ -855,7 +855,7 @@ public class LocalesApi {
      * Get a single locale
      * Get details on a single locale for a given project.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @return LocaleDetails
@@ -878,7 +878,7 @@ public class LocalesApi {
      * Get a single locale
      * Get details on a single locale for a given project.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;LocaleDetails&gt;
@@ -902,7 +902,7 @@ public class LocalesApi {
      * Get a single locale (asynchronously)
      * Get details on a single locale for a given project.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -927,7 +927,7 @@ public class LocalesApi {
     /**
      * Build call for localeUpdate
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param localeUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
@@ -1005,7 +1005,7 @@ public class LocalesApi {
      * Update a locale
      * Update an existing locale.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param localeUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return LocaleDetails
@@ -1028,7 +1028,7 @@ public class LocalesApi {
      * Update a locale
      * Update an existing locale.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param localeUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;LocaleDetails&gt;
@@ -1052,7 +1052,7 @@ public class LocalesApi {
      * Update a locale (asynchronously)
      * Update an existing locale.
      * @param projectId Project ID (required)
-     * @param id ID (required)
+     * @param id Locale ID or locale name (required)
      * @param localeUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes

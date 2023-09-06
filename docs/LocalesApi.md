@@ -213,7 +213,7 @@ public class Example {
 
     LocalesApi apiInstance = new LocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
-    String id = "id_example"; // String | ID
+    String id = "id_example"; // String | Locale ID or locale name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = my-feature-branch; // String | specify the branch to use
     try {
@@ -234,7 +234,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
- **id** | **String**| ID |
+ **id** | **String**| Locale ID or locale name |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
 
@@ -295,7 +295,7 @@ public class Example {
 
     LocalesApi apiInstance = new LocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
-    String id = "id_example"; // String | ID
+    String id = "id_example"; // String | Locale ID or locale name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String ifModifiedSince = "ifModifiedSince_example"; // String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
     String ifNoneMatch = "ifNoneMatch_example"; // String | ETag condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
@@ -334,7 +334,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
- **id** | **String**| ID |
+ **id** | **String**| Locale ID or locale name |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **ifModifiedSince** | **String**| Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional]
  **ifNoneMatch** | **String**| ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional]
@@ -412,7 +412,7 @@ public class Example {
 
     LocalesApi apiInstance = new LocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
-    String id = "id_example"; // String | ID
+    String id = "id_example"; // String | Locale ID or locale name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = my-feature-branch; // String | specify the branch to use
     try {
@@ -434,7 +434,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
- **id** | **String**| ID |
+ **id** | **String**| Locale ID or locale name |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
 
@@ -495,7 +495,7 @@ public class Example {
 
     LocalesApi apiInstance = new LocalesApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
-    String id = "id_example"; // String | ID
+    String id = "id_example"; // String | Locale ID or locale name
     LocaleUpdateParameters localeUpdateParameters = new LocaleUpdateParameters(); // LocaleUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
@@ -517,7 +517,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
- **id** | **String**| ID |
+ **id** | **String**| Locale ID or locale name |
  **localeUpdateParameters** | [**LocaleUpdateParameters**](LocaleUpdateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
