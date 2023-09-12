@@ -12458,6 +12458,11 @@ paths:
                     be marked as reviewed. This setting is available if the review
                     workflow is enabled for the project.
                   type: boolean
+                tag_only_affected_keys:
+                  default: false
+                  description: Indicates whether only keys affected (created or updated)
+                    by the upload should be tagged. The default is `false`
+                  type: boolean
               title: upload/create/parameters
               type: object
         required: true
@@ -12530,7 +12535,7 @@ paths:
           --locale_mapping '{"en": "2"}' \
           --format_options '{"foo": "bar"}' \
           --access_token <token>
-      x-cli-version: "2.5"
+      x-cli-version: "2.12"
       x-contentType: multipart/form-data
       x-accepts: application/json
   /projects/{project_id}/uploads/{id}:
@@ -32956,6 +32961,11 @@ components:
           description: Indicated whether the imported translations should be marked
             as reviewed. This setting is available if the review workflow is enabled
             for the project.
+          type: boolean
+        tag_only_affected_keys:
+          default: false
+          description: Indicates whether only keys affected (created or updated) by
+            the upload should be tagged. The default is `false`
           type: boolean
       title: upload/create/parameters
       type: object

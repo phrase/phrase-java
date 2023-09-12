@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **formatOptions** | [**Object**](.md) | Additional options available for specific formats. See our format guide for complete list. |  [optional]
 **autotranslate** | **Boolean** | If set, translations for the uploaded language will be fetched automatically. |  [optional]
 **markReviewed** | **Boolean** | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. |  [optional]
+**tagOnlyAffectedKeys** | **Boolean** | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; |  [optional]
 
 
 

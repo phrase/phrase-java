@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UploadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-06T12:05:21.628755Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-12T14:42:03.885134Z[Etc/UTC]")
 public class UploadCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -88,6 +88,10 @@ public class UploadCreateParameters {
   public static final String SERIALIZED_NAME_MARK_REVIEWED = "mark_reviewed";
   @SerializedName(SERIALIZED_NAME_MARK_REVIEWED)
   private Boolean markReviewed;
+
+  public static final String SERIALIZED_NAME_TAG_ONLY_AFFECTED_KEYS = "tag_only_affected_keys";
+  @SerializedName(SERIALIZED_NAME_TAG_ONLY_AFFECTED_KEYS)
+  private Boolean tagOnlyAffectedKeys = false;
 
 
   public UploadCreateParameters branch(String branch) {
@@ -435,6 +439,29 @@ public class UploadCreateParameters {
   }
 
 
+  public UploadCreateParameters tagOnlyAffectedKeys(Boolean tagOnlyAffectedKeys) {
+    
+    this.tagOnlyAffectedKeys = tagOnlyAffectedKeys;
+    return this;
+  }
+
+   /**
+   * Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60;
+   * @return tagOnlyAffectedKeys
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`")
+
+  public Boolean getTagOnlyAffectedKeys() {
+    return tagOnlyAffectedKeys;
+  }
+
+
+  public void setTagOnlyAffectedKeys(Boolean tagOnlyAffectedKeys) {
+    this.tagOnlyAffectedKeys = tagOnlyAffectedKeys;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -458,12 +485,13 @@ public class UploadCreateParameters {
         Objects.equals(this.localeMapping, uploadCreateParameters.localeMapping) &&
         Objects.equals(this.formatOptions, uploadCreateParameters.formatOptions) &&
         Objects.equals(this.autotranslate, uploadCreateParameters.autotranslate) &&
-        Objects.equals(this.markReviewed, uploadCreateParameters.markReviewed);
+        Objects.equals(this.markReviewed, uploadCreateParameters.markReviewed) &&
+        Objects.equals(this.tagOnlyAffectedKeys, uploadCreateParameters.tagOnlyAffectedKeys);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed);
+    return Objects.hash(branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
   }
 
 
@@ -486,6 +514,7 @@ public class UploadCreateParameters {
     sb.append("    formatOptions: ").append(toIndentedString(formatOptions)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("    markReviewed: ").append(toIndentedString(markReviewed)).append("\n");
+    sb.append("    tagOnlyAffectedKeys: ").append(toIndentedString(tagOnlyAffectedKeys)).append("\n");
     sb.append("}");
     return sb.toString();
   }

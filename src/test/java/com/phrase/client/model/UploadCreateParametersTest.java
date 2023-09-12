@@ -160,4 +160,12 @@ public class UploadCreateParametersTest {
         // TODO: test markReviewed
     }
 
+    /**
+     * Test the property 'tagOnlyAffectedKeys'
+     */
+    @Test
+    public void tagOnlyAffectedKeysTest() {
+        // TODO: test tagOnlyAffectedKeys
+    }
+
 }
