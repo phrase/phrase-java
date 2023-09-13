@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GitlabSyncHistoryErrors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-13T14:00:46.287520Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-13T14:02:26.557393Z[Etc/UTC]")
 public class GitlabSyncHistoryErrors {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
