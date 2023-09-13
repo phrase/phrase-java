@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * OrganizationJobTemplateLocaleUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-13T14:02:59.597295Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-13T14:03:36.976549Z[Etc/UTC]")
 public class OrganizationJobTemplateLocaleUpdateParameters {
   public static final String SERIALIZED_NAME_LOCALE_NAME = "locale_name";
   @SerializedName(SERIALIZED_NAME_LOCALE_NAME)
