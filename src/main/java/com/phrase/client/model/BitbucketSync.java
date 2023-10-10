@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * BitbucketSync
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T08:19:37.080632Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-10T11:40:08.618397Z[Etc/UTC]")
 public class BitbucketSync {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
