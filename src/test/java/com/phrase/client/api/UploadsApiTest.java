@@ -12,10 +12,25 @@
 
 package com.phrase.client.api;
 
+import com.phrase.client.ApiClient;
 import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.HttpBasicAuth;
+
 import java.io.File;
+import java.io.IOException;
+import java.time.OffsetDateTime;
+
 import com.phrase.client.model.Upload;
+
+import okhttp3.mockwebserver.MockResponse;
+import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.RecordedRequest;
+
 import org.junit.Test;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Ignore;
 
 import java.util.ArrayList;
@@ -26,12 +41,32 @@ import java.util.Map;
 /**
  * API tests for UploadsApi
  */
-@Ignore
 public class UploadsApiTest {
 
-    private final UploadsApi api = new UploadsApi();
+    MockWebServer mockBackend = new MockWebServer();
 
-    
+    private UploadsApi api;
+
+    @Before
+    public void setUp() throws IOException {
+        mockBackend.start();
+
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath(mockBackend.url("/").toString());
+
+        // Configure HTTP basic authorization: Basic
+        HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+        Basic.setUsername("TOKEN");
+        Basic.setPassword("");
+
+        api = new UploadsApi(defaultClient);
+    }
+
+    @After
+    public void tearDown() throws IOException {
+        mockBackend.shutdown();
+    }
+
     /**
      * Upload a new file
      *
@@ -39,13 +74,24 @@ public class UploadsApiTest {
      *
      * @throws ApiException
      *          if the Api call fails
+     * @throws IOException
+     * @throws InterruptedException
      */
     @Test
-    public void uploadCreateTest() throws ApiException {
-        String projectId = null;
+    public void uploadCreateTest() throws ApiException, IOException, InterruptedException {
+        String body = "{\"id\":\"id_example\",\"created_at\": \"2015-01-28T09:52:53Z\"}";
+
+        MockResponse mockResponse = new MockResponse()
+            .addHeader("Content-Type", "application/json; charset=utf-8")
+            .setBody(body);
+
+        mockBackend.enqueue(mockResponse);
+
+        String projectId = "projectId_example";
         String xPhraseAppOTP = null;
-        String branch = null;
-        File file = null;
+        String branch = "branch_example";
+        File file = File.createTempFile("test", "test");
+        file.deleteOnExit();
         String fileFormat = null;
         String localeId = null;
         String tags = null;
@@ -62,9 +108,14 @@ public class UploadsApiTest {
         Boolean tagOnlyAffectedKeys = null;
         Upload response = api.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
 
-        // TODO: test validations
+        Assert.assertEquals("valid id returned", "id_example", response.getId());
+        Assert.assertEquals("valid creation date returned", OffsetDateTime.parse("2015-01-28T09:52:53Z"), response.getCreatedAt());
+
+        RecordedRequest recordedRequest = mockBackend.takeRequest();
+        Assert.assertEquals("Request path", "//projects/projectId_example/uploads", recordedRequest.getPath());
+        Assert.assertTrue("Request payload", recordedRequest.getBody().readUtf8().contains("Content-Disposition: form-data; name=\"file\""));
     }
-    
+
     /**
      * Get a single upload
      *
@@ -73,7 +124,7 @@ public class UploadsApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void uploadShowTest() throws ApiException {
         String projectId = null;
         String id = null;
@@ -83,7 +134,7 @@ public class UploadsApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * List uploads
      *
@@ -92,7 +143,7 @@ public class UploadsApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void uploadsListTest() throws ApiException {
         String projectId = null;
         String xPhraseAppOTP = null;
@@ -103,5 +154,5 @@ public class UploadsApiTest {
 
         // TODO: test validations
     }
-    
+
 }
