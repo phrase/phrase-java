@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BlacklistedKeyCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-11T09:20:59.497084Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-12T06:58:28.841259Z[Etc/UTC]")
 public class BlacklistedKeyCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
