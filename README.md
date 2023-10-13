@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-10-13T07:24:54.615398Z[Etc/UTC]
+- Build date: 2023-10-13T07:47:56.809246Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -160,6 +160,11 @@ Class | Method | HTTP request | Description
 *DistributionsApi* | [**distributionsList**](docs/DistributionsApi.md#distributionsList) | **GET** /accounts/{account_id}/distributions | List distributions
 *DocumentsApi* | [**documentDelete**](docs/DocumentsApi.md#documentDelete) | **DELETE** /projects/{project_id}/documents/{id} | Delete document
 *DocumentsApi* | [**documentsList**](docs/DocumentsApi.md#documentsList) | **GET** /projects/{project_id}/documents | List documents
+*FigmaAttachmentsApi* | [**figmaAttachmentCreate**](docs/FigmaAttachmentsApi.md#figmaAttachmentCreate) | **POST** /projects/{project_id}/figma_attachments | Create a Figma attachment
+*FigmaAttachmentsApi* | [**figmaAttachmentDelete**](docs/FigmaAttachmentsApi.md#figmaAttachmentDelete) | **DELETE** /projects/{project_id}/figma_attachments/{id} | Delete a Figma attachment
+*FigmaAttachmentsApi* | [**figmaAttachmentShow**](docs/FigmaAttachmentsApi.md#figmaAttachmentShow) | **GET** /projects/{project_id}/figma_attachments/{id} | Get a single Figma attachment
+*FigmaAttachmentsApi* | [**figmaAttachmentUpdate**](docs/FigmaAttachmentsApi.md#figmaAttachmentUpdate) | **PATCH** /projects/{project_id}/figma_attachments/{id} | Update a Figma attachment
+*FigmaAttachmentsApi* | [**figmaAttachmentsList**](docs/FigmaAttachmentsApi.md#figmaAttachmentsList) | **GET** /projects/{project_id}/figma_attachments | List Figma attachments
 *FormatsApi* | [**formatsList**](docs/FormatsApi.md#formatsList) | **GET** /formats | List formats
 *GitHubSyncApi* | [**githubSyncExport**](docs/GitHubSyncApi.md#githubSyncExport) | **POST** /github_syncs/export | Export from Phrase Strings to GitHub
 *GitHubSyncApi* | [**githubSyncImport**](docs/GitHubSyncApi.md#githubSyncImport) | **POST** /github_syncs/import | Import to Phrase Strings from GitHub
@@ -238,6 +243,8 @@ Class | Method | HTTP request | Description
 *KeysApi* | [**keysSearch**](docs/KeysApi.md#keysSearch) | **POST** /projects/{project_id}/keys/search | Search keys
 *KeysApi* | [**keysTag**](docs/KeysApi.md#keysTag) | **PATCH** /projects/{project_id}/keys/tag | Add tags to collection of keys
 *KeysApi* | [**keysUntag**](docs/KeysApi.md#keysUntag) | **PATCH** /projects/{project_id}/keys/untag | Remove tags from collection of keys
+*KeysFigmaAttachmentsApi* | [**figmaAttachmentAttachToKey**](docs/KeysFigmaAttachmentsApi.md#figmaAttachmentAttachToKey) | **POST** /projects/{project_id}/figma_attachments/{figma_attachment_id}/keys | Attach the Figma attachment to a key
+*KeysFigmaAttachmentsApi* | [**figmaAttachmentDetachFromKey**](docs/KeysFigmaAttachmentsApi.md#figmaAttachmentDetachFromKey) | **DELETE** /projects/{project_id}/figma_attachments/{figma_attachment_id}/keys/{id} | Detach the Figma attachment from a key
 *LocalesApi* | [**accountLocales**](docs/LocalesApi.md#accountLocales) | **GET** /accounts/{id}/locales | List locales used in account
 *LocalesApi* | [**localeCreate**](docs/LocalesApi.md#localeCreate) | **POST** /projects/{project_id}/locales | Create a locale
 *LocalesApi* | [**localeDelete**](docs/LocalesApi.md#localeDelete) | **DELETE** /projects/{project_id}/locales/{id} | Delete a locale
@@ -397,6 +404,9 @@ Class | Method | HTTP request | Description
  - [DistributionPreview](docs/DistributionPreview.md)
  - [DistributionUpdateParameters](docs/DistributionUpdateParameters.md)
  - [Document](docs/Document.md)
+ - [FigmaAttachment](docs/FigmaAttachment.md)
+ - [FigmaAttachmentCreateParameters](docs/FigmaAttachmentCreateParameters.md)
+ - [FigmaAttachmentUpdateParameters](docs/FigmaAttachmentUpdateParameters.md)
  - [Format](docs/Format.md)
  - [GithubSyncExportParameters](docs/GithubSyncExportParameters.md)
  - [GithubSyncImportParameters](docs/GithubSyncImportParameters.md)
