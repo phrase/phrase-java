@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ProjectLocales1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-13T09:04:34.866242Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-17T12:04:22.979297Z[Etc/UTC]")
 public class ProjectLocales1 {
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
