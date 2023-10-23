@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **query** | **String** | Search query for comment messages |  [optional]
 **localeIds** | **List&lt;String&gt;** | Search comments by their assigned locales |  [optional]
 **filters** | **List&lt;String&gt;** | Specify filters to find comments by |  [optional]
+**order** | **String** | Specify ordering of comments |  [optional]
 
 
 

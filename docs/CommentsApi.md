@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 <a name="commentsList"></a>
 # **commentsList**
-> List&lt;Comment&gt; commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters)
+> List&lt;Comment&gt; commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order)
 
 List comments
 
@@ -652,8 +652,9 @@ public class Example {
     String query = Some comment content; // String | Search query for comment messages
     List<String> localeIds = ["someId"]; // List<String> | Search comments by their assigned locales
     List<String> filters = ["read","unread"]; // List<String> | Specify the filter for the comments
+    String order = desc; // String | Order direction. Can be one of: asc, desc.
     try {
-      List<Comment> result = apiInstance.commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters);
+      List<Comment> result = apiInstance.commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CommentsApi#commentsList");
@@ -680,6 +681,7 @@ Name | Type | Description  | Notes
  **query** | **String**| Search query for comment messages | [optional]
  **localeIds** | [**List&lt;String&gt;**](String.md)| Search comments by their assigned locales | [optional]
  **filters** | [**List&lt;String&gt;**](String.md)| Specify the filter for the comments | [optional]
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
 
 ### Return type
 

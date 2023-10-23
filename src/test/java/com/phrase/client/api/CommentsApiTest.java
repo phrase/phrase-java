@@ -196,7 +196,8 @@ public class CommentsApiTest {
         String query = null;
         List<String> localeIds = null;
         List<String> filters = null;
-        List<Comment> response = api.commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters);
+        String order = null;
+        List<Comment> response = api.commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order);
 
         // TODO: test validations
     }

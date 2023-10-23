@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * RepliesListParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:28:43.001721Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:41:41.791020Z[Etc/UTC]")
 public class RepliesListParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -41,6 +41,10 @@ public class RepliesListParameters {
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
   private List<String> filters = null;
+
+  public static final String SERIALIZED_NAME_ORDER = "order";
+  @SerializedName(SERIALIZED_NAME_ORDER)
+  private String order;
 
 
   public RepliesListParameters branch(String branch) {
@@ -120,6 +124,29 @@ public class RepliesListParameters {
   }
 
 
+  public RepliesListParameters order(String order) {
+    
+    this.order = order;
+    return this;
+  }
+
+   /**
+   * Specify ordering of comments
+   * @return order
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "desc", value = "Specify ordering of comments")
+
+  public String getOrder() {
+    return order;
+  }
+
+
+  public void setOrder(String order) {
+    this.order = order;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -131,12 +158,13 @@ public class RepliesListParameters {
     RepliesListParameters repliesListParameters = (RepliesListParameters) o;
     return Objects.equals(this.branch, repliesListParameters.branch) &&
         Objects.equals(this.query, repliesListParameters.query) &&
-        Objects.equals(this.filters, repliesListParameters.filters);
+        Objects.equals(this.filters, repliesListParameters.filters) &&
+        Objects.equals(this.order, repliesListParameters.order);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, query, filters);
+    return Objects.hash(branch, query, filters, order);
   }
 
 
@@ -147,6 +175,7 @@ public class RepliesListParameters {
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("}");
     return sb.toString();
   }

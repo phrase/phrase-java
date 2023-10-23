@@ -65,4 +65,12 @@ public class RepliesListParametersTest {
         // TODO: test filters
     }
 
+    /**
+     * Test the property 'order'
+     */
+    @Test
+    public void orderTest() {
+        // TODO: test order
+    }
+
 }

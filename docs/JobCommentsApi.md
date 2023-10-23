@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 <a name="jobCommentsList"></a>
 # **jobCommentsList**
-> List&lt;JobComment&gt; jobCommentsList(projectId, jobId, xPhraseAppOTP, branch)
+> List&lt;JobComment&gt; jobCommentsList(projectId, jobId, xPhraseAppOTP, branch, order)
 
 List job comments
 
@@ -387,8 +387,9 @@ public class Example {
     String jobId = "jobId_example"; // String | Job ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = my-feature-branch; // String | specify the branch to use
+    String order = desc; // String | Order direction. Can be one of: asc, desc.
     try {
-      List<JobComment> result = apiInstance.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch);
+      List<JobComment> result = apiInstance.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch, order);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobCommentsApi#jobCommentsList");
@@ -409,6 +410,7 @@ Name | Type | Description  | Notes
  **jobId** | **String**| Job ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
 
 ### Return type
 

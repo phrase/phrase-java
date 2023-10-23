@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="repliesList"></a>
 # **repliesList**
-> List&lt;Comment&gt; repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters)
+> List&lt;Comment&gt; repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters, order)
 
 List replies
 
@@ -57,8 +57,9 @@ public class Example {
     String branch = my-feature-branch; // String | specify the branch to use
     String query = Some comment content; // String | Search query for comment messages
     List<String> filters = ["read","unread"]; // List<String> | Specify the filter for the comments
+    String order = desc; // String | Order direction. Can be one of: asc, desc.
     try {
-      List<Comment> result = apiInstance.repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters);
+      List<Comment> result = apiInstance.repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters, order);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CommentRepliesApi#repliesList");
@@ -85,6 +86,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional]
  **query** | **String**| Search query for comment messages | [optional]
  **filters** | [**List&lt;String&gt;**](String.md)| Specify the filter for the comments | [optional]
+ **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
 
 ### Return type
 

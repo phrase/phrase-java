@@ -52,7 +52,8 @@ public class CommentRepliesApiTest {
         String branch = null;
         String query = null;
         List<String> filters = null;
-        List<Comment> response = api.repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters);
+        String order = null;
+        List<Comment> response = api.repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters, order);
 
         // TODO: test validations
     }

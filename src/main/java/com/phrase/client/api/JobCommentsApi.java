@@ -685,6 +685,7 @@ public class JobCommentsApi {
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
+     * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -697,7 +698,7 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobCommentsListCall(String projectId, String jobId, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call jobCommentsListCall(String projectId, String jobId, String xPhraseAppOTP, String branch, String order, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -709,6 +710,10 @@ public class JobCommentsApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (branch != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        if (order != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order", order));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -737,7 +742,7 @@ public class JobCommentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jobCommentsListValidateBeforeCall(String projectId, String jobId, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jobCommentsListValidateBeforeCall(String projectId, String jobId, String xPhraseAppOTP, String branch, String order, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -750,7 +755,7 @@ public class JobCommentsApi {
         }
         
 
-        okhttp3.Call localVarCall = jobCommentsListCall(projectId, jobId, xPhraseAppOTP, branch, _callback);
+        okhttp3.Call localVarCall = jobCommentsListCall(projectId, jobId, xPhraseAppOTP, branch, order, _callback);
         return localVarCall;
 
     }
@@ -762,6 +767,7 @@ public class JobCommentsApi {
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
+     * @param order Order direction. Can be one of: asc, desc. (optional)
      * @return List&lt;JobComment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -773,8 +779,8 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<JobComment> jobCommentsList(String projectId, String jobId, String xPhraseAppOTP, String branch) throws ApiException {
-        ApiResponse<List<JobComment>> localVarResp = jobCommentsListWithHttpInfo(projectId, jobId, xPhraseAppOTP, branch);
+    public List<JobComment> jobCommentsList(String projectId, String jobId, String xPhraseAppOTP, String branch, String order) throws ApiException {
+        ApiResponse<List<JobComment>> localVarResp = jobCommentsListWithHttpInfo(projectId, jobId, xPhraseAppOTP, branch, order);
         return localVarResp.getData();
     }
 
@@ -785,6 +791,7 @@ public class JobCommentsApi {
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
+     * @param order Order direction. Can be one of: asc, desc. (optional)
      * @return ApiResponse&lt;List&lt;JobComment&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -796,8 +803,8 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<JobComment>> jobCommentsListWithHttpInfo(String projectId, String jobId, String xPhraseAppOTP, String branch) throws ApiException {
-        okhttp3.Call localVarCall = jobCommentsListValidateBeforeCall(projectId, jobId, xPhraseAppOTP, branch, null);
+    public ApiResponse<List<JobComment>> jobCommentsListWithHttpInfo(String projectId, String jobId, String xPhraseAppOTP, String branch, String order) throws ApiException {
+        okhttp3.Call localVarCall = jobCommentsListValidateBeforeCall(projectId, jobId, xPhraseAppOTP, branch, order, null);
         Type localVarReturnType = new TypeToken<List<JobComment>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -809,6 +816,7 @@ public class JobCommentsApi {
      * @param jobId Job ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
+     * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -821,9 +829,9 @@ public class JobCommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobCommentsListAsync(String projectId, String jobId, String xPhraseAppOTP, String branch, final ApiCallback<List<JobComment>> _callback) throws ApiException {
+    public okhttp3.Call jobCommentsListAsync(String projectId, String jobId, String xPhraseAppOTP, String branch, String order, final ApiCallback<List<JobComment>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = jobCommentsListValidateBeforeCall(projectId, jobId, xPhraseAppOTP, branch, _callback);
+        okhttp3.Call localVarCall = jobCommentsListValidateBeforeCall(projectId, jobId, xPhraseAppOTP, branch, order, _callback);
         Type localVarReturnType = new TypeToken<List<JobComment>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

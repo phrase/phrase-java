@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * CommentsListParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:28:43.001721Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:41:41.791020Z[Etc/UTC]")
 public class CommentsListParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -45,6 +45,10 @@ public class CommentsListParameters {
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
   private List<String> filters = null;
+
+  public static final String SERIALIZED_NAME_ORDER = "order";
+  @SerializedName(SERIALIZED_NAME_ORDER)
+  private String order;
 
 
   public CommentsListParameters branch(String branch) {
@@ -155,6 +159,29 @@ public class CommentsListParameters {
   }
 
 
+  public CommentsListParameters order(String order) {
+    
+    this.order = order;
+    return this;
+  }
+
+   /**
+   * Specify ordering of comments
+   * @return order
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "desc", value = "Specify ordering of comments")
+
+  public String getOrder() {
+    return order;
+  }
+
+
+  public void setOrder(String order) {
+    this.order = order;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -167,12 +194,13 @@ public class CommentsListParameters {
     return Objects.equals(this.branch, commentsListParameters.branch) &&
         Objects.equals(this.query, commentsListParameters.query) &&
         Objects.equals(this.localeIds, commentsListParameters.localeIds) &&
-        Objects.equals(this.filters, commentsListParameters.filters);
+        Objects.equals(this.filters, commentsListParameters.filters) &&
+        Objects.equals(this.order, commentsListParameters.order);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, query, localeIds, filters);
+    return Objects.hash(branch, query, localeIds, filters, order);
   }
 
 
@@ -184,6 +212,7 @@ public class CommentsListParameters {
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("}");
     return sb.toString();
   }

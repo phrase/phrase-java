@@ -126,7 +126,8 @@ public class JobCommentsApiTest {
         String jobId = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        List<JobComment> response = api.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch);
+        String order = null;
+        List<JobComment> response = api.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch, order);
 
         // TODO: test validations
     }
