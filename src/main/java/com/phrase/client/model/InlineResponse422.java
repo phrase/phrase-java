@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * InlineResponse422
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-18T15:10:59.976688Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T08:48:04.959920Z[Etc/UTC]")
 public class InlineResponse422 {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
