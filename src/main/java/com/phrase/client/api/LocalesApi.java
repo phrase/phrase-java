@@ -572,7 +572,7 @@ public class LocalesApi {
         }
 
         if (formatOptions != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("format_options", formatOptions));
+            localVarQueryParams.addAll(localVarApiClient.mappedParameterToPairs("format_options", formatOptions));
         }
 
         if (encoding != null) {
