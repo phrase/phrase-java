@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **lastActivityAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **role** | **String** |  |  [optional]
 **projects** | [**List&lt;ProjectLocales&gt;**](ProjectLocales.md) |  |  [optional]
-**permissions** | [**Object**](.md) |  |  [optional]
+**permissions** | **Object** |  |  [optional]
 **defaultLocaleCodes** | **List&lt;String&gt;** |  |  [optional]
 **teams** | [**List&lt;TeamShort&gt;**](TeamShort.md) |  |  [optional]
-**spaces** | [**List&lt;MemberSpaces&gt;**](MemberSpaces.md) |  |  [optional]
+**spaces** | [**List&lt;MemberSpacesInner&gt;**](MemberSpacesInner.md) |  |  [optional]
 
 
 

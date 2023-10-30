@@ -13,26 +13,26 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.MemberSpaces;
+import com.phrase.client.model.MemberSpacesInner;
 import com.phrase.client.model.ProjectLocales;
 import com.phrase.client.model.TeamShort;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Member {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -60,7 +60,7 @@ public class Member {
 
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
-  private List<ProjectLocales> projects = null;
+  private List<ProjectLocales> projects;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
@@ -68,16 +68,18 @@ public class Member {
 
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
-  private List<String> defaultLocaleCodes = null;
+  private List<String> defaultLocaleCodes;
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
-  private List<TeamShort> teams = null;
+  private List<TeamShort> teams;
 
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
-  private List<MemberSpaces> spaces = null;
+  private List<MemberSpacesInner> spaces;
 
+  public Member() {
+  }
 
   public Member id(String id) {
     
@@ -90,7 +92,6 @@ public class Member {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -113,7 +114,6 @@ public class Member {
    * @return email
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getEmail() {
     return email;
@@ -136,7 +136,6 @@ public class Member {
    * @return username
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getUsername() {
     return username;
@@ -159,7 +158,6 @@ public class Member {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -182,7 +180,6 @@ public class Member {
    * @return lastActivityAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getLastActivityAt() {
     return lastActivityAt;
@@ -205,7 +202,6 @@ public class Member {
    * @return role
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getRole() {
     return role;
@@ -236,7 +232,6 @@ public class Member {
    * @return projects
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<ProjectLocales> getProjects() {
     return projects;
@@ -259,7 +254,6 @@ public class Member {
    * @return permissions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Object getPermissions() {
     return permissions;
@@ -290,7 +284,6 @@ public class Member {
    * @return defaultLocaleCodes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getDefaultLocaleCodes() {
     return defaultLocaleCodes;
@@ -321,7 +314,6 @@ public class Member {
    * @return teams
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<TeamShort> getTeams() {
     return teams;
@@ -333,13 +325,13 @@ public class Member {
   }
 
 
-  public Member spaces(List<MemberSpaces> spaces) {
+  public Member spaces(List<MemberSpacesInner> spaces) {
     
     this.spaces = spaces;
     return this;
   }
 
-  public Member addSpacesItem(MemberSpaces spacesItem) {
+  public Member addSpacesItem(MemberSpacesInner spacesItem) {
     if (this.spaces == null) {
       this.spaces = new ArrayList<>();
     }
@@ -352,20 +344,18 @@ public class Member {
    * @return spaces
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
-  public List<MemberSpaces> getSpaces() {
+  public List<MemberSpacesInner> getSpaces() {
     return spaces;
   }
 
 
-  public void setSpaces(List<MemberSpaces> spaces) {
+  public void setSpaces(List<MemberSpacesInner> spaces) {
     this.spaces = spaces;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -391,7 +381,6 @@ public class Member {
     return Objects.hash(id, email, username, createdAt, lastActivityAt, role, projects, permissions, defaultLocaleCodes, teams, spaces);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -415,7 +404,7 @@ public class Member {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

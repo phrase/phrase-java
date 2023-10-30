@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Branch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Branch {
   public static final String SERIALIZED_NAME_BASE_PROJECT_ID = "base_project_id";
   @SerializedName(SERIALIZED_NAME_BASE_PROJECT_ID)
@@ -66,6 +66,8 @@ public class Branch {
   @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
 
+  public Branch() {
+  }
 
   public Branch baseProjectId(String baseProjectId) {
     
@@ -78,7 +80,6 @@ public class Branch {
    * @return baseProjectId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getBaseProjectId() {
     return baseProjectId;
@@ -101,7 +102,6 @@ public class Branch {
    * @return branchProjectId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getBranchProjectId() {
     return branchProjectId;
@@ -124,7 +124,6 @@ public class Branch {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -147,7 +146,6 @@ public class Branch {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -170,7 +168,6 @@ public class Branch {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -193,7 +190,6 @@ public class Branch {
    * @return mergedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getMergedAt() {
     return mergedAt;
@@ -216,7 +212,6 @@ public class Branch {
    * @return mergedBy
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getMergedBy() {
     return mergedBy;
@@ -239,7 +234,6 @@ public class Branch {
    * @return createdBy
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getCreatedBy() {
     return createdBy;
@@ -262,7 +256,6 @@ public class Branch {
    * @return state
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getState() {
     return state;
@@ -273,9 +266,8 @@ public class Branch {
     this.state = state;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -299,7 +291,6 @@ public class Branch {
     return Objects.hash(baseProjectId, branchProjectId, name, createdAt, updatedAt, mergedAt, mergedBy, createdBy, state);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -321,7 +312,7 @@ public class Branch {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -53,8 +53,8 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     CommentCreateParameters commentCreateParameters = new CommentCreateParameters(); // CommentCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String message = some message...; // String | specify the message for the comment
-    List<String> localeIds = someId; // List<String> | specify the locales for the comment
+    String message = "some message..."; // String | specify the message for the comment
+    List<String> localeIds = Arrays.asList(); // List<String> | specify the locales for the comment
     try {
       Comment result = apiInstance.commentCreate(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds);
       System.out.println(result);
@@ -140,7 +140,7 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.commentDelete(projectId, keyId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -224,7 +224,7 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.commentMarkCheck(projectId, keyId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -392,7 +392,7 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.commentMarkUnread(projectId, keyId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -476,7 +476,7 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       Comment result = apiInstance.commentShow(projectId, keyId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -648,11 +648,11 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
-    String query = Some comment content; // String | Search query for comment messages
-    List<String> localeIds = ["someId"]; // List<String> | Search comments by their assigned locales
-    List<String> filters = ["read","unread"]; // List<String> | Specify the filter for the comments
-    String order = desc; // String | Order direction. Can be one of: asc, desc.
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String query = "Some comment content"; // String | Search query for comment messages
+    List<String> localeIds = Arrays.asList(); // List<String> | Search comments by their assigned locales
+    List<String> filters = Arrays.asList(); // List<String> | Specify the filter for the comments
+    String order = "desc"; // String | Order direction. Can be one of: asc, desc.
     try {
       List<Comment> result = apiInstance.commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order);
       System.out.println(result);

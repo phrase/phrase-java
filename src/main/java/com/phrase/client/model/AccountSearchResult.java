@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,16 +22,17 @@ import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.Project;
 import com.phrase.client.model.Translation;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * AccountSearchResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class AccountSearchResult {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
@@ -60,8 +60,10 @@ public class AccountSearchResult {
 
   public static final String SERIALIZED_NAME_OTHER_TRANSLATIONS = "other_translations";
   @SerializedName(SERIALIZED_NAME_OTHER_TRANSLATIONS)
-  private List<Translation> otherTranslations = null;
+  private List<Translation> otherTranslations;
 
+  public AccountSearchResult() {
+  }
 
   public AccountSearchResult query(String query) {
     
@@ -74,7 +76,6 @@ public class AccountSearchResult {
    * @return query
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getQuery() {
     return query;
@@ -97,7 +98,6 @@ public class AccountSearchResult {
    * @return excerpt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getExcerpt() {
     return excerpt;
@@ -120,7 +120,6 @@ public class AccountSearchResult {
    * @return key
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public KeyPreview getKey() {
     return key;
@@ -143,7 +142,6 @@ public class AccountSearchResult {
    * @return locale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getLocale() {
     return locale;
@@ -166,7 +164,6 @@ public class AccountSearchResult {
    * @return project
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Project getProject() {
     return project;
@@ -189,7 +186,6 @@ public class AccountSearchResult {
    * @return translation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Translation getTranslation() {
     return translation;
@@ -220,7 +216,6 @@ public class AccountSearchResult {
    * @return otherTranslations
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<Translation> getOtherTranslations() {
     return otherTranslations;
@@ -231,9 +226,8 @@ public class AccountSearchResult {
     this.otherTranslations = otherTranslations;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -255,7 +249,6 @@ public class AccountSearchResult {
     return Objects.hash(query, excerpt, key, locale, project, translation, otherTranslations);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -275,7 +268,7 @@ public class AccountSearchResult {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

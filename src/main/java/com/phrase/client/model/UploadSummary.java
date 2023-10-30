@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * UploadSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class UploadSummary {
   public static final String SERIALIZED_NAME_LOCALES_CREATED = "locales_created";
   @SerializedName(SERIALIZED_NAME_LOCALES_CREATED)
@@ -60,6 +60,8 @@ public class UploadSummary {
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEYS_IGNORED)
   private Integer translationKeysIgnored;
 
+  public UploadSummary() {
+  }
 
   public UploadSummary localesCreated(Integer localesCreated) {
     
@@ -72,7 +74,6 @@ public class UploadSummary {
    * @return localesCreated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getLocalesCreated() {
     return localesCreated;
@@ -95,7 +96,6 @@ public class UploadSummary {
    * @return translationKeysCreated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationKeysCreated() {
     return translationKeysCreated;
@@ -118,7 +118,6 @@ public class UploadSummary {
    * @return translationKeysUpdated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationKeysUpdated() {
     return translationKeysUpdated;
@@ -141,7 +140,6 @@ public class UploadSummary {
    * @return translationKeysUnmentioned
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationKeysUnmentioned() {
     return translationKeysUnmentioned;
@@ -164,7 +162,6 @@ public class UploadSummary {
    * @return translationsCreated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationsCreated() {
     return translationsCreated;
@@ -187,7 +184,6 @@ public class UploadSummary {
    * @return translationsUpdated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationsUpdated() {
     return translationsUpdated;
@@ -210,7 +206,6 @@ public class UploadSummary {
    * @return tagsCreated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTagsCreated() {
     return tagsCreated;
@@ -233,7 +228,6 @@ public class UploadSummary {
    * @return translationKeysIgnored
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationKeysIgnored() {
     return translationKeysIgnored;
@@ -244,9 +238,8 @@ public class UploadSummary {
     this.translationKeysIgnored = translationKeysIgnored;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -269,7 +262,6 @@ public class UploadSummary {
     return Objects.hash(localesCreated, translationKeysCreated, translationKeysUpdated, translationKeysUnmentioned, translationsCreated, translationsUpdated, tagsCreated, translationKeysIgnored);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -290,7 +282,7 @@ public class UploadSummary {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

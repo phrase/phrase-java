@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.TranslationKey;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ScreenshotMarker
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class ScreenshotMarker {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -54,6 +54,8 @@ public class ScreenshotMarker {
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEY)
   private TranslationKey translationKey;
 
+  public ScreenshotMarker() {
+  }
 
   public ScreenshotMarker id(String id) {
     
@@ -66,7 +68,6 @@ public class ScreenshotMarker {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -89,7 +90,6 @@ public class ScreenshotMarker {
    * @return presentation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getPresentation() {
     return presentation;
@@ -112,7 +112,6 @@ public class ScreenshotMarker {
    * @return presentationType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getPresentationType() {
     return presentationType;
@@ -135,7 +134,6 @@ public class ScreenshotMarker {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -158,7 +156,6 @@ public class ScreenshotMarker {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -181,7 +178,6 @@ public class ScreenshotMarker {
    * @return translationKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public TranslationKey getTranslationKey() {
     return translationKey;
@@ -192,9 +188,8 @@ public class ScreenshotMarker {
     this.translationKey = translationKey;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -215,7 +210,6 @@ public class ScreenshotMarker {
     return Objects.hash(id, presentation, presentationType, createdAt, updatedAt, translationKey);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -234,7 +228,7 @@ public class ScreenshotMarker {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

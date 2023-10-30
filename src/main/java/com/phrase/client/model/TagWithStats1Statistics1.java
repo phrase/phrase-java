@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,14 +20,15 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.TagWithStats1Statistics;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * TagWithStats1Statistics1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TagWithStats1Statistics1 {
   public static final String SERIALIZED_NAME_LOCALE = "locale";
   @SerializedName(SERIALIZED_NAME_LOCALE)
@@ -38,6 +38,8 @@ public class TagWithStats1Statistics1 {
   @SerializedName(SERIALIZED_NAME_STATISTICS)
   private TagWithStats1Statistics statistics;
 
+  public TagWithStats1Statistics1() {
+  }
 
   public TagWithStats1Statistics1 locale(LocalePreview locale) {
     
@@ -50,7 +52,6 @@ public class TagWithStats1Statistics1 {
    * @return locale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getLocale() {
     return locale;
@@ -73,7 +74,6 @@ public class TagWithStats1Statistics1 {
    * @return statistics
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public TagWithStats1Statistics getStatistics() {
     return statistics;
@@ -84,9 +84,8 @@ public class TagWithStats1Statistics1 {
     this.statistics = statistics;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -103,7 +102,6 @@ public class TagWithStats1Statistics1 {
     return Objects.hash(locale, statistics);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -118,7 +116,7 @@ public class TagWithStats1Statistics1 {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

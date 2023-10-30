@@ -13,21 +13,21 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * GitlabSync
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class GitlabSync {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -73,6 +73,8 @@ public class GitlabSync {
   @SerializedName(SERIALIZED_NAME_LAST_STATUS)
   private String lastStatus;
 
+  public GitlabSync() {
+  }
 
   public GitlabSync id(String id) {
     
@@ -85,7 +87,6 @@ public class GitlabSync {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -108,7 +109,6 @@ public class GitlabSync {
    * @return projectId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getProjectId() {
     return projectId;
@@ -131,7 +131,6 @@ public class GitlabSync {
    * @return gitlabProjectId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getGitlabProjectId() {
     return gitlabProjectId;
@@ -154,7 +153,6 @@ public class GitlabSync {
    * @return gitlabBranchName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getGitlabBranchName() {
     return gitlabBranchName;
@@ -177,7 +175,6 @@ public class GitlabSync {
    * @return autoImport
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getAutoImport() {
     return autoImport;
@@ -200,7 +197,6 @@ public class GitlabSync {
    * @return autoImportSecret
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getAutoImportSecret() {
     return autoImportSecret;
@@ -223,7 +219,6 @@ public class GitlabSync {
    * @return autoImportUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getAutoImportUrl() {
     return autoImportUrl;
@@ -246,7 +241,6 @@ public class GitlabSync {
    * @return selfHostedApiUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getSelfHostedApiUrl() {
     return selfHostedApiUrl;
@@ -269,7 +263,6 @@ public class GitlabSync {
    * @return lastExportedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getLastExportedAt() {
     return lastExportedAt;
@@ -292,7 +285,6 @@ public class GitlabSync {
    * @return lastImportedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getLastImportedAt() {
     return lastImportedAt;
@@ -315,7 +307,6 @@ public class GitlabSync {
    * @return lastStatus
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getLastStatus() {
     return lastStatus;
@@ -326,9 +317,8 @@ public class GitlabSync {
     this.lastStatus = lastStatus;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -354,7 +344,6 @@ public class GitlabSync {
     return Objects.hash(id, projectId, gitlabProjectId, gitlabBranchName, autoImport, autoImportSecret, autoImportUrl, selfHostedApiUrl, lastExportedAt, lastImportedAt, lastStatus);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -378,7 +367,7 @@ public class GitlabSync {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

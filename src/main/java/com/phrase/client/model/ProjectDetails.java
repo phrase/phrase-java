@@ -13,26 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
-import com.phrase.client.model.Project;
-import com.phrase.client.model.ProjectDetails1;
 import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -82,6 +80,8 @@ public class ProjectDetails {
   @SerializedName(SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY)
   private Boolean sharesTranslationMemory;
 
+  public ProjectDetails() {
+  }
 
   public ProjectDetails id(String id) {
     
@@ -94,7 +94,6 @@ public class ProjectDetails {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -117,7 +116,6 @@ public class ProjectDetails {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -140,7 +138,6 @@ public class ProjectDetails {
    * @return slug
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getSlug() {
     return slug;
@@ -163,7 +160,6 @@ public class ProjectDetails {
    * @return mainFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getMainFormat() {
     return mainFormat;
@@ -186,7 +182,6 @@ public class ProjectDetails {
    * @return projectImageUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getProjectImageUrl() {
     return projectImageUrl;
@@ -209,7 +204,6 @@ public class ProjectDetails {
    * @return media
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getMedia() {
     return media;
@@ -232,7 +226,6 @@ public class ProjectDetails {
    * @return account
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Account getAccount() {
     return account;
@@ -255,7 +248,6 @@ public class ProjectDetails {
    * @return space
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Space1 getSpace() {
     return space;
@@ -278,7 +270,6 @@ public class ProjectDetails {
    * @return pointOfContact
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getPointOfContact() {
     return pointOfContact;
@@ -301,7 +292,6 @@ public class ProjectDetails {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -324,7 +314,6 @@ public class ProjectDetails {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -347,7 +336,6 @@ public class ProjectDetails {
    * @return sharesTranslationMemory
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getSharesTranslationMemory() {
     return sharesTranslationMemory;
@@ -358,9 +346,8 @@ public class ProjectDetails {
     this.sharesTranslationMemory = sharesTranslationMemory;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -387,7 +374,6 @@ public class ProjectDetails {
     return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -412,7 +398,7 @@ public class ProjectDetails {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

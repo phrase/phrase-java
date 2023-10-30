@@ -13,24 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)
@@ -50,16 +50,18 @@ public class MemberUpdateParameters {
 
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
-  private List<String> defaultLocaleCodes = null;
+  private List<String> defaultLocaleCodes;
 
   public static final String SERIALIZED_NAME_SPACE_IDS = "space_ids";
   @SerializedName(SERIALIZED_NAME_SPACE_IDS)
-  private List<String> spaceIds = null;
+  private List<String> spaceIds;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  private Map<String, String> permissions = null;
+  private Map<String, String> permissions = new HashMap<>();
 
+  public MemberUpdateParameters() {
+  }
 
   public MemberUpdateParameters strategy(String strategy) {
     
@@ -72,7 +74,6 @@ public class MemberUpdateParameters {
    * @return strategy
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "set", value = "Update strategy, can be any of set, add, remove. If provided, it will set, add or remove given spaces, projects and locale ids from users access list.")
 
   public String getStrategy() {
     return strategy;
@@ -95,7 +96,6 @@ public class MemberUpdateParameters {
    * @return role
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Developer", value = "Member role, can be any of of Admin, ProjectManager, Developer, Designer, Translator")
 
   public String getRole() {
     return role;
@@ -118,7 +118,6 @@ public class MemberUpdateParameters {
    * @return projectIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", value = "List of project ids the user has access to. ")
 
   public String getProjectIds() {
     return projectIds;
@@ -141,7 +140,6 @@ public class MemberUpdateParameters {
    * @return localeIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", value = "List of locale ids the user has access to.")
 
   public String getLocaleIds() {
     return localeIds;
@@ -172,7 +170,6 @@ public class MemberUpdateParameters {
    * @return defaultLocaleCodes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"en\",\"fi\"]", value = "List of default locales for the user.")
 
   public List<String> getDefaultLocaleCodes() {
     return defaultLocaleCodes;
@@ -203,7 +200,6 @@ public class MemberUpdateParameters {
    * @return spaceIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234abcd1234abcd1234\",\"abcd1234abcd1234abcd1235\"]", value = "List of spaces the user is assigned to.")
 
   public List<String> getSpaceIds() {
     return spaceIds;
@@ -234,7 +230,6 @@ public class MemberUpdateParameters {
    * @return permissions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "{\"create_upload\":true,\"review_translations\":true}", value = "Additional permissions depending on member role. Available permissions are <code>create_upload</code> and <code>review_translations</code>")
 
   public Map<String, String> getPermissions() {
     return permissions;
@@ -245,9 +240,8 @@ public class MemberUpdateParameters {
     this.permissions = permissions;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -269,7 +263,6 @@ public class MemberUpdateParameters {
     return Objects.hash(strategy, role, projectIds, localeIds, defaultLocaleCodes, spaceIds, permissions);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -289,7 +282,7 @@ public class MemberUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

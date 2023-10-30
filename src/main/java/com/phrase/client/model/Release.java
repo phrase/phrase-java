@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,17 +20,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Release
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Release {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -55,19 +55,19 @@ public class Release {
 
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
-  private List<String> platforms = null;
+  private List<String> platforms;
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
-  private List<String> environments = null;
+  private List<String> environments;
 
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
-  private List<LocalePreview> locales = null;
+  private List<LocalePreview> locales;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = null;
+  private List<String> tags;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
@@ -81,6 +81,8 @@ public class Release {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public Release() {
+  }
 
   public Release id(String id) {
     
@@ -93,7 +95,6 @@ public class Release {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -116,7 +117,6 @@ public class Release {
    * @return version
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getVersion() {
     return version;
@@ -139,7 +139,6 @@ public class Release {
    * @return appMinVersion
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getAppMinVersion() {
     return appMinVersion;
@@ -162,7 +161,6 @@ public class Release {
    * @return appMaxVersion
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getAppMaxVersion() {
     return appMaxVersion;
@@ -185,7 +183,6 @@ public class Release {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getDescription() {
     return description;
@@ -216,7 +213,6 @@ public class Release {
    * @return platforms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getPlatforms() {
     return platforms;
@@ -247,7 +243,6 @@ public class Release {
    * @return environments
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getEnvironments() {
     return environments;
@@ -278,7 +273,6 @@ public class Release {
    * @return locales
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<LocalePreview> getLocales() {
     return locales;
@@ -309,7 +303,6 @@ public class Release {
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getTags() {
     return tags;
@@ -332,7 +325,6 @@ public class Release {
    * @return project
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public ProjectShort getProject() {
     return project;
@@ -355,7 +347,6 @@ public class Release {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -378,7 +369,6 @@ public class Release {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -389,9 +379,8 @@ public class Release {
     this.updatedAt = updatedAt;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -418,7 +407,6 @@ public class Release {
     return Objects.hash(id, version, appMinVersion, appMaxVersion, description, platforms, environments, locales, tags, project, createdAt, updatedAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -443,7 +431,7 @@ public class Release {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

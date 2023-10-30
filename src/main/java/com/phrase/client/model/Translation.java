@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,17 +20,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Translation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Translation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -63,7 +63,7 @@ public class Translation {
 
   public static final String SERIALIZED_NAME_PLACEHOLDERS = "placeholders";
   @SerializedName(SERIALIZED_NAME_PLACEHOLDERS)
-  private List<String> placeholders = null;
+  private List<String> placeholders;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
@@ -77,6 +77,8 @@ public class Translation {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public Translation() {
+  }
 
   public Translation id(String id) {
     
@@ -89,7 +91,6 @@ public class Translation {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -112,7 +113,6 @@ public class Translation {
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getContent() {
     return content;
@@ -135,7 +135,6 @@ public class Translation {
    * @return unverified
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getUnverified() {
     return unverified;
@@ -158,7 +157,6 @@ public class Translation {
    * @return excluded
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getExcluded() {
     return excluded;
@@ -181,7 +179,6 @@ public class Translation {
    * @return pluralSuffix
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getPluralSuffix() {
     return pluralSuffix;
@@ -204,7 +201,6 @@ public class Translation {
    * @return key
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public KeyPreview getKey() {
     return key;
@@ -227,7 +223,6 @@ public class Translation {
    * @return locale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getLocale() {
     return locale;
@@ -258,7 +253,6 @@ public class Translation {
    * @return placeholders
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getPlaceholders() {
     return placeholders;
@@ -281,7 +275,6 @@ public class Translation {
    * @return state
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getState() {
     return state;
@@ -304,7 +297,6 @@ public class Translation {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -327,7 +319,6 @@ public class Translation {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -338,9 +329,8 @@ public class Translation {
     this.updatedAt = updatedAt;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -366,7 +356,6 @@ public class Translation {
     return Objects.hash(id, content, unverified, excluded, pluralSuffix, key, locale, placeholders, state, createdAt, updatedAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -390,7 +379,7 @@ public class Translation {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

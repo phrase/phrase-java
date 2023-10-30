@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * TranslationUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TranslationUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -52,6 +52,8 @@ public class TranslationUpdateParameters {
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
 
+  public TranslationUpdateParameters() {
+  }
 
   public TranslationUpdateParameters branch(String branch) {
     
@@ -64,7 +66,6 @@ public class TranslationUpdateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -87,7 +88,6 @@ public class TranslationUpdateParameters {
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My translation", value = "Translation content")
 
   public String getContent() {
     return content;
@@ -110,7 +110,6 @@ public class TranslationUpdateParameters {
    * @return pluralSuffix
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Plural suffix. Can be one of: zero, one, two, few, many, other. Must be specified if the key associated to the translation is pluralized.")
 
   public String getPluralSuffix() {
     return pluralSuffix;
@@ -133,7 +132,6 @@ public class TranslationUpdateParameters {
    * @return unverified
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether translation is unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.")
 
   public Boolean getUnverified() {
     return unverified;
@@ -156,7 +154,6 @@ public class TranslationUpdateParameters {
    * @return excluded
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether translation is excluded.")
 
   public Boolean getExcluded() {
     return excluded;
@@ -179,7 +176,6 @@ public class TranslationUpdateParameters {
    * @return autotranslate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether the translation should be auto-translated. Responses with status 422 if provided for translation within a non-default locale or the project does not have the Autopilot feature enabled.")
 
   public Boolean getAutotranslate() {
     return autotranslate;
@@ -190,9 +186,8 @@ public class TranslationUpdateParameters {
     this.autotranslate = autotranslate;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -213,7 +208,6 @@ public class TranslationUpdateParameters {
     return Objects.hash(branch, content, pluralSuffix, unverified, excluded, autotranslate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -232,7 +226,7 @@ public class TranslationUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

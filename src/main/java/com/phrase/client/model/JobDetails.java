@@ -13,30 +13,28 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.BranchName;
-import com.phrase.client.model.Job;
-import com.phrase.client.model.JobDetails1;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -92,12 +90,14 @@ public class JobDetails {
 
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
-  private List<LocalePreview> locales = null;
+  private List<LocalePreview> locales;
 
   public static final String SERIALIZED_NAME_KEYS = "keys";
   @SerializedName(SERIALIZED_NAME_KEYS)
-  private List<KeyPreview> keys = null;
+  private List<KeyPreview> keys;
 
+  public JobDetails() {
+  }
 
   public JobDetails id(String id) {
     
@@ -110,7 +110,6 @@ public class JobDetails {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -133,7 +132,6 @@ public class JobDetails {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -156,7 +154,6 @@ public class JobDetails {
    * @return briefing
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getBriefing() {
     return briefing;
@@ -179,7 +176,6 @@ public class JobDetails {
    * @return dueDate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getDueDate() {
     return dueDate;
@@ -202,7 +198,6 @@ public class JobDetails {
    * @return state
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getState() {
     return state;
@@ -225,7 +220,6 @@ public class JobDetails {
    * @return ticketUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getTicketUrl() {
     return ticketUrl;
@@ -248,7 +242,6 @@ public class JobDetails {
    * @return project
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public ProjectShort getProject() {
     return project;
@@ -271,7 +264,6 @@ public class JobDetails {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public BranchName getBranch() {
     return branch;
@@ -294,7 +286,6 @@ public class JobDetails {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -317,7 +308,6 @@ public class JobDetails {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -340,7 +330,6 @@ public class JobDetails {
    * @return owner
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getOwner() {
     return owner;
@@ -363,7 +352,6 @@ public class JobDetails {
    * @return jobTagName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getJobTagName() {
     return jobTagName;
@@ -386,7 +374,6 @@ public class JobDetails {
    * @return sourceLocale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getSourceLocale() {
     return sourceLocale;
@@ -417,7 +404,6 @@ public class JobDetails {
    * @return locales
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<LocalePreview> getLocales() {
     return locales;
@@ -448,7 +434,6 @@ public class JobDetails {
    * @return keys
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<KeyPreview> getKeys() {
     return keys;
@@ -459,9 +444,8 @@ public class JobDetails {
     this.keys = keys;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -491,7 +475,6 @@ public class JobDetails {
     return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceLocale, locales, keys);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -519,7 +502,7 @@ public class JobDetails {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

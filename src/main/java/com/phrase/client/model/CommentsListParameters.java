@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CommentsListParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class CommentsListParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -40,16 +40,18 @@ public class CommentsListParameters {
 
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
-  private List<String> localeIds = null;
+  private List<String> localeIds;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
-  private List<String> filters = null;
+  private List<String> filters;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
   private String order;
 
+  public CommentsListParameters() {
+  }
 
   public CommentsListParameters branch(String branch) {
     
@@ -62,7 +64,6 @@ public class CommentsListParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "Specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -85,7 +86,6 @@ public class CommentsListParameters {
    * @return query
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Some comment content", value = "Search query for comment messages")
 
   public String getQuery() {
     return query;
@@ -116,7 +116,6 @@ public class CommentsListParameters {
    * @return localeIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"someId\",\"otherId\"]", value = "Search comments by their assigned locales")
 
   public List<String> getLocaleIds() {
     return localeIds;
@@ -147,7 +146,6 @@ public class CommentsListParameters {
    * @return filters
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"read\",\"unread\"]", value = "Specify filters to find comments by")
 
   public List<String> getFilters() {
     return filters;
@@ -170,7 +168,6 @@ public class CommentsListParameters {
    * @return order
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "desc", value = "Specify ordering of comments")
 
   public String getOrder() {
     return order;
@@ -181,9 +178,8 @@ public class CommentsListParameters {
     this.order = order;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -203,7 +199,6 @@ public class CommentsListParameters {
     return Objects.hash(branch, query, localeIds, filters, order);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -221,7 +216,7 @@ public class CommentsListParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

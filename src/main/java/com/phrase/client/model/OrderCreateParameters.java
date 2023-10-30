@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * OrderCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class OrderCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -48,7 +48,7 @@ public class OrderCreateParameters {
 
   public static final String SERIALIZED_NAME_TARGET_LOCALE_IDS = "target_locale_ids";
   @SerializedName(SERIALIZED_NAME_TARGET_LOCALE_IDS)
-  private List<String> targetLocaleIds = null;
+  private List<String> targetLocaleIds;
 
   public static final String SERIALIZED_NAME_TRANSLATION_TYPE = "translation_type";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_TYPE)
@@ -90,6 +90,8 @@ public class OrderCreateParameters {
   @SerializedName(SERIALIZED_NAME_PRIORITY)
   private Boolean priority;
 
+  public OrderCreateParameters() {
+  }
 
   public OrderCreateParameters branch(String branch) {
     
@@ -102,7 +104,6 @@ public class OrderCreateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -125,7 +126,6 @@ public class OrderCreateParameters {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Welcome message translations", value = "the name of the order, default name is: Translation order from 'current datetime'")
 
   public String getName() {
     return name;
@@ -148,7 +148,6 @@ public class OrderCreateParameters {
    * @return lsp
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "textmaster", value = "Name of the LSP that should process this order. Can be one of gengo, textmaster.")
 
   public String getLsp() {
     return lsp;
@@ -171,7 +170,6 @@ public class OrderCreateParameters {
    * @return sourceLocaleId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234abcd1234", value = "Source locale for the order. Can be the name or public id of the source locale. Preferred is the public id.")
 
   public String getSourceLocaleId() {
     return sourceLocaleId;
@@ -202,7 +200,6 @@ public class OrderCreateParameters {
    * @return targetLocaleIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"1234abcd1234abcd1234abcd1234abcd\",\"abcd1234abcd1234abcd1234abcd1234\"]", value = "List of target locales you want the source content translate to. Can be the name or public id of the target locales. Preferred is the public id.")
 
   public List<String> getTargetLocaleIds() {
     return targetLocaleIds;
@@ -225,7 +222,6 @@ public class OrderCreateParameters {
    * @return translationType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "premium", value = "Name of the quality level, availability depends on the LSP. Can be one of:  standard, pro (for orders processed by Gengo) and one of regular, premium, enterprise (for orders processed by TextMaster)")
 
   public String getTranslationType() {
     return translationType;
@@ -248,7 +244,6 @@ public class OrderCreateParameters {
    * @return tag
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-awesome-feature", value = "Tag you want to order translations for.")
 
   public String getTag() {
     return tag;
@@ -271,7 +266,6 @@ public class OrderCreateParameters {
    * @return message
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Please make everything sound really nice :)", value = "Message that is displayed to the translators for description.")
 
   public String getMessage() {
     return message;
@@ -294,7 +288,6 @@ public class OrderCreateParameters {
    * @return styleguideId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1234abcd1234abcd1234abcd1234abcd", value = "Style guide for translators to be sent with the order.")
 
   public String getStyleguideId() {
     return styleguideId;
@@ -317,7 +310,6 @@ public class OrderCreateParameters {
    * @return unverifyTranslationsUponDelivery
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Unverify translations upon delivery.")
 
   public Boolean getUnverifyTranslationsUponDelivery() {
     return unverifyTranslationsUponDelivery;
@@ -340,7 +332,6 @@ public class OrderCreateParameters {
    * @return includeUntranslatedKeys
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Order translations for keys with untranslated content in the selected target locales.")
 
   public Boolean getIncludeUntranslatedKeys() {
     return includeUntranslatedKeys;
@@ -363,7 +354,6 @@ public class OrderCreateParameters {
    * @return includeUnverifiedTranslations
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Order translations for keys with unverified content in the selected target locales.")
 
   public Boolean getIncludeUnverifiedTranslations() {
     return includeUnverifiedTranslations;
@@ -386,7 +376,6 @@ public class OrderCreateParameters {
    * @return category
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "C021", value = "Category to use (required for orders processed by TextMaster).")
 
   public String getCategory() {
     return category;
@@ -409,7 +398,6 @@ public class OrderCreateParameters {
    * @return quality
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Extra proofreading option to ensure consistency in vocabulary and style. Only available for orders processed by TextMaster.")
 
   public Boolean getQuality() {
     return quality;
@@ -432,7 +420,6 @@ public class OrderCreateParameters {
    * @return priority
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether the priority option should be ordered which decreases turnaround time by 30%. Available only for orders processed by TextMaster.")
 
   public Boolean getPriority() {
     return priority;
@@ -443,9 +430,8 @@ public class OrderCreateParameters {
     this.priority = priority;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -475,7 +461,6 @@ public class OrderCreateParameters {
     return Objects.hash(branch, name, lsp, sourceLocaleId, targetLocaleIds, translationType, tag, message, styleguideId, unverifyTranslationsUponDelivery, includeUntranslatedKeys, includeUnverifiedTranslations, category, quality, priority);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -503,7 +488,7 @@ public class OrderCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

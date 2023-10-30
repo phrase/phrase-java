@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * LocaleUserPreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class LocaleUserPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -44,6 +44,8 @@ public class LocaleUserPreview {
   @SerializedName(SERIALIZED_NAME_ROLE)
   private String role;
 
+  public LocaleUserPreview() {
+  }
 
   public LocaleUserPreview id(String id) {
     
@@ -56,7 +58,6 @@ public class LocaleUserPreview {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -79,7 +80,6 @@ public class LocaleUserPreview {
    * @return username
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getUsername() {
     return username;
@@ -102,7 +102,6 @@ public class LocaleUserPreview {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -125,7 +124,6 @@ public class LocaleUserPreview {
    * @return role
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getRole() {
     return role;
@@ -136,9 +134,8 @@ public class LocaleUserPreview {
     this.role = role;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -157,7 +154,6 @@ public class LocaleUserPreview {
     return Objects.hash(id, username, name, role);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,7 +170,7 @@ public class LocaleUserPreview {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

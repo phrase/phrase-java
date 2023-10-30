@@ -13,26 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.TranslationKey;
-import com.phrase.client.model.TranslationKeyDetails1;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * TranslationKeyDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TranslationKeyDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -56,7 +54,7 @@ public class TranslationKeyDetails {
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = null;
+  private List<String> tags;
 
   public static final String SERIALIZED_NAME_DATA_TYPE = "data_type";
   @SerializedName(SERIALIZED_NAME_DATA_TYPE)
@@ -106,6 +104,8 @@ public class TranslationKeyDetails {
   @SerializedName(SERIALIZED_NAME_CREATOR)
   private UserPreview creator;
 
+  public TranslationKeyDetails() {
+  }
 
   public TranslationKeyDetails id(String id) {
     
@@ -118,7 +118,6 @@ public class TranslationKeyDetails {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -141,7 +140,6 @@ public class TranslationKeyDetails {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -164,7 +162,6 @@ public class TranslationKeyDetails {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getDescription() {
     return description;
@@ -187,7 +184,6 @@ public class TranslationKeyDetails {
    * @return nameHash
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getNameHash() {
     return nameHash;
@@ -210,7 +206,6 @@ public class TranslationKeyDetails {
    * @return plural
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getPlural() {
     return plural;
@@ -241,7 +236,6 @@ public class TranslationKeyDetails {
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getTags() {
     return tags;
@@ -264,7 +258,6 @@ public class TranslationKeyDetails {
    * @return dataType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getDataType() {
     return dataType;
@@ -287,7 +280,6 @@ public class TranslationKeyDetails {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -310,7 +302,6 @@ public class TranslationKeyDetails {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -333,7 +324,6 @@ public class TranslationKeyDetails {
    * @return namePlural
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getNamePlural() {
     return namePlural;
@@ -356,7 +346,6 @@ public class TranslationKeyDetails {
    * @return commentsCount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getCommentsCount() {
     return commentsCount;
@@ -379,7 +368,6 @@ public class TranslationKeyDetails {
    * @return maxCharactersAllowed
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getMaxCharactersAllowed() {
     return maxCharactersAllowed;
@@ -402,7 +390,6 @@ public class TranslationKeyDetails {
    * @return screenshotUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getScreenshotUrl() {
     return screenshotUrl;
@@ -425,7 +412,6 @@ public class TranslationKeyDetails {
    * @return unformatted
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getUnformatted() {
     return unformatted;
@@ -448,7 +434,6 @@ public class TranslationKeyDetails {
    * @return xmlSpacePreserve
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getXmlSpacePreserve() {
     return xmlSpacePreserve;
@@ -471,7 +456,6 @@ public class TranslationKeyDetails {
    * @return originalFile
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getOriginalFile() {
     return originalFile;
@@ -494,7 +478,6 @@ public class TranslationKeyDetails {
    * @return formatValueType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getFormatValueType() {
     return formatValueType;
@@ -517,7 +500,6 @@ public class TranslationKeyDetails {
    * @return creator
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getCreator() {
     return creator;
@@ -528,9 +510,8 @@ public class TranslationKeyDetails {
     this.creator = creator;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -563,7 +544,6 @@ public class TranslationKeyDetails {
     return Objects.hash(id, name, description, nameHash, plural, tags, dataType, createdAt, updatedAt, namePlural, commentsCount, maxCharactersAllowed, screenshotUrl, unformatted, xmlSpacePreserve, originalFile, formatValueType, creator);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -594,7 +574,7 @@ public class TranslationKeyDetails {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

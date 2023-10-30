@@ -13,25 +13,25 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.MemberProjectDetailProjectRoles;
-import com.phrase.client.model.MemberSpaces;
+import com.phrase.client.model.MemberProjectDetailProjectRolesInner;
+import com.phrase.client.model.MemberSpacesInner;
 import com.phrase.client.model.ProjectLocales;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * MemberProjectDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class MemberProjectDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -51,7 +51,7 @@ public class MemberProjectDetail {
 
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
-  private List<ProjectLocales> projects = null;
+  private List<ProjectLocales> projects;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
@@ -59,20 +59,22 @@ public class MemberProjectDetail {
 
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
-  private List<String> localeIds = null;
+  private List<String> localeIds;
 
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
-  private List<String> defaultLocaleCodes = null;
+  private List<String> defaultLocaleCodes;
 
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
-  private List<MemberSpaces> spaces = null;
+  private List<MemberSpacesInner> spaces;
 
   public static final String SERIALIZED_NAME_PROJECT_ROLES = "project_roles";
   @SerializedName(SERIALIZED_NAME_PROJECT_ROLES)
-  private List<MemberProjectDetailProjectRoles> projectRoles = null;
+  private List<MemberProjectDetailProjectRolesInner> projectRoles;
 
+  public MemberProjectDetail() {
+  }
 
   public MemberProjectDetail id(String id) {
     
@@ -85,7 +87,6 @@ public class MemberProjectDetail {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -108,7 +109,6 @@ public class MemberProjectDetail {
    * @return email
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getEmail() {
     return email;
@@ -131,7 +131,6 @@ public class MemberProjectDetail {
    * @return username
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getUsername() {
     return username;
@@ -154,7 +153,6 @@ public class MemberProjectDetail {
    * @return role
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getRole() {
     return role;
@@ -185,7 +183,6 @@ public class MemberProjectDetail {
    * @return projects
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<ProjectLocales> getProjects() {
     return projects;
@@ -208,7 +205,6 @@ public class MemberProjectDetail {
    * @return permissions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Object getPermissions() {
     return permissions;
@@ -239,7 +235,6 @@ public class MemberProjectDetail {
    * @return localeIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getLocaleIds() {
     return localeIds;
@@ -270,7 +265,6 @@ public class MemberProjectDetail {
    * @return defaultLocaleCodes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getDefaultLocaleCodes() {
     return defaultLocaleCodes;
@@ -282,13 +276,13 @@ public class MemberProjectDetail {
   }
 
 
-  public MemberProjectDetail spaces(List<MemberSpaces> spaces) {
+  public MemberProjectDetail spaces(List<MemberSpacesInner> spaces) {
     
     this.spaces = spaces;
     return this;
   }
 
-  public MemberProjectDetail addSpacesItem(MemberSpaces spacesItem) {
+  public MemberProjectDetail addSpacesItem(MemberSpacesInner spacesItem) {
     if (this.spaces == null) {
       this.spaces = new ArrayList<>();
     }
@@ -301,25 +295,24 @@ public class MemberProjectDetail {
    * @return spaces
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
-  public List<MemberSpaces> getSpaces() {
+  public List<MemberSpacesInner> getSpaces() {
     return spaces;
   }
 
 
-  public void setSpaces(List<MemberSpaces> spaces) {
+  public void setSpaces(List<MemberSpacesInner> spaces) {
     this.spaces = spaces;
   }
 
 
-  public MemberProjectDetail projectRoles(List<MemberProjectDetailProjectRoles> projectRoles) {
+  public MemberProjectDetail projectRoles(List<MemberProjectDetailProjectRolesInner> projectRoles) {
     
     this.projectRoles = projectRoles;
     return this;
   }
 
-  public MemberProjectDetail addProjectRolesItem(MemberProjectDetailProjectRoles projectRolesItem) {
+  public MemberProjectDetail addProjectRolesItem(MemberProjectDetailProjectRolesInner projectRolesItem) {
     if (this.projectRoles == null) {
       this.projectRoles = new ArrayList<>();
     }
@@ -332,20 +325,18 @@ public class MemberProjectDetail {
    * @return projectRoles
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
-  public List<MemberProjectDetailProjectRoles> getProjectRoles() {
+  public List<MemberProjectDetailProjectRolesInner> getProjectRoles() {
     return projectRoles;
   }
 
 
-  public void setProjectRoles(List<MemberProjectDetailProjectRoles> projectRoles) {
+  public void setProjectRoles(List<MemberProjectDetailProjectRolesInner> projectRoles) {
     this.projectRoles = projectRoles;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -370,7 +361,6 @@ public class MemberProjectDetail {
     return Objects.hash(id, email, username, role, projects, permissions, localeIds, defaultLocaleCodes, spaces, projectRoles);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -393,7 +383,7 @@ public class MemberProjectDetail {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

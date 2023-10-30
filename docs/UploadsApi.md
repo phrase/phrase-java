@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys)
+> Upload uploadCreate(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys)
 
 Upload a new file
 
@@ -47,7 +47,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = "branch_example"; // String | specify the branch to use
-    File file = new File("/path/to/file"); // File | File to be imported
+    File _file = new File("/path/to/file"); // File | File to be imported
     String fileFormat = "fileFormat_example"; // String | File format. Auto-detected when possible and not specified.
     String localeId = "localeId_example"; // String | Locale of the file's content. Can be the name or public id of the locale. Preferred is the public id.
     String tags = "tags_example"; // String | List of tags separated by comma to be associated with the new keys contained in the upload.
@@ -63,7 +63,7 @@ public class Example {
     Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     Boolean tagOnlyAffectedKeys = false; // Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
     try {
-      Upload result = apiInstance.uploadCreate(projectId, xPhraseAppOTP, branch, file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
+      Upload result = apiInstance.uploadCreate(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
- **file** | **File**| File to be imported | [optional]
+ **_file** | **File**| File to be imported | [optional]
  **fileFormat** | **String**| File format. Auto-detected when possible and not specified. | [optional]
  **localeId** | **String**| Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. | [optional]
  **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional]
@@ -158,7 +158,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       Upload result = apiInstance.uploadShow(projectId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -242,7 +242,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<Upload> result = apiInstance.uploadsList(projectId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);

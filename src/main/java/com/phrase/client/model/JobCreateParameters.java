@@ -13,23 +13,23 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * JobCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class JobCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -57,16 +57,18 @@ public class JobCreateParameters {
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = null;
+  private List<String> tags;
 
   public static final String SERIALIZED_NAME_TRANSLATION_KEY_IDS = "translation_key_ids";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEY_IDS)
-  private List<String> translationKeyIds = null;
+  private List<String> translationKeyIds;
 
   public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
   private String jobTemplateId;
 
+  public JobCreateParameters() {
+  }
 
   public JobCreateParameters branch(String branch) {
     
@@ -79,7 +81,6 @@ public class JobCreateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -102,7 +103,6 @@ public class JobCreateParameters {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "de", value = "Job name")
 
   public String getName() {
     return name;
@@ -125,7 +125,6 @@ public class JobCreateParameters {
    * @return sourceLocaleId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234cdef1234abcd1234cdef1234", value = "The API id of the source language")
 
   public String getSourceLocaleId() {
     return sourceLocaleId;
@@ -148,7 +147,6 @@ public class JobCreateParameters {
    * @return briefing
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "de-DE", value = "Briefing for the translators")
 
   public String getBriefing() {
     return briefing;
@@ -171,7 +169,6 @@ public class JobCreateParameters {
    * @return dueDate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date the job should be finished")
 
   public OffsetDateTime getDueDate() {
     return dueDate;
@@ -194,7 +191,6 @@ public class JobCreateParameters {
    * @return ticketUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://example.atlassian.net/browse/FOO", value = "URL to a ticket for this job (e.g. Jira, Trello)")
 
   public String getTicketUrl() {
     return ticketUrl;
@@ -225,7 +221,6 @@ public class JobCreateParameters {
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"myUploadTag\"]", value = "tags of keys that should be included within the job")
 
   public List<String> getTags() {
     return tags;
@@ -256,7 +251,6 @@ public class JobCreateParameters {
    * @return translationKeyIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "ids of keys that should be included within the job")
 
   public List<String> getTranslationKeyIds() {
     return translationKeyIds;
@@ -279,7 +273,6 @@ public class JobCreateParameters {
    * @return jobTemplateId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234cdef1234abcd1234cdef1234", value = "id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes.")
 
   public String getJobTemplateId() {
     return jobTemplateId;
@@ -290,9 +283,8 @@ public class JobCreateParameters {
     this.jobTemplateId = jobTemplateId;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -316,7 +308,6 @@ public class JobCreateParameters {
     return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds, jobTemplateId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -338,7 +329,7 @@ public class JobCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

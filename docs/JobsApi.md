@@ -221,7 +221,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.jobDelete(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -386,8 +386,8 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
-    List<String> translationKeyIds = ["abcd1234cdef1234abcd1234cdef1234"]; // List<String> | ids of keys that should added to the job
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    List<String> translationKeyIds = Arrays.asList(); // List<String> | ids of keys that should added to the job
     try {
       apiInstance.jobKeysDelete(projectId, id, xPhraseAppOTP, branch, translationKeyIds);
     } catch (ApiException e) {
@@ -470,7 +470,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.jobLock(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -635,7 +635,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       JobDetails result = apiInstance.jobShow(projectId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -801,7 +801,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.jobUnlock(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -967,9 +967,9 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String ownedBy = abcd1234cdef1234abcd1234cdef1234; // String | filter by user owning job
-    String assignedTo = abcd1234cdef1234abcd1234cdef1234; // String | filter by user assigned to job
-    String state = completed; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String ownedBy = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user owning job
+    String assignedTo = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user assigned to job
+    String state = "completed"; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
     try {
       List<Job> result = apiInstance.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state);
       System.out.println(result);
@@ -1056,10 +1056,10 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
-    String ownedBy = abcd1234cdef1234abcd1234cdef1234; // String | filter by user owning job
-    String assignedTo = abcd1234cdef1234abcd1234cdef1234; // String | filter by user assigned to job
-    String state = completed; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String ownedBy = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user owning job
+    String assignedTo = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user assigned to job
+    String state = "completed"; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
     try {
       List<Job> result = apiInstance.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state);
       System.out.println(result);

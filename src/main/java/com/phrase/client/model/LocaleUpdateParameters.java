@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * LocaleUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class LocaleUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -72,6 +72,8 @@ public class LocaleUpdateParameters {
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
 
+  public LocaleUpdateParameters() {
+  }
 
   public LocaleUpdateParameters branch(String branch) {
     
@@ -84,7 +86,6 @@ public class LocaleUpdateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -107,7 +108,6 @@ public class LocaleUpdateParameters {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "de", value = "Locale name")
 
   public String getName() {
     return name;
@@ -130,7 +130,6 @@ public class LocaleUpdateParameters {
    * @return code
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "de-DE", value = "Locale ISO code")
 
   public String getCode() {
     return code;
@@ -153,7 +152,6 @@ public class LocaleUpdateParameters {
    * @return _default
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether locale is the default locale. If set to true, the previous default locale the project is no longer the default locale.")
 
   public Boolean getDefault() {
     return _default;
@@ -176,7 +174,6 @@ public class LocaleUpdateParameters {
    * @return main
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether locale is a main locale. Main locales are part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Verification System</a> feature.")
 
   public Boolean getMain() {
     return main;
@@ -199,7 +196,6 @@ public class LocaleUpdateParameters {
    * @return rtl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether locale is a RTL (Right-to-Left) locale.")
 
   public Boolean getRtl() {
     return rtl;
@@ -222,7 +218,6 @@ public class LocaleUpdateParameters {
    * @return sourceLocaleId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234abcd1234", value = "Source locale. Can be the name or public id of the locale. Preferred is the public id.")
 
   public String getSourceLocaleId() {
     return sourceLocaleId;
@@ -245,7 +240,6 @@ public class LocaleUpdateParameters {
    * @return fallbackLocaleId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234abcd1234", value = "Fallback locale for empty translations. Can be a locale name or id.")
 
   public String getFallbackLocaleId() {
     return fallbackLocaleId;
@@ -268,7 +262,6 @@ public class LocaleUpdateParameters {
    * @return unverifyNewTranslations
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates that new translations for this locale should be marked as unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.")
 
   public Boolean getUnverifyNewTranslations() {
     return unverifyNewTranslations;
@@ -291,7 +284,6 @@ public class LocaleUpdateParameters {
    * @return unverifyUpdatedTranslations
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates that updated translations for this locale should be marked as unverified. Part of the <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\" target=\"_blank\">Advanced Workflows</a> feature.")
 
   public Boolean getUnverifyUpdatedTranslations() {
     return unverifyUpdatedTranslations;
@@ -314,7 +306,6 @@ public class LocaleUpdateParameters {
    * @return autotranslate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "If set, translations for this locale will be fetched automatically, right after creation.")
 
   public Boolean getAutotranslate() {
     return autotranslate;
@@ -325,9 +316,8 @@ public class LocaleUpdateParameters {
     this.autotranslate = autotranslate;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -353,7 +343,6 @@ public class LocaleUpdateParameters {
     return Objects.hash(branch, name, code, _default, main, rtl, sourceLocaleId, fallbackLocaleId, unverifyNewTranslations, unverifyUpdatedTranslations, autotranslate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -377,7 +366,7 @@ public class LocaleUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

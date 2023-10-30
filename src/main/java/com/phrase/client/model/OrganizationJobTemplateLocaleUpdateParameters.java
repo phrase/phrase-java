@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * OrganizationJobTemplateLocaleUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class OrganizationJobTemplateLocaleUpdateParameters {
   public static final String SERIALIZED_NAME_LOCALE_NAME = "locale_name";
   @SerializedName(SERIALIZED_NAME_LOCALE_NAME)
@@ -40,20 +40,22 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  private List<String> userIds = null;
+  private List<String> userIds;
 
   public static final String SERIALIZED_NAME_REVIEWER_IDS = "reviewer_ids";
   @SerializedName(SERIALIZED_NAME_REVIEWER_IDS)
-  private List<String> reviewerIds = null;
+  private List<String> reviewerIds;
 
   public static final String SERIALIZED_NAME_TRANSLATOR_TEAM_IDS = "translator_team_ids";
   @SerializedName(SERIALIZED_NAME_TRANSLATOR_TEAM_IDS)
-  private List<String> translatorTeamIds = null;
+  private List<String> translatorTeamIds;
 
   public static final String SERIALIZED_NAME_REVIEWER_TEAM_IDS = "reviewer_team_ids";
   @SerializedName(SERIALIZED_NAME_REVIEWER_TEAM_IDS)
-  private List<String> reviewerTeamIds = null;
+  private List<String> reviewerTeamIds;
 
+  public OrganizationJobTemplateLocaleUpdateParameters() {
+  }
 
   public OrganizationJobTemplateLocaleUpdateParameters localeName(String localeName) {
     
@@ -66,7 +68,6 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
    * @return localeName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "de-1", value = "locale name")
 
   public String getLocaleName() {
     return localeName;
@@ -89,7 +90,6 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
    * @return localeCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "de-DE", value = "locale code")
 
   public String getLocaleCode() {
     return localeCode;
@@ -120,7 +120,6 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
    * @return userIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "Array of user ids to be assigned to the job template locale")
 
   public List<String> getUserIds() {
     return userIds;
@@ -151,7 +150,6 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
    * @return reviewerIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "Array of reviewer ids to be assigned to the job template locale")
 
   public List<String> getReviewerIds() {
     return reviewerIds;
@@ -182,7 +180,6 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
    * @return translatorTeamIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "Array of team ids to be assigned to the job locale as translators")
 
   public List<String> getTranslatorTeamIds() {
     return translatorTeamIds;
@@ -213,7 +210,6 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
    * @return reviewerTeamIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "Array of team ids to be assigned to the job locale as reviewers")
 
   public List<String> getReviewerTeamIds() {
     return reviewerTeamIds;
@@ -224,9 +220,8 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
     this.reviewerTeamIds = reviewerTeamIds;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -247,7 +242,6 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
     return Objects.hash(localeName, localeCode, userIds, reviewerIds, translatorTeamIds, reviewerTeamIds);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -266,7 +260,7 @@ public class OrganizationJobTemplateLocaleUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

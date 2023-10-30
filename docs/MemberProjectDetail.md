@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **username** | **String** |  |  [optional]
 **role** | **String** |  |  [optional]
 **projects** | [**List&lt;ProjectLocales&gt;**](ProjectLocales.md) |  |  [optional]
-**permissions** | [**Object**](.md) |  |  [optional]
+**permissions** | **Object** |  |  [optional]
 **localeIds** | **List&lt;String&gt;** |  |  [optional]
 **defaultLocaleCodes** | **List&lt;String&gt;** |  |  [optional]
-**spaces** | [**List&lt;MemberSpaces&gt;**](MemberSpaces.md) |  |  [optional]
-**projectRoles** | [**List&lt;MemberProjectDetailProjectRoles&gt;**](MemberProjectDetailProjectRoles.md) |  |  [optional]
+**spaces** | [**List&lt;MemberSpacesInner&gt;**](MemberSpacesInner.md) |  |  [optional]
+**projectRoles** | [**List&lt;MemberProjectDetailProjectRolesInner&gt;**](MemberProjectDetailProjectRolesInner.md) |  |  [optional]
 
 
 

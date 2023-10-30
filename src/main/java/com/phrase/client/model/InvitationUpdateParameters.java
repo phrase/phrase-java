@@ -13,24 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * InvitationUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class InvitationUpdateParameters {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
@@ -46,20 +46,22 @@ public class InvitationUpdateParameters {
 
   public static final String SERIALIZED_NAME_SPACE_IDS = "space_ids";
   @SerializedName(SERIALIZED_NAME_SPACE_IDS)
-  private List<String> spaceIds = null;
+  private List<String> spaceIds;
 
   public static final String SERIALIZED_NAME_TEAM_IDS = "team_ids";
   @SerializedName(SERIALIZED_NAME_TEAM_IDS)
-  private List<String> teamIds = null;
+  private List<String> teamIds;
 
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
-  private List<String> defaultLocaleCodes = null;
+  private List<String> defaultLocaleCodes;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  private Map<String, String> permissions = null;
+  private Map<String, String> permissions = new HashMap<>();
 
+  public InvitationUpdateParameters() {
+  }
 
   public InvitationUpdateParameters role(String role) {
     
@@ -72,7 +74,6 @@ public class InvitationUpdateParameters {
    * @return role
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Invitiation role", value = "Invitiation role, can be any of Manager, Developer, Translator")
 
   public String getRole() {
     return role;
@@ -95,7 +96,6 @@ public class InvitationUpdateParameters {
    * @return projectIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", value = "List of project ids the invited user has access to")
 
   public String getProjectIds() {
     return projectIds;
@@ -118,7 +118,6 @@ public class InvitationUpdateParameters {
    * @return localeIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234,abcd1234abcd1234abcd1235", value = "List of locale ids the invited user has access to")
 
   public String getLocaleIds() {
     return localeIds;
@@ -149,7 +148,6 @@ public class InvitationUpdateParameters {
    * @return spaceIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234abcd1234abcd1234\",\"abcd1234abcd1234abcd1235\"]", value = "List of spaces the user is assigned to.")
 
   public List<String> getSpaceIds() {
     return spaceIds;
@@ -180,7 +178,6 @@ public class InvitationUpdateParameters {
    * @return teamIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234abcd1234abcd1234\",\"abcd1234abcd1234abcd1235\"]", value = "List of teams the user is assigned to.")
 
   public List<String> getTeamIds() {
     return teamIds;
@@ -211,7 +208,6 @@ public class InvitationUpdateParameters {
    * @return defaultLocaleCodes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"en\",\"de\"]", value = "List of default locales for the user.")
 
   public List<String> getDefaultLocaleCodes() {
     return defaultLocaleCodes;
@@ -242,7 +238,6 @@ public class InvitationUpdateParameters {
    * @return permissions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "{\"create_upload\":true}", value = "Additional permissions depending on invitation role.")
 
   public Map<String, String> getPermissions() {
     return permissions;
@@ -253,9 +248,8 @@ public class InvitationUpdateParameters {
     this.permissions = permissions;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -277,7 +271,6 @@ public class InvitationUpdateParameters {
     return Objects.hash(role, projectIds, localeIds, spaceIds, teamIds, defaultLocaleCodes, permissions);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -297,7 +290,7 @@ public class InvitationUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

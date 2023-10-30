@@ -13,24 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * JobComment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class JobComment {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -58,8 +58,10 @@ public class JobComment {
 
   public static final String SERIALIZED_NAME_MENTIONED_USERS = "mentioned_users";
   @SerializedName(SERIALIZED_NAME_MENTIONED_USERS)
-  private List<UserPreview> mentionedUsers = null;
+  private List<UserPreview> mentionedUsers;
 
+  public JobComment() {
+  }
 
   public JobComment id(String id) {
     
@@ -72,7 +74,6 @@ public class JobComment {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -95,7 +96,6 @@ public class JobComment {
    * @return message
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getMessage() {
     return message;
@@ -118,7 +118,6 @@ public class JobComment {
    * @return jobId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getJobId() {
     return jobId;
@@ -141,7 +140,6 @@ public class JobComment {
    * @return user
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getUser() {
     return user;
@@ -164,7 +162,6 @@ public class JobComment {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -187,7 +184,6 @@ public class JobComment {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -218,7 +214,6 @@ public class JobComment {
    * @return mentionedUsers
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<UserPreview> getMentionedUsers() {
     return mentionedUsers;
@@ -229,9 +224,8 @@ public class JobComment {
     this.mentionedUsers = mentionedUsers;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -253,7 +247,6 @@ public class JobComment {
     return Objects.hash(id, message, jobId, user, createdAt, updatedAt, mentionedUsers);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -273,7 +266,7 @@ public class JobComment {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

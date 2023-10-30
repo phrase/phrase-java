@@ -50,7 +50,7 @@ public class Example {
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String accountId = abcd1234; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
+    String accountId = "abcd1234"; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
     try {
       apiInstance.gitlabSyncDelete(id, xPhraseAppOTP, accountId);
     } catch (ApiException e) {
@@ -213,7 +213,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String accountId = abcd1234; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
+    String accountId = "abcd1234"; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
     try {
       List<GitlabSyncHistory> result = apiInstance.gitlabSyncHistory(gitlabSyncId, xPhraseAppOTP, page, perPage, accountId);
       System.out.println(result);
@@ -376,7 +376,7 @@ public class Example {
 
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String accountId = abcd1234; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
+    String accountId = "abcd1234"; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
     try {
       List<GitlabSync> result = apiInstance.gitlabSyncList(xPhraseAppOTP, accountId);
       System.out.println(result);
@@ -456,7 +456,7 @@ public class Example {
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String accountId = abcd1234; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
+    String accountId = "abcd1234"; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
     try {
       GitlabSync result = apiInstance.gitlabSyncShow(id, xPhraseAppOTP, accountId);
       System.out.println(result);
@@ -537,10 +537,10 @@ public class Example {
     GitLabSyncApi apiInstance = new GitLabSyncApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String accountId = abcd1234; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
-    String phraseProjectCode = 3456abcd; // String | Code of the related Phrase Strings Project.
+    String accountId = "abcd1234"; // String | Account ID to specify the actual account the GitLab Sync should be created in. Required if the requesting user is a member of multiple accounts.
+    String phraseProjectCode = "3456abcd"; // String | Code of the related Phrase Strings Project.
     Integer gitlabProjectId = 12345; // Integer | ID of the related GitLab Project.
-    String gitlabBranchName = feature-development; // String | Name of the GitLab Branch.
+    String gitlabBranchName = "feature-development"; // String | Name of the GitLab Branch.
     try {
       GitlabSync result = apiInstance.gitlabSyncUpdate(id, xPhraseAppOTP, accountId, phraseProjectCode, gitlabProjectId, gitlabBranchName);
       System.out.println(result);

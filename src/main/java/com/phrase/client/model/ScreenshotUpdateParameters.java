@@ -13,21 +13,21 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ScreenshotUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class ScreenshotUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -45,6 +45,8 @@ public class ScreenshotUpdateParameters {
   @SerializedName(SERIALIZED_NAME_FILENAME)
   private File filename;
 
+  public ScreenshotUpdateParameters() {
+  }
 
   public ScreenshotUpdateParameters branch(String branch) {
     
@@ -57,7 +59,6 @@ public class ScreenshotUpdateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -80,7 +81,6 @@ public class ScreenshotUpdateParameters {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "A screenshot name", value = "Name of the screenshot")
 
   public String getName() {
     return name;
@@ -103,7 +103,6 @@ public class ScreenshotUpdateParameters {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "A screenshot description", value = "Description of the screenshot")
 
   public String getDescription() {
     return description;
@@ -126,7 +125,6 @@ public class ScreenshotUpdateParameters {
    * @return filename
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Screenshot file")
 
   public File getFilename() {
     return filename;
@@ -137,9 +135,8 @@ public class ScreenshotUpdateParameters {
     this.filename = filename;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -158,7 +155,6 @@ public class ScreenshotUpdateParameters {
     return Objects.hash(branch, name, description, filename);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -175,7 +171,7 @@ public class ScreenshotUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

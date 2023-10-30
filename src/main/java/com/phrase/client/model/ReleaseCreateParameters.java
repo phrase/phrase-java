@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ReleaseCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class ReleaseCreateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -36,20 +36,22 @@ public class ReleaseCreateParameters {
 
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
-  private List<String> platforms = null;
+  private List<String> platforms;
 
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
-  private List<String> localeIds = null;
+  private List<String> localeIds;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  private List<String> tags = null;
+  private List<String> tags;
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
   private String branch;
 
+  public ReleaseCreateParameters() {
+  }
 
   public ReleaseCreateParameters description(String description) {
     
@@ -62,7 +64,6 @@ public class ReleaseCreateParameters {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My first Release", value = "Description of the release")
 
   public String getDescription() {
     return description;
@@ -93,7 +94,6 @@ public class ReleaseCreateParameters {
    * @return platforms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"android\",\"ios\"]", value = "List of platforms the release should support.")
 
   public List<String> getPlatforms() {
     return platforms;
@@ -124,7 +124,6 @@ public class ReleaseCreateParameters {
    * @return localeIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\",\"fff565db236400772368235db2c6117e\"]", value = "List of locale ids that will be included in the release. If empty, distribution locales will be used")
 
   public List<String> getLocaleIds() {
     return localeIds;
@@ -155,7 +154,6 @@ public class ReleaseCreateParameters {
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"android\",\"feature1\"]", value = "Only include tagged keys in the release. For a key to be included it must be tagged with all tags provided")
 
   public List<String> getTags() {
     return tags;
@@ -178,7 +176,6 @@ public class ReleaseCreateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "Branch used for release")
 
   public String getBranch() {
     return branch;
@@ -189,9 +186,8 @@ public class ReleaseCreateParameters {
     this.branch = branch;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -211,7 +207,6 @@ public class ReleaseCreateParameters {
     return Objects.hash(description, platforms, localeIds, tags, branch);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -229,7 +224,7 @@ public class ReleaseCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -130,7 +130,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.jobTemplateDelete(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -296,7 +296,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<JobTemplate> result = apiInstance.jobTemplatesList(projectId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);
@@ -380,7 +380,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       JobTemplateDetails result = apiInstance.jobTemplatesShow(projectId, id, xPhraseAppOTP, branch);
       System.out.println(result);

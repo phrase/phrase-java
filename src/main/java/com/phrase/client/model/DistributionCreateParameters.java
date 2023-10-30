@@ -13,24 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * DistributionCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class DistributionCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -42,15 +42,15 @@ public class DistributionCreateParameters {
 
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
-  private List<String> platforms = null;
+  private List<String> platforms;
 
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
-  private List<String> localeIds = null;
+  private List<String> localeIds;
 
   public static final String SERIALIZED_NAME_FORMAT_OPTIONS = "format_options";
   @SerializedName(SERIALIZED_NAME_FORMAT_OPTIONS)
-  private Map<String, String> formatOptions = null;
+  private Map<String, String> formatOptions = new HashMap<>();
 
   public static final String SERIALIZED_NAME_FALLBACK_LOCALES_ENABLED = "fallback_locales_enabled";
   @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALES_ENABLED)
@@ -68,6 +68,8 @@ public class DistributionCreateParameters {
   @SerializedName(SERIALIZED_NAME_USE_LAST_REVIEWED_VERSION)
   private Boolean useLastReviewedVersion;
 
+  public DistributionCreateParameters() {
+  }
 
   public DistributionCreateParameters name(String name) {
     
@@ -80,7 +82,6 @@ public class DistributionCreateParameters {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My Android Distribution", value = "Name of the distribution")
 
   public String getName() {
     return name;
@@ -103,7 +104,6 @@ public class DistributionCreateParameters {
    * @return projectId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234abcd1234abcd1234", value = "Project id the distribution should be assigned to.")
 
   public String getProjectId() {
     return projectId;
@@ -134,7 +134,6 @@ public class DistributionCreateParameters {
    * @return platforms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"android\",\"ios\"]", value = "List of platforms the distribution should support. Valid values are: * `android` * `ios` * `flutter` * `i18next` * `rails`")
 
   public List<String> getPlatforms() {
     return platforms;
@@ -165,7 +164,6 @@ public class DistributionCreateParameters {
    * @return localeIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\",\"fff565db236400772368235db2c6117e\"]", value = "List of locale ids that will be part of distribution releases")
 
   public List<String> getLocaleIds() {
     return localeIds;
@@ -196,7 +194,6 @@ public class DistributionCreateParameters {
    * @return formatOptions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "{xml:{enclose_in_cdata:'1'}}", value = "Additional formatting and render options. Only <code>enclose_in_cdata</code> is available for platform <code>android</code>.")
 
   public Map<String, String> getFormatOptions() {
     return formatOptions;
@@ -219,7 +216,6 @@ public class DistributionCreateParameters {
    * @return fallbackLocalesEnabled
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Use fallback locale if there is no translation in the current locale.")
 
   public Boolean getFallbackLocalesEnabled() {
     return fallbackLocalesEnabled;
@@ -242,7 +238,6 @@ public class DistributionCreateParameters {
    * @return fallbackToNonRegionalLocale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Indicates whether to fallback to non regional locale when locale can not be found")
 
   public Boolean getFallbackToNonRegionalLocale() {
     return fallbackToNonRegionalLocale;
@@ -265,7 +260,6 @@ public class DistributionCreateParameters {
    * @return fallbackToDefaultLocale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Indicates whether to fallback to projects default locale when locale can not be found")
 
   public Boolean getFallbackToDefaultLocale() {
     return fallbackToDefaultLocale;
@@ -288,7 +282,6 @@ public class DistributionCreateParameters {
    * @return useLastReviewedVersion
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Use last reviewed instead of latest translation in a project")
 
   public Boolean getUseLastReviewedVersion() {
     return useLastReviewedVersion;
@@ -299,9 +292,8 @@ public class DistributionCreateParameters {
     this.useLastReviewedVersion = useLastReviewedVersion;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -325,7 +317,6 @@ public class DistributionCreateParameters {
     return Objects.hash(name, projectId, platforms, localeIds, formatOptions, fallbackLocalesEnabled, fallbackToNonRegionalLocale, fallbackToDefaultLocale, useLastReviewedVersion);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -347,7 +338,7 @@ public class DistributionCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

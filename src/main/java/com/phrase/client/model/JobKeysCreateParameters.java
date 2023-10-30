@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * JobKeysCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class JobKeysCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -36,8 +36,10 @@ public class JobKeysCreateParameters {
 
   public static final String SERIALIZED_NAME_TRANSLATION_KEY_IDS = "translation_key_ids";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEY_IDS)
-  private List<String> translationKeyIds = null;
+  private List<String> translationKeyIds;
 
+  public JobKeysCreateParameters() {
+  }
 
   public JobKeysCreateParameters branch(String branch) {
     
@@ -50,7 +52,6 @@ public class JobKeysCreateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -81,7 +82,6 @@ public class JobKeysCreateParameters {
    * @return translationKeyIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"abcd1234cdef1234abcd1234cdef1234\"]", value = "ids of keys that should added to the job")
 
   public List<String> getTranslationKeyIds() {
     return translationKeyIds;
@@ -92,9 +92,8 @@ public class JobKeysCreateParameters {
     this.translationKeyIds = translationKeyIds;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -111,7 +110,6 @@ public class JobKeysCreateParameters {
     return Objects.hash(branch, translationKeyIds);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -126,7 +124,7 @@ public class JobKeysCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

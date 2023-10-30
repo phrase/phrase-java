@@ -13,24 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.GitlabSyncHistoryErrors;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.phrase.client.model.GitlabSyncHistoryErrorsInner;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * GitlabSyncHistory
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class GitlabSyncHistory {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -42,7 +42,7 @@ public class GitlabSyncHistory {
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<GitlabSyncHistoryErrors> errors = null;
+  private List<GitlabSyncHistoryErrorsInner> errors;
 
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)
@@ -52,6 +52,8 @@ public class GitlabSyncHistory {
   @SerializedName(SERIALIZED_NAME_DETAILS)
   private Object details;
 
+  public GitlabSyncHistory() {
+  }
 
   public GitlabSyncHistory status(String status) {
     
@@ -64,7 +66,6 @@ public class GitlabSyncHistory {
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getStatus() {
     return status;
@@ -87,7 +88,6 @@ public class GitlabSyncHistory {
    * @return action
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getAction() {
     return action;
@@ -99,13 +99,13 @@ public class GitlabSyncHistory {
   }
 
 
-  public GitlabSyncHistory errors(List<GitlabSyncHistoryErrors> errors) {
+  public GitlabSyncHistory errors(List<GitlabSyncHistoryErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
 
-  public GitlabSyncHistory addErrorsItem(GitlabSyncHistoryErrors errorsItem) {
+  public GitlabSyncHistory addErrorsItem(GitlabSyncHistoryErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -118,14 +118,13 @@ public class GitlabSyncHistory {
    * @return errors
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
-  public List<GitlabSyncHistoryErrors> getErrors() {
+  public List<GitlabSyncHistoryErrorsInner> getErrors() {
     return errors;
   }
 
 
-  public void setErrors(List<GitlabSyncHistoryErrors> errors) {
+  public void setErrors(List<GitlabSyncHistoryErrorsInner> errors) {
     this.errors = errors;
   }
 
@@ -141,7 +140,6 @@ public class GitlabSyncHistory {
    * @return date
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getDate() {
     return date;
@@ -164,7 +162,6 @@ public class GitlabSyncHistory {
    * @return details
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Object getDetails() {
     return details;
@@ -175,9 +172,8 @@ public class GitlabSyncHistory {
     this.details = details;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -197,7 +193,6 @@ public class GitlabSyncHistory {
     return Objects.hash(status, action, errors, date, details);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -215,7 +210,7 @@ public class GitlabSyncHistory {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

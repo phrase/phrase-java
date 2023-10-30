@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * GlossaryTermTranslationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class GlossaryTermTranslationCreateParameters {
   public static final String SERIALIZED_NAME_LOCALE_CODE = "locale_code";
   @SerializedName(SERIALIZED_NAME_LOCALE_CODE)
@@ -36,6 +36,8 @@ public class GlossaryTermTranslationCreateParameters {
   @SerializedName(SERIALIZED_NAME_CONTENT)
   private String content;
 
+  public GlossaryTermTranslationCreateParameters() {
+  }
 
   public GlossaryTermTranslationCreateParameters localeCode(String localeCode) {
     
@@ -48,7 +50,6 @@ public class GlossaryTermTranslationCreateParameters {
    * @return localeCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "en-US", value = "Identifies the language for this translation")
 
   public String getLocaleCode() {
     return localeCode;
@@ -71,7 +72,6 @@ public class GlossaryTermTranslationCreateParameters {
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My translated term", value = "The content of the translation")
 
   public String getContent() {
     return content;
@@ -82,9 +82,8 @@ public class GlossaryTermTranslationCreateParameters {
     this.content = content;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -101,7 +100,6 @@ public class GlossaryTermTranslationCreateParameters {
     return Objects.hash(localeCode, content);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -116,7 +114,7 @@ public class GlossaryTermTranslationCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

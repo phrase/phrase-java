@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * Format
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Format {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -68,6 +68,8 @@ public class Format {
   @SerializedName(SERIALIZED_NAME_INCLUDES_LOCALE_INFORMATION)
   private Boolean includesLocaleInformation;
 
+  public Format() {
+  }
 
   public Format name(String name) {
     
@@ -80,7 +82,6 @@ public class Format {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -103,7 +104,6 @@ public class Format {
    * @return apiName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getApiName() {
     return apiName;
@@ -126,7 +126,6 @@ public class Format {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getDescription() {
     return description;
@@ -149,7 +148,6 @@ public class Format {
    * @return extension
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getExtension() {
     return extension;
@@ -172,7 +170,6 @@ public class Format {
    * @return defaultEncoding
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getDefaultEncoding() {
     return defaultEncoding;
@@ -195,7 +192,6 @@ public class Format {
    * @return importable
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getImportable() {
     return importable;
@@ -218,7 +214,6 @@ public class Format {
    * @return exportable
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getExportable() {
     return exportable;
@@ -241,7 +236,6 @@ public class Format {
    * @return defaultFile
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getDefaultFile() {
     return defaultFile;
@@ -264,7 +258,6 @@ public class Format {
    * @return rendersDefaultLocale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getRendersDefaultLocale() {
     return rendersDefaultLocale;
@@ -287,7 +280,6 @@ public class Format {
    * @return includesLocaleInformation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getIncludesLocaleInformation() {
     return includesLocaleInformation;
@@ -298,9 +290,8 @@ public class Format {
     this.includesLocaleInformation = includesLocaleInformation;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -325,7 +316,6 @@ public class Format {
     return Objects.hash(name, apiName, description, extension, defaultEncoding, importable, exportable, defaultFile, rendersDefaultLocale, includesLocaleInformation);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -348,7 +338,7 @@ public class Format {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

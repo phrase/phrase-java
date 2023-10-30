@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,17 +21,18 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Project;
 import com.phrase.client.model.Space;
 import com.phrase.client.model.User;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * TeamDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TeamDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -52,16 +52,18 @@ public class TeamDetail {
 
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
-  private List<Project> projects = null;
+  private List<Project> projects;
 
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
-  private List<Space> spaces = null;
+  private List<Space> spaces;
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  private List<User> users = null;
+  private List<User> users;
 
+  public TeamDetail() {
+  }
 
   public TeamDetail id(String id) {
     
@@ -74,7 +76,6 @@ public class TeamDetail {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -97,7 +98,6 @@ public class TeamDetail {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -120,7 +120,6 @@ public class TeamDetail {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -143,7 +142,6 @@ public class TeamDetail {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -174,7 +172,6 @@ public class TeamDetail {
    * @return projects
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<Project> getProjects() {
     return projects;
@@ -205,7 +202,6 @@ public class TeamDetail {
    * @return spaces
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<Space> getSpaces() {
     return spaces;
@@ -236,7 +232,6 @@ public class TeamDetail {
    * @return users
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<User> getUsers() {
     return users;
@@ -247,9 +242,8 @@ public class TeamDetail {
     this.users = users;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -271,7 +265,6 @@ public class TeamDetail {
     return Objects.hash(id, name, createdAt, updatedAt, projects, spaces, users);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -291,7 +284,7 @@ public class TeamDetail {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

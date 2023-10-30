@@ -49,8 +49,8 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     String commentId = "commentId_example"; // String | Comment ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
-    String emoji = 👍; // String | specify the emoji for the reaction
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String emoji = "👍"; // String | specify the emoji for the reaction
     try {
       CommentReaction result = apiInstance.reactionCreate(projectId, keyId, commentId, xPhraseAppOTP, branch, emoji);
       System.out.println(result);
@@ -138,7 +138,7 @@ public class Example {
     String commentId = "commentId_example"; // String | Comment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.reactionDelete(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -225,7 +225,7 @@ public class Example {
     String commentId = "commentId_example"; // String | Comment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       CommentReaction result = apiInstance.reactionShow(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -314,7 +314,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<CommentReaction> result = apiInstance.reactionsList(projectId, keyId, commentId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);

@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Notification;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * NotificationGroupDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class NotificationGroupDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -54,6 +54,8 @@ public class NotificationGroupDetail {
   @SerializedName(SERIALIZED_NAME_LATEST_NOTIFICATION)
   private Notification latestNotification;
 
+  public NotificationGroupDetail() {
+  }
 
   public NotificationGroupDetail id(String id) {
     
@@ -66,7 +68,6 @@ public class NotificationGroupDetail {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -89,7 +90,6 @@ public class NotificationGroupDetail {
    * @return eventName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getEventName() {
     return eventName;
@@ -112,7 +112,6 @@ public class NotificationGroupDetail {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -135,7 +134,6 @@ public class NotificationGroupDetail {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -158,7 +156,6 @@ public class NotificationGroupDetail {
    * @return notificationsCount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getNotificationsCount() {
     return notificationsCount;
@@ -181,7 +178,6 @@ public class NotificationGroupDetail {
    * @return latestNotification
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Notification getLatestNotification() {
     return latestNotification;
@@ -192,9 +188,8 @@ public class NotificationGroupDetail {
     this.latestNotification = latestNotification;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -215,7 +210,6 @@ public class NotificationGroupDetail {
     return Objects.hash(id, eventName, createdAt, updatedAt, notificationsCount, latestNotification);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -234,7 +228,7 @@ public class NotificationGroupDetail {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

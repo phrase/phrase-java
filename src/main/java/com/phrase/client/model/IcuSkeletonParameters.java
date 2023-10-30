@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * IcuSkeletonParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -36,7 +36,7 @@ public class IcuSkeletonParameters {
 
   public static final String SERIALIZED_NAME_LOCALE_CODES = "locale_codes";
   @SerializedName(SERIALIZED_NAME_LOCALE_CODES)
-  private List<String> localeCodes = null;
+  private List<String> localeCodes;
 
   public static final String SERIALIZED_NAME_KEEP_CONTENT = "keep_content";
   @SerializedName(SERIALIZED_NAME_KEEP_CONTENT)
@@ -50,6 +50,8 @@ public class IcuSkeletonParameters {
   @SerializedName(SERIALIZED_NAME_CLDR_VERSION)
   private String cldrVersion;
 
+  public IcuSkeletonParameters() {
+  }
 
   public IcuSkeletonParameters content(String content) {
     
@@ -62,7 +64,6 @@ public class IcuSkeletonParameters {
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "{number, plural, one {One} other {%{n}}}", value = "Source content")
 
   public String getContent() {
     return content;
@@ -93,7 +94,6 @@ public class IcuSkeletonParameters {
    * @return localeCodes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"en\"]", value = "Locale codes")
 
   public List<String> getLocaleCodes() {
     return localeCodes;
@@ -116,7 +116,6 @@ public class IcuSkeletonParameters {
    * @return keepContent
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Keep the content and add missing plural forms for each locale")
 
   public Boolean getKeepContent() {
     return keepContent;
@@ -139,7 +138,6 @@ public class IcuSkeletonParameters {
    * @return zeroFormEnabled
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether the zero form should be included or excluded in the returned skeletons")
 
   public Boolean getZeroFormEnabled() {
     return zeroFormEnabled;
@@ -162,7 +160,6 @@ public class IcuSkeletonParameters {
    * @return cldrVersion
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "cldr_41", value = "Strings supports two CLDR variants, when it comes to pluralization rules. \\ You can choose which one you want to use when constructing the skeletons. Possible values \\ are `legacy` and `cldr_41`. Default value is `legacy`.")
 
   public String getCldrVersion() {
     return cldrVersion;
@@ -173,9 +170,8 @@ public class IcuSkeletonParameters {
     this.cldrVersion = cldrVersion;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -195,7 +191,6 @@ public class IcuSkeletonParameters {
     return Objects.hash(content, localeCodes, keepContent, zeroFormEnabled, cldrVersion);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -213,7 +208,7 @@ public class IcuSkeletonParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

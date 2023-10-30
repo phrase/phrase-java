@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,17 +20,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.StyleguidePreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * TranslationOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TranslationOrder {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -75,7 +75,7 @@ public class TranslationOrder {
 
   public static final String SERIALIZED_NAME_TARGET_LOCALES = "target_locales";
   @SerializedName(SERIALIZED_NAME_TARGET_LOCALES)
-  private List<LocalePreview> targetLocales = null;
+  private List<LocalePreview> targetLocales;
 
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
@@ -105,6 +105,8 @@ public class TranslationOrder {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public TranslationOrder() {
+  }
 
   public TranslationOrder id(String id) {
     
@@ -117,7 +119,6 @@ public class TranslationOrder {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -140,7 +141,6 @@ public class TranslationOrder {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -163,7 +163,6 @@ public class TranslationOrder {
    * @return lsp
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getLsp() {
     return lsp;
@@ -186,7 +185,6 @@ public class TranslationOrder {
    * @return amountInCents
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getAmountInCents() {
     return amountInCents;
@@ -209,7 +207,6 @@ public class TranslationOrder {
    * @return currency
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getCurrency() {
     return currency;
@@ -232,7 +229,6 @@ public class TranslationOrder {
    * @return message
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getMessage() {
     return message;
@@ -255,7 +251,6 @@ public class TranslationOrder {
    * @return state
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getState() {
     return state;
@@ -278,7 +273,6 @@ public class TranslationOrder {
    * @return translationType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getTranslationType() {
     return translationType;
@@ -301,7 +295,6 @@ public class TranslationOrder {
    * @return progressPercent
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getProgressPercent() {
     return progressPercent;
@@ -324,7 +317,6 @@ public class TranslationOrder {
    * @return sourceLocale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getSourceLocale() {
     return sourceLocale;
@@ -355,7 +347,6 @@ public class TranslationOrder {
    * @return targetLocales
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<LocalePreview> getTargetLocales() {
     return targetLocales;
@@ -378,7 +369,6 @@ public class TranslationOrder {
    * @return tag
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getTag() {
     return tag;
@@ -401,7 +391,6 @@ public class TranslationOrder {
    * @return styleguide
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public StyleguidePreview getStyleguide() {
     return styleguide;
@@ -424,7 +413,6 @@ public class TranslationOrder {
    * @return unverifyTranslationsUponDelivery
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getUnverifyTranslationsUponDelivery() {
     return unverifyTranslationsUponDelivery;
@@ -447,7 +435,6 @@ public class TranslationOrder {
    * @return quality
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getQuality() {
     return quality;
@@ -470,7 +457,6 @@ public class TranslationOrder {
    * @return priority
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getPriority() {
     return priority;
@@ -493,7 +479,6 @@ public class TranslationOrder {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -516,7 +501,6 @@ public class TranslationOrder {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -527,9 +511,8 @@ public class TranslationOrder {
     this.updatedAt = updatedAt;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -562,7 +545,6 @@ public class TranslationOrder {
     return Objects.hash(id, name, lsp, amountInCents, currency, message, state, translationType, progressPercent, sourceLocale, targetLocales, tag, styleguide, unverifyTranslationsUponDelivery, quality, priority, createdAt, updatedAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -593,7 +575,7 @@ public class TranslationOrder {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

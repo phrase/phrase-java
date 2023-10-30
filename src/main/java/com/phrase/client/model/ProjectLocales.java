@@ -13,26 +13,24 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
-import com.phrase.client.model.ProjectLocales1;
-import com.phrase.client.model.ProjectMemberSpecific;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ProjectLocales
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class ProjectLocales {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -60,8 +58,10 @@ public class ProjectLocales {
 
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
-  private List<LocalePreview> locales = null;
+  private List<LocalePreview> locales;
 
+  public ProjectLocales() {
+  }
 
   public ProjectLocales id(String id) {
     
@@ -74,7 +74,6 @@ public class ProjectLocales {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -97,7 +96,6 @@ public class ProjectLocales {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -120,7 +118,6 @@ public class ProjectLocales {
    * @return projectRole
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getProjectRole() {
     return projectRole;
@@ -143,7 +140,6 @@ public class ProjectLocales {
    * @return mainFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getMainFormat() {
     return mainFormat;
@@ -166,7 +162,6 @@ public class ProjectLocales {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -189,7 +184,6 @@ public class ProjectLocales {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -220,7 +214,6 @@ public class ProjectLocales {
    * @return locales
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<LocalePreview> getLocales() {
     return locales;
@@ -231,9 +224,8 @@ public class ProjectLocales {
     this.locales = locales;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -255,7 +247,6 @@ public class ProjectLocales {
     return Objects.hash(id, name, projectRole, mainFormat, createdAt, updatedAt, locales);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -275,7 +266,7 @@ public class ProjectLocales {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -13,27 +13,25 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Locale;
-import com.phrase.client.model.LocaleDetails1;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.LocaleStatistics;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * LocaleDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class LocaleDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -61,7 +59,7 @@ public class LocaleDetails {
 
   public static final String SERIALIZED_NAME_PLURAL_FORMS = "plural_forms";
   @SerializedName(SERIALIZED_NAME_PLURAL_FORMS)
-  private List<String> pluralForms = null;
+  private List<String> pluralForms;
 
   public static final String SERIALIZED_NAME_SOURCE_LOCALE = "source_locale";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE)
@@ -83,6 +81,8 @@ public class LocaleDetails {
   @SerializedName(SERIALIZED_NAME_STATISTICS)
   private LocaleStatistics statistics;
 
+  public LocaleDetails() {
+  }
 
   public LocaleDetails id(String id) {
     
@@ -95,7 +95,6 @@ public class LocaleDetails {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -118,7 +117,6 @@ public class LocaleDetails {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -141,7 +139,6 @@ public class LocaleDetails {
    * @return code
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getCode() {
     return code;
@@ -164,7 +161,6 @@ public class LocaleDetails {
    * @return _default
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getDefault() {
     return _default;
@@ -187,7 +183,6 @@ public class LocaleDetails {
    * @return main
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getMain() {
     return main;
@@ -210,7 +205,6 @@ public class LocaleDetails {
    * @return rtl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Boolean getRtl() {
     return rtl;
@@ -241,7 +235,6 @@ public class LocaleDetails {
    * @return pluralForms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getPluralForms() {
     return pluralForms;
@@ -264,7 +257,6 @@ public class LocaleDetails {
    * @return sourceLocale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getSourceLocale() {
     return sourceLocale;
@@ -287,7 +279,6 @@ public class LocaleDetails {
    * @return fallbackLocale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getFallbackLocale() {
     return fallbackLocale;
@@ -310,7 +301,6 @@ public class LocaleDetails {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -333,7 +323,6 @@ public class LocaleDetails {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -356,7 +345,6 @@ public class LocaleDetails {
    * @return statistics
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocaleStatistics getStatistics() {
     return statistics;
@@ -367,9 +355,8 @@ public class LocaleDetails {
     this.statistics = statistics;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -396,7 +383,6 @@ public class LocaleDetails {
     return Objects.hash(id, name, code, _default, main, rtl, pluralForms, sourceLocale, fallbackLocale, createdAt, updatedAt, statistics);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -421,7 +407,7 @@ public class LocaleDetails {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -368,7 +368,7 @@ public class Example {
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String accountId = "accountId_example"; // String | Filter by Account ID
     String sortBy = "sortBy_example"; // String | Sort projects. Valid options are \"name_asc\", \"name_desc\", \"updated_at_asc\", \"updated_at_desc\", \"space_asc\" and \"space_desc\".
-    List<String> filters = favorites; // List<String> | Filter projects. Valid options are [\"favorites\"].
+    List<String> filters = Arrays.asList(); // List<String> | Filter projects. Valid options are [\"favorites\"].
     try {
       List<Project> result = apiInstance.projectsList(xPhraseAppOTP, page, perPage, accountId, sortBy, filters);
       System.out.println(result);

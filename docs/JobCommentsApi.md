@@ -133,7 +133,7 @@ public class Example {
     String jobId = "jobId_example"; // String | Job ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.jobCommentDelete(projectId, jobId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -217,7 +217,7 @@ public class Example {
     String jobId = "jobId_example"; // String | Job ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       JobComment result = apiInstance.jobCommentShow(projectId, jobId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -386,8 +386,8 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String jobId = "jobId_example"; // String | Job ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
-    String order = desc; // String | Order direction. Can be one of: asc, desc.
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String order = "desc"; // String | Order direction. Can be one of: asc, desc.
     try {
       List<JobComment> result = apiInstance.jobCommentsList(projectId, jobId, xPhraseAppOTP, branch, order);
       System.out.println(result);

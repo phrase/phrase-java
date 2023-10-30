@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,15 +23,16 @@ import com.phrase.client.model.Locale;
 import com.phrase.client.model.NotificationGroup;
 import com.phrase.client.model.Project;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Notification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Notification {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -86,6 +86,8 @@ public class Notification {
   @SerializedName(SERIALIZED_NAME_GROUP)
   private NotificationGroup group;
 
+  public Notification() {
+  }
 
   public Notification id(String id) {
     
@@ -98,7 +100,6 @@ public class Notification {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -121,7 +122,6 @@ public class Notification {
    * @return eventName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getEventName() {
     return eventName;
@@ -144,7 +144,6 @@ public class Notification {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -167,7 +166,6 @@ public class Notification {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -190,7 +188,6 @@ public class Notification {
    * @return deliveredAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getDeliveredAt() {
     return deliveredAt;
@@ -213,7 +210,6 @@ public class Notification {
    * @return seenAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getSeenAt() {
     return seenAt;
@@ -236,7 +232,6 @@ public class Notification {
    * @return data
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Object getData() {
     return data;
@@ -259,7 +254,6 @@ public class Notification {
    * @return resource
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Object getResource() {
     return resource;
@@ -282,7 +276,6 @@ public class Notification {
    * @return locale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Locale getLocale() {
     return locale;
@@ -305,7 +298,6 @@ public class Notification {
    * @return user
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getUser() {
     return user;
@@ -328,7 +320,6 @@ public class Notification {
    * @return project
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Project getProject() {
     return project;
@@ -351,7 +342,6 @@ public class Notification {
    * @return account
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Account getAccount() {
     return account;
@@ -374,7 +364,6 @@ public class Notification {
    * @return group
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public NotificationGroup getGroup() {
     return group;
@@ -385,9 +374,8 @@ public class Notification {
     this.group = group;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -415,7 +403,6 @@ public class Notification {
     return Objects.hash(id, eventName, createdAt, updatedAt, deliveredAt, seenAt, data, resource, locale, user, project, account, group);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -441,7 +428,7 @@ public class Notification {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

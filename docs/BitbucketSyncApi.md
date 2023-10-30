@@ -206,7 +206,7 @@ public class Example {
 
     BitbucketSyncApi apiInstance = new BitbucketSyncApi(defaultClient);
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String accountId = abcd1234; // String | Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
+    String accountId = "abcd1234"; // String | Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.
     try {
       List<BitbucketSync> result = apiInstance.bitbucketSyncsList(xPhraseAppOTP, accountId);
       System.out.println(result);

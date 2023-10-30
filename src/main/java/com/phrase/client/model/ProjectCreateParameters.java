@@ -13,21 +13,21 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -133,6 +133,8 @@ public class ProjectCreateParameters {
   @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION)
   private Boolean smartSuggestUseMachineTranslation;
 
+  public ProjectCreateParameters() {
+  }
 
   public ProjectCreateParameters name(String name) {
     
@@ -145,7 +147,6 @@ public class ProjectCreateParameters {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My Android Project", value = "Name of the project")
 
   public String getName() {
     return name;
@@ -168,7 +169,6 @@ public class ProjectCreateParameters {
    * @return mainFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "yml", value = "Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see <a href=\"https://support.phrase.com/hc/en-us/sections/6111343326364\">Format Guide</a> or our <a href=\"#formats\">Formats API Endpoint</a>.")
 
   public String getMainFormat() {
     return mainFormat;
@@ -191,7 +191,6 @@ public class ProjectCreateParameters {
    * @return media
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Python", value = "(Optional) Main technology stack used in the project. It affects for example the suggested placeholder style. Predefined values include: `Ruby`, `JavaScript`, `AngularJS`, `React`, `iOS`, `Android`, `Python`, `PHP`, `Java`, `Go`, `Windows Phone`, `Rails`, `Node.js`, `.NET`, `Django`, `Symfony`, `Yii Framework`, `Zend Framework`, `Apple App Store Description`, `Google Play Description`, but it can also take any other value.")
 
   public String getMedia() {
     return media;
@@ -214,7 +213,6 @@ public class ProjectCreateParameters {
    * @return sharesTranslationMemory
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Indicates whether the project should share the account's translation memory")
 
   public Boolean getSharesTranslationMemory() {
     return sharesTranslationMemory;
@@ -237,7 +235,6 @@ public class ProjectCreateParameters {
    * @return projectImage
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Image to identify the project")
 
   public File getProjectImage() {
     return projectImage;
@@ -260,7 +257,6 @@ public class ProjectCreateParameters {
    * @return removeProjectImage
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether the project image should be deleted.")
 
   public Boolean getRemoveProjectImage() {
     return removeProjectImage;
@@ -283,7 +279,6 @@ public class ProjectCreateParameters {
    * @return accountId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234", value = "Account ID to specify the actual account the project should be created in. Required if the requesting user is a member of multiple accounts.")
 
   public String getAccountId() {
     return accountId;
@@ -306,7 +301,6 @@ public class ProjectCreateParameters {
    * @return pointOfContact
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234", value = "(Optional) User ID of the point of contact for the project.")
 
   public String getPointOfContact() {
     return pointOfContact;
@@ -329,7 +323,6 @@ public class ProjectCreateParameters {
    * @return sourceProjectId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "abcd1234", value = "When a source project ID is given, a clone of that project will be created, including all locales, keys and translations as well as the main project settings if they are not defined otherwise through the params.")
 
   public String getSourceProjectId() {
     return sourceProjectId;
@@ -352,7 +345,6 @@ public class ProjectCreateParameters {
    * @return workflow
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "review", value = "(Optional) Review Workflow. \"simple\" / \"review\". <a href=\"https://support.phrase.com/hc/en-us/articles/5784094755484\">Read more</a>")
 
   public String getWorkflow() {
     return workflow;
@@ -375,7 +367,6 @@ public class ProjectCreateParameters {
    * @return machineTranslationEnabled
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest")
 
   public Boolean getMachineTranslationEnabled() {
     return machineTranslationEnabled;
@@ -398,7 +389,6 @@ public class ProjectCreateParameters {
    * @return enableBranching
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Enable branching in the project")
 
   public Boolean getEnableBranching() {
     return enableBranching;
@@ -421,7 +411,6 @@ public class ProjectCreateParameters {
    * @return protectMasterBranch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Protect the master branch in project where branching is enabled")
 
   public Boolean getProtectMasterBranch() {
     return protectMasterBranch;
@@ -444,7 +433,6 @@ public class ProjectCreateParameters {
    * @return enableAllDataTypeTranslationKeysForTranslators
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Otherwise, translators are not allowed to edit translations other than strings")
 
   public Boolean getEnableAllDataTypeTranslationKeysForTranslators() {
     return enableAllDataTypeTranslationKeysForTranslators;
@@ -467,7 +455,6 @@ public class ProjectCreateParameters {
    * @return enableIcuMessageFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) We can validate and highlight your ICU messages. <a href=\"https://support.phrase.com/hc/en-us/articles/5822319545116\">Read more</a>")
 
   public Boolean getEnableIcuMessageFormat() {
     return enableIcuMessageFormat;
@@ -490,7 +477,6 @@ public class ProjectCreateParameters {
    * @return zeroPluralFormEnabled
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Displays the input fields for the 'ZERO' plural form for every key as well although only some languages require the 'ZERO' explicitly.")
 
   public Boolean getZeroPluralFormEnabled() {
     return zeroPluralFormEnabled;
@@ -513,7 +499,6 @@ public class ProjectCreateParameters {
    * @return autotranslateEnabled
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Autopilot, requires machine_translation_enabled. <a href=\"https://support.phrase.com/hc/en-us/articles/5822187934364\">Read more</a>")
 
   public Boolean getAutotranslateEnabled() {
     return autotranslateEnabled;
@@ -536,7 +521,6 @@ public class ProjectCreateParameters {
    * @return autotranslateCheckNewTranslationKeys
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires autotranslate_enabled to be true")
 
   public Boolean getAutotranslateCheckNewTranslationKeys() {
     return autotranslateCheckNewTranslationKeys;
@@ -559,7 +543,6 @@ public class ProjectCreateParameters {
    * @return autotranslateCheckNewUploads
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires autotranslate_enabled to be true")
 
   public Boolean getAutotranslateCheckNewUploads() {
     return autotranslateCheckNewUploads;
@@ -582,7 +565,6 @@ public class ProjectCreateParameters {
    * @return autotranslateCheckNewLocales
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires autotranslate_enabled to be true")
 
   public Boolean getAutotranslateCheckNewLocales() {
     return autotranslateCheckNewLocales;
@@ -605,7 +587,6 @@ public class ProjectCreateParameters {
    * @return autotranslateMarkAsUnverified
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires autotranslate_enabled to be true")
 
   public Boolean getAutotranslateMarkAsUnverified() {
     return autotranslateMarkAsUnverified;
@@ -628,7 +609,6 @@ public class ProjectCreateParameters {
    * @return autotranslateUseMachineTranslation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires autotranslate_enabled to be true")
 
   public Boolean getAutotranslateUseMachineTranslation() {
     return autotranslateUseMachineTranslation;
@@ -651,7 +631,6 @@ public class ProjectCreateParameters {
    * @return autotranslateUseTranslationMemory
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires autotranslate_enabled to be true")
 
   public Boolean getAutotranslateUseTranslationMemory() {
     return autotranslateUseTranslationMemory;
@@ -674,7 +653,6 @@ public class ProjectCreateParameters {
    * @return smartSuggestEnabled
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Smart Suggest, requires machine_translation_enabled")
 
   public Boolean getSmartSuggestEnabled() {
     return smartSuggestEnabled;
@@ -697,7 +675,6 @@ public class ProjectCreateParameters {
    * @return smartSuggestUseGlossary
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires smart_suggest_enabled to be true")
 
   public Boolean getSmartSuggestUseGlossary() {
     return smartSuggestUseGlossary;
@@ -720,7 +697,6 @@ public class ProjectCreateParameters {
    * @return smartSuggestUseMachineTranslation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "(Optional) Requires smart_suggest_enabled to be true")
 
   public Boolean getSmartSuggestUseMachineTranslation() {
     return smartSuggestUseMachineTranslation;
@@ -731,9 +707,8 @@ public class ProjectCreateParameters {
     this.smartSuggestUseMachineTranslation = smartSuggestUseMachineTranslation;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -774,7 +749,6 @@ public class ProjectCreateParameters {
     return Objects.hash(name, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -813,7 +787,7 @@ public class ProjectCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

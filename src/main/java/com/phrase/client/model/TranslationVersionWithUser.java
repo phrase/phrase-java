@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,18 +20,17 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
-import com.phrase.client.model.TranslationVersion;
-import com.phrase.client.model.TranslationVersionWithUser1;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * TranslationVersionWithUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TranslationVersionWithUser {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -70,6 +68,8 @@ public class TranslationVersionWithUser {
   @SerializedName(SERIALIZED_NAME_USER)
   private UserPreview user;
 
+  public TranslationVersionWithUser() {
+  }
 
   public TranslationVersionWithUser id(String id) {
     
@@ -82,7 +82,6 @@ public class TranslationVersionWithUser {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -105,7 +104,6 @@ public class TranslationVersionWithUser {
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getContent() {
     return content;
@@ -128,7 +126,6 @@ public class TranslationVersionWithUser {
    * @return pluralSuffix
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getPluralSuffix() {
     return pluralSuffix;
@@ -151,7 +148,6 @@ public class TranslationVersionWithUser {
    * @return key
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public KeyPreview getKey() {
     return key;
@@ -174,7 +170,6 @@ public class TranslationVersionWithUser {
    * @return locale
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public LocalePreview getLocale() {
     return locale;
@@ -197,7 +192,6 @@ public class TranslationVersionWithUser {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -220,7 +214,6 @@ public class TranslationVersionWithUser {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -243,7 +236,6 @@ public class TranslationVersionWithUser {
    * @return changedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getChangedAt() {
     return changedAt;
@@ -266,7 +258,6 @@ public class TranslationVersionWithUser {
    * @return user
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getUser() {
     return user;
@@ -277,9 +268,8 @@ public class TranslationVersionWithUser {
     this.user = user;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -303,7 +293,6 @@ public class TranslationVersionWithUser {
     return Objects.hash(id, content, pluralSuffix, key, locale, createdAt, updatedAt, changedAt, user);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -325,7 +314,7 @@ public class TranslationVersionWithUser {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

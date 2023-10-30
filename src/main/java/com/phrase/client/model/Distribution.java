@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,17 +21,18 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
 import com.phrase.client.model.ReleasePreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Distribution
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Distribution {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -48,15 +48,15 @@ public class Distribution {
 
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
-  private List<String> platforms = null;
+  private List<String> platforms;
 
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
-  private List<LocalePreview> locales = null;
+  private List<LocalePreview> locales;
 
   public static final String SERIALIZED_NAME_RELEASES = "releases";
   @SerializedName(SERIALIZED_NAME_RELEASES)
-  private List<ReleasePreview> releases = null;
+  private List<ReleasePreview> releases;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -66,6 +66,8 @@ public class Distribution {
   @SerializedName(SERIALIZED_NAME_DELETED_AT)
   private OffsetDateTime deletedAt;
 
+  public Distribution() {
+  }
 
   public Distribution id(String id) {
     
@@ -78,7 +80,6 @@ public class Distribution {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -101,7 +102,6 @@ public class Distribution {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -124,7 +124,6 @@ public class Distribution {
    * @return project
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public ProjectShort getProject() {
     return project;
@@ -155,7 +154,6 @@ public class Distribution {
    * @return platforms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getPlatforms() {
     return platforms;
@@ -186,7 +184,6 @@ public class Distribution {
    * @return locales
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<LocalePreview> getLocales() {
     return locales;
@@ -217,7 +214,6 @@ public class Distribution {
    * @return releases
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<ReleasePreview> getReleases() {
     return releases;
@@ -240,7 +236,6 @@ public class Distribution {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -263,7 +258,6 @@ public class Distribution {
    * @return deletedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getDeletedAt() {
     return deletedAt;
@@ -274,9 +268,8 @@ public class Distribution {
     this.deletedAt = deletedAt;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -299,7 +292,6 @@ public class Distribution {
     return Objects.hash(id, name, project, platforms, locales, releases, createdAt, deletedAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -320,7 +312,7 @@ public class Distribution {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

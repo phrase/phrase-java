@@ -13,21 +13,21 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * KeyUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class KeyUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -89,6 +89,8 @@ public class KeyUpdateParameters {
   @SerializedName(SERIALIZED_NAME_LOCALIZED_FORMAT_KEY)
   private String localizedFormatKey;
 
+  public KeyUpdateParameters() {
+  }
 
   public KeyUpdateParameters branch(String branch) {
     
@@ -101,7 +103,6 @@ public class KeyUpdateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -124,7 +125,6 @@ public class KeyUpdateParameters {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "home.index.headline", value = "Key name")
 
   public String getName() {
     return name;
@@ -147,7 +147,6 @@ public class KeyUpdateParameters {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Some description worth knowing...", value = "Key description (usually includes contextual information for translators)")
 
   public String getDescription() {
     return description;
@@ -170,7 +169,6 @@ public class KeyUpdateParameters {
    * @return plural
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether key supports pluralization")
 
   public Boolean getPlural() {
     return plural;
@@ -193,7 +191,6 @@ public class KeyUpdateParameters {
    * @return namePlural
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "home.index.headlines", value = "Plural name for the key (used in some file formats, e.g. Gettext)")
 
   public String getNamePlural() {
     return namePlural;
@@ -216,7 +213,6 @@ public class KeyUpdateParameters {
    * @return dataType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "number", value = "Type of the key. Can be one of the following: string, number, boolean, array, markdown.")
 
   public String getDataType() {
     return dataType;
@@ -239,7 +235,6 @@ public class KeyUpdateParameters {
    * @return tags
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "awesome-feature,needs-proofreading", value = "List of tags separated by comma to be associated with the key.")
 
   public String getTags() {
     return tags;
@@ -262,7 +257,6 @@ public class KeyUpdateParameters {
    * @return maxCharactersAllowed
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "140", value = "Max. number of characters translations for this key can have.")
 
   public Integer getMaxCharactersAllowed() {
     return maxCharactersAllowed;
@@ -283,9 +277,10 @@ public class KeyUpdateParameters {
    /**
    * Screenshot/image for the key. This parameter is deprecated. Please use the Screenshots endpoint instead.
    * @return screenshot
+   * @deprecated
   **/
+  @Deprecated
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Screenshot/image for the key. This parameter is deprecated. Please use the Screenshots endpoint instead.")
 
   public File getScreenshot() {
     return screenshot;
@@ -306,9 +301,10 @@ public class KeyUpdateParameters {
    /**
    * Indicates whether the screenshot will be deleted. This parameter is deprecated. Please use the Screenshots endpoint instead.
    * @return removeScreenshot
+   * @deprecated
   **/
+  @Deprecated
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether the screenshot will be deleted. This parameter is deprecated. Please use the Screenshots endpoint instead.")
 
   public Boolean getRemoveScreenshot() {
     return removeScreenshot;
@@ -331,7 +327,6 @@ public class KeyUpdateParameters {
    * @return unformatted
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether the key should be exported as \"unformatted\". Supported by Android XML and other formats.")
 
   public Boolean getUnformatted() {
     return unformatted;
@@ -354,7 +349,6 @@ public class KeyUpdateParameters {
    * @return xmlSpacePreserve
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates whether the key should be exported with \"xml:space=preserve\". Supported by several XML-based formats.")
 
   public Boolean getXmlSpacePreserve() {
     return xmlSpacePreserve;
@@ -377,7 +371,6 @@ public class KeyUpdateParameters {
    * @return originalFile
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Original file attribute. Used in some formats, e.g. XLIFF.")
 
   public String getOriginalFile() {
     return originalFile;
@@ -400,7 +393,6 @@ public class KeyUpdateParameters {
    * @return localizedFormatString
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "NSStringLocalizedFormatKey attribute. Used in .stringsdict format.")
 
   public String getLocalizedFormatString() {
     return localizedFormatString;
@@ -423,7 +415,6 @@ public class KeyUpdateParameters {
    * @return localizedFormatKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "NSStringLocalizedFormatKey attribute. Used in .stringsdict format.")
 
   public String getLocalizedFormatKey() {
     return localizedFormatKey;
@@ -434,9 +425,8 @@ public class KeyUpdateParameters {
     this.localizedFormatKey = localizedFormatKey;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -466,7 +456,6 @@ public class KeyUpdateParameters {
     return Objects.hash(branch, name, description, plural, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -494,7 +483,7 @@ public class KeyUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * WebhookCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class WebhookCreateParameters {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callback_url";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
@@ -52,6 +52,8 @@ public class WebhookCreateParameters {
   @SerializedName(SERIALIZED_NAME_INCLUDE_BRANCHES)
   private Boolean includeBranches;
 
+  public WebhookCreateParameters() {
+  }
 
   public WebhookCreateParameters callbackUrl(String callbackUrl) {
     
@@ -64,7 +66,6 @@ public class WebhookCreateParameters {
    * @return callbackUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "http://example.com/hooks/phraseapp-notifications", value = "Callback URL to send requests to")
 
   public String getCallbackUrl() {
     return callbackUrl;
@@ -87,7 +88,6 @@ public class WebhookCreateParameters {
    * @return secret
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "secr3t", value = "Webhook secret used to calculate signature. If empty, the default project secret will be used.")
 
   public String getSecret() {
     return secret;
@@ -110,7 +110,6 @@ public class WebhookCreateParameters {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My webhook for chat notifications", value = "Webhook description")
 
   public String getDescription() {
     return description;
@@ -133,7 +132,6 @@ public class WebhookCreateParameters {
    * @return events
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "locales:create,translations:update", value = "List of event names to trigger the webhook (separated by comma)")
 
   public String getEvents() {
     return events;
@@ -156,7 +154,6 @@ public class WebhookCreateParameters {
    * @return active
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Whether webhook is active or inactive")
 
   public Boolean getActive() {
     return active;
@@ -179,7 +176,6 @@ public class WebhookCreateParameters {
    * @return includeBranches
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "If enabled, webhook will also be triggered for events from branches of the project specified.")
 
   public Boolean getIncludeBranches() {
     return includeBranches;
@@ -190,9 +186,8 @@ public class WebhookCreateParameters {
     this.includeBranches = includeBranches;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -213,7 +208,6 @@ public class WebhookCreateParameters {
     return Objects.hash(callbackUrl, secret, description, events, active, includeBranches);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -232,7 +226,7 @@ public class WebhookCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

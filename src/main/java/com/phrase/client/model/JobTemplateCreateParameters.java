@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * JobTemplateCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class JobTemplateCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -40,6 +40,8 @@ public class JobTemplateCreateParameters {
   @SerializedName(SERIALIZED_NAME_BRIEFING)
   private String briefing;
 
+  public JobTemplateCreateParameters() {
+  }
 
   public JobTemplateCreateParameters branch(String branch) {
     
@@ -52,7 +54,6 @@ public class JobTemplateCreateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -74,7 +75,7 @@ public class JobTemplateCreateParameters {
    * Job template name
    * @return name
   **/
-  @ApiModelProperty(example = "template", required = true, value = "Job template name")
+  @javax.annotation.Nonnull
 
   public String getName() {
     return name;
@@ -97,7 +98,6 @@ public class JobTemplateCreateParameters {
    * @return briefing
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "text", value = "Briefing for the translators")
 
   public String getBriefing() {
     return briefing;
@@ -108,9 +108,8 @@ public class JobTemplateCreateParameters {
     this.briefing = briefing;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -128,7 +127,6 @@ public class JobTemplateCreateParameters {
     return Objects.hash(branch, name, briefing);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -144,7 +142,7 @@ public class JobTemplateCreateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

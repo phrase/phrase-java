@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * SearchInAccountParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class SearchInAccountParameters {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
@@ -44,6 +44,8 @@ public class SearchInAccountParameters {
   @SerializedName(SERIALIZED_NAME_PER_PAGE)
   private Integer perPage;
 
+  public SearchInAccountParameters() {
+  }
 
   public SearchInAccountParameters query(String query) {
     
@@ -56,7 +58,6 @@ public class SearchInAccountParameters {
    * @return query
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "keyword", value = "Search query")
 
   public String getQuery() {
     return query;
@@ -79,7 +80,6 @@ public class SearchInAccountParameters {
    * @return localeCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "de_DE", value = "Locale code")
 
   public String getLocaleCode() {
     return localeCode;
@@ -102,7 +102,6 @@ public class SearchInAccountParameters {
    * @return page
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "Page")
 
   public Integer getPage() {
     return page;
@@ -125,7 +124,6 @@ public class SearchInAccountParameters {
    * @return perPage
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "25", value = "Number of results per page")
 
   public Integer getPerPage() {
     return perPage;
@@ -136,9 +134,8 @@ public class SearchInAccountParameters {
     this.perPage = perPage;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -157,7 +154,6 @@ public class SearchInAccountParameters {
     return Objects.hash(query, localeCode, page, perPage);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,7 +170,7 @@ public class SearchInAccountParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

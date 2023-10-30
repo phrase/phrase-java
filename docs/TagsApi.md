@@ -129,7 +129,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String name = "name_example"; // String | name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.tagDelete(projectId, name, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -211,7 +211,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String name = "name_example"; // String | name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       TagWithStats result = apiInstance.tagShow(projectId, name, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -295,7 +295,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<Tag> result = apiInstance.tagsList(projectId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);

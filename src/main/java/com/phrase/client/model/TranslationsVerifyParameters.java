@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * TranslationsVerifyParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TranslationsVerifyParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -40,6 +40,8 @@ public class TranslationsVerifyParameters {
   @SerializedName(SERIALIZED_NAME_Q)
   private String q;
 
+  public TranslationsVerifyParameters() {
+  }
 
   public TranslationsVerifyParameters branch(String branch) {
     
@@ -52,7 +54,6 @@ public class TranslationsVerifyParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -75,7 +76,6 @@ public class TranslationsVerifyParameters {
    * @return localeId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "fc2f11dd6a658fa9652f6f0a9ebee688", value = "specify the locale of the translations to be verified")
 
   public String getLocaleId() {
     return localeId;
@@ -98,7 +98,6 @@ public class TranslationsVerifyParameters {
    * @return q
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "PhraseApp*%20unverified:true%20tags:feature,center", value = "Specify a query to find translations by content (including wildcards).<br><br> <i>Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).</i><br> The following qualifiers are supported in the query:<br> <ul>   <li><code>id:translation_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>tags:XYZ</code> for tags on the translation</li>   <li><code>unverified:{true|false}</code> for verification status</li>   <li><code>excluded:{true|false}</code> for exclusion status</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. ")
 
   public String getQ() {
     return q;
@@ -109,9 +108,8 @@ public class TranslationsVerifyParameters {
     this.q = q;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -129,7 +127,6 @@ public class TranslationsVerifyParameters {
     return Objects.hash(branch, localeId, q);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -145,7 +142,7 @@ public class TranslationsVerifyParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

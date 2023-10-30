@@ -13,7 +13,6 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,15 +21,16 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
 import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Project
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Project {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -76,6 +76,8 @@ public class Project {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public Project() {
+  }
 
   public Project id(String id) {
     
@@ -88,7 +90,6 @@ public class Project {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -111,7 +112,6 @@ public class Project {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getName() {
     return name;
@@ -134,7 +134,6 @@ public class Project {
    * @return slug
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getSlug() {
     return slug;
@@ -157,7 +156,6 @@ public class Project {
    * @return mainFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getMainFormat() {
     return mainFormat;
@@ -180,7 +178,6 @@ public class Project {
    * @return projectImageUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getProjectImageUrl() {
     return projectImageUrl;
@@ -203,7 +200,6 @@ public class Project {
    * @return media
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getMedia() {
     return media;
@@ -226,7 +222,6 @@ public class Project {
    * @return account
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Account getAccount() {
     return account;
@@ -249,7 +244,6 @@ public class Project {
    * @return space
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Space1 getSpace() {
     return space;
@@ -272,7 +266,6 @@ public class Project {
    * @return pointOfContact
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public UserPreview getPointOfContact() {
     return pointOfContact;
@@ -295,7 +288,6 @@ public class Project {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -318,7 +310,6 @@ public class Project {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -329,9 +320,8 @@ public class Project {
     this.updatedAt = updatedAt;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -357,7 +347,6 @@ public class Project {
     return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -381,7 +370,7 @@ public class Project {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

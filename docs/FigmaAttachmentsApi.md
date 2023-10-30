@@ -49,7 +49,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     FigmaAttachmentCreateParameters figmaAttachmentCreateParameters = new FigmaAttachmentCreateParameters(); // FigmaAttachmentCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       FigmaAttachment result = apiInstance.figmaAttachmentCreate(projectId, figmaAttachmentCreateParameters, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -132,7 +132,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.figmaAttachmentDelete(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -214,7 +214,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       FigmaAttachment result = apiInstance.figmaAttachmentShow(projectId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -298,7 +298,7 @@ public class Example {
     String id = "id_example"; // String | ID
     FigmaAttachmentUpdateParameters figmaAttachmentUpdateParameters = new FigmaAttachmentUpdateParameters(); // FigmaAttachmentUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       FigmaAttachment result = apiInstance.figmaAttachmentUpdate(projectId, id, figmaAttachmentUpdateParameters, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -383,7 +383,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<FigmaAttachment> result = apiInstance.figmaAttachmentsList(projectId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);

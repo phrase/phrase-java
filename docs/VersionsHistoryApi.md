@@ -47,7 +47,7 @@ public class Example {
     String translationId = "translationId_example"; // String | Translation ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       TranslationVersionWithUser result = apiInstance.versionShow(projectId, translationId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -133,7 +133,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<TranslationVersion> result = apiInstance.versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);

@@ -136,7 +136,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.keyDelete(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -218,7 +218,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       TranslationKeyDetails result = apiInstance.keyShow(projectId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -383,9 +383,9 @@ public class Example {
     KeysApi apiInstance = new KeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
-    String q = mykey* translated:true; // String | Specify a query to do broad search for keys by name (including wildcards).<br><br> The following qualifiers are also supported in the search term:<br> <ul>   <li><code>ids:key_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>name:key_name</code> for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes</li>   <li><code>tags:tag_name</code> to filter for keys with certain tags</li>   <li><code>translated:{true|false}</code> for translation status (also requires <code>locale_id</code> to be specified)</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li>   <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
-    String localeId = abcd1234abcd1234abcd1234abcd1234; // String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String q = "mykey* translated:true"; // String | Specify a query to do broad search for keys by name (including wildcards).<br><br> The following qualifiers are also supported in the search term:<br> <ul>   <li><code>ids:key_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>name:key_name</code> for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes</li>   <li><code>tags:tag_name</code> to filter for keys with certain tags</li>   <li><code>translated:{true|false}</code> for translation status (also requires <code>locale_id</code> to be specified)</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li>   <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
+    String localeId = "abcd1234abcd1234abcd1234abcd1234"; // String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     try {
       AffectedResources result = apiInstance.keysDeleteCollection(projectId, xPhraseAppOTP, branch, q, localeId);
       System.out.println(result);
@@ -632,11 +632,11 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
-    String sort = updated_at; // String | Sort by field. Can be one of: name, created_at, updated_at.
-    String order = desc; // String | Order direction. Can be one of: asc, desc.
-    String q = mykey* translated:true; // String | Specify a query to do broad search for keys by name (including wildcards).<br><br> The following qualifiers are also supported in the search term:<br> <ul>   <li><code>ids:key_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>name:key_name</code> for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes</li>   <li><code>tags:tag_name</code> to filter for keys with certain tags</li>   <li><code>translated:{true|false}</code> for translation status (also requires <code>locale_id</code> to be specified)</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li>   <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
-    String localeId = abcd1234abcd1234abcd1234abcd1234; // String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String sort = "updated_at"; // String | Sort by field. Can be one of: name, created_at, updated_at.
+    String order = "desc"; // String | Order direction. Can be one of: asc, desc.
+    String q = "mykey* translated:true"; // String | Specify a query to do broad search for keys by name (including wildcards).<br><br> The following qualifiers are also supported in the search term:<br> <ul>   <li><code>ids:key_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>name:key_name</code> for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes</li>   <li><code>tags:tag_name</code> to filter for keys with certain tags</li>   <li><code>translated:{true|false}</code> for translation status (also requires <code>locale_id</code> to be specified)</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li>   <li><code>unmentioned_in_upload:upload_id</code> to filter keys unmentioned within upload</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. 
+    String localeId = "abcd1234abcd1234abcd1234abcd1234"; // String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
     try {
       List<TranslationKey> result = apiInstance.keysList(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId);
       System.out.println(result);

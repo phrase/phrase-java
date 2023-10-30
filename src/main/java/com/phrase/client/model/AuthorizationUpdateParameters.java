@@ -13,23 +13,23 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * AuthorizationUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class AuthorizationUpdateParameters {
   public static final String SERIALIZED_NAME_NOTE = "note";
   @SerializedName(SERIALIZED_NAME_NOTE)
@@ -37,12 +37,14 @@ public class AuthorizationUpdateParameters {
 
   public static final String SERIALIZED_NAME_SCOPES = "scopes";
   @SerializedName(SERIALIZED_NAME_SCOPES)
-  private List<String> scopes = null;
+  private List<String> scopes;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
   private OffsetDateTime expiresAt;
 
+  public AuthorizationUpdateParameters() {
+  }
 
   public AuthorizationUpdateParameters note(String note) {
     
@@ -55,7 +57,6 @@ public class AuthorizationUpdateParameters {
    * @return note
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My Deploy Script", value = "A note to help you remember what the access is used for.")
 
   public String getNote() {
     return note;
@@ -86,7 +87,6 @@ public class AuthorizationUpdateParameters {
    * @return scopes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"read\",\"write\"]", value = "A list of scopes that the access can be used for.")
 
   public List<String> getScopes() {
     return scopes;
@@ -109,7 +109,6 @@ public class AuthorizationUpdateParameters {
    * @return expiresAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2015-03-30T09:52:53Z", value = "Expiration date for the authorization token. Null means no expiration date (default).")
 
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
@@ -120,9 +119,8 @@ public class AuthorizationUpdateParameters {
     this.expiresAt = expiresAt;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -140,7 +138,6 @@ public class AuthorizationUpdateParameters {
     return Objects.hash(note, scopes, expiresAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -156,7 +153,7 @@ public class AuthorizationUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

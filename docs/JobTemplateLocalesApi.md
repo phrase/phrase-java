@@ -50,7 +50,7 @@ public class Example {
     String jobTemplateId = "jobTemplateId_example"; // String | Job Template ID
     String jobTemplateLocaleId = "jobTemplateLocaleId_example"; // String | Job Template Locale ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.jobTemplateLocaleDelete(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -134,7 +134,7 @@ public class Example {
     String jobTemplateId = "jobTemplateId_example"; // String | Job Template ID
     String jobTemplateLocaleId = "jobTemplateLocaleId_example"; // String | Job Template Locale ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       JobTemplateLocales result = apiInstance.jobTemplateLocaleShow(projectId, jobTemplateId, jobTemplateLocaleId, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -388,7 +388,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<JobTemplateLocales> result = apiInstance.jobTemplateLocalesList(projectId, jobTemplateId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);

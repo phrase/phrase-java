@@ -13,28 +13,28 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
-import com.phrase.client.model.MemberProjectDetailProjectRoles;
+import com.phrase.client.model.MemberProjectDetailProjectRolesInner;
 import com.phrase.client.model.ProjectShort;
 import com.phrase.client.model.Space;
 import com.phrase.client.model.TeamShort;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Invitation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class Invitation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -54,19 +54,19 @@ public class Invitation {
 
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
-  private List<ProjectShort> projects = null;
+  private List<ProjectShort> projects;
 
   public static final String SERIALIZED_NAME_LOCALES = "locales";
   @SerializedName(SERIALIZED_NAME_LOCALES)
-  private List<LocalePreview> locales = null;
+  private List<LocalePreview> locales;
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
-  private List<TeamShort> teams = null;
+  private List<TeamShort> teams;
 
   public static final String SERIALIZED_NAME_DEFAULT_LOCALE_CODES = "default_locale_codes";
   @SerializedName(SERIALIZED_NAME_DEFAULT_LOCALE_CODES)
-  private List<String> defaultLocaleCodes = null;
+  private List<String> defaultLocaleCodes;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
@@ -74,7 +74,7 @@ public class Invitation {
 
   public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
   @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
-  private List<String> localeIds = null;
+  private List<String> localeIds;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -90,12 +90,14 @@ public class Invitation {
 
   public static final String SERIALIZED_NAME_SPACES = "spaces";
   @SerializedName(SERIALIZED_NAME_SPACES)
-  private List<Space> spaces = null;
+  private List<Space> spaces;
 
   public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
   @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
-  private List<MemberProjectDetailProjectRoles> projectRole = null;
+  private List<MemberProjectDetailProjectRolesInner> projectRole;
 
+  public Invitation() {
+  }
 
   public Invitation id(String id) {
     
@@ -108,7 +110,6 @@ public class Invitation {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -131,7 +132,6 @@ public class Invitation {
    * @return email
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getEmail() {
     return email;
@@ -154,7 +154,6 @@ public class Invitation {
    * @return role
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getRole() {
     return role;
@@ -177,7 +176,6 @@ public class Invitation {
    * @return state
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getState() {
     return state;
@@ -208,7 +206,6 @@ public class Invitation {
    * @return projects
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<ProjectShort> getProjects() {
     return projects;
@@ -239,7 +236,6 @@ public class Invitation {
    * @return locales
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<LocalePreview> getLocales() {
     return locales;
@@ -270,7 +266,6 @@ public class Invitation {
    * @return teams
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<TeamShort> getTeams() {
     return teams;
@@ -301,7 +296,6 @@ public class Invitation {
    * @return defaultLocaleCodes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getDefaultLocaleCodes() {
     return defaultLocaleCodes;
@@ -324,7 +318,6 @@ public class Invitation {
    * @return permissions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Object getPermissions() {
     return permissions;
@@ -355,7 +348,6 @@ public class Invitation {
    * @return localeIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getLocaleIds() {
     return localeIds;
@@ -378,7 +370,6 @@ public class Invitation {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -401,7 +392,6 @@ public class Invitation {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -424,7 +414,6 @@ public class Invitation {
    * @return acceptedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getAcceptedAt() {
     return acceptedAt;
@@ -455,7 +444,6 @@ public class Invitation {
    * @return spaces
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<Space> getSpaces() {
     return spaces;
@@ -467,13 +455,13 @@ public class Invitation {
   }
 
 
-  public Invitation projectRole(List<MemberProjectDetailProjectRoles> projectRole) {
+  public Invitation projectRole(List<MemberProjectDetailProjectRolesInner> projectRole) {
     
     this.projectRole = projectRole;
     return this;
   }
 
-  public Invitation addProjectRoleItem(MemberProjectDetailProjectRoles projectRoleItem) {
+  public Invitation addProjectRoleItem(MemberProjectDetailProjectRolesInner projectRoleItem) {
     if (this.projectRole == null) {
       this.projectRole = new ArrayList<>();
     }
@@ -486,20 +474,18 @@ public class Invitation {
    * @return projectRole
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
-  public List<MemberProjectDetailProjectRoles> getProjectRole() {
+  public List<MemberProjectDetailProjectRolesInner> getProjectRole() {
     return projectRole;
   }
 
 
-  public void setProjectRole(List<MemberProjectDetailProjectRoles> projectRole) {
+  public void setProjectRole(List<MemberProjectDetailProjectRolesInner> projectRole) {
     this.projectRole = projectRole;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -529,7 +515,6 @@ public class Invitation {
     return Objects.hash(id, email, role, state, projects, locales, teams, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, projectRole);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -557,7 +542,7 @@ public class Invitation {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

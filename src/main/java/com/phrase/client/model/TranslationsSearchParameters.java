@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * TranslationsSearchParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TranslationsSearchParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -44,6 +44,8 @@ public class TranslationsSearchParameters {
   @SerializedName(SERIALIZED_NAME_Q)
   private String q;
 
+  public TranslationsSearchParameters() {
+  }
 
   public TranslationsSearchParameters branch(String branch) {
     
@@ -56,7 +58,6 @@ public class TranslationsSearchParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "specify the branch to use")
 
   public String getBranch() {
     return branch;
@@ -79,7 +80,6 @@ public class TranslationsSearchParameters {
    * @return sort
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "updated_at", value = "Sort criteria. Can be one of: key_name, created_at, updated_at.")
 
   public String getSort() {
     return sort;
@@ -102,7 +102,6 @@ public class TranslationsSearchParameters {
    * @return order
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "desc", value = "Order direction. Can be one of: asc, desc.")
 
   public String getOrder() {
     return order;
@@ -125,7 +124,6 @@ public class TranslationsSearchParameters {
    * @return q
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "PhraseApp*%20unverified:true%20excluded:true%20tags:feature,center", value = "Specify a query to find translations by content (including wildcards).<br><br> <i>Note: Search is limited to 10000 results and may not include recently updated data (depending on the project size).</i><br> The following qualifiers are supported in the query:<br> <ul>   <li><code>id:translation_id,...</code> for queries on a comma-separated list of ids</li>   <li><code>tags:XYZ</code> for tags on the translation</li>   <li><code>unverified:{true|false}</code> for verification status</li>   <li><code>excluded:{true|false}</code> for exclusion status</li>   <li><code>updated_at:{>=|<=}2013-02-21T00:00:00Z</code> for date range queries</li> </ul> Find more examples <a href=\"#overview--usage-examples\">here</a>. ")
 
   public String getQ() {
     return q;
@@ -136,9 +134,8 @@ public class TranslationsSearchParameters {
     this.q = q;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -157,7 +154,6 @@ public class TranslationsSearchParameters {
     return Objects.hash(branch, sort, order, q);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,7 +170,7 @@ public class TranslationsSearchParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

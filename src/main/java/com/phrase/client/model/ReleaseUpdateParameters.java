@@ -13,22 +13,22 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ReleaseUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class ReleaseUpdateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -36,12 +36,14 @@ public class ReleaseUpdateParameters {
 
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
-  private List<String> platforms = null;
+  private List<String> platforms;
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
   private String branch;
 
+  public ReleaseUpdateParameters() {
+  }
 
   public ReleaseUpdateParameters description(String description) {
     
@@ -54,7 +56,6 @@ public class ReleaseUpdateParameters {
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My first Release", value = "Description of the release")
 
   public String getDescription() {
     return description;
@@ -85,7 +86,6 @@ public class ReleaseUpdateParameters {
    * @return platforms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[\"android\",\"ios\"]", value = "List of platforms the release should support.")
 
   public List<String> getPlatforms() {
     return platforms;
@@ -108,7 +108,6 @@ public class ReleaseUpdateParameters {
    * @return branch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "my-feature-branch", value = "Branch used for release")
 
   public String getBranch() {
     return branch;
@@ -119,9 +118,8 @@ public class ReleaseUpdateParameters {
     this.branch = branch;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -139,7 +137,6 @@ public class ReleaseUpdateParameters {
     return Objects.hash(description, platforms, branch);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -155,7 +152,7 @@ public class ReleaseUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

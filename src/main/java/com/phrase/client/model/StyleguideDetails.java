@@ -13,23 +13,21 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Styleguide;
-import com.phrase.client.model.StyleguideDetails1;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * StyleguideDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class StyleguideDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -99,6 +97,8 @@ public class StyleguideDetails {
   @SerializedName(SERIALIZED_NAME_SAMPLES)
   private String samples;
 
+  public StyleguideDetails() {
+  }
 
   public StyleguideDetails id(String id) {
     
@@ -111,7 +111,6 @@ public class StyleguideDetails {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -134,7 +133,6 @@ public class StyleguideDetails {
    * @return title
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getTitle() {
     return title;
@@ -157,7 +155,6 @@ public class StyleguideDetails {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -180,7 +177,6 @@ public class StyleguideDetails {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -203,7 +199,6 @@ public class StyleguideDetails {
    * @return publicUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getPublicUrl() {
     return publicUrl;
@@ -226,7 +221,6 @@ public class StyleguideDetails {
    * @return audience
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getAudience() {
     return audience;
@@ -249,7 +243,6 @@ public class StyleguideDetails {
    * @return targetAudience
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getTargetAudience() {
     return targetAudience;
@@ -272,7 +265,6 @@ public class StyleguideDetails {
    * @return grammaticalPerson
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getGrammaticalPerson() {
     return grammaticalPerson;
@@ -295,7 +287,6 @@ public class StyleguideDetails {
    * @return vocabularyType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getVocabularyType() {
     return vocabularyType;
@@ -318,7 +309,6 @@ public class StyleguideDetails {
    * @return business
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getBusiness() {
     return business;
@@ -341,7 +331,6 @@ public class StyleguideDetails {
    * @return companyBranding
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getCompanyBranding() {
     return companyBranding;
@@ -364,7 +353,6 @@ public class StyleguideDetails {
    * @return formatting
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getFormatting() {
     return formatting;
@@ -387,7 +375,6 @@ public class StyleguideDetails {
    * @return glossaryTerms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getGlossaryTerms() {
     return glossaryTerms;
@@ -410,7 +397,6 @@ public class StyleguideDetails {
    * @return grammarConsistency
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getGrammarConsistency() {
     return grammarConsistency;
@@ -433,7 +419,6 @@ public class StyleguideDetails {
    * @return literalTranslation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getLiteralTranslation() {
     return literalTranslation;
@@ -456,7 +441,6 @@ public class StyleguideDetails {
    * @return overallTone
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getOverallTone() {
     return overallTone;
@@ -479,7 +463,6 @@ public class StyleguideDetails {
    * @return samples
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getSamples() {
     return samples;
@@ -490,9 +473,8 @@ public class StyleguideDetails {
     this.samples = samples;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -524,7 +506,6 @@ public class StyleguideDetails {
     return Objects.hash(id, title, createdAt, updatedAt, publicUrl, audience, targetAudience, grammaticalPerson, vocabularyType, business, companyBranding, formatting, glossaryTerms, grammarConsistency, literalTranslation, overallTone, samples);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -554,7 +535,7 @@ public class StyleguideDetails {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

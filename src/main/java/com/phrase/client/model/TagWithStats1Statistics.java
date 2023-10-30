@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * TagWithStats1Statistics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class TagWithStats1Statistics {
   public static final String SERIALIZED_NAME_KEYS_TOTAL_COUNT = "keys_total_count";
   @SerializedName(SERIALIZED_NAME_KEYS_TOTAL_COUNT)
@@ -44,6 +44,8 @@ public class TagWithStats1Statistics {
   @SerializedName(SERIALIZED_NAME_KEYS_UNTRANSLATED_COUNT)
   private Integer keysUntranslatedCount;
 
+  public TagWithStats1Statistics() {
+  }
 
   public TagWithStats1Statistics keysTotalCount(Integer keysTotalCount) {
     
@@ -56,7 +58,6 @@ public class TagWithStats1Statistics {
    * @return keysTotalCount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getKeysTotalCount() {
     return keysTotalCount;
@@ -79,7 +80,6 @@ public class TagWithStats1Statistics {
    * @return translationsCompletedCount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationsCompletedCount() {
     return translationsCompletedCount;
@@ -102,7 +102,6 @@ public class TagWithStats1Statistics {
    * @return translationsUnverifiedCount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getTranslationsUnverifiedCount() {
     return translationsUnverifiedCount;
@@ -125,7 +124,6 @@ public class TagWithStats1Statistics {
    * @return keysUntranslatedCount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public Integer getKeysUntranslatedCount() {
     return keysUntranslatedCount;
@@ -136,9 +134,8 @@ public class TagWithStats1Statistics {
     this.keysUntranslatedCount = keysUntranslatedCount;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -157,7 +154,6 @@ public class TagWithStats1Statistics {
     return Objects.hash(keysTotalCount, translationsCompletedCount, translationsUnverifiedCount, keysUntranslatedCount);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -174,7 +170,7 @@ public class TagWithStats1Statistics {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

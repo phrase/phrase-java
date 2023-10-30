@@ -54,10 +54,10 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = my-feature-branch; // String | specify the branch to use
-    String query = Some comment content; // String | Search query for comment messages
-    List<String> filters = ["read","unread"]; // List<String> | Specify the filter for the comments
-    String order = desc; // String | Order direction. Can be one of: asc, desc.
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String query = "Some comment content"; // String | Search query for comment messages
+    List<String> filters = Arrays.asList(); // List<String> | Specify the filter for the comments
+    String order = "desc"; // String | Order direction. Can be one of: asc, desc.
     try {
       List<Comment> result = apiInstance.repliesList(projectId, keyId, commentId, repliesListParameters, xPhraseAppOTP, page, perPage, branch, query, filters, order);
       System.out.println(result);
@@ -149,8 +149,8 @@ public class Example {
     String keyId = "keyId_example"; // String | Translation Key ID
     String commentId = "commentId_example"; // String | Comment ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
-    String message = some message...; // String | specify the message for the comment
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String message = "some message..."; // String | specify the message for the comment
     try {
       Comment result = apiInstance.replyCreate(projectId, keyId, commentId, xPhraseAppOTP, branch, message);
       System.out.println(result);
@@ -238,7 +238,7 @@ public class Example {
     String commentId = "commentId_example"; // String | Comment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.replyDelete(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -325,7 +325,7 @@ public class Example {
     String commentId = "commentId_example"; // String | Comment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.replyMarkAsRead(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -412,7 +412,7 @@ public class Example {
     String commentId = "commentId_example"; // String | Comment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.replyMarkAsUnread(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -499,7 +499,7 @@ public class Example {
     String commentId = "commentId_example"; // String | Comment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       Comment result = apiInstance.replyShow(projectId, keyId, commentId, id, xPhraseAppOTP, branch);
       System.out.println(result);

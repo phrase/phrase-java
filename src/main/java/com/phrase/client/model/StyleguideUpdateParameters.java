@@ -13,20 +13,20 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * StyleguideUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class StyleguideUpdateParameters {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -80,6 +80,8 @@ public class StyleguideUpdateParameters {
   @SerializedName(SERIALIZED_NAME_SAMPLES)
   private String samples;
 
+  public StyleguideUpdateParameters() {
+  }
 
   public StyleguideUpdateParameters title(String title) {
     
@@ -92,7 +94,6 @@ public class StyleguideUpdateParameters {
    * @return title
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Web application style guide", value = "Style guide title")
 
   public String getTitle() {
     return title;
@@ -115,7 +116,6 @@ public class StyleguideUpdateParameters {
    * @return audience
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "customer-facing", value = "Audience description")
 
   public String getAudience() {
     return audience;
@@ -138,7 +138,6 @@ public class StyleguideUpdateParameters {
    * @return targetAudience
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "teenager", value = "Can be one of: not_specified, children, teenager, young_adults, adults, old_adults.")
 
   public String getTargetAudience() {
     return targetAudience;
@@ -161,7 +160,6 @@ public class StyleguideUpdateParameters {
    * @return grammaticalPerson
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "first_person_singular", value = "Can be one of: not_specified, first_person_singular, second_person_singular, third_person_singular_masculine, third_person_singular_feminine, third_person_singular_neuter, first_person_plural, second_person_plural, third_person_plural.")
 
   public String getGrammaticalPerson() {
     return grammaticalPerson;
@@ -184,7 +182,6 @@ public class StyleguideUpdateParameters {
    * @return vocabularyType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "technical", value = "Can be one of: not_specified, popular, technical, fictional.")
 
   public String getVocabularyType() {
     return vocabularyType;
@@ -207,7 +204,6 @@ public class StyleguideUpdateParameters {
    * @return business
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "We are a travel site that helps customers find the best hotels and flights.", value = "Description of the business")
 
   public String getBusiness() {
     return business;
@@ -230,7 +226,6 @@ public class StyleguideUpdateParameters {
    * @return companyBranding
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "ACME Inc. should never be translated.", value = "Company branding to remain consistent.")
 
   public String getCompanyBranding() {
     return companyBranding;
@@ -253,7 +248,6 @@ public class StyleguideUpdateParameters {
    * @return formatting
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Never use capital letters", value = "Formatting requirements and character limitations.")
 
   public String getFormatting() {
     return formatting;
@@ -276,7 +270,6 @@ public class StyleguideUpdateParameters {
    * @return glossaryTerms
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Apartment, cabin, loft", value = "List of terms and/or phrases that need to be translated consistently.")
 
   public String getGlossaryTerms() {
     return glossaryTerms;
@@ -299,7 +292,6 @@ public class StyleguideUpdateParameters {
    * @return grammarConsistency
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Formal or informal pronouns, consistent conjugation, grammatical gender")
 
   public String getGrammarConsistency() {
     return grammarConsistency;
@@ -322,7 +314,6 @@ public class StyleguideUpdateParameters {
    * @return literalTranslation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Neutral", value = "Can be one of: Cultural/Conversational, Literal, Neutral.")
 
   public String getLiteralTranslation() {
     return literalTranslation;
@@ -345,7 +336,6 @@ public class StyleguideUpdateParameters {
    * @return overallTone
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Tone should be fun and light", value = "Tone requirement descriptions")
 
   public String getOverallTone() {
     return overallTone;
@@ -368,7 +358,6 @@ public class StyleguideUpdateParameters {
    * @return samples
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "http://www.myexample.com/my/document/path/to/samples.pdf", value = "Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency.")
 
   public String getSamples() {
     return samples;
@@ -379,9 +368,8 @@ public class StyleguideUpdateParameters {
     this.samples = samples;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -409,7 +397,6 @@ public class StyleguideUpdateParameters {
     return Objects.hash(title, audience, targetAudience, grammaticalPerson, vocabularyType, business, companyBranding, formatting, glossaryTerms, grammarConsistency, literalTranslation, overallTone, samples);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -435,7 +422,7 @@ public class StyleguideUpdateParameters {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

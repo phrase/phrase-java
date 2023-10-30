@@ -13,25 +13,23 @@
 package com.phrase.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.Authorization;
-import com.phrase.client.model.AuthorizationWithToken1;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * AuthorizationWithToken
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T13:52:55.228813Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T14:56:43.532733Z[Etc/UTC]")
 public class AuthorizationWithToken {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -51,7 +49,7 @@ public class AuthorizationWithToken {
 
   public static final String SERIALIZED_NAME_SCOPES = "scopes";
   @SerializedName(SERIALIZED_NAME_SCOPES)
-  private List<String> scopes = null;
+  private List<String> scopes;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
@@ -69,6 +67,8 @@ public class AuthorizationWithToken {
   @SerializedName(SERIALIZED_NAME_TOKEN)
   private String token;
 
+  public AuthorizationWithToken() {
+  }
 
   public AuthorizationWithToken id(String id) {
     
@@ -81,7 +81,6 @@ public class AuthorizationWithToken {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getId() {
     return id;
@@ -104,7 +103,6 @@ public class AuthorizationWithToken {
    * @return note
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getNote() {
     return note;
@@ -127,7 +125,6 @@ public class AuthorizationWithToken {
    * @return tokenLastEight
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getTokenLastEight() {
     return tokenLastEight;
@@ -150,7 +147,6 @@ public class AuthorizationWithToken {
    * @return hashedToken
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getHashedToken() {
     return hashedToken;
@@ -181,7 +177,6 @@ public class AuthorizationWithToken {
    * @return scopes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public List<String> getScopes() {
     return scopes;
@@ -204,7 +199,6 @@ public class AuthorizationWithToken {
    * @return expiresAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
@@ -227,7 +221,6 @@ public class AuthorizationWithToken {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -250,7 +243,6 @@ public class AuthorizationWithToken {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -273,7 +265,6 @@ public class AuthorizationWithToken {
    * @return token
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
 
   public String getToken() {
     return token;
@@ -284,9 +275,8 @@ public class AuthorizationWithToken {
     this.token = token;
   }
 
-
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -310,7 +300,6 @@ public class AuthorizationWithToken {
     return Objects.hash(id, note, tokenLastEight, hashedToken, scopes, expiresAt, createdAt, updatedAt, token);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -332,7 +321,7 @@ public class AuthorizationWithToken {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

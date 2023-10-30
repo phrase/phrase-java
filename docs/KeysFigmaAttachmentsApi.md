@@ -47,7 +47,7 @@ public class Example {
     String figmaAttachmentId = "figmaAttachmentId_example"; // String | Figma attachment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.figmaAttachmentAttachToKey(projectId, figmaAttachmentId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -131,7 +131,7 @@ public class Example {
     String figmaAttachmentId = "figmaAttachmentId_example"; // String | Figma attachment ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.figmaAttachmentDetachFromKey(projectId, figmaAttachmentId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {

@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.InlineResponse422;
 import com.phrase.client.model.Invitation;
+import com.phrase.client.model.InvitationCreate422Response;
 import com.phrase.client.model.InvitationCreateParameters;
 import com.phrase.client.model.InvitationUpdateParameters;
 import com.phrase.client.model.InvitationUpdateSettingsParameters;

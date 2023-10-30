@@ -215,7 +215,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | Locale ID or locale name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       apiInstance.localeDelete(projectId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -299,10 +299,10 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String ifModifiedSince = "ifModifiedSince_example"; // String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
     String ifNoneMatch = "ifNoneMatch_example"; // String | ETag condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
-    String fileFormat = yml; // String | File format name. See the <a href=\"https://support.phrase.com/hc/en-us/sections/6111343326364\">format guide</a> for all supported file formats.
-    String tags = feature1,feature2; // String | Limit results to keys tagged with a list of comma separated tag names.
-    String tag = feature; // String | Limit download to tagged keys. This parameter is deprecated. Please use the \"tags\" parameter instead
+    String branch = "my-feature-branch"; // String | specify the branch to use
+    String fileFormat = "yml"; // String | File format name. See the <a href=\"https://support.phrase.com/hc/en-us/sections/6111343326364\">format guide</a> for all supported file formats.
+    String tags = "feature1,feature2"; // String | Limit results to keys tagged with a list of comma separated tag names.
+    String tag = "feature"; // String | Limit download to tagged keys. This parameter is deprecated. Please use the \"tags\" parameter instead
     Boolean includeEmptyTranslations = true; // Boolean | Indicates whether keys without translations should be included in the output as well.
     Boolean excludeEmptyZeroForms = true; // Boolean | Indicates whether zero forms should be included when empty in pluralized keys.
     Boolean includeTranslatedKeys = true; // Boolean | Include translated keys in the locale file. Use in combination with include_empty_translations to obtain only untranslated keys.
@@ -414,7 +414,7 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | Locale ID or locale name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       LocaleDetails result = apiInstance.localeShow(projectId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -582,7 +582,7 @@ public class Example {
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String sortBy = "sortBy_example"; // String | Sort locales. Valid options are \"name_asc\", \"name_desc\", \"default_asc\", \"default_desc\".
-    String branch = my-feature-branch; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | specify the branch to use
     try {
       List<Locale> result = apiInstance.localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch);
       System.out.println(result);
