@@ -11176,7 +11176,7 @@ paths:
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase gitlab_syncs list \
+          phrase git_lab_sync list \
           --account_id abcd1234 \
           --access_token <token>
       x-cli-version: "2.5"
@@ -11262,7 +11262,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase gitlab_syncs delete \
+          phrase git_lab_sync delete \
           --id <id> \
           --account_id abcd1234 \
           --access_token <token>
@@ -11349,7 +11349,7 @@ paths:
             -u USERNAME_OR_ACCESS_TOKEN
       - lang: CLI v2
         source: |-
-          phrase gitlab_syncs show \
+          phrase git_lab_sync show \
           --id <id> \
           --account_id abcd1234 \
           --access_token <token>
@@ -11466,7 +11466,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase gitlab_syncs update \
+          phrase git_lab_sync update \
           --id <id> \
           --data '{"account_id":"abcd1234", "phrase_project_code":"3456abcd", "gitlab_project_id":"12345", "gitlab_branch_name":"feature-development"}' \
           --access_token <token>
@@ -11560,7 +11560,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase gitlab_syncs import \
+          phrase git_lab_sync import \
           --gitlab_sync_id <gitlab_sync_id> \
           --data '{"account_id":"abcd1234"}' \
           --access_token <token>
@@ -11651,7 +11651,7 @@ paths:
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
-          phrase gitlab_syncs export \
+          phrase git_lab_sync export \
           --gitlab_sync_id <gitlab_sync_id> \
           --data '{"account_id":"abcd1234"}' \
           --access_token <token>
