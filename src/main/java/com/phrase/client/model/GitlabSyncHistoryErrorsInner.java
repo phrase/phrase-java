@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GitlabSyncHistoryErrorsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:03:27.896510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:03:37.144228Z[Etc/UTC]")
 public class GitlabSyncHistoryErrorsInner {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)

@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * SearchInAccountParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:03:27.896510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:03:37.144228Z[Etc/UTC]")
 public class SearchInAccountParameters {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
