@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ScreenshotMarkerUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:02:55.933368Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:03:27.896510Z[Etc/UTC]")
 public class ScreenshotMarkerUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
