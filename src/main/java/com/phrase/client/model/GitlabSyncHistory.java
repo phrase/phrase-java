@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GitlabSyncHistory
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:04:07.063922Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-03T15:05:18.320133Z[Etc/UTC]")
 public class GitlabSyncHistory {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
