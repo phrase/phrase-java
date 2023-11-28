@@ -133,6 +133,7 @@ docs/LocaleCreateParameters.md
 docs/LocaleDetails.md
 docs/LocalePreview.md
 docs/LocalePreview1.md
+docs/LocaleReport.md
 docs/LocaleStatistics.md
 docs/LocaleTeamPreview.md
 docs/LocaleUpdateParameters.md
@@ -165,6 +166,7 @@ docs/Project.md
 docs/ProjectCreateParameters.md
 docs/ProjectDetails.md
 docs/ProjectLocales.md
+docs/ProjectReport.md
 docs/ProjectShort.md
 docs/ProjectUpdateParameters.md
 docs/ProjectsApi.md
@@ -174,6 +176,7 @@ docs/ReleasePreview.md
 docs/ReleaseUpdateParameters.md
 docs/ReleasesApi.md
 docs/RepliesListParameters.md
+docs/ReportsApi.md
 docs/Screenshot.md
 docs/ScreenshotMarker.md
 docs/ScreenshotMarkerCreateParameters.md
@@ -306,6 +309,7 @@ src/main/java/com/phrase/client/api/OrganizationJobTemplateLocalesApi.java
 src/main/java/com/phrase/client/api/OrganizationJobTemplatesApi.java
 src/main/java/com/phrase/client/api/ProjectsApi.java
 src/main/java/com/phrase/client/api/ReleasesApi.java
+src/main/java/com/phrase/client/api/ReportsApi.java
 src/main/java/com/phrase/client/api/ScreenshotMarkersApi.java
 src/main/java/com/phrase/client/api/ScreenshotsApi.java
 src/main/java/com/phrase/client/api/SearchApi.java
@@ -426,6 +430,7 @@ src/main/java/com/phrase/client/model/LocaleCreateParameters.java
 src/main/java/com/phrase/client/model/LocaleDetails.java
 src/main/java/com/phrase/client/model/LocalePreview.java
 src/main/java/com/phrase/client/model/LocalePreview1.java
+src/main/java/com/phrase/client/model/LocaleReport.java
 src/main/java/com/phrase/client/model/LocaleStatistics.java
 src/main/java/com/phrase/client/model/LocaleTeamPreview.java
 src/main/java/com/phrase/client/model/LocaleUpdateParameters.java
@@ -451,6 +456,7 @@ src/main/java/com/phrase/client/model/Project.java
 src/main/java/com/phrase/client/model/ProjectCreateParameters.java
 src/main/java/com/phrase/client/model/ProjectDetails.java
 src/main/java/com/phrase/client/model/ProjectLocales.java
+src/main/java/com/phrase/client/model/ProjectReport.java
 src/main/java/com/phrase/client/model/ProjectShort.java
 src/main/java/com/phrase/client/model/ProjectUpdateParameters.java
 src/main/java/com/phrase/client/model/Release.java
@@ -553,6 +559,7 @@ src/test/java/com/phrase/client/api/OrganizationJobTemplateLocalesApiTest.java
 src/test/java/com/phrase/client/api/OrganizationJobTemplatesApiTest.java
 src/test/java/com/phrase/client/api/ProjectsApiTest.java
 src/test/java/com/phrase/client/api/ReleasesApiTest.java
+src/test/java/com/phrase/client/api/ReportsApiTest.java
 src/test/java/com/phrase/client/api/ScreenshotMarkersApiTest.java
 src/test/java/com/phrase/client/api/ScreenshotsApiTest.java
 src/test/java/com/phrase/client/api/SearchApiTest.java
@@ -666,6 +673,7 @@ src/test/java/com/phrase/client/model/LocaleCreateParametersTest.java
 src/test/java/com/phrase/client/model/LocaleDetailsTest.java
 src/test/java/com/phrase/client/model/LocalePreview1Test.java
 src/test/java/com/phrase/client/model/LocalePreviewTest.java
+src/test/java/com/phrase/client/model/LocaleReportTest.java
 src/test/java/com/phrase/client/model/LocaleStatisticsTest.java
 src/test/java/com/phrase/client/model/LocaleTeamPreviewTest.java
 src/test/java/com/phrase/client/model/LocaleTest.java
@@ -691,6 +699,7 @@ src/test/java/com/phrase/client/model/OrganizationJobTemplateUpdateParametersTes
 src/test/java/com/phrase/client/model/ProjectCreateParametersTest.java
 src/test/java/com/phrase/client/model/ProjectDetailsTest.java
 src/test/java/com/phrase/client/model/ProjectLocalesTest.java
+src/test/java/com/phrase/client/model/ProjectReportTest.java
 src/test/java/com/phrase/client/model/ProjectShortTest.java
 src/test/java/com/phrase/client/model/ProjectTest.java
 src/test/java/com/phrase/client/model/ProjectUpdateParametersTest.java

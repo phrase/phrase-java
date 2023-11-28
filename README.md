@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-11-28T08:47:49.181415Z[Etc/UTC]
+- Build date: 2023-11-28T13:36:06.529719Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -289,6 +289,8 @@ Class | Method | HTTP request | Description
 *ReleasesApi* | [**releaseShow**](docs/ReleasesApi.md#releaseShow) | **GET** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Get a single release
 *ReleasesApi* | [**releaseUpdate**](docs/ReleasesApi.md#releaseUpdate) | **PATCH** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Update a release
 *ReleasesApi* | [**releasesList**](docs/ReleasesApi.md#releasesList) | **GET** /accounts/{account_id}/distributions/{distribution_id}/releases | List releases
+*ReportsApi* | [**reportLocalesList**](docs/ReportsApi.md#reportLocalesList) | **GET** /projects/{project_id}/report/locales | List Locale Reports
+*ReportsApi* | [**reportShow**](docs/ReportsApi.md#reportShow) | **GET** /projects/{project_id}/report | Get Project Report
 *ScreenshotMarkersApi* | [**screenshotMarkerCreate**](docs/ScreenshotMarkersApi.md#screenshotMarkerCreate) | **POST** /projects/{project_id}/screenshots/{screenshot_id}/markers | Create a screenshot marker
 *ScreenshotMarkersApi* | [**screenshotMarkerDelete**](docs/ScreenshotMarkersApi.md#screenshotMarkerDelete) | **DELETE** /projects/{project_id}/screenshots/{screenshot_id}/markers | Delete a screenshot marker
 *ScreenshotMarkersApi* | [**screenshotMarkerShow**](docs/ScreenshotMarkersApi.md#screenshotMarkerShow) | **GET** /projects/{project_id}/screenshots/{screenshot_id}/markers/{id} | Get a single screenshot marker
@@ -470,6 +472,7 @@ Class | Method | HTTP request | Description
  - [LocaleDetails](docs/LocaleDetails.md)
  - [LocalePreview](docs/LocalePreview.md)
  - [LocalePreview1](docs/LocalePreview1.md)
+ - [LocaleReport](docs/LocaleReport.md)
  - [LocaleStatistics](docs/LocaleStatistics.md)
  - [LocaleTeamPreview](docs/LocaleTeamPreview.md)
  - [LocaleUpdateParameters](docs/LocaleUpdateParameters.md)
@@ -495,6 +498,7 @@ Class | Method | HTTP request | Description
  - [ProjectCreateParameters](docs/ProjectCreateParameters.md)
  - [ProjectDetails](docs/ProjectDetails.md)
  - [ProjectLocales](docs/ProjectLocales.md)
+ - [ProjectReport](docs/ProjectReport.md)
  - [ProjectShort](docs/ProjectShort.md)
  - [ProjectUpdateParameters](docs/ProjectUpdateParameters.md)
  - [Release](docs/Release.md)
