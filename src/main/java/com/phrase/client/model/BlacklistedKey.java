@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BlacklistedKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-12T10:03:58.674754Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-12T10:07:17.897597Z[Etc/UTC]")
 public class BlacklistedKey {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
