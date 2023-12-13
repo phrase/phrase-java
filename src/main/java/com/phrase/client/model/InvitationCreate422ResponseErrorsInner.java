@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * InvitationCreate422ResponseErrorsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T10:30:21.875997Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:14:22.871694Z[Etc/UTC]")
 public class InvitationCreate422ResponseErrorsInner {
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
