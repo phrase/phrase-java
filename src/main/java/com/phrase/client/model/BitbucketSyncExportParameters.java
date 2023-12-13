@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BitbucketSyncExportParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T13:32:23.965098Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T13:33:29.303309Z[Etc/UTC]")
 public class BitbucketSyncExportParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
