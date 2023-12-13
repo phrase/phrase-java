@@ -1,6 +1,6 @@
 
 
-# InvitationCreate422ResponseErrorsInner
+# CustomMetadataPropertyCreate422ResponseErrorsInner
 
 ## Properties
 

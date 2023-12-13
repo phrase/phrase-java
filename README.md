@@ -4,7 +4,7 @@ Phrase Strings API Reference
 
 - API version: 2.0.0
 
-- Build date: 2023-12-13T11:14:22.871694Z[Etc/UTC]
+- Build date: 2023-12-13T11:27:10.938287Z[Etc/UTC]
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -153,6 +153,11 @@ Class | Method | HTTP request | Description
 *CommentsApi* | [**commentShow**](docs/CommentsApi.md#commentShow) | **GET** /projects/{project_id}/keys/{key_id}/comments/{id} | Get a single comment
 *CommentsApi* | [**commentUpdate**](docs/CommentsApi.md#commentUpdate) | **PATCH** /projects/{project_id}/keys/{key_id}/comments/{id} | Update a comment
 *CommentsApi* | [**commentsList**](docs/CommentsApi.md#commentsList) | **GET** /projects/{project_id}/keys/{key_id}/comments | List comments
+*CustomMetadataApi* | [**customMetadataPropertiesDelete**](docs/CustomMetadataApi.md#customMetadataPropertiesDelete) | **DELETE** /accounts/{account_id}/custom_metadata/properties/{id} | Destroy property
+*CustomMetadataApi* | [**customMetadataPropertiesList**](docs/CustomMetadataApi.md#customMetadataPropertiesList) | **GET** /accounts/{account_id}/custom_metadata/properties | List properties
+*CustomMetadataApi* | [**customMetadataPropertyCreate**](docs/CustomMetadataApi.md#customMetadataPropertyCreate) | **POST** /accounts/{account_id}/custom_metadata/properties | Create a property
+*CustomMetadataApi* | [**customMetadataPropertyShow**](docs/CustomMetadataApi.md#customMetadataPropertyShow) | **GET** /accounts/{account_id}/custom_metadata/properties/{id} | Get a single property
+*CustomMetadataApi* | [**customMetadataPropertyUpdate**](docs/CustomMetadataApi.md#customMetadataPropertyUpdate) | **PATCH** /accounts/{account_id}/custom_metadata/properties/{id} | Update a property
 *DistributionsApi* | [**distributionCreate**](docs/DistributionsApi.md#distributionCreate) | **POST** /accounts/{account_id}/distributions | Create a distribution
 *DistributionsApi* | [**distributionDelete**](docs/DistributionsApi.md#distributionDelete) | **DELETE** /accounts/{account_id}/distributions/{id} | Delete a distribution
 *DistributionsApi* | [**distributionShow**](docs/DistributionsApi.md#distributionShow) | **GET** /accounts/{account_id}/distributions/{id} | Get a single distribution
@@ -399,6 +404,10 @@ Class | Method | HTTP request | Description
  - [CommentUpdateParameters](docs/CommentUpdateParameters.md)
  - [CommentsListParameters](docs/CommentsListParameters.md)
  - [CurrentUser](docs/CurrentUser.md)
+ - [CustomMetadataDataType](docs/CustomMetadataDataType.md)
+ - [CustomMetadataProperty](docs/CustomMetadataProperty.md)
+ - [CustomMetadataPropertyCreate422Response](docs/CustomMetadataPropertyCreate422Response.md)
+ - [CustomMetadataPropertyCreate422ResponseErrorsInner](docs/CustomMetadataPropertyCreate422ResponseErrorsInner.md)
  - [Distribution](docs/Distribution.md)
  - [DistributionCreateParameters](docs/DistributionCreateParameters.md)
  - [DistributionPreview](docs/DistributionPreview.md)
@@ -428,8 +437,6 @@ Class | Method | HTTP request | Description
  - [Icu](docs/Icu.md)
  - [IcuSkeletonParameters](docs/IcuSkeletonParameters.md)
  - [Invitation](docs/Invitation.md)
- - [InvitationCreate422Response](docs/InvitationCreate422Response.md)
- - [InvitationCreate422ResponseErrorsInner](docs/InvitationCreate422ResponseErrorsInner.md)
  - [InvitationCreateParameters](docs/InvitationCreateParameters.md)
  - [InvitationUpdateParameters](docs/InvitationUpdateParameters.md)
  - [InvitationUpdateSettingsParameters](docs/InvitationUpdateSettingsParameters.md)

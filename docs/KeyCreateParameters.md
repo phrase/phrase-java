@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **originalFile** | **String** | Original file attribute. Used in some formats, e.g. XLIFF. |  [optional]
 **localizedFormatString** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. |  [optional]
 **localizedFormatKey** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. |  [optional]
+**customMetadata** | **Object** | Custom metadata property name and value pairs to be associated with key. |  [optional]
 
 
 

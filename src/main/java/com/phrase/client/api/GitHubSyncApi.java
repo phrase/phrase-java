@@ -26,9 +26,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
 import com.phrase.client.model.GithubSyncExportParameters;
 import com.phrase.client.model.GithubSyncImportParameters;
-import com.phrase.client.model.InvitationCreate422Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

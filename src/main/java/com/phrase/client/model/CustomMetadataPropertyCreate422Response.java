@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.InvitationCreate422ResponseErrorsInner;
+import com.phrase.client.model.CustomMetadataPropertyCreate422ResponseErrorsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,22 +27,22 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * InvitationCreate422Response
+ * CustomMetadataPropertyCreate422Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:14:22.871694Z[Etc/UTC]")
-public class InvitationCreate422Response {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:27:10.938287Z[Etc/UTC]")
+public class CustomMetadataPropertyCreate422Response {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<InvitationCreate422ResponseErrorsInner> errors;
+  private List<CustomMetadataPropertyCreate422ResponseErrorsInner> errors;
 
-  public InvitationCreate422Response() {
+  public CustomMetadataPropertyCreate422Response() {
   }
 
-  public InvitationCreate422Response message(String message) {
+  public CustomMetadataPropertyCreate422Response message(String message) {
     
     this.message = message;
     return this;
@@ -64,13 +64,13 @@ public class InvitationCreate422Response {
   }
 
 
-  public InvitationCreate422Response errors(List<InvitationCreate422ResponseErrorsInner> errors) {
+  public CustomMetadataPropertyCreate422Response errors(List<CustomMetadataPropertyCreate422ResponseErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
 
-  public InvitationCreate422Response addErrorsItem(InvitationCreate422ResponseErrorsInner errorsItem) {
+  public CustomMetadataPropertyCreate422Response addErrorsItem(CustomMetadataPropertyCreate422ResponseErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -84,12 +84,12 @@ public class InvitationCreate422Response {
   **/
   @javax.annotation.Nullable
 
-  public List<InvitationCreate422ResponseErrorsInner> getErrors() {
+  public List<CustomMetadataPropertyCreate422ResponseErrorsInner> getErrors() {
     return errors;
   }
 
 
-  public void setErrors(List<InvitationCreate422ResponseErrorsInner> errors) {
+  public void setErrors(List<CustomMetadataPropertyCreate422ResponseErrorsInner> errors) {
     this.errors = errors;
   }
 
@@ -101,9 +101,9 @@ public class InvitationCreate422Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InvitationCreate422Response invitationCreate422Response = (InvitationCreate422Response) o;
-    return Objects.equals(this.message, invitationCreate422Response.message) &&
-        Objects.equals(this.errors, invitationCreate422Response.errors);
+    CustomMetadataPropertyCreate422Response customMetadataPropertyCreate422Response = (CustomMetadataPropertyCreate422Response) o;
+    return Objects.equals(this.message, customMetadataPropertyCreate422Response.message) &&
+        Objects.equals(this.errors, customMetadataPropertyCreate422Response.errors);
   }
 
   @Override
@@ -114,7 +114,7 @@ public class InvitationCreate422Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InvitationCreate422Response {\n");
+    sb.append("class CustomMetadataPropertyCreate422Response {\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");

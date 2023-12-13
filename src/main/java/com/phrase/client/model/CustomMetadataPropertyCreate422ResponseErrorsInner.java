@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * InvitationCreate422ResponseErrorsInner
+ * CustomMetadataPropertyCreate422ResponseErrorsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:14:22.871694Z[Etc/UTC]")
-public class InvitationCreate422ResponseErrorsInner {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:27:10.938287Z[Etc/UTC]")
+public class CustomMetadataPropertyCreate422ResponseErrorsInner {
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
   private String resource;
@@ -40,10 +40,10 @@ public class InvitationCreate422ResponseErrorsInner {
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
-  public InvitationCreate422ResponseErrorsInner() {
+  public CustomMetadataPropertyCreate422ResponseErrorsInner() {
   }
 
-  public InvitationCreate422ResponseErrorsInner resource(String resource) {
+  public CustomMetadataPropertyCreate422ResponseErrorsInner resource(String resource) {
     
     this.resource = resource;
     return this;
@@ -65,7 +65,7 @@ public class InvitationCreate422ResponseErrorsInner {
   }
 
 
-  public InvitationCreate422ResponseErrorsInner field(String field) {
+  public CustomMetadataPropertyCreate422ResponseErrorsInner field(String field) {
     
     this.field = field;
     return this;
@@ -87,7 +87,7 @@ public class InvitationCreate422ResponseErrorsInner {
   }
 
 
-  public InvitationCreate422ResponseErrorsInner message(String message) {
+  public CustomMetadataPropertyCreate422ResponseErrorsInner message(String message) {
     
     this.message = message;
     return this;
@@ -116,10 +116,10 @@ public class InvitationCreate422ResponseErrorsInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InvitationCreate422ResponseErrorsInner invitationCreate422ResponseErrorsInner = (InvitationCreate422ResponseErrorsInner) o;
-    return Objects.equals(this.resource, invitationCreate422ResponseErrorsInner.resource) &&
-        Objects.equals(this.field, invitationCreate422ResponseErrorsInner.field) &&
-        Objects.equals(this.message, invitationCreate422ResponseErrorsInner.message);
+    CustomMetadataPropertyCreate422ResponseErrorsInner customMetadataPropertyCreate422ResponseErrorsInner = (CustomMetadataPropertyCreate422ResponseErrorsInner) o;
+    return Objects.equals(this.resource, customMetadataPropertyCreate422ResponseErrorsInner.resource) &&
+        Objects.equals(this.field, customMetadataPropertyCreate422ResponseErrorsInner.field) &&
+        Objects.equals(this.message, customMetadataPropertyCreate422ResponseErrorsInner.message);
   }
 
   @Override
@@ -130,7 +130,7 @@ public class InvitationCreate422ResponseErrorsInner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InvitationCreate422ResponseErrorsInner {\n");
+    sb.append("class CustomMetadataPropertyCreate422ResponseErrorsInner {\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    field: ").append(toIndentedString(field)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

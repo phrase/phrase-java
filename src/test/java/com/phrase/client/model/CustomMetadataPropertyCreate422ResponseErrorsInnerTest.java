@@ -25,17 +25,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for InvitationCreate422ResponseErrorsInner
+ * Model tests for CustomMetadataPropertyCreate422ResponseErrorsInner
  */
-public class InvitationCreate422ResponseErrorsInnerTest {
-    private final InvitationCreate422ResponseErrorsInner model = new InvitationCreate422ResponseErrorsInner();
+public class CustomMetadataPropertyCreate422ResponseErrorsInnerTest {
+    private final CustomMetadataPropertyCreate422ResponseErrorsInner model = new CustomMetadataPropertyCreate422ResponseErrorsInner();
 
     /**
-     * Model tests for InvitationCreate422ResponseErrorsInner
+     * Model tests for CustomMetadataPropertyCreate422ResponseErrorsInner
      */
     @Test
-    public void testInvitationCreate422ResponseErrorsInner() {
-        // TODO: test InvitationCreate422ResponseErrorsInner
+    public void testCustomMetadataPropertyCreate422ResponseErrorsInner() {
+        // TODO: test CustomMetadataPropertyCreate422ResponseErrorsInner
     }
 
     /**

@@ -13,9 +13,9 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
 import com.phrase.client.model.GithubSyncExportParameters;
 import com.phrase.client.model.GithubSyncImportParameters;
-import com.phrase.client.model.InvitationCreate422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

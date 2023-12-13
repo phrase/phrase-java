@@ -22,7 +22,9 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -184,6 +186,14 @@ public class TranslationKeyDetailsTest {
     @Test
     public void creatorTest() {
         // TODO: test creator
+    }
+
+    /**
+     * Test the property 'customMetadata'
+     */
+    @Test
+    public void customMetadataTest() {
+        // TODO: test customMetadata
     }
 
 }

@@ -159,4 +159,12 @@ public class KeyUpdateParametersTest {
         // TODO: test localizedFormatKey
     }
 
+    /**
+     * Test the property 'customMetadata'
+     */
+    @Test
+    public void customMetadataTest() {
+        // TODO: test customMetadata
+    }
+
 }

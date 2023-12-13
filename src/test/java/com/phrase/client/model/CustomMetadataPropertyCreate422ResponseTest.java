@@ -17,7 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.InvitationCreate422ResponseErrorsInner;
+import com.phrase.client.model.CustomMetadataPropertyCreate422ResponseErrorsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,17 +28,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for InvitationCreate422Response
+ * Model tests for CustomMetadataPropertyCreate422Response
  */
-public class InvitationCreate422ResponseTest {
-    private final InvitationCreate422Response model = new InvitationCreate422Response();
+public class CustomMetadataPropertyCreate422ResponseTest {
+    private final CustomMetadataPropertyCreate422Response model = new CustomMetadataPropertyCreate422Response();
 
     /**
-     * Model tests for InvitationCreate422Response
+     * Model tests for CustomMetadataPropertyCreate422Response
      */
     @Test
-    public void testInvitationCreate422Response() {
-        // TODO: test InvitationCreate422Response
+    public void testCustomMetadataPropertyCreate422Response() {
+        // TODO: test CustomMetadataPropertyCreate422Response
     }
 
     /**

@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **originalFile** | **String** |  |  [optional]
 **formatValueType** | **String** |  |  [optional]
 **creator** | [**UserPreview**](UserPreview.md) |  |  [optional]
+**customMetadata** | **Map&lt;String, String&gt;** |  |  [optional]
 
 
 

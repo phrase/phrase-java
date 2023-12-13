@@ -13,8 +13,8 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
 import com.phrase.client.model.Invitation;
-import com.phrase.client.model.InvitationCreate422Response;
 import com.phrase.client.model.InvitationCreateParameters;
 import com.phrase.client.model.InvitationUpdateParameters;
 import com.phrase.client.model.InvitationUpdateSettingsParameters;

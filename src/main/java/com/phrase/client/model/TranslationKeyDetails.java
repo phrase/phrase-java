@@ -23,14 +23,16 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * TranslationKeyDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:14:22.871694Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:27:10.938287Z[Etc/UTC]")
 public class TranslationKeyDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -103,6 +105,10 @@ public class TranslationKeyDetails {
   public static final String SERIALIZED_NAME_CREATOR = "creator";
   @SerializedName(SERIALIZED_NAME_CREATOR)
   private UserPreview creator;
+
+  public static final String SERIALIZED_NAME_CUSTOM_METADATA = "custom_metadata";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_METADATA)
+  private Map<String, String> customMetadata = new HashMap<>();
 
   public TranslationKeyDetails() {
   }
@@ -510,6 +516,36 @@ public class TranslationKeyDetails {
     this.creator = creator;
   }
 
+
+  public TranslationKeyDetails customMetadata(Map<String, String> customMetadata) {
+    
+    this.customMetadata = customMetadata;
+    return this;
+  }
+
+  public TranslationKeyDetails putCustomMetadataItem(String key, String customMetadataItem) {
+    if (this.customMetadata == null) {
+      this.customMetadata = new HashMap<>();
+    }
+    this.customMetadata.put(key, customMetadataItem);
+    return this;
+  }
+
+   /**
+   * Get customMetadata
+   * @return customMetadata
+  **/
+  @javax.annotation.Nullable
+
+  public Map<String, String> getCustomMetadata() {
+    return customMetadata;
+  }
+
+
+  public void setCustomMetadata(Map<String, String> customMetadata) {
+    this.customMetadata = customMetadata;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -536,12 +572,13 @@ public class TranslationKeyDetails {
         Objects.equals(this.xmlSpacePreserve, translationKeyDetails.xmlSpacePreserve) &&
         Objects.equals(this.originalFile, translationKeyDetails.originalFile) &&
         Objects.equals(this.formatValueType, translationKeyDetails.formatValueType) &&
-        Objects.equals(this.creator, translationKeyDetails.creator);
+        Objects.equals(this.creator, translationKeyDetails.creator) &&
+        Objects.equals(this.customMetadata, translationKeyDetails.customMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, nameHash, plural, tags, dataType, createdAt, updatedAt, namePlural, commentsCount, maxCharactersAllowed, screenshotUrl, unformatted, xmlSpacePreserve, originalFile, formatValueType, creator);
+    return Objects.hash(id, name, description, nameHash, plural, tags, dataType, createdAt, updatedAt, namePlural, commentsCount, maxCharactersAllowed, screenshotUrl, unformatted, xmlSpacePreserve, originalFile, formatValueType, creator, customMetadata);
   }
 
   @Override
@@ -566,6 +603,7 @@ public class TranslationKeyDetails {
     sb.append("    originalFile: ").append(toIndentedString(originalFile)).append("\n");
     sb.append("    formatValueType: ").append(toIndentedString(formatValueType)).append("\n");
     sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+    sb.append("    customMetadata: ").append(toIndentedString(customMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

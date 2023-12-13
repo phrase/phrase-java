@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:14:22.871694Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T11:27:10.938287Z[Etc/UTC]")
 public class KeyUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -88,6 +88,10 @@ public class KeyUpdateParameters {
   public static final String SERIALIZED_NAME_LOCALIZED_FORMAT_KEY = "localized_format_key";
   @SerializedName(SERIALIZED_NAME_LOCALIZED_FORMAT_KEY)
   private String localizedFormatKey;
+
+  public static final String SERIALIZED_NAME_CUSTOM_METADATA = "custom_metadata";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_METADATA)
+  private Object customMetadata;
 
   public KeyUpdateParameters() {
   }
@@ -425,6 +429,28 @@ public class KeyUpdateParameters {
     this.localizedFormatKey = localizedFormatKey;
   }
 
+
+  public KeyUpdateParameters customMetadata(Object customMetadata) {
+    
+    this.customMetadata = customMetadata;
+    return this;
+  }
+
+   /**
+   * Updates/Creates custom metadata property name and value pairs to be associated with key. If you want to delete a custom metadata property, you can set its value to null. If you want to update a custom metadata property, you can set its value to the new value.
+   * @return customMetadata
+  **/
+  @javax.annotation.Nullable
+
+  public Object getCustomMetadata() {
+    return customMetadata;
+  }
+
+
+  public void setCustomMetadata(Object customMetadata) {
+    this.customMetadata = customMetadata;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -448,12 +474,13 @@ public class KeyUpdateParameters {
         Objects.equals(this.xmlSpacePreserve, keyUpdateParameters.xmlSpacePreserve) &&
         Objects.equals(this.originalFile, keyUpdateParameters.originalFile) &&
         Objects.equals(this.localizedFormatString, keyUpdateParameters.localizedFormatString) &&
-        Objects.equals(this.localizedFormatKey, keyUpdateParameters.localizedFormatKey);
+        Objects.equals(this.localizedFormatKey, keyUpdateParameters.localizedFormatKey) &&
+        Objects.equals(this.customMetadata, keyUpdateParameters.customMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, description, plural, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey);
+    return Objects.hash(branch, name, description, plural, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey, customMetadata);
   }
 
   @Override
@@ -475,6 +502,7 @@ public class KeyUpdateParameters {
     sb.append("    originalFile: ").append(toIndentedString(originalFile)).append("\n");
     sb.append("    localizedFormatString: ").append(toIndentedString(localizedFormatString)).append("\n");
     sb.append("    localizedFormatKey: ").append(toIndentedString(localizedFormatKey)).append("\n");
+    sb.append("    customMetadata: ").append(toIndentedString(customMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
