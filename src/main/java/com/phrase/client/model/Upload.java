@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Upload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T09:12:35.134548Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-13T10:30:21.875997Z[Etc/UTC]")
 public class Upload {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -49,6 +49,10 @@ public class Upload {
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
+
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
+  private String url;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
@@ -175,6 +179,28 @@ public class Upload {
   }
 
 
+  public Upload url(String url) {
+    
+    this.url = url;
+    return this;
+  }
+
+   /**
+   * The URL to the upload in Phrase Strings app. 
+   * @return url
+  **/
+  @javax.annotation.Nullable
+
+  public String getUrl() {
+    return url;
+  }
+
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+
   public Upload summary(UploadSummary summary) {
     
     this.summary = summary;
@@ -254,6 +280,7 @@ public class Upload {
         Objects.equals(this.format, upload.format) &&
         Objects.equals(this.state, upload.state) &&
         Objects.equals(this.tag, upload.tag) &&
+        Objects.equals(this.url, upload.url) &&
         Objects.equals(this.summary, upload.summary) &&
         Objects.equals(this.createdAt, upload.createdAt) &&
         Objects.equals(this.updatedAt, upload.updatedAt);
@@ -261,7 +288,7 @@ public class Upload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, filename, format, state, tag, summary, createdAt, updatedAt);
+    return Objects.hash(id, filename, format, state, tag, url, summary, createdAt, updatedAt);
   }
 
   @Override
@@ -273,6 +300,7 @@ public class Upload {
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
