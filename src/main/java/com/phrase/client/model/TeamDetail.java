@@ -32,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TeamDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T10:58:24.410945Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T11:11:08.694775Z[Etc/UTC]")
 public class TeamDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
