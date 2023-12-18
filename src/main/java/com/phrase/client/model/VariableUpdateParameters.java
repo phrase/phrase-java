@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * VariableUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-15T13:51:10.444793Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-18T07:31:17.346266Z[Etc/UTC]")
 public class VariableUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
