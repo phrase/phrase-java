@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GlossaryTerm
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-20T15:53:51.193949Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-21T12:50:02.281393Z[Etc/UTC]")
 public class GlossaryTerm {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
