@@ -27,6 +27,8 @@ import java.io.IOException;
 
 
 import com.phrase.client.model.CustomMetadataDataType;
+import com.phrase.client.model.CustomMetadataPropertiesCreateParameters;
+import com.phrase.client.model.CustomMetadataPropertiesUpdateParameters;
 import com.phrase.client.model.CustomMetadataProperty;
 import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
 
@@ -374,12 +376,8 @@ public class CustomMetadataApi {
     /**
      * Build call for customMetadataPropertyCreate
      * @param accountId Account ID (required)
-     * @param name name of the property (required)
-     * @param dataType Data Type of Custom Metadata Property (required)
+     * @param customMetadataPropertiesCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -393,8 +391,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call customMetadataPropertyCreateCall(String accountId, String name, CustomMetadataDataType dataType, String xPhraseAppOTP, String description, List<String> projectIds, List<String> valueOptions, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
+    public okhttp3.Call customMetadataPropertyCreateCall(String accountId, CustomMetadataPropertiesCreateParameters customMetadataPropertiesCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = customMetadataPropertiesCreateParameters;
 
         // create path and map variables
         String localVarPath = "/accounts/{account_id}/custom_metadata/properties"
@@ -402,26 +400,6 @@ public class CustomMetadataApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (name != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
-        }
-
-        if (dataType != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("data_type", dataType));
-        }
-
-        if (description != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("description", description));
-        }
-
-        if (projectIds != null) {
-            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "project_ids", projectIds));
-        }
-
-        if (valueOptions != null) {
-            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "value_options", valueOptions));
-        }
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -438,7 +416,7 @@ public class CustomMetadataApi {
         }
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -448,25 +426,20 @@ public class CustomMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call customMetadataPropertyCreateValidateBeforeCall(String accountId, String name, CustomMetadataDataType dataType, String xPhraseAppOTP, String description, List<String> projectIds, List<String> valueOptions, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customMetadataPropertyCreateValidateBeforeCall(String accountId, CustomMetadataPropertiesCreateParameters customMetadataPropertiesCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
             throw new ApiException("Missing the required parameter 'accountId' when calling customMetadataPropertyCreate(Async)");
         }
         
-        // verify the required parameter 'name' is set
-        if (name == null) {
-            throw new ApiException("Missing the required parameter 'name' when calling customMetadataPropertyCreate(Async)");
-        }
-        
-        // verify the required parameter 'dataType' is set
-        if (dataType == null) {
-            throw new ApiException("Missing the required parameter 'dataType' when calling customMetadataPropertyCreate(Async)");
+        // verify the required parameter 'customMetadataPropertiesCreateParameters' is set
+        if (customMetadataPropertiesCreateParameters == null) {
+            throw new ApiException("Missing the required parameter 'customMetadataPropertiesCreateParameters' when calling customMetadataPropertyCreate(Async)");
         }
         
 
-        okhttp3.Call localVarCall = customMetadataPropertyCreateCall(accountId, name, dataType, xPhraseAppOTP, description, projectIds, valueOptions, _callback);
+        okhttp3.Call localVarCall = customMetadataPropertyCreateCall(accountId, customMetadataPropertiesCreateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -475,12 +448,8 @@ public class CustomMetadataApi {
      * Create a property
      * Create a new custom metadata property.
      * @param accountId Account ID (required)
-     * @param name name of the property (required)
-     * @param dataType Data Type of Custom Metadata Property (required)
+     * @param customMetadataPropertiesCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @return CustomMetadataProperty
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -493,8 +462,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public CustomMetadataProperty customMetadataPropertyCreate(String accountId, String name, CustomMetadataDataType dataType, String xPhraseAppOTP, String description, List<String> projectIds, List<String> valueOptions) throws ApiException {
-        ApiResponse<CustomMetadataProperty> localVarResp = customMetadataPropertyCreateWithHttpInfo(accountId, name, dataType, xPhraseAppOTP, description, projectIds, valueOptions);
+    public CustomMetadataProperty customMetadataPropertyCreate(String accountId, CustomMetadataPropertiesCreateParameters customMetadataPropertiesCreateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<CustomMetadataProperty> localVarResp = customMetadataPropertyCreateWithHttpInfo(accountId, customMetadataPropertiesCreateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -502,12 +471,8 @@ public class CustomMetadataApi {
      * Create a property
      * Create a new custom metadata property.
      * @param accountId Account ID (required)
-     * @param name name of the property (required)
-     * @param dataType Data Type of Custom Metadata Property (required)
+     * @param customMetadataPropertiesCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @return ApiResponse&lt;CustomMetadataProperty&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -520,8 +485,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<CustomMetadataProperty> customMetadataPropertyCreateWithHttpInfo(String accountId, String name, CustomMetadataDataType dataType, String xPhraseAppOTP, String description, List<String> projectIds, List<String> valueOptions) throws ApiException {
-        okhttp3.Call localVarCall = customMetadataPropertyCreateValidateBeforeCall(accountId, name, dataType, xPhraseAppOTP, description, projectIds, valueOptions, null);
+    public ApiResponse<CustomMetadataProperty> customMetadataPropertyCreateWithHttpInfo(String accountId, CustomMetadataPropertiesCreateParameters customMetadataPropertiesCreateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = customMetadataPropertyCreateValidateBeforeCall(accountId, customMetadataPropertiesCreateParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<CustomMetadataProperty>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -530,12 +495,8 @@ public class CustomMetadataApi {
      * Create a property (asynchronously)
      * Create a new custom metadata property.
      * @param accountId Account ID (required)
-     * @param name name of the property (required)
-     * @param dataType Data Type of Custom Metadata Property (required)
+     * @param customMetadataPropertiesCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -549,9 +510,9 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call customMetadataPropertyCreateAsync(String accountId, String name, CustomMetadataDataType dataType, String xPhraseAppOTP, String description, List<String> projectIds, List<String> valueOptions, final ApiCallback<CustomMetadataProperty> _callback) throws ApiException {
+    public okhttp3.Call customMetadataPropertyCreateAsync(String accountId, CustomMetadataPropertiesCreateParameters customMetadataPropertiesCreateParameters, String xPhraseAppOTP, final ApiCallback<CustomMetadataProperty> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = customMetadataPropertyCreateValidateBeforeCall(accountId, name, dataType, xPhraseAppOTP, description, projectIds, valueOptions, _callback);
+        okhttp3.Call localVarCall = customMetadataPropertyCreateValidateBeforeCall(accountId, customMetadataPropertiesCreateParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<CustomMetadataProperty>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -701,11 +662,8 @@ public class CustomMetadataApi {
      * Build call for customMetadataPropertyUpdate
      * @param accountId Account ID (required)
      * @param id ID (required)
+     * @param customMetadataPropertiesUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param name name of the property (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -718,8 +676,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call customMetadataPropertyUpdateCall(String accountId, String id, String xPhraseAppOTP, String name, String description, List<String> projectIds, List<String> valueOptions, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
+    public okhttp3.Call customMetadataPropertyUpdateCall(String accountId, String id, CustomMetadataPropertiesUpdateParameters customMetadataPropertiesUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = customMetadataPropertiesUpdateParameters;
 
         // create path and map variables
         String localVarPath = "/accounts/{account_id}/custom_metadata/properties/{id}"
@@ -728,22 +686,6 @@ public class CustomMetadataApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (name != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
-        }
-
-        if (description != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("description", description));
-        }
-
-        if (projectIds != null) {
-            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "project_ids", projectIds));
-        }
-
-        if (valueOptions != null) {
-            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "value_options", valueOptions));
-        }
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -760,7 +702,7 @@ public class CustomMetadataApi {
         }
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -770,7 +712,7 @@ public class CustomMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call customMetadataPropertyUpdateValidateBeforeCall(String accountId, String id, String xPhraseAppOTP, String name, String description, List<String> projectIds, List<String> valueOptions, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customMetadataPropertyUpdateValidateBeforeCall(String accountId, String id, CustomMetadataPropertiesUpdateParameters customMetadataPropertiesUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
@@ -782,8 +724,13 @@ public class CustomMetadataApi {
             throw new ApiException("Missing the required parameter 'id' when calling customMetadataPropertyUpdate(Async)");
         }
         
+        // verify the required parameter 'customMetadataPropertiesUpdateParameters' is set
+        if (customMetadataPropertiesUpdateParameters == null) {
+            throw new ApiException("Missing the required parameter 'customMetadataPropertiesUpdateParameters' when calling customMetadataPropertyUpdate(Async)");
+        }
+        
 
-        okhttp3.Call localVarCall = customMetadataPropertyUpdateCall(accountId, id, xPhraseAppOTP, name, description, projectIds, valueOptions, _callback);
+        okhttp3.Call localVarCall = customMetadataPropertyUpdateCall(accountId, id, customMetadataPropertiesUpdateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -793,11 +740,8 @@ public class CustomMetadataApi {
      * Update an existing custom metadata property.
      * @param accountId Account ID (required)
      * @param id ID (required)
+     * @param customMetadataPropertiesUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param name name of the property (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @return CustomMetadataProperty
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -809,8 +753,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public CustomMetadataProperty customMetadataPropertyUpdate(String accountId, String id, String xPhraseAppOTP, String name, String description, List<String> projectIds, List<String> valueOptions) throws ApiException {
-        ApiResponse<CustomMetadataProperty> localVarResp = customMetadataPropertyUpdateWithHttpInfo(accountId, id, xPhraseAppOTP, name, description, projectIds, valueOptions);
+    public CustomMetadataProperty customMetadataPropertyUpdate(String accountId, String id, CustomMetadataPropertiesUpdateParameters customMetadataPropertiesUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<CustomMetadataProperty> localVarResp = customMetadataPropertyUpdateWithHttpInfo(accountId, id, customMetadataPropertiesUpdateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -819,11 +763,8 @@ public class CustomMetadataApi {
      * Update an existing custom metadata property.
      * @param accountId Account ID (required)
      * @param id ID (required)
+     * @param customMetadataPropertiesUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param name name of the property (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @return ApiResponse&lt;CustomMetadataProperty&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -835,8 +776,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<CustomMetadataProperty> customMetadataPropertyUpdateWithHttpInfo(String accountId, String id, String xPhraseAppOTP, String name, String description, List<String> projectIds, List<String> valueOptions) throws ApiException {
-        okhttp3.Call localVarCall = customMetadataPropertyUpdateValidateBeforeCall(accountId, id, xPhraseAppOTP, name, description, projectIds, valueOptions, null);
+    public ApiResponse<CustomMetadataProperty> customMetadataPropertyUpdateWithHttpInfo(String accountId, String id, CustomMetadataPropertiesUpdateParameters customMetadataPropertiesUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = customMetadataPropertyUpdateValidateBeforeCall(accountId, id, customMetadataPropertiesUpdateParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<CustomMetadataProperty>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -846,11 +787,8 @@ public class CustomMetadataApi {
      * Update an existing custom metadata property.
      * @param accountId Account ID (required)
      * @param id ID (required)
+     * @param customMetadataPropertiesUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param name name of the property (optional)
-     * @param description description of property (optional)
-     * @param projectIds ids of projects that the property belongs to (optional)
-     * @param valueOptions value options of property (only applies to single or multi select properties) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -863,9 +801,9 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call customMetadataPropertyUpdateAsync(String accountId, String id, String xPhraseAppOTP, String name, String description, List<String> projectIds, List<String> valueOptions, final ApiCallback<CustomMetadataProperty> _callback) throws ApiException {
+    public okhttp3.Call customMetadataPropertyUpdateAsync(String accountId, String id, CustomMetadataPropertiesUpdateParameters customMetadataPropertiesUpdateParameters, String xPhraseAppOTP, final ApiCallback<CustomMetadataProperty> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = customMetadataPropertyUpdateValidateBeforeCall(accountId, id, xPhraseAppOTP, name, description, projectIds, valueOptions, _callback);
+        okhttp3.Call localVarCall = customMetadataPropertyUpdateValidateBeforeCall(accountId, id, customMetadataPropertiesUpdateParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<CustomMetadataProperty>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

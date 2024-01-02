@@ -44,6 +44,8 @@ docs/CommentsListParameters.md
 docs/CurrentUser.md
 docs/CustomMetadataApi.md
 docs/CustomMetadataDataType.md
+docs/CustomMetadataPropertiesCreateParameters.md
+docs/CustomMetadataPropertiesUpdateParameters.md
 docs/CustomMetadataProperty.md
 docs/CustomMetadataPropertyCreate422Response.md
 docs/CustomMetadataPropertyCreate422ResponseErrorsInner.md
@@ -362,6 +364,8 @@ src/main/java/com/phrase/client/model/CommentUpdateParameters.java
 src/main/java/com/phrase/client/model/CommentsListParameters.java
 src/main/java/com/phrase/client/model/CurrentUser.java
 src/main/java/com/phrase/client/model/CustomMetadataDataType.java
+src/main/java/com/phrase/client/model/CustomMetadataPropertiesCreateParameters.java
+src/main/java/com/phrase/client/model/CustomMetadataPropertiesUpdateParameters.java
 src/main/java/com/phrase/client/model/CustomMetadataProperty.java
 src/main/java/com/phrase/client/model/CustomMetadataPropertyCreate422Response.java
 src/main/java/com/phrase/client/model/CustomMetadataPropertyCreate422ResponseErrorsInner.java
@@ -609,6 +613,8 @@ src/test/java/com/phrase/client/model/CommentUpdateParametersTest.java
 src/test/java/com/phrase/client/model/CommentsListParametersTest.java
 src/test/java/com/phrase/client/model/CurrentUserTest.java
 src/test/java/com/phrase/client/model/CustomMetadataDataTypeTest.java
+src/test/java/com/phrase/client/model/CustomMetadataPropertiesCreateParametersTest.java
+src/test/java/com/phrase/client/model/CustomMetadataPropertiesUpdateParametersTest.java
 src/test/java/com/phrase/client/model/CustomMetadataPropertyCreate422ResponseErrorsInnerTest.java
 src/test/java/com/phrase/client/model/CustomMetadataPropertyCreate422ResponseTest.java
 src/test/java/com/phrase/client/model/CustomMetadataPropertyTest.java

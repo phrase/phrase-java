@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 <a name="customMetadataPropertyCreate"></a>
 # **customMetadataPropertyCreate**
-> CustomMetadataProperty customMetadataPropertyCreate(accountId, name, dataType, xPhraseAppOTP, description, projectIds, valueOptions)
+> CustomMetadataProperty customMetadataPropertyCreate(accountId, customMetadataPropertiesCreateParameters, xPhraseAppOTP)
 
 Create a property
 
@@ -218,14 +218,10 @@ public class Example {
 
     CustomMetadataApi apiInstance = new CustomMetadataApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
-    String name = "[\"Fruit\"]"; // String | name of the property
-    CustomMetadataDataType dataType = CustomMetadataDataType.fromValue("boolean"); // CustomMetadataDataType | Data Type of Custom Metadata Property
+    CustomMetadataPropertiesCreateParameters customMetadataPropertiesCreateParameters = new CustomMetadataPropertiesCreateParameters(); // CustomMetadataPropertiesCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String description = "[\"A healthy snack for all ages\"]"; // String | description of property
-    List<String> projectIds = Arrays.asList(); // List<String> | ids of projects that the property belongs to
-    List<String> valueOptions = Arrays.asList(); // List<String> | value options of property (only applies to single or multi select properties)
     try {
-      CustomMetadataProperty result = apiInstance.customMetadataPropertyCreate(accountId, name, dataType, xPhraseAppOTP, description, projectIds, valueOptions);
+      CustomMetadataProperty result = apiInstance.customMetadataPropertyCreate(accountId, customMetadataPropertiesCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomMetadataApi#customMetadataPropertyCreate");
@@ -243,12 +239,8 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **name** | **String**| name of the property |
- **dataType** | [**CustomMetadataDataType**](.md)| Data Type of Custom Metadata Property | [enum: boolean, date, link, multi_select, number, single_select, string, text]
+ **customMetadataPropertiesCreateParameters** | [**CustomMetadataPropertiesCreateParameters**](CustomMetadataPropertiesCreateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **description** | **String**| description of property | [optional]
- **projectIds** | [**List&lt;String&gt;**](String.md)| ids of projects that the property belongs to | [optional]
- **valueOptions** | [**List&lt;String&gt;**](String.md)| value options of property (only applies to single or multi select properties) | [optional]
 
 ### Return type
 
@@ -260,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -355,7 +347,7 @@ Name | Type | Description  | Notes
 
 <a name="customMetadataPropertyUpdate"></a>
 # **customMetadataPropertyUpdate**
-> CustomMetadataProperty customMetadataPropertyUpdate(accountId, id, xPhraseAppOTP, name, description, projectIds, valueOptions)
+> CustomMetadataProperty customMetadataPropertyUpdate(accountId, id, customMetadataPropertiesUpdateParameters, xPhraseAppOTP)
 
 Update a property
 
@@ -390,13 +382,10 @@ public class Example {
     CustomMetadataApi apiInstance = new CustomMetadataApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String id = "id_example"; // String | ID
+    CustomMetadataPropertiesUpdateParameters customMetadataPropertiesUpdateParameters = new CustomMetadataPropertiesUpdateParameters(); // CustomMetadataPropertiesUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String name = "[\"Fruit\"]"; // String | name of the property
-    String description = "[\"A healthy snack for all ages\"]"; // String | description of property
-    List<String> projectIds = Arrays.asList(); // List<String> | ids of projects that the property belongs to
-    List<String> valueOptions = Arrays.asList(); // List<String> | value options of property (only applies to single or multi select properties)
     try {
-      CustomMetadataProperty result = apiInstance.customMetadataPropertyUpdate(accountId, id, xPhraseAppOTP, name, description, projectIds, valueOptions);
+      CustomMetadataProperty result = apiInstance.customMetadataPropertyUpdate(accountId, id, customMetadataPropertiesUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomMetadataApi#customMetadataPropertyUpdate");
@@ -415,11 +404,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
  **id** | **String**| ID |
+ **customMetadataPropertiesUpdateParameters** | [**CustomMetadataPropertiesUpdateParameters**](CustomMetadataPropertiesUpdateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **name** | **String**| name of the property | [optional]
- **description** | **String**| description of property | [optional]
- **projectIds** | [**List&lt;String&gt;**](String.md)| ids of projects that the property belongs to | [optional]
- **valueOptions** | [**List&lt;String&gt;**](String.md)| value options of property (only applies to single or multi select properties) | [optional]
 
 ### Return type
 
@@ -431,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

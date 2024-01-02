@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets custom_metadata_data_type
+ * data type of the property
  */
 @JsonAdapter(CustomMetadataDataType.Adapter.class)
 public enum CustomMetadataDataType {

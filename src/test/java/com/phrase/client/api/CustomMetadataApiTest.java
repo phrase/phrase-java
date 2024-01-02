@@ -14,6 +14,8 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.CustomMetadataDataType;
+import com.phrase.client.model.CustomMetadataPropertiesCreateParameters;
+import com.phrase.client.model.CustomMetadataPropertiesUpdateParameters;
 import com.phrase.client.model.CustomMetadataProperty;
 import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
 import org.junit.Test;
@@ -85,13 +87,9 @@ public class CustomMetadataApiTest {
     @Test
     public void customMetadataPropertyCreateTest() throws ApiException {
         String accountId = null;
-        String name = null;
-        CustomMetadataDataType dataType = null;
+        CustomMetadataPropertiesCreateParameters customMetadataPropertiesCreateParameters = null;
         String xPhraseAppOTP = null;
-        String description = null;
-        List<String> projectIds = null;
-        List<String> valueOptions = null;
-        CustomMetadataProperty response = api.customMetadataPropertyCreate(accountId, name, dataType, xPhraseAppOTP, description, projectIds, valueOptions);
+        CustomMetadataProperty response = api.customMetadataPropertyCreate(accountId, customMetadataPropertiesCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -126,12 +124,9 @@ public class CustomMetadataApiTest {
     public void customMetadataPropertyUpdateTest() throws ApiException {
         String accountId = null;
         String id = null;
+        CustomMetadataPropertiesUpdateParameters customMetadataPropertiesUpdateParameters = null;
         String xPhraseAppOTP = null;
-        String name = null;
-        String description = null;
-        List<String> projectIds = null;
-        List<String> valueOptions = null;
-        CustomMetadataProperty response = api.customMetadataPropertyUpdate(accountId, id, xPhraseAppOTP, name, description, projectIds, valueOptions);
+        CustomMetadataProperty response = api.customMetadataPropertyUpdate(accountId, id, customMetadataPropertiesUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
