@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BitbucketSyncExportResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-02T14:36:40.347533Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-02T15:46:41.294473Z[Etc/UTC]")
 public class BitbucketSyncExportResponse {
   public static final String SERIALIZED_NAME_STATUS_PATH = "status_path";
   @SerializedName(SERIALIZED_NAME_STATUS_PATH)
