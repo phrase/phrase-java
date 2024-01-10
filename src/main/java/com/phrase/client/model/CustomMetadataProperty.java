@@ -32,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * CustomMetadataProperty
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T07:42:43.728688Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-10T12:57:50.846707Z[Etc/UTC]")
 public class CustomMetadataProperty {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
