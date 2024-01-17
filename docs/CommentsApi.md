@@ -45,8 +45,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
@@ -132,8 +131,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
@@ -216,8 +214,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
@@ -300,8 +297,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
@@ -384,8 +380,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
@@ -468,8 +463,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
@@ -553,8 +547,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
@@ -638,8 +631,7 @@ public class Example {
     // Configure API key authorization: Token
     ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
     Token.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Token.setApiKeyPrefix("Token");
+    Token.setApiKeyPrefix("token");
 
     CommentsApi apiInstance = new CommentsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
