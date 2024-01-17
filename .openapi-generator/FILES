@@ -56,6 +56,8 @@ docs/DistributionUpdateParameters.md
 docs/DistributionsApi.md
 docs/Document.md
 docs/DocumentsApi.md
+docs/Error.md
+docs/ErrorError.md
 docs/FigmaAttachment.md
 docs/FigmaAttachmentCreateParameters.md
 docs/FigmaAttachmentUpdateParameters.md
@@ -175,6 +177,13 @@ docs/ProjectReport.md
 docs/ProjectShort.md
 docs/ProjectUpdateParameters.md
 docs/ProjectsApi.md
+docs/ProjectsQualityPerformanceScore200Response.md
+docs/ProjectsQualityPerformanceScore200ResponseAnyOf.md
+docs/ProjectsQualityPerformanceScore200ResponseAnyOfData.md
+docs/ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.md
+docs/ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner.md
+docs/ProjectsQualityPerformanceScoreRequest.md
+docs/QualityPerformanceScoreApi.md
 docs/Release.md
 docs/ReleaseCreateParameters.md
 docs/ReleasePreview.md
@@ -314,6 +323,7 @@ src/main/java/com/phrase/client/api/OrdersApi.java
 src/main/java/com/phrase/client/api/OrganizationJobTemplateLocalesApi.java
 src/main/java/com/phrase/client/api/OrganizationJobTemplatesApi.java
 src/main/java/com/phrase/client/api/ProjectsApi.java
+src/main/java/com/phrase/client/api/QualityPerformanceScoreApi.java
 src/main/java/com/phrase/client/api/ReleasesApi.java
 src/main/java/com/phrase/client/api/ReportsApi.java
 src/main/java/com/phrase/client/api/ScreenshotMarkersApi.java
@@ -374,6 +384,8 @@ src/main/java/com/phrase/client/model/DistributionCreateParameters.java
 src/main/java/com/phrase/client/model/DistributionPreview.java
 src/main/java/com/phrase/client/model/DistributionUpdateParameters.java
 src/main/java/com/phrase/client/model/Document.java
+src/main/java/com/phrase/client/model/Error.java
+src/main/java/com/phrase/client/model/ErrorError.java
 src/main/java/com/phrase/client/model/FigmaAttachment.java
 src/main/java/com/phrase/client/model/FigmaAttachmentCreateParameters.java
 src/main/java/com/phrase/client/model/FigmaAttachmentUpdateParameters.java
@@ -469,6 +481,12 @@ src/main/java/com/phrase/client/model/ProjectLocales.java
 src/main/java/com/phrase/client/model/ProjectReport.java
 src/main/java/com/phrase/client/model/ProjectShort.java
 src/main/java/com/phrase/client/model/ProjectUpdateParameters.java
+src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScore200Response.java
+src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOf.java
+src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfData.java
+src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.java
+src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner.java
+src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScoreRequest.java
 src/main/java/com/phrase/client/model/Release.java
 src/main/java/com/phrase/client/model/ReleaseCreateParameters.java
 src/main/java/com/phrase/client/model/ReleasePreview.java
@@ -569,6 +587,7 @@ src/test/java/com/phrase/client/api/OrdersApiTest.java
 src/test/java/com/phrase/client/api/OrganizationJobTemplateLocalesApiTest.java
 src/test/java/com/phrase/client/api/OrganizationJobTemplatesApiTest.java
 src/test/java/com/phrase/client/api/ProjectsApiTest.java
+src/test/java/com/phrase/client/api/QualityPerformanceScoreApiTest.java
 src/test/java/com/phrase/client/api/ReleasesApiTest.java
 src/test/java/com/phrase/client/api/ReportsApiTest.java
 src/test/java/com/phrase/client/api/ScreenshotMarkersApiTest.java
@@ -623,6 +642,8 @@ src/test/java/com/phrase/client/model/DistributionPreviewTest.java
 src/test/java/com/phrase/client/model/DistributionTest.java
 src/test/java/com/phrase/client/model/DistributionUpdateParametersTest.java
 src/test/java/com/phrase/client/model/DocumentTest.java
+src/test/java/com/phrase/client/model/ErrorErrorTest.java
+src/test/java/com/phrase/client/model/ErrorTest.java
 src/test/java/com/phrase/client/model/FigmaAttachmentCreateParametersTest.java
 src/test/java/com/phrase/client/model/FigmaAttachmentTest.java
 src/test/java/com/phrase/client/model/FigmaAttachmentUpdateParametersTest.java
@@ -718,6 +739,12 @@ src/test/java/com/phrase/client/model/ProjectReportTest.java
 src/test/java/com/phrase/client/model/ProjectShortTest.java
 src/test/java/com/phrase/client/model/ProjectTest.java
 src/test/java/com/phrase/client/model/ProjectUpdateParametersTest.java
+src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfDataTest.java
+src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInnerTest.java
+src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInnerTest.java
+src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfTest.java
+src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseTest.java
+src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScoreRequestTest.java
 src/test/java/com/phrase/client/model/ReleaseCreateParametersTest.java
 src/test/java/com/phrase/client/model/ReleasePreviewTest.java
 src/test/java/com/phrase/client/model/ReleaseTest.java

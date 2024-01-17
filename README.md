@@ -286,6 +286,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**projectShow**](docs/ProjectsApi.md#projectShow) | **GET** /projects/{id} | Get a single project
 *ProjectsApi* | [**projectUpdate**](docs/ProjectsApi.md#projectUpdate) | **PATCH** /projects/{id} | Update a project
 *ProjectsApi* | [**projectsList**](docs/ProjectsApi.md#projectsList) | **GET** /projects | List projects
+*QualityPerformanceScoreApi* | [**projectsQualityPerformanceScore**](docs/QualityPerformanceScoreApi.md#projectsQualityPerformanceScore) | **POST** /projects/{id}/quality_performance_score | Get project&#39;s translations&#39; quality performance scores
 *ReleasesApi* | [**releaseCreate**](docs/ReleasesApi.md#releaseCreate) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases | Create a release
 *ReleasesApi* | [**releaseDelete**](docs/ReleasesApi.md#releaseDelete) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Delete a release
 *ReleasesApi* | [**releasePublish**](docs/ReleasesApi.md#releasePublish) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish | Publish a release
@@ -413,6 +414,8 @@ Class | Method | HTTP request | Description
  - [DistributionPreview](docs/DistributionPreview.md)
  - [DistributionUpdateParameters](docs/DistributionUpdateParameters.md)
  - [Document](docs/Document.md)
+ - [Error](docs/Error.md)
+ - [ErrorError](docs/ErrorError.md)
  - [FigmaAttachment](docs/FigmaAttachment.md)
  - [FigmaAttachmentCreateParameters](docs/FigmaAttachmentCreateParameters.md)
  - [FigmaAttachmentUpdateParameters](docs/FigmaAttachmentUpdateParameters.md)
@@ -508,6 +511,12 @@ Class | Method | HTTP request | Description
  - [ProjectReport](docs/ProjectReport.md)
  - [ProjectShort](docs/ProjectShort.md)
  - [ProjectUpdateParameters](docs/ProjectUpdateParameters.md)
+ - [ProjectsQualityPerformanceScore200Response](docs/ProjectsQualityPerformanceScore200Response.md)
+ - [ProjectsQualityPerformanceScore200ResponseAnyOf](docs/ProjectsQualityPerformanceScore200ResponseAnyOf.md)
+ - [ProjectsQualityPerformanceScore200ResponseAnyOfData](docs/ProjectsQualityPerformanceScore200ResponseAnyOfData.md)
+ - [ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner](docs/ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.md)
+ - [ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner](docs/ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner.md)
+ - [ProjectsQualityPerformanceScoreRequest](docs/ProjectsQualityPerformanceScoreRequest.md)
  - [Release](docs/Release.md)
  - [ReleaseCreateParameters](docs/ReleaseCreateParameters.md)
  - [ReleasePreview](docs/ReleasePreview.md)
