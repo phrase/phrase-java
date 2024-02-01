@@ -57,7 +57,7 @@ public class QualityPerformanceScoreApi {
 
     /**
      * Build call for projectsQualityPerformanceScore
-     * @param id ID (required)
+     * @param projectId Project ID (required)
      * @param projectsQualityPerformanceScoreRequest  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
@@ -75,12 +75,12 @@ public class QualityPerformanceScoreApi {
         <tr><td> 504 </td><td> Gateway timeout </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call projectsQualityPerformanceScoreCall(String id, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call projectsQualityPerformanceScoreCall(String projectId, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = projectsQualityPerformanceScoreRequest;
 
         // create path and map variables
-        String localVarPath = "/projects/{id}/quality_performance_score"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+        String localVarPath = "/projects/{project_id}/quality_performance_score"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -110,11 +110,11 @@ public class QualityPerformanceScoreApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call projectsQualityPerformanceScoreValidateBeforeCall(String id, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call projectsQualityPerformanceScoreValidateBeforeCall(String projectId, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling projectsQualityPerformanceScore(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling projectsQualityPerformanceScore(Async)");
         }
         
         // verify the required parameter 'projectsQualityPerformanceScoreRequest' is set
@@ -123,15 +123,15 @@ public class QualityPerformanceScoreApi {
         }
         
 
-        okhttp3.Call localVarCall = projectsQualityPerformanceScoreCall(id, projectsQualityPerformanceScoreRequest, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = projectsQualityPerformanceScoreCall(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Get project&#39;s translations&#39; quality performance scores
-     * Get project&#39;s translations&#39; quality performance scores
-     * @param id ID (required)
+     * Get Translation Quality
+     * Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
+     * @param projectId Project ID (required)
      * @param projectsQualityPerformanceScoreRequest  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ProjectsQualityPerformanceScore200Response
@@ -148,15 +148,15 @@ public class QualityPerformanceScoreApi {
         <tr><td> 504 </td><td> Gateway timeout </td><td>  -  </td></tr>
      </table>
      */
-    public ProjectsQualityPerformanceScore200Response projectsQualityPerformanceScore(String id, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<ProjectsQualityPerformanceScore200Response> localVarResp = projectsQualityPerformanceScoreWithHttpInfo(id, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
+    public ProjectsQualityPerformanceScore200Response projectsQualityPerformanceScore(String projectId, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<ProjectsQualityPerformanceScore200Response> localVarResp = projectsQualityPerformanceScoreWithHttpInfo(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
     /**
-     * Get project&#39;s translations&#39; quality performance scores
-     * Get project&#39;s translations&#39; quality performance scores
-     * @param id ID (required)
+     * Get Translation Quality
+     * Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
+     * @param projectId Project ID (required)
      * @param projectsQualityPerformanceScoreRequest  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;ProjectsQualityPerformanceScore200Response&gt;
@@ -173,16 +173,16 @@ public class QualityPerformanceScoreApi {
         <tr><td> 504 </td><td> Gateway timeout </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProjectsQualityPerformanceScore200Response> projectsQualityPerformanceScoreWithHttpInfo(String id, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = projectsQualityPerformanceScoreValidateBeforeCall(id, projectsQualityPerformanceScoreRequest, xPhraseAppOTP, null);
+    public ApiResponse<ProjectsQualityPerformanceScore200Response> projectsQualityPerformanceScoreWithHttpInfo(String projectId, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = projectsQualityPerformanceScoreValidateBeforeCall(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<ProjectsQualityPerformanceScore200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get project&#39;s translations&#39; quality performance scores (asynchronously)
-     * Get project&#39;s translations&#39; quality performance scores
-     * @param id ID (required)
+     * Get Translation Quality (asynchronously)
+     * Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
+     * @param projectId Project ID (required)
      * @param projectsQualityPerformanceScoreRequest  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -200,9 +200,9 @@ public class QualityPerformanceScoreApi {
         <tr><td> 504 </td><td> Gateway timeout </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call projectsQualityPerformanceScoreAsync(String id, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP, final ApiCallback<ProjectsQualityPerformanceScore200Response> _callback) throws ApiException {
+    public okhttp3.Call projectsQualityPerformanceScoreAsync(String projectId, ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest, String xPhraseAppOTP, final ApiCallback<ProjectsQualityPerformanceScore200Response> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = projectsQualityPerformanceScoreValidateBeforeCall(id, projectsQualityPerformanceScoreRequest, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = projectsQualityPerformanceScoreValidateBeforeCall(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<ProjectsQualityPerformanceScore200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -4,16 +4,16 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**projectsQualityPerformanceScore**](QualityPerformanceScoreApi.md#projectsQualityPerformanceScore) | **POST** /projects/{id}/quality_performance_score | Get project&#39;s translations&#39; quality performance scores
+[**projectsQualityPerformanceScore**](QualityPerformanceScoreApi.md#projectsQualityPerformanceScore) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
 
 
 <a name="projectsQualityPerformanceScore"></a>
 # **projectsQualityPerformanceScore**
-> ProjectsQualityPerformanceScore200Response projectsQualityPerformanceScore(id, projectsQualityPerformanceScoreRequest, xPhraseAppOTP)
+> ProjectsQualityPerformanceScore200Response projectsQualityPerformanceScore(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP)
 
-Get project&#39;s translations&#39; quality performance scores
+Get Translation Quality
 
-Get project&#39;s translations&#39; quality performance scores
+Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
 
 ### Example
 ```java
@@ -41,11 +41,11 @@ public class Example {
     Token.setApiKeyPrefix("token");
 
     QualityPerformanceScoreApi apiInstance = new QualityPerformanceScoreApi(defaultClient);
-    String id = "id_example"; // String | ID
+    String projectId = "projectId_example"; // String | Project ID
     ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest = new ProjectsQualityPerformanceScoreRequest(); // ProjectsQualityPerformanceScoreRequest | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      ProjectsQualityPerformanceScore200Response result = apiInstance.projectsQualityPerformanceScore(id, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
+      ProjectsQualityPerformanceScore200Response result = apiInstance.projectsQualityPerformanceScore(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QualityPerformanceScoreApi#projectsQualityPerformanceScore");
@@ -62,7 +62,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| ID |
+ **projectId** | **String**| Project ID |
  **projectsQualityPerformanceScoreRequest** | [**ProjectsQualityPerformanceScoreRequest**](ProjectsQualityPerformanceScoreRequest.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 

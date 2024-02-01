@@ -34,19 +34,19 @@ public class QualityPerformanceScoreApiTest {
 
     
     /**
-     * Get project&#39;s translations&#39; quality performance scores
+     * Get Translation Quality
      *
-     * Get project&#39;s translations&#39; quality performance scores
+     * Retrieves the quality scores for your Strings translations. Returns a score, measured by Phrase QPS
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void projectsQualityPerformanceScoreTest() throws ApiException {
-        String id = null;
+        String projectId = null;
         ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest = null;
         String xPhraseAppOTP = null;
-        ProjectsQualityPerformanceScore200Response response = api.projectsQualityPerformanceScore(id, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
+        ProjectsQualityPerformanceScore200Response response = api.projectsQualityPerformanceScore(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
 
         // TODO: test validations
     }

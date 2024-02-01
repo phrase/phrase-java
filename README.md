@@ -286,7 +286,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**projectShow**](docs/ProjectsApi.md#projectShow) | **GET** /projects/{id} | Get a single project
 *ProjectsApi* | [**projectUpdate**](docs/ProjectsApi.md#projectUpdate) | **PATCH** /projects/{id} | Update a project
 *ProjectsApi* | [**projectsList**](docs/ProjectsApi.md#projectsList) | **GET** /projects | List projects
-*QualityPerformanceScoreApi* | [**projectsQualityPerformanceScore**](docs/QualityPerformanceScoreApi.md#projectsQualityPerformanceScore) | **POST** /projects/{id}/quality_performance_score | Get project&#39;s translations&#39; quality performance scores
+*QualityPerformanceScoreApi* | [**projectsQualityPerformanceScore**](docs/QualityPerformanceScoreApi.md#projectsQualityPerformanceScore) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
 *ReleasesApi* | [**releaseCreate**](docs/ReleasesApi.md#releaseCreate) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases | Create a release
 *ReleasesApi* | [**releaseDelete**](docs/ReleasesApi.md#releaseDelete) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Delete a release
 *ReleasesApi* | [**releasePublish**](docs/ReleasesApi.md#releasePublish) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish | Publish a release

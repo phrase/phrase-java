@@ -33,7 +33,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectsQualityPerformanceScore200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T07:50:45.781353Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T08:16:17.427160Z[Etc/UTC]")
 public class ProjectsQualityPerformanceScore200Response {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
@@ -109,7 +109,7 @@ public class ProjectsQualityPerformanceScore200Response {
   }
 
    /**
-   * Array of errors for any failing translation ids
+   * Array of errors for any failing translation IDs
    * @return errors
   **/
   @javax.annotation.Nullable
