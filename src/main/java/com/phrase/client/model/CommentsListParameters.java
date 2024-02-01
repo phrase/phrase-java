@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * CommentsListParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T08:31:26.929141Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T08:31:52.050486Z[Etc/UTC]")
 public class CommentsListParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
