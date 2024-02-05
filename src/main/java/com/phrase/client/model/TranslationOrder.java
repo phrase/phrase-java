@@ -31,7 +31,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-01T08:54:56.818935Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-05T08:56:43.530184Z[Etc/UTC]")
 public class TranslationOrder {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
