@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Subscription
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-05T10:22:11.259493Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-05T10:23:15.919780Z[Etc/UTC]")
 public class Subscription {
   public static final String SERIALIZED_NAME_IS_CURRENT = "is_current";
   @SerializedName(SERIALIZED_NAME_IS_CURRENT)
