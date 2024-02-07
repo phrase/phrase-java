@@ -69,9 +69,10 @@ public class CustomMetadataApiTest {
         String projectId = null;
         Integer page = null;
         Integer perPage = null;
+        String q = null;
         String sort = null;
         String order = null;
-        List<CustomMetadataProperty> response = api.customMetadataPropertiesList(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, sort, order);
+        List<CustomMetadataProperty> response = api.customMetadataPropertiesList(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, q, sort, order);
 
         // TODO: test validations
     }

@@ -92,7 +92,7 @@ null (empty response body)
 
 <a name="customMetadataPropertiesList"></a>
 # **customMetadataPropertiesList**
-> List&lt;CustomMetadataProperty&gt; customMetadataPropertiesList(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, sort, order)
+> List&lt;CustomMetadataProperty&gt; customMetadataPropertiesList(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, q, sort, order)
 
 List properties
 
@@ -130,10 +130,11 @@ public class Example {
     String projectId = "abcd1234cdef1234abcd1234cdef1234"; // String | id of project that the properties belong to
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    String q = "character_name"; // String | query to find a property by name
     String sort = "updated_at"; // String | Sort criteria. Can be one of: name, data_type, created_at.
     String order = "desc"; // String | Order direction. Can be one of: asc, desc.
     try {
-      List<CustomMetadataProperty> result = apiInstance.customMetadataPropertiesList(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, sort, order);
+      List<CustomMetadataProperty> result = apiInstance.customMetadataPropertiesList(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, q, sort, order);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomMetadataApi#customMetadataPropertiesList");
@@ -156,6 +157,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| id of project that the properties belong to | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
+ **q** | **String**| query to find a property by name | [optional]
  **sort** | **String**| Sort criteria. Can be one of: name, data_type, created_at. | [optional]
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
 

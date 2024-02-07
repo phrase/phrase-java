@@ -202,6 +202,7 @@ public class CustomMetadataApi {
      * @param projectId id of project that the properties belong to (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param q query to find a property by name (optional)
      * @param sort Sort criteria. Can be one of: name, data_type, created_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param _callback Callback for upload/download progress
@@ -216,7 +217,7 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call customMetadataPropertiesListCall(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String sort, String order, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call customMetadataPropertiesListCall(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String q, String sort, String order, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -239,6 +240,10 @@ public class CustomMetadataApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (q != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("q", q));
         }
 
         if (sort != null) {
@@ -275,7 +280,7 @@ public class CustomMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call customMetadataPropertiesListValidateBeforeCall(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String sort, String order, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customMetadataPropertiesListValidateBeforeCall(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String q, String sort, String order, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
@@ -283,7 +288,7 @@ public class CustomMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = customMetadataPropertiesListCall(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, sort, order, _callback);
+        okhttp3.Call localVarCall = customMetadataPropertiesListCall(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, q, sort, order, _callback);
         return localVarCall;
 
     }
@@ -297,6 +302,7 @@ public class CustomMetadataApi {
      * @param projectId id of project that the properties belong to (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param q query to find a property by name (optional)
      * @param sort Sort criteria. Can be one of: name, data_type, created_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @return List&lt;CustomMetadataProperty&gt;
@@ -310,8 +316,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<CustomMetadataProperty> customMetadataPropertiesList(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String sort, String order) throws ApiException {
-        ApiResponse<List<CustomMetadataProperty>> localVarResp = customMetadataPropertiesListWithHttpInfo(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, sort, order);
+    public List<CustomMetadataProperty> customMetadataPropertiesList(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String q, String sort, String order) throws ApiException {
+        ApiResponse<List<CustomMetadataProperty>> localVarResp = customMetadataPropertiesListWithHttpInfo(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, q, sort, order);
         return localVarResp.getData();
     }
 
@@ -324,6 +330,7 @@ public class CustomMetadataApi {
      * @param projectId id of project that the properties belong to (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param q query to find a property by name (optional)
      * @param sort Sort criteria. Can be one of: name, data_type, created_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @return ApiResponse&lt;List&lt;CustomMetadataProperty&gt;&gt;
@@ -337,8 +344,8 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<CustomMetadataProperty>> customMetadataPropertiesListWithHttpInfo(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String sort, String order) throws ApiException {
-        okhttp3.Call localVarCall = customMetadataPropertiesListValidateBeforeCall(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, sort, order, null);
+    public ApiResponse<List<CustomMetadataProperty>> customMetadataPropertiesListWithHttpInfo(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String q, String sort, String order) throws ApiException {
+        okhttp3.Call localVarCall = customMetadataPropertiesListValidateBeforeCall(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, q, sort, order, null);
         Type localVarReturnType = new TypeToken<List<CustomMetadataProperty>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -352,6 +359,7 @@ public class CustomMetadataApi {
      * @param projectId id of project that the properties belong to (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param q query to find a property by name (optional)
      * @param sort Sort criteria. Can be one of: name, data_type, created_at. (optional)
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -366,9 +374,9 @@ public class CustomMetadataApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call customMetadataPropertiesListAsync(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String sort, String order, final ApiCallback<List<CustomMetadataProperty>> _callback) throws ApiException {
+    public okhttp3.Call customMetadataPropertiesListAsync(String accountId, String xPhraseAppOTP, CustomMetadataDataType dataType, String projectId, Integer page, Integer perPage, String q, String sort, String order, final ApiCallback<List<CustomMetadataProperty>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = customMetadataPropertiesListValidateBeforeCall(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, sort, order, _callback);
+        okhttp3.Call localVarCall = customMetadataPropertiesListValidateBeforeCall(accountId, xPhraseAppOTP, dataType, projectId, page, perPage, q, sort, order, _callback);
         Type localVarReturnType = new TypeToken<List<CustomMetadataProperty>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
