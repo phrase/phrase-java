@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * AuthorizationWithToken
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T15:13:10.273765Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T15:23:17.520138Z[Etc/UTC]")
 public class AuthorizationWithToken {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
