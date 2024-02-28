@@ -1781,6 +1781,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -1880,6 +1882,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -2295,6 +2299,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -3000,6 +3006,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -3501,6 +3509,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -3980,6 +3990,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -4733,6 +4745,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -5230,6 +5244,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -5350,6 +5366,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -6101,6 +6119,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -6562,6 +6582,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -7185,6 +7207,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -7406,6 +7430,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -8492,6 +8518,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -8969,6 +8997,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -9414,6 +9444,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -9807,6 +9839,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -10153,6 +10187,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -11024,6 +11060,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -11575,6 +11613,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -12311,6 +12351,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -12856,6 +12898,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -13311,6 +13355,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -13692,6 +13738,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -13900,6 +13948,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -14020,6 +14070,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -14574,6 +14626,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -15009,6 +15063,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -15857,6 +15913,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -16370,6 +16428,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -16823,6 +16883,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -17447,6 +17509,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -17695,6 +17759,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -18236,6 +18302,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -18725,6 +18793,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -19224,6 +19294,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -19614,6 +19686,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -20250,6 +20324,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -21216,6 +21292,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -21800,6 +21878,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -22261,6 +22341,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -22548,6 +22630,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -23624,6 +23708,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -23874,6 +23960,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -24035,6 +24123,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -25374,6 +25464,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -25627,6 +25719,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -26289,6 +26383,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -26485,6 +26581,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -26679,6 +26777,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -26783,6 +26883,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -27243,6 +27345,8 @@ paths:
               $ref: '#/components/headers/X-Rate-Limit-Reset'
             Link:
               $ref: '#/components/headers/Link'
+            Pagination:
+              $ref: '#/components/headers/Pagination'
         "400":
           description: Bad request
           headers:
@@ -27709,6 +27813,37 @@ components:
       explode: false
       schema:
         type: integer
+      style: simple
+    Pagination:
+      description: "Pagination details for navigating through a collection of resources,\
+        \ provided in JSON format."
+      explode: false
+      schema:
+        properties:
+          total_count:
+            description: Total count of items in the collection.
+            example: 10
+            type: integer
+          total_pages_count:
+            description: Total number of pages available for the collection.
+            example: 2
+            type: integer
+          current_page:
+            description: The current page number.
+            example: 1
+            type: integer
+          current_per_page:
+            description: Number of items currently displayed per page.
+            example: 5
+            type: integer
+          previous_page:
+            description: "Page number of the previous page, if available."
+            type: integer
+          next_page:
+            description: "Page number of the next page, if available."
+            example: 2
+            type: integer
+        type: object
       style: simple
   parameters:
     X-PhraseApp-OTP:
