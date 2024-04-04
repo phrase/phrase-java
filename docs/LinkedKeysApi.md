@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="keyLinksBatchDestroy"></a>
 # **keyLinksBatchDestroy**
-> keyLinksBatchDestroy(accountId, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent)
+> keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent)
 
 Batch unlink child keys from a parent key
 
@@ -44,12 +44,13 @@ public class Example {
     Token.setApiKeyPrefix("token");
 
     LinkedKeysApi apiInstance = new LinkedKeysApi(defaultClient);
-    String accountId = "accountId_example"; // String | Account ID
+    String projectId = "projectId_example"; // String | Project ID
+    String id = "id_example"; // String | Parent Translation Key ID
     KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = new KeyLinksBatchDestroyParameters(); // KeyLinksBatchDestroyParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Boolean unlinkParent = true; // Boolean | Whether to unlink the parent key as well and unmark it as linked-key.
     try {
-      apiInstance.keyLinksBatchDestroy(accountId, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent);
+      apiInstance.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent);
     } catch (ApiException e) {
       System.err.println("Exception when calling LinkedKeysApi#keyLinksBatchDestroy");
       System.err.println("Status code: " + e.getCode());
@@ -65,7 +66,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Account ID |
+ **projectId** | **String**| Project ID |
+ **id** | **String**| Parent Translation Key ID |
  **keyLinksBatchDestroyParameters** | [**KeyLinksBatchDestroyParameters**](KeyLinksBatchDestroyParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **unlinkParent** | **Boolean**| Whether to unlink the parent key as well and unmark it as linked-key. | [optional]
@@ -91,7 +93,7 @@ null (empty response body)
 
 <a name="keyLinksCreate"></a>
 # **keyLinksCreate**
-> KeyLink keyLinksCreate(accountId, keyLinksCreateParameters, xPhraseAppOTP)
+> KeyLink keyLinksCreate(projectId, id, keyLinksCreateParameters, xPhraseAppOTP)
 
 Link child keys to a parent key
 
@@ -123,11 +125,12 @@ public class Example {
     Token.setApiKeyPrefix("token");
 
     LinkedKeysApi apiInstance = new LinkedKeysApi(defaultClient);
-    String accountId = "accountId_example"; // String | Account ID
+    String projectId = "projectId_example"; // String | Project ID
+    String id = "id_example"; // String | Parent Translation Key ID
     KeyLinksCreateParameters keyLinksCreateParameters = new KeyLinksCreateParameters(); // KeyLinksCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      KeyLink result = apiInstance.keyLinksCreate(accountId, keyLinksCreateParameters, xPhraseAppOTP);
+      KeyLink result = apiInstance.keyLinksCreate(projectId, id, keyLinksCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LinkedKeysApi#keyLinksCreate");
@@ -144,7 +147,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Account ID |
+ **projectId** | **String**| Project ID |
+ **id** | **String**| Parent Translation Key ID |
  **keyLinksCreateParameters** | [**KeyLinksCreateParameters**](KeyLinksCreateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
@@ -169,7 +173,7 @@ Name | Type | Description  | Notes
 
 <a name="keyLinksDestroy"></a>
 # **keyLinksDestroy**
-> keyLinksDestroy(accountId, childKeyId, xPhraseAppOTP)
+> keyLinksDestroy(projectId, id, childKeyId, xPhraseAppOTP)
 
 Unlink a child key from a parent key
 
@@ -201,11 +205,12 @@ public class Example {
     Token.setApiKeyPrefix("token");
 
     LinkedKeysApi apiInstance = new LinkedKeysApi(defaultClient);
-    String accountId = "accountId_example"; // String | Account ID
+    String projectId = "projectId_example"; // String | Project ID
+    String id = "id_example"; // String | Parent Translation Key ID
     String childKeyId = "childKeyId_example"; // String | The ID of the child key to unlink.
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.keyLinksDestroy(accountId, childKeyId, xPhraseAppOTP);
+      apiInstance.keyLinksDestroy(projectId, id, childKeyId, xPhraseAppOTP);
     } catch (ApiException e) {
       System.err.println("Exception when calling LinkedKeysApi#keyLinksDestroy");
       System.err.println("Status code: " + e.getCode());
@@ -221,7 +226,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Account ID |
+ **projectId** | **String**| Project ID |
+ **id** | **String**| Parent Translation Key ID |
  **childKeyId** | **String**| The ID of the child key to unlink. |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
@@ -246,7 +252,7 @@ null (empty response body)
 
 <a name="keyLinksIndex"></a>
 # **keyLinksIndex**
-> KeyLink keyLinksIndex(accountId, xPhraseAppOTP)
+> KeyLink keyLinksIndex(projectId, id, xPhraseAppOTP)
 
 Retrieve all child keys linked to a specific parent key
 
@@ -278,10 +284,11 @@ public class Example {
     Token.setApiKeyPrefix("token");
 
     LinkedKeysApi apiInstance = new LinkedKeysApi(defaultClient);
-    String accountId = "accountId_example"; // String | Account ID
+    String projectId = "projectId_example"; // String | Project ID
+    String id = "id_example"; // String | Parent Translation Key ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      KeyLink result = apiInstance.keyLinksIndex(accountId, xPhraseAppOTP);
+      KeyLink result = apiInstance.keyLinksIndex(projectId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LinkedKeysApi#keyLinksIndex");
@@ -298,7 +305,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Account ID |
+ **projectId** | **String**| Project ID |
+ **id** | **String**| Parent Translation Key ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type

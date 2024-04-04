@@ -45,11 +45,12 @@ public class LinkedKeysApiTest {
      */
     @Test
     public void keyLinksBatchDestroyTest() throws ApiException {
-        String accountId = null;
+        String projectId = null;
+        String id = null;
         KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = null;
         String xPhraseAppOTP = null;
         Boolean unlinkParent = null;
-        api.keyLinksBatchDestroy(accountId, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent);
+        api.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent);
 
         // TODO: test validations
     }
@@ -64,10 +65,11 @@ public class LinkedKeysApiTest {
      */
     @Test
     public void keyLinksCreateTest() throws ApiException {
-        String accountId = null;
+        String projectId = null;
+        String id = null;
         KeyLinksCreateParameters keyLinksCreateParameters = null;
         String xPhraseAppOTP = null;
-        KeyLink response = api.keyLinksCreate(accountId, keyLinksCreateParameters, xPhraseAppOTP);
+        KeyLink response = api.keyLinksCreate(projectId, id, keyLinksCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -82,10 +84,11 @@ public class LinkedKeysApiTest {
      */
     @Test
     public void keyLinksDestroyTest() throws ApiException {
-        String accountId = null;
+        String projectId = null;
+        String id = null;
         String childKeyId = null;
         String xPhraseAppOTP = null;
-        api.keyLinksDestroy(accountId, childKeyId, xPhraseAppOTP);
+        api.keyLinksDestroy(projectId, id, childKeyId, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -100,9 +103,10 @@ public class LinkedKeysApiTest {
      */
     @Test
     public void keyLinksIndexTest() throws ApiException {
-        String accountId = null;
+        String projectId = null;
+        String id = null;
         String xPhraseAppOTP = null;
-        KeyLink response = api.keyLinksIndex(accountId, xPhraseAppOTP);
+        KeyLink response = api.keyLinksIndex(projectId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
