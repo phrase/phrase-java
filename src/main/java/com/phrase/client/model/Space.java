@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Space
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T08:58:54.004002Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-10T08:59:18.059217Z[Etc/UTC]")
 public class Space {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
