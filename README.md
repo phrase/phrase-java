@@ -297,6 +297,13 @@ Class | Method | HTTP request | Description
 *ReleasesApi* | [**releaseShow**](docs/ReleasesApi.md#releaseShow) | **GET** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Get a single release
 *ReleasesApi* | [**releaseUpdate**](docs/ReleasesApi.md#releaseUpdate) | **PATCH** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Update a release
 *ReleasesApi* | [**releasesList**](docs/ReleasesApi.md#releasesList) | **GET** /accounts/{account_id}/distributions/{distribution_id}/releases | List releases
+*RepoSyncsApi* | [**repoSyncActivate**](docs/RepoSyncsApi.md#repoSyncActivate) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/activate | Activate a Repo Sync
+*RepoSyncsApi* | [**repoSyncDeactivate**](docs/RepoSyncsApi.md#repoSyncDeactivate) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/deactivate | Deactivate a Repo Sync
+*RepoSyncsApi* | [**repoSyncEvents**](docs/RepoSyncsApi.md#repoSyncEvents) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id}/events | Repository Syncs History
+*RepoSyncsApi* | [**repoSyncExport**](docs/RepoSyncsApi.md#repoSyncExport) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/export | Export to code repository
+*RepoSyncsApi* | [**repoSyncImport**](docs/RepoSyncsApi.md#repoSyncImport) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/import | Import from code repository
+*RepoSyncsApi* | [**repoSyncList**](docs/RepoSyncsApi.md#repoSyncList) | **GET** /accounts/{account_id}/repo_syncs | Get Repo Syncs
+*RepoSyncsApi* | [**repoSyncShow**](docs/RepoSyncsApi.md#repoSyncShow) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id} | Get a single Repo Sync
 *ReportsApi* | [**reportLocalesList**](docs/ReportsApi.md#reportLocalesList) | **GET** /projects/{project_id}/report/locales | List Locale Reports
 *ReportsApi* | [**reportShow**](docs/ReportsApi.md#reportShow) | **GET** /projects/{project_id}/report | Get Project Report
 *ScreenshotMarkersApi* | [**screenshotMarkerCreate**](docs/ScreenshotMarkersApi.md#screenshotMarkerCreate) | **POST** /projects/{project_id}/screenshots/{screenshot_id}/markers | Create a screenshot marker
@@ -530,6 +537,11 @@ Class | Method | HTTP request | Description
  - [ReleasePreview](docs/ReleasePreview.md)
  - [ReleaseUpdateParameters](docs/ReleaseUpdateParameters.md)
  - [RepliesListParameters](docs/RepliesListParameters.md)
+ - [RepoSync](docs/RepoSync.md)
+ - [RepoSyncEvent](docs/RepoSyncEvent.md)
+ - [RepoSyncEventErrorsInner](docs/RepoSyncEventErrorsInner.md)
+ - [RepoSyncExport](docs/RepoSyncExport.md)
+ - [RepoSyncImport](docs/RepoSyncImport.md)
  - [Screenshot](docs/Screenshot.md)
  - [ScreenshotMarker](docs/ScreenshotMarker.md)
  - [ScreenshotMarkerCreateParameters](docs/ScreenshotMarkerCreateParameters.md)

@@ -195,6 +195,12 @@ docs/ReleasePreview.md
 docs/ReleaseUpdateParameters.md
 docs/ReleasesApi.md
 docs/RepliesListParameters.md
+docs/RepoSync.md
+docs/RepoSyncEvent.md
+docs/RepoSyncEventErrorsInner.md
+docs/RepoSyncExport.md
+docs/RepoSyncImport.md
+docs/RepoSyncsApi.md
 docs/ReportsApi.md
 docs/Screenshot.md
 docs/ScreenshotMarker.md
@@ -331,6 +337,7 @@ src/main/java/com/phrase/client/api/OrganizationJobTemplatesApi.java
 src/main/java/com/phrase/client/api/ProjectsApi.java
 src/main/java/com/phrase/client/api/QualityPerformanceScoreApi.java
 src/main/java/com/phrase/client/api/ReleasesApi.java
+src/main/java/com/phrase/client/api/RepoSyncsApi.java
 src/main/java/com/phrase/client/api/ReportsApi.java
 src/main/java/com/phrase/client/api/ScreenshotMarkersApi.java
 src/main/java/com/phrase/client/api/ScreenshotsApi.java
@@ -502,6 +509,11 @@ src/main/java/com/phrase/client/model/ReleaseCreateParameters.java
 src/main/java/com/phrase/client/model/ReleasePreview.java
 src/main/java/com/phrase/client/model/ReleaseUpdateParameters.java
 src/main/java/com/phrase/client/model/RepliesListParameters.java
+src/main/java/com/phrase/client/model/RepoSync.java
+src/main/java/com/phrase/client/model/RepoSyncEvent.java
+src/main/java/com/phrase/client/model/RepoSyncEventErrorsInner.java
+src/main/java/com/phrase/client/model/RepoSyncExport.java
+src/main/java/com/phrase/client/model/RepoSyncImport.java
 src/main/java/com/phrase/client/model/Screenshot.java
 src/main/java/com/phrase/client/model/ScreenshotMarker.java
 src/main/java/com/phrase/client/model/ScreenshotMarkerCreateParameters.java
@@ -600,6 +612,7 @@ src/test/java/com/phrase/client/api/OrganizationJobTemplatesApiTest.java
 src/test/java/com/phrase/client/api/ProjectsApiTest.java
 src/test/java/com/phrase/client/api/QualityPerformanceScoreApiTest.java
 src/test/java/com/phrase/client/api/ReleasesApiTest.java
+src/test/java/com/phrase/client/api/RepoSyncsApiTest.java
 src/test/java/com/phrase/client/api/ReportsApiTest.java
 src/test/java/com/phrase/client/api/ScreenshotMarkersApiTest.java
 src/test/java/com/phrase/client/api/ScreenshotsApiTest.java
@@ -765,6 +778,11 @@ src/test/java/com/phrase/client/model/ReleasePreviewTest.java
 src/test/java/com/phrase/client/model/ReleaseTest.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParametersTest.java
 src/test/java/com/phrase/client/model/RepliesListParametersTest.java
+src/test/java/com/phrase/client/model/RepoSyncEventErrorsInnerTest.java
+src/test/java/com/phrase/client/model/RepoSyncEventTest.java
+src/test/java/com/phrase/client/model/RepoSyncExportTest.java
+src/test/java/com/phrase/client/model/RepoSyncImportTest.java
+src/test/java/com/phrase/client/model/RepoSyncTest.java
 src/test/java/com/phrase/client/model/ScreenshotMarkerCreateParametersTest.java
 src/test/java/com/phrase/client/model/ScreenshotMarkerTest.java
 src/test/java/com/phrase/client/model/ScreenshotMarkerUpdateParametersTest.java
