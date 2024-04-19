@@ -24,36 +24,62 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * TeamUpdateParameters
+ * TranslationParent
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-19T13:28:48.309233Z[Etc/UTC]")
-public class TeamUpdateParameters {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+public class TranslationParent {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
 
-  public TeamUpdateParameters() {
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  private String content;
+
+  public TranslationParent() {
   }
 
-  public TeamUpdateParameters name(String name) {
+  public TranslationParent id(String id) {
     
-    this.name = name;
+    this.id = id;
     return this;
   }
 
    /**
-   * New name of the team
-   * @return name
+   * Get id
+   * @return id
   **/
   @javax.annotation.Nullable
 
-  public String getName() {
-    return name;
+  public String getId() {
+    return id;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
+  public TranslationParent content(String content) {
+    
+    this.content = content;
+    return this;
+  }
+
+   /**
+   * Get content
+   * @return content
+  **/
+  @javax.annotation.Nullable
+
+  public String getContent() {
+    return content;
+  }
+
+
+  public void setContent(String content) {
+    this.content = content;
   }
 
   @Override
@@ -64,20 +90,22 @@ public class TeamUpdateParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TeamUpdateParameters teamUpdateParameters = (TeamUpdateParameters) o;
-    return Objects.equals(this.name, teamUpdateParameters.name);
+    TranslationParent translationParent = (TranslationParent) o;
+    return Objects.equals(this.id, translationParent.id) &&
+        Objects.equals(this.content, translationParent.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(id, content);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TeamUpdateParameters {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("class TranslationParent {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }

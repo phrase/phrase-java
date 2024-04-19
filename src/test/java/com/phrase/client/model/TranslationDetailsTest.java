@@ -19,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.TranslationParent;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -146,6 +147,14 @@ public class TranslationDetailsTest {
     @Test
     public void wordCountTest() {
         // TODO: test wordCount
+    }
+
+    /**
+     * Test the property 'linkedTranslation'
+     */
+    @Test
+    public void linkedTranslationTest() {
+        // TODO: test linkedTranslation
     }
 
 }

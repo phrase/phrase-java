@@ -247,6 +247,7 @@ docs/TranslationIncludeParameters.md
 docs/TranslationKey.md
 docs/TranslationKeyDetails.md
 docs/TranslationOrder.md
+docs/TranslationParent.md
 docs/TranslationReviewParameters.md
 docs/TranslationUnverifyParameters.md
 docs/TranslationUpdateParameters.md
@@ -552,6 +553,7 @@ src/main/java/com/phrase/client/model/TranslationIncludeParameters.java
 src/main/java/com/phrase/client/model/TranslationKey.java
 src/main/java/com/phrase/client/model/TranslationKeyDetails.java
 src/main/java/com/phrase/client/model/TranslationOrder.java
+src/main/java/com/phrase/client/model/TranslationParent.java
 src/main/java/com/phrase/client/model/TranslationReviewParameters.java
 src/main/java/com/phrase/client/model/TranslationUnverifyParameters.java
 src/main/java/com/phrase/client/model/TranslationUpdateParameters.java
@@ -820,6 +822,7 @@ src/test/java/com/phrase/client/model/TranslationIncludeParametersTest.java
 src/test/java/com/phrase/client/model/TranslationKeyDetailsTest.java
 src/test/java/com/phrase/client/model/TranslationKeyTest.java
 src/test/java/com/phrase/client/model/TranslationOrderTest.java
+src/test/java/com/phrase/client/model/TranslationParentTest.java
 src/test/java/com/phrase/client/model/TranslationReviewParametersTest.java
 src/test/java/com/phrase/client/model/TranslationTest.java
 src/test/java/com/phrase/client/model/TranslationUnverifyParametersTest.java

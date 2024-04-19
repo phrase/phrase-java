@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **user** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **wordCount** | **Integer** |  |  [optional]
+**linkedTranslation** | [**TranslationParent**](TranslationParent.md) |  |  [optional]
 
 
 

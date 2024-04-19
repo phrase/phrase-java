@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.TranslationParent;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -32,7 +33,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-17T11:39:50.908492Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-19T13:28:48.309233Z[Etc/UTC]")
 public class TranslationDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -85,6 +86,10 @@ public class TranslationDetails {
   public static final String SERIALIZED_NAME_WORD_COUNT = "word_count";
   @SerializedName(SERIALIZED_NAME_WORD_COUNT)
   private Integer wordCount;
+
+  public static final String SERIALIZED_NAME_LINKED_TRANSLATION = "linked_translation";
+  @SerializedName(SERIALIZED_NAME_LINKED_TRANSLATION)
+  private TranslationParent linkedTranslation;
 
   public TranslationDetails() {
   }
@@ -382,6 +387,28 @@ public class TranslationDetails {
     this.wordCount = wordCount;
   }
 
+
+  public TranslationDetails linkedTranslation(TranslationParent linkedTranslation) {
+    
+    this.linkedTranslation = linkedTranslation;
+    return this;
+  }
+
+   /**
+   * Get linkedTranslation
+   * @return linkedTranslation
+  **/
+  @javax.annotation.Nullable
+
+  public TranslationParent getLinkedTranslation() {
+    return linkedTranslation;
+  }
+
+
+  public void setLinkedTranslation(TranslationParent linkedTranslation) {
+    this.linkedTranslation = linkedTranslation;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -403,12 +430,13 @@ public class TranslationDetails {
         Objects.equals(this.createdAt, translationDetails.createdAt) &&
         Objects.equals(this.updatedAt, translationDetails.updatedAt) &&
         Objects.equals(this.user, translationDetails.user) &&
-        Objects.equals(this.wordCount, translationDetails.wordCount);
+        Objects.equals(this.wordCount, translationDetails.wordCount) &&
+        Objects.equals(this.linkedTranslation, translationDetails.linkedTranslation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, content, unverified, excluded, pluralSuffix, key, locale, placeholders, state, createdAt, updatedAt, user, wordCount);
+    return Objects.hash(id, content, unverified, excluded, pluralSuffix, key, locale, placeholders, state, createdAt, updatedAt, user, wordCount, linkedTranslation);
   }
 
   @Override
@@ -428,6 +456,7 @@ public class TranslationDetails {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    wordCount: ").append(toIndentedString(wordCount)).append("\n");
+    sb.append("    linkedTranslation: ").append(toIndentedString(linkedTranslation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
