@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TeamCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-22T12:10:03.996953Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-22T12:10:33.469303Z[Etc/UTC]")
 public class TeamCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
