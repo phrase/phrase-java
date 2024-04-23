@@ -263,6 +263,11 @@
             <version>3.14.7</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
+            <version>0.2.6</version>
+        </dependency>
     </dependencies>
     <properties>
         <java.version>1.8</java.version>
