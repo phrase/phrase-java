@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * WebhookCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:42:04.577834Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:44:41.560121Z[Etc/UTC]")
 public class WebhookCreateParameters {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callback_url";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
@@ -65,7 +65,7 @@ public class WebhookCreateParameters {
    * Callback URL to send requests to
    * @return callbackUrl
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getCallbackUrl() {
     return callbackUrl;

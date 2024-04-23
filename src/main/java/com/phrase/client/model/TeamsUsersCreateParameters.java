@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TeamsUsersCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:42:04.577834Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:44:41.560121Z[Etc/UTC]")
 public class TeamsUsersCreateParameters {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -45,7 +45,7 @@ public class TeamsUsersCreateParameters {
    * User ID to add to the Team
    * @return id
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getId() {
     return id;

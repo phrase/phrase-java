@@ -57,11 +57,11 @@ public class UploadsApi {
     /**
      * Build call for uploadCreate
      * @param projectId Project ID (required)
+     * @param _file File to be imported (required)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (required)
+     * @param localeId Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param _file File to be imported (optional)
-     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
-     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
      * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
      * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
      * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
@@ -69,7 +69,7 @@ public class UploadsApi {
      * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
      * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
      * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
-     * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
+     * @param localeMapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
@@ -86,7 +86,7 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadCreateCall(String projectId, String xPhraseAppOTP, String branch, File _file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadCreateCall(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -185,15 +185,30 @@ public class UploadsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadCreateValidateBeforeCall(String projectId, String xPhraseAppOTP, String branch, File _file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadCreateValidateBeforeCall(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
             throw new ApiException("Missing the required parameter 'projectId' when calling uploadCreate(Async)");
         }
         
+        // verify the required parameter '_file' is set
+        if (_file == null) {
+            throw new ApiException("Missing the required parameter '_file' when calling uploadCreate(Async)");
+        }
+        
+        // verify the required parameter 'fileFormat' is set
+        if (fileFormat == null) {
+            throw new ApiException("Missing the required parameter 'fileFormat' when calling uploadCreate(Async)");
+        }
+        
+        // verify the required parameter 'localeId' is set
+        if (localeId == null) {
+            throw new ApiException("Missing the required parameter 'localeId' when calling uploadCreate(Async)");
+        }
+        
 
-        okhttp3.Call localVarCall = uploadCreateCall(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, _callback);
+        okhttp3.Call localVarCall = uploadCreateCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, _callback);
         return localVarCall;
 
     }
@@ -202,11 +217,11 @@ public class UploadsApi {
      * Upload a new file
      * Upload a new language file. Creates necessary resources in your project.
      * @param projectId Project ID (required)
+     * @param _file File to be imported (required)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (required)
+     * @param localeId Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param _file File to be imported (optional)
-     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
-     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
      * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
      * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
      * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
@@ -214,7 +229,7 @@ public class UploadsApi {
      * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
      * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
      * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
-     * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
+     * @param localeMapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
@@ -230,8 +245,8 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Upload uploadCreate(String projectId, String xPhraseAppOTP, String branch, File _file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys) throws ApiException {
-        ApiResponse<Upload> localVarResp = uploadCreateWithHttpInfo(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
+    public Upload uploadCreate(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys) throws ApiException {
+        ApiResponse<Upload> localVarResp = uploadCreateWithHttpInfo(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
         return localVarResp.getData();
     }
 
@@ -239,11 +254,11 @@ public class UploadsApi {
      * Upload a new file
      * Upload a new language file. Creates necessary resources in your project.
      * @param projectId Project ID (required)
+     * @param _file File to be imported (required)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (required)
+     * @param localeId Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param _file File to be imported (optional)
-     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
-     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
      * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
      * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
      * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
@@ -251,7 +266,7 @@ public class UploadsApi {
      * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
      * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
      * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
-     * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
+     * @param localeMapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
@@ -267,8 +282,8 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Upload> uploadCreateWithHttpInfo(String projectId, String xPhraseAppOTP, String branch, File _file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys) throws ApiException {
-        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, null);
+    public ApiResponse<Upload> uploadCreateWithHttpInfo(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys) throws ApiException {
+        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, null);
         Type localVarReturnType = new TypeToken<Upload>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -277,11 +292,11 @@ public class UploadsApi {
      * Upload a new file (asynchronously)
      * Upload a new language file. Creates necessary resources in your project.
      * @param projectId Project ID (required)
+     * @param _file File to be imported (required)
+     * @param fileFormat File format. Auto-detected when possible and not specified. (required)
+     * @param localeId Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param _file File to be imported (optional)
-     * @param fileFormat File format. Auto-detected when possible and not specified. (optional)
-     * @param localeId Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. (optional)
      * @param tags List of tags separated by comma to be associated with the new keys contained in the upload. (optional)
      * @param updateTranslations Indicates whether existing translations should be updated with the file content. (optional)
      * @param updateDescriptions Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. (optional)
@@ -289,7 +304,7 @@ public class UploadsApi {
      * @param skipUploadTags Indicates whether the upload should not create upload tags. (optional)
      * @param skipUnverification Indicates whether the upload should unverify updated translations. (optional)
      * @param fileEncoding Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. (optional)
-     * @param localeMapping Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. (optional)
+     * @param localeMapping Mapping between locale names and translation columns. Required in some formats like CSV or XLSX. (optional)
      * @param formatOptions Additional options available for specific formats. See our format guide for complete list. (optional)
      * @param autotranslate If set, translations for the uploaded language will be fetched automatically. (optional)
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
@@ -306,9 +321,9 @@ public class UploadsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadCreateAsync(String projectId, String xPhraseAppOTP, String branch, File _file, String fileFormat, String localeId, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys, final ApiCallback<Upload> _callback) throws ApiException {
+    public okhttp3.Call uploadCreateAsync(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean markReviewed, Boolean tagOnlyAffectedKeys, final ApiCallback<Upload> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, _callback);
+        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, _callback);
         Type localVarReturnType = new TypeToken<Upload>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

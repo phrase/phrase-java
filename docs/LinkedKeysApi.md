@@ -7,12 +7,12 @@ Method | HTTP request | Description
 [**keyLinksBatchDestroy**](LinkedKeysApi.md#keyLinksBatchDestroy) | **DELETE** /projects/{project_id}/keys/{id}/key_links | Batch unlink child keys from a parent key
 [**keyLinksCreate**](LinkedKeysApi.md#keyLinksCreate) | **POST** /projects/{project_id}/keys/{id}/key_links | Link child keys to a parent key
 [**keyLinksDestroy**](LinkedKeysApi.md#keyLinksDestroy) | **DELETE** /projects/{project_id}/keys/{id}/key_links/{child_key_id} | Unlink a child key from a parent key
-[**keyLinksIndex**](LinkedKeysApi.md#keyLinksIndex) | **GET** /projects/{project_id}/keys/{id}/key_links | Retrieve all child keys linked to a specific parent key
+[**keyLinksIndex**](LinkedKeysApi.md#keyLinksIndex) | **GET** /projects/{project_id}/keys/{id}/key_links | List child keys of a parent key
 
 
 <a name="keyLinksBatchDestroy"></a>
 # **keyLinksBatchDestroy**
-> keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent)
+> keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP)
 
 Batch unlink child keys from a parent key
 
@@ -48,9 +48,8 @@ public class Example {
     String id = "id_example"; // String | Parent Translation Key ID
     KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = new KeyLinksBatchDestroyParameters(); // KeyLinksBatchDestroyParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    Boolean unlinkParent = true; // Boolean | Whether to unlink the parent key as well and unmark it as linked-key.
     try {
-      apiInstance.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent);
+      apiInstance.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP);
     } catch (ApiException e) {
       System.err.println("Exception when calling LinkedKeysApi#keyLinksBatchDestroy");
       System.err.println("Status code: " + e.getCode());
@@ -70,7 +69,6 @@ Name | Type | Description  | Notes
  **id** | **String**| Parent Translation Key ID |
  **keyLinksBatchDestroyParameters** | [**KeyLinksBatchDestroyParameters**](KeyLinksBatchDestroyParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **unlinkParent** | **Boolean**| Whether to unlink the parent key as well and unmark it as linked-key. | [optional]
 
 ### Return type
 
@@ -254,7 +252,7 @@ null (empty response body)
 # **keyLinksIndex**
 > KeyLink keyLinksIndex(projectId, id, xPhraseAppOTP)
 
-Retrieve all child keys linked to a specific parent key
+List child keys of a parent key
 
 Returns detailed information about a parent key, including its linked child keys.
 

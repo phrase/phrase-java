@@ -63,7 +63,6 @@ public class LinkedKeysApi {
      * @param id Parent Translation Key ID (required)
      * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param unlinkParent Whether to unlink the parent key as well and unmark it as linked-key. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -74,7 +73,7 @@ public class LinkedKeysApi {
         <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keyLinksBatchDestroyCall(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, Boolean unlinkParent, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call keyLinksBatchDestroyCall(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = keyLinksBatchDestroyParameters;
 
         // create path and map variables
@@ -84,10 +83,6 @@ public class LinkedKeysApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (unlinkParent != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("unlink_parent", unlinkParent));
-        }
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -114,7 +109,7 @@ public class LinkedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call keyLinksBatchDestroyValidateBeforeCall(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, Boolean unlinkParent, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call keyLinksBatchDestroyValidateBeforeCall(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -132,7 +127,7 @@ public class LinkedKeysApi {
         }
         
 
-        okhttp3.Call localVarCall = keyLinksBatchDestroyCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent, _callback);
+        okhttp3.Call localVarCall = keyLinksBatchDestroyCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -144,7 +139,6 @@ public class LinkedKeysApi {
      * @param id Parent Translation Key ID (required)
      * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param unlinkParent Whether to unlink the parent key as well and unmark it as linked-key. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -153,8 +147,8 @@ public class LinkedKeysApi {
         <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void keyLinksBatchDestroy(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, Boolean unlinkParent) throws ApiException {
-        keyLinksBatchDestroyWithHttpInfo(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent);
+    public void keyLinksBatchDestroy(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP) throws ApiException {
+        keyLinksBatchDestroyWithHttpInfo(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP);
     }
 
     /**
@@ -164,7 +158,6 @@ public class LinkedKeysApi {
      * @param id Parent Translation Key ID (required)
      * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param unlinkParent Whether to unlink the parent key as well and unmark it as linked-key. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -174,8 +167,8 @@ public class LinkedKeysApi {
         <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> keyLinksBatchDestroyWithHttpInfo(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, Boolean unlinkParent) throws ApiException {
-        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent, null);
+    public ApiResponse<Void> keyLinksBatchDestroyWithHttpInfo(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -186,7 +179,6 @@ public class LinkedKeysApi {
      * @param id Parent Translation Key ID (required)
      * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param unlinkParent Whether to unlink the parent key as well and unmark it as linked-key. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -197,9 +189,9 @@ public class LinkedKeysApi {
         <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keyLinksBatchDestroyAsync(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, Boolean unlinkParent, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call keyLinksBatchDestroyAsync(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent, _callback);
+        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -554,7 +546,7 @@ public class LinkedKeysApi {
     }
 
     /**
-     * Retrieve all child keys linked to a specific parent key
+     * List child keys of a parent key
      * Returns detailed information about a parent key, including its linked child keys.
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
@@ -574,7 +566,7 @@ public class LinkedKeysApi {
     }
 
     /**
-     * Retrieve all child keys linked to a specific parent key
+     * List child keys of a parent key
      * Returns detailed information about a parent key, including its linked child keys.
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
@@ -595,7 +587,7 @@ public class LinkedKeysApi {
     }
 
     /**
-     * Retrieve all child keys linked to a specific parent key (asynchronously)
+     * List child keys of a parent key (asynchronously)
      * Returns detailed information about a parent key, including its linked child keys.
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)

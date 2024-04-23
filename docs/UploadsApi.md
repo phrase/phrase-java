@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys)
+> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys)
 
 Upload a new file
 
@@ -44,11 +44,11 @@ public class Example {
 
     UploadsApi apiInstance = new UploadsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
-    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = "branch_example"; // String | specify the branch to use
     File _file = new File("/path/to/file"); // File | File to be imported
     String fileFormat = "fileFormat_example"; // String | File format. Auto-detected when possible and not specified.
-    String localeId = "localeId_example"; // String | Locale of the file's content. Can be the name or public id of the locale. Preferred is the public id.
+    String localeId = "localeId_example"; // String | Locale of the file's content. Can be the name or id of the locale. Preferred is id.
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = "branch_example"; // String | specify the branch to use
     String tags = "tags_example"; // String | List of tags separated by comma to be associated with the new keys contained in the upload.
     Boolean updateTranslations = true; // Boolean | Indicates whether existing translations should be updated with the file content.
     Boolean updateDescriptions = true; // Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
@@ -56,13 +56,13 @@ public class Example {
     Boolean skipUploadTags = true; // Boolean | Indicates whether the upload should not create upload tags.
     Boolean skipUnverification = true; // Boolean | Indicates whether the upload should unverify updated translations.
     String fileEncoding = "fileEncoding_example"; // String | Enforces a specific encoding on the file contents. Valid options are \\\"UTF-8\\\", \\\"UTF-16\\\" and \\\"ISO-8859-1\\\".
-    Object localeMapping = null; // Object | Optional, format specific mapping between locale names and the columns the translations to those locales are contained in.
+    Object localeMapping = null; // Object | Mapping between locale names and translation columns. Required in some formats like CSV or XLSX.
     Object formatOptions = null; // Object | Additional options available for specific formats. See our format guide for complete list.
     Boolean autotranslate = true; // Boolean | If set, translations for the uploaded language will be fetched automatically.
     Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     Boolean tagOnlyAffectedKeys = false; // Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
     try {
-      Upload result = apiInstance.uploadCreate(projectId, xPhraseAppOTP, branch, _file, fileFormat, localeId, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
+      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -80,11 +80,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
+ **_file** | **File**| File to be imported |
+ **fileFormat** | **String**| File format. Auto-detected when possible and not specified. |
+ **localeId** | **String**| Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id. |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
- **_file** | **File**| File to be imported | [optional]
- **fileFormat** | **String**| File format. Auto-detected when possible and not specified. | [optional]
- **localeId** | **String**| Locale of the file&#39;s content. Can be the name or public id of the locale. Preferred is the public id. | [optional]
  **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional]
  **updateTranslations** | **Boolean**| Indicates whether existing translations should be updated with the file content. | [optional]
  **updateDescriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional]
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
  **skipUploadTags** | **Boolean**| Indicates whether the upload should not create upload tags. | [optional]
  **skipUnverification** | **Boolean**| Indicates whether the upload should unverify updated translations. | [optional]
  **fileEncoding** | **String**| Enforces a specific encoding on the file contents. Valid options are \\\&quot;UTF-8\\\&quot;, \\\&quot;UTF-16\\\&quot; and \\\&quot;ISO-8859-1\\\&quot;. | [optional]
- **localeMapping** | [**Object**](Object.md)| Optional, format specific mapping between locale names and the columns the translations to those locales are contained in. | [optional]
+ **localeMapping** | [**Object**](Object.md)| Mapping between locale names and translation columns. Required in some formats like CSV or XLSX. | [optional]
  **formatOptions** | [**Object**](Object.md)| Additional options available for specific formats. See our format guide for complete list. | [optional]
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional]
  **markReviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional]

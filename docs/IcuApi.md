@@ -4,16 +4,16 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**icuSkeleton**](IcuApi.md#icuSkeleton) | **POST** /icu/skeleton | Build icu skeletons
+[**icuSkeleton**](IcuApi.md#icuSkeleton) | **POST** /icu/skeleton | Build ICU skeletons
 
 
 <a name="icuSkeleton"></a>
 # **icuSkeleton**
 > Icu icuSkeleton(icuSkeletonParameters, xPhraseAppOTP)
 
-Build icu skeletons
+Build ICU skeletons
 
-Returns icu skeletons for multiple locale codes based on a source content.
+Returns ICU skeletons for multiple locale codes based on a source content.
 
 ### Example
 ```java

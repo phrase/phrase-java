@@ -28,11 +28,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLinksBatchDestroyParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:42:04.577834Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:44:41.560121Z[Etc/UTC]")
 public class KeyLinksBatchDestroyParameters {
   public static final String SERIALIZED_NAME_CHILD_KEY_IDS = "child_key_ids";
   @SerializedName(SERIALIZED_NAME_CHILD_KEY_IDS)
   private List<String> childKeyIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_UNLINK_PARENT = "unlink_parent";
+  @SerializedName(SERIALIZED_NAME_UNLINK_PARENT)
+  private Boolean unlinkParent = false;
 
   public KeyLinksBatchDestroyParameters() {
   }
@@ -66,6 +70,28 @@ public class KeyLinksBatchDestroyParameters {
     this.childKeyIds = childKeyIds;
   }
 
+
+  public KeyLinksBatchDestroyParameters unlinkParent(Boolean unlinkParent) {
+    
+    this.unlinkParent = unlinkParent;
+    return this;
+  }
+
+   /**
+   * Whether to unlink the parent key as well and unmark it as linked-key.
+   * @return unlinkParent
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUnlinkParent() {
+    return unlinkParent;
+  }
+
+
+  public void setUnlinkParent(Boolean unlinkParent) {
+    this.unlinkParent = unlinkParent;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -75,12 +101,13 @@ public class KeyLinksBatchDestroyParameters {
       return false;
     }
     KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = (KeyLinksBatchDestroyParameters) o;
-    return Objects.equals(this.childKeyIds, keyLinksBatchDestroyParameters.childKeyIds);
+    return Objects.equals(this.childKeyIds, keyLinksBatchDestroyParameters.childKeyIds) &&
+        Objects.equals(this.unlinkParent, keyLinksBatchDestroyParameters.unlinkParent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(childKeyIds);
+    return Objects.hash(childKeyIds, unlinkParent);
   }
 
   @Override
@@ -88,6 +115,7 @@ public class KeyLinksBatchDestroyParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class KeyLinksBatchDestroyParameters {\n");
     sb.append("    childKeyIds: ").append(toIndentedString(childKeyIds)).append("\n");
+    sb.append("    unlinkParent: ").append(toIndentedString(unlinkParent)).append("\n");
     sb.append("}");
     return sb.toString();
   }

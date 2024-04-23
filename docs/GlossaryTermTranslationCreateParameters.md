@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**localeCode** | **String** | Identifies the language for this translation |  [optional]
-**content** | **String** | The content of the translation |  [optional]
+**localeCode** | **String** | Identifies the language for this translation | 
+**content** | **String** | The content of the translation | 
 
 
 

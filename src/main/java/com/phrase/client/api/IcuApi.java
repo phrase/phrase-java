@@ -118,8 +118,8 @@ public class IcuApi {
     }
 
     /**
-     * Build icu skeletons
-     * Returns icu skeletons for multiple locale codes based on a source content.
+     * Build ICU skeletons
+     * Returns ICU skeletons for multiple locale codes based on a source content.
      * @param icuSkeletonParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return Icu
@@ -139,8 +139,8 @@ public class IcuApi {
     }
 
     /**
-     * Build icu skeletons
-     * Returns icu skeletons for multiple locale codes based on a source content.
+     * Build ICU skeletons
+     * Returns ICU skeletons for multiple locale codes based on a source content.
      * @param icuSkeletonParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Icu&gt;
@@ -161,8 +161,8 @@ public class IcuApi {
     }
 
     /**
-     * Build icu skeletons (asynchronously)
-     * Returns icu skeletons for multiple locale codes based on a source content.
+     * Build ICU skeletons (asynchronously)
+     * Returns ICU skeletons for multiple locale codes based on a source content.
      * @param icuSkeletonParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes

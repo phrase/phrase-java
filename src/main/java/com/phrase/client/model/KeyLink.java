@@ -32,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLink
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:42:04.577834Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:44:41.560121Z[Etc/UTC]")
 public class KeyLink {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -60,7 +60,7 @@ public class KeyLink {
 
   public static final String SERIALIZED_NAME_CHILDREN = "children";
   @SerializedName(SERIALIZED_NAME_CHILDREN)
-  private List<KeyPreview> children = new ArrayList<>();
+  private List<KeyPreview> children;
 
   public KeyLink() {
   }
@@ -75,7 +75,7 @@ public class KeyLink {
    * The timestamp when the link was created.
    * @return createdAt
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -97,7 +97,7 @@ public class KeyLink {
    * The timestamp when the link was last updated.
    * @return updatedAt
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
@@ -119,7 +119,7 @@ public class KeyLink {
    * Get createdBy
    * @return createdBy
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
   public UserPreview getCreatedBy() {
     return createdBy;
@@ -141,7 +141,7 @@ public class KeyLink {
    * Get updatedBy
    * @return updatedBy
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
   public UserPreview getUpdatedBy() {
     return updatedBy;
@@ -163,7 +163,7 @@ public class KeyLink {
    * Get account
    * @return account
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
   public Account getAccount() {
     return account;
@@ -185,7 +185,7 @@ public class KeyLink {
    * Get parent
    * @return parent
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
   public KeyPreview getParent() {
     return parent;
@@ -215,7 +215,7 @@ public class KeyLink {
    * The child translation keys linked to the parent.
    * @return children
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
   public List<KeyPreview> getChildren() {
     return children;

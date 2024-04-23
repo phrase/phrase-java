@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Name of the team |  [optional]
+**name** | **String** | Name of the team | 
 
 
 

@@ -48,4 +48,12 @@ public class KeyLinksBatchDestroyParametersTest {
         // TODO: test childKeyIds
     }
 
+    /**
+     * Test the property 'unlinkParent'
+     */
+    @Test
+    public void unlinkParentTest() {
+        // TODO: test unlinkParent
+    }
+
 }

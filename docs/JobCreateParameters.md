@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use |  [optional]
-**name** | **String** | Job name |  [optional]
+**name** | **String** | Job name | 
 **sourceLocaleId** | **String** | The API id of the source language |  [optional]
 **briefing** | **String** | Briefing for the translators |  [optional]
 **dueDate** | [**OffsetDateTime**](OffsetDateTime.md) | Date the job should be finished |  [optional]

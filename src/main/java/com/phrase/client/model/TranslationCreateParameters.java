@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:42:04.577834Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:44:41.560121Z[Etc/UTC]")
 public class TranslationCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -92,7 +92,7 @@ public class TranslationCreateParameters {
   }
 
    /**
-   * Locale. Can be the name or public id of the locale. Preferred is the public id.
+   * Locale. Can be the name or id of the locale. Preferred is id
    * @return localeId
   **/
   @javax.annotation.Nullable

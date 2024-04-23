@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * OrderCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:42:04.577834Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:44:41.560121Z[Etc/UTC]")
 public class OrderCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -125,7 +125,7 @@ public class OrderCreateParameters {
    * the name of the order, default name is: Translation order from &#39;current datetime&#39;
    * @return name
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getName() {
     return name;
@@ -147,7 +147,7 @@ public class OrderCreateParameters {
    * Name of the LSP that should process this order. Can be one of gengo, textmaster.
    * @return lsp
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getLsp() {
     return lsp;
@@ -166,7 +166,7 @@ public class OrderCreateParameters {
   }
 
    /**
-   * Source locale for the order. Can be the name or public id of the source locale. Preferred is the public id.
+   * Source locale for the order. Can be the name or id of the source locale. Preferred is id.
    * @return sourceLocaleId
   **/
   @javax.annotation.Nullable
@@ -196,7 +196,7 @@ public class OrderCreateParameters {
   }
 
    /**
-   * List of target locales you want the source content translate to. Can be the name or public id of the target locales. Preferred is the public id.
+   * List of target locales you want the source content translate to. Can be the name or id of the target locales. Preferred is id.
    * @return targetLocaleIds
   **/
   @javax.annotation.Nullable

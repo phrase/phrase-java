@@ -49,8 +49,7 @@ public class LinkedKeysApiTest {
         String id = null;
         KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = null;
         String xPhraseAppOTP = null;
-        Boolean unlinkParent = null;
-        api.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, unlinkParent);
+        api.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -94,7 +93,7 @@ public class LinkedKeysApiTest {
     }
     
     /**
-     * Retrieve all child keys linked to a specific parent key
+     * List child keys of a parent key
      *
      * Returns detailed information about a parent key, including its linked child keys.
      *

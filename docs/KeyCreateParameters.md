@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branch** | **String** | specify the branch to use |  [optional]
-**name** | **String** | Key name |  [optional]
+**name** | **String** | Key name | 
 **description** | **String** | Key description (usually includes contextual information for translators) |  [optional]
 **plural** | **Boolean** | Indicates whether key supports pluralization |  [optional]
 **namePlural** | **String** | Plural name for the key (used in some file formats, e.g. Gettext) |  [optional]

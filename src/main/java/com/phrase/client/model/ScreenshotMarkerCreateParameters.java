@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ScreenshotMarkerCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:42:04.577834Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T07:44:41.560121Z[Etc/UTC]")
 public class ScreenshotMarkerCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -75,7 +75,7 @@ public class ScreenshotMarkerCreateParameters {
    * Specify the Key ID which should be highlighted on the specified screenshot. The Key must belong to the project.
    * @return keyId
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getKeyId() {
     return keyId;

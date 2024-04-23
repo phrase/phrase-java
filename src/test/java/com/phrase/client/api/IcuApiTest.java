@@ -33,9 +33,9 @@ public class IcuApiTest {
 
     
     /**
-     * Build icu skeletons
+     * Build ICU skeletons
      *
-     * Returns icu skeletons for multiple locale codes based on a source content.
+     * Returns ICU skeletons for multiple locale codes based on a source content.
      *
      * @throws ApiException
      *          if the Api call fails
