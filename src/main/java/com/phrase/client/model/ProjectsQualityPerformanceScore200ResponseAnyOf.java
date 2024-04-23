@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectsQualityPerformanceScore200ResponseAnyOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T09:45:32.972161Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-23T12:19:53.242633Z[Etc/UTC]")
 public class ProjectsQualityPerformanceScore200ResponseAnyOf {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
