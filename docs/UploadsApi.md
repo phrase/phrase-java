@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys)
+> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys)
 
 Upload a new file
 
@@ -51,6 +51,7 @@ public class Example {
     String branch = "branch_example"; // String | specify the branch to use
     String tags = "tags_example"; // String | List of tags separated by comma to be associated with the new keys contained in the upload.
     Boolean updateTranslations = true; // Boolean | Indicates whether existing translations should be updated with the file content.
+    Boolean updateTranslationKeys = true; // Boolean | Pass `false` here to prevent new keys from being created and existing keys updated.
     Boolean updateDescriptions = true; // Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
     Boolean convertEmoji = true; // Boolean | This option is obsolete. Providing the option will cause a bad request error.
     Boolean skipUploadTags = true; // Boolean | Indicates whether the upload should not create upload tags.
@@ -62,7 +63,7 @@ public class Example {
     Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     Boolean tagOnlyAffectedKeys = false; // Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
     try {
-      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
+      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -87,6 +88,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional]
  **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional]
  **updateTranslations** | **Boolean**| Indicates whether existing translations should be updated with the file content. | [optional]
+ **updateTranslationKeys** | **Boolean**| Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. | [optional] [default to true]
  **updateDescriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional]
  **convertEmoji** | **Boolean**| This option is obsolete. Providing the option will cause a bad request error. | [optional]
  **skipUploadTags** | **Boolean**| Indicates whether the upload should not create upload tags. | [optional]
