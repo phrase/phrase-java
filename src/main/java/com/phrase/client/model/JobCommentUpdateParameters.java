@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobCommentUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-29T15:08:36.884064Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-29T15:09:37.565536Z[Etc/UTC]")
 public class JobCommentUpdateParameters {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
