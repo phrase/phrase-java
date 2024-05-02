@@ -12,7 +12,7 @@
 
 package com.phrase.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-02T15:11:11.208831Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-02T15:26:52.833774Z[Etc/UTC]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
