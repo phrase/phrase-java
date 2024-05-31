@@ -4,18 +4,18 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**repoSyncActivate**](RepoSyncsApi.md#repoSyncActivate) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/activate | Activate a Repo Sync
-[**repoSyncDeactivate**](RepoSyncsApi.md#repoSyncDeactivate) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/deactivate | Deactivate a Repo Sync
-[**repoSyncEvents**](RepoSyncsApi.md#repoSyncEvents) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id}/events | Repository Syncs History
-[**repoSyncExport**](RepoSyncsApi.md#repoSyncExport) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/export | Export to code repository
-[**repoSyncImport**](RepoSyncsApi.md#repoSyncImport) | **POST** /accounts/{account_id}/repo_syncs/{repo_sync_id}/import | Import from code repository
+[**repoSyncActivate**](RepoSyncsApi.md#repoSyncActivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/activate | Activate a Repo Sync
+[**repoSyncDeactivate**](RepoSyncsApi.md#repoSyncDeactivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/deactivate | Deactivate a Repo Sync
+[**repoSyncEvents**](RepoSyncsApi.md#repoSyncEvents) | **GET** /accounts/{account_id}/repo_syncs/{id}/events | Repository Syncs History
+[**repoSyncExport**](RepoSyncsApi.md#repoSyncExport) | **POST** /accounts/{account_id}/repo_syncs/{id}/export | Export to code repository
+[**repoSyncImport**](RepoSyncsApi.md#repoSyncImport) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
 [**repoSyncList**](RepoSyncsApi.md#repoSyncList) | **GET** /accounts/{account_id}/repo_syncs | Get Repo Syncs
-[**repoSyncShow**](RepoSyncsApi.md#repoSyncShow) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id} | Get a single Repo Sync
+[**repoSyncShow**](RepoSyncsApi.md#repoSyncShow) | **GET** /accounts/{account_id}/repo_syncs/{id} | Get a single Repo Sync
 
 
 <a name="repoSyncActivate"></a>
 # **repoSyncActivate**
-> RepoSync repoSyncActivate(accountId, repoSyncId, xPhraseAppOTP)
+> RepoSync repoSyncActivate(accountId, id, xPhraseAppOTP)
 
 Activate a Repo Sync
 
@@ -48,10 +48,10 @@ public class Example {
 
     RepoSyncsApi apiInstance = new RepoSyncsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
-    String repoSyncId = "repoSyncId_example"; // String | Repo Sync ID
+    String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      RepoSync result = apiInstance.repoSyncActivate(accountId, repoSyncId, xPhraseAppOTP);
+      RepoSync result = apiInstance.repoSyncActivate(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncActivate");
@@ -69,7 +69,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **repoSyncId** | **String**| Repo Sync ID |
+ **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncDeactivate"></a>
 # **repoSyncDeactivate**
-> RepoSync repoSyncDeactivate(accountId, repoSyncId, xPhraseAppOTP)
+> RepoSync repoSyncDeactivate(accountId, id, xPhraseAppOTP)
 
 Deactivate a Repo Sync
 
@@ -128,10 +128,10 @@ public class Example {
 
     RepoSyncsApi apiInstance = new RepoSyncsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
-    String repoSyncId = "repoSyncId_example"; // String | Repo Sync ID
+    String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      RepoSync result = apiInstance.repoSyncDeactivate(accountId, repoSyncId, xPhraseAppOTP);
+      RepoSync result = apiInstance.repoSyncDeactivate(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncDeactivate");
@@ -149,7 +149,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **repoSyncId** | **String**| Repo Sync ID |
+ **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncEvents"></a>
 # **repoSyncEvents**
-> List&lt;RepoSyncEvent&gt; repoSyncEvents(accountId, repoSyncId, xPhraseAppOTP)
+> List&lt;RepoSyncEvent&gt; repoSyncEvents(accountId, id, xPhraseAppOTP)
 
 Repository Syncs History
 
@@ -208,10 +208,10 @@ public class Example {
 
     RepoSyncsApi apiInstance = new RepoSyncsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
-    String repoSyncId = "repoSyncId_example"; // String | Repo Sync ID
+    String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      List<RepoSyncEvent> result = apiInstance.repoSyncEvents(accountId, repoSyncId, xPhraseAppOTP);
+      List<RepoSyncEvent> result = apiInstance.repoSyncEvents(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncEvents");
@@ -229,7 +229,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **repoSyncId** | **String**| Repo Sync ID |
+ **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncExport"></a>
 # **repoSyncExport**
-> RepoSyncExport repoSyncExport(accountId, repoSyncId, xPhraseAppOTP)
+> RepoSyncExport repoSyncExport(accountId, id, xPhraseAppOTP)
 
 Export to code repository
 
@@ -288,10 +288,10 @@ public class Example {
 
     RepoSyncsApi apiInstance = new RepoSyncsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
-    String repoSyncId = "repoSyncId_example"; // String | Repo Sync ID
+    String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      RepoSyncExport result = apiInstance.repoSyncExport(accountId, repoSyncId, xPhraseAppOTP);
+      RepoSyncExport result = apiInstance.repoSyncExport(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncExport");
@@ -309,7 +309,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **repoSyncId** | **String**| Repo Sync ID |
+ **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncImport"></a>
 # **repoSyncImport**
-> RepoSyncImport repoSyncImport(accountId, repoSyncId, xPhraseAppOTP)
+> RepoSyncImport repoSyncImport(accountId, id, xPhraseAppOTP)
 
 Import from code repository
 
@@ -368,10 +368,10 @@ public class Example {
 
     RepoSyncsApi apiInstance = new RepoSyncsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
-    String repoSyncId = "repoSyncId_example"; // String | Repo Sync ID
+    String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      RepoSyncImport result = apiInstance.repoSyncImport(accountId, repoSyncId, xPhraseAppOTP);
+      RepoSyncImport result = apiInstance.repoSyncImport(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncImport");
@@ -389,7 +389,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **repoSyncId** | **String**| Repo Sync ID |
+ **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncShow"></a>
 # **repoSyncShow**
-> RepoSync repoSyncShow(accountId, repoSyncId, xPhraseAppOTP)
+> RepoSync repoSyncShow(accountId, id, xPhraseAppOTP)
 
 Get a single Repo Sync
 
@@ -526,10 +526,10 @@ public class Example {
 
     RepoSyncsApi apiInstance = new RepoSyncsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
-    String repoSyncId = "repoSyncId_example"; // String | Repo Sync ID
+    String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      RepoSync result = apiInstance.repoSyncShow(accountId, repoSyncId, xPhraseAppOTP);
+      RepoSync result = apiInstance.repoSyncShow(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncShow");
@@ -547,7 +547,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
- **repoSyncId** | **String**| Repo Sync ID |
+ **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type

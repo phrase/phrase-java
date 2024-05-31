@@ -45,9 +45,9 @@ public class RepoSyncsApiTest {
     @Test
     public void repoSyncActivateTest() throws ApiException {
         String accountId = null;
-        String repoSyncId = null;
+        String id = null;
         String xPhraseAppOTP = null;
-        RepoSync response = api.repoSyncActivate(accountId, repoSyncId, xPhraseAppOTP);
+        RepoSync response = api.repoSyncActivate(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -63,9 +63,9 @@ public class RepoSyncsApiTest {
     @Test
     public void repoSyncDeactivateTest() throws ApiException {
         String accountId = null;
-        String repoSyncId = null;
+        String id = null;
         String xPhraseAppOTP = null;
-        RepoSync response = api.repoSyncDeactivate(accountId, repoSyncId, xPhraseAppOTP);
+        RepoSync response = api.repoSyncDeactivate(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -81,9 +81,9 @@ public class RepoSyncsApiTest {
     @Test
     public void repoSyncEventsTest() throws ApiException {
         String accountId = null;
-        String repoSyncId = null;
+        String id = null;
         String xPhraseAppOTP = null;
-        List<RepoSyncEvent> response = api.repoSyncEvents(accountId, repoSyncId, xPhraseAppOTP);
+        List<RepoSyncEvent> response = api.repoSyncEvents(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -99,9 +99,9 @@ public class RepoSyncsApiTest {
     @Test
     public void repoSyncExportTest() throws ApiException {
         String accountId = null;
-        String repoSyncId = null;
+        String id = null;
         String xPhraseAppOTP = null;
-        RepoSyncExport response = api.repoSyncExport(accountId, repoSyncId, xPhraseAppOTP);
+        RepoSyncExport response = api.repoSyncExport(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -117,9 +117,9 @@ public class RepoSyncsApiTest {
     @Test
     public void repoSyncImportTest() throws ApiException {
         String accountId = null;
-        String repoSyncId = null;
+        String id = null;
         String xPhraseAppOTP = null;
-        RepoSyncImport response = api.repoSyncImport(accountId, repoSyncId, xPhraseAppOTP);
+        RepoSyncImport response = api.repoSyncImport(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -152,9 +152,9 @@ public class RepoSyncsApiTest {
     @Test
     public void repoSyncShowTest() throws ApiException {
         String accountId = null;
-        String repoSyncId = null;
+        String id = null;
         String xPhraseAppOTP = null;
-        RepoSync response = api.repoSyncShow(accountId, repoSyncId, xPhraseAppOTP);
+        RepoSync response = api.repoSyncShow(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
