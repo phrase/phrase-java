@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-31T12:56:03.703074Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-04T13:46:50.681992Z[Etc/UTC]")
 public class LocaleReport {
   public static final String SERIALIZED_NAME_KEYS_COUNT = "keys_count";
   @SerializedName(SERIALIZED_NAME_KEYS_COUNT)
@@ -35,19 +36,19 @@ public class LocaleReport {
 
   public static final String SERIALIZED_NAME_TRANSLATED_TRANSLATIONS_PERCENTAGE = "translated_translations_percentage";
   @SerializedName(SERIALIZED_NAME_TRANSLATED_TRANSLATIONS_PERCENTAGE)
-  private Integer translatedTranslationsPercentage;
+  private BigDecimal translatedTranslationsPercentage;
 
   public static final String SERIALIZED_NAME_UNVERIFIED_TRANSLATIONS_PERCENTAGE = "unverified_translations_percentage";
   @SerializedName(SERIALIZED_NAME_UNVERIFIED_TRANSLATIONS_PERCENTAGE)
-  private Integer unverifiedTranslationsPercentage;
+  private BigDecimal unverifiedTranslationsPercentage;
 
   public static final String SERIALIZED_NAME_REVIEWED_TRANSLATIONS_PERCENTAGE = "reviewed_translations_percentage";
   @SerializedName(SERIALIZED_NAME_REVIEWED_TRANSLATIONS_PERCENTAGE)
-  private Integer reviewedTranslationsPercentage;
+  private BigDecimal reviewedTranslationsPercentage;
 
   public static final String SERIALIZED_NAME_UNTRANSLATED_KEYS_PERCENTAGE = "untranslated_keys_percentage";
   @SerializedName(SERIALIZED_NAME_UNTRANSLATED_KEYS_PERCENTAGE)
-  private Integer untranslatedKeysPercentage;
+  private BigDecimal untranslatedKeysPercentage;
 
   public static final String SERIALIZED_NAME_COMPLETED_TRANSLATIONS_COUNT = "completed_translations_count";
   @SerializedName(SERIALIZED_NAME_COMPLETED_TRANSLATIONS_COUNT)
@@ -110,7 +111,7 @@ public class LocaleReport {
   }
 
 
-  public LocaleReport translatedTranslationsPercentage(Integer translatedTranslationsPercentage) {
+  public LocaleReport translatedTranslationsPercentage(BigDecimal translatedTranslationsPercentage) {
     
     this.translatedTranslationsPercentage = translatedTranslationsPercentage;
     return this;
@@ -122,17 +123,17 @@ public class LocaleReport {
   **/
   @javax.annotation.Nullable
 
-  public Integer getTranslatedTranslationsPercentage() {
+  public BigDecimal getTranslatedTranslationsPercentage() {
     return translatedTranslationsPercentage;
   }
 
 
-  public void setTranslatedTranslationsPercentage(Integer translatedTranslationsPercentage) {
+  public void setTranslatedTranslationsPercentage(BigDecimal translatedTranslationsPercentage) {
     this.translatedTranslationsPercentage = translatedTranslationsPercentage;
   }
 
 
-  public LocaleReport unverifiedTranslationsPercentage(Integer unverifiedTranslationsPercentage) {
+  public LocaleReport unverifiedTranslationsPercentage(BigDecimal unverifiedTranslationsPercentage) {
     
     this.unverifiedTranslationsPercentage = unverifiedTranslationsPercentage;
     return this;
@@ -144,17 +145,17 @@ public class LocaleReport {
   **/
   @javax.annotation.Nullable
 
-  public Integer getUnverifiedTranslationsPercentage() {
+  public BigDecimal getUnverifiedTranslationsPercentage() {
     return unverifiedTranslationsPercentage;
   }
 
 
-  public void setUnverifiedTranslationsPercentage(Integer unverifiedTranslationsPercentage) {
+  public void setUnverifiedTranslationsPercentage(BigDecimal unverifiedTranslationsPercentage) {
     this.unverifiedTranslationsPercentage = unverifiedTranslationsPercentage;
   }
 
 
-  public LocaleReport reviewedTranslationsPercentage(Integer reviewedTranslationsPercentage) {
+  public LocaleReport reviewedTranslationsPercentage(BigDecimal reviewedTranslationsPercentage) {
     
     this.reviewedTranslationsPercentage = reviewedTranslationsPercentage;
     return this;
@@ -166,17 +167,17 @@ public class LocaleReport {
   **/
   @javax.annotation.Nullable
 
-  public Integer getReviewedTranslationsPercentage() {
+  public BigDecimal getReviewedTranslationsPercentage() {
     return reviewedTranslationsPercentage;
   }
 
 
-  public void setReviewedTranslationsPercentage(Integer reviewedTranslationsPercentage) {
+  public void setReviewedTranslationsPercentage(BigDecimal reviewedTranslationsPercentage) {
     this.reviewedTranslationsPercentage = reviewedTranslationsPercentage;
   }
 
 
-  public LocaleReport untranslatedKeysPercentage(Integer untranslatedKeysPercentage) {
+  public LocaleReport untranslatedKeysPercentage(BigDecimal untranslatedKeysPercentage) {
     
     this.untranslatedKeysPercentage = untranslatedKeysPercentage;
     return this;
@@ -188,12 +189,12 @@ public class LocaleReport {
   **/
   @javax.annotation.Nullable
 
-  public Integer getUntranslatedKeysPercentage() {
+  public BigDecimal getUntranslatedKeysPercentage() {
     return untranslatedKeysPercentage;
   }
 
 
-  public void setUntranslatedKeysPercentage(Integer untranslatedKeysPercentage) {
+  public void setUntranslatedKeysPercentage(BigDecimal untranslatedKeysPercentage) {
     this.untranslatedKeysPercentage = untranslatedKeysPercentage;
   }
 

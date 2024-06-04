@@ -19,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.LocalePreview;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Ignore;

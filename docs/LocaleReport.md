@@ -7,10 +7,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **keysCount** | **Integer** |  |  [optional]
-**translatedTranslationsPercentage** | **Integer** |  |  [optional]
-**unverifiedTranslationsPercentage** | **Integer** |  |  [optional]
-**reviewedTranslationsPercentage** | **Integer** |  |  [optional]
-**untranslatedKeysPercentage** | **Integer** |  |  [optional]
+**translatedTranslationsPercentage** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**unverifiedTranslationsPercentage** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**reviewedTranslationsPercentage** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**untranslatedKeysPercentage** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **completedTranslationsCount** | **Integer** |  |  [optional]
 **untranslatedKeysCount** | **Integer** |  |  [optional]
 **unverifiedTranslationsCount** | **Integer** |  |  [optional]
