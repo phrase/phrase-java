@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GlossaryTermTranslationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-12T10:24:33.917853Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-12T13:06:44.075112Z[Etc/UTC]")
 public class GlossaryTermTranslationCreateParameters {
   public static final String SERIALIZED_NAME_LOCALE_CODE = "locale_code";
   @SerializedName(SERIALIZED_NAME_LOCALE_CODE)
