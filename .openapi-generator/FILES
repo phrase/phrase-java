@@ -191,8 +191,12 @@ docs/ProjectsQualityPerformanceScoreRequest.md
 docs/QualityPerformanceScoreApi.md
 docs/Release.md
 docs/ReleaseCreateParameters.md
+docs/ReleaseCreateParameters1.md
 docs/ReleasePreview.md
+docs/ReleaseTrigger.md
+docs/ReleaseTriggersApi.md
 docs/ReleaseUpdateParameters.md
+docs/ReleaseUpdateParameters1.md
 docs/ReleasesApi.md
 docs/RepliesListParameters.md
 docs/RepoSync.md
@@ -337,6 +341,7 @@ src/main/java/com/phrase/client/api/OrganizationJobTemplateLocalesApi.java
 src/main/java/com/phrase/client/api/OrganizationJobTemplatesApi.java
 src/main/java/com/phrase/client/api/ProjectsApi.java
 src/main/java/com/phrase/client/api/QualityPerformanceScoreApi.java
+src/main/java/com/phrase/client/api/ReleaseTriggersApi.java
 src/main/java/com/phrase/client/api/ReleasesApi.java
 src/main/java/com/phrase/client/api/RepoSyncsApi.java
 src/main/java/com/phrase/client/api/ReportsApi.java
@@ -507,8 +512,11 @@ src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScore200Response
 src/main/java/com/phrase/client/model/ProjectsQualityPerformanceScoreRequest.java
 src/main/java/com/phrase/client/model/Release.java
 src/main/java/com/phrase/client/model/ReleaseCreateParameters.java
+src/main/java/com/phrase/client/model/ReleaseCreateParameters1.java
 src/main/java/com/phrase/client/model/ReleasePreview.java
+src/main/java/com/phrase/client/model/ReleaseTrigger.java
 src/main/java/com/phrase/client/model/ReleaseUpdateParameters.java
+src/main/java/com/phrase/client/model/ReleaseUpdateParameters1.java
 src/main/java/com/phrase/client/model/RepliesListParameters.java
 src/main/java/com/phrase/client/model/RepoSync.java
 src/main/java/com/phrase/client/model/RepoSyncEvent.java
@@ -613,6 +621,7 @@ src/test/java/com/phrase/client/api/OrganizationJobTemplateLocalesApiTest.java
 src/test/java/com/phrase/client/api/OrganizationJobTemplatesApiTest.java
 src/test/java/com/phrase/client/api/ProjectsApiTest.java
 src/test/java/com/phrase/client/api/QualityPerformanceScoreApiTest.java
+src/test/java/com/phrase/client/api/ReleaseTriggersApiTest.java
 src/test/java/com/phrase/client/api/ReleasesApiTest.java
 src/test/java/com/phrase/client/api/RepoSyncsApiTest.java
 src/test/java/com/phrase/client/api/ReportsApiTest.java
@@ -775,9 +784,12 @@ src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200Response
 src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseAnyOfTest.java
 src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScore200ResponseTest.java
 src/test/java/com/phrase/client/model/ProjectsQualityPerformanceScoreRequestTest.java
+src/test/java/com/phrase/client/model/ReleaseCreateParameters1Test.java
 src/test/java/com/phrase/client/model/ReleaseCreateParametersTest.java
 src/test/java/com/phrase/client/model/ReleasePreviewTest.java
 src/test/java/com/phrase/client/model/ReleaseTest.java
+src/test/java/com/phrase/client/model/ReleaseTriggerTest.java
+src/test/java/com/phrase/client/model/ReleaseUpdateParameters1Test.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParametersTest.java
 src/test/java/com/phrase/client/model/RepliesListParametersTest.java
 src/test/java/com/phrase/client/model/RepoSyncEventErrorsInnerTest.java

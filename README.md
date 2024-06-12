@@ -291,6 +291,11 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**projectUpdate**](docs/ProjectsApi.md#projectUpdate) | **PATCH** /projects/{id} | Update a project
 *ProjectsApi* | [**projectsList**](docs/ProjectsApi.md#projectsList) | **GET** /projects | List projects
 *QualityPerformanceScoreApi* | [**projectsQualityPerformanceScore**](docs/QualityPerformanceScoreApi.md#projectsQualityPerformanceScore) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
+*ReleaseTriggersApi* | [**releaseTriggersCreate**](docs/ReleaseTriggersApi.md#releaseTriggersCreate) | **POST** /accounts/{account_id}/distributions/{distribution_id}/release_triggers | Create a release trigger
+*ReleaseTriggersApi* | [**releaseTriggersDestroy**](docs/ReleaseTriggersApi.md#releaseTriggersDestroy) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/release_triggers/{id} | Delete a single release trigger
+*ReleaseTriggersApi* | [**releaseTriggersList**](docs/ReleaseTriggersApi.md#releaseTriggersList) | **GET** /accounts/{account_id}/distributions/{distribution_id}/release_triggers | List release triggers
+*ReleaseTriggersApi* | [**releaseTriggersShow**](docs/ReleaseTriggersApi.md#releaseTriggersShow) | **GET** /accounts/{account_id}/distributions/{distribution_id}/release_triggers/{id} | Get a single release trigger
+*ReleaseTriggersApi* | [**releaseTriggersUpdate**](docs/ReleaseTriggersApi.md#releaseTriggersUpdate) | **PATCH** /accounts/{account_id}/distributions/{distribution_id}/release_triggers/{id} | Update a release trigger
 *ReleasesApi* | [**releaseCreate**](docs/ReleasesApi.md#releaseCreate) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases | Create a release
 *ReleasesApi* | [**releaseDelete**](docs/ReleasesApi.md#releaseDelete) | **DELETE** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Delete a release
 *ReleasesApi* | [**releasePublish**](docs/ReleasesApi.md#releasePublish) | **POST** /accounts/{account_id}/distributions/{distribution_id}/releases/{id}/publish | Publish a release
@@ -534,8 +539,11 @@ Class | Method | HTTP request | Description
  - [ProjectsQualityPerformanceScoreRequest](docs/ProjectsQualityPerformanceScoreRequest.md)
  - [Release](docs/Release.md)
  - [ReleaseCreateParameters](docs/ReleaseCreateParameters.md)
+ - [ReleaseCreateParameters1](docs/ReleaseCreateParameters1.md)
  - [ReleasePreview](docs/ReleasePreview.md)
+ - [ReleaseTrigger](docs/ReleaseTrigger.md)
  - [ReleaseUpdateParameters](docs/ReleaseUpdateParameters.md)
+ - [ReleaseUpdateParameters1](docs/ReleaseUpdateParameters1.md)
  - [RepliesListParameters](docs/RepliesListParameters.md)
  - [RepoSync](docs/RepoSync.md)
  - [RepoSyncEvent](docs/RepoSyncEvent.md)
