@@ -32,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLink
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-12T13:56:14.504189Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T07:41:41.290735Z[Etc/UTC]")
 public class KeyLink {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
