@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ReleaseUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-13T07:41:41.290735Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-18T06:53:14.587619Z[Etc/UTC]")
 public class ReleaseUpdateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -37,6 +37,14 @@ public class ReleaseUpdateParameters {
   public static final String SERIALIZED_NAME_PLATFORMS = "platforms";
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
   private List<String> platforms;
+
+  public static final String SERIALIZED_NAME_APP_MIN_VERSION = "app_min_version";
+  @SerializedName(SERIALIZED_NAME_APP_MIN_VERSION)
+  private String appMinVersion;
+
+  public static final String SERIALIZED_NAME_APP_MAX_VERSION = "app_max_version";
+  @SerializedName(SERIALIZED_NAME_APP_MAX_VERSION)
+  private String appMaxVersion;
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -97,6 +105,50 @@ public class ReleaseUpdateParameters {
   }
 
 
+  public ReleaseUpdateParameters appMinVersion(String appMinVersion) {
+    
+    this.appMinVersion = appMinVersion;
+    return this;
+  }
+
+   /**
+   * Minimum version of the app that the release supports in semver format
+   * @return appMinVersion
+  **/
+  @javax.annotation.Nullable
+
+  public String getAppMinVersion() {
+    return appMinVersion;
+  }
+
+
+  public void setAppMinVersion(String appMinVersion) {
+    this.appMinVersion = appMinVersion;
+  }
+
+
+  public ReleaseUpdateParameters appMaxVersion(String appMaxVersion) {
+    
+    this.appMaxVersion = appMaxVersion;
+    return this;
+  }
+
+   /**
+   * Maximum version of the app that the release supports in semver format
+   * @return appMaxVersion
+  **/
+  @javax.annotation.Nullable
+
+  public String getAppMaxVersion() {
+    return appMaxVersion;
+  }
+
+
+  public void setAppMaxVersion(String appMaxVersion) {
+    this.appMaxVersion = appMaxVersion;
+  }
+
+
   public ReleaseUpdateParameters branch(String branch) {
     
     this.branch = branch;
@@ -129,12 +181,14 @@ public class ReleaseUpdateParameters {
     ReleaseUpdateParameters releaseUpdateParameters = (ReleaseUpdateParameters) o;
     return Objects.equals(this.description, releaseUpdateParameters.description) &&
         Objects.equals(this.platforms, releaseUpdateParameters.platforms) &&
+        Objects.equals(this.appMinVersion, releaseUpdateParameters.appMinVersion) &&
+        Objects.equals(this.appMaxVersion, releaseUpdateParameters.appMaxVersion) &&
         Objects.equals(this.branch, releaseUpdateParameters.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, platforms, branch);
+    return Objects.hash(description, platforms, appMinVersion, appMaxVersion, branch);
   }
 
   @Override
@@ -143,6 +197,8 @@ public class ReleaseUpdateParameters {
     sb.append("class ReleaseUpdateParameters {\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
+    sb.append("    appMinVersion: ").append(toIndentedString(appMinVersion)).append("\n");
+    sb.append("    appMaxVersion: ").append(toIndentedString(appMaxVersion)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();

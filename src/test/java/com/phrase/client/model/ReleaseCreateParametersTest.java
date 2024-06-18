@@ -73,6 +73,22 @@ public class ReleaseCreateParametersTest {
     }
 
     /**
+     * Test the property 'appMinVersion'
+     */
+    @Test
+    public void appMinVersionTest() {
+        // TODO: test appMinVersion
+    }
+
+    /**
+     * Test the property 'appMaxVersion'
+     */
+    @Test
+    public void appMaxVersionTest() {
+        // TODO: test appMaxVersion
+    }
+
+    /**
      * Test the property 'branch'
      */
     @Test
