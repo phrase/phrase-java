@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncEvent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-25T13:02:01.699924Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-25T13:22:19.157872Z[Etc/UTC]")
 public class RepoSyncEvent {
   /**
    * Gets or Sets eventType
