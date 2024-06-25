@@ -252,6 +252,8 @@ Class | Method | HTTP request | Description
 *LinkedKeysApi* | [**keyLinksCreate**](docs/LinkedKeysApi.md#keyLinksCreate) | **POST** /projects/{project_id}/keys/{id}/key_links | Link child keys to a parent key
 *LinkedKeysApi* | [**keyLinksDestroy**](docs/LinkedKeysApi.md#keyLinksDestroy) | **DELETE** /projects/{project_id}/keys/{id}/key_links/{child_key_id} | Unlink a child key from a parent key
 *LinkedKeysApi* | [**keyLinksIndex**](docs/LinkedKeysApi.md#keyLinksIndex) | **GET** /projects/{project_id}/keys/{id}/key_links | List child keys of a parent key
+*LocaleDownloadsApi* | [**localeDownloadCreate**](docs/LocaleDownloadsApi.md#localeDownloadCreate) | **POST** /projects/{project_id}/locales/{locale_id}/downloads | Initiate async download of a locale
+*LocaleDownloadsApi* | [**localeDownloadShow**](docs/LocaleDownloadsApi.md#localeDownloadShow) | **GET** /projects/{project_id}/locales/{locale_id}/downloads/{id} | Show status of an async locale download
 *LocalesApi* | [**accountLocales**](docs/LocalesApi.md#accountLocales) | **GET** /accounts/{id}/locales | List locales used in account
 *LocalesApi* | [**localeCreate**](docs/LocalesApi.md#localeCreate) | **POST** /projects/{project_id}/locales | Create a locale
 *LocalesApi* | [**localeDelete**](docs/LocalesApi.md#localeDelete) | **DELETE** /projects/{project_id}/locales/{id} | Delete a locale
@@ -500,6 +502,10 @@ Class | Method | HTTP request | Description
  - [Locale](docs/Locale.md)
  - [LocaleCreateParameters](docs/LocaleCreateParameters.md)
  - [LocaleDetails](docs/LocaleDetails.md)
+ - [LocaleDownload](docs/LocaleDownload.md)
+ - [LocaleDownloadCreateParameters](docs/LocaleDownloadCreateParameters.md)
+ - [LocaleDownloadParams](docs/LocaleDownloadParams.md)
+ - [LocaleDownloadResult](docs/LocaleDownloadResult.md)
  - [LocalePreview](docs/LocalePreview.md)
  - [LocalePreview1](docs/LocalePreview1.md)
  - [LocaleReport](docs/LocaleReport.md)

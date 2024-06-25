@@ -143,6 +143,11 @@ docs/LinkedKeysApi.md
 docs/Locale.md
 docs/LocaleCreateParameters.md
 docs/LocaleDetails.md
+docs/LocaleDownload.md
+docs/LocaleDownloadCreateParameters.md
+docs/LocaleDownloadParams.md
+docs/LocaleDownloadResult.md
+docs/LocaleDownloadsApi.md
 docs/LocalePreview.md
 docs/LocalePreview1.md
 docs/LocaleReport.md
@@ -332,6 +337,7 @@ src/main/java/com/phrase/client/api/JobsApi.java
 src/main/java/com/phrase/client/api/KeysApi.java
 src/main/java/com/phrase/client/api/KeysFigmaAttachmentsApi.java
 src/main/java/com/phrase/client/api/LinkedKeysApi.java
+src/main/java/com/phrase/client/api/LocaleDownloadsApi.java
 src/main/java/com/phrase/client/api/LocalesApi.java
 src/main/java/com/phrase/client/api/MembersApi.java
 src/main/java/com/phrase/client/api/NotificationGroupsApi.java
@@ -473,6 +479,10 @@ src/main/java/com/phrase/client/model/KeysUntagParameters.java
 src/main/java/com/phrase/client/model/Locale.java
 src/main/java/com/phrase/client/model/LocaleCreateParameters.java
 src/main/java/com/phrase/client/model/LocaleDetails.java
+src/main/java/com/phrase/client/model/LocaleDownload.java
+src/main/java/com/phrase/client/model/LocaleDownloadCreateParameters.java
+src/main/java/com/phrase/client/model/LocaleDownloadParams.java
+src/main/java/com/phrase/client/model/LocaleDownloadResult.java
 src/main/java/com/phrase/client/model/LocalePreview.java
 src/main/java/com/phrase/client/model/LocalePreview1.java
 src/main/java/com/phrase/client/model/LocaleReport.java
@@ -613,6 +623,7 @@ src/test/java/com/phrase/client/api/JobsApiTest.java
 src/test/java/com/phrase/client/api/KeysApiTest.java
 src/test/java/com/phrase/client/api/KeysFigmaAttachmentsApiTest.java
 src/test/java/com/phrase/client/api/LinkedKeysApiTest.java
+src/test/java/com/phrase/client/api/LocaleDownloadsApiTest.java
 src/test/java/com/phrase/client/api/MembersApiTest.java
 src/test/java/com/phrase/client/api/NotificationGroupsApiTest.java
 src/test/java/com/phrase/client/api/NotificationsApiTest.java
@@ -746,6 +757,10 @@ src/test/java/com/phrase/client/model/KeysTagParametersTest.java
 src/test/java/com/phrase/client/model/KeysUntagParametersTest.java
 src/test/java/com/phrase/client/model/LocaleCreateParametersTest.java
 src/test/java/com/phrase/client/model/LocaleDetailsTest.java
+src/test/java/com/phrase/client/model/LocaleDownloadCreateParametersTest.java
+src/test/java/com/phrase/client/model/LocaleDownloadParamsTest.java
+src/test/java/com/phrase/client/model/LocaleDownloadResultTest.java
+src/test/java/com/phrase/client/model/LocaleDownloadTest.java
 src/test/java/com/phrase/client/model/LocalePreview1Test.java
 src/test/java/com/phrase/client/model/LocalePreviewTest.java
 src/test/java/com/phrase/client/model/LocaleReportTest.java
