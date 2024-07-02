@@ -43,6 +43,14 @@ public class RepoSyncEventTest {
     }
 
     /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
      * Test the property 'eventType'
      */
     @Test

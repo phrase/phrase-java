@@ -15,8 +15,6 @@ package com.phrase.client.api;
 import com.phrase.client.ApiException;
 import com.phrase.client.model.RepoSync;
 import com.phrase.client.model.RepoSyncEvent;
-import com.phrase.client.model.RepoSyncExport;
-import com.phrase.client.model.RepoSyncImport;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -71,6 +69,25 @@ public class RepoSyncsApiTest {
     }
     
     /**
+     * Get a single Repo Sync Event
+     *
+     * Shows a single Repo Sync event.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void repoSyncEventShowTest() throws ApiException {
+        String accountId = null;
+        String repoSyncId = null;
+        String id = null;
+        String xPhraseAppOTP = null;
+        RepoSyncEvent response = api.repoSyncEventShow(accountId, repoSyncId, id, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Repository Syncs History
      *
      * Get the history of a single Repo Sync. The history includes all imports and exports performed by the Repo Sync.
@@ -101,7 +118,7 @@ public class RepoSyncsApiTest {
         String accountId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        RepoSyncExport response = api.repoSyncExport(accountId, id, xPhraseAppOTP);
+        RepoSyncEvent response = api.repoSyncExport(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -119,7 +136,7 @@ public class RepoSyncsApiTest {
         String accountId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        RepoSyncImport response = api.repoSyncImport(accountId, id, xPhraseAppOTP);
+        RepoSyncEvent response = api.repoSyncImport(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }

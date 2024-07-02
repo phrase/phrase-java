@@ -30,8 +30,12 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncEvent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-25T13:22:19.157872Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-02T12:13:13.790531Z[Etc/UTC]")
 public class RepoSyncEvent {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
+
   /**
    * Gets or Sets eventType
    */
@@ -154,6 +158,28 @@ public class RepoSyncEvent {
 
   public RepoSyncEvent() {
   }
+
+  public RepoSyncEvent id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @javax.annotation.Nullable
+
+  public String getId() {
+    return id;
+  }
+
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
 
   public RepoSyncEvent eventType(EventTypeEnum eventType) {
     
@@ -303,7 +329,8 @@ public class RepoSyncEvent {
       return false;
     }
     RepoSyncEvent repoSyncEvent = (RepoSyncEvent) o;
-    return Objects.equals(this.eventType, repoSyncEvent.eventType) &&
+    return Objects.equals(this.id, repoSyncEvent.id) &&
+        Objects.equals(this.eventType, repoSyncEvent.eventType) &&
         Objects.equals(this.createdAt, repoSyncEvent.createdAt) &&
         Objects.equals(this.status, repoSyncEvent.status) &&
         Objects.equals(this.pullRequestUrl, repoSyncEvent.pullRequestUrl) &&
@@ -313,13 +340,14 @@ public class RepoSyncEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventType, createdAt, status, pullRequestUrl, autoImport, errors);
+    return Objects.hash(id, eventType, createdAt, status, pullRequestUrl, autoImport, errors);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RepoSyncEvent {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

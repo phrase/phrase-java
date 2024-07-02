@@ -6,6 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  |  [optional]
 **eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]

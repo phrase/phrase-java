@@ -306,6 +306,7 @@ Class | Method | HTTP request | Description
 *ReleasesApi* | [**releasesList**](docs/ReleasesApi.md#releasesList) | **GET** /accounts/{account_id}/distributions/{distribution_id}/releases | List releases
 *RepoSyncsApi* | [**repoSyncActivate**](docs/RepoSyncsApi.md#repoSyncActivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/activate | Activate a Repo Sync
 *RepoSyncsApi* | [**repoSyncDeactivate**](docs/RepoSyncsApi.md#repoSyncDeactivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/deactivate | Deactivate a Repo Sync
+*RepoSyncsApi* | [**repoSyncEventShow**](docs/RepoSyncsApi.md#repoSyncEventShow) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id}/events/{id} | Get a single Repo Sync Event
 *RepoSyncsApi* | [**repoSyncEvents**](docs/RepoSyncsApi.md#repoSyncEvents) | **GET** /accounts/{account_id}/repo_syncs/{id}/events | Repository Syncs History
 *RepoSyncsApi* | [**repoSyncExport**](docs/RepoSyncsApi.md#repoSyncExport) | **POST** /accounts/{account_id}/repo_syncs/{id}/export | Export to code repository
 *RepoSyncsApi* | [**repoSyncImport**](docs/RepoSyncsApi.md#repoSyncImport) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
@@ -554,8 +555,6 @@ Class | Method | HTTP request | Description
  - [RepoSync](docs/RepoSync.md)
  - [RepoSyncEvent](docs/RepoSyncEvent.md)
  - [RepoSyncEventErrorsInner](docs/RepoSyncEventErrorsInner.md)
- - [RepoSyncExport](docs/RepoSyncExport.md)
- - [RepoSyncImport](docs/RepoSyncImport.md)
  - [Screenshot](docs/Screenshot.md)
  - [ScreenshotMarker](docs/ScreenshotMarker.md)
  - [ScreenshotMarkerCreateParameters](docs/ScreenshotMarkerCreateParameters.md)

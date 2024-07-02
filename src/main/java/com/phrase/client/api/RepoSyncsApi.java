@@ -28,8 +28,6 @@ import java.io.IOException;
 
 import com.phrase.client.model.RepoSync;
 import com.phrase.client.model.RepoSyncEvent;
-import com.phrase.client.model.RepoSyncExport;
-import com.phrase.client.model.RepoSyncImport;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -339,6 +337,157 @@ public class RepoSyncsApi {
         return localVarCall;
     }
     /**
+     * Build call for repoSyncEventShow
+     * @param accountId Account ID (required)
+     * @param repoSyncId Repo Sync ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call repoSyncEventShowCall(String accountId, String repoSyncId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/repo_syncs/{repo_sync_id}/events/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "repo_sync_id" + "\\}", localVarApiClient.escapeString(repoSyncId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call repoSyncEventShowValidateBeforeCall(String accountId, String repoSyncId, String id, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling repoSyncEventShow(Async)");
+        }
+        
+        // verify the required parameter 'repoSyncId' is set
+        if (repoSyncId == null) {
+            throw new ApiException("Missing the required parameter 'repoSyncId' when calling repoSyncEventShow(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling repoSyncEventShow(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = repoSyncEventShowCall(accountId, repoSyncId, id, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get a single Repo Sync Event
+     * Shows a single Repo Sync event.
+     * @param accountId Account ID (required)
+     * @param repoSyncId Repo Sync ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return RepoSyncEvent
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public RepoSyncEvent repoSyncEventShow(String accountId, String repoSyncId, String id, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<RepoSyncEvent> localVarResp = repoSyncEventShowWithHttpInfo(accountId, repoSyncId, id, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get a single Repo Sync Event
+     * Shows a single Repo Sync event.
+     * @param accountId Account ID (required)
+     * @param repoSyncId Repo Sync ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;RepoSyncEvent&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<RepoSyncEvent> repoSyncEventShowWithHttpInfo(String accountId, String repoSyncId, String id, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = repoSyncEventShowValidateBeforeCall(accountId, repoSyncId, id, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<RepoSyncEvent>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get a single Repo Sync Event (asynchronously)
+     * Shows a single Repo Sync event.
+     * @param accountId Account ID (required)
+     * @param repoSyncId Repo Sync ID (required)
+     * @param id ID (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call repoSyncEventShowAsync(String accountId, String repoSyncId, String id, String xPhraseAppOTP, final ApiCallback<RepoSyncEvent> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = repoSyncEventShowValidateBeforeCall(accountId, repoSyncId, id, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<RepoSyncEvent>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for repoSyncEvents
      * @param accountId Account ID (required)
      * @param id ID (required)
@@ -556,7 +705,7 @@ public class RepoSyncsApi {
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return RepoSyncExport
+     * @return RepoSyncEvent
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -567,8 +716,8 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public RepoSyncExport repoSyncExport(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<RepoSyncExport> localVarResp = repoSyncExportWithHttpInfo(accountId, id, xPhraseAppOTP);
+    public RepoSyncEvent repoSyncExport(String accountId, String id, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<RepoSyncEvent> localVarResp = repoSyncExportWithHttpInfo(accountId, id, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -578,7 +727,7 @@ public class RepoSyncsApi {
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;RepoSyncExport&gt;
+     * @return ApiResponse&lt;RepoSyncEvent&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -589,9 +738,9 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<RepoSyncExport> repoSyncExportWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<RepoSyncEvent> repoSyncExportWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = repoSyncExportValidateBeforeCall(accountId, id, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<RepoSyncExport>(){}.getType();
+        Type localVarReturnType = new TypeToken<RepoSyncEvent>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -613,10 +762,10 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call repoSyncExportAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<RepoSyncExport> _callback) throws ApiException {
+    public okhttp3.Call repoSyncExportAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<RepoSyncEvent> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = repoSyncExportValidateBeforeCall(accountId, id, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<RepoSyncExport>(){}.getType();
+        Type localVarReturnType = new TypeToken<RepoSyncEvent>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -697,7 +846,7 @@ public class RepoSyncsApi {
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return RepoSyncImport
+     * @return RepoSyncEvent
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -708,8 +857,8 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public RepoSyncImport repoSyncImport(String accountId, String id, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<RepoSyncImport> localVarResp = repoSyncImportWithHttpInfo(accountId, id, xPhraseAppOTP);
+    public RepoSyncEvent repoSyncImport(String accountId, String id, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<RepoSyncEvent> localVarResp = repoSyncImportWithHttpInfo(accountId, id, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -719,7 +868,7 @@ public class RepoSyncsApi {
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;RepoSyncImport&gt;
+     * @return ApiResponse&lt;RepoSyncEvent&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -730,9 +879,9 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<RepoSyncImport> repoSyncImportWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<RepoSyncEvent> repoSyncImportWithHttpInfo(String accountId, String id, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = repoSyncImportValidateBeforeCall(accountId, id, xPhraseAppOTP, null);
-        Type localVarReturnType = new TypeToken<RepoSyncImport>(){}.getType();
+        Type localVarReturnType = new TypeToken<RepoSyncEvent>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -754,10 +903,10 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call repoSyncImportAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<RepoSyncImport> _callback) throws ApiException {
+    public okhttp3.Call repoSyncImportAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<RepoSyncEvent> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = repoSyncImportValidateBeforeCall(accountId, id, xPhraseAppOTP, _callback);
-        Type localVarReturnType = new TypeToken<RepoSyncImport>(){}.getType();
+        Type localVarReturnType = new TypeToken<RepoSyncEvent>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
