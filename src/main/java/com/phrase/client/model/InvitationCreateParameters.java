@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * InvitationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-22T13:27:24.720609Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-25T14:40:16.052014Z[Etc/UTC]")
 public class InvitationCreateParameters {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
