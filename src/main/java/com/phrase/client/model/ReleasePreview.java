@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ReleasePreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-14T11:22:00.512694Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-16T11:47:21.685168Z[Etc/UTC]")
 public class ReleasePreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
