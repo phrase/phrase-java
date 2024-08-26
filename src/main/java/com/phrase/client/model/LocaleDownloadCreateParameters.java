@@ -19,14 +19,16 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * LocaleDownloadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-26T09:46:06.137663Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-26T16:54:22.246929Z[Etc/UTC]")
 public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_FILE_FORMAT = "file_format";
   @SerializedName(SERIALIZED_NAME_FILE_FORMAT)
@@ -71,6 +73,10 @@ public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_USE_LAST_REVIEWED_VERSION = "use_last_reviewed_version";
   @SerializedName(SERIALIZED_NAME_USE_LAST_REVIEWED_VERSION)
   private Boolean useLastReviewedVersion;
+
+  public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
+  @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
+  private List<String> localeIds;
 
   public static final String SERIALIZED_NAME_FALLBACK_LOCALE_ID = "fallback_locale_id";
   @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALE_ID)
@@ -329,6 +335,36 @@ public class LocaleDownloadCreateParameters {
   }
 
 
+  public LocaleDownloadCreateParameters localeIds(List<String> localeIds) {
+    
+    this.localeIds = localeIds;
+    return this;
+  }
+
+  public LocaleDownloadCreateParameters addLocaleIdsItem(String localeIdsItem) {
+    if (this.localeIds == null) {
+      this.localeIds = new ArrayList<>();
+    }
+    this.localeIds.add(localeIdsItem);
+    return this;
+  }
+
+   /**
+   * Locale IDs or locale names
+   * @return localeIds
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getLocaleIds() {
+    return localeIds;
+  }
+
+
+  public void setLocaleIds(List<String> localeIds) {
+    this.localeIds = localeIds;
+  }
+
+
   public LocaleDownloadCreateParameters fallbackLocaleId(String fallbackLocaleId) {
     
     this.fallbackLocaleId = fallbackLocaleId;
@@ -414,6 +450,7 @@ public class LocaleDownloadCreateParameters {
         Objects.equals(this.encoding, localeDownloadCreateParameters.encoding) &&
         Objects.equals(this.includeUnverifiedTranslations, localeDownloadCreateParameters.includeUnverifiedTranslations) &&
         Objects.equals(this.useLastReviewedVersion, localeDownloadCreateParameters.useLastReviewedVersion) &&
+        Objects.equals(this.localeIds, localeDownloadCreateParameters.localeIds) &&
         Objects.equals(this.fallbackLocaleId, localeDownloadCreateParameters.fallbackLocaleId) &&
         Objects.equals(this.sourceLocaleId, localeDownloadCreateParameters.sourceLocaleId) &&
         Objects.equals(this.customMetadataFilters, localeDownloadCreateParameters.customMetadataFilters);
@@ -421,7 +458,7 @@ public class LocaleDownloadCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, customMetadataFilters);
+    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, sourceLocaleId, customMetadataFilters);
   }
 
   @Override
@@ -439,6 +476,7 @@ public class LocaleDownloadCreateParameters {
     sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
     sb.append("    includeUnverifiedTranslations: ").append(toIndentedString(includeUnverifiedTranslations)).append("\n");
     sb.append("    useLastReviewedVersion: ").append(toIndentedString(useLastReviewedVersion)).append("\n");
+    sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    fallbackLocaleId: ").append(toIndentedString(fallbackLocaleId)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    customMetadataFilters: ").append(toIndentedString(customMetadataFilters)).append("\n");
