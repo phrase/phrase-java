@@ -103,8 +103,9 @@ public class TagsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
+        Boolean excludeSystemTags = null;
         String branch = null;
-        List<Tag> response = api.tagsList(projectId, xPhraseAppOTP, page, perPage, branch);
+        List<Tag> response = api.tagsList(projectId, xPhraseAppOTP, page, perPage, excludeSystemTags, branch);
 
         // TODO: test validations
     }
