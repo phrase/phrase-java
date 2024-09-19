@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-18T09:00:20.575262Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-19T11:27:31.753930Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -116,18 +116,6 @@ public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY = "autotranslate_use_translation_memory";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY)
   private Boolean autotranslateUseTranslationMemory;
-
-  public static final String SERIALIZED_NAME_SMART_SUGGEST_ENABLED = "smart_suggest_enabled";
-  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_ENABLED)
-  private Boolean smartSuggestEnabled;
-
-  public static final String SERIALIZED_NAME_SMART_SUGGEST_USE_GLOSSARY = "smart_suggest_use_glossary";
-  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_GLOSSARY)
-  private Boolean smartSuggestUseGlossary;
-
-  public static final String SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION = "smart_suggest_use_machine_translation";
-  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION)
-  private Boolean smartSuggestUseMachineTranslation;
 
   public ProjectUpdateParameters() {
   }
@@ -337,7 +325,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest
+   * (Optional) Enable machine translation support in the project. Required for Pre-Translation
    * @return machineTranslationEnabled
   **/
   @javax.annotation.Nullable
@@ -615,72 +603,6 @@ public class ProjectUpdateParameters {
     this.autotranslateUseTranslationMemory = autotranslateUseTranslationMemory;
   }
 
-
-  public ProjectUpdateParameters smartSuggestEnabled(Boolean smartSuggestEnabled) {
-    
-    this.smartSuggestEnabled = smartSuggestEnabled;
-    return this;
-  }
-
-   /**
-   * (Optional) Smart Suggest, requires machine_translation_enabled
-   * @return smartSuggestEnabled
-  **/
-  @javax.annotation.Nullable
-
-  public Boolean getSmartSuggestEnabled() {
-    return smartSuggestEnabled;
-  }
-
-
-  public void setSmartSuggestEnabled(Boolean smartSuggestEnabled) {
-    this.smartSuggestEnabled = smartSuggestEnabled;
-  }
-
-
-  public ProjectUpdateParameters smartSuggestUseGlossary(Boolean smartSuggestUseGlossary) {
-    
-    this.smartSuggestUseGlossary = smartSuggestUseGlossary;
-    return this;
-  }
-
-   /**
-   * (Optional) Requires smart_suggest_enabled to be true
-   * @return smartSuggestUseGlossary
-  **/
-  @javax.annotation.Nullable
-
-  public Boolean getSmartSuggestUseGlossary() {
-    return smartSuggestUseGlossary;
-  }
-
-
-  public void setSmartSuggestUseGlossary(Boolean smartSuggestUseGlossary) {
-    this.smartSuggestUseGlossary = smartSuggestUseGlossary;
-  }
-
-
-  public ProjectUpdateParameters smartSuggestUseMachineTranslation(Boolean smartSuggestUseMachineTranslation) {
-    
-    this.smartSuggestUseMachineTranslation = smartSuggestUseMachineTranslation;
-    return this;
-  }
-
-   /**
-   * (Optional) Requires smart_suggest_enabled to be true
-   * @return smartSuggestUseMachineTranslation
-  **/
-  @javax.annotation.Nullable
-
-  public Boolean getSmartSuggestUseMachineTranslation() {
-    return smartSuggestUseMachineTranslation;
-  }
-
-
-  public void setSmartSuggestUseMachineTranslation(Boolean smartSuggestUseMachineTranslation) {
-    this.smartSuggestUseMachineTranslation = smartSuggestUseMachineTranslation;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -711,15 +633,12 @@ public class ProjectUpdateParameters {
         Objects.equals(this.autotranslateCheckNewLocales, projectUpdateParameters.autotranslateCheckNewLocales) &&
         Objects.equals(this.autotranslateMarkAsUnverified, projectUpdateParameters.autotranslateMarkAsUnverified) &&
         Objects.equals(this.autotranslateUseMachineTranslation, projectUpdateParameters.autotranslateUseMachineTranslation) &&
-        Objects.equals(this.autotranslateUseTranslationMemory, projectUpdateParameters.autotranslateUseTranslationMemory) &&
-        Objects.equals(this.smartSuggestEnabled, projectUpdateParameters.smartSuggestEnabled) &&
-        Objects.equals(this.smartSuggestUseGlossary, projectUpdateParameters.smartSuggestUseGlossary) &&
-        Objects.equals(this.smartSuggestUseMachineTranslation, projectUpdateParameters.smartSuggestUseMachineTranslation);
+        Objects.equals(this.autotranslateUseTranslationMemory, projectUpdateParameters.autotranslateUseTranslationMemory);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation);
+    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory);
   }
 
   @Override
@@ -748,9 +667,6 @@ public class ProjectUpdateParameters {
     sb.append("    autotranslateMarkAsUnverified: ").append(toIndentedString(autotranslateMarkAsUnverified)).append("\n");
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
-    sb.append("    smartSuggestEnabled: ").append(toIndentedString(smartSuggestEnabled)).append("\n");
-    sb.append("    smartSuggestUseGlossary: ").append(toIndentedString(smartSuggestUseGlossary)).append("\n");
-    sb.append("    smartSuggestUseMachineTranslation: ").append(toIndentedString(smartSuggestUseMachineTranslation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

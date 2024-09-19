@@ -382,7 +382,7 @@ public class Example {
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = "my-feature-branch"; // String | specify the branch to use
-    List<String> translationKeyIds = Arrays.asList(); // List<String> | ids of keys that should added to the job
+    List<String> translationKeyIds = Arrays.asList(); // List<String> | ids of keys that should be removed from the job
     try {
       apiInstance.jobKeysDelete(projectId, id, xPhraseAppOTP, branch, translationKeyIds);
     } catch (ApiException e) {
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
- **translationKeyIds** | [**List&lt;String&gt;**](String.md)| ids of keys that should added to the job | [optional]
+ **translationKeyIds** | [**List&lt;String&gt;**](String.md)| ids of keys that should be removed from the job | [optional]
 
 ### Return type
 

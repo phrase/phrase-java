@@ -215,28 +215,4 @@ public class ProjectUpdateParametersTest {
         // TODO: test autotranslateUseTranslationMemory
     }
 
-    /**
-     * Test the property 'smartSuggestEnabled'
-     */
-    @Test
-    public void smartSuggestEnabledTest() {
-        // TODO: test smartSuggestEnabled
-    }
-
-    /**
-     * Test the property 'smartSuggestUseGlossary'
-     */
-    @Test
-    public void smartSuggestUseGlossaryTest() {
-        // TODO: test smartSuggestUseGlossary
-    }
-
-    /**
-     * Test the property 'smartSuggestUseMachineTranslation'
-     */
-    @Test
-    public void smartSuggestUseMachineTranslationTest() {
-        // TODO: test smartSuggestUseMachineTranslation
-    }
-
 }

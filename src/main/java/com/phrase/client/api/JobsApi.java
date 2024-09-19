@@ -651,7 +651,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should added to the job (optional)
+     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -733,7 +733,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should added to the job (optional)
+     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -755,7 +755,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should added to the job (optional)
+     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -779,7 +779,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should added to the job (optional)
+     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

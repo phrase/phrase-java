@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **projectImage** | [**File**](File.md) | (Optional) Image to identify the project |  [optional]
 **removeProjectImage** | **Boolean** | (Optional) Indicates whether the project image should be deleted. |  [optional]
 **workflow** | **String** | (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784094755484\&quot;&gt;Read more&lt;/a&gt; |  [optional]
-**machineTranslationEnabled** | **Boolean** | (Optional) Enable machine translation support in the project. Required for Autopilot and Smart Suggest |  [optional]
+**machineTranslationEnabled** | **Boolean** | (Optional) Enable machine translation support in the project. Required for Pre-Translation |  [optional]
 **enableBranching** | **Boolean** | (Optional) Enable branching in the project |  [optional]
 **protectMasterBranch** | **Boolean** | (Optional) Protect the master branch in project where branching is enabled |  [optional]
 **enableAllDataTypeTranslationKeysForTranslators** | **Boolean** | (Optional) Otherwise, translators are not allowed to edit translations other than strings |  [optional]
@@ -28,9 +28,6 @@ Name | Type | Description | Notes
 **autotranslateMarkAsUnverified** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseMachineTranslation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
-**smartSuggestEnabled** | **Boolean** | (Optional) Smart Suggest, requires machine_translation_enabled |  [optional]
-**smartSuggestUseGlossary** | **Boolean** | (Optional) Requires smart_suggest_enabled to be true |  [optional]
-**smartSuggestUseMachineTranslation** | **Boolean** | (Optional) Requires smart_suggest_enabled to be true |  [optional]
 
 
 
