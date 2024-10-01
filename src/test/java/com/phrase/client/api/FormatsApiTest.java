@@ -41,8 +41,7 @@ public class FormatsApiTest {
      */
     @Test
     public void formatsListTest() throws ApiException {
-        String xPhraseAppOTP = null;
-        List<Format> response = api.formatsList(xPhraseAppOTP);
+        List<Format> response = api.formatsList();
 
         // TODO: test validations
     }

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="formatsList"></a>
 # **formatsList**
-> List&lt;Format&gt; formatsList(xPhraseAppOTP)
+> List&lt;Format&gt; formatsList()
 
 List formats
 
@@ -41,9 +41,8 @@ public class Example {
     Token.setApiKeyPrefix("token");
 
     FormatsApi apiInstance = new FormatsApi(defaultClient);
-    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      List<Format> result = apiInstance.formatsList(xPhraseAppOTP);
+      List<Format> result = apiInstance.formatsList();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FormatsApi#formatsList");
@@ -57,10 +56,7 @@ public class Example {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -78,8 +74,6 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  |
+**200** | OK |  -  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
-**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
-**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
