@@ -258,7 +258,7 @@ null (empty response body)
 
 <a name="localeDownload"></a>
 # **localeDownload**
-> File localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, customMetadataFilters)
+> File localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters)
 
 Download a locale
 
@@ -311,9 +311,11 @@ public class Example {
     Boolean useLastReviewedVersion = true; // Boolean | If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project.
     String fallbackLocaleId = "fallbackLocaleId_example"; // String | If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to <code>true</code>.
     String sourceLocaleId = "sourceLocaleId_example"; // String | Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a <code>tag</code> parameter indicating a specific job.
+    String translationKeyPrefix = "prefix_"; // String | Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
+    Boolean filterByPrefix = true; // Boolean | Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
     Object customMetadataFilters = null; // Object | Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
     try {
-      File result = apiInstance.localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, customMetadataFilters);
+      File result = apiInstance.localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#localeDownload");
@@ -351,6 +353,8 @@ Name | Type | Description  | Notes
  **useLastReviewedVersion** | **Boolean**| If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. | [optional]
  **fallbackLocaleId** | **String**| If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. | [optional]
  **sourceLocaleId** | **String**| Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. | [optional]
+ **translationKeyPrefix** | **String**| Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed. | [optional]
+ **filterByPrefix** | **Boolean**| Only download translation keys containing the specified prefix, and remove the prefix from the generated file. | [optional]
  **customMetadataFilters** | [**Object**](.md)| Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  | [optional]
 
 ### Return type

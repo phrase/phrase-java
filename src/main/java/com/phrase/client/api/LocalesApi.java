@@ -513,6 +513,8 @@ public class LocalesApi {
      * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
+     * @param translationKeyPrefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed. (optional)
+     * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -526,7 +528,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, Object customMetadataFilters, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call localeDownloadCall(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, String translationKeyPrefix, Boolean filterByPrefix, Object customMetadataFilters, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -600,6 +602,14 @@ public class LocalesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("source_locale_id", sourceLocaleId));
         }
 
+        if (translationKeyPrefix != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("translation_key_prefix", translationKeyPrefix));
+        }
+
+        if (filterByPrefix != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_by_prefix", filterByPrefix));
+        }
+
         if (customMetadataFilters != null) {
             localVarQueryParams.addAll(localVarApiClient.mappedParameterToPairs("custom_metadata_filters", customMetadataFilters));
         }
@@ -638,7 +648,7 @@ public class LocalesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, Object customMetadataFilters, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call localeDownloadValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, String translationKeyPrefix, Boolean filterByPrefix, Object customMetadataFilters, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -651,7 +661,7 @@ public class LocalesApi {
         }
         
 
-        okhttp3.Call localVarCall = localeDownloadCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, customMetadataFilters, _callback);
+        okhttp3.Call localVarCall = localeDownloadCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters, _callback);
         return localVarCall;
 
     }
@@ -680,6 +690,8 @@ public class LocalesApi {
      * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
+     * @param translationKeyPrefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed. (optional)
+     * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -692,8 +704,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public File localeDownload(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, Object customMetadataFilters) throws ApiException {
-        ApiResponse<File> localVarResp = localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, customMetadataFilters);
+    public File localeDownload(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, String translationKeyPrefix, Boolean filterByPrefix, Object customMetadataFilters) throws ApiException {
+        ApiResponse<File> localVarResp = localeDownloadWithHttpInfo(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters);
         return localVarResp.getData();
     }
 
@@ -721,6 +733,8 @@ public class LocalesApi {
      * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
+     * @param translationKeyPrefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed. (optional)
+     * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -733,8 +747,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<File> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, Object customMetadataFilters) throws ApiException {
-        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, customMetadataFilters, null);
+    public ApiResponse<File> localeDownloadWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, String translationKeyPrefix, Boolean filterByPrefix, Object customMetadataFilters) throws ApiException {
+        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -763,6 +777,8 @@ public class LocalesApi {
      * @param useLastReviewedVersion If set to true the last reviewed version of a translation is used. This is only available if the review workflow is enabled for the project. (optional)
      * @param fallbackLocaleId If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &lt;code&gt;true&lt;/code&gt;. (optional)
      * @param sourceLocaleId Provides the source language of a corresponding job as the source language of the generated locale file. This parameter will be ignored unless used in combination with a &lt;code&gt;tag&lt;/code&gt; parameter indicating a specific job. (optional)
+     * @param translationKeyPrefix Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed. (optional)
+     * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -776,9 +792,9 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, Object customMetadataFilters, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call localeDownloadAsync(String projectId, String id, String xPhraseAppOTP, String ifModifiedSince, String ifNoneMatch, String branch, String fileFormat, String tags, String tag, Boolean includeEmptyTranslations, Boolean excludeEmptyZeroForms, Boolean includeTranslatedKeys, Boolean keepNotranslateTags, Boolean convertEmoji, Object formatOptions, String encoding, Boolean skipUnverifiedTranslations, Boolean includeUnverifiedTranslations, Boolean useLastReviewedVersion, String fallbackLocaleId, String sourceLocaleId, String translationKeyPrefix, Boolean filterByPrefix, Object customMetadataFilters, final ApiCallback<File> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, customMetadataFilters, _callback);
+        okhttp3.Call localVarCall = localeDownloadValidateBeforeCall(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters, _callback);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

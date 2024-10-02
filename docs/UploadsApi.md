@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys)
+> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix)
 
 Upload a new file
 
@@ -63,8 +63,9 @@ public class Example {
     Boolean autotranslate = true; // Boolean | If set, translations for the uploaded language will be fetched automatically.
     Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     Boolean tagOnlyAffectedKeys = false; // Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
+    String translationKeyPrefix = "translationKeyPrefix_example"; // String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
     try {
-      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys);
+      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -101,6 +102,7 @@ Name | Type | Description  | Notes
  **autotranslate** | **Boolean**| If set, translations for the uploaded language will be fetched automatically. | [optional]
  **markReviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional]
  **tagOnlyAffectedKeys** | **Boolean**| Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; | [optional] [default to false]
+ **translationKeyPrefix** | **String**| This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. | [optional]
 
 ### Return type
 
