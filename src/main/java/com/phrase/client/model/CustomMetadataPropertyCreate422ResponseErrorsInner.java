@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * CustomMetadataPropertyCreate422ResponseErrorsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T09:39:30.545371Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T12:59:49.185571Z[Etc/UTC]")
 public class CustomMetadataPropertyCreate422ResponseErrorsInner {
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)

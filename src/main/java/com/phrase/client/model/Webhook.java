@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Webhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T09:39:30.545371Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T12:59:49.185571Z[Etc/UTC]")
 public class Webhook {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

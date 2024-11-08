@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * IcuSkeletonParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T09:39:30.545371Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T12:59:49.185571Z[Etc/UTC]")
 public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
