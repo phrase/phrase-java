@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncEventErrorsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T13:31:32.127129Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-08T14:13:44.906808Z[Etc/UTC]")
 public class RepoSyncEventErrorsInner {
   public RepoSyncEventErrorsInner() {
   }
