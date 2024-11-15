@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **removeScreenshot** | **Boolean** | Indicates whether the screenshot will be deleted. This parameter is deprecated. Please use the Screenshots endpoint instead. |  [optional]
 **unformatted** | **Boolean** | Indicates whether the key should be exported as \&quot;unformatted\&quot;. Supported by Android XML and other formats. |  [optional]
 **defaultTranslationContent** | **String** | Creates a translation in the default locale with the specified content |  [optional]
+**autotranslate** | **Boolean** | Indicates whether the key should be autotranslated to other locales based on the copy provided in &#x60;default_translation_content&#x60;. |  [optional]
 **xmlSpacePreserve** | **Boolean** | Indicates whether the key should be exported with \&quot;xml:space&#x3D;preserve\&quot;. Supported by several XML-based formats. |  [optional]
 **originalFile** | **String** | Original file attribute. Used in some formats, e.g. XLIFF. |  [optional]
 **localizedFormatString** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. |  [optional]
