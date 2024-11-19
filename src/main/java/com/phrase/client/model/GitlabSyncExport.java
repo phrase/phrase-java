@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GitlabSyncExport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T10:03:24.551398Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-19T13:24:39.958535Z[Etc/UTC]")
 public class GitlabSyncExport {
   public static final String SERIALIZED_NAME_MERGE_REQUEST_ID = "merge_request_id";
   @SerializedName(SERIALIZED_NAME_MERGE_REQUEST_ID)
