@@ -18,26 +18,24 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for CommentCreateParameters
+ * Model tests for CommentCreateParameters1
  */
-public class CommentCreateParametersTest {
-    private final CommentCreateParameters model = new CommentCreateParameters();
+public class CommentCreateParameters1Test {
+    private final CommentCreateParameters1 model = new CommentCreateParameters1();
 
     /**
-     * Model tests for CommentCreateParameters
+     * Model tests for CommentCreateParameters1
      */
     @Test
-    public void testCommentCreateParameters() {
-        // TODO: test CommentCreateParameters
+    public void testCommentCreateParameters1() {
+        // TODO: test CommentCreateParameters1
     }
 
     /**
@@ -54,14 +52,6 @@ public class CommentCreateParametersTest {
     @Test
     public void branchTest() {
         // TODO: test branch
-    }
-
-    /**
-     * Test the property 'localeIds'
-     */
-    @Test
-    public void localeIdsTest() {
-        // TODO: test localeIds
     }
 
 }

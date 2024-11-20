@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 <a name="replyCreate"></a>
 # **replyCreate**
-> Comment replyCreate(projectId, keyId, commentId, xPhraseAppOTP, branch, message)
+> Comment replyCreate(projectId, keyId, commentId, commentCreateParameters1, xPhraseAppOTP)
 
 Create a reply
 
@@ -146,11 +146,10 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String keyId = "keyId_example"; // String | Translation Key ID
     String commentId = "commentId_example"; // String | Comment ID
+    CommentCreateParameters1 commentCreateParameters1 = new CommentCreateParameters1(); // CommentCreateParameters1 | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = "my-feature-branch"; // String | specify the branch to use
-    String message = "some message..."; // String | specify the message for the comment
     try {
-      Comment result = apiInstance.replyCreate(projectId, keyId, commentId, xPhraseAppOTP, branch, message);
+      Comment result = apiInstance.replyCreate(projectId, keyId, commentId, commentCreateParameters1, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CommentRepliesApi#replyCreate");
@@ -170,9 +169,8 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **keyId** | **String**| Translation Key ID |
  **commentId** | **String**| Comment ID |
+ **commentCreateParameters1** | [**CommentCreateParameters1**](CommentCreateParameters1.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **branch** | **String**| specify the branch to use | [optional]
- **message** | **String**| specify the message for the comment | [optional]
 
 ### Return type
 
@@ -184,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

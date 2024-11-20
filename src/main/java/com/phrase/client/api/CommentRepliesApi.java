@@ -27,6 +27,7 @@ import java.io.IOException;
 
 
 import com.phrase.client.model.Comment;
+import com.phrase.client.model.CommentCreateParameters1;
 import com.phrase.client.model.RepliesListParameters;
 
 import java.lang.reflect.Type;
@@ -271,9 +272,8 @@ public class CommentRepliesApi {
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
      * @param commentId Comment ID (required)
+     * @param commentCreateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param message specify the message for the comment (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -287,8 +287,8 @@ public class CommentRepliesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call replyCreateCall(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
+    public okhttp3.Call replyCreateCall(String projectId, String keyId, String commentId, CommentCreateParameters1 commentCreateParameters1, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = commentCreateParameters1;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/keys/{key_id}/comments/{comment_id}/replies"
@@ -298,14 +298,6 @@ public class CommentRepliesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
-        }
-
-        if (message != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("message", message));
-        }
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -322,7 +314,7 @@ public class CommentRepliesApi {
         }
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -332,7 +324,7 @@ public class CommentRepliesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replyCreateValidateBeforeCall(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replyCreateValidateBeforeCall(String projectId, String keyId, String commentId, CommentCreateParameters1 commentCreateParameters1, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -349,8 +341,13 @@ public class CommentRepliesApi {
             throw new ApiException("Missing the required parameter 'commentId' when calling replyCreate(Async)");
         }
         
+        // verify the required parameter 'commentCreateParameters1' is set
+        if (commentCreateParameters1 == null) {
+            throw new ApiException("Missing the required parameter 'commentCreateParameters1' when calling replyCreate(Async)");
+        }
+        
 
-        okhttp3.Call localVarCall = replyCreateCall(projectId, keyId, commentId, xPhraseAppOTP, branch, message, _callback);
+        okhttp3.Call localVarCall = replyCreateCall(projectId, keyId, commentId, commentCreateParameters1, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -361,9 +358,8 @@ public class CommentRepliesApi {
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
      * @param commentId Comment ID (required)
+     * @param commentCreateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param message specify the message for the comment (optional)
      * @return Comment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -376,8 +372,8 @@ public class CommentRepliesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Comment replyCreate(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message) throws ApiException {
-        ApiResponse<Comment> localVarResp = replyCreateWithHttpInfo(projectId, keyId, commentId, xPhraseAppOTP, branch, message);
+    public Comment replyCreate(String projectId, String keyId, String commentId, CommentCreateParameters1 commentCreateParameters1, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<Comment> localVarResp = replyCreateWithHttpInfo(projectId, keyId, commentId, commentCreateParameters1, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -387,9 +383,8 @@ public class CommentRepliesApi {
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
      * @param commentId Comment ID (required)
+     * @param commentCreateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param message specify the message for the comment (optional)
      * @return ApiResponse&lt;Comment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -402,8 +397,8 @@ public class CommentRepliesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Comment> replyCreateWithHttpInfo(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message) throws ApiException {
-        okhttp3.Call localVarCall = replyCreateValidateBeforeCall(projectId, keyId, commentId, xPhraseAppOTP, branch, message, null);
+    public ApiResponse<Comment> replyCreateWithHttpInfo(String projectId, String keyId, String commentId, CommentCreateParameters1 commentCreateParameters1, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = replyCreateValidateBeforeCall(projectId, keyId, commentId, commentCreateParameters1, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<Comment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -414,9 +409,8 @@ public class CommentRepliesApi {
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
      * @param commentId Comment ID (required)
+     * @param commentCreateParameters1  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param message specify the message for the comment (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -430,9 +424,9 @@ public class CommentRepliesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call replyCreateAsync(String projectId, String keyId, String commentId, String xPhraseAppOTP, String branch, String message, final ApiCallback<Comment> _callback) throws ApiException {
+    public okhttp3.Call replyCreateAsync(String projectId, String keyId, String commentId, CommentCreateParameters1 commentCreateParameters1, String xPhraseAppOTP, final ApiCallback<Comment> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = replyCreateValidateBeforeCall(projectId, keyId, commentId, xPhraseAppOTP, branch, message, _callback);
+        okhttp3.Call localVarCall = replyCreateValidateBeforeCall(projectId, keyId, commentId, commentCreateParameters1, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<Comment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

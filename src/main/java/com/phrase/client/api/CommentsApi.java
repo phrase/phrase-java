@@ -63,8 +63,6 @@ public class CommentsApi {
      * @param keyId Translation Key ID (required)
      * @param commentCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -77,7 +75,7 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call commentCreateCall(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call commentCreateCall(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = commentCreateParameters;
 
         // create path and map variables
@@ -87,14 +85,6 @@ public class CommentsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (message != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("message", message));
-        }
-
-        if (localeIds != null) {
-            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "locale_ids", localeIds));
-        }
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -121,7 +111,7 @@ public class CommentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentCreateValidateBeforeCall(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call commentCreateValidateBeforeCall(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -139,7 +129,7 @@ public class CommentsApi {
         }
         
 
-        okhttp3.Call localVarCall = commentCreateCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds, _callback);
+        okhttp3.Call localVarCall = commentCreateCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -151,8 +141,6 @@ public class CommentsApi {
      * @param keyId Translation Key ID (required)
      * @param commentCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
      * @return Comment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -164,8 +152,8 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Comment commentCreate(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds) throws ApiException {
-        ApiResponse<Comment> localVarResp = commentCreateWithHttpInfo(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds);
+    public Comment commentCreate(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<Comment> localVarResp = commentCreateWithHttpInfo(projectId, keyId, commentCreateParameters, xPhraseAppOTP);
         return localVarResp.getData();
     }
 
@@ -176,8 +164,6 @@ public class CommentsApi {
      * @param keyId Translation Key ID (required)
      * @param commentCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
      * @return ApiResponse&lt;Comment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -189,8 +175,8 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Comment> commentCreateWithHttpInfo(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds) throws ApiException {
-        okhttp3.Call localVarCall = commentCreateValidateBeforeCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds, null);
+    public ApiResponse<Comment> commentCreateWithHttpInfo(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = commentCreateValidateBeforeCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, null);
         Type localVarReturnType = new TypeToken<Comment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -202,8 +188,6 @@ public class CommentsApi {
      * @param keyId Translation Key ID (required)
      * @param commentCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param message specify the message for the comment (optional)
-     * @param localeIds specify the locales for the comment (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -216,9 +200,9 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call commentCreateAsync(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, String message, List<String> localeIds, final ApiCallback<Comment> _callback) throws ApiException {
+    public okhttp3.Call commentCreateAsync(String projectId, String keyId, CommentCreateParameters commentCreateParameters, String xPhraseAppOTP, final ApiCallback<Comment> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = commentCreateValidateBeforeCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, message, localeIds, _callback);
+        okhttp3.Call localVarCall = commentCreateValidateBeforeCall(projectId, keyId, commentCreateParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<Comment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

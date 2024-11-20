@@ -19,25 +19,53 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CommentCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-20T10:25:01.780516Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-20T11:04:48.219209Z[Etc/UTC]")
 public class CommentCreateParameters {
-  public static final String SERIALIZED_NAME_BRANCH = "branch";
-  @SerializedName(SERIALIZED_NAME_BRANCH)
-  private String branch;
-
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
+
+  public static final String SERIALIZED_NAME_LOCALE_IDS = "locale_ids";
+  @SerializedName(SERIALIZED_NAME_LOCALE_IDS)
+  private List<String> localeIds;
+
   public CommentCreateParameters() {
   }
+
+  public CommentCreateParameters message(String message) {
+    
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Comment message
+   * @return message
+  **/
+  @javax.annotation.Nonnull
+
+  public String getMessage() {
+    return message;
+  }
+
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
 
   public CommentCreateParameters branch(String branch) {
     
@@ -61,25 +89,33 @@ public class CommentCreateParameters {
   }
 
 
-  public CommentCreateParameters message(String message) {
+  public CommentCreateParameters localeIds(List<String> localeIds) {
     
-    this.message = message;
+    this.localeIds = localeIds;
+    return this;
+  }
+
+  public CommentCreateParameters addLocaleIdsItem(String localeIdsItem) {
+    if (this.localeIds == null) {
+      this.localeIds = new ArrayList<>();
+    }
+    this.localeIds.add(localeIdsItem);
     return this;
   }
 
    /**
-   * Comment message
-   * @return message
+   * specify the locales for the comment
+   * @return localeIds
   **/
   @javax.annotation.Nullable
 
-  public String getMessage() {
-    return message;
+  public List<String> getLocaleIds() {
+    return localeIds;
   }
 
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setLocaleIds(List<String> localeIds) {
+    this.localeIds = localeIds;
   }
 
   @Override
@@ -91,21 +127,23 @@ public class CommentCreateParameters {
       return false;
     }
     CommentCreateParameters commentCreateParameters = (CommentCreateParameters) o;
-    return Objects.equals(this.branch, commentCreateParameters.branch) &&
-        Objects.equals(this.message, commentCreateParameters.message);
+    return Objects.equals(this.message, commentCreateParameters.message) &&
+        Objects.equals(this.branch, commentCreateParameters.branch) &&
+        Objects.equals(this.localeIds, commentCreateParameters.localeIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, message);
+    return Objects.hash(message, branch, localeIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommentCreateParameters {\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

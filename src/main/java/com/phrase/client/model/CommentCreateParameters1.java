@@ -24,36 +24,32 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner
+ * CommentCreateParameters1
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-20T11:04:48.219209Z[Etc/UTC]")
-public class ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner {
+public class CommentCreateParameters1 {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
 
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private String id;
-
-  public ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner() {
+  public CommentCreateParameters1() {
   }
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner message(String message) {
+  public CommentCreateParameters1 message(String message) {
     
     this.message = message;
     return this;
   }
 
    /**
-   * Get message
+   * Reply message body
    * @return message
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getMessage() {
     return message;
@@ -65,47 +61,25 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner {
   }
 
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner code(String code) {
+  public CommentCreateParameters1 branch(String branch) {
     
-    this.code = code;
+    this.branch = branch;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Specify the branch to use
+   * @return branch
   **/
   @javax.annotation.Nullable
 
-  public String getCode() {
-    return code;
+  public String getBranch() {
+    return branch;
   }
 
 
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-
-  public ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner id(String id) {
-    
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * One of the translation ids passed in arguments
-   * @return id
-  **/
-  @javax.annotation.Nullable
-
-  public String getId() {
-    return id;
-  }
-
-
-  public void setId(String id) {
-    this.id = id;
+  public void setBranch(String branch) {
+    this.branch = branch;
   }
 
   @Override
@@ -116,24 +90,22 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner projectsQualityPerformanceScore200ResponseAnyOfErrorsInner = (ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner) o;
-    return Objects.equals(this.message, projectsQualityPerformanceScore200ResponseAnyOfErrorsInner.message) &&
-        Objects.equals(this.code, projectsQualityPerformanceScore200ResponseAnyOfErrorsInner.code) &&
-        Objects.equals(this.id, projectsQualityPerformanceScore200ResponseAnyOfErrorsInner.id);
+    CommentCreateParameters1 commentCreateParameters1 = (CommentCreateParameters1) o;
+    return Objects.equals(this.message, commentCreateParameters1.message) &&
+        Objects.equals(this.branch, commentCreateParameters1.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, code, id);
+    return Objects.hash(message, branch);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner {\n");
+    sb.append("class CommentCreateParameters1 {\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();
   }

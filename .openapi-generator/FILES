@@ -34,6 +34,7 @@ docs/BranchUpdateParameters.md
 docs/BranchesApi.md
 docs/Comment.md
 docs/CommentCreateParameters.md
+docs/CommentCreateParameters1.md
 docs/CommentMarkReadParameters.md
 docs/CommentReaction.md
 docs/CommentReactionsApi.md
@@ -391,6 +392,7 @@ src/main/java/com/phrase/client/model/BranchName.java
 src/main/java/com/phrase/client/model/BranchUpdateParameters.java
 src/main/java/com/phrase/client/model/Comment.java
 src/main/java/com/phrase/client/model/CommentCreateParameters.java
+src/main/java/com/phrase/client/model/CommentCreateParameters1.java
 src/main/java/com/phrase/client/model/CommentMarkReadParameters.java
 src/main/java/com/phrase/client/model/CommentReaction.java
 src/main/java/com/phrase/client/model/CommentUpdateParameters.java
@@ -666,6 +668,7 @@ src/test/java/com/phrase/client/model/BranchMergeParametersTest.java
 src/test/java/com/phrase/client/model/BranchNameTest.java
 src/test/java/com/phrase/client/model/BranchTest.java
 src/test/java/com/phrase/client/model/BranchUpdateParametersTest.java
+src/test/java/com/phrase/client/model/CommentCreateParameters1Test.java
 src/test/java/com/phrase/client/model/CommentCreateParametersTest.java
 src/test/java/com/phrase/client/model/CommentMarkReadParametersTest.java
 src/test/java/com/phrase/client/model/CommentReactionTest.java
