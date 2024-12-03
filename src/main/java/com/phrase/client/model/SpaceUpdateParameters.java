@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * SpaceUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-03T08:11:20.292228Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-03T08:13:47.711589Z[Etc/UTC]")
 public class SpaceUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
