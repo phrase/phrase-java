@@ -26,11 +26,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobCommentUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-03T08:31:33.761290Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-09T13:59:58.264464Z[Etc/UTC]")
 public class JobCommentUpdateParameters {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
+
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
 
   public JobCommentUpdateParameters() {
   }
@@ -56,6 +60,28 @@ public class JobCommentUpdateParameters {
     this.message = message;
   }
 
+
+  public JobCommentUpdateParameters branch(String branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * Branch name for the job
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+
+  public String getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(String branch) {
+    this.branch = branch;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -65,12 +91,13 @@ public class JobCommentUpdateParameters {
       return false;
     }
     JobCommentUpdateParameters jobCommentUpdateParameters = (JobCommentUpdateParameters) o;
-    return Objects.equals(this.message, jobCommentUpdateParameters.message);
+    return Objects.equals(this.message, jobCommentUpdateParameters.message) &&
+        Objects.equals(this.branch, jobCommentUpdateParameters.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message);
+    return Objects.hash(message, branch);
   }
 
   @Override
@@ -78,6 +105,7 @@ public class JobCommentUpdateParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class JobCommentUpdateParameters {\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();
   }

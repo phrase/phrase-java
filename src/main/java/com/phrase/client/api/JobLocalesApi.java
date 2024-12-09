@@ -384,7 +384,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -468,7 +468,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -490,7 +490,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -514,7 +514,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -699,7 +699,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -783,7 +783,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @return JobLocale
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -807,7 +807,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @return ApiResponse&lt;JobLocale&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -832,7 +832,7 @@ public class JobLocalesApi {
      * @param jobId Job ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1169,7 +1169,7 @@ public class JobLocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1256,7 +1256,7 @@ public class JobLocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @return List&lt;JobLocale&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1281,7 +1281,7 @@ public class JobLocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @return ApiResponse&lt;List&lt;JobLocale&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1307,7 +1307,7 @@ public class JobLocalesApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

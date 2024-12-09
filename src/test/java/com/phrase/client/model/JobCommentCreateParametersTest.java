@@ -46,4 +46,12 @@ public class JobCommentCreateParametersTest {
         // TODO: test message
     }
 
+    /**
+     * Test the property 'branch'
+     */
+    @Test
+    public void branchTest() {
+        // TODO: test branch
+    }
+
 }

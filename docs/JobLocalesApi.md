@@ -220,7 +220,7 @@ public class Example {
     String jobId = "jobId_example"; // String | Job ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = "my-feature-branch"; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | Branch to use
     try {
       apiInstance.jobLocaleDelete(projectId, jobId, id, xPhraseAppOTP, branch);
     } catch (ApiException e) {
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
  **jobId** | **String**| Job ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **branch** | **String**| specify the branch to use | [optional]
+ **branch** | **String**| Branch to use | [optional]
 
 ### Return type
 
@@ -387,7 +387,7 @@ public class Example {
     String jobId = "jobId_example"; // String | Job ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = "my-feature-branch"; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | Branch to use
     try {
       JobLocale result = apiInstance.jobLocaleShow(projectId, jobId, id, xPhraseAppOTP, branch);
       System.out.println(result);
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
  **jobId** | **String**| Job ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **branch** | **String**| specify the branch to use | [optional]
+ **branch** | **String**| Branch to use | [optional]
 
 ### Return type
 
@@ -638,7 +638,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = "my-feature-branch"; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | Branch to use
     try {
       List<JobLocale> result = apiInstance.jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch);
       System.out.println(result);
@@ -662,7 +662,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
- **branch** | **String**| specify the branch to use | [optional]
+ **branch** | **String**| Branch to use | [optional]
 
 ### Return type
 
