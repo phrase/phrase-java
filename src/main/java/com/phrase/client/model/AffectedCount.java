@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * AffectedCount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-09T14:06:43.955946Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-12T13:10:40.601286Z[Etc/UTC]")
 public class AffectedCount {
   public static final String SERIALIZED_NAME_RECORDS_AFFECTED = "records_affected";
   @SerializedName(SERIALIZED_NAME_RECORDS_AFFECTED)

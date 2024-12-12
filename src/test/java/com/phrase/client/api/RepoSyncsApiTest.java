@@ -108,7 +108,7 @@ public class RepoSyncsApiTest {
     /**
      * Export to code repository
      *
-     * &gt; Beta: this feature will change in the future.  Export translations from Phrase Strings to repository provider according to the .phrase.yml file within the code repository.  *Export is done asynchronously and may take several seconds depending on the project size.*
+     * Export translations from Phrase Strings to repository provider according to the .phrase.yml file within the code repository.  *Export is done asynchronously and may take several seconds depending on the project size.*
      *
      * @throws ApiException
      *          if the Api call fails
@@ -126,7 +126,7 @@ public class RepoSyncsApiTest {
     /**
      * Import from code repository
      *
-     * &gt; Beta: this feature will change in the future.  Import translations from repository provider to Phrase Strings according to the .phrase.yml file within the code repository.  _Import is done asynchronously and may take several seconds depending on the project size._
+     * Import translations from repository provider to Phrase Strings according to the .phrase.yml file within the code repository.  _Import is done asynchronously and may take several seconds depending on the project size._
      *
      * @throws ApiException
      *          if the Api call fails
