@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-12T13:10:40.601286Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-13T09:41:10.863654223Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -116,6 +116,63 @@ public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY = "autotranslate_use_translation_memory";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY)
   private Boolean autotranslateUseTranslationMemory;
+
+  /**
+   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the &lt;a href&#x3D;&#39;#post-/projects/-project_id-/uploads&#39;&gt;&#x60;file_encoding&#x60;&lt;/a&gt; parameter for Uploads.
+   */
+  @JsonAdapter(DefaultEncodingEnum.Adapter.class)
+  public enum DefaultEncodingEnum {
+    UTF_8("UTF-8"),
+    
+    UTF_16("UTF-16"),
+    
+    UTF_16BE("UTF-16BE"),
+    
+    UTF_16LE("UTF-16LE"),
+    
+    ISO_8859_1("ISO-8859-1");
+
+    private String value;
+
+    DefaultEncodingEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DefaultEncodingEnum fromValue(String value) {
+      for (DefaultEncodingEnum b : DefaultEncodingEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DefaultEncodingEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DefaultEncodingEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DefaultEncodingEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DefaultEncodingEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DEFAULT_ENCODING = "default_encoding";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_ENCODING)
+  private DefaultEncodingEnum defaultEncoding;
 
   public ProjectUpdateParameters() {
   }
@@ -603,6 +660,28 @@ public class ProjectUpdateParameters {
     this.autotranslateUseTranslationMemory = autotranslateUseTranslationMemory;
   }
 
+
+  public ProjectUpdateParameters defaultEncoding(DefaultEncodingEnum defaultEncoding) {
+    
+    this.defaultEncoding = defaultEncoding;
+    return this;
+  }
+
+   /**
+   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the &lt;a href&#x3D;&#39;#post-/projects/-project_id-/uploads&#39;&gt;&#x60;file_encoding&#x60;&lt;/a&gt; parameter for Uploads.
+   * @return defaultEncoding
+  **/
+  @javax.annotation.Nullable
+
+  public DefaultEncodingEnum getDefaultEncoding() {
+    return defaultEncoding;
+  }
+
+
+  public void setDefaultEncoding(DefaultEncodingEnum defaultEncoding) {
+    this.defaultEncoding = defaultEncoding;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -633,12 +712,13 @@ public class ProjectUpdateParameters {
         Objects.equals(this.autotranslateCheckNewLocales, projectUpdateParameters.autotranslateCheckNewLocales) &&
         Objects.equals(this.autotranslateMarkAsUnverified, projectUpdateParameters.autotranslateMarkAsUnverified) &&
         Objects.equals(this.autotranslateUseMachineTranslation, projectUpdateParameters.autotranslateUseMachineTranslation) &&
-        Objects.equals(this.autotranslateUseTranslationMemory, projectUpdateParameters.autotranslateUseTranslationMemory);
+        Objects.equals(this.autotranslateUseTranslationMemory, projectUpdateParameters.autotranslateUseTranslationMemory) &&
+        Objects.equals(this.defaultEncoding, projectUpdateParameters.defaultEncoding);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory);
+    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding);
   }
 
   @Override
@@ -667,6 +747,7 @@ public class ProjectUpdateParameters {
     sb.append("    autotranslateMarkAsUnverified: ").append(toIndentedString(autotranslateMarkAsUnverified)).append("\n");
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
+    sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
     sb.append("}");
     return sb.toString();
   }

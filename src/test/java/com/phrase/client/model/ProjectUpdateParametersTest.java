@@ -215,4 +215,12 @@ public class ProjectUpdateParametersTest {
         // TODO: test autotranslateUseTranslationMemory
     }
 
+    /**
+     * Test the property 'defaultEncoding'
+     */
+    @Test
+    public void defaultEncodingTest() {
+        // TODO: test defaultEncoding
+    }
+
 }

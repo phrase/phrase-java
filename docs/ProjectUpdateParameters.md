@@ -28,6 +28,19 @@ Name | Type | Description | Notes
 **autotranslateMarkAsUnverified** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseMachineTranslation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
+**defaultEncoding** | [**DefaultEncodingEnum**](#DefaultEncodingEnum) | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the &lt;a href&#x3D;&#39;#post-/projects/-project_id-/uploads&#39;&gt;&#x60;file_encoding&#x60;&lt;/a&gt; parameter for Uploads. |  [optional]
+
+
+
+## Enum: DefaultEncodingEnum
+
+Name | Value
+---- | -----
+UTF_8 | &quot;UTF-8&quot;
+UTF_16 | &quot;UTF-16&quot;
+UTF_16BE | &quot;UTF-16BE&quot;
+UTF_16LE | &quot;UTF-16LE&quot;
+ISO_8859_1 | &quot;ISO-8859-1&quot;
 
 
 
