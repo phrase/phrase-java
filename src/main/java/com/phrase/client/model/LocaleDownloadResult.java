@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleDownloadResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-18T10:01:30.267900471Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-18T10:06:04.991703014Z[Etc/UTC]")
 public class LocaleDownloadResult {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
