@@ -118,9 +118,6 @@ Class | Method | HTTP request | Description
 *AuthorizationsApi* | [**authorizationShow**](docs/AuthorizationsApi.md#authorizationShow) | **GET** /authorizations/{id} | Get a single authorization
 *AuthorizationsApi* | [**authorizationUpdate**](docs/AuthorizationsApi.md#authorizationUpdate) | **PATCH** /authorizations/{id} | Update an authorization
 *AuthorizationsApi* | [**authorizationsList**](docs/AuthorizationsApi.md#authorizationsList) | **GET** /authorizations | List authorizations
-*BitbucketSyncApi* | [**bitbucketSyncExport**](docs/BitbucketSyncApi.md#bitbucketSyncExport) | **POST** /bitbucket_syncs/{id}/export | Export from Phrase Strings to Bitbucket
-*BitbucketSyncApi* | [**bitbucketSyncImport**](docs/BitbucketSyncApi.md#bitbucketSyncImport) | **POST** /bitbucket_syncs/{id}/import | Import to Phrase Strings from Bitbucket
-*BitbucketSyncApi* | [**bitbucketSyncsList**](docs/BitbucketSyncApi.md#bitbucketSyncsList) | **GET** /bitbucket_syncs | List Bitbucket syncs
 *BlacklistedKeysApi* | [**blacklistedKeyCreate**](docs/BlacklistedKeysApi.md#blacklistedKeyCreate) | **POST** /projects/{project_id}/blacklisted_keys | Create a blocked key
 *BlacklistedKeysApi* | [**blacklistedKeyDelete**](docs/BlacklistedKeysApi.md#blacklistedKeyDelete) | **DELETE** /projects/{project_id}/blacklisted_keys/{id} | Delete a blocked key
 *BlacklistedKeysApi* | [**blacklistedKeyShow**](docs/BlacklistedKeysApi.md#blacklistedKeyShow) | **GET** /projects/{project_id}/blacklisted_keys/{id} | Get a single blocked key
@@ -169,15 +166,6 @@ Class | Method | HTTP request | Description
 *FigmaAttachmentsApi* | [**figmaAttachmentUpdate**](docs/FigmaAttachmentsApi.md#figmaAttachmentUpdate) | **PATCH** /projects/{project_id}/figma_attachments/{id} | Update a Figma attachment
 *FigmaAttachmentsApi* | [**figmaAttachmentsList**](docs/FigmaAttachmentsApi.md#figmaAttachmentsList) | **GET** /projects/{project_id}/figma_attachments | List Figma attachments
 *FormatsApi* | [**formatsList**](docs/FormatsApi.md#formatsList) | **GET** /formats | List formats
-*GitHubSyncApi* | [**githubSyncExport**](docs/GitHubSyncApi.md#githubSyncExport) | **POST** /github_syncs/export | Export from Phrase Strings to GitHub
-*GitHubSyncApi* | [**githubSyncImport**](docs/GitHubSyncApi.md#githubSyncImport) | **POST** /github_syncs/import | Import to Phrase Strings from GitHub
-*GitLabSyncApi* | [**gitlabSyncDelete**](docs/GitLabSyncApi.md#gitlabSyncDelete) | **DELETE** /gitlab_syncs/{id} | Delete single Sync Setting
-*GitLabSyncApi* | [**gitlabSyncExport**](docs/GitLabSyncApi.md#gitlabSyncExport) | **POST** /gitlab_syncs/{gitlab_sync_id}/export | Export from Phrase Strings to GitLab
-*GitLabSyncApi* | [**gitlabSyncHistory**](docs/GitLabSyncApi.md#gitlabSyncHistory) | **GET** /gitlab_syncs/{gitlab_sync_id}/history | History of single Sync Setting
-*GitLabSyncApi* | [**gitlabSyncImport**](docs/GitLabSyncApi.md#gitlabSyncImport) | **POST** /gitlab_syncs/{gitlab_sync_id}/import | Import from GitLab to Phrase
-*GitLabSyncApi* | [**gitlabSyncList**](docs/GitLabSyncApi.md#gitlabSyncList) | **GET** /gitlab_syncs | List GitLab syncs
-*GitLabSyncApi* | [**gitlabSyncShow**](docs/GitLabSyncApi.md#gitlabSyncShow) | **GET** /gitlab_syncs/{id} | Get single Sync Setting
-*GitLabSyncApi* | [**gitlabSyncUpdate**](docs/GitLabSyncApi.md#gitlabSyncUpdate) | **PUT** /gitlab_syncs/{id} | Update single Sync Setting
 *GlossariesApi* | [**glossariesList**](docs/GlossariesApi.md#glossariesList) | **GET** /accounts/{account_id}/glossaries | List term bases
 *GlossariesApi* | [**glossaryCreate**](docs/GlossariesApi.md#glossaryCreate) | **POST** /accounts/{account_id}/glossaries | Create a term base
 *GlossariesApi* | [**glossaryDelete**](docs/GlossariesApi.md#glossaryDelete) | **DELETE** /accounts/{account_id}/glossaries/{id} | Delete a term base
@@ -403,10 +391,6 @@ Class | Method | HTTP request | Description
  - [AuthorizationCreateParameters](docs/AuthorizationCreateParameters.md)
  - [AuthorizationUpdateParameters](docs/AuthorizationUpdateParameters.md)
  - [AuthorizationWithToken](docs/AuthorizationWithToken.md)
- - [BitbucketSync](docs/BitbucketSync.md)
- - [BitbucketSyncExportParameters](docs/BitbucketSyncExportParameters.md)
- - [BitbucketSyncExportResponse](docs/BitbucketSyncExportResponse.md)
- - [BitbucketSyncImportParameters](docs/BitbucketSyncImportParameters.md)
  - [BlacklistedKey](docs/BlacklistedKey.md)
  - [BlacklistedKeyCreateParameters](docs/BlacklistedKeyCreateParameters.md)
  - [BlacklistedKeyUpdateParameters](docs/BlacklistedKeyUpdateParameters.md)
@@ -440,14 +424,6 @@ Class | Method | HTTP request | Description
  - [FigmaAttachmentCreateParameters](docs/FigmaAttachmentCreateParameters.md)
  - [FigmaAttachmentUpdateParameters](docs/FigmaAttachmentUpdateParameters.md)
  - [Format](docs/Format.md)
- - [GithubSyncExportParameters](docs/GithubSyncExportParameters.md)
- - [GithubSyncImportParameters](docs/GithubSyncImportParameters.md)
- - [GitlabSync](docs/GitlabSync.md)
- - [GitlabSyncExport](docs/GitlabSyncExport.md)
- - [GitlabSyncExportParameters](docs/GitlabSyncExportParameters.md)
- - [GitlabSyncHistory](docs/GitlabSyncHistory.md)
- - [GitlabSyncHistoryErrorsInner](docs/GitlabSyncHistoryErrorsInner.md)
- - [GitlabSyncImportParameters](docs/GitlabSyncImportParameters.md)
  - [Glossary](docs/Glossary.md)
  - [GlossaryCreateParameters](docs/GlossaryCreateParameters.md)
  - [GlossaryTerm](docs/GlossaryTerm.md)
