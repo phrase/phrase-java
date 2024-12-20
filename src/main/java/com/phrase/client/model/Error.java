@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Error field for when the request completely fails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-20T10:49:16.789919651Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-20T15:01:27.155667120Z[Etc/UTC]")
 public class Error {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)

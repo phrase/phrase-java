@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **pullRequestUrl** | **String** | URL of the pull request created on export |  [optional]
 **autoImport** | **Boolean** | Whether the import was triggered by the repo push event |  [optional]
-**errors** | [**List&lt;RepoSyncEventErrorsInner&gt;**](RepoSyncEventErrorsInner.md) | List of error messages, in case of failure |  [optional]
+**errors** | **List&lt;String&gt;** | List of error messages, in case of failure |  [optional]
 
 
 

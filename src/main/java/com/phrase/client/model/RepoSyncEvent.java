@@ -18,7 +18,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.RepoSyncEventErrorsInner;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncEvent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-20T10:49:16.789919651Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-20T15:01:27.155667120Z[Etc/UTC]")
 public class RepoSyncEvent {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -154,7 +153,7 @@ public class RepoSyncEvent {
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<RepoSyncEventErrorsInner> errors;
+  private List<String> errors;
 
   public RepoSyncEvent() {
   }
@@ -291,13 +290,13 @@ public class RepoSyncEvent {
   }
 
 
-  public RepoSyncEvent errors(List<RepoSyncEventErrorsInner> errors) {
+  public RepoSyncEvent errors(List<String> errors) {
     
     this.errors = errors;
     return this;
   }
 
-  public RepoSyncEvent addErrorsItem(RepoSyncEventErrorsInner errorsItem) {
+  public RepoSyncEvent addErrorsItem(String errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -311,12 +310,12 @@ public class RepoSyncEvent {
   **/
   @javax.annotation.Nullable
 
-  public List<RepoSyncEventErrorsInner> getErrors() {
+  public List<String> getErrors() {
     return errors;
   }
 
 
-  public void setErrors(List<RepoSyncEventErrorsInner> errors) {
+  public void setErrors(List<String> errors) {
     this.errors = errors;
   }
 
