@@ -51,11 +51,11 @@ public class RepoSyncEventTest {
     }
 
     /**
-     * Test the property 'eventType'
+     * Test the property 'type'
      */
     @Test
-    public void eventTypeTest() {
-        // TODO: test eventType
+    public void typeTest() {
+        // TODO: test type
     }
 
     /**

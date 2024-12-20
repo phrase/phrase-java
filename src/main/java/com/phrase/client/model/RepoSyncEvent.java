@@ -30,24 +30,24 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncEvent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-19T11:57:28.502990428Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-12-20T10:30:25.736713121Z[Etc/UTC]")
 public class RepoSyncEvent {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
   /**
-   * Gets or Sets eventType
+   * Gets or Sets type
    */
-  @JsonAdapter(EventTypeEnum.Adapter.class)
-  public enum EventTypeEnum {
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
     IMPORT("import"),
     
     EXPORT("export");
 
     private String value;
 
-    EventTypeEnum(String value) {
+    TypeEnum(String value) {
       this.value = value;
     }
 
@@ -60,8 +60,8 @@ public class RepoSyncEvent {
       return String.valueOf(value);
     }
 
-    public static EventTypeEnum fromValue(String value) {
-      for (EventTypeEnum b : EventTypeEnum.values()) {
+    public static TypeEnum fromValue(String value) {
+      for (TypeEnum b : TypeEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -69,23 +69,23 @@ public class RepoSyncEvent {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<EventTypeEnum> {
+    public static class Adapter extends TypeAdapter<TypeEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final EventTypeEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public EventTypeEnum read(final JsonReader jsonReader) throws IOException {
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return EventTypeEnum.fromValue(value);
+        return TypeEnum.fromValue(value);
       }
     }
   }
 
-  public static final String SERIALIZED_NAME_EVENT_TYPE = "event_type";
-  @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
-  private EventTypeEnum eventType;
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private TypeEnum type;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -181,25 +181,25 @@ public class RepoSyncEvent {
   }
 
 
-  public RepoSyncEvent eventType(EventTypeEnum eventType) {
+  public RepoSyncEvent type(TypeEnum type) {
     
-    this.eventType = eventType;
+    this.type = type;
     return this;
   }
 
    /**
-   * Get eventType
-   * @return eventType
+   * Get type
+   * @return type
   **/
   @javax.annotation.Nullable
 
-  public EventTypeEnum getEventType() {
-    return eventType;
+  public TypeEnum getType() {
+    return type;
   }
 
 
-  public void setEventType(EventTypeEnum eventType) {
-    this.eventType = eventType;
+  public void setType(TypeEnum type) {
+    this.type = type;
   }
 
 
@@ -330,7 +330,7 @@ public class RepoSyncEvent {
     }
     RepoSyncEvent repoSyncEvent = (RepoSyncEvent) o;
     return Objects.equals(this.id, repoSyncEvent.id) &&
-        Objects.equals(this.eventType, repoSyncEvent.eventType) &&
+        Objects.equals(this.type, repoSyncEvent.type) &&
         Objects.equals(this.createdAt, repoSyncEvent.createdAt) &&
         Objects.equals(this.status, repoSyncEvent.status) &&
         Objects.equals(this.pullRequestUrl, repoSyncEvent.pullRequestUrl) &&
@@ -340,7 +340,7 @@ public class RepoSyncEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, eventType, createdAt, status, pullRequestUrl, autoImport, errors);
+    return Objects.hash(id, type, createdAt, status, pullRequestUrl, autoImport, errors);
   }
 
   @Override
@@ -348,7 +348,7 @@ public class RepoSyncEvent {
     StringBuilder sb = new StringBuilder();
     sb.append("class RepoSyncEvent {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    pullRequestUrl: ").append(toIndentedString(pullRequestUrl)).append("\n");

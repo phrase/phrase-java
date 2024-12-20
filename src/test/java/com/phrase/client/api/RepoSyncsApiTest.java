@@ -69,43 +69,6 @@ public class RepoSyncsApiTest {
     }
     
     /**
-     * Get a single Repo Sync Event
-     *
-     * Shows a single Repo Sync event.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void repoSyncEventShowTest() throws ApiException {
-        String accountId = null;
-        String repoSyncId = null;
-        String id = null;
-        String xPhraseAppOTP = null;
-        RepoSyncEvent response = api.repoSyncEventShow(accountId, repoSyncId, id, xPhraseAppOTP);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Repository Syncs History
-     *
-     * Get the history of a single Repo Sync. The history includes all imports and exports performed by the Repo Sync.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void repoSyncEventsTest() throws ApiException {
-        String accountId = null;
-        String id = null;
-        String xPhraseAppOTP = null;
-        List<RepoSyncEvent> response = api.repoSyncEvents(accountId, id, xPhraseAppOTP);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Export to code repository
      *
      * Export translations from Phrase Strings to repository provider according to the .phrase.yml file within the code repository.  *Export is done asynchronously and may take several seconds depending on the project size.*

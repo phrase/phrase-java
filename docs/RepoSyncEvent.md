@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  |  [optional]
-**eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  [optional]
+**type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **pullRequestUrl** | **String** | URL of the pull request created on export |  [optional]
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 
 
-## Enum: EventTypeEnum
+## Enum: TypeEnum
 
 Name | Value
 ---- | -----

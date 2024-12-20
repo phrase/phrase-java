@@ -292,10 +292,10 @@ Class | Method | HTTP request | Description
 *ReleasesApi* | [**releaseShow**](docs/ReleasesApi.md#releaseShow) | **GET** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Get a single release
 *ReleasesApi* | [**releaseUpdate**](docs/ReleasesApi.md#releaseUpdate) | **PATCH** /accounts/{account_id}/distributions/{distribution_id}/releases/{id} | Update a release
 *ReleasesApi* | [**releasesList**](docs/ReleasesApi.md#releasesList) | **GET** /accounts/{account_id}/distributions/{distribution_id}/releases | List releases
+*RepoSyncEventsApi* | [**repoSyncEventList**](docs/RepoSyncEventsApi.md#repoSyncEventList) | **GET** /accounts/{account_id}/repo_syncs/{id}/events | Repository Syncs History
+*RepoSyncEventsApi* | [**repoSyncEventShow**](docs/RepoSyncEventsApi.md#repoSyncEventShow) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id}/events/{id} | Get a single Repo Sync Event
 *RepoSyncsApi* | [**repoSyncActivate**](docs/RepoSyncsApi.md#repoSyncActivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/activate | Activate a Repo Sync
 *RepoSyncsApi* | [**repoSyncDeactivate**](docs/RepoSyncsApi.md#repoSyncDeactivate) | **POST** /accounts/{account_id}/repo_syncs/{id}/deactivate | Deactivate a Repo Sync
-*RepoSyncsApi* | [**repoSyncEventShow**](docs/RepoSyncsApi.md#repoSyncEventShow) | **GET** /accounts/{account_id}/repo_syncs/{repo_sync_id}/events/{id} | Get a single Repo Sync Event
-*RepoSyncsApi* | [**repoSyncEvents**](docs/RepoSyncsApi.md#repoSyncEvents) | **GET** /accounts/{account_id}/repo_syncs/{id}/events | Repository Syncs History
 *RepoSyncsApi* | [**repoSyncExport**](docs/RepoSyncsApi.md#repoSyncExport) | **POST** /accounts/{account_id}/repo_syncs/{id}/export | Export to code repository
 *RepoSyncsApi* | [**repoSyncImport**](docs/RepoSyncsApi.md#repoSyncImport) | **POST** /accounts/{account_id}/repo_syncs/{id}/import | Import from code repository
 *RepoSyncsApi* | [**repoSyncList**](docs/RepoSyncsApi.md#repoSyncList) | **GET** /accounts/{account_id}/repo_syncs | Get Repo Syncs

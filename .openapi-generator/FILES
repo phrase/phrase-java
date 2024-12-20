@@ -193,6 +193,7 @@ docs/RepliesListParameters.md
 docs/RepoSync.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventErrorsInner.md
+docs/RepoSyncEventsApi.md
 docs/RepoSyncsApi.md
 docs/ReportsApi.md
 docs/Screenshot.md
@@ -330,6 +331,7 @@ src/main/java/com/phrase/client/api/ProjectsApi.java
 src/main/java/com/phrase/client/api/QualityPerformanceScoreApi.java
 src/main/java/com/phrase/client/api/ReleaseTriggersApi.java
 src/main/java/com/phrase/client/api/ReleasesApi.java
+src/main/java/com/phrase/client/api/RepoSyncEventsApi.java
 src/main/java/com/phrase/client/api/RepoSyncsApi.java
 src/main/java/com/phrase/client/api/ReportsApi.java
 src/main/java/com/phrase/client/api/ScreenshotMarkersApi.java
@@ -599,6 +601,7 @@ src/test/java/com/phrase/client/api/ProjectsApiTest.java
 src/test/java/com/phrase/client/api/QualityPerformanceScoreApiTest.java
 src/test/java/com/phrase/client/api/ReleaseTriggersApiTest.java
 src/test/java/com/phrase/client/api/ReleasesApiTest.java
+src/test/java/com/phrase/client/api/RepoSyncEventsApiTest.java
 src/test/java/com/phrase/client/api/RepoSyncsApiTest.java
 src/test/java/com/phrase/client/api/ReportsApiTest.java
 src/test/java/com/phrase/client/api/ScreenshotMarkersApiTest.java
