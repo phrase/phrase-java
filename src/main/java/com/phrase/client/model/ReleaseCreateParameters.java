@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ReleaseCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-03T12:00:22.836291385Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-03T12:02:08.693616844Z[Etc/UTC]")
 public class ReleaseCreateParameters {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
