@@ -3,7 +3,7 @@
 Phrase Strings API Reference
 
 - API version: 2.0.0
-- Package version: 3.0.0
+- Package version: 3.0.1
 
 Phrase Strings is a translation management platform for software projects. You can collaborate on language file translation with your team or order translations through our platform. The API allows you to import locale files, download locale files, tag keys or interact in other ways with the localization data stored in Phrase Strings for your account.
 
@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.phrase</groupId>
   <artifactId>phrase-java</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.phrase:phrase-java:3.0.0"
+compile "com.phrase:phrase-java:3.0.1"
 ```
 
 ### Others
@@ -51,7 +51,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/phrase-java-3.0.0.jar`
+- `target/phrase-java-3.0.1.jar`
 - `target/lib/*.jar`
 
 ### Github package repository
