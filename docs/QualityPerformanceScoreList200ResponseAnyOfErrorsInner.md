@@ -1,6 +1,6 @@
 
 
-# ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner
+# QualityPerformanceScoreList200ResponseAnyOfErrorsInner
 
 ## Properties
 

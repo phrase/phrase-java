@@ -26,24 +26,24 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ProjectsQualityPerformanceScoreRequest
+ * QualityPerformanceScoreListRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-03T12:02:25.948344916Z[Etc/UTC]")
-public class ProjectsQualityPerformanceScoreRequest {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-06T08:22:22.677493027Z[Etc/UTC]")
+public class QualityPerformanceScoreListRequest {
   public static final String SERIALIZED_NAME_TRANSLATION_IDS = "translation_ids";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_IDS)
   private List<String> translationIds;
 
-  public ProjectsQualityPerformanceScoreRequest() {
+  public QualityPerformanceScoreListRequest() {
   }
 
-  public ProjectsQualityPerformanceScoreRequest translationIds(List<String> translationIds) {
+  public QualityPerformanceScoreListRequest translationIds(List<String> translationIds) {
     
     this.translationIds = translationIds;
     return this;
   }
 
-  public ProjectsQualityPerformanceScoreRequest addTranslationIdsItem(String translationIdsItem) {
+  public QualityPerformanceScoreListRequest addTranslationIdsItem(String translationIdsItem) {
     if (this.translationIds == null) {
       this.translationIds = new ArrayList<>();
     }
@@ -74,8 +74,8 @@ public class ProjectsQualityPerformanceScoreRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest = (ProjectsQualityPerformanceScoreRequest) o;
-    return Objects.equals(this.translationIds, projectsQualityPerformanceScoreRequest.translationIds);
+    QualityPerformanceScoreListRequest qualityPerformanceScoreListRequest = (QualityPerformanceScoreListRequest) o;
+    return Objects.equals(this.translationIds, qualityPerformanceScoreListRequest.translationIds);
   }
 
   @Override
@@ -86,7 +86,7 @@ public class ProjectsQualityPerformanceScoreRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProjectsQualityPerformanceScoreRequest {\n");
+    sb.append("class QualityPerformanceScoreListRequest {\n");
     sb.append("    translationIds: ").append(toIndentedString(translationIds)).append("\n");
     sb.append("}");
     return sb.toString();

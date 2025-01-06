@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner;
+import com.phrase.client.model.QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,24 +27,24 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ProjectsQualityPerformanceScore200ResponseAnyOfData
+ * QualityPerformanceScoreList200ResponseAnyOfData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-03T12:02:25.948344916Z[Etc/UTC]")
-public class ProjectsQualityPerformanceScore200ResponseAnyOfData {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-06T08:22:22.677493027Z[Etc/UTC]")
+public class QualityPerformanceScoreList200ResponseAnyOfData {
   public static final String SERIALIZED_NAME_TRANSLATIONS = "translations";
   @SerializedName(SERIALIZED_NAME_TRANSLATIONS)
-  private List<ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner> translations;
+  private List<QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner> translations;
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfData() {
+  public QualityPerformanceScoreList200ResponseAnyOfData() {
   }
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfData translations(List<ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner> translations) {
+  public QualityPerformanceScoreList200ResponseAnyOfData translations(List<QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner> translations) {
     
     this.translations = translations;
     return this;
   }
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfData addTranslationsItem(ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner translationsItem) {
+  public QualityPerformanceScoreList200ResponseAnyOfData addTranslationsItem(QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner translationsItem) {
     if (this.translations == null) {
       this.translations = new ArrayList<>();
     }
@@ -58,12 +58,12 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfData {
   **/
   @javax.annotation.Nullable
 
-  public List<ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner> getTranslations() {
+  public List<QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner> getTranslations() {
     return translations;
   }
 
 
-  public void setTranslations(List<ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner> translations) {
+  public void setTranslations(List<QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner> translations) {
     this.translations = translations;
   }
 
@@ -75,8 +75,8 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProjectsQualityPerformanceScore200ResponseAnyOfData projectsQualityPerformanceScore200ResponseAnyOfData = (ProjectsQualityPerformanceScore200ResponseAnyOfData) o;
-    return Objects.equals(this.translations, projectsQualityPerformanceScore200ResponseAnyOfData.translations);
+    QualityPerformanceScoreList200ResponseAnyOfData qualityPerformanceScoreList200ResponseAnyOfData = (QualityPerformanceScoreList200ResponseAnyOfData) o;
+    return Objects.equals(this.translations, qualityPerformanceScoreList200ResponseAnyOfData.translations);
   }
 
   @Override
@@ -87,7 +87,7 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfData {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProjectsQualityPerformanceScore200ResponseAnyOfData {\n");
+    sb.append("class QualityPerformanceScoreList200ResponseAnyOfData {\n");
     sb.append("    translations: ").append(toIndentedString(translations)).append("\n");
     sb.append("}");
     return sb.toString();

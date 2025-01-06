@@ -20,9 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Error;
 import com.phrase.client.model.ErrorError;
-import com.phrase.client.model.ProjectsQualityPerformanceScore200ResponseAnyOf;
-import com.phrase.client.model.ProjectsQualityPerformanceScore200ResponseAnyOfData;
-import com.phrase.client.model.ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner;
+import com.phrase.client.model.QualityPerformanceScoreList200ResponseAnyOf;
+import com.phrase.client.model.QualityPerformanceScoreList200ResponseAnyOfData;
+import com.phrase.client.model.QualityPerformanceScoreList200ResponseAnyOfErrorsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,26 +31,26 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ProjectsQualityPerformanceScore200Response
+ * QualityPerformanceScoreList200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-03T12:02:25.948344916Z[Etc/UTC]")
-public class ProjectsQualityPerformanceScore200Response {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-06T08:22:22.677493027Z[Etc/UTC]")
+public class QualityPerformanceScoreList200Response {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
   private ErrorError error;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private ProjectsQualityPerformanceScore200ResponseAnyOfData data;
+  private QualityPerformanceScoreList200ResponseAnyOfData data;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner> errors;
+  private List<QualityPerformanceScoreList200ResponseAnyOfErrorsInner> errors;
 
-  public ProjectsQualityPerformanceScore200Response() {
+  public QualityPerformanceScoreList200Response() {
   }
 
-  public ProjectsQualityPerformanceScore200Response error(ErrorError error) {
+  public QualityPerformanceScoreList200Response error(ErrorError error) {
     
     this.error = error;
     return this;
@@ -72,7 +72,7 @@ public class ProjectsQualityPerformanceScore200Response {
   }
 
 
-  public ProjectsQualityPerformanceScore200Response data(ProjectsQualityPerformanceScore200ResponseAnyOfData data) {
+  public QualityPerformanceScoreList200Response data(QualityPerformanceScoreList200ResponseAnyOfData data) {
     
     this.data = data;
     return this;
@@ -84,23 +84,23 @@ public class ProjectsQualityPerformanceScore200Response {
   **/
   @javax.annotation.Nullable
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfData getData() {
+  public QualityPerformanceScoreList200ResponseAnyOfData getData() {
     return data;
   }
 
 
-  public void setData(ProjectsQualityPerformanceScore200ResponseAnyOfData data) {
+  public void setData(QualityPerformanceScoreList200ResponseAnyOfData data) {
     this.data = data;
   }
 
 
-  public ProjectsQualityPerformanceScore200Response errors(List<ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner> errors) {
+  public QualityPerformanceScoreList200Response errors(List<QualityPerformanceScoreList200ResponseAnyOfErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
 
-  public ProjectsQualityPerformanceScore200Response addErrorsItem(ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner errorsItem) {
+  public QualityPerformanceScoreList200Response addErrorsItem(QualityPerformanceScoreList200ResponseAnyOfErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -114,12 +114,12 @@ public class ProjectsQualityPerformanceScore200Response {
   **/
   @javax.annotation.Nullable
 
-  public List<ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner> getErrors() {
+  public List<QualityPerformanceScoreList200ResponseAnyOfErrorsInner> getErrors() {
     return errors;
   }
 
 
-  public void setErrors(List<ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner> errors) {
+  public void setErrors(List<QualityPerformanceScoreList200ResponseAnyOfErrorsInner> errors) {
     this.errors = errors;
   }
 
@@ -131,10 +131,10 @@ public class ProjectsQualityPerformanceScore200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProjectsQualityPerformanceScore200Response projectsQualityPerformanceScore200Response = (ProjectsQualityPerformanceScore200Response) o;
-    return Objects.equals(this.error, projectsQualityPerformanceScore200Response.error) &&
-        Objects.equals(this.data, projectsQualityPerformanceScore200Response.data) &&
-        Objects.equals(this.errors, projectsQualityPerformanceScore200Response.errors);
+    QualityPerformanceScoreList200Response qualityPerformanceScoreList200Response = (QualityPerformanceScoreList200Response) o;
+    return Objects.equals(this.error, qualityPerformanceScoreList200Response.error) &&
+        Objects.equals(this.data, qualityPerformanceScoreList200Response.data) &&
+        Objects.equals(this.errors, qualityPerformanceScoreList200Response.errors);
   }
 
   @Override
@@ -145,7 +145,7 @@ public class ProjectsQualityPerformanceScore200Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProjectsQualityPerformanceScore200Response {\n");
+    sb.append("class QualityPerformanceScoreList200Response {\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");

@@ -18,7 +18,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -26,33 +25,33 @@ import org.junit.Test;
 
 
 /**
- * Model tests for ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner
+ * Model tests for QualityPerformanceScoreList200ResponseAnyOfErrorsInner
  */
-public class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInnerTest {
-    private final ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner model = new ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner();
+public class QualityPerformanceScoreList200ResponseAnyOfErrorsInnerTest {
+    private final QualityPerformanceScoreList200ResponseAnyOfErrorsInner model = new QualityPerformanceScoreList200ResponseAnyOfErrorsInner();
 
     /**
-     * Model tests for ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner
+     * Model tests for QualityPerformanceScoreList200ResponseAnyOfErrorsInner
      */
     @Test
-    public void testProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner() {
-        // TODO: test ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner
+    public void testQualityPerformanceScoreList200ResponseAnyOfErrorsInner() {
+        // TODO: test QualityPerformanceScoreList200ResponseAnyOfErrorsInner
     }
 
     /**
-     * Test the property 'engine'
+     * Test the property 'message'
      */
     @Test
-    public void engineTest() {
-        // TODO: test engine
+    public void messageTest() {
+        // TODO: test message
     }
 
     /**
-     * Test the property 'score'
+     * Test the property 'code'
      */
     @Test
-    public void scoreTest() {
-        // TODO: test score
+    public void codeTest() {
+        // TODO: test code
     }
 
     /**

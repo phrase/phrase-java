@@ -17,8 +17,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.ProjectsQualityPerformanceScore200ResponseAnyOfData;
-import com.phrase.client.model.ProjectsQualityPerformanceScore200ResponseAnyOfErrorsInner;
+import com.phrase.client.model.Error;
+import com.phrase.client.model.ErrorError;
+import com.phrase.client.model.QualityPerformanceScoreList200ResponseAnyOf;
+import com.phrase.client.model.QualityPerformanceScoreList200ResponseAnyOfData;
+import com.phrase.client.model.QualityPerformanceScoreList200ResponseAnyOfErrorsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,17 +32,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for ProjectsQualityPerformanceScore200ResponseAnyOf
+ * Model tests for QualityPerformanceScoreList200Response
  */
-public class ProjectsQualityPerformanceScore200ResponseAnyOfTest {
-    private final ProjectsQualityPerformanceScore200ResponseAnyOf model = new ProjectsQualityPerformanceScore200ResponseAnyOf();
+public class QualityPerformanceScoreList200ResponseTest {
+    private final QualityPerformanceScoreList200Response model = new QualityPerformanceScoreList200Response();
 
     /**
-     * Model tests for ProjectsQualityPerformanceScore200ResponseAnyOf
+     * Model tests for QualityPerformanceScoreList200Response
      */
     @Test
-    public void testProjectsQualityPerformanceScore200ResponseAnyOf() {
-        // TODO: test ProjectsQualityPerformanceScore200ResponseAnyOf
+    public void testQualityPerformanceScoreList200Response() {
+        // TODO: test QualityPerformanceScoreList200Response
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
     }
 
     /**

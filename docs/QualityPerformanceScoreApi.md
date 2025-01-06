@@ -4,12 +4,12 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**projectsQualityPerformanceScore**](QualityPerformanceScoreApi.md#projectsQualityPerformanceScore) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
+[**qualityPerformanceScoreList**](QualityPerformanceScoreApi.md#qualityPerformanceScoreList) | **POST** /projects/{project_id}/quality_performance_score | Get Translation Quality
 
 
-<a name="projectsQualityPerformanceScore"></a>
-# **projectsQualityPerformanceScore**
-> ProjectsQualityPerformanceScore200Response projectsQualityPerformanceScore(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP)
+<a name="qualityPerformanceScoreList"></a>
+# **qualityPerformanceScoreList**
+> QualityPerformanceScoreList200Response qualityPerformanceScoreList(projectId, qualityPerformanceScoreListRequest, xPhraseAppOTP)
 
 Get Translation Quality
 
@@ -42,13 +42,13 @@ public class Example {
 
     QualityPerformanceScoreApi apiInstance = new QualityPerformanceScoreApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
-    ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest = new ProjectsQualityPerformanceScoreRequest(); // ProjectsQualityPerformanceScoreRequest | 
+    QualityPerformanceScoreListRequest qualityPerformanceScoreListRequest = new QualityPerformanceScoreListRequest(); // QualityPerformanceScoreListRequest | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      ProjectsQualityPerformanceScore200Response result = apiInstance.projectsQualityPerformanceScore(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
+      QualityPerformanceScoreList200Response result = apiInstance.qualityPerformanceScoreList(projectId, qualityPerformanceScoreListRequest, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling QualityPerformanceScoreApi#projectsQualityPerformanceScore");
+      System.err.println("Exception when calling QualityPerformanceScoreApi#qualityPerformanceScoreList");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -63,12 +63,12 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
- **projectsQualityPerformanceScoreRequest** | [**ProjectsQualityPerformanceScoreRequest**](ProjectsQualityPerformanceScoreRequest.md)|  |
+ **qualityPerformanceScoreListRequest** | [**QualityPerformanceScoreListRequest**](QualityPerformanceScoreListRequest.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
 
-[**ProjectsQualityPerformanceScore200Response**](ProjectsQualityPerformanceScore200Response.md)
+[**QualityPerformanceScoreList200Response**](QualityPerformanceScoreList200Response.md)
 
 ### Authorization
 

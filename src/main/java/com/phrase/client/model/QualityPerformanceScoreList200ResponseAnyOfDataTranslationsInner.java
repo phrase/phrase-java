@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner
+ * QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-03T12:02:25.948344916Z[Etc/UTC]")
-public class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-06T08:22:22.677493027Z[Etc/UTC]")
+public class QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner {
   public static final String SERIALIZED_NAME_ENGINE = "engine";
   @SerializedName(SERIALIZED_NAME_ENGINE)
   private String engine;
@@ -41,10 +41,10 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInne
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner() {
+  public QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner() {
   }
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner engine(String engine) {
+  public QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner engine(String engine) {
     
     this.engine = engine;
     return this;
@@ -66,7 +66,7 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInne
   }
 
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner score(BigDecimal score) {
+  public QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner score(BigDecimal score) {
     
     this.score = score;
     return this;
@@ -88,7 +88,7 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInne
   }
 
 
-  public ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner id(String id) {
+  public QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner id(String id) {
     
     this.id = id;
     return this;
@@ -117,10 +117,10 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInne
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner projectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner = (ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner) o;
-    return Objects.equals(this.engine, projectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.engine) &&
-        Objects.equals(this.score, projectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.score) &&
-        Objects.equals(this.id, projectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner.id);
+    QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner qualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner = (QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner) o;
+    return Objects.equals(this.engine, qualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner.engine) &&
+        Objects.equals(this.score, qualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner.score) &&
+        Objects.equals(this.id, qualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner.id);
   }
 
   @Override
@@ -131,7 +131,7 @@ public class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInne
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProjectsQualityPerformanceScore200ResponseAnyOfDataTranslationsInner {\n");
+    sb.append("class QualityPerformanceScoreList200ResponseAnyOfDataTranslationsInner {\n");
     sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

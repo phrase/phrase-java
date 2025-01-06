@@ -1,6 +1,6 @@
 
 
-# ProjectsQualityPerformanceScoreRequest
+# QualityPerformanceScoreListRequest
 
 ## Properties
 

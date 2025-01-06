@@ -14,8 +14,8 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
-import com.phrase.client.model.ProjectsQualityPerformanceScore200Response;
-import com.phrase.client.model.ProjectsQualityPerformanceScoreRequest;
+import com.phrase.client.model.QualityPerformanceScoreList200Response;
+import com.phrase.client.model.QualityPerformanceScoreListRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -42,11 +42,11 @@ public class QualityPerformanceScoreApiTest {
      *          if the Api call fails
      */
     @Test
-    public void projectsQualityPerformanceScoreTest() throws ApiException {
+    public void qualityPerformanceScoreListTest() throws ApiException {
         String projectId = null;
-        ProjectsQualityPerformanceScoreRequest projectsQualityPerformanceScoreRequest = null;
+        QualityPerformanceScoreListRequest qualityPerformanceScoreListRequest = null;
         String xPhraseAppOTP = null;
-        ProjectsQualityPerformanceScore200Response response = api.projectsQualityPerformanceScore(projectId, projectsQualityPerformanceScoreRequest, xPhraseAppOTP);
+        QualityPerformanceScoreList200Response response = api.qualityPerformanceScoreList(projectId, qualityPerformanceScoreListRequest, xPhraseAppOTP);
 
         // TODO: test validations
     }

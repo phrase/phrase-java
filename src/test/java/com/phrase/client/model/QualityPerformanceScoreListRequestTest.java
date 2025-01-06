@@ -27,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for ProjectsQualityPerformanceScoreRequest
+ * Model tests for QualityPerformanceScoreListRequest
  */
-public class ProjectsQualityPerformanceScoreRequestTest {
-    private final ProjectsQualityPerformanceScoreRequest model = new ProjectsQualityPerformanceScoreRequest();
+public class QualityPerformanceScoreListRequestTest {
+    private final QualityPerformanceScoreListRequest model = new QualityPerformanceScoreListRequest();
 
     /**
-     * Model tests for ProjectsQualityPerformanceScoreRequest
+     * Model tests for QualityPerformanceScoreListRequest
      */
     @Test
-    public void testProjectsQualityPerformanceScoreRequest() {
-        // TODO: test ProjectsQualityPerformanceScoreRequest
+    public void testQualityPerformanceScoreListRequest() {
+        // TODO: test QualityPerformanceScoreListRequest
     }
 
     /**
