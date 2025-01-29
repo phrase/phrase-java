@@ -89,6 +89,7 @@ docs/JobCompleteParameters.md
 docs/JobCreateParameters.md
 docs/JobDetails.md
 docs/JobKeysCreateParameters.md
+docs/JobKeysDeleteParameters.md
 docs/JobLocale.md
 docs/JobLocaleCompleteParameters.md
 docs/JobLocaleCompleteReviewParameters.md
@@ -417,6 +418,7 @@ src/main/java/com/phrase/client/model/JobCompleteParameters.java
 src/main/java/com/phrase/client/model/JobCreateParameters.java
 src/main/java/com/phrase/client/model/JobDetails.java
 src/main/java/com/phrase/client/model/JobKeysCreateParameters.java
+src/main/java/com/phrase/client/model/JobKeysDeleteParameters.java
 src/main/java/com/phrase/client/model/JobLocale.java
 src/main/java/com/phrase/client/model/JobLocaleCompleteParameters.java
 src/main/java/com/phrase/client/model/JobLocaleCompleteReviewParameters.java
@@ -679,6 +681,7 @@ src/test/java/com/phrase/client/model/JobCompleteParametersTest.java
 src/test/java/com/phrase/client/model/JobCreateParametersTest.java
 src/test/java/com/phrase/client/model/JobDetailsTest.java
 src/test/java/com/phrase/client/model/JobKeysCreateParametersTest.java
+src/test/java/com/phrase/client/model/JobKeysDeleteParametersTest.java
 src/test/java/com/phrase/client/model/JobLocaleCompleteParametersTest.java
 src/test/java/com/phrase/client/model/JobLocaleCompleteReviewParametersTest.java
 src/test/java/com/phrase/client/model/JobLocaleReopenParametersTest.java

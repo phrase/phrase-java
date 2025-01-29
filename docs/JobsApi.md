@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 <a name="jobKeysDelete"></a>
 # **jobKeysDelete**
-> jobKeysDelete(projectId, id, xPhraseAppOTP, branch, translationKeyIds)
+> jobKeysDelete(projectId, id, jobKeysDeleteParameters, xPhraseAppOTP)
 
 Remove keys from job
 
@@ -380,11 +380,10 @@ public class Example {
     JobsApi apiInstance = new JobsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
+    JobKeysDeleteParameters jobKeysDeleteParameters = new JobKeysDeleteParameters(); // JobKeysDeleteParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = "my-feature-branch"; // String | specify the branch to use
-    List<String> translationKeyIds = Arrays.asList(); // List<String> | ids of keys that should be removed from the job
     try {
-      apiInstance.jobKeysDelete(projectId, id, xPhraseAppOTP, branch, translationKeyIds);
+      apiInstance.jobKeysDelete(projectId, id, jobKeysDeleteParameters, xPhraseAppOTP);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobsApi#jobKeysDelete");
       System.err.println("Status code: " + e.getCode());
@@ -402,9 +401,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
  **id** | **String**| ID |
+ **jobKeysDeleteParameters** | [**JobKeysDeleteParameters**](JobKeysDeleteParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **branch** | **String**| specify the branch to use | [optional]
- **translationKeyIds** | [**List&lt;String&gt;**](String.md)| ids of keys that should be removed from the job | [optional]
 
 ### Return type
 
@@ -416,7 +414,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 ### HTTP response details

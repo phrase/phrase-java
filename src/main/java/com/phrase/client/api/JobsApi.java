@@ -31,6 +31,7 @@ import com.phrase.client.model.JobCompleteParameters;
 import com.phrase.client.model.JobCreateParameters;
 import com.phrase.client.model.JobDetails;
 import com.phrase.client.model.JobKeysCreateParameters;
+import com.phrase.client.model.JobKeysDeleteParameters;
 import com.phrase.client.model.JobReopenParameters;
 import com.phrase.client.model.JobStartParameters;
 import com.phrase.client.model.JobUpdateParameters;
@@ -649,9 +650,8 @@ public class JobsApi {
      * Build call for jobKeysDelete
      * @param projectId Project ID (required)
      * @param id ID (required)
+     * @param jobKeysDeleteParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -664,8 +664,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobKeysDeleteCall(String projectId, String id, String xPhraseAppOTP, String branch, List<String> translationKeyIds, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
+    public okhttp3.Call jobKeysDeleteCall(String projectId, String id, JobKeysDeleteParameters jobKeysDeleteParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = jobKeysDeleteParameters;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/jobs/{id}/keys"
@@ -674,14 +674,6 @@ public class JobsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (branch != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
-        }
-
-        if (translationKeyIds != null) {
-            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "translation_key_ids", translationKeyIds));
-        }
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -698,7 +690,7 @@ public class JobsApi {
         }
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -708,7 +700,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jobKeysDeleteValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, List<String> translationKeyIds, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jobKeysDeleteValidateBeforeCall(String projectId, String id, JobKeysDeleteParameters jobKeysDeleteParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -720,8 +712,13 @@ public class JobsApi {
             throw new ApiException("Missing the required parameter 'id' when calling jobKeysDelete(Async)");
         }
         
+        // verify the required parameter 'jobKeysDeleteParameters' is set
+        if (jobKeysDeleteParameters == null) {
+            throw new ApiException("Missing the required parameter 'jobKeysDeleteParameters' when calling jobKeysDelete(Async)");
+        }
+        
 
-        okhttp3.Call localVarCall = jobKeysDeleteCall(projectId, id, xPhraseAppOTP, branch, translationKeyIds, _callback);
+        okhttp3.Call localVarCall = jobKeysDeleteCall(projectId, id, jobKeysDeleteParameters, xPhraseAppOTP, _callback);
         return localVarCall;
 
     }
@@ -731,9 +728,8 @@ public class JobsApi {
      * Remove multiple keys from existing job.
      * @param projectId Project ID (required)
      * @param id ID (required)
+     * @param jobKeysDeleteParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -744,8 +740,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void jobKeysDelete(String projectId, String id, String xPhraseAppOTP, String branch, List<String> translationKeyIds) throws ApiException {
-        jobKeysDeleteWithHttpInfo(projectId, id, xPhraseAppOTP, branch, translationKeyIds);
+    public void jobKeysDelete(String projectId, String id, JobKeysDeleteParameters jobKeysDeleteParameters, String xPhraseAppOTP) throws ApiException {
+        jobKeysDeleteWithHttpInfo(projectId, id, jobKeysDeleteParameters, xPhraseAppOTP);
     }
 
     /**
@@ -753,9 +749,8 @@ public class JobsApi {
      * Remove multiple keys from existing job.
      * @param projectId Project ID (required)
      * @param id ID (required)
+     * @param jobKeysDeleteParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -767,8 +762,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> jobKeysDeleteWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, List<String> translationKeyIds) throws ApiException {
-        okhttp3.Call localVarCall = jobKeysDeleteValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, translationKeyIds, null);
+    public ApiResponse<Void> jobKeysDeleteWithHttpInfo(String projectId, String id, JobKeysDeleteParameters jobKeysDeleteParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = jobKeysDeleteValidateBeforeCall(projectId, id, jobKeysDeleteParameters, xPhraseAppOTP, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -777,9 +772,8 @@ public class JobsApi {
      * Remove multiple keys from existing job.
      * @param projectId Project ID (required)
      * @param id ID (required)
+     * @param jobKeysDeleteParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @param branch specify the branch to use (optional)
-     * @param translationKeyIds ids of keys that should be removed from the job (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -792,9 +786,9 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobKeysDeleteAsync(String projectId, String id, String xPhraseAppOTP, String branch, List<String> translationKeyIds, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call jobKeysDeleteAsync(String projectId, String id, JobKeysDeleteParameters jobKeysDeleteParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = jobKeysDeleteValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, translationKeyIds, _callback);
+        okhttp3.Call localVarCall = jobKeysDeleteValidateBeforeCall(projectId, id, jobKeysDeleteParameters, xPhraseAppOTP, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

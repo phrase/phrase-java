@@ -19,56 +19,36 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * JobCommentCreateParameters
+ * JobKeysDeleteParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-29T15:15:40.351400890Z[Etc/UTC]")
-public class JobCommentCreateParameters {
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
-
+public class JobKeysDeleteParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
   private String branch;
 
-  public JobCommentCreateParameters() {
+  public static final String SERIALIZED_NAME_TRANSLATION_KEY_IDS = "translation_key_ids";
+  @SerializedName(SERIALIZED_NAME_TRANSLATION_KEY_IDS)
+  private List<String> translationKeyIds = new ArrayList<>();
+
+  public JobKeysDeleteParameters() {
   }
 
-  public JobCommentCreateParameters message(String message) {
-    
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Job comment message
-   * @return message
-  **/
-  @javax.annotation.Nullable
-
-  public String getMessage() {
-    return message;
-  }
-
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-
-  public JobCommentCreateParameters branch(String branch) {
+  public JobKeysDeleteParameters branch(String branch) {
     
     this.branch = branch;
     return this;
   }
 
    /**
-   * Branch name for the job
+   * specify the branch to use
    * @return branch
   **/
   @javax.annotation.Nullable
@@ -82,6 +62,36 @@ public class JobCommentCreateParameters {
     this.branch = branch;
   }
 
+
+  public JobKeysDeleteParameters translationKeyIds(List<String> translationKeyIds) {
+    
+    this.translationKeyIds = translationKeyIds;
+    return this;
+  }
+
+  public JobKeysDeleteParameters addTranslationKeyIdsItem(String translationKeyIdsItem) {
+    if (this.translationKeyIds == null) {
+      this.translationKeyIds = new ArrayList<>();
+    }
+    this.translationKeyIds.add(translationKeyIdsItem);
+    return this;
+  }
+
+   /**
+   * ids of keys that should be deleted from the job
+   * @return translationKeyIds
+  **/
+  @javax.annotation.Nonnull
+
+  public List<String> getTranslationKeyIds() {
+    return translationKeyIds;
+  }
+
+
+  public void setTranslationKeyIds(List<String> translationKeyIds) {
+    this.translationKeyIds = translationKeyIds;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -90,22 +100,22 @@ public class JobCommentCreateParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    JobCommentCreateParameters jobCommentCreateParameters = (JobCommentCreateParameters) o;
-    return Objects.equals(this.message, jobCommentCreateParameters.message) &&
-        Objects.equals(this.branch, jobCommentCreateParameters.branch);
+    JobKeysDeleteParameters jobKeysDeleteParameters = (JobKeysDeleteParameters) o;
+    return Objects.equals(this.branch, jobKeysDeleteParameters.branch) &&
+        Objects.equals(this.translationKeyIds, jobKeysDeleteParameters.translationKeyIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, branch);
+    return Objects.hash(branch, translationKeyIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class JobCommentCreateParameters {\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("class JobKeysDeleteParameters {\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("    translationKeyIds: ").append(toIndentedString(translationKeyIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

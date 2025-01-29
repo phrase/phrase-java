@@ -18,6 +18,7 @@ import com.phrase.client.model.JobCompleteParameters;
 import com.phrase.client.model.JobCreateParameters;
 import com.phrase.client.model.JobDetails;
 import com.phrase.client.model.JobKeysCreateParameters;
+import com.phrase.client.model.JobKeysDeleteParameters;
 import com.phrase.client.model.JobReopenParameters;
 import com.phrase.client.model.JobStartParameters;
 import com.phrase.client.model.JobUpdateParameters;
@@ -125,10 +126,9 @@ public class JobsApiTest {
     public void jobKeysDeleteTest() throws ApiException {
         String projectId = null;
         String id = null;
+        JobKeysDeleteParameters jobKeysDeleteParameters = null;
         String xPhraseAppOTP = null;
-        String branch = null;
-        List<String> translationKeyIds = null;
-        api.jobKeysDelete(projectId, id, xPhraseAppOTP, branch, translationKeyIds);
+        api.jobKeysDelete(projectId, id, jobKeysDeleteParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
