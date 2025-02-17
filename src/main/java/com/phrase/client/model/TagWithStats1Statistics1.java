@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TagWithStats1Statistics1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T11:15:30.069845888Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T11:17:49.610766915Z[Etc/UTC]")
 public class TagWithStats1Statistics1 {
   public static final String SERIALIZED_NAME_LOCALE = "locale";
   @SerializedName(SERIALIZED_NAME_LOCALE)

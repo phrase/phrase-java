@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLinksCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T11:15:30.069845888Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T11:17:49.610766915Z[Etc/UTC]")
 public class KeyLinksCreateParameters {
   public static final String SERIALIZED_NAME_CHILD_KEY_IDS = "child_key_ids";
   @SerializedName(SERIALIZED_NAME_CHILD_KEY_IDS)
