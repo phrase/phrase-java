@@ -21,14 +21,16 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UploadSummary;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Upload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T10:43:14.656589345Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T10:57:01.003883507Z[Etc/UTC]")
 public class Upload {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -49,6 +51,10 @@ public class Upload {
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
@@ -164,7 +170,7 @@ public class Upload {
   }
 
    /**
-   * Get tag
+   * Unique tag of the upload 
    * @return tag
   **/
   @javax.annotation.Nullable
@@ -176,6 +182,36 @@ public class Upload {
 
   public void setTag(String tag) {
     this.tag = tag;
+  }
+
+
+  public Upload tags(List<String> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public Upload addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * List of tags that were assigned to the uploaded keys 
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
   }
 
 
@@ -280,6 +316,7 @@ public class Upload {
         Objects.equals(this.format, upload.format) &&
         Objects.equals(this.state, upload.state) &&
         Objects.equals(this.tag, upload.tag) &&
+        Objects.equals(this.tags, upload.tags) &&
         Objects.equals(this.url, upload.url) &&
         Objects.equals(this.summary, upload.summary) &&
         Objects.equals(this.createdAt, upload.createdAt) &&
@@ -288,7 +325,7 @@ public class Upload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, filename, format, state, tag, url, summary, createdAt, updatedAt);
+    return Objects.hash(id, filename, format, state, tag, tags, url, summary, createdAt, updatedAt);
   }
 
   @Override
@@ -300,6 +337,7 @@ public class Upload {
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

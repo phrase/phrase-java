@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UploadSummary;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -78,6 +80,14 @@ public class UploadTest {
     @Test
     public void tagTest() {
         // TODO: test tag
+    }
+
+    /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
     }
 
     /**
