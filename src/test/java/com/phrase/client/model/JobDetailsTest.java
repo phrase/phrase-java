@@ -144,6 +144,14 @@ public class JobDetailsTest {
     }
 
     /**
+     * Test the property 'sourceTranslationsUpdatedAt'
+     */
+    @Test
+    public void sourceTranslationsUpdatedAtTest() {
+        // TODO: test sourceTranslationsUpdatedAt
+    }
+
+    /**
      * Test the property 'sourceLocale'
      */
     @Test

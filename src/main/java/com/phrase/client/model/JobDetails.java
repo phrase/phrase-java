@@ -35,7 +35,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-29T15:57:18.834533290Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T08:54:37.526605703Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -84,6 +84,10 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_JOB_TAG_NAME = "job_tag_name";
   @SerializedName(SERIALIZED_NAME_JOB_TAG_NAME)
   private String jobTagName;
+
+  public static final String SERIALIZED_NAME_SOURCE_TRANSLATIONS_UPDATED_AT = "source_translations_updated_at";
+  @SerializedName(SERIALIZED_NAME_SOURCE_TRANSLATIONS_UPDATED_AT)
+  private OffsetDateTime sourceTranslationsUpdatedAt;
 
   public static final String SERIALIZED_NAME_SOURCE_LOCALE = "source_locale";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE)
@@ -364,6 +368,28 @@ public class JobDetails {
   }
 
 
+  public JobDetails sourceTranslationsUpdatedAt(OffsetDateTime sourceTranslationsUpdatedAt) {
+    
+    this.sourceTranslationsUpdatedAt = sourceTranslationsUpdatedAt;
+    return this;
+  }
+
+   /**
+   * Get sourceTranslationsUpdatedAt
+   * @return sourceTranslationsUpdatedAt
+  **/
+  @javax.annotation.Nullable
+
+  public OffsetDateTime getSourceTranslationsUpdatedAt() {
+    return sourceTranslationsUpdatedAt;
+  }
+
+
+  public void setSourceTranslationsUpdatedAt(OffsetDateTime sourceTranslationsUpdatedAt) {
+    this.sourceTranslationsUpdatedAt = sourceTranslationsUpdatedAt;
+  }
+
+
   public JobDetails sourceLocale(LocalePreview sourceLocale) {
     
     this.sourceLocale = sourceLocale;
@@ -466,6 +492,7 @@ public class JobDetails {
         Objects.equals(this.updatedAt, jobDetails.updatedAt) &&
         Objects.equals(this.owner, jobDetails.owner) &&
         Objects.equals(this.jobTagName, jobDetails.jobTagName) &&
+        Objects.equals(this.sourceTranslationsUpdatedAt, jobDetails.sourceTranslationsUpdatedAt) &&
         Objects.equals(this.sourceLocale, jobDetails.sourceLocale) &&
         Objects.equals(this.locales, jobDetails.locales) &&
         Objects.equals(this.keys, jobDetails.keys);
@@ -477,7 +504,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceLocale, locales, keys);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -503,6 +530,7 @@ public class JobDetails {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    jobTagName: ").append(toIndentedString(jobTagName)).append("\n");
+    sb.append("    sourceTranslationsUpdatedAt: ").append(toIndentedString(sourceTranslationsUpdatedAt)).append("\n");
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("    keys: ").append(toIndentedString(keys)).append("\n");

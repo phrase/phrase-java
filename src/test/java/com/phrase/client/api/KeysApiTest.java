@@ -12,7 +12,10 @@
 
 package com.phrase.client.api;
 
+import com.phrase.client.ApiClient;
 import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.HttpBasicAuth;
 import com.phrase.client.model.AffectedResources;
 import com.phrase.client.model.KeyCreateParameters;
 import com.phrase.client.model.KeyUpdateParameters;
@@ -25,6 +28,15 @@ import com.phrase.client.model.TranslationKey;
 import com.phrase.client.model.TranslationKeyDetails;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Before;
+import org.junit.After;
+import org.junit.Assert;
+
+import okhttp3.mockwebserver.MockResponse;
+import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.RecordedRequest;
+
+import java.io.IOException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,12 +46,32 @@ import java.util.Map;
 /**
  * API tests for KeysApi
  */
-@Ignore
 public class KeysApiTest {
 
-    private final KeysApi api = new KeysApi();
+    MockWebServer mockBackend = new MockWebServer();
 
-    
+    private KeysApi api;
+
+    @Before
+    public void setUp() throws IOException {
+        mockBackend.start();
+
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath(mockBackend.url("/").toString());
+
+        // Configure HTTP basic authorization: Basic
+        HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+        Basic.setUsername("TOKEN");
+        Basic.setPassword("");
+
+        api = new KeysApi(defaultClient);
+    }
+
+    @After
+    public void tearDown() throws IOException {
+        mockBackend.shutdown();
+    }
+
     /**
      * Create a key
      *
@@ -49,15 +81,33 @@ public class KeysApiTest {
      *          if the Api call fails
      */
     @Test
-    public void keyCreateTest() throws ApiException {
-        String projectId = null;
-        KeyCreateParameters keyCreateParameters = null;
+    public void keyCreateTest() throws ApiException, InterruptedException {
+        String body = "{\"id\":\"id_example\",\"name\":\"test-key-1\",\"created_at\": \"2015-01-28T09:52:53Z\"}";
+
+        MockResponse mockResponse = new MockResponse()
+            .addHeader("Content-Type", "application/json; charset=utf-8")
+            .setBody(body);
+
+        mockBackend.enqueue(mockResponse);
+
+        String projectId = "MY_PROJECT_ID";
+        KeyCreateParameters keyCreateParameters = new KeyCreateParameters()
+            .name("test-key-1")
+            .autotranslate(true)
+            .defaultTranslationContent("some test value which should be created and automatically translated in one call")
+            .dataType("string")
+            .maxCharactersAllowed(Integer.MAX_VALUE)
+            .plural(false);
         String xPhraseAppOTP = null;
         TranslationKeyDetails response = api.keyCreate(projectId, keyCreateParameters, xPhraseAppOTP);
 
-        // TODO: test validations
+        Assert.assertEquals("valid id returned", "id_example", response.getId());
+        RecordedRequest recordedRequest = mockBackend.takeRequest();
+        Assert.assertEquals("Request path", "//projects/MY_PROJECT_ID/keys", recordedRequest.getPath());
+        String requestBody = recordedRequest.getBody().readUtf8();
+        Assert.assertEquals("Request body", "{\"name\":\"test-key-1\",\"plural\":false,\"data_type\":\"string\",\"max_characters_allowed\":2147483647,\"default_translation_content\":\"some test value which should be created and automatically translated in one call\",\"autotranslate\":true}", requestBody);
     }
-    
+
     /**
      * Delete a key
      *
@@ -66,7 +116,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keyDeleteTest() throws ApiException {
         String projectId = null;
         String id = null;
@@ -76,7 +126,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Get a single key
      *
@@ -85,7 +135,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keyShowTest() throws ApiException {
         String projectId = null;
         String id = null;
@@ -95,7 +145,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Update a key
      *
@@ -104,7 +154,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keyUpdateTest() throws ApiException {
         String projectId = null;
         String id = null;
@@ -114,7 +164,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Delete collection of keys
      *
@@ -123,7 +173,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keysDeleteCollectionTest() throws ApiException {
         String projectId = null;
         String xPhraseAppOTP = null;
@@ -134,7 +184,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Exclude a locale on a collection of keys
      *
@@ -143,7 +193,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keysExcludeTest() throws ApiException {
         String projectId = null;
         KeysExcludeParameters keysExcludeParameters = null;
@@ -152,7 +202,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Include a locale on a collection of keys
      *
@@ -161,7 +211,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keysIncludeTest() throws ApiException {
         String projectId = null;
         KeysIncludeParameters keysIncludeParameters = null;
@@ -170,7 +220,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * List keys
      *
@@ -179,7 +229,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keysListTest() throws ApiException {
         String projectId = null;
         String xPhraseAppOTP = null;
@@ -194,7 +244,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Search keys
      *
@@ -203,7 +253,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keysSearchTest() throws ApiException {
         String projectId = null;
         KeysSearchParameters keysSearchParameters = null;
@@ -214,7 +264,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Add tags to collection of keys
      *
@@ -223,7 +273,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keysTagTest() throws ApiException {
         String projectId = null;
         KeysTagParameters keysTagParameters = null;
@@ -232,7 +282,7 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Remove tags from collection of keys
      *
@@ -241,7 +291,7 @@ public class KeysApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void keysUntagTest() throws ApiException {
         String projectId = null;
         KeysUntagParameters keysUntagParameters = null;
@@ -250,5 +300,5 @@ public class KeysApiTest {
 
         // TODO: test validations
     }
-    
+
 }

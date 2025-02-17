@@ -5984,6 +5984,19 @@ paths:
           properties: {}
           type: object
         style: deepObject
+      - description: Locale IDs or locale names
+        example:
+        - de
+        - en
+        explode: true
+        in: query
+        name: locale_ids
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
       responses:
         "200":
           content:
@@ -30518,6 +30531,7 @@ components:
             username: joe.doe
             name: Joe Doe
           job_tag_name: Job_123
+          source_translations_updated_at: 2020-01-01T00:00:00Z
           source_locale:
             id: abcd1234cdef1234abcd1234cdef1235
             name: de-DE
@@ -30533,6 +30547,9 @@ components:
           owner:
             $ref: '#/components/schemas/user_preview'
           job_tag_name:
+            type: string
+          source_translations_updated_at:
+            format: date-time
             type: string
           source_locale:
             $ref: '#/components/schemas/locale_preview'

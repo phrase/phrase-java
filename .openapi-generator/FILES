@@ -587,7 +587,6 @@ src/test/java/com/phrase/client/api/JobLocalesApiTest.java
 src/test/java/com/phrase/client/api/JobTemplateLocalesApiTest.java
 src/test/java/com/phrase/client/api/JobTemplatesApiTest.java
 src/test/java/com/phrase/client/api/JobsApiTest.java
-src/test/java/com/phrase/client/api/KeysApiTest.java
 src/test/java/com/phrase/client/api/KeysFigmaAttachmentsApiTest.java
 src/test/java/com/phrase/client/api/LinkedKeysApiTest.java
 src/test/java/com/phrase/client/api/LocaleDownloadsApiTest.java
