@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationVerifyParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T10:57:01.003883507Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T11:07:37.169760371Z[Etc/UTC]")
 public class TranslationVerifyParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
