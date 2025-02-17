@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ErrorError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T08:54:37.526605703Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T09:30:36.752619142Z[Etc/UTC]")
 public class ErrorError {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
