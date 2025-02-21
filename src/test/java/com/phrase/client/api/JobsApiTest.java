@@ -264,7 +264,8 @@ public class JobsApiTest {
         String ownedBy = null;
         String assignedTo = null;
         String state = null;
-        List<Job> response = api.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state);
+        String updatedSince = null;
+        List<Job> response = api.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince);
 
         // TODO: test validations
     }
@@ -287,7 +288,8 @@ public class JobsApiTest {
         String ownedBy = null;
         String assignedTo = null;
         String state = null;
-        List<Job> response = api.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state);
+        String updatedSince = null;
+        List<Job> response = api.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince);
 
         // TODO: test validations
     }

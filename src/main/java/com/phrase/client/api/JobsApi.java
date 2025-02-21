@@ -1689,7 +1689,8 @@ public class JobsApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1702,7 +1703,7 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobsByAccountCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call jobsByAccountCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, String updatedSince, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1731,6 +1732,10 @@ public class JobsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("state", state));
         }
 
+        if (updatedSince != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("updated_since", updatedSince));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -1757,7 +1762,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jobsByAccountValidateBeforeCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jobsByAccountValidateBeforeCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, String updatedSince, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
@@ -1765,7 +1770,7 @@ public class JobsApi {
         }
         
 
-        okhttp3.Call localVarCall = jobsByAccountCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, _callback);
+        okhttp3.Call localVarCall = jobsByAccountCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince, _callback);
         return localVarCall;
 
     }
@@ -1779,7 +1784,8 @@ public class JobsApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @return List&lt;Job&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1791,8 +1797,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Job> jobsByAccount(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state) throws ApiException {
-        ApiResponse<List<Job>> localVarResp = jobsByAccountWithHttpInfo(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state);
+    public List<Job> jobsByAccount(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, String updatedSince) throws ApiException {
+        ApiResponse<List<Job>> localVarResp = jobsByAccountWithHttpInfo(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince);
         return localVarResp.getData();
     }
 
@@ -1805,7 +1811,8 @@ public class JobsApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @return ApiResponse&lt;List&lt;Job&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1817,8 +1824,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Job>> jobsByAccountWithHttpInfo(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state) throws ApiException {
-        okhttp3.Call localVarCall = jobsByAccountValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, null);
+    public ApiResponse<List<Job>> jobsByAccountWithHttpInfo(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, String updatedSince) throws ApiException {
+        okhttp3.Call localVarCall = jobsByAccountValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince, null);
         Type localVarReturnType = new TypeToken<List<Job>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1832,7 +1839,8 @@ public class JobsApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1845,9 +1853,9 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobsByAccountAsync(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, final ApiCallback<List<Job>> _callback) throws ApiException {
+    public okhttp3.Call jobsByAccountAsync(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, String ownedBy, String assignedTo, String state, String updatedSince, final ApiCallback<List<Job>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = jobsByAccountValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, _callback);
+        okhttp3.Call localVarCall = jobsByAccountValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince, _callback);
         Type localVarReturnType = new TypeToken<List<Job>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1858,10 +1866,11 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1874,7 +1883,7 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobsListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call jobsListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, String updatedSince, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1907,6 +1916,10 @@ public class JobsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("state", state));
         }
 
+        if (updatedSince != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("updated_since", updatedSince));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -1933,7 +1946,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jobsListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jobsListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, String updatedSince, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -1941,7 +1954,7 @@ public class JobsApi {
         }
         
 
-        okhttp3.Call localVarCall = jobsListCall(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, _callback);
+        okhttp3.Call localVarCall = jobsListCall(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince, _callback);
         return localVarCall;
 
     }
@@ -1953,10 +1966,11 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @return List&lt;Job&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1968,8 +1982,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Job> jobsList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state) throws ApiException {
-        ApiResponse<List<Job>> localVarResp = jobsListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state);
+    public List<Job> jobsList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, String updatedSince) throws ApiException {
+        ApiResponse<List<Job>> localVarResp = jobsListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince);
         return localVarResp.getData();
     }
 
@@ -1980,10 +1994,11 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @return ApiResponse&lt;List&lt;Job&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1995,8 +2010,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Job>> jobsListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state) throws ApiException {
-        okhttp3.Call localVarCall = jobsListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, null);
+    public ApiResponse<List<Job>> jobsListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, String updatedSince) throws ApiException {
+        okhttp3.Call localVarCall = jobsListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince, null);
         Type localVarReturnType = new TypeToken<List<Job>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2008,10 +2023,11 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param branch specify the branch to use (optional)
+     * @param branch Branch to use (optional)
      * @param ownedBy filter by user owning job (optional)
      * @param assignedTo filter by user assigned to job (optional)
-     * @param state filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param state filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; (optional)
+     * @param updatedSince filter by jobs updated since given date (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2024,9 +2040,9 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobsListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, final ApiCallback<List<Job>> _callback) throws ApiException {
+    public okhttp3.Call jobsListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String ownedBy, String assignedTo, String state, String updatedSince, final ApiCallback<List<Job>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = jobsListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, _callback);
+        okhttp3.Call localVarCall = jobsListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince, _callback);
         Type localVarReturnType = new TypeToken<List<Job>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

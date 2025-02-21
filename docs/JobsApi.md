@@ -917,7 +917,7 @@ Name | Type | Description  | Notes
 
 <a name="jobsByAccount"></a>
 # **jobsByAccount**
-> List&lt;Job&gt; jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state)
+> List&lt;Job&gt; jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince)
 
 List account jobs
 
@@ -955,9 +955,10 @@ public class Example {
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String ownedBy = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user owning job
     String assignedTo = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user assigned to job
-    String state = "completed"; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String state = "completed"; // String | filter by state of job; valid states are: <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String updatedSince = "2013-02-21T00:00:00.000Z"; // String | filter by jobs updated since given date
     try {
-      List<Job> result = apiInstance.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state);
+      List<Job> result = apiInstance.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobsApi#jobsByAccount");
@@ -980,7 +981,8 @@ Name | Type | Description  | Notes
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **ownedBy** | **String**| filter by user owning job | [optional]
  **assignedTo** | **String**| filter by user assigned to job | [optional]
- **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
+ **state** | **String**| filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
+ **updatedSince** | **String**| filter by jobs updated since given date | [optional]
 
 ### Return type
 
@@ -1005,7 +1007,7 @@ Name | Type | Description  | Notes
 
 <a name="jobsList"></a>
 # **jobsList**
-> List&lt;Job&gt; jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state)
+> List&lt;Job&gt; jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince)
 
 List jobs
 
@@ -1041,12 +1043,13 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String branch = "my-feature-branch"; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | Branch to use
     String ownedBy = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user owning job
     String assignedTo = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user assigned to job
-    String state = "completed"; // String | filter by state of job Valid states are <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String state = "completed"; // String | filter by state of job; valid states are: <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String updatedSince = "2013-02-21T00:00:00.000Z"; // String | filter by jobs updated since given date
     try {
-      List<Job> result = apiInstance.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state);
+      List<Job> result = apiInstance.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobsApi#jobsList");
@@ -1067,10 +1070,11 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
- **branch** | **String**| specify the branch to use | [optional]
+ **branch** | **String**| Branch to use | [optional]
  **ownedBy** | **String**| filter by user owning job | [optional]
  **assignedTo** | **String**| filter by user assigned to job | [optional]
- **state** | **String**| filter by state of job Valid states are &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
+ **state** | **String**| filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
+ **updatedSince** | **String**| filter by jobs updated since given date | [optional]
 
 ### Return type
 
