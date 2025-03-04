@@ -21,14 +21,16 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Subscription;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * AccountDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-25T11:57:44.195832786Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-04T13:24:55.600319455Z[Etc/UTC]")
 public class AccountDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -61,6 +63,10 @@ public class AccountDetails {
   public static final String SERIALIZED_NAME_SUBSCRIPTION = "subscription";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION)
   private Subscription subscription;
+
+  public static final String SERIALIZED_NAME_ROLES = "roles";
+  @SerializedName(SERIALIZED_NAME_ROLES)
+  private List<String> roles;
 
   public AccountDetails() {
   }
@@ -240,6 +246,36 @@ public class AccountDetails {
     this.subscription = subscription;
   }
 
+
+  public AccountDetails roles(List<String> roles) {
+    
+    this.roles = roles;
+    return this;
+  }
+
+  public AccountDetails addRolesItem(String rolesItem) {
+    if (this.roles == null) {
+      this.roles = new ArrayList<>();
+    }
+    this.roles.add(rolesItem);
+    return this;
+  }
+
+   /**
+   * Get roles
+   * @return roles
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getRoles() {
+    return roles;
+  }
+
+
+  public void setRoles(List<String> roles) {
+    this.roles = roles;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -256,12 +292,13 @@ public class AccountDetails {
         Objects.equals(this.createdAt, accountDetails.createdAt) &&
         Objects.equals(this.updatedAt, accountDetails.updatedAt) &&
         Objects.equals(this.companyLogoUrl, accountDetails.companyLogoUrl) &&
-        Objects.equals(this.subscription, accountDetails.subscription);
+        Objects.equals(this.subscription, accountDetails.subscription) &&
+        Objects.equals(this.roles, accountDetails.roles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, company, createdAt, updatedAt, companyLogoUrl, subscription);
+    return Objects.hash(id, name, slug, company, createdAt, updatedAt, companyLogoUrl, subscription, roles);
   }
 
   @Override
@@ -276,6 +313,7 @@ public class AccountDetails {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    companyLogoUrl: ").append(toIndentedString(companyLogoUrl)).append("\n");
     sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");
+    sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("}");
     return sb.toString();
   }

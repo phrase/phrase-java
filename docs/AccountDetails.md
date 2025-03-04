@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **companyLogoUrl** | **String** |  |  [optional]
 **subscription** | [**Subscription**](Subscription.md) |  |  [optional]
+**roles** | **List&lt;String&gt;** |  |  [optional]
 
 
 

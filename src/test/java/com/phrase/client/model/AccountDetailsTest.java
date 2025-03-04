@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Subscription;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -102,6 +104,14 @@ public class AccountDetailsTest {
     @Test
     public void subscriptionTest() {
         // TODO: test subscription
+    }
+
+    /**
+     * Test the property 'roles'
+     */
+    @Test
+    public void rolesTest() {
+        // TODO: test roles
     }
 
 }
