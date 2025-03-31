@@ -30,7 +30,6 @@ import com.phrase.client.model.Comment;
 import com.phrase.client.model.CommentCreateParameters;
 import com.phrase.client.model.CommentMarkReadParameters;
 import com.phrase.client.model.CommentUpdateParameters;
-import com.phrase.client.model.CommentsListParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -1151,7 +1150,6 @@ public class CommentsApi {
      * Build call for commentsList
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
-     * @param commentsListParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1172,8 +1170,8 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call commentsListCall(String projectId, String keyId, CommentsListParameters commentsListParameters, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = commentsListParameters;
+    public okhttp3.Call commentsListCall(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/projects/{project_id}/keys/{key_id}/comments"
@@ -1226,7 +1224,7 @@ public class CommentsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1236,7 +1234,7 @@ public class CommentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call commentsListValidateBeforeCall(String projectId, String keyId, CommentsListParameters commentsListParameters, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call commentsListValidateBeforeCall(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -1248,13 +1246,8 @@ public class CommentsApi {
             throw new ApiException("Missing the required parameter 'keyId' when calling commentsList(Async)");
         }
         
-        // verify the required parameter 'commentsListParameters' is set
-        if (commentsListParameters == null) {
-            throw new ApiException("Missing the required parameter 'commentsListParameters' when calling commentsList(Async)");
-        }
-        
 
-        okhttp3.Call localVarCall = commentsListCall(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order, _callback);
+        okhttp3.Call localVarCall = commentsListCall(projectId, keyId, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order, _callback);
         return localVarCall;
 
     }
@@ -1264,7 +1257,6 @@ public class CommentsApi {
      * List all comments for a key.
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
-     * @param commentsListParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1284,8 +1276,8 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Comment> commentsList(String projectId, String keyId, CommentsListParameters commentsListParameters, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order) throws ApiException {
-        ApiResponse<List<Comment>> localVarResp = commentsListWithHttpInfo(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order);
+    public List<Comment> commentsList(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order) throws ApiException {
+        ApiResponse<List<Comment>> localVarResp = commentsListWithHttpInfo(projectId, keyId, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order);
         return localVarResp.getData();
     }
 
@@ -1294,7 +1286,6 @@ public class CommentsApi {
      * List all comments for a key.
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
-     * @param commentsListParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1314,8 +1305,8 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Comment>> commentsListWithHttpInfo(String projectId, String keyId, CommentsListParameters commentsListParameters, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order) throws ApiException {
-        okhttp3.Call localVarCall = commentsListValidateBeforeCall(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order, null);
+    public ApiResponse<List<Comment>> commentsListWithHttpInfo(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order) throws ApiException {
+        okhttp3.Call localVarCall = commentsListValidateBeforeCall(projectId, keyId, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order, null);
         Type localVarReturnType = new TypeToken<List<Comment>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1325,7 +1316,6 @@ public class CommentsApi {
      * List all comments for a key.
      * @param projectId Project ID (required)
      * @param keyId Translation Key ID (required)
-     * @param commentsListParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
@@ -1346,9 +1336,9 @@ public class CommentsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call commentsListAsync(String projectId, String keyId, CommentsListParameters commentsListParameters, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order, final ApiCallback<List<Comment>> _callback) throws ApiException {
+    public okhttp3.Call commentsListAsync(String projectId, String keyId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String query, List<String> localeIds, List<String> filters, String order, final ApiCallback<List<Comment>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = commentsListValidateBeforeCall(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order, _callback);
+        okhttp3.Call localVarCall = commentsListValidateBeforeCall(projectId, keyId, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order, _callback);
         Type localVarReturnType = new TypeToken<List<Comment>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -17,7 +17,6 @@ import com.phrase.client.model.Comment;
 import com.phrase.client.model.CommentCreateParameters;
 import com.phrase.client.model.CommentMarkReadParameters;
 import com.phrase.client.model.CommentUpdateParameters;
-import com.phrase.client.model.CommentsListParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -186,7 +185,6 @@ public class CommentsApiTest {
     public void commentsListTest() throws ApiException {
         String projectId = null;
         String keyId = null;
-        CommentsListParameters commentsListParameters = null;
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
@@ -195,7 +193,7 @@ public class CommentsApiTest {
         List<String> localeIds = null;
         List<String> filters = null;
         String order = null;
-        List<Comment> response = api.commentsList(projectId, keyId, commentsListParameters, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order);
+        List<Comment> response = api.commentsList(projectId, keyId, xPhraseAppOTP, page, perPage, branch, query, localeIds, filters, order);
 
         // TODO: test validations
     }

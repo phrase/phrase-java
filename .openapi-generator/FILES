@@ -36,7 +36,6 @@ docs/CommentReactionsApi.md
 docs/CommentRepliesApi.md
 docs/CommentUpdateParameters.md
 docs/CommentsApi.md
-docs/CommentsListParameters.md
 docs/CurrentUser.md
 docs/CustomMetadataApi.md
 docs/CustomMetadataDataType.md
@@ -190,7 +189,6 @@ docs/ReleaseTriggersApi.md
 docs/ReleaseUpdateParameters.md
 docs/ReleaseUpdateParameters1.md
 docs/ReleasesApi.md
-docs/RepliesListParameters.md
 docs/RepoSync.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventsApi.md
@@ -376,7 +374,6 @@ src/main/java/com/phrase/client/model/CommentCreateParameters1.java
 src/main/java/com/phrase/client/model/CommentMarkReadParameters.java
 src/main/java/com/phrase/client/model/CommentReaction.java
 src/main/java/com/phrase/client/model/CommentUpdateParameters.java
-src/main/java/com/phrase/client/model/CommentsListParameters.java
 src/main/java/com/phrase/client/model/CurrentUser.java
 src/main/java/com/phrase/client/model/CustomMetadataDataType.java
 src/main/java/com/phrase/client/model/CustomMetadataPropertiesCreateParameters.java
@@ -500,7 +497,6 @@ src/main/java/com/phrase/client/model/ReleasePreview.java
 src/main/java/com/phrase/client/model/ReleaseTrigger.java
 src/main/java/com/phrase/client/model/ReleaseUpdateParameters.java
 src/main/java/com/phrase/client/model/ReleaseUpdateParameters1.java
-src/main/java/com/phrase/client/model/RepliesListParameters.java
 src/main/java/com/phrase/client/model/RepoSync.java
 src/main/java/com/phrase/client/model/RepoSyncEvent.java
 src/main/java/com/phrase/client/model/Screenshot.java
@@ -639,7 +635,6 @@ src/test/java/com/phrase/client/model/CommentMarkReadParametersTest.java
 src/test/java/com/phrase/client/model/CommentReactionTest.java
 src/test/java/com/phrase/client/model/CommentTest.java
 src/test/java/com/phrase/client/model/CommentUpdateParametersTest.java
-src/test/java/com/phrase/client/model/CommentsListParametersTest.java
 src/test/java/com/phrase/client/model/CurrentUserTest.java
 src/test/java/com/phrase/client/model/CustomMetadataDataTypeTest.java
 src/test/java/com/phrase/client/model/CustomMetadataPropertiesCreateParametersTest.java
@@ -763,7 +758,6 @@ src/test/java/com/phrase/client/model/ReleaseTest.java
 src/test/java/com/phrase/client/model/ReleaseTriggerTest.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParameters1Test.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParametersTest.java
-src/test/java/com/phrase/client/model/RepliesListParametersTest.java
 src/test/java/com/phrase/client/model/RepoSyncEventTest.java
 src/test/java/com/phrase/client/model/RepoSyncTest.java
 src/test/java/com/phrase/client/model/ScreenshotMarkerCreateParametersTest.java
