@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Format
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T08:12:17.446320092Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T08:15:58.639437417Z[Etc/UTC]")
 public class Format {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
