@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UploadSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-09T13:28:40.431588697Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-14T07:39:13.963277996Z[Etc/UTC]")
 public class UploadSummary {
   public static final String SERIALIZED_NAME_LOCALES_CREATED = "locales_created";
   @SerializedName(SERIALIZED_NAME_LOCALES_CREATED)
@@ -59,6 +59,14 @@ public class UploadSummary {
   public static final String SERIALIZED_NAME_TRANSLATION_KEYS_IGNORED = "translation_keys_ignored";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEYS_IGNORED)
   private Integer translationKeysIgnored;
+
+  public static final String SERIALIZED_NAME_PROCESSED_TRANSLATIONS = "processed_translations";
+  @SerializedName(SERIALIZED_NAME_PROCESSED_TRANSLATIONS)
+  private Integer processedTranslations;
+
+  public static final String SERIALIZED_NAME_UPLOAD_TOTAL_TRANSLATIONS = "upload_total_translations";
+  @SerializedName(SERIALIZED_NAME_UPLOAD_TOTAL_TRANSLATIONS)
+  private Integer uploadTotalTranslations;
 
   public UploadSummary() {
   }
@@ -238,6 +246,50 @@ public class UploadSummary {
     this.translationKeysIgnored = translationKeysIgnored;
   }
 
+
+  public UploadSummary processedTranslations(Integer processedTranslations) {
+    
+    this.processedTranslations = processedTranslations;
+    return this;
+  }
+
+   /**
+   * Get processedTranslations
+   * @return processedTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Integer getProcessedTranslations() {
+    return processedTranslations;
+  }
+
+
+  public void setProcessedTranslations(Integer processedTranslations) {
+    this.processedTranslations = processedTranslations;
+  }
+
+
+  public UploadSummary uploadTotalTranslations(Integer uploadTotalTranslations) {
+    
+    this.uploadTotalTranslations = uploadTotalTranslations;
+    return this;
+  }
+
+   /**
+   * Get uploadTotalTranslations
+   * @return uploadTotalTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Integer getUploadTotalTranslations() {
+    return uploadTotalTranslations;
+  }
+
+
+  public void setUploadTotalTranslations(Integer uploadTotalTranslations) {
+    this.uploadTotalTranslations = uploadTotalTranslations;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -254,12 +306,14 @@ public class UploadSummary {
         Objects.equals(this.translationsCreated, uploadSummary.translationsCreated) &&
         Objects.equals(this.translationsUpdated, uploadSummary.translationsUpdated) &&
         Objects.equals(this.tagsCreated, uploadSummary.tagsCreated) &&
-        Objects.equals(this.translationKeysIgnored, uploadSummary.translationKeysIgnored);
+        Objects.equals(this.translationKeysIgnored, uploadSummary.translationKeysIgnored) &&
+        Objects.equals(this.processedTranslations, uploadSummary.processedTranslations) &&
+        Objects.equals(this.uploadTotalTranslations, uploadSummary.uploadTotalTranslations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(localesCreated, translationKeysCreated, translationKeysUpdated, translationKeysUnmentioned, translationsCreated, translationsUpdated, tagsCreated, translationKeysIgnored);
+    return Objects.hash(localesCreated, translationKeysCreated, translationKeysUpdated, translationKeysUnmentioned, translationsCreated, translationsUpdated, tagsCreated, translationKeysIgnored, processedTranslations, uploadTotalTranslations);
   }
 
   @Override
@@ -274,6 +328,8 @@ public class UploadSummary {
     sb.append("    translationsUpdated: ").append(toIndentedString(translationsUpdated)).append("\n");
     sb.append("    tagsCreated: ").append(toIndentedString(tagsCreated)).append("\n");
     sb.append("    translationKeysIgnored: ").append(toIndentedString(translationKeysIgnored)).append("\n");
+    sb.append("    processedTranslations: ").append(toIndentedString(processedTranslations)).append("\n");
+    sb.append("    uploadTotalTranslations: ").append(toIndentedString(uploadTotalTranslations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

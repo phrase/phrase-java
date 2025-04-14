@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **translationsUpdated** | **Integer** |  |  [optional]
 **tagsCreated** | **Integer** |  |  [optional]
 **translationKeysIgnored** | **Integer** |  |  [optional]
+**processedTranslations** | **Integer** |  |  [optional]
+**uploadTotalTranslations** | **Integer** |  |  [optional]
 
 
 

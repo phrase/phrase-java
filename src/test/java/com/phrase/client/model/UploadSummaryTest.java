@@ -102,4 +102,20 @@ public class UploadSummaryTest {
         // TODO: test translationKeysIgnored
     }
 
+    /**
+     * Test the property 'processedTranslations'
+     */
+    @Test
+    public void processedTranslationsTest() {
+        // TODO: test processedTranslations
+    }
+
+    /**
+     * Test the property 'uploadTotalTranslations'
+     */
+    @Test
+    public void uploadTotalTranslationsTest() {
+        // TODO: test uploadTotalTranslations
+    }
+
 }

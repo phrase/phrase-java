@@ -35021,6 +35021,10 @@ components:
           type: integer
         translation_keys_ignored:
           type: integer
+        processed_translations:
+          type: integer
+        upload_total_translations:
+          type: integer
       type: object
     space_1:
       example:
