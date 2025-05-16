@@ -241,6 +241,7 @@ docs/TranslationKeyDetails.md
 docs/TranslationOrder.md
 docs/TranslationParent.md
 docs/TranslationReviewParameters.md
+docs/TranslationUnreviewParameters.md
 docs/TranslationUnverifyParameters.md
 docs/TranslationUpdateParameters.md
 docs/TranslationVerifyParameters.md
@@ -251,6 +252,7 @@ docs/TranslationsExcludeParameters.md
 docs/TranslationsIncludeParameters.md
 docs/TranslationsReviewParameters.md
 docs/TranslationsSearchParameters.md
+docs/TranslationsUnreviewParameters.md
 docs/TranslationsUnverifyParameters.md
 docs/TranslationsVerifyParameters.md
 docs/Upload.md
@@ -539,6 +541,7 @@ src/main/java/com/phrase/client/model/TranslationKeyDetails.java
 src/main/java/com/phrase/client/model/TranslationOrder.java
 src/main/java/com/phrase/client/model/TranslationParent.java
 src/main/java/com/phrase/client/model/TranslationReviewParameters.java
+src/main/java/com/phrase/client/model/TranslationUnreviewParameters.java
 src/main/java/com/phrase/client/model/TranslationUnverifyParameters.java
 src/main/java/com/phrase/client/model/TranslationUpdateParameters.java
 src/main/java/com/phrase/client/model/TranslationVerifyParameters.java
@@ -548,6 +551,7 @@ src/main/java/com/phrase/client/model/TranslationsExcludeParameters.java
 src/main/java/com/phrase/client/model/TranslationsIncludeParameters.java
 src/main/java/com/phrase/client/model/TranslationsReviewParameters.java
 src/main/java/com/phrase/client/model/TranslationsSearchParameters.java
+src/main/java/com/phrase/client/model/TranslationsUnreviewParameters.java
 src/main/java/com/phrase/client/model/TranslationsUnverifyParameters.java
 src/main/java/com/phrase/client/model/TranslationsVerifyParameters.java
 src/main/java/com/phrase/client/model/Upload.java
@@ -800,6 +804,7 @@ src/test/java/com/phrase/client/model/TranslationOrderTest.java
 src/test/java/com/phrase/client/model/TranslationParentTest.java
 src/test/java/com/phrase/client/model/TranslationReviewParametersTest.java
 src/test/java/com/phrase/client/model/TranslationTest.java
+src/test/java/com/phrase/client/model/TranslationUnreviewParametersTest.java
 src/test/java/com/phrase/client/model/TranslationUnverifyParametersTest.java
 src/test/java/com/phrase/client/model/TranslationUpdateParametersTest.java
 src/test/java/com/phrase/client/model/TranslationVerifyParametersTest.java
@@ -809,6 +814,7 @@ src/test/java/com/phrase/client/model/TranslationsExcludeParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsIncludeParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsReviewParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsSearchParametersTest.java
+src/test/java/com/phrase/client/model/TranslationsUnreviewParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsUnverifyParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsVerifyParametersTest.java
 src/test/java/com/phrase/client/model/UploadSummaryTest.java

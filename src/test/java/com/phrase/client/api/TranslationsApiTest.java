@@ -20,6 +20,7 @@ import com.phrase.client.model.TranslationDetails;
 import com.phrase.client.model.TranslationExcludeParameters;
 import com.phrase.client.model.TranslationIncludeParameters;
 import com.phrase.client.model.TranslationReviewParameters;
+import com.phrase.client.model.TranslationUnreviewParameters;
 import com.phrase.client.model.TranslationUnverifyParameters;
 import com.phrase.client.model.TranslationUpdateParameters;
 import com.phrase.client.model.TranslationVerifyParameters;
@@ -27,6 +28,7 @@ import com.phrase.client.model.TranslationsExcludeParameters;
 import com.phrase.client.model.TranslationsIncludeParameters;
 import com.phrase.client.model.TranslationsReviewParameters;
 import com.phrase.client.model.TranslationsSearchParameters;
+import com.phrase.client.model.TranslationsUnreviewParameters;
 import com.phrase.client.model.TranslationsUnverifyParameters;
 import com.phrase.client.model.TranslationsVerifyParameters;
 import org.junit.Test;
@@ -136,6 +138,25 @@ public class TranslationsApiTest {
         String xPhraseAppOTP = null;
         String branch = null;
         TranslationDetails response = api.translationShow(projectId, id, xPhraseAppOTP, branch);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Unreview a translation
+     *
+     * Mark a reviewed translation as translated.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void translationUnreviewTest() throws ApiException {
+        String projectId = null;
+        String id = null;
+        TranslationUnreviewParameters translationUnreviewParameters = null;
+        String xPhraseAppOTP = null;
+        TranslationDetails response = api.translationUnreview(projectId, id, translationUnreviewParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -340,6 +361,24 @@ public class TranslationsApiTest {
         Integer page = null;
         Integer perPage = null;
         List<Translation> response = api.translationsSearch(projectId, translationsSearchParameters, xPhraseAppOTP, page, perPage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Unreview translations selected by query
+     *
+     * Unreview translations matching query.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void translationsUnreviewCollectionTest() throws ApiException {
+        String projectId = null;
+        TranslationsUnreviewParameters translationsUnreviewParameters = null;
+        String xPhraseAppOTP = null;
+        AffectedCount response = api.translationsUnreviewCollection(projectId, translationsUnreviewParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
