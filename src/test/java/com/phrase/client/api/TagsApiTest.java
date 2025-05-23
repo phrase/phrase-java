@@ -83,8 +83,9 @@ public class TagsApiTest {
         String projectId = null;
         String name = null;
         String xPhraseAppOTP = null;
+        Boolean omitStatistics = null;
         String branch = null;
-        TagWithStats response = api.tagShow(projectId, name, xPhraseAppOTP, branch);
+        TagWithStats response = api.tagShow(projectId, name, xPhraseAppOTP, omitStatistics, branch);
 
         // TODO: test validations
     }

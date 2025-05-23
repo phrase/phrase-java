@@ -173,7 +173,7 @@ null (empty response body)
 
 <a name="tagShow"></a>
 # **tagShow**
-> TagWithStats tagShow(projectId, name, xPhraseAppOTP, branch)
+> TagWithStats tagShow(projectId, name, xPhraseAppOTP, omitStatistics, branch)
 
 Get a single tag
 
@@ -208,9 +208,10 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String name = "name_example"; // String | name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    Boolean omitStatistics = true; // Boolean | omit statistics in the response
     String branch = "my-feature-branch"; // String | specify the branch to use
     try {
-      TagWithStats result = apiInstance.tagShow(projectId, name, xPhraseAppOTP, branch);
+      TagWithStats result = apiInstance.tagShow(projectId, name, xPhraseAppOTP, omitStatistics, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TagsApi#tagShow");
@@ -230,6 +231,7 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **name** | **String**| name |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **omitStatistics** | **Boolean**| omit statistics in the response | [optional]
  **branch** | **String**| specify the branch to use | [optional]
 
 ### Return type

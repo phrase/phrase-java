@@ -345,6 +345,7 @@ public class TagsApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param omitStatistics omit statistics in the response (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -358,7 +359,7 @@ public class TagsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call tagShowCall(String projectId, String name, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call tagShowCall(String projectId, String name, String xPhraseAppOTP, Boolean omitStatistics, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -368,6 +369,10 @@ public class TagsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (omitStatistics != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("omit_statistics", omitStatistics));
+        }
+
         if (branch != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
         }
@@ -398,7 +403,7 @@ public class TagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call tagShowValidateBeforeCall(String projectId, String name, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call tagShowValidateBeforeCall(String projectId, String name, String xPhraseAppOTP, Boolean omitStatistics, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -411,7 +416,7 @@ public class TagsApi {
         }
         
 
-        okhttp3.Call localVarCall = tagShowCall(projectId, name, xPhraseAppOTP, branch, _callback);
+        okhttp3.Call localVarCall = tagShowCall(projectId, name, xPhraseAppOTP, omitStatistics, branch, _callback);
         return localVarCall;
 
     }
@@ -422,6 +427,7 @@ public class TagsApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param omitStatistics omit statistics in the response (optional)
      * @param branch specify the branch to use (optional)
      * @return TagWithStats
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -434,8 +440,8 @@ public class TagsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public TagWithStats tagShow(String projectId, String name, String xPhraseAppOTP, String branch) throws ApiException {
-        ApiResponse<TagWithStats> localVarResp = tagShowWithHttpInfo(projectId, name, xPhraseAppOTP, branch);
+    public TagWithStats tagShow(String projectId, String name, String xPhraseAppOTP, Boolean omitStatistics, String branch) throws ApiException {
+        ApiResponse<TagWithStats> localVarResp = tagShowWithHttpInfo(projectId, name, xPhraseAppOTP, omitStatistics, branch);
         return localVarResp.getData();
     }
 
@@ -445,6 +451,7 @@ public class TagsApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param omitStatistics omit statistics in the response (optional)
      * @param branch specify the branch to use (optional)
      * @return ApiResponse&lt;TagWithStats&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -457,8 +464,8 @@ public class TagsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<TagWithStats> tagShowWithHttpInfo(String projectId, String name, String xPhraseAppOTP, String branch) throws ApiException {
-        okhttp3.Call localVarCall = tagShowValidateBeforeCall(projectId, name, xPhraseAppOTP, branch, null);
+    public ApiResponse<TagWithStats> tagShowWithHttpInfo(String projectId, String name, String xPhraseAppOTP, Boolean omitStatistics, String branch) throws ApiException {
+        okhttp3.Call localVarCall = tagShowValidateBeforeCall(projectId, name, xPhraseAppOTP, omitStatistics, branch, null);
         Type localVarReturnType = new TypeToken<TagWithStats>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -469,6 +476,7 @@ public class TagsApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param omitStatistics omit statistics in the response (optional)
      * @param branch specify the branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -482,9 +490,9 @@ public class TagsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call tagShowAsync(String projectId, String name, String xPhraseAppOTP, String branch, final ApiCallback<TagWithStats> _callback) throws ApiException {
+    public okhttp3.Call tagShowAsync(String projectId, String name, String xPhraseAppOTP, Boolean omitStatistics, String branch, final ApiCallback<TagWithStats> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = tagShowValidateBeforeCall(projectId, name, xPhraseAppOTP, branch, _callback);
+        okhttp3.Call localVarCall = tagShowValidateBeforeCall(projectId, name, xPhraseAppOTP, omitStatistics, branch, _callback);
         Type localVarReturnType = new TypeToken<TagWithStats>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
