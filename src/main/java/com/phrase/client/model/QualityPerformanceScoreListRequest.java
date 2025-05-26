@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * QualityPerformanceScoreListRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T08:15:17.842311294Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T08:17:09.100706837Z[Etc/UTC]")
 public class QualityPerformanceScoreListRequest {
   public static final String SERIALIZED_NAME_TRANSLATION_IDS = "translation_ids";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_IDS)
