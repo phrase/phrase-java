@@ -37,7 +37,7 @@ public class MembersApiTest {
     /**
      * Remove a user from the account
      *
-     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &#x60;team.manage&#x60;.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -55,7 +55,7 @@ public class MembersApiTest {
     /**
      * Get single member
      *
-     * Get details on a single user in the account. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get details on a single user in the account. Access token scope must include &#x60;team.manage&#x60;.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -73,7 +73,7 @@ public class MembersApiTest {
     /**
      * Update a member
      *
-     * Update user permissions in the account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user permissions in the account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -92,7 +92,7 @@ public class MembersApiTest {
     /**
      * Update a member&#39;s project settings
      *
-     * Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user settings in the project. Access token scope must include &#x60;team.manage&#x60;.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -111,7 +111,7 @@ public class MembersApiTest {
     /**
      * List members
      *
-     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
      *
      * @throws ApiException
      *          if the Api call fails

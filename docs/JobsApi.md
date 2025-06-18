@@ -955,7 +955,7 @@ public class Example {
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String ownedBy = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user owning job
     String assignedTo = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user assigned to job
-    String state = "completed"; // String | filter by state of job; valid states are: <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String state = "completed"; // String | filter by state of job; valid states are: `draft`, `in_progress`, `completed`
     String updatedSince = "2013-02-21T00:00:00.000Z"; // String | filter by jobs updated since given date
     try {
       List<Job> result = apiInstance.jobsByAccount(accountId, xPhraseAppOTP, page, perPage, ownedBy, assignedTo, state, updatedSince);
@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **ownedBy** | **String**| filter by user owning job | [optional]
  **assignedTo** | **String**| filter by user assigned to job | [optional]
- **state** | **String**| filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
+ **state** | **String**| filter by state of job; valid states are: &#x60;draft&#x60;, &#x60;in_progress&#x60;, &#x60;completed&#x60; | [optional]
  **updatedSince** | **String**| filter by jobs updated since given date | [optional]
 
 ### Return type
@@ -1046,7 +1046,7 @@ public class Example {
     String branch = "my-feature-branch"; // String | Branch to use
     String ownedBy = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user owning job
     String assignedTo = "abcd1234cdef1234abcd1234cdef1234"; // String | filter by user assigned to job
-    String state = "completed"; // String | filter by state of job; valid states are: <code>draft</code>, <code>in_progress</code>, <code>completed</code>
+    String state = "completed"; // String | filter by state of job; valid states are: `draft`, `in_progress`, `completed`
     String updatedSince = "2013-02-21T00:00:00.000Z"; // String | filter by jobs updated since given date
     try {
       List<Job> result = apiInstance.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince);
@@ -1073,7 +1073,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| Branch to use | [optional]
  **ownedBy** | **String**| filter by user owning job | [optional]
  **assignedTo** | **String**| filter by user assigned to job | [optional]
- **state** | **String**| filter by state of job; valid states are: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;in_progress&lt;/code&gt;, &lt;code&gt;completed&lt;/code&gt; | [optional]
+ **state** | **String**| filter by state of job; valid states are: &#x60;draft&#x60;, &#x60;in_progress&#x60;, &#x60;completed&#x60; | [optional]
  **updatedSince** | **String**| filter by jobs updated since given date | [optional]
 
 ### Return type

@@ -46,8 +46,8 @@ public class Example {
     String localeId = "localeId_example"; // String | Locale ID
     LocaleDownloadCreateParameters localeDownloadCreateParameters = new LocaleDownloadCreateParameters(); // LocaleDownloadCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String ifModifiedSince = "ifModifiedSince_example"; // String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
-    String ifNoneMatch = "ifNoneMatch_example"; // String | ETag condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
+    String ifModifiedSince = "ifModifiedSince_example"; // String | Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
+    String ifNoneMatch = "ifNoneMatch_example"; // String | ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
     try {
       LocaleDownload result = apiInstance.localeDownloadCreate(projectId, localeId, localeDownloadCreateParameters, xPhraseAppOTP, ifModifiedSince, ifNoneMatch);
       System.out.println(result);
@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
  **localeId** | **String**| Locale ID |
  **localeDownloadCreateParameters** | [**LocaleDownloadCreateParameters**](LocaleDownloadCreateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **ifModifiedSince** | **String**| Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional]
- **ifNoneMatch** | **String**| ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional]
+ **ifModifiedSince** | **String**| Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional]
+ **ifNoneMatch** | **String**| ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional]
 
 ### Return type
 
@@ -132,8 +132,8 @@ public class Example {
     String localeId = "localeId_example"; // String | Locale ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String ifModifiedSince = "ifModifiedSince_example"; // String | Last modified condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
-    String ifNoneMatch = "ifNoneMatch_example"; // String | ETag condition, see <a href=\"#overview--conditional-get-requests--http-caching\">Conditional GET requests / HTTP Caching</a> (optional)
+    String ifModifiedSince = "ifModifiedSince_example"; // String | Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
+    String ifNoneMatch = "ifNoneMatch_example"; // String | ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional)
     try {
       LocaleDownload result = apiInstance.localeDownloadShow(projectId, localeId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch);
       System.out.println(result);
@@ -156,8 +156,8 @@ Name | Type | Description  | Notes
  **localeId** | **String**| Locale ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **ifModifiedSince** | **String**| Last modified condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional]
- **ifNoneMatch** | **String**| ETag condition, see &lt;a href&#x3D;\&quot;#overview--conditional-get-requests--http-caching\&quot;&gt;Conditional GET requests / HTTP Caching&lt;/a&gt; (optional) | [optional]
+ **ifModifiedSince** | **String**| Last modified condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional]
+ **ifNoneMatch** | **String**| ETag condition, see [Conditional GET requests / HTTP Caching](/en/api/strings/pagination#conditional-get-requests-%2F-http-caching) (optional) | [optional]
 
 ### Return type
 

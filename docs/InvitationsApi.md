@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Create a new invitation
 
-Invite a person to an account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+Invite a person to an account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
 
 ### Example
 ```java
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 Delete an invitation
 
-Delete an existing invitation (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+Delete an existing invitation (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
 
 ### Example
 ```java
@@ -183,7 +183,7 @@ null (empty response body)
 
 Resend an invitation
 
-Resend the invitation email (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+Resend the invitation email (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
 
 ### Example
 ```java
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 Get a single invitation
 
-Get details on a single invitation. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+Get details on a single invitation. Access token scope must include &#x60;team.manage&#x60;.
 
 ### Example
 ```java
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 Update an invitation
 
-Update an existing invitation (must not be accepted yet). The &lt;code&gt;email&lt;/code&gt; cannot be updated. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+Update an existing invitation (must not be accepted yet). The &#x60;email&#x60; cannot be updated. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
 
 ### Example
 ```java
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 Update a member&#39;s invitation access
 
-Update member&#39;s settings in the invitations. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+Update member&#39;s settings in the invitations. Access token scope must include &#x60;team.manage&#x60;.
 
 ### Example
 ```java
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 List invitations
 
-List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
 
 ### Example
 ```java

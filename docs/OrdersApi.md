@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 Create a new order
 
-Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
+Create a new order. Access token scope must include &#x60;orders.create&#x60;.
 
 ### Example
 ```java

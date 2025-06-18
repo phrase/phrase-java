@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * InvitationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-12T08:39:03.049249260Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T07:19:22.303905126Z[Etc/UTC]")
 public class InvitationCreateParameters {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -74,7 +74,7 @@ public class InvitationCreateParameters {
   }
 
    /**
-   * The email of the invited user. The &lt;code&gt;email&lt;/code&gt; can not be updated once created. Create a new invitation for each unique email.
+   * The email of the invited user. The &#x60;email&#x60; can not be updated once created. Create a new invitation for each unique email.
    * @return email
   **/
   @javax.annotation.Nonnull
@@ -260,7 +260,7 @@ public class InvitationCreateParameters {
   }
 
    /**
-   * Additional permissions depending on invitation role. Available permissions are &lt;code&gt;create_upload&lt;/code&gt; and &lt;code&gt;review_translations&lt;/code&gt;
+   * Additional permissions depending on invitation role. Available permissions are &#x60;create_upload&#x60; and &#x60;review_translations&#x60;
    * @return permissions
   **/
   @javax.annotation.Nullable

@@ -132,7 +132,7 @@ public class InvitationsApi {
 
     /**
      * Create a new invitation
-     * Invite a person to an account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Invite a person to an account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param invitationCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -157,7 +157,7 @@ public class InvitationsApi {
 
     /**
      * Create a new invitation
-     * Invite a person to an account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Invite a person to an account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param invitationCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -183,7 +183,7 @@ public class InvitationsApi {
 
     /**
      * Create a new invitation (asynchronously)
-     * Invite a person to an account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Invite a person to an account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param invitationCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -284,7 +284,7 @@ public class InvitationsApi {
 
     /**
      * Delete an invitation
-     * Delete an existing invitation (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Delete an existing invitation (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -306,7 +306,7 @@ public class InvitationsApi {
 
     /**
      * Delete an invitation
-     * Delete an existing invitation (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Delete an existing invitation (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -330,7 +330,7 @@ public class InvitationsApi {
 
     /**
      * Delete an invitation (asynchronously)
-     * Delete an existing invitation (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Delete an existing invitation (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -429,7 +429,7 @@ public class InvitationsApi {
 
     /**
      * Resend an invitation
-     * Resend the invitation email (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Resend the invitation email (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -453,7 +453,7 @@ public class InvitationsApi {
 
     /**
      * Resend an invitation
-     * Resend the invitation email (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Resend the invitation email (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -478,7 +478,7 @@ public class InvitationsApi {
 
     /**
      * Resend an invitation (asynchronously)
-     * Resend the invitation email (must not be accepted yet). Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Resend the invitation email (must not be accepted yet). Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -578,7 +578,7 @@ public class InvitationsApi {
 
     /**
      * Get a single invitation
-     * Get details on a single invitation. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get details on a single invitation. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -602,7 +602,7 @@ public class InvitationsApi {
 
     /**
      * Get a single invitation
-     * Get details on a single invitation. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get details on a single invitation. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -627,7 +627,7 @@ public class InvitationsApi {
 
     /**
      * Get a single invitation (asynchronously)
-     * Get details on a single invitation. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get details on a single invitation. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -733,7 +733,7 @@ public class InvitationsApi {
 
     /**
      * Update an invitation
-     * Update an existing invitation (must not be accepted yet). The &lt;code&gt;email&lt;/code&gt; cannot be updated. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update an existing invitation (must not be accepted yet). The &#x60;email&#x60; cannot be updated. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param invitationUpdateParameters  (required)
@@ -758,7 +758,7 @@ public class InvitationsApi {
 
     /**
      * Update an invitation
-     * Update an existing invitation (must not be accepted yet). The &lt;code&gt;email&lt;/code&gt; cannot be updated. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update an existing invitation (must not be accepted yet). The &#x60;email&#x60; cannot be updated. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param invitationUpdateParameters  (required)
@@ -784,7 +784,7 @@ public class InvitationsApi {
 
     /**
      * Update an invitation (asynchronously)
-     * Update an existing invitation (must not be accepted yet). The &lt;code&gt;email&lt;/code&gt; cannot be updated. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update an existing invitation (must not be accepted yet). The &#x60;email&#x60; cannot be updated. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param invitationUpdateParameters  (required)
@@ -891,7 +891,7 @@ public class InvitationsApi {
 
     /**
      * Update a member&#39;s invitation access
-     * Update member&#39;s settings in the invitations. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update member&#39;s settings in the invitations. Access token scope must include &#x60;team.manage&#x60;.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param invitationUpdateSettingsParameters  (required)
@@ -916,7 +916,7 @@ public class InvitationsApi {
 
     /**
      * Update a member&#39;s invitation access
-     * Update member&#39;s settings in the invitations. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update member&#39;s settings in the invitations. Access token scope must include &#x60;team.manage&#x60;.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param invitationUpdateSettingsParameters  (required)
@@ -942,7 +942,7 @@ public class InvitationsApi {
 
     /**
      * Update a member&#39;s invitation access (asynchronously)
-     * Update member&#39;s settings in the invitations. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update member&#39;s settings in the invitations. Access token scope must include &#x60;team.manage&#x60;.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param invitationUpdateSettingsParameters  (required)
@@ -1046,7 +1046,7 @@ public class InvitationsApi {
 
     /**
      * List invitations
-     * List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -1071,7 +1071,7 @@ public class InvitationsApi {
 
     /**
      * List invitations
-     * List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -1097,7 +1097,7 @@ public class InvitationsApi {
 
     /**
      * List invitations (asynchronously)
-     * List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * List invitations for an account. It will also list the accessible resources like projects and locales the invited user has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **projectId** | **String** | Project id the distribution should be assigned to. |  [optional]
 **platforms** | **List&lt;String&gt;** | List of platforms the distribution should support. |  [optional]
 **localeIds** | **List&lt;String&gt;** | List of locale ids that will be part of distribution releases |  [optional]
-**formatOptions** | **Map&lt;String, String&gt;** | Additional formatting and render options. Only &lt;code&gt;enclose_in_cdata&lt;/code&gt; is available for platform &lt;code&gt;android&lt;/code&gt;. |  [optional]
+**formatOptions** | **Map&lt;String, String&gt;** | Additional formatting and render options. Only &#x60;enclose_in_cdata&#x60; is available for platform &#x60;android&#x60;.  |  [optional]
 **fallbackLocalesEnabled** | **Boolean** | Use fallback locale if there is no translation in the current locale. |  [optional]
 **fallbackToNonRegionalLocale** | **Boolean** | Indicates whether to fallback to non regional locale when locale can not be found |  [optional]
 **fallbackToDefaultLocale** | **Boolean** | Indicates whether to fallback to projects default locale when locale can not be found |  [optional]

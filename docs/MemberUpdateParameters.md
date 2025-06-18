@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **localeIds** | **String** | List of locale ids the user has access to. |  [optional]
 **defaultLocaleCodes** | **List&lt;String&gt;** | List of default locales for the user. |  [optional]
 **spaceIds** | **List&lt;String&gt;** | List of spaces the user is assigned to. |  [optional]
-**permissions** | **Map&lt;String, String&gt;** | Additional permissions depending on member role. Available permissions are &lt;code&gt;create_upload&lt;/code&gt; and &lt;code&gt;review_translations&lt;/code&gt; |  [optional]
+**permissions** | **Map&lt;String, String&gt;** | Additional permissions depending on member role. Available permissions are &#x60;create_upload&#x60; and &#x60;review_translations&#x60; |  [optional]
 
 
 

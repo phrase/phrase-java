@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Search across projects
 
-Search for keys and translations in all account projects &lt;br&gt;&lt;br&gt;&lt;i&gt;Note: Search is limited to 10000 results and may not include recently updated data depending on the project sizes.&lt;/i&gt;
+Search for keys and translations in all account projects  *Note: Search is limited to 10000 results and may not include recently updated data depending on the project sizes.* 
 
 ### Example
 ```java

@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ScreenshotMarkerCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-12T08:39:03.049249260Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T07:19:22.303905126Z[Etc/UTC]")
 public class ScreenshotMarkerCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -94,7 +94,7 @@ public class ScreenshotMarkerCreateParameters {
   }
 
    /**
-   * Presentation details of the screenshot marker in JSON format.&lt;br/&gt;&lt;br/&gt;Each Screenshot Marker is represented as a rectangular shaped highlight box with the name of the specified Key attached. You can specify the marker position on the screenshot (&lt;code&gt;x&lt;/code&gt;-axis and &lt;code&gt;y&lt;/code&gt;-axis in pixels) from the top left corner of the screenshot and the dimensions of the marker itself (&lt;code&gt;w&lt;/code&gt; and &lt;code&gt;h&lt;/code&gt; in pixels).
+   * Presentation details of the screenshot marker in JSON format.  Each Screenshot Marker is represented as a rectangular shaped highlight box with the name of the specified Key attached. You can specify the marker position on the screenshot (&#x60;x&#x60;-axis and &#x60;y&#x60;-axis in pixels) from the top left corner of the screenshot and the dimensions of the marker itself (&#x60;w&#x60; and &#x60;h&#x60; in pixels). 
    * @return presentation
   **/
   @javax.annotation.Nullable

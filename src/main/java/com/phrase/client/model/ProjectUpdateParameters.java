@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-12T08:39:03.049249260Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T07:19:22.303905126Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -118,7 +118,7 @@ public class ProjectUpdateParameters {
   private Boolean autotranslateUseTranslationMemory;
 
   /**
-   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the &lt;a href&#x3D;&#39;#post-/projects/-project_id-/uploads&#39;&gt;&#x60;file_encoding&#x60;&lt;/a&gt; parameter for Uploads.
+   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
    */
   @JsonAdapter(DefaultEncodingEnum.Adapter.class)
   public enum DefaultEncodingEnum {
@@ -250,7 +250,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/sections/6111343326364\&quot;&gt;Format Guide&lt;/a&gt; or our &lt;a href&#x3D;\&quot;#formats\&quot;&gt;Formats API Endpoint&lt;/a&gt;.
+   * (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see [Format Guide](https://support.phrase.com/hc/en-us/sections/6111343326364) or our [Formats API Endpoint](#formats).
    * @return mainFormat
   **/
   @javax.annotation.Nullable
@@ -360,7 +360,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5784094755484\&quot;&gt;Read more&lt;/a&gt;
+   * (Optional) Review Workflow. \&quot;simple\&quot; / \&quot;review\&quot;. [Read more](https://support.phrase.com/hc/en-us/articles/5784094755484)
    * @return workflow
   **/
   @javax.annotation.Nullable
@@ -470,7 +470,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) We can validate and highlight your ICU messages. &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5822319545116\&quot;&gt;Read more&lt;/a&gt;
+   * (Optional) We can validate and highlight your ICU messages. [Read more](https://support.phrase.com/hc/en-us/articles/5822319545116)
    * @return enableIcuMessageFormat
   **/
   @javax.annotation.Nullable
@@ -514,7 +514,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) Autopilot, requires machine_translation_enabled. &lt;a href&#x3D;\&quot;https://support.phrase.com/hc/en-us/articles/5822187934364\&quot;&gt;Read more&lt;/a&gt;
+   * (Optional) Autopilot, requires machine_translation_enabled. [Read more](https://support.phrase.com/hc/en-us/articles/5822187934364)
    * @return autotranslateEnabled
   **/
   @javax.annotation.Nullable
@@ -668,7 +668,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the &lt;a href&#x3D;&#39;#post-/projects/-project_id-/uploads&#39;&gt;&#x60;file_encoding&#x60;&lt;/a&gt; parameter for Uploads.
+   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
    * @return defaultEncoding
   **/
   @javax.annotation.Nullable

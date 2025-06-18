@@ -277,7 +277,7 @@ public class OrdersApi {
 
     /**
      * Create a new order
-     * Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
+     * Create a new order. Access token scope must include &#x60;orders.create&#x60;.
      * @param projectId Project ID (required)
      * @param orderCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -299,7 +299,7 @@ public class OrdersApi {
 
     /**
      * Create a new order
-     * Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
+     * Create a new order. Access token scope must include &#x60;orders.create&#x60;.
      * @param projectId Project ID (required)
      * @param orderCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -322,7 +322,7 @@ public class OrdersApi {
 
     /**
      * Create a new order (asynchronously)
-     * Create a new order. Access token scope must include &lt;code&gt;orders.create&lt;/code&gt;.
+     * Create a new order. Access token scope must include &#x60;orders.create&#x60;.
      * @param projectId Project ID (required)
      * @param orderCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

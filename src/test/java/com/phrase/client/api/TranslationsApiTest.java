@@ -245,7 +245,7 @@ public class TranslationsApiTest {
     /**
      * List translations by locale
      *
-     * List translations for a specific locale. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
+     * List translations for a specific locale. If you want to download all translations for one locale we recommend to use the &#x60;locales#download&#x60; endpoint. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -305,7 +305,7 @@ public class TranslationsApiTest {
     /**
      * List all translations
      *
-     * List translations for the given project. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
+     * List translations for the given project. If you want to download all translations for one locale we recommend to use the &#x60;locales#download&#x60; endpoint. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -348,7 +348,7 @@ public class TranslationsApiTest {
     /**
      * Search translations
      *
-     * Search translations for the given project. Provides the same search interface as &lt;code&gt;translations#index&lt;/code&gt; but allows POST requests to avoid limitations imposed by GET requests. If you want to download all translations for one locale we recommend to use the &lt;code&gt;locales#download&lt;/code&gt; endpoint.
+     * Search translations for the given project. Provides the same search interface as &#x60;translations#index&#x60; but allows POST requests to avoid limitations imposed by GET requests. If you want to download all translations for one locale we recommend to use the &#x60;locales#download&#x60; endpoint.
      *
      * @throws ApiException
      *          if the Api call fails

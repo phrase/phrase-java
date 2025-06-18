@@ -425,7 +425,7 @@ public class ReleaseTriggersApi {
 
     /**
      * List release triggers
-     * List all release triggers for the given distribution.&lt;br&gt; Note: Currently only one release trigger can exist per distribution. 
+     * List all release triggers for the given distribution.  Note: Currently only one release trigger can exist per distribution. 
      * @param accountId Account ID (required)
      * @param distributionId Distribution ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -447,7 +447,7 @@ public class ReleaseTriggersApi {
 
     /**
      * List release triggers
-     * List all release triggers for the given distribution.&lt;br&gt; Note: Currently only one release trigger can exist per distribution. 
+     * List all release triggers for the given distribution.  Note: Currently only one release trigger can exist per distribution. 
      * @param accountId Account ID (required)
      * @param distributionId Distribution ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -470,7 +470,7 @@ public class ReleaseTriggersApi {
 
     /**
      * List release triggers (asynchronously)
-     * List all release triggers for the given distribution.&lt;br&gt; Note: Currently only one release trigger can exist per distribution. 
+     * List all release triggers for the given distribution.  Note: Currently only one release trigger can exist per distribution. 
      * @param accountId Account ID (required)
      * @param distributionId Distribution ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)

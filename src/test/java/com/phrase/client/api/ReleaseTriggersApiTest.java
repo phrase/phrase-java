@@ -74,7 +74,7 @@ public class ReleaseTriggersApiTest {
     /**
      * List release triggers
      *
-     * List all release triggers for the given distribution.&lt;br&gt; Note: Currently only one release trigger can exist per distribution. 
+     * List all release triggers for the given distribution.  Note: Currently only one release trigger can exist per distribution. 
      *
      * @throws ApiException
      *          if the Api call fails

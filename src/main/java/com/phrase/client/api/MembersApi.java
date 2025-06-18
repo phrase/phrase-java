@@ -131,7 +131,7 @@ public class MembersApi {
 
     /**
      * Remove a user from the account
-     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -153,7 +153,7 @@ public class MembersApi {
 
     /**
      * Remove a user from the account
-     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -177,7 +177,7 @@ public class MembersApi {
 
     /**
      * Remove a user from the account (asynchronously)
-     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Remove a user from the account. The user will be removed from the account but not deleted from Phrase. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -276,7 +276,7 @@ public class MembersApi {
 
     /**
      * Get single member
-     * Get details on a single user in the account. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get details on a single user in the account. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -300,7 +300,7 @@ public class MembersApi {
 
     /**
      * Get single member
-     * Get details on a single user in the account. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get details on a single user in the account. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -325,7 +325,7 @@ public class MembersApi {
 
     /**
      * Get single member (asynchronously)
-     * Get details on a single user in the account. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get details on a single user in the account. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -431,7 +431,7 @@ public class MembersApi {
 
     /**
      * Update a member
-     * Update user permissions in the account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user permissions in the account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param memberUpdateParameters  (required)
@@ -456,7 +456,7 @@ public class MembersApi {
 
     /**
      * Update a member
-     * Update user permissions in the account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user permissions in the account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param memberUpdateParameters  (required)
@@ -482,7 +482,7 @@ public class MembersApi {
 
     /**
      * Update a member (asynchronously)
-     * Update user permissions in the account. Developers and translators need &lt;code&gt;project_ids&lt;/code&gt; and &lt;code&gt;locale_ids&lt;/code&gt; assigned to access them. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user permissions in the account. Developers and translators need &#x60;project_ids&#x60; and &#x60;locale_ids&#x60; assigned to access them. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param memberUpdateParameters  (required)
@@ -589,7 +589,7 @@ public class MembersApi {
 
     /**
      * Update a member&#39;s project settings
-     * Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user settings in the project. Access token scope must include &#x60;team.manage&#x60;.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param memberUpdateSettingsParameters  (required)
@@ -614,7 +614,7 @@ public class MembersApi {
 
     /**
      * Update a member&#39;s project settings
-     * Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user settings in the project. Access token scope must include &#x60;team.manage&#x60;.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param memberUpdateSettingsParameters  (required)
@@ -640,7 +640,7 @@ public class MembersApi {
 
     /**
      * Update a member&#39;s project settings (asynchronously)
-     * Update user settings in the project. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Update user settings in the project. Access token scope must include &#x60;team.manage&#x60;.
      * @param projectId Project ID (required)
      * @param id ID (required)
      * @param memberUpdateSettingsParameters  (required)
@@ -744,7 +744,7 @@ public class MembersApi {
 
     /**
      * List members
-     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -769,7 +769,7 @@ public class MembersApi {
 
     /**
      * List members
-     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -795,7 +795,7 @@ public class MembersApi {
 
     /**
      * List members (asynchronously)
-     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &lt;code&gt;team.manage&lt;/code&gt;.
+     * Get all users active in the account. It also lists resources like projects and locales the member has access to. In case nothing is shown the default access from the role is used. Access token scope must include &#x60;team.manage&#x60;.
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
