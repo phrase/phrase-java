@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleDownloadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T11:49:45.144258120Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T06:30:51.989673169Z[Etc/UTC]")
 public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_FILE_FORMAT = "file_format";
   @SerializedName(SERIALIZED_NAME_FILE_FORMAT)
@@ -89,6 +89,10 @@ public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_CUSTOM_METADATA_FILTERS = "custom_metadata_filters";
   @SerializedName(SERIALIZED_NAME_CUSTOM_METADATA_FILTERS)
   private Object customMetadataFilters;
+
+  public static final String SERIALIZED_NAME_UPDATED_SINCE = "updated_since";
+  @SerializedName(SERIALIZED_NAME_UPDATED_SINCE)
+  private String updatedSince;
 
   public LocaleDownloadCreateParameters() {
   }
@@ -430,6 +434,28 @@ public class LocaleDownloadCreateParameters {
     this.customMetadataFilters = customMetadataFilters;
   }
 
+
+  public LocaleDownloadCreateParameters updatedSince(String updatedSince) {
+    
+    this.updatedSince = updatedSince;
+    return this;
+  }
+
+   /**
+   * Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;). 
+   * @return updatedSince
+  **/
+  @javax.annotation.Nullable
+
+  public String getUpdatedSince() {
+    return updatedSince;
+  }
+
+
+  public void setUpdatedSince(String updatedSince) {
+    this.updatedSince = updatedSince;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -453,12 +479,13 @@ public class LocaleDownloadCreateParameters {
         Objects.equals(this.localeIds, localeDownloadCreateParameters.localeIds) &&
         Objects.equals(this.fallbackLocaleId, localeDownloadCreateParameters.fallbackLocaleId) &&
         Objects.equals(this.sourceLocaleId, localeDownloadCreateParameters.sourceLocaleId) &&
-        Objects.equals(this.customMetadataFilters, localeDownloadCreateParameters.customMetadataFilters);
+        Objects.equals(this.customMetadataFilters, localeDownloadCreateParameters.customMetadataFilters) &&
+        Objects.equals(this.updatedSince, localeDownloadCreateParameters.updatedSince);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, sourceLocaleId, customMetadataFilters);
+    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, sourceLocaleId, customMetadataFilters, updatedSince);
   }
 
   @Override
@@ -480,6 +507,7 @@ public class LocaleDownloadCreateParameters {
     sb.append("    fallbackLocaleId: ").append(toIndentedString(fallbackLocaleId)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    customMetadataFilters: ").append(toIndentedString(customMetadataFilters)).append("\n");
+    sb.append("    updatedSince: ").append(toIndentedString(updatedSince)).append("\n");
     sb.append("}");
     return sb.toString();
   }

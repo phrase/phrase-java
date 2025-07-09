@@ -258,7 +258,7 @@ null (empty response body)
 
 <a name="localeDownload"></a>
 # **localeDownload**
-> File localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters, localeIds)
+> File localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters, localeIds, updatedSince)
 
 Download a locale
 
@@ -315,8 +315,9 @@ public class Example {
     Boolean filterByPrefix = true; // Boolean | Only download translation keys containing the specified prefix, and remove the prefix from the generated file.
     Object customMetadataFilters = null; // Object | Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download. 
     List<String> localeIds = Arrays.asList(); // List<String> | Locale IDs or locale names
+    String updatedSince = "2023-01-01T00:00:00Z"; // String | Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., `2023-01-01T00:00:00Z`). 
     try {
-      File result = apiInstance.localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters, localeIds);
+      File result = apiInstance.localeDownload(projectId, id, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, branch, fileFormat, tags, tag, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, convertEmoji, formatOptions, encoding, skipUnverifiedTranslations, includeUnverifiedTranslations, useLastReviewedVersion, fallbackLocaleId, sourceLocaleId, translationKeyPrefix, filterByPrefix, customMetadataFilters, localeIds, updatedSince);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#localeDownload");
@@ -358,6 +359,7 @@ Name | Type | Description  | Notes
  **filterByPrefix** | **Boolean**| Only download translation keys containing the specified prefix, and remove the prefix from the generated file. | [optional]
  **customMetadataFilters** | [**Object**](.md)| Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  | [optional]
  **localeIds** | [**List&lt;String&gt;**](String.md)| Locale IDs or locale names | [optional]
+ **updatedSince** | **String**| Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  | [optional]
 
 ### Return type
 

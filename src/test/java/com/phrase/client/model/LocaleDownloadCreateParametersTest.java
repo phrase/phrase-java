@@ -160,4 +160,12 @@ public class LocaleDownloadCreateParametersTest {
         // TODO: test customMetadataFilters
     }
 
+    /**
+     * Test the property 'updatedSince'
+     */
+    @Test
+    public void updatedSinceTest() {
+        // TODO: test updatedSince
+    }
+
 }
