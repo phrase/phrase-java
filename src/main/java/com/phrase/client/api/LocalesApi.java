@@ -517,7 +517,7 @@ public class LocalesApi {
      * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @param localeIds Locale IDs or locale names (optional)
-     * @param updatedSince Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
+     * @param updatedSince Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -704,7 +704,7 @@ public class LocalesApi {
      * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @param localeIds Locale IDs or locale names (optional)
-     * @param updatedSince Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
+     * @param updatedSince Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -749,7 +749,7 @@ public class LocalesApi {
      * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @param localeIds Locale IDs or locale names (optional)
-     * @param updatedSince Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
+     * @param updatedSince Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -795,7 +795,7 @@ public class LocalesApi {
      * @param filterByPrefix Only download translation keys containing the specified prefix, and remove the prefix from the generated file. (optional)
      * @param customMetadataFilters Custom metadata filters. Provide the name of the metadata field and the value to filter by. Only keys with matching metadata will be included in the download.  (optional)
      * @param localeIds Locale IDs or locale names (optional)
-     * @param updatedSince Only include keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
+     * @param updatedSince Only include translations and keys that have been updated since the given date. The date must be in ISO 8601 format (e.g., &#x60;2023-01-01T00:00:00Z&#x60;).  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
