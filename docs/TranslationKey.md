@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **String** |  |  [optional]
 **nameHash** | **String** |  |  [optional]
 **plural** | **Boolean** |  |  [optional]
+**useOrdinalRules** | **Boolean** |  |  [optional]
 **tags** | **List&lt;String&gt;** |  |  [optional]
 **dataType** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

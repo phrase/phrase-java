@@ -99,6 +99,14 @@ public class LocaleTest {
     }
 
     /**
+     * Test the property 'ordinalPluralForms'
+     */
+    @Test
+    public void ordinalPluralFormsTest() {
+        // TODO: test ordinalPluralForms
+    }
+
+    /**
      * Test the property 'sourceLocale'
      */
     @Test

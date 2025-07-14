@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T08:04:27.503909165Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T07:59:43.536441990Z[Etc/UTC]")
 public class TranslationKey {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -50,6 +50,10 @@ public class TranslationKey {
   public static final String SERIALIZED_NAME_PLURAL = "plural";
   @SerializedName(SERIALIZED_NAME_PLURAL)
   private Boolean plural;
+
+  public static final String SERIALIZED_NAME_USE_ORDINAL_RULES = "use_ordinal_rules";
+  @SerializedName(SERIALIZED_NAME_USE_ORDINAL_RULES)
+  private Boolean useOrdinalRules;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
@@ -180,6 +184,28 @@ public class TranslationKey {
   }
 
 
+  public TranslationKey useOrdinalRules(Boolean useOrdinalRules) {
+    
+    this.useOrdinalRules = useOrdinalRules;
+    return this;
+  }
+
+   /**
+   * Get useOrdinalRules
+   * @return useOrdinalRules
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUseOrdinalRules() {
+    return useOrdinalRules;
+  }
+
+
+  public void setUseOrdinalRules(Boolean useOrdinalRules) {
+    this.useOrdinalRules = useOrdinalRules;
+  }
+
+
   public TranslationKey tags(List<String> tags) {
     
     this.tags = tags;
@@ -289,6 +315,7 @@ public class TranslationKey {
         Objects.equals(this.description, translationKey.description) &&
         Objects.equals(this.nameHash, translationKey.nameHash) &&
         Objects.equals(this.plural, translationKey.plural) &&
+        Objects.equals(this.useOrdinalRules, translationKey.useOrdinalRules) &&
         Objects.equals(this.tags, translationKey.tags) &&
         Objects.equals(this.dataType, translationKey.dataType) &&
         Objects.equals(this.createdAt, translationKey.createdAt) &&
@@ -297,7 +324,7 @@ public class TranslationKey {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, nameHash, plural, tags, dataType, createdAt, updatedAt);
+    return Objects.hash(id, name, description, nameHash, plural, useOrdinalRules, tags, dataType, createdAt, updatedAt);
   }
 
   @Override
@@ -309,6 +336,7 @@ public class TranslationKey {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    nameHash: ").append(toIndentedString(nameHash)).append("\n");
     sb.append("    plural: ").append(toIndentedString(plural)).append("\n");
+    sb.append("    useOrdinalRules: ").append(toIndentedString(useOrdinalRules)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

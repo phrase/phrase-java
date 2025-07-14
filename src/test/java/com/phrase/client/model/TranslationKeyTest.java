@@ -82,6 +82,14 @@ public class TranslationKeyTest {
     }
 
     /**
+     * Test the property 'useOrdinalRules'
+     */
+    @Test
+    public void useOrdinalRulesTest() {
+        // TODO: test useOrdinalRules
+    }
+
+    /**
      * Test the property 'tags'
      */
     @Test

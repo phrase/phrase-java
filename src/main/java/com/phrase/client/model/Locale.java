@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Locale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T08:04:27.503909165Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T07:59:43.536441990Z[Etc/UTC]")
 public class Locale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -59,6 +59,10 @@ public class Locale {
   public static final String SERIALIZED_NAME_PLURAL_FORMS = "plural_forms";
   @SerializedName(SERIALIZED_NAME_PLURAL_FORMS)
   private List<String> pluralForms;
+
+  public static final String SERIALIZED_NAME_ORDINAL_PLURAL_FORMS = "ordinal_plural_forms";
+  @SerializedName(SERIALIZED_NAME_ORDINAL_PLURAL_FORMS)
+  private List<String> ordinalPluralForms;
 
   public static final String SERIALIZED_NAME_SOURCE_LOCALE = "source_locale";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE)
@@ -241,6 +245,36 @@ public class Locale {
   }
 
 
+  public Locale ordinalPluralForms(List<String> ordinalPluralForms) {
+    
+    this.ordinalPluralForms = ordinalPluralForms;
+    return this;
+  }
+
+  public Locale addOrdinalPluralFormsItem(String ordinalPluralFormsItem) {
+    if (this.ordinalPluralForms == null) {
+      this.ordinalPluralForms = new ArrayList<>();
+    }
+    this.ordinalPluralForms.add(ordinalPluralFormsItem);
+    return this;
+  }
+
+   /**
+   * Get ordinalPluralForms
+   * @return ordinalPluralForms
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getOrdinalPluralForms() {
+    return ordinalPluralForms;
+  }
+
+
+  public void setOrdinalPluralForms(List<String> ordinalPluralForms) {
+    this.ordinalPluralForms = ordinalPluralForms;
+  }
+
+
   public Locale sourceLocale(LocalePreview sourceLocale) {
     
     this.sourceLocale = sourceLocale;
@@ -344,6 +378,7 @@ public class Locale {
         Objects.equals(this.main, locale.main) &&
         Objects.equals(this.rtl, locale.rtl) &&
         Objects.equals(this.pluralForms, locale.pluralForms) &&
+        Objects.equals(this.ordinalPluralForms, locale.ordinalPluralForms) &&
         Objects.equals(this.sourceLocale, locale.sourceLocale) &&
         Objects.equals(this.fallbackLocale, locale.fallbackLocale) &&
         Objects.equals(this.createdAt, locale.createdAt) &&
@@ -352,7 +387,7 @@ public class Locale {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, sourceLocale, fallbackLocale, createdAt, updatedAt);
+    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, ordinalPluralForms, sourceLocale, fallbackLocale, createdAt, updatedAt);
   }
 
   @Override
@@ -366,6 +401,7 @@ public class Locale {
     sb.append("    main: ").append(toIndentedString(main)).append("\n");
     sb.append("    rtl: ").append(toIndentedString(rtl)).append("\n");
     sb.append("    pluralForms: ").append(toIndentedString(pluralForms)).append("\n");
+    sb.append("    ordinalPluralForms: ").append(toIndentedString(ordinalPluralForms)).append("\n");
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    fallbackLocale: ").append(toIndentedString(fallbackLocale)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
