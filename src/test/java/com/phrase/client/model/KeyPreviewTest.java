@@ -62,4 +62,12 @@ public class KeyPreviewTest {
         // TODO: test plural
     }
 
+    /**
+     * Test the property 'useOrdinalRules'
+     */
+    @Test
+    public void useOrdinalRulesTest() {
+        // TODO: test useOrdinalRules
+    }
+
 }

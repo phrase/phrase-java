@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **name** | **String** | Key name |  [optional]
 **description** | **String** | Key description (usually includes contextual information for translators) |  [optional]
 **plural** | **Boolean** | Indicates whether key supports pluralization |  [optional]
+**useOrdinalRules** | **Boolean** | Indicates whether key uses ordinal rules for pluralization |  [optional]
 **namePlural** | **String** | Plural name for the key (used in some file formats, e.g. Gettext) |  [optional]
 **dataType** | **String** | Type of the key. Can be one of the following: string, number, boolean, array, markdown. |  [optional]
 **tags** | **String** | List of tags separated by comma to be associated with the key. |  [optional]

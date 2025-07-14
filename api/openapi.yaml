@@ -27809,12 +27809,15 @@ components:
         plural: true
         name: name
         id: id
+        use_ordinal_rules: true
       properties:
         id:
           type: string
         name:
           type: string
         plural:
+          type: boolean
+        use_ordinal_rules:
           type: boolean
       title: key_preview
       type: object
@@ -30285,14 +30288,17 @@ components:
           plural: true
           name: name
           id: id
+          use_ordinal_rules: true
         updated_at: 2000-01-23T04:56:07.000+00:00
         children:
         - plural: true
           name: name
           id: id
+          use_ordinal_rules: true
         - plural: true
           name: name
           id: id
+          use_ordinal_rules: true
         updated_by:
           name: name
           id: id
@@ -32599,6 +32605,10 @@ components:
           description: Indicates whether key supports pluralization
           type: boolean
           example: null
+        use_ordinal_rules:
+          description: Indicates whether key uses ordinal rules for pluralization
+          type: boolean
+          example: null
         name_plural:
           description: "Plural name for the key (used in some file formats, e.g. Gettext)"
           example: home.index.headlines
@@ -32732,6 +32742,10 @@ components:
           type: string
         plural:
           description: Indicates whether key supports pluralization
+          type: boolean
+          example: null
+        use_ordinal_rules:
+          description: Indicates whether key uses ordinal rules for pluralization
           type: boolean
           example: null
         name_plural:

@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T07:59:43.536441990Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T09:26:19.771754276Z[Etc/UTC]")
 public class KeyCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -44,6 +44,10 @@ public class KeyCreateParameters {
   public static final String SERIALIZED_NAME_PLURAL = "plural";
   @SerializedName(SERIALIZED_NAME_PLURAL)
   private Boolean plural;
+
+  public static final String SERIALIZED_NAME_USE_ORDINAL_RULES = "use_ordinal_rules";
+  @SerializedName(SERIALIZED_NAME_USE_ORDINAL_RULES)
+  private Boolean useOrdinalRules;
 
   public static final String SERIALIZED_NAME_NAME_PLURAL = "name_plural";
   @SerializedName(SERIALIZED_NAME_NAME_PLURAL)
@@ -189,6 +193,28 @@ public class KeyCreateParameters {
 
   public void setPlural(Boolean plural) {
     this.plural = plural;
+  }
+
+
+  public KeyCreateParameters useOrdinalRules(Boolean useOrdinalRules) {
+    
+    this.useOrdinalRules = useOrdinalRules;
+    return this;
+  }
+
+   /**
+   * Indicates whether key uses ordinal rules for pluralization
+   * @return useOrdinalRules
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUseOrdinalRules() {
+    return useOrdinalRules;
+  }
+
+
+  public void setUseOrdinalRules(Boolean useOrdinalRules) {
+    this.useOrdinalRules = useOrdinalRules;
   }
 
 
@@ -516,6 +542,7 @@ public class KeyCreateParameters {
         Objects.equals(this.name, keyCreateParameters.name) &&
         Objects.equals(this.description, keyCreateParameters.description) &&
         Objects.equals(this.plural, keyCreateParameters.plural) &&
+        Objects.equals(this.useOrdinalRules, keyCreateParameters.useOrdinalRules) &&
         Objects.equals(this.namePlural, keyCreateParameters.namePlural) &&
         Objects.equals(this.dataType, keyCreateParameters.dataType) &&
         Objects.equals(this.tags, keyCreateParameters.tags) &&
@@ -534,7 +561,7 @@ public class KeyCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, description, plural, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, defaultTranslationContent, autotranslate, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey, customMetadata);
+    return Objects.hash(branch, name, description, plural, useOrdinalRules, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, defaultTranslationContent, autotranslate, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey, customMetadata);
   }
 
   @Override
@@ -545,6 +572,7 @@ public class KeyCreateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    plural: ").append(toIndentedString(plural)).append("\n");
+    sb.append("    useOrdinalRules: ").append(toIndentedString(useOrdinalRules)).append("\n");
     sb.append("    namePlural: ").append(toIndentedString(namePlural)).append("\n");
     sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

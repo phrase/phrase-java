@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyPreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T07:59:43.536441990Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T09:26:19.771754276Z[Etc/UTC]")
 public class KeyPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -39,6 +39,10 @@ public class KeyPreview {
   public static final String SERIALIZED_NAME_PLURAL = "plural";
   @SerializedName(SERIALIZED_NAME_PLURAL)
   private Boolean plural;
+
+  public static final String SERIALIZED_NAME_USE_ORDINAL_RULES = "use_ordinal_rules";
+  @SerializedName(SERIALIZED_NAME_USE_ORDINAL_RULES)
+  private Boolean useOrdinalRules;
 
   public KeyPreview() {
   }
@@ -108,6 +112,28 @@ public class KeyPreview {
     this.plural = plural;
   }
 
+
+  public KeyPreview useOrdinalRules(Boolean useOrdinalRules) {
+    
+    this.useOrdinalRules = useOrdinalRules;
+    return this;
+  }
+
+   /**
+   * Get useOrdinalRules
+   * @return useOrdinalRules
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUseOrdinalRules() {
+    return useOrdinalRules;
+  }
+
+
+  public void setUseOrdinalRules(Boolean useOrdinalRules) {
+    this.useOrdinalRules = useOrdinalRules;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -119,12 +145,13 @@ public class KeyPreview {
     KeyPreview keyPreview = (KeyPreview) o;
     return Objects.equals(this.id, keyPreview.id) &&
         Objects.equals(this.name, keyPreview.name) &&
-        Objects.equals(this.plural, keyPreview.plural);
+        Objects.equals(this.plural, keyPreview.plural) &&
+        Objects.equals(this.useOrdinalRules, keyPreview.useOrdinalRules);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, plural);
+    return Objects.hash(id, name, plural, useOrdinalRules);
   }
 
   @Override
@@ -134,6 +161,7 @@ public class KeyPreview {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    plural: ").append(toIndentedString(plural)).append("\n");
+    sb.append("    useOrdinalRules: ").append(toIndentedString(useOrdinalRules)).append("\n");
     sb.append("}");
     return sb.toString();
   }

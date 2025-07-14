@@ -72,6 +72,14 @@ public class KeyCreateParametersTest {
     }
 
     /**
+     * Test the property 'useOrdinalRules'
+     */
+    @Test
+    public void useOrdinalRulesTest() {
+        // TODO: test useOrdinalRules
+    }
+
+    /**
      * Test the property 'namePlural'
      */
     @Test
