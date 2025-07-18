@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Branch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-15T05:13:20.396557957Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T13:10:22.504459410Z[Etc/UTC]")
 public class Branch {
   public static final String SERIALIZED_NAME_BASE_PROJECT_ID = "base_project_id";
   @SerializedName(SERIALIZED_NAME_BASE_PROJECT_ID)
