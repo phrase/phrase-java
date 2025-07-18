@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobReopenParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T13:37:42.234717194Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T13:38:06.471859863Z[Etc/UTC]")
 public class JobReopenParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
