@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 <a name="jobShow"></a>
 # **jobShow**
-> JobDetails jobShow(projectId, id, xPhraseAppOTP, branch)
+> JobDetails jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations)
 
 Get a single job
 
@@ -625,9 +625,10 @@ public class Example {
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = "my-feature-branch"; // String | specify the branch to use
+    String branch = "my-feature-branch"; // String | Branch to use
+    Boolean includeAnnotations = false; // Boolean | Include job-locale annotations in the response
     try {
-      JobDetails result = apiInstance.jobShow(projectId, id, xPhraseAppOTP, branch);
+      JobDetails result = apiInstance.jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobsApi#jobShow");
@@ -647,7 +648,8 @@ Name | Type | Description  | Notes
  **projectId** | **String**| Project ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **branch** | **String**| specify the branch to use | [optional]
+ **branch** | **String**| Branch to use | [optional]
+ **includeAnnotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
 
 ### Return type
 

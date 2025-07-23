@@ -185,7 +185,8 @@ public class JobsApiTest {
         String id = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        JobDetails response = api.jobShow(projectId, id, xPhraseAppOTP, branch);
+        Boolean includeAnnotations = null;
+        JobDetails response = api.jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations);
 
         // TODO: test validations
     }

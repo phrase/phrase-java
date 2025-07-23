@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.JobAnnotationShort;
 import com.phrase.client.model.JobPreview;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.LocaleTeamPreview;
@@ -33,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobLocale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-21T05:52:51.596147030Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-23T13:26:59.479706588Z[Etc/UTC]")
 public class JobLocale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -66,6 +67,10 @@ public class JobLocale {
   public static final String SERIALIZED_NAME_REVIEW_COMPLETED_AT = "review_completed_at";
   @SerializedName(SERIALIZED_NAME_REVIEW_COMPLETED_AT)
   private OffsetDateTime reviewCompletedAt;
+
+  public static final String SERIALIZED_NAME_ANNOTATIONS = "annotations";
+  @SerializedName(SERIALIZED_NAME_ANNOTATIONS)
+  private List<JobAnnotationShort> annotations;
 
   public JobLocale() {
   }
@@ -261,6 +266,36 @@ public class JobLocale {
     this.reviewCompletedAt = reviewCompletedAt;
   }
 
+
+  public JobLocale annotations(List<JobAnnotationShort> annotations) {
+    
+    this.annotations = annotations;
+    return this;
+  }
+
+  public JobLocale addAnnotationsItem(JobAnnotationShort annotationsItem) {
+    if (this.annotations == null) {
+      this.annotations = new ArrayList<>();
+    }
+    this.annotations.add(annotationsItem);
+    return this;
+  }
+
+   /**
+   * Get annotations
+   * @return annotations
+  **/
+  @javax.annotation.Nullable
+
+  public List<JobAnnotationShort> getAnnotations() {
+    return annotations;
+  }
+
+
+  public void setAnnotations(List<JobAnnotationShort> annotations) {
+    this.annotations = annotations;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -277,12 +312,13 @@ public class JobLocale {
         Objects.equals(this.teams, jobLocale.teams) &&
         Objects.equals(this.completed, jobLocale.completed) &&
         Objects.equals(this.translationCompletedAt, jobLocale.translationCompletedAt) &&
-        Objects.equals(this.reviewCompletedAt, jobLocale.reviewCompletedAt);
+        Objects.equals(this.reviewCompletedAt, jobLocale.reviewCompletedAt) &&
+        Objects.equals(this.annotations, jobLocale.annotations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, job, locale, users, teams, completed, translationCompletedAt, reviewCompletedAt);
+    return Objects.hash(id, job, locale, users, teams, completed, translationCompletedAt, reviewCompletedAt, annotations);
   }
 
   @Override
@@ -297,6 +333,7 @@ public class JobLocale {
     sb.append("    completed: ").append(toIndentedString(completed)).append("\n");
     sb.append("    translationCompletedAt: ").append(toIndentedString(translationCompletedAt)).append("\n");
     sb.append("    reviewCompletedAt: ").append(toIndentedString(reviewCompletedAt)).append("\n");
+    sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

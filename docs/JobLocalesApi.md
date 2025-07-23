@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 <a name="jobLocaleShow"></a>
 # **jobLocaleShow**
-> JobLocale jobLocaleShow(projectId, jobId, id, xPhraseAppOTP, branch)
+> JobLocale jobLocaleShow(projectId, jobId, id, xPhraseAppOTP, branch, includeAnnotations)
 
 Show single job target locale
 
@@ -388,8 +388,9 @@ public class Example {
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = "my-feature-branch"; // String | Branch to use
+    Boolean includeAnnotations = false; // Boolean | Include job-locale annotations in the response
     try {
-      JobLocale result = apiInstance.jobLocaleShow(projectId, jobId, id, xPhraseAppOTP, branch);
+      JobLocale result = apiInstance.jobLocaleShow(projectId, jobId, id, xPhraseAppOTP, branch, includeAnnotations);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobLocalesApi#jobLocaleShow");
@@ -411,6 +412,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| Branch to use | [optional]
+ **includeAnnotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
 
 ### Return type
 
@@ -601,7 +603,7 @@ Name | Type | Description  | Notes
 
 <a name="jobLocalesList"></a>
 # **jobLocalesList**
-> List&lt;JobLocale&gt; jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch)
+> List&lt;JobLocale&gt; jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch, includeAnnotations)
 
 List job target locales
 
@@ -639,8 +641,9 @@ public class Example {
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = "my-feature-branch"; // String | Branch to use
+    Boolean includeAnnotations = false; // Boolean | Include job-locale annotations in the response
     try {
-      List<JobLocale> result = apiInstance.jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch);
+      List<JobLocale> result = apiInstance.jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch, includeAnnotations);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobLocalesApi#jobLocalesList");
@@ -663,6 +666,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| Branch to use | [optional]
+ **includeAnnotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
 
 ### Return type
 

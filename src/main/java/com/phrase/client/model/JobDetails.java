@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.BranchName;
+import com.phrase.client.model.JobAnnotationShort;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
@@ -35,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-21T05:52:51.596147030Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-23T13:26:59.479706588Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -100,6 +101,10 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_KEYS = "keys";
   @SerializedName(SERIALIZED_NAME_KEYS)
   private List<KeyPreview> keys;
+
+  public static final String SERIALIZED_NAME_ANNOTATIONS = "annotations";
+  @SerializedName(SERIALIZED_NAME_ANNOTATIONS)
+  private List<JobAnnotationShort> annotations;
 
   public JobDetails() {
   }
@@ -471,6 +476,36 @@ public class JobDetails {
     this.keys = keys;
   }
 
+
+  public JobDetails annotations(List<JobAnnotationShort> annotations) {
+    
+    this.annotations = annotations;
+    return this;
+  }
+
+  public JobDetails addAnnotationsItem(JobAnnotationShort annotationsItem) {
+    if (this.annotations == null) {
+      this.annotations = new ArrayList<>();
+    }
+    this.annotations.add(annotationsItem);
+    return this;
+  }
+
+   /**
+   * Get annotations
+   * @return annotations
+  **/
+  @javax.annotation.Nullable
+
+  public List<JobAnnotationShort> getAnnotations() {
+    return annotations;
+  }
+
+
+  public void setAnnotations(List<JobAnnotationShort> annotations) {
+    this.annotations = annotations;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -495,7 +530,8 @@ public class JobDetails {
         Objects.equals(this.sourceTranslationsUpdatedAt, jobDetails.sourceTranslationsUpdatedAt) &&
         Objects.equals(this.sourceLocale, jobDetails.sourceLocale) &&
         Objects.equals(this.locales, jobDetails.locales) &&
-        Objects.equals(this.keys, jobDetails.keys);
+        Objects.equals(this.keys, jobDetails.keys) &&
+        Objects.equals(this.annotations, jobDetails.annotations);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -504,7 +540,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys, annotations);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -534,6 +570,7 @@ public class JobDetails {
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
+    sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

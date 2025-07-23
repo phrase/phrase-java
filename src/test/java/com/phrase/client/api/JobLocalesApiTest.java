@@ -131,7 +131,8 @@ public class JobLocalesApiTest {
         String id = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        JobLocale response = api.jobLocaleShow(projectId, jobId, id, xPhraseAppOTP, branch);
+        Boolean includeAnnotations = null;
+        JobLocale response = api.jobLocaleShow(projectId, jobId, id, xPhraseAppOTP, branch, includeAnnotations);
 
         // TODO: test validations
     }
@@ -191,7 +192,8 @@ public class JobLocalesApiTest {
         Integer page = null;
         Integer perPage = null;
         String branch = null;
-        List<JobLocale> response = api.jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch);
+        Boolean includeAnnotations = null;
+        List<JobLocale> response = api.jobLocalesList(projectId, jobId, xPhraseAppOTP, page, perPage, branch, includeAnnotations);
 
         // TODO: test validations
     }

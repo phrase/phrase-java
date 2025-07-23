@@ -17,6 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.JobAnnotationShort;
 import com.phrase.client.model.JobPreview;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.LocaleTeamPreview;
@@ -107,6 +108,14 @@ public class JobLocaleTest {
     @Test
     public void reviewCompletedAtTest() {
         // TODO: test reviewCompletedAt
+    }
+
+    /**
+     * Test the property 'annotations'
+     */
+    @Test
+    public void annotationsTest() {
+        // TODO: test annotations
     }
 
 }

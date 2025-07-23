@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.BranchName;
+import com.phrase.client.model.JobAnnotationShort;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
@@ -173,6 +174,14 @@ public class JobDetailsTest {
     @Test
     public void keysTest() {
         // TODO: test keys
+    }
+
+    /**
+     * Test the property 'annotations'
+     */
+    @Test
+    public void annotationsTest() {
+        // TODO: test annotations
     }
 
 }

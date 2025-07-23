@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **completed** | **Boolean** |  |  [optional]
 **translationCompletedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **reviewCompletedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**annotations** | [**List&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) |  |  [optional]
 
 
 

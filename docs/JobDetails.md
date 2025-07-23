@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **sourceLocale** | [**LocalePreview**](LocalePreview.md) |  |  [optional]
 **locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
 **keys** | [**List&lt;KeyPreview&gt;**](KeyPreview.md) |  |  [optional]
+**annotations** | [**List&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) |  |  [optional]
 
 
 

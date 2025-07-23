@@ -80,6 +80,10 @@ docs/InvitationUpdateParameters.md
 docs/InvitationUpdateSettingsParameters.md
 docs/InvitationsApi.md
 docs/Job.md
+docs/JobAnnotation.md
+docs/JobAnnotationShort.md
+docs/JobAnnotationUpdateParameters.md
+docs/JobAnnotationsApi.md
 docs/JobComment.md
 docs/JobCommentCreateParameters.md
 docs/JobCommentUpdateParameters.md
@@ -311,6 +315,7 @@ src/main/java/com/phrase/client/api/GlossaryTermTranslationsApi.java
 src/main/java/com/phrase/client/api/GlossaryTermsApi.java
 src/main/java/com/phrase/client/api/IcuApi.java
 src/main/java/com/phrase/client/api/InvitationsApi.java
+src/main/java/com/phrase/client/api/JobAnnotationsApi.java
 src/main/java/com/phrase/client/api/JobCommentsApi.java
 src/main/java/com/phrase/client/api/JobLocalesApi.java
 src/main/java/com/phrase/client/api/JobTemplateLocalesApi.java
@@ -410,6 +415,9 @@ src/main/java/com/phrase/client/model/InvitationCreateParameters.java
 src/main/java/com/phrase/client/model/InvitationUpdateParameters.java
 src/main/java/com/phrase/client/model/InvitationUpdateSettingsParameters.java
 src/main/java/com/phrase/client/model/Job.java
+src/main/java/com/phrase/client/model/JobAnnotation.java
+src/main/java/com/phrase/client/model/JobAnnotationShort.java
+src/main/java/com/phrase/client/model/JobAnnotationUpdateParameters.java
 src/main/java/com/phrase/client/model/JobComment.java
 src/main/java/com/phrase/client/model/JobCommentCreateParameters.java
 src/main/java/com/phrase/client/model/JobCommentUpdateParameters.java
@@ -582,6 +590,7 @@ src/test/java/com/phrase/client/api/GlossaryTermTranslationsApiTest.java
 src/test/java/com/phrase/client/api/GlossaryTermsApiTest.java
 src/test/java/com/phrase/client/api/IcuApiTest.java
 src/test/java/com/phrase/client/api/InvitationsApiTest.java
+src/test/java/com/phrase/client/api/JobAnnotationsApiTest.java
 src/test/java/com/phrase/client/api/JobCommentsApiTest.java
 src/test/java/com/phrase/client/api/JobLocalesApiTest.java
 src/test/java/com/phrase/client/api/JobTemplateLocalesApiTest.java
@@ -672,6 +681,9 @@ src/test/java/com/phrase/client/model/InvitationCreateParametersTest.java
 src/test/java/com/phrase/client/model/InvitationTest.java
 src/test/java/com/phrase/client/model/InvitationUpdateParametersTest.java
 src/test/java/com/phrase/client/model/InvitationUpdateSettingsParametersTest.java
+src/test/java/com/phrase/client/model/JobAnnotationShortTest.java
+src/test/java/com/phrase/client/model/JobAnnotationTest.java
+src/test/java/com/phrase/client/model/JobAnnotationUpdateParametersTest.java
 src/test/java/com/phrase/client/model/JobCommentCreateParametersTest.java
 src/test/java/com/phrase/client/model/JobCommentTest.java
 src/test/java/com/phrase/client/model/JobCommentUpdateParametersTest.java
