@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix)
+> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix)
 
 Upload a new file
 
@@ -51,6 +51,7 @@ public class Example {
     String branch = "branch_example"; // String | specify the branch to use
     String tags = "tags_example"; // String | List of tags separated by comma to be associated with the new keys contained in the upload.
     Boolean updateTranslations = true; // Boolean | Indicates whether existing translations should be updated with the file content.
+    Boolean updateCustomMetadata = true; // Boolean | Indicates whether existing custom metadata properties should be updated with the file content
     Boolean updateTranslationKeys = true; // Boolean | Pass `false` here to prevent new keys from being created and existing keys updated.
     Boolean updateTranslationsOnSourceMatch = false; // Boolean | Update target translations only if the source translations of the uploaded multilingual file match the stored translations.
     Boolean updateDescriptions = true; // Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
@@ -66,7 +67,7 @@ public class Example {
     Boolean tagOnlyAffectedKeys = false; // Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
     String translationKeyPrefix = "translationKeyPrefix_example"; // String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
     try {
-      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix);
+      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -91,6 +92,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional]
  **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional]
  **updateTranslations** | **Boolean**| Indicates whether existing translations should be updated with the file content. | [optional]
+ **updateCustomMetadata** | **Boolean**| Indicates whether existing custom metadata properties should be updated with the file content | [optional] [default to true]
  **updateTranslationKeys** | **Boolean**| Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. | [optional] [default to true]
  **updateTranslationsOnSourceMatch** | **Boolean**| Update target translations only if the source translations of the uploaded multilingual file match the stored translations. | [optional] [default to false]
  **updateDescriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional]
