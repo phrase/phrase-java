@@ -51,7 +51,7 @@ public class Example {
     String branch = "branch_example"; // String | specify the branch to use
     String tags = "tags_example"; // String | List of tags separated by comma to be associated with the new keys contained in the upload.
     Boolean updateTranslations = true; // Boolean | Indicates whether existing translations should be updated with the file content.
-    Boolean updateCustomMetadata = true; // Boolean | Indicates whether existing custom metadata properties should be updated with the file content
+    Boolean updateCustomMetadata = true; // Boolean | Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property.
     Boolean updateTranslationKeys = true; // Boolean | Pass `false` here to prevent new keys from being created and existing keys updated.
     Boolean updateTranslationsOnSourceMatch = false; // Boolean | Update target translations only if the source translations of the uploaded multilingual file match the stored translations.
     Boolean updateDescriptions = true; // Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
  **branch** | **String**| specify the branch to use | [optional]
  **tags** | **String**| List of tags separated by comma to be associated with the new keys contained in the upload. | [optional]
  **updateTranslations** | **Boolean**| Indicates whether existing translations should be updated with the file content. | [optional]
- **updateCustomMetadata** | **Boolean**| Indicates whether existing custom metadata properties should be updated with the file content | [optional] [default to true]
+ **updateCustomMetadata** | **Boolean**| Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property. | [optional] [default to true]
  **updateTranslationKeys** | **Boolean**| Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. | [optional] [default to true]
  **updateTranslationsOnSourceMatch** | **Boolean**| Update target translations only if the source translations of the uploaded multilingual file match the stored translations. | [optional] [default to false]
  **updateDescriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional]
