@@ -86,4 +86,12 @@ public class TranslationUpdateParametersTest {
         // TODO: test autotranslate
     }
 
+    /**
+     * Test the property 'reviewed'
+     */
+    @Test
+    public void reviewedTest() {
+        // TODO: test reviewed
+    }
+
 }

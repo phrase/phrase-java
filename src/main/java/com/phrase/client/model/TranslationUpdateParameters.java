@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T11:36:29.497950432Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T11:51:19.747770813Z[Etc/UTC]")
 public class TranslationUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -51,6 +51,10 @@ public class TranslationUpdateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
+
+  public static final String SERIALIZED_NAME_REVIEWED = "reviewed";
+  @SerializedName(SERIALIZED_NAME_REVIEWED)
+  private Boolean reviewed;
 
   public TranslationUpdateParameters() {
   }
@@ -186,6 +190,28 @@ public class TranslationUpdateParameters {
     this.autotranslate = autotranslate;
   }
 
+
+  public TranslationUpdateParameters reviewed(Boolean reviewed) {
+    
+    this.reviewed = reviewed;
+    return this;
+  }
+
+   /**
+   * When set to &#x60;true&#x60;, the translation will be marked as reviewed.
+   * @return reviewed
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getReviewed() {
+    return reviewed;
+  }
+
+
+  public void setReviewed(Boolean reviewed) {
+    this.reviewed = reviewed;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -200,12 +226,13 @@ public class TranslationUpdateParameters {
         Objects.equals(this.pluralSuffix, translationUpdateParameters.pluralSuffix) &&
         Objects.equals(this.unverified, translationUpdateParameters.unverified) &&
         Objects.equals(this.excluded, translationUpdateParameters.excluded) &&
-        Objects.equals(this.autotranslate, translationUpdateParameters.autotranslate);
+        Objects.equals(this.autotranslate, translationUpdateParameters.autotranslate) &&
+        Objects.equals(this.reviewed, translationUpdateParameters.reviewed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, content, pluralSuffix, unverified, excluded, autotranslate);
+    return Objects.hash(branch, content, pluralSuffix, unverified, excluded, autotranslate, reviewed);
   }
 
   @Override
@@ -218,6 +245,7 @@ public class TranslationUpdateParameters {
     sb.append("    unverified: ").append(toIndentedString(unverified)).append("\n");
     sb.append("    excluded: ").append(toIndentedString(excluded)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    reviewed: ").append(toIndentedString(reviewed)).append("\n");
     sb.append("}");
     return sb.toString();
   }
