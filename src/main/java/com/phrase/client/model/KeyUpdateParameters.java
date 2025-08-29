@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T13:12:16.976111039Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-29T07:12:48.537785925Z[Etc/UTC]")
 public class KeyUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)

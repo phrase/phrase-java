@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TagWithStats1Statistics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T13:12:16.976111039Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-29T07:12:48.537785925Z[Etc/UTC]")
 public class TagWithStats1Statistics {
   public static final String SERIALIZED_NAME_KEYS_TOTAL_COUNT = "keys_total_count";
   @SerializedName(SERIALIZED_NAME_KEYS_TOTAL_COUNT)
