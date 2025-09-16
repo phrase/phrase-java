@@ -29,10 +29,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Create GitHub Release
-        uses: ncipollo/release-action@6c75be85e571768fa31b40abf38de58ba0397db5 # pin@v1.13.0
-        with:
-          tag: 3.8.0
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
@@ -44,11 +40,6 @@ jobs:
         with:
           gradle-version: 8.14.3
       -
-        name: Version
-        id: version
-        run: |
-          echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
-      -
         name: Install GPG key
         id: install-gpg-key
         run: |
@@ -59,6 +50,6 @@ jobs:
         run: bash ./.github/workflows/release.sh -xe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ steps.version.outputs.VERSION }}
+          VERSION: 3.8.0
           OSSRH_USER: "${{ secrets.OSSRH_USER }}"
           OSSRH_PASSWORD: "${{ secrets.OSSRH_PASSWORD }}"
