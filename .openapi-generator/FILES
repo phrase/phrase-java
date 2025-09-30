@@ -17,6 +17,10 @@ docs/AuthorizationCreateParameters.md
 docs/AuthorizationUpdateParameters.md
 docs/AuthorizationWithToken.md
 docs/AuthorizationsApi.md
+docs/Automation.md
+docs/AutomationsApi.md
+docs/AutomationsCreateParameters.md
+docs/AutomationsCreateParameters1.md
 docs/BlacklistedKey.md
 docs/BlacklistedKeyCreateParameters.md
 docs/BlacklistedKeyUpdateParameters.md
@@ -300,6 +304,7 @@ src/main/java/com/phrase/client/ServerVariable.java
 src/main/java/com/phrase/client/StringUtil.java
 src/main/java/com/phrase/client/api/AccountsApi.java
 src/main/java/com/phrase/client/api/AuthorizationsApi.java
+src/main/java/com/phrase/client/api/AutomationsApi.java
 src/main/java/com/phrase/client/api/BlacklistedKeysApi.java
 src/main/java/com/phrase/client/api/BranchesApi.java
 src/main/java/com/phrase/client/api/CommentReactionsApi.java
@@ -367,6 +372,9 @@ src/main/java/com/phrase/client/model/Authorization.java
 src/main/java/com/phrase/client/model/AuthorizationCreateParameters.java
 src/main/java/com/phrase/client/model/AuthorizationUpdateParameters.java
 src/main/java/com/phrase/client/model/AuthorizationWithToken.java
+src/main/java/com/phrase/client/model/Automation.java
+src/main/java/com/phrase/client/model/AutomationsCreateParameters.java
+src/main/java/com/phrase/client/model/AutomationsCreateParameters1.java
 src/main/java/com/phrase/client/model/BlacklistedKey.java
 src/main/java/com/phrase/client/model/BlacklistedKeyCreateParameters.java
 src/main/java/com/phrase/client/model/BlacklistedKeyUpdateParameters.java
@@ -575,6 +583,7 @@ src/main/java/com/phrase/client/model/WebhookDelivery.java
 src/main/java/com/phrase/client/model/WebhookUpdateParameters.java
 src/test/java/com/phrase/client/api/AccountsApiTest.java
 src/test/java/com/phrase/client/api/AuthorizationsApiTest.java
+src/test/java/com/phrase/client/api/AutomationsApiTest.java
 src/test/java/com/phrase/client/api/BlacklistedKeysApiTest.java
 src/test/java/com/phrase/client/api/BranchesApiTest.java
 src/test/java/com/phrase/client/api/CommentReactionsApiTest.java
@@ -634,6 +643,9 @@ src/test/java/com/phrase/client/model/AuthorizationCreateParametersTest.java
 src/test/java/com/phrase/client/model/AuthorizationTest.java
 src/test/java/com/phrase/client/model/AuthorizationUpdateParametersTest.java
 src/test/java/com/phrase/client/model/AuthorizationWithTokenTest.java
+src/test/java/com/phrase/client/model/AutomationTest.java
+src/test/java/com/phrase/client/model/AutomationsCreateParameters1Test.java
+src/test/java/com/phrase/client/model/AutomationsCreateParametersTest.java
 src/test/java/com/phrase/client/model/BlacklistedKeyCreateParametersTest.java
 src/test/java/com/phrase/client/model/BlacklistedKeyTest.java
 src/test/java/com/phrase/client/model/BlacklistedKeyUpdateParametersTest.java
