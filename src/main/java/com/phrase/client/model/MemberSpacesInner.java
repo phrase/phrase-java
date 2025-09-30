@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MemberSpacesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-30T06:22:12.346540407Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-30T06:22:26.327354747Z[Etc/UTC]")
 public class MemberSpacesInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
