@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**branchDelete**](BranchesApi.md#branchDelete) | **DELETE** /projects/{project_id}/branches/{name} | Delete a branch
 [**branchMerge**](BranchesApi.md#branchMerge) | **PATCH** /projects/{project_id}/branches/{name}/merge | Merge a branch
 [**branchShow**](BranchesApi.md#branchShow) | **GET** /projects/{project_id}/branches/{name} | Get a single branch
+[**branchSync**](BranchesApi.md#branchSync) | **PATCH** /projects/{project_id}/branches/{name}/sync | Sync a branch
 [**branchUpdate**](BranchesApi.md#branchUpdate) | **PATCH** /projects/{project_id}/branches/{name} | Update a branch
 [**branchesList**](BranchesApi.md#branchesList) | **GET** /projects/{project_id}/branches | List branches
 
@@ -257,7 +258,7 @@ null (empty response body)
 
 Merge a branch
 
-Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
 
 ### Example
 ```java
@@ -403,6 +404,87 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+
+<a name="branchSync"></a>
+# **branchSync**
+> branchSync(projectId, name, branchSyncParameters, xPhraseAppOTP)
+
+Sync a branch
+
+Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+
+### Example
+```java
+// Import classes:
+import com.phrase.client.ApiClient;
+import com.phrase.client.ApiException;
+import com.phrase.client.Configuration;
+import com.phrase.client.auth.*;
+import com.phrase.client.models.*;
+import com.phrase.client.api.BranchesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.phrase.com/v2");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    // Configure API key authorization: Token
+    ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+    Token.setApiKey("YOUR API KEY");
+    Token.setApiKeyPrefix("token");
+
+    BranchesApi apiInstance = new BranchesApi(defaultClient);
+    String projectId = "projectId_example"; // String | Project ID
+    String name = "name_example"; // String | name
+    BranchSyncParameters branchSyncParameters = new BranchSyncParameters(); // BranchSyncParameters | 
+    String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    try {
+      apiInstance.branchSync(projectId, name, branchSyncParameters, xPhraseAppOTP);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling BranchesApi#branchSync");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| Project ID |
+ **name** | **String**| name |
+ **branchSyncParameters** | [**BranchSyncParameters**](BranchSyncParameters.md)|  |
+ **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |

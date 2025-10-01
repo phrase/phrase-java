@@ -24,36 +24,36 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * AffectedCount
+ * BranchSyncParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-01T08:02:00.829017195Z[Etc/UTC]")
-public class AffectedCount {
-  public static final String SERIALIZED_NAME_RECORDS_AFFECTED = "records_affected";
-  @SerializedName(SERIALIZED_NAME_RECORDS_AFFECTED)
-  private Integer recordsAffected;
+public class BranchSyncParameters {
+  public static final String SERIALIZED_NAME_STRATEGY = "strategy";
+  @SerializedName(SERIALIZED_NAME_STRATEGY)
+  private String strategy;
 
-  public AffectedCount() {
+  public BranchSyncParameters() {
   }
 
-  public AffectedCount recordsAffected(Integer recordsAffected) {
+  public BranchSyncParameters strategy(String strategy) {
     
-    this.recordsAffected = recordsAffected;
+    this.strategy = strategy;
     return this;
   }
 
    /**
-   * Get recordsAffected
-   * @return recordsAffected
+   * strategy used for conflicts, use_main or use_branch
+   * @return strategy
   **/
   @javax.annotation.Nullable
 
-  public Integer getRecordsAffected() {
-    return recordsAffected;
+  public String getStrategy() {
+    return strategy;
   }
 
 
-  public void setRecordsAffected(Integer recordsAffected) {
-    this.recordsAffected = recordsAffected;
+  public void setStrategy(String strategy) {
+    this.strategy = strategy;
   }
 
   @Override
@@ -64,20 +64,20 @@ public class AffectedCount {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AffectedCount affectedCount = (AffectedCount) o;
-    return Objects.equals(this.recordsAffected, affectedCount.recordsAffected);
+    BranchSyncParameters branchSyncParameters = (BranchSyncParameters) o;
+    return Objects.equals(this.strategy, branchSyncParameters.strategy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recordsAffected);
+    return Objects.hash(strategy);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AffectedCount {\n");
-    sb.append("    recordsAffected: ").append(toIndentedString(recordsAffected)).append("\n");
+    sb.append("class BranchSyncParameters {\n");
+    sb.append("    strategy: ").append(toIndentedString(strategy)).append("\n");
     sb.append("}");
     return sb.toString();
   }

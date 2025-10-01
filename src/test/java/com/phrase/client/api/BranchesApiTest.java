@@ -16,6 +16,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.model.Branch;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
+import com.phrase.client.model.BranchSyncParameters;
 import com.phrase.client.model.BranchUpdateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -91,7 +92,7 @@ public class BranchesApiTest {
     /**
      * Merge a branch
      *
-     * Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+     * Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -121,6 +122,25 @@ public class BranchesApiTest {
         String name = null;
         String xPhraseAppOTP = null;
         Branch response = api.branchShow(projectId, name, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Sync a branch
+     *
+     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void branchSyncTest() throws ApiException {
+        String projectId = null;
+        String name = null;
+        BranchSyncParameters branchSyncParameters = null;
+        String xPhraseAppOTP = null;
+        api.branchSync(projectId, name, branchSyncParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

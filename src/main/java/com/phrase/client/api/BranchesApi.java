@@ -29,6 +29,7 @@ import java.io.IOException;
 import com.phrase.client.model.Branch;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
+import com.phrase.client.model.BranchSyncParameters;
 import com.phrase.client.model.BranchUpdateParameters;
 
 import java.lang.reflect.Type;
@@ -549,7 +550,7 @@ public class BranchesApi {
 
     /**
      * Merge a branch
-     * Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+     * Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchMergeParameters  (required)
@@ -570,7 +571,7 @@ public class BranchesApi {
 
     /**
      * Merge a branch
-     * Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+     * Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchMergeParameters  (required)
@@ -593,7 +594,7 @@ public class BranchesApi {
 
     /**
      * Merge a branch (asynchronously)
-     * Merge an existing branch.   *Note: Merging a branch may take several minutes depending on diff size.* 
+     * Merge an existing branch.  *Note: Merging a branch may take several minutes depending on diff size.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchMergeParameters  (required)
@@ -755,6 +756,152 @@ public class BranchesApi {
         okhttp3.Call localVarCall = branchShowValidateBeforeCall(projectId, name, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<Branch>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for branchSync
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchSyncParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call branchSyncCall(String projectId, String name, BranchSyncParameters branchSyncParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = branchSyncParameters;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/branches/{name}/sync"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call branchSyncValidateBeforeCall(String projectId, String name, BranchSyncParameters branchSyncParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling branchSync(Async)");
+        }
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling branchSync(Async)");
+        }
+        
+        // verify the required parameter 'branchSyncParameters' is set
+        if (branchSyncParameters == null) {
+            throw new ApiException("Missing the required parameter 'branchSyncParameters' when calling branchSync(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = branchSyncCall(projectId, name, branchSyncParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Sync a branch
+     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchSyncParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void branchSync(String projectId, String name, BranchSyncParameters branchSyncParameters, String xPhraseAppOTP) throws ApiException {
+        branchSyncWithHttpInfo(projectId, name, branchSyncParameters, xPhraseAppOTP);
+    }
+
+    /**
+     * Sync a branch
+     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchSyncParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> branchSyncWithHttpInfo(String projectId, String name, BranchSyncParameters branchSyncParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = branchSyncValidateBeforeCall(projectId, name, branchSyncParameters, xPhraseAppOTP, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Sync a branch (asynchronously)
+     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchSyncParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call branchSyncAsync(String projectId, String name, BranchSyncParameters branchSyncParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = branchSyncValidateBeforeCall(projectId, name, branchSyncParameters, xPhraseAppOTP, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**

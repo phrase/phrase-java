@@ -29,6 +29,7 @@ docs/Branch.md
 docs/BranchCreateParameters.md
 docs/BranchMergeParameters.md
 docs/BranchName.md
+docs/BranchSyncParameters.md
 docs/BranchUpdateParameters.md
 docs/BranchesApi.md
 docs/Comment.md
@@ -382,6 +383,7 @@ src/main/java/com/phrase/client/model/Branch.java
 src/main/java/com/phrase/client/model/BranchCreateParameters.java
 src/main/java/com/phrase/client/model/BranchMergeParameters.java
 src/main/java/com/phrase/client/model/BranchName.java
+src/main/java/com/phrase/client/model/BranchSyncParameters.java
 src/main/java/com/phrase/client/model/BranchUpdateParameters.java
 src/main/java/com/phrase/client/model/Comment.java
 src/main/java/com/phrase/client/model/CommentCreateParameters.java
@@ -652,6 +654,7 @@ src/test/java/com/phrase/client/model/BlacklistedKeyUpdateParametersTest.java
 src/test/java/com/phrase/client/model/BranchCreateParametersTest.java
 src/test/java/com/phrase/client/model/BranchMergeParametersTest.java
 src/test/java/com/phrase/client/model/BranchNameTest.java
+src/test/java/com/phrase/client/model/BranchSyncParametersTest.java
 src/test/java/com/phrase/client/model/BranchTest.java
 src/test/java/com/phrase/client/model/BranchUpdateParametersTest.java
 src/test/java/com/phrase/client/model/CommentCreateParameters1Test.java

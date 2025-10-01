@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BranchMergeParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-30T13:56:26.818386666Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-01T08:02:00.829017195Z[Etc/UTC]")
 public class BranchMergeParameters {
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)
@@ -42,7 +42,7 @@ public class BranchMergeParameters {
   }
 
    /**
-   * strategy used for merge blocking, use_main or use_branch
+   * strategy used for merge conflicts, use_main or use_branch
    * @return strategy
   **/
   @javax.annotation.Nullable
