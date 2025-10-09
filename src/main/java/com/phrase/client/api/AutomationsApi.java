@@ -129,7 +129,7 @@ public class AutomationsApi {
 
     /**
      * Activate an automation
-     * 
+     * Activate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -151,7 +151,7 @@ public class AutomationsApi {
 
     /**
      * Activate an automation
-     * 
+     * Activate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -174,7 +174,7 @@ public class AutomationsApi {
 
     /**
      * Activate an automation (asynchronously)
-     * 
+     * Activate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -270,7 +270,7 @@ public class AutomationsApi {
 
     /**
      * Create an automation
-     * Create a new automation.
+     * Create a new automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param automationsCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -293,7 +293,7 @@ public class AutomationsApi {
 
     /**
      * Create an automation
-     * Create a new automation.
+     * Create a new automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param automationsCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -317,7 +317,7 @@ public class AutomationsApi {
 
     /**
      * Create an automation (asynchronously)
-     * Create a new automation.
+     * Create a new automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param automationsCreateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -414,7 +414,7 @@ public class AutomationsApi {
 
     /**
      * Deactivate an automation
-     * 
+     * Deactivate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -436,7 +436,7 @@ public class AutomationsApi {
 
     /**
      * Deactivate an automation
-     * 
+     * Deactivate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -459,7 +459,7 @@ public class AutomationsApi {
 
     /**
      * Deactivate an automation (asynchronously)
-     * 
+     * Deactivate an automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -555,7 +555,7 @@ public class AutomationsApi {
 
     /**
      * Destroy automation
-     * Destroy an automation of an account.  This endpoint is only available to accounts with advanced plans or above. 
+     * Destroy an automation of an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -575,7 +575,7 @@ public class AutomationsApi {
 
     /**
      * Destroy automation
-     * Destroy an automation of an account.  This endpoint is only available to accounts with advanced plans or above. 
+     * Destroy an automation of an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -597,7 +597,7 @@ public class AutomationsApi {
 
     /**
      * Destroy automation (asynchronously)
-     * Destroy an automation of an account.  This endpoint is only available to accounts with advanced plans or above. 
+     * Destroy an automation of an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -692,7 +692,7 @@ public class AutomationsApi {
 
     /**
      * Get a single automation
-     * Get details of a single automation.
+     * Get details of a single automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -714,7 +714,7 @@ public class AutomationsApi {
 
     /**
      * Get a single automation
-     * Get details of a single automation.
+     * Get details of a single automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -737,7 +737,7 @@ public class AutomationsApi {
 
     /**
      * Get a single automation (asynchronously)
-     * Get details of a single automation.
+     * Get details of a single automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -839,7 +839,7 @@ public class AutomationsApi {
 
     /**
      * Update an automation
-     * Update an existing automation.
+     * Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param automationsCreateParameters1  (required)
@@ -862,7 +862,7 @@ public class AutomationsApi {
 
     /**
      * Update an automation
-     * Update an existing automation.
+     * Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param automationsCreateParameters1  (required)
@@ -886,7 +886,7 @@ public class AutomationsApi {
 
     /**
      * Update an automation (asynchronously)
-     * Update an existing automation.
+     * Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param id ID (required)
      * @param automationsCreateParameters1  (required)
@@ -987,7 +987,7 @@ public class AutomationsApi {
 
     /**
      * List automations
-     * List all automations for an account.  This endpoint is only available to accounts with advanced plans or above. 
+     * List all automations for an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -1011,7 +1011,7 @@ public class AutomationsApi {
 
     /**
      * List automations
-     * List all automations for an account.  This endpoint is only available to accounts with advanced plans or above. 
+     * List all automations for an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
@@ -1036,7 +1036,7 @@ public class AutomationsApi {
 
     /**
      * List automations (asynchronously)
-     * List all automations for an account.  This endpoint is only available to accounts with advanced plans or above. 
+     * List all automations for an account.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
