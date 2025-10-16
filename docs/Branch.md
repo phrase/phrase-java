@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **mergedBy** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **createdBy** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **state** | **String** |  |  [optional]
+**childBranches** | **List&lt;String&gt;** |  |  [optional]
 
 
 

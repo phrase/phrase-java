@@ -21,14 +21,16 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Branch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T07:36:31.465600872Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T11:58:51.518199517Z[Etc/UTC]")
 public class Branch {
   public static final String SERIALIZED_NAME_BASE_PROJECT_ID = "base_project_id";
   @SerializedName(SERIALIZED_NAME_BASE_PROJECT_ID)
@@ -65,6 +67,10 @@ public class Branch {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
+
+  public static final String SERIALIZED_NAME_CHILD_BRANCHES = "child_branches";
+  @SerializedName(SERIALIZED_NAME_CHILD_BRANCHES)
+  private List<String> childBranches;
 
   public Branch() {
   }
@@ -266,6 +272,36 @@ public class Branch {
     this.state = state;
   }
 
+
+  public Branch childBranches(List<String> childBranches) {
+    
+    this.childBranches = childBranches;
+    return this;
+  }
+
+  public Branch addChildBranchesItem(String childBranchesItem) {
+    if (this.childBranches == null) {
+      this.childBranches = new ArrayList<>();
+    }
+    this.childBranches.add(childBranchesItem);
+    return this;
+  }
+
+   /**
+   * Get childBranches
+   * @return childBranches
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getChildBranches() {
+    return childBranches;
+  }
+
+
+  public void setChildBranches(List<String> childBranches) {
+    this.childBranches = childBranches;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -283,12 +319,13 @@ public class Branch {
         Objects.equals(this.mergedAt, branch.mergedAt) &&
         Objects.equals(this.mergedBy, branch.mergedBy) &&
         Objects.equals(this.createdBy, branch.createdBy) &&
-        Objects.equals(this.state, branch.state);
+        Objects.equals(this.state, branch.state) &&
+        Objects.equals(this.childBranches, branch.childBranches);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseProjectId, branchProjectId, name, createdAt, updatedAt, mergedAt, mergedBy, createdBy, state);
+    return Objects.hash(baseProjectId, branchProjectId, name, createdAt, updatedAt, mergedAt, mergedBy, createdBy, state, childBranches);
   }
 
   @Override
@@ -304,6 +341,7 @@ public class Branch {
     sb.append("    mergedBy: ").append(toIndentedString(mergedBy)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    childBranches: ").append(toIndentedString(childBranches)).append("\n");
     sb.append("}");
     return sb.toString();
   }

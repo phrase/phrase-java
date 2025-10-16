@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * CustomMetadataPropertyCreate422Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T07:36:31.465600872Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T11:58:51.518199517Z[Etc/UTC]")
 public class CustomMetadataPropertyCreate422Response {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)

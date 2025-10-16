@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -110,6 +112,14 @@ public class BranchTest {
     @Test
     public void stateTest() {
         // TODO: test state
+    }
+
+    /**
+     * Test the property 'childBranches'
+     */
+    @Test
+    public void childBranchesTest() {
+        // TODO: test childBranches
     }
 
 }
