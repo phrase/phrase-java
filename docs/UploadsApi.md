@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix)
+> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix)
 
 Upload a new file
 
@@ -54,6 +54,7 @@ public class Example {
     Boolean updateCustomMetadata = true; // Boolean | Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property.
     Boolean updateTranslationKeys = true; // Boolean | Pass `false` here to prevent new keys from being created and existing keys updated.
     Boolean updateTranslationsOnSourceMatch = false; // Boolean | Update target translations only if the source translations of the uploaded multilingual file match the stored translations.
+    String sourceLocaleId = "sourceLocaleId_example"; // String | Specifies the source locale for multilingual files. Can be the name or id of the locale. Preferred is id.
     Boolean updateDescriptions = true; // Boolean | Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions.
     Boolean convertEmoji = true; // Boolean | This option is obsolete. Providing the option will cause a bad request error.
     Boolean skipUploadTags = true; // Boolean | Indicates whether the upload should not create upload tags.
@@ -67,7 +68,7 @@ public class Example {
     Boolean tagOnlyAffectedKeys = false; // Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
     String translationKeyPrefix = "translationKeyPrefix_example"; // String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
     try {
-      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix);
+      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -95,6 +96,7 @@ Name | Type | Description  | Notes
  **updateCustomMetadata** | **Boolean**| Determines whether to update custom metadata values when uploading a file. If set to true, existing metadata can be changed or removed. Passing an empty value deletes the corresponding metadata property. | [optional] [default to true]
  **updateTranslationKeys** | **Boolean**| Pass &#x60;false&#x60; here to prevent new keys from being created and existing keys updated. | [optional] [default to true]
  **updateTranslationsOnSourceMatch** | **Boolean**| Update target translations only if the source translations of the uploaded multilingual file match the stored translations. | [optional] [default to false]
+ **sourceLocaleId** | **String**| Specifies the source locale for multilingual files. Can be the name or id of the locale. Preferred is id. | [optional]
  **updateDescriptions** | **Boolean**| Existing key descriptions will be updated with the file content. Empty descriptions overwrite existing descriptions. | [optional]
  **convertEmoji** | **Boolean**| This option is obsolete. Providing the option will cause a bad request error. | [optional]
  **skipUploadTags** | **Boolean**| Indicates whether the upload should not create upload tags. | [optional]
