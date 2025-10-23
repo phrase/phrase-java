@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleDownloadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-23T08:35:19.012062412Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-23T08:37:29.724609149Z[Etc/UTC]")
 public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_FILE_FORMAT = "file_format";
   @SerializedName(SERIALIZED_NAME_FILE_FORMAT)
