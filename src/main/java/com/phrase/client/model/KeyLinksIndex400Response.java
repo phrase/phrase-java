@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLinksIndex400Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T14:36:23.684556148Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T14:49:28.952997303Z[Etc/UTC]")
 public class KeyLinksIndex400Response {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
