@@ -186,7 +186,8 @@ public class JobsApiTest {
         String xPhraseAppOTP = null;
         String branch = null;
         Boolean includeAnnotations = null;
-        JobDetails response = api.jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations);
+        Boolean omitTranslationKeys = null;
+        JobDetails response = api.jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations, omitTranslationKeys);
 
         // TODO: test validations
     }

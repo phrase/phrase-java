@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 <a name="jobShow"></a>
 # **jobShow**
-> JobDetails jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations)
+> JobDetails jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations, omitTranslationKeys)
 
 Get a single job
 
@@ -627,8 +627,9 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = "my-feature-branch"; // String | Branch to use
     Boolean includeAnnotations = false; // Boolean | Include job-locale annotations in the response
+    Boolean omitTranslationKeys = false; // Boolean | Omit translation keys in the response to reduce payload size for bigger jobs
     try {
-      JobDetails result = apiInstance.jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations);
+      JobDetails result = apiInstance.jobShow(projectId, id, xPhraseAppOTP, branch, includeAnnotations, omitTranslationKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobsApi#jobShow");
@@ -650,6 +651,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| Branch to use | [optional]
  **includeAnnotations** | **Boolean**| Include job-locale annotations in the response | [optional] [default to false]
+ **omitTranslationKeys** | **Boolean**| Omit translation keys in the response to reduce payload size for bigger jobs | [optional] [default to false]
 
 ### Return type
 

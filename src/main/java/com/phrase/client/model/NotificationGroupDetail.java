@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * NotificationGroupDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-10T09:17:50.247834902Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-10T10:03:51.568732748Z[Etc/UTC]")
 public class NotificationGroupDetail {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

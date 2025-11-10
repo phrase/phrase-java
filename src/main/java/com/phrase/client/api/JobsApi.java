@@ -1094,6 +1094,7 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch Branch to use (optional)
      * @param includeAnnotations Include job-locale annotations in the response (optional, default to false)
+     * @param omitTranslationKeys Omit translation keys in the response to reduce payload size for bigger jobs (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1106,7 +1107,7 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobShowCall(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call jobShowCall(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, Boolean omitTranslationKeys, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1122,6 +1123,10 @@ public class JobsApi {
 
         if (includeAnnotations != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_annotations", includeAnnotations));
+        }
+
+        if (omitTranslationKeys != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("omit_translation_keys", omitTranslationKeys));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -1150,7 +1155,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jobShowValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jobShowValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, Boolean omitTranslationKeys, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -1163,7 +1168,7 @@ public class JobsApi {
         }
         
 
-        okhttp3.Call localVarCall = jobShowCall(projectId, id, xPhraseAppOTP, branch, includeAnnotations, _callback);
+        okhttp3.Call localVarCall = jobShowCall(projectId, id, xPhraseAppOTP, branch, includeAnnotations, omitTranslationKeys, _callback);
         return localVarCall;
 
     }
@@ -1176,6 +1181,7 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch Branch to use (optional)
      * @param includeAnnotations Include job-locale annotations in the response (optional, default to false)
+     * @param omitTranslationKeys Omit translation keys in the response to reduce payload size for bigger jobs (optional, default to false)
      * @return JobDetails
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1187,8 +1193,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public JobDetails jobShow(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations) throws ApiException {
-        ApiResponse<JobDetails> localVarResp = jobShowWithHttpInfo(projectId, id, xPhraseAppOTP, branch, includeAnnotations);
+    public JobDetails jobShow(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, Boolean omitTranslationKeys) throws ApiException {
+        ApiResponse<JobDetails> localVarResp = jobShowWithHttpInfo(projectId, id, xPhraseAppOTP, branch, includeAnnotations, omitTranslationKeys);
         return localVarResp.getData();
     }
 
@@ -1200,6 +1206,7 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch Branch to use (optional)
      * @param includeAnnotations Include job-locale annotations in the response (optional, default to false)
+     * @param omitTranslationKeys Omit translation keys in the response to reduce payload size for bigger jobs (optional, default to false)
      * @return ApiResponse&lt;JobDetails&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1211,8 +1218,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<JobDetails> jobShowWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations) throws ApiException {
-        okhttp3.Call localVarCall = jobShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, includeAnnotations, null);
+    public ApiResponse<JobDetails> jobShowWithHttpInfo(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, Boolean omitTranslationKeys) throws ApiException {
+        okhttp3.Call localVarCall = jobShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, includeAnnotations, omitTranslationKeys, null);
         Type localVarReturnType = new TypeToken<JobDetails>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1225,6 +1232,7 @@ public class JobsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch Branch to use (optional)
      * @param includeAnnotations Include job-locale annotations in the response (optional, default to false)
+     * @param omitTranslationKeys Omit translation keys in the response to reduce payload size for bigger jobs (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1237,9 +1245,9 @@ public class JobsApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobShowAsync(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, final ApiCallback<JobDetails> _callback) throws ApiException {
+    public okhttp3.Call jobShowAsync(String projectId, String id, String xPhraseAppOTP, String branch, Boolean includeAnnotations, Boolean omitTranslationKeys, final ApiCallback<JobDetails> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = jobShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, includeAnnotations, _callback);
+        okhttp3.Call localVarCall = jobShowValidateBeforeCall(projectId, id, xPhraseAppOTP, branch, includeAnnotations, omitTranslationKeys, _callback);
         Type localVarReturnType = new TypeToken<JobDetails>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
