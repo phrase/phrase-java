@@ -245,7 +245,7 @@ public class UploadsApi {
 
     /**
      * Upload a new file
-     * Upload a new language file. Creates necessary resources in your project.
+     * Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
      * @param projectId Project ID (required)
      * @param _file File to be imported (required)
      * @param fileFormat File format. Auto-detected when possible and not specified. (required)
@@ -288,7 +288,7 @@ public class UploadsApi {
 
     /**
      * Upload a new file
-     * Upload a new language file. Creates necessary resources in your project.
+     * Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
      * @param projectId Project ID (required)
      * @param _file File to be imported (required)
      * @param fileFormat File format. Auto-detected when possible and not specified. (required)
@@ -332,7 +332,7 @@ public class UploadsApi {
 
     /**
      * Upload a new file (asynchronously)
-     * Upload a new language file. Creates necessary resources in your project.
+     * Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
      * @param projectId Project ID (required)
      * @param _file File to be imported (required)
      * @param fileFormat File format. Auto-detected when possible and not specified. (required)
