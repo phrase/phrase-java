@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLinksBatchDestroyParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-10T12:17:58.913603270Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-10T12:20:52.341789057Z[Etc/UTC]")
 public class KeyLinksBatchDestroyParameters {
   public static final String SERIALIZED_NAME_CHILD_KEY_IDS = "child_key_ids";
   @SerializedName(SERIALIZED_NAME_CHILD_KEY_IDS)
