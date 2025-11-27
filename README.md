@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
 *AutomationsApi* | [**automationDeactivate**](docs/AutomationsApi.md#automationDeactivate) | **POST** /accounts/{account_id}/automations/{automation_id}/deactivate | Deactivate an automation
 *AutomationsApi* | [**automationDelete**](docs/AutomationsApi.md#automationDelete) | **DELETE** /accounts/{account_id}/automations/{automation_id} | Destroy automation
 *AutomationsApi* | [**automationShow**](docs/AutomationsApi.md#automationShow) | **GET** /accounts/{account_id}/automations/{automation_id} | Get a single automation
+*AutomationsApi* | [**automationTrigger**](docs/AutomationsApi.md#automationTrigger) | **POST** /accounts/{account_id}/automations/{automation_id}/trigger | Trigger an automation
 *AutomationsApi* | [**automationUpdate**](docs/AutomationsApi.md#automationUpdate) | **PATCH** /accounts/{account_id}/automations/{automation_id} | Update an automation
 *AutomationsApi* | [**automationsList**](docs/AutomationsApi.md#automationsList) | **GET** /accounts/{account_id}/automations | List automations
 *BlacklistedKeysApi* | [**blacklistedKeyCreate**](docs/BlacklistedKeysApi.md#blacklistedKeyCreate) | **POST** /projects/{project_id}/blacklisted_keys | Create a blocked key

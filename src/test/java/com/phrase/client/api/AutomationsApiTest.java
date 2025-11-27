@@ -125,6 +125,24 @@ public class AutomationsApiTest {
     }
     
     /**
+     * Trigger an automation
+     *
+     * Trigger an automation. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void automationTriggerTest() throws ApiException {
+        String accountId = null;
+        String id = null;
+        String xPhraseAppOTP = null;
+        api.automationTrigger(accountId, id, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update an automation
      *
      * Update an existing automation.  For feature availability, see [Jobs (Strings)](https://support.phrase.com/hc/en-us/articles/5784100517788-Jobs-Strings). 
