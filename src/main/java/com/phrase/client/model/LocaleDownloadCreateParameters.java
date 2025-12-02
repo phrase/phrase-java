@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleDownloadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-27T09:54:52.116167958Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-02T08:07:35.616179544Z[Etc/UTC]")
 public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_FILE_FORMAT = "file_format";
   @SerializedName(SERIALIZED_NAME_FILE_FORMAT)
@@ -81,6 +81,10 @@ public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_FALLBACK_LOCALE_ID = "fallback_locale_id";
   @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALE_ID)
   private String fallbackLocaleId;
+
+  public static final String SERIALIZED_NAME_USE_LOCALE_FALLBACK = "use_locale_fallback";
+  @SerializedName(SERIALIZED_NAME_USE_LOCALE_FALLBACK)
+  private Boolean useLocaleFallback;
 
   public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
@@ -376,7 +380,7 @@ public class LocaleDownloadCreateParameters {
   }
 
    /**
-   * If a key has no translation in the locale being downloaded the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires include_empty_translations to be set to &#x60;true&#x60;.
+   * If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;use_locale_fallback&#x60;. 
    * @return fallbackLocaleId
   **/
   @javax.annotation.Nullable
@@ -388,6 +392,28 @@ public class LocaleDownloadCreateParameters {
 
   public void setFallbackLocaleId(String fallbackLocaleId) {
     this.fallbackLocaleId = fallbackLocaleId;
+  }
+
+
+  public LocaleDownloadCreateParameters useLocaleFallback(Boolean useLocaleFallback) {
+    
+    this.useLocaleFallback = useLocaleFallback;
+    return this;
+  }
+
+   /**
+   * If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale&#39;s settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;fallback_locale_id&#x60;. 
+   * @return useLocaleFallback
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUseLocaleFallback() {
+    return useLocaleFallback;
+  }
+
+
+  public void setUseLocaleFallback(Boolean useLocaleFallback) {
+    this.useLocaleFallback = useLocaleFallback;
   }
 
 
@@ -478,6 +504,7 @@ public class LocaleDownloadCreateParameters {
         Objects.equals(this.useLastReviewedVersion, localeDownloadCreateParameters.useLastReviewedVersion) &&
         Objects.equals(this.localeIds, localeDownloadCreateParameters.localeIds) &&
         Objects.equals(this.fallbackLocaleId, localeDownloadCreateParameters.fallbackLocaleId) &&
+        Objects.equals(this.useLocaleFallback, localeDownloadCreateParameters.useLocaleFallback) &&
         Objects.equals(this.sourceLocaleId, localeDownloadCreateParameters.sourceLocaleId) &&
         Objects.equals(this.customMetadataFilters, localeDownloadCreateParameters.customMetadataFilters) &&
         Objects.equals(this.updatedSince, localeDownloadCreateParameters.updatedSince);
@@ -485,7 +512,7 @@ public class LocaleDownloadCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, sourceLocaleId, customMetadataFilters, updatedSince);
+    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, useLocaleFallback, sourceLocaleId, customMetadataFilters, updatedSince);
   }
 
   @Override
@@ -505,6 +532,7 @@ public class LocaleDownloadCreateParameters {
     sb.append("    useLastReviewedVersion: ").append(toIndentedString(useLastReviewedVersion)).append("\n");
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    fallbackLocaleId: ").append(toIndentedString(fallbackLocaleId)).append("\n");
+    sb.append("    useLocaleFallback: ").append(toIndentedString(useLocaleFallback)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    customMetadataFilters: ").append(toIndentedString(customMetadataFilters)).append("\n");
     sb.append("    updatedSince: ").append(toIndentedString(updatedSince)).append("\n");

@@ -145,6 +145,14 @@ public class LocaleDownloadCreateParametersTest {
     }
 
     /**
+     * Test the property 'useLocaleFallback'
+     */
+    @Test
+    public void useLocaleFallbackTest() {
+        // TODO: test useLocaleFallback
+    }
+
+    /**
      * Test the property 'sourceLocaleId'
      */
     @Test
