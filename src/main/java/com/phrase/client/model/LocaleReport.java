@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleReport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-02T08:07:35.616179544Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-02T10:49:58.860029498Z[Etc/UTC]")
 public class LocaleReport {
   public static final String SERIALIZED_NAME_KEYS_COUNT = "keys_count";
   @SerializedName(SERIALIZED_NAME_KEYS_COUNT)
