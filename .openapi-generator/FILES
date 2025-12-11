@@ -26,6 +26,7 @@ docs/BlacklistedKeyCreateParameters.md
 docs/BlacklistedKeyUpdateParameters.md
 docs/BlacklistedKeysApi.md
 docs/Branch.md
+docs/BranchCreateComparisonParameters.md
 docs/BranchCreateParameters.md
 docs/BranchMergeParameters.md
 docs/BranchName.md
@@ -380,6 +381,7 @@ src/main/java/com/phrase/client/model/BlacklistedKey.java
 src/main/java/com/phrase/client/model/BlacklistedKeyCreateParameters.java
 src/main/java/com/phrase/client/model/BlacklistedKeyUpdateParameters.java
 src/main/java/com/phrase/client/model/Branch.java
+src/main/java/com/phrase/client/model/BranchCreateComparisonParameters.java
 src/main/java/com/phrase/client/model/BranchCreateParameters.java
 src/main/java/com/phrase/client/model/BranchMergeParameters.java
 src/main/java/com/phrase/client/model/BranchName.java
@@ -651,6 +653,7 @@ src/test/java/com/phrase/client/model/AutomationsCreateParametersTest.java
 src/test/java/com/phrase/client/model/BlacklistedKeyCreateParametersTest.java
 src/test/java/com/phrase/client/model/BlacklistedKeyTest.java
 src/test/java/com/phrase/client/model/BlacklistedKeyUpdateParametersTest.java
+src/test/java/com/phrase/client/model/BranchCreateComparisonParametersTest.java
 src/test/java/com/phrase/client/model/BranchCreateParametersTest.java
 src/test/java/com/phrase/client/model/BranchMergeParametersTest.java
 src/test/java/com/phrase/client/model/BranchNameTest.java

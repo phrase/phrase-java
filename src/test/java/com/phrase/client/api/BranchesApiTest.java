@@ -14,6 +14,7 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.Branch;
+import com.phrase.client.model.BranchCreateComparisonParameters;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
 import com.phrase.client.model.BranchSyncParameters;
@@ -38,7 +39,7 @@ public class BranchesApiTest {
     /**
      * Compare branches
      *
-     * Compare branch with main branch.   *Note: Comparing a branch may take several minutes depending on the project size.* 
+     * Compare branch with main branch.  *Note: Comparing a branch may take several minutes depending on the project size. Consider using the &#x60;POST /compare&#x60; endpoint for creating comparison asynchronously.* 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -49,6 +50,25 @@ public class BranchesApiTest {
         String name = null;
         String xPhraseAppOTP = null;
         api.branchCompare(projectId, name, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create comparison (async.)
+     *
+     * Create a branch comparison asynchronously. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void branchComparisonCreateTest() throws ApiException {
+        String projectId = null;
+        String name = null;
+        BranchCreateComparisonParameters branchCreateComparisonParameters = null;
+        String xPhraseAppOTP = null;
+        api.branchComparisonCreate(projectId, name, branchCreateComparisonParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -129,7 +149,7 @@ public class BranchesApiTest {
     /**
      * Sync a branch
      *
-     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     * Sync an existing branch.  *Note: Only available for branches created with new branching.* 
      *
      * @throws ApiException
      *          if the Api call fails

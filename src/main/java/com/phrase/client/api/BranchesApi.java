@@ -27,6 +27,7 @@ import java.io.IOException;
 
 
 import com.phrase.client.model.Branch;
+import com.phrase.client.model.BranchCreateComparisonParameters;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
 import com.phrase.client.model.BranchSyncParameters;
@@ -71,6 +72,7 @@ public class BranchesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
@@ -130,7 +132,7 @@ public class BranchesApi {
 
     /**
      * Compare branches
-     * Compare branch with main branch.   *Note: Comparing a branch may take several minutes depending on the project size.* 
+     * Compare branch with main branch.  *Note: Comparing a branch may take several minutes depending on the project size. Consider using the &#x60;POST /compare&#x60; endpoint for creating comparison asynchronously.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -141,6 +143,7 @@ public class BranchesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
@@ -150,7 +153,7 @@ public class BranchesApi {
 
     /**
      * Compare branches
-     * Compare branch with main branch.   *Note: Comparing a branch may take several minutes depending on the project size.* 
+     * Compare branch with main branch.  *Note: Comparing a branch may take several minutes depending on the project size. Consider using the &#x60;POST /compare&#x60; endpoint for creating comparison asynchronously.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -162,6 +165,7 @@ public class BranchesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
@@ -172,7 +176,7 @@ public class BranchesApi {
 
     /**
      * Compare branches (asynchronously)
-     * Compare branch with main branch.   *Note: Comparing a branch may take several minutes depending on the project size.* 
+     * Compare branch with main branch.  *Note: Comparing a branch may take several minutes depending on the project size. Consider using the &#x60;POST /compare&#x60; endpoint for creating comparison asynchronously.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -185,12 +189,163 @@ public class BranchesApi {
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
     public okhttp3.Call branchCompareAsync(String projectId, String name, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = branchCompareValidateBeforeCall(projectId, name, xPhraseAppOTP, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for branchComparisonCreate
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchCreateComparisonParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Accepted </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call branchComparisonCreateCall(String projectId, String name, BranchCreateComparisonParameters branchCreateComparisonParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = branchCreateComparisonParameters;
+
+        // create path and map variables
+        String localVarPath = "/projects/{project_id}/branches/{name}/compare"
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call branchComparisonCreateValidateBeforeCall(String projectId, String name, BranchCreateComparisonParameters branchCreateComparisonParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling branchComparisonCreate(Async)");
+        }
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling branchComparisonCreate(Async)");
+        }
+        
+        // verify the required parameter 'branchCreateComparisonParameters' is set
+        if (branchCreateComparisonParameters == null) {
+            throw new ApiException("Missing the required parameter 'branchCreateComparisonParameters' when calling branchComparisonCreate(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = branchComparisonCreateCall(projectId, name, branchCreateComparisonParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Create comparison (async.)
+     * Create a branch comparison asynchronously. 
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchCreateComparisonParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Accepted </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public void branchComparisonCreate(String projectId, String name, BranchCreateComparisonParameters branchCreateComparisonParameters, String xPhraseAppOTP) throws ApiException {
+        branchComparisonCreateWithHttpInfo(projectId, name, branchCreateComparisonParameters, xPhraseAppOTP);
+    }
+
+    /**
+     * Create comparison (async.)
+     * Create a branch comparison asynchronously. 
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchCreateComparisonParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Accepted </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> branchComparisonCreateWithHttpInfo(String projectId, String name, BranchCreateComparisonParameters branchCreateComparisonParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = branchComparisonCreateValidateBeforeCall(projectId, name, branchCreateComparisonParameters, xPhraseAppOTP, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Create comparison (async.) (asynchronously)
+     * Create a branch comparison asynchronously. 
+     * @param projectId Project ID (required)
+     * @param name name (required)
+     * @param branchCreateComparisonParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Accepted </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Conflict </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call branchComparisonCreateAsync(String projectId, String name, BranchCreateComparisonParameters branchCreateComparisonParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = branchComparisonCreateValidateBeforeCall(projectId, name, branchCreateComparisonParameters, xPhraseAppOTP, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -837,7 +992,7 @@ public class BranchesApi {
 
     /**
      * Sync a branch
-     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     * Sync an existing branch.  *Note: Only available for branches created with new branching.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchSyncParameters  (required)
@@ -858,7 +1013,7 @@ public class BranchesApi {
 
     /**
      * Sync a branch
-     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     * Sync an existing branch.  *Note: Only available for branches created with new branching.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchSyncParameters  (required)
@@ -881,7 +1036,7 @@ public class BranchesApi {
 
     /**
      * Sync a branch (asynchronously)
-     * Sync an existing branch.  *Note: Only available for branches created with new branching. New branching is currently in private beta* 
+     * Sync an existing branch.  *Note: Only available for branches created with new branching.* 
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param branchSyncParameters  (required)

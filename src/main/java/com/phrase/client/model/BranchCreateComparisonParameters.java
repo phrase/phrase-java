@@ -24,36 +24,36 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * OrderConfirmParameters
+ * BranchCreateComparisonParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-11T10:21:45.095447738Z[Etc/UTC]")
-public class OrderConfirmParameters {
-  public static final String SERIALIZED_NAME_BRANCH = "branch";
-  @SerializedName(SERIALIZED_NAME_BRANCH)
-  private String branch;
+public class BranchCreateComparisonParameters {
+  public static final String SERIALIZED_NAME_DIRECTION = "direction";
+  @SerializedName(SERIALIZED_NAME_DIRECTION)
+  private String direction = "merge";
 
-  public OrderConfirmParameters() {
+  public BranchCreateComparisonParameters() {
   }
 
-  public OrderConfirmParameters branch(String branch) {
+  public BranchCreateComparisonParameters direction(String direction) {
     
-    this.branch = branch;
+    this.direction = direction;
     return this;
   }
 
    /**
-   * specify the branch to use
-   * @return branch
+   * direction of comparison, possible values are sync or merge (only for v2 branches)
+   * @return direction
   **/
   @javax.annotation.Nullable
 
-  public String getBranch() {
-    return branch;
+  public String getDirection() {
+    return direction;
   }
 
 
-  public void setBranch(String branch) {
-    this.branch = branch;
+  public void setDirection(String direction) {
+    this.direction = direction;
   }
 
   @Override
@@ -64,20 +64,20 @@ public class OrderConfirmParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderConfirmParameters orderConfirmParameters = (OrderConfirmParameters) o;
-    return Objects.equals(this.branch, orderConfirmParameters.branch);
+    BranchCreateComparisonParameters branchCreateComparisonParameters = (BranchCreateComparisonParameters) o;
+    return Objects.equals(this.direction, branchCreateComparisonParameters.direction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch);
+    return Objects.hash(direction);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderConfirmParameters {\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("class BranchCreateComparisonParameters {\n");
+    sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("}");
     return sb.toString();
   }
