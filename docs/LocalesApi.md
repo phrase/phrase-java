@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="accountLocales"></a>
 # **accountLocales**
-> List&lt;LocalePreview1&gt; accountLocales(id, xPhraseAppOTP, page, perPage)
+> List&lt;LocalePreview1&gt; accountLocales(id, xPhraseAppOTP)
 
 List locales used in account
 
@@ -49,10 +49,8 @@ public class Example {
     LocalesApi apiInstance = new LocalesApi(defaultClient);
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    Integer page = 1; // Integer | Page number
-    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     try {
-      List<LocalePreview1> result = apiInstance.accountLocales(id, xPhraseAppOTP, page, perPage);
+      List<LocalePreview1> result = apiInstance.accountLocales(id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#accountLocales");
@@ -71,8 +69,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **page** | **Integer**| Page number | [optional]
- **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
 
 ### Return type
 

@@ -27,12 +27,8 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocalePreview1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T11:49:59.766862026Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-06T09:06:49.023047988Z[Etc/UTC]")
 public class LocalePreview1 {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private String id;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -47,28 +43,6 @@ public class LocalePreview1 {
 
   public LocalePreview1() {
   }
-
-  public LocalePreview1 id(String id) {
-    
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @javax.annotation.Nullable
-
-  public String getId() {
-    return id;
-  }
-
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
 
   public LocalePreview1 name(String name) {
     
@@ -144,22 +118,20 @@ public class LocalePreview1 {
       return false;
     }
     LocalePreview1 localePreview1 = (LocalePreview1) o;
-    return Objects.equals(this.id, localePreview1.id) &&
-        Objects.equals(this.name, localePreview1.name) &&
+    return Objects.equals(this.name, localePreview1.name) &&
         Objects.equals(this.code, localePreview1.code) &&
         Objects.equals(this.project, localePreview1.project);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, project);
+    return Objects.hash(name, code, project);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LocalePreview1 {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
