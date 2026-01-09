@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Upload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-09T08:41:54.041576393Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-09T08:42:50.930962152Z[Etc/UTC]")
 public class Upload {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
