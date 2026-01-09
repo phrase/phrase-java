@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-06T09:06:49.023047988Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-09T08:36:51.910323569Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -79,6 +79,62 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY = "shares_translation_memory";
   @SerializedName(SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY)
   private Boolean sharesTranslationMemory;
+
+  public static final String SERIALIZED_NAME_MACHINE_TRANSLATION_ENABLED = "machine_translation_enabled";
+  @SerializedName(SERIALIZED_NAME_MACHINE_TRANSLATION_ENABLED)
+  private Boolean machineTranslationEnabled;
+
+  public static final String SERIALIZED_NAME_ZERO_PLURAL_FORM_ENABLED = "zero_plural_form_enabled";
+  @SerializedName(SERIALIZED_NAME_ZERO_PLURAL_FORM_ENABLED)
+  private Boolean zeroPluralFormEnabled;
+
+  public static final String SERIALIZED_NAME_ENABLE_ALL_DATA_TYPE_TRANSLATION_KEYS_FOR_TRANSLATORS = "enable_all_data_type_translation_keys_for_translators";
+  @SerializedName(SERIALIZED_NAME_ENABLE_ALL_DATA_TYPE_TRANSLATION_KEYS_FOR_TRANSLATORS)
+  private Boolean enableAllDataTypeTranslationKeysForTranslators;
+
+  public static final String SERIALIZED_NAME_ENABLE_ICU_MESSAGE_FORMAT = "enable_icu_message_format";
+  @SerializedName(SERIALIZED_NAME_ENABLE_ICU_MESSAGE_FORMAT)
+  private Boolean enableIcuMessageFormat;
+
+  public static final String SERIALIZED_NAME_ENABLE_BRANCHING = "enable_branching";
+  @SerializedName(SERIALIZED_NAME_ENABLE_BRANCHING)
+  private Boolean enableBranching;
+
+  public static final String SERIALIZED_NAME_PROTECT_MASTER_BRANCH = "protect_master_branch";
+  @SerializedName(SERIALIZED_NAME_PROTECT_MASTER_BRANCH)
+  private Boolean protectMasterBranch;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_ENABLED = "autotranslate_enabled";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_ENABLED)
+  private Boolean autotranslateEnabled;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_CHECK_NEW_TRANSLATION_KEYS = "autotranslate_check_new_translation_keys";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_CHECK_NEW_TRANSLATION_KEYS)
+  private Boolean autotranslateCheckNewTranslationKeys;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_CHECK_NEW_UPLOADS = "autotranslate_check_new_uploads";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_CHECK_NEW_UPLOADS)
+  private Boolean autotranslateCheckNewUploads;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_CHECK_NEW_LOCALES = "autotranslate_check_new_locales";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_CHECK_NEW_LOCALES)
+  private Boolean autotranslateCheckNewLocales;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_MARK_AS_UNVERIFIED = "autotranslate_mark_as_unverified";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_MARK_AS_UNVERIFIED)
+  private Boolean autotranslateMarkAsUnverified;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_USE_MACHINE_TRANSLATION = "autotranslate_use_machine_translation";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_USE_MACHINE_TRANSLATION)
+  private Boolean autotranslateUseMachineTranslation;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY = "autotranslate_use_translation_memory";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY)
+  private Boolean autotranslateUseTranslationMemory;
+
+  public static final String SERIALIZED_NAME_DEFAULT_ENCODING = "default_encoding";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_ENCODING)
+  private String defaultEncoding;
 
   public ProjectDetails() {
   }
@@ -346,6 +402,314 @@ public class ProjectDetails {
     this.sharesTranslationMemory = sharesTranslationMemory;
   }
 
+
+  public ProjectDetails machineTranslationEnabled(Boolean machineTranslationEnabled) {
+    
+    this.machineTranslationEnabled = machineTranslationEnabled;
+    return this;
+  }
+
+   /**
+   * Get machineTranslationEnabled
+   * @return machineTranslationEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getMachineTranslationEnabled() {
+    return machineTranslationEnabled;
+  }
+
+
+  public void setMachineTranslationEnabled(Boolean machineTranslationEnabled) {
+    this.machineTranslationEnabled = machineTranslationEnabled;
+  }
+
+
+  public ProjectDetails zeroPluralFormEnabled(Boolean zeroPluralFormEnabled) {
+    
+    this.zeroPluralFormEnabled = zeroPluralFormEnabled;
+    return this;
+  }
+
+   /**
+   * Get zeroPluralFormEnabled
+   * @return zeroPluralFormEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getZeroPluralFormEnabled() {
+    return zeroPluralFormEnabled;
+  }
+
+
+  public void setZeroPluralFormEnabled(Boolean zeroPluralFormEnabled) {
+    this.zeroPluralFormEnabled = zeroPluralFormEnabled;
+  }
+
+
+  public ProjectDetails enableAllDataTypeTranslationKeysForTranslators(Boolean enableAllDataTypeTranslationKeysForTranslators) {
+    
+    this.enableAllDataTypeTranslationKeysForTranslators = enableAllDataTypeTranslationKeysForTranslators;
+    return this;
+  }
+
+   /**
+   * Get enableAllDataTypeTranslationKeysForTranslators
+   * @return enableAllDataTypeTranslationKeysForTranslators
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getEnableAllDataTypeTranslationKeysForTranslators() {
+    return enableAllDataTypeTranslationKeysForTranslators;
+  }
+
+
+  public void setEnableAllDataTypeTranslationKeysForTranslators(Boolean enableAllDataTypeTranslationKeysForTranslators) {
+    this.enableAllDataTypeTranslationKeysForTranslators = enableAllDataTypeTranslationKeysForTranslators;
+  }
+
+
+  public ProjectDetails enableIcuMessageFormat(Boolean enableIcuMessageFormat) {
+    
+    this.enableIcuMessageFormat = enableIcuMessageFormat;
+    return this;
+  }
+
+   /**
+   * Get enableIcuMessageFormat
+   * @return enableIcuMessageFormat
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getEnableIcuMessageFormat() {
+    return enableIcuMessageFormat;
+  }
+
+
+  public void setEnableIcuMessageFormat(Boolean enableIcuMessageFormat) {
+    this.enableIcuMessageFormat = enableIcuMessageFormat;
+  }
+
+
+  public ProjectDetails enableBranching(Boolean enableBranching) {
+    
+    this.enableBranching = enableBranching;
+    return this;
+  }
+
+   /**
+   * Get enableBranching
+   * @return enableBranching
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getEnableBranching() {
+    return enableBranching;
+  }
+
+
+  public void setEnableBranching(Boolean enableBranching) {
+    this.enableBranching = enableBranching;
+  }
+
+
+  public ProjectDetails protectMasterBranch(Boolean protectMasterBranch) {
+    
+    this.protectMasterBranch = protectMasterBranch;
+    return this;
+  }
+
+   /**
+   * Get protectMasterBranch
+   * @return protectMasterBranch
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getProtectMasterBranch() {
+    return protectMasterBranch;
+  }
+
+
+  public void setProtectMasterBranch(Boolean protectMasterBranch) {
+    this.protectMasterBranch = protectMasterBranch;
+  }
+
+
+  public ProjectDetails autotranslateEnabled(Boolean autotranslateEnabled) {
+    
+    this.autotranslateEnabled = autotranslateEnabled;
+    return this;
+  }
+
+   /**
+   * Get autotranslateEnabled
+   * @return autotranslateEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateEnabled() {
+    return autotranslateEnabled;
+  }
+
+
+  public void setAutotranslateEnabled(Boolean autotranslateEnabled) {
+    this.autotranslateEnabled = autotranslateEnabled;
+  }
+
+
+  public ProjectDetails autotranslateCheckNewTranslationKeys(Boolean autotranslateCheckNewTranslationKeys) {
+    
+    this.autotranslateCheckNewTranslationKeys = autotranslateCheckNewTranslationKeys;
+    return this;
+  }
+
+   /**
+   * Get autotranslateCheckNewTranslationKeys
+   * @return autotranslateCheckNewTranslationKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateCheckNewTranslationKeys() {
+    return autotranslateCheckNewTranslationKeys;
+  }
+
+
+  public void setAutotranslateCheckNewTranslationKeys(Boolean autotranslateCheckNewTranslationKeys) {
+    this.autotranslateCheckNewTranslationKeys = autotranslateCheckNewTranslationKeys;
+  }
+
+
+  public ProjectDetails autotranslateCheckNewUploads(Boolean autotranslateCheckNewUploads) {
+    
+    this.autotranslateCheckNewUploads = autotranslateCheckNewUploads;
+    return this;
+  }
+
+   /**
+   * Get autotranslateCheckNewUploads
+   * @return autotranslateCheckNewUploads
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateCheckNewUploads() {
+    return autotranslateCheckNewUploads;
+  }
+
+
+  public void setAutotranslateCheckNewUploads(Boolean autotranslateCheckNewUploads) {
+    this.autotranslateCheckNewUploads = autotranslateCheckNewUploads;
+  }
+
+
+  public ProjectDetails autotranslateCheckNewLocales(Boolean autotranslateCheckNewLocales) {
+    
+    this.autotranslateCheckNewLocales = autotranslateCheckNewLocales;
+    return this;
+  }
+
+   /**
+   * Get autotranslateCheckNewLocales
+   * @return autotranslateCheckNewLocales
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateCheckNewLocales() {
+    return autotranslateCheckNewLocales;
+  }
+
+
+  public void setAutotranslateCheckNewLocales(Boolean autotranslateCheckNewLocales) {
+    this.autotranslateCheckNewLocales = autotranslateCheckNewLocales;
+  }
+
+
+  public ProjectDetails autotranslateMarkAsUnverified(Boolean autotranslateMarkAsUnverified) {
+    
+    this.autotranslateMarkAsUnverified = autotranslateMarkAsUnverified;
+    return this;
+  }
+
+   /**
+   * Get autotranslateMarkAsUnverified
+   * @return autotranslateMarkAsUnverified
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateMarkAsUnverified() {
+    return autotranslateMarkAsUnverified;
+  }
+
+
+  public void setAutotranslateMarkAsUnverified(Boolean autotranslateMarkAsUnverified) {
+    this.autotranslateMarkAsUnverified = autotranslateMarkAsUnverified;
+  }
+
+
+  public ProjectDetails autotranslateUseMachineTranslation(Boolean autotranslateUseMachineTranslation) {
+    
+    this.autotranslateUseMachineTranslation = autotranslateUseMachineTranslation;
+    return this;
+  }
+
+   /**
+   * Get autotranslateUseMachineTranslation
+   * @return autotranslateUseMachineTranslation
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateUseMachineTranslation() {
+    return autotranslateUseMachineTranslation;
+  }
+
+
+  public void setAutotranslateUseMachineTranslation(Boolean autotranslateUseMachineTranslation) {
+    this.autotranslateUseMachineTranslation = autotranslateUseMachineTranslation;
+  }
+
+
+  public ProjectDetails autotranslateUseTranslationMemory(Boolean autotranslateUseTranslationMemory) {
+    
+    this.autotranslateUseTranslationMemory = autotranslateUseTranslationMemory;
+    return this;
+  }
+
+   /**
+   * Get autotranslateUseTranslationMemory
+   * @return autotranslateUseTranslationMemory
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateUseTranslationMemory() {
+    return autotranslateUseTranslationMemory;
+  }
+
+
+  public void setAutotranslateUseTranslationMemory(Boolean autotranslateUseTranslationMemory) {
+    this.autotranslateUseTranslationMemory = autotranslateUseTranslationMemory;
+  }
+
+
+  public ProjectDetails defaultEncoding(String defaultEncoding) {
+    
+    this.defaultEncoding = defaultEncoding;
+    return this;
+  }
+
+   /**
+   * Get defaultEncoding
+   * @return defaultEncoding
+  **/
+  @javax.annotation.Nullable
+
+  public String getDefaultEncoding() {
+    return defaultEncoding;
+  }
+
+
+  public void setDefaultEncoding(String defaultEncoding) {
+    this.defaultEncoding = defaultEncoding;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -366,12 +730,26 @@ public class ProjectDetails {
         Objects.equals(this.pointOfContact, projectDetails.pointOfContact) &&
         Objects.equals(this.createdAt, projectDetails.createdAt) &&
         Objects.equals(this.updatedAt, projectDetails.updatedAt) &&
-        Objects.equals(this.sharesTranslationMemory, projectDetails.sharesTranslationMemory);
+        Objects.equals(this.sharesTranslationMemory, projectDetails.sharesTranslationMemory) &&
+        Objects.equals(this.machineTranslationEnabled, projectDetails.machineTranslationEnabled) &&
+        Objects.equals(this.zeroPluralFormEnabled, projectDetails.zeroPluralFormEnabled) &&
+        Objects.equals(this.enableAllDataTypeTranslationKeysForTranslators, projectDetails.enableAllDataTypeTranslationKeysForTranslators) &&
+        Objects.equals(this.enableIcuMessageFormat, projectDetails.enableIcuMessageFormat) &&
+        Objects.equals(this.enableBranching, projectDetails.enableBranching) &&
+        Objects.equals(this.protectMasterBranch, projectDetails.protectMasterBranch) &&
+        Objects.equals(this.autotranslateEnabled, projectDetails.autotranslateEnabled) &&
+        Objects.equals(this.autotranslateCheckNewTranslationKeys, projectDetails.autotranslateCheckNewTranslationKeys) &&
+        Objects.equals(this.autotranslateCheckNewUploads, projectDetails.autotranslateCheckNewUploads) &&
+        Objects.equals(this.autotranslateCheckNewLocales, projectDetails.autotranslateCheckNewLocales) &&
+        Objects.equals(this.autotranslateMarkAsUnverified, projectDetails.autotranslateMarkAsUnverified) &&
+        Objects.equals(this.autotranslateUseMachineTranslation, projectDetails.autotranslateUseMachineTranslation) &&
+        Objects.equals(this.autotranslateUseTranslationMemory, projectDetails.autotranslateUseTranslationMemory) &&
+        Objects.equals(this.defaultEncoding, projectDetails.defaultEncoding);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding);
   }
 
   @Override
@@ -390,6 +768,20 @@ public class ProjectDetails {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    sharesTranslationMemory: ").append(toIndentedString(sharesTranslationMemory)).append("\n");
+    sb.append("    machineTranslationEnabled: ").append(toIndentedString(machineTranslationEnabled)).append("\n");
+    sb.append("    zeroPluralFormEnabled: ").append(toIndentedString(zeroPluralFormEnabled)).append("\n");
+    sb.append("    enableAllDataTypeTranslationKeysForTranslators: ").append(toIndentedString(enableAllDataTypeTranslationKeysForTranslators)).append("\n");
+    sb.append("    enableIcuMessageFormat: ").append(toIndentedString(enableIcuMessageFormat)).append("\n");
+    sb.append("    enableBranching: ").append(toIndentedString(enableBranching)).append("\n");
+    sb.append("    protectMasterBranch: ").append(toIndentedString(protectMasterBranch)).append("\n");
+    sb.append("    autotranslateEnabled: ").append(toIndentedString(autotranslateEnabled)).append("\n");
+    sb.append("    autotranslateCheckNewTranslationKeys: ").append(toIndentedString(autotranslateCheckNewTranslationKeys)).append("\n");
+    sb.append("    autotranslateCheckNewUploads: ").append(toIndentedString(autotranslateCheckNewUploads)).append("\n");
+    sb.append("    autotranslateCheckNewLocales: ").append(toIndentedString(autotranslateCheckNewLocales)).append("\n");
+    sb.append("    autotranslateMarkAsUnverified: ").append(toIndentedString(autotranslateMarkAsUnverified)).append("\n");
+    sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
+    sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
+    sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
     sb.append("}");
     return sb.toString();
   }
