@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **state** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**linkedTranslation** | [**TranslationParent**](TranslationParent.md) |  |  [optional]
 **user** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **wordCount** | **Integer** |  |  [optional]
-**linkedTranslation** | [**TranslationParent**](TranslationParent.md) |  |  [optional]
 
 
 

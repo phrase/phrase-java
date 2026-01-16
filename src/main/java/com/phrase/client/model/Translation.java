@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.KeyPreview;
 import com.phrase.client.model.LocalePreview;
+import com.phrase.client.model.TranslationParent;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Translation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-13T14:18:21.588191963Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T12:23:45.750636966Z[Etc/UTC]")
 public class Translation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -76,6 +77,10 @@ public class Translation {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_LINKED_TRANSLATION = "linked_translation";
+  @SerializedName(SERIALIZED_NAME_LINKED_TRANSLATION)
+  private TranslationParent linkedTranslation;
 
   public Translation() {
   }
@@ -329,6 +334,28 @@ public class Translation {
     this.updatedAt = updatedAt;
   }
 
+
+  public Translation linkedTranslation(TranslationParent linkedTranslation) {
+    
+    this.linkedTranslation = linkedTranslation;
+    return this;
+  }
+
+   /**
+   * Get linkedTranslation
+   * @return linkedTranslation
+  **/
+  @javax.annotation.Nullable
+
+  public TranslationParent getLinkedTranslation() {
+    return linkedTranslation;
+  }
+
+
+  public void setLinkedTranslation(TranslationParent linkedTranslation) {
+    this.linkedTranslation = linkedTranslation;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -348,12 +375,13 @@ public class Translation {
         Objects.equals(this.placeholders, translation.placeholders) &&
         Objects.equals(this.state, translation.state) &&
         Objects.equals(this.createdAt, translation.createdAt) &&
-        Objects.equals(this.updatedAt, translation.updatedAt);
+        Objects.equals(this.updatedAt, translation.updatedAt) &&
+        Objects.equals(this.linkedTranslation, translation.linkedTranslation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, content, unverified, excluded, pluralSuffix, key, locale, placeholders, state, createdAt, updatedAt);
+    return Objects.hash(id, content, unverified, excluded, pluralSuffix, key, locale, placeholders, state, createdAt, updatedAt, linkedTranslation);
   }
 
   @Override
@@ -371,6 +399,7 @@ public class Translation {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    linkedTranslation: ").append(toIndentedString(linkedTranslation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -33,7 +33,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-13T14:18:21.588191963Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T12:23:45.750636966Z[Etc/UTC]")
 public class TranslationDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -79,6 +79,10 @@ public class TranslationDetails {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
+  public static final String SERIALIZED_NAME_LINKED_TRANSLATION = "linked_translation";
+  @SerializedName(SERIALIZED_NAME_LINKED_TRANSLATION)
+  private TranslationParent linkedTranslation;
+
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
   private UserPreview user;
@@ -86,10 +90,6 @@ public class TranslationDetails {
   public static final String SERIALIZED_NAME_WORD_COUNT = "word_count";
   @SerializedName(SERIALIZED_NAME_WORD_COUNT)
   private Integer wordCount;
-
-  public static final String SERIALIZED_NAME_LINKED_TRANSLATION = "linked_translation";
-  @SerializedName(SERIALIZED_NAME_LINKED_TRANSLATION)
-  private TranslationParent linkedTranslation;
 
   public TranslationDetails() {
   }
@@ -344,6 +344,28 @@ public class TranslationDetails {
   }
 
 
+  public TranslationDetails linkedTranslation(TranslationParent linkedTranslation) {
+    
+    this.linkedTranslation = linkedTranslation;
+    return this;
+  }
+
+   /**
+   * Get linkedTranslation
+   * @return linkedTranslation
+  **/
+  @javax.annotation.Nullable
+
+  public TranslationParent getLinkedTranslation() {
+    return linkedTranslation;
+  }
+
+
+  public void setLinkedTranslation(TranslationParent linkedTranslation) {
+    this.linkedTranslation = linkedTranslation;
+  }
+
+
   public TranslationDetails user(UserPreview user) {
     
     this.user = user;
@@ -387,28 +409,6 @@ public class TranslationDetails {
     this.wordCount = wordCount;
   }
 
-
-  public TranslationDetails linkedTranslation(TranslationParent linkedTranslation) {
-    
-    this.linkedTranslation = linkedTranslation;
-    return this;
-  }
-
-   /**
-   * Get linkedTranslation
-   * @return linkedTranslation
-  **/
-  @javax.annotation.Nullable
-
-  public TranslationParent getLinkedTranslation() {
-    return linkedTranslation;
-  }
-
-
-  public void setLinkedTranslation(TranslationParent linkedTranslation) {
-    this.linkedTranslation = linkedTranslation;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -429,14 +429,14 @@ public class TranslationDetails {
         Objects.equals(this.state, translationDetails.state) &&
         Objects.equals(this.createdAt, translationDetails.createdAt) &&
         Objects.equals(this.updatedAt, translationDetails.updatedAt) &&
+        Objects.equals(this.linkedTranslation, translationDetails.linkedTranslation) &&
         Objects.equals(this.user, translationDetails.user) &&
-        Objects.equals(this.wordCount, translationDetails.wordCount) &&
-        Objects.equals(this.linkedTranslation, translationDetails.linkedTranslation);
+        Objects.equals(this.wordCount, translationDetails.wordCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, content, unverified, excluded, pluralSuffix, key, locale, placeholders, state, createdAt, updatedAt, user, wordCount, linkedTranslation);
+    return Objects.hash(id, content, unverified, excluded, pluralSuffix, key, locale, placeholders, state, createdAt, updatedAt, linkedTranslation, user, wordCount);
   }
 
   @Override
@@ -454,9 +454,9 @@ public class TranslationDetails {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    linkedTranslation: ").append(toIndentedString(linkedTranslation)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    wordCount: ").append(toIndentedString(wordCount)).append("\n");
-    sb.append("    linkedTranslation: ").append(toIndentedString(linkedTranslation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

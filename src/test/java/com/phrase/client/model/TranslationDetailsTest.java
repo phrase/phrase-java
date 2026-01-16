@@ -134,6 +134,14 @@ public class TranslationDetailsTest {
     }
 
     /**
+     * Test the property 'linkedTranslation'
+     */
+    @Test
+    public void linkedTranslationTest() {
+        // TODO: test linkedTranslation
+    }
+
+    /**
      * Test the property 'user'
      */
     @Test
@@ -147,14 +155,6 @@ public class TranslationDetailsTest {
     @Test
     public void wordCountTest() {
         // TODO: test wordCount
-    }
-
-    /**
-     * Test the property 'linkedTranslation'
-     */
-    @Test
-    public void linkedTranslationTest() {
-        // TODO: test linkedTranslation
     }
 
 }
