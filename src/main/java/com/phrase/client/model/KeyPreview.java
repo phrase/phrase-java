@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyPreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T15:10:12.147582214Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T15:13:31.935284819Z[Etc/UTC]")
 public class KeyPreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
