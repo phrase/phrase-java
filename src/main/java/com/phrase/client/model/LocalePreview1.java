@@ -18,7 +18,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.ProjectShort;
 import java.io.IOException;
 import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
@@ -27,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocalePreview1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-21T08:22:28.240949904Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-21T09:58:14.352871869Z[Etc/UTC]")
 public class LocalePreview1 {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -36,10 +35,6 @@ public class LocalePreview1 {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
-
-  public static final String SERIALIZED_NAME_PROJECT = "project";
-  @SerializedName(SERIALIZED_NAME_PROJECT)
-  private ProjectShort project;
 
   public LocalePreview1() {
   }
@@ -87,28 +82,6 @@ public class LocalePreview1 {
     this.code = code;
   }
 
-
-  public LocalePreview1 project(ProjectShort project) {
-    
-    this.project = project;
-    return this;
-  }
-
-   /**
-   * Get project
-   * @return project
-  **/
-  @javax.annotation.Nullable
-
-  public ProjectShort getProject() {
-    return project;
-  }
-
-
-  public void setProject(ProjectShort project) {
-    this.project = project;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -119,13 +92,12 @@ public class LocalePreview1 {
     }
     LocalePreview1 localePreview1 = (LocalePreview1) o;
     return Objects.equals(this.name, localePreview1.name) &&
-        Objects.equals(this.code, localePreview1.code) &&
-        Objects.equals(this.project, localePreview1.project);
+        Objects.equals(this.code, localePreview1.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, code, project);
+    return Objects.hash(name, code);
   }
 
   @Override
@@ -134,7 +106,6 @@ public class LocalePreview1 {
     sb.append("class LocalePreview1 {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("}");
     return sb.toString();
   }

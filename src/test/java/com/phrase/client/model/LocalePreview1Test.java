@@ -17,7 +17,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.ProjectShort;
 import java.io.IOException;
 import java.util.Arrays;
 import org.junit.Assert;
@@ -53,14 +52,6 @@ public class LocalePreview1Test {
     @Test
     public void codeTest() {
         // TODO: test code
-    }
-
-    /**
-     * Test the property 'project'
-     */
-    @Test
-    public void projectTest() {
-        // TODO: test project
     }
 
 }
