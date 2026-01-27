@@ -15,6 +15,7 @@ package com.phrase.client.api;
 import com.phrase.client.ApiException;
 import com.phrase.client.model.RepoSync;
 import com.phrase.client.model.RepoSyncEvent;
+import com.phrase.client.model.RepoSyncImportParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -99,7 +100,8 @@ public class RepoSyncsApiTest {
         String accountId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        RepoSyncEvent response = api.repoSyncImport(accountId, id, xPhraseAppOTP);
+        RepoSyncImportParameters repoSyncImportParameters = null;
+        RepoSyncEvent response = api.repoSyncImport(accountId, id, xPhraseAppOTP, repoSyncImportParameters);
 
         // TODO: test validations
     }

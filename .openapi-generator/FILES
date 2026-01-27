@@ -202,6 +202,7 @@ docs/ReleasesApi.md
 docs/RepoSync.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventsApi.md
+docs/RepoSyncImportParameters.md
 docs/RepoSyncsApi.md
 docs/ReportsApi.md
 docs/Screenshot.md
@@ -521,6 +522,7 @@ src/main/java/com/phrase/client/model/ReleaseUpdateParameters.java
 src/main/java/com/phrase/client/model/ReleaseUpdateParameters1.java
 src/main/java/com/phrase/client/model/RepoSync.java
 src/main/java/com/phrase/client/model/RepoSyncEvent.java
+src/main/java/com/phrase/client/model/RepoSyncImportParameters.java
 src/main/java/com/phrase/client/model/Screenshot.java
 src/main/java/com/phrase/client/model/ScreenshotMarker.java
 src/main/java/com/phrase/client/model/ScreenshotMarkerCreateParameters.java
@@ -793,6 +795,7 @@ src/test/java/com/phrase/client/model/ReleaseTriggerTest.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParameters1Test.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParametersTest.java
 src/test/java/com/phrase/client/model/RepoSyncEventTest.java
+src/test/java/com/phrase/client/model/RepoSyncImportParametersTest.java
 src/test/java/com/phrase/client/model/RepoSyncTest.java
 src/test/java/com/phrase/client/model/ScreenshotMarkerCreateParametersTest.java
 src/test/java/com/phrase/client/model/ScreenshotMarkerTest.java

@@ -19,51 +19,41 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * KeyLinksCreateParameters
+ * RepoSyncImportParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T07:27:29.804514966Z[Etc/UTC]")
-public class KeyLinksCreateParameters {
-  public static final String SERIALIZED_NAME_CHILD_KEY_IDS = "child_key_ids";
-  @SerializedName(SERIALIZED_NAME_CHILD_KEY_IDS)
-  private List<String> childKeyIds = new ArrayList<>();
+public class RepoSyncImportParameters {
+  public static final String SERIALIZED_NAME_REPOSITORY_BRANCH = "repository_branch";
+  @SerializedName(SERIALIZED_NAME_REPOSITORY_BRANCH)
+  private String repositoryBranch;
 
-  public KeyLinksCreateParameters() {
+  public RepoSyncImportParameters() {
   }
 
-  public KeyLinksCreateParameters childKeyIds(List<String> childKeyIds) {
+  public RepoSyncImportParameters repositoryBranch(String repositoryBranch) {
     
-    this.childKeyIds = childKeyIds;
-    return this;
-  }
-
-  public KeyLinksCreateParameters addChildKeyIdsItem(String childKeyIdsItem) {
-    if (this.childKeyIds == null) {
-      this.childKeyIds = new ArrayList<>();
-    }
-    this.childKeyIds.add(childKeyIdsItem);
+    this.repositoryBranch = repositoryBranch;
     return this;
   }
 
    /**
-   * The IDs of the child keys to link to the parent key. Can be left empty, to only mark the given translation-key as parent
-   * @return childKeyIds
+   * Branch to import from
+   * @return repositoryBranch
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
 
-  public List<String> getChildKeyIds() {
-    return childKeyIds;
+  public String getRepositoryBranch() {
+    return repositoryBranch;
   }
 
 
-  public void setChildKeyIds(List<String> childKeyIds) {
-    this.childKeyIds = childKeyIds;
+  public void setRepositoryBranch(String repositoryBranch) {
+    this.repositoryBranch = repositoryBranch;
   }
 
   @Override
@@ -74,20 +64,20 @@ public class KeyLinksCreateParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    KeyLinksCreateParameters keyLinksCreateParameters = (KeyLinksCreateParameters) o;
-    return Objects.equals(this.childKeyIds, keyLinksCreateParameters.childKeyIds);
+    RepoSyncImportParameters repoSyncImportParameters = (RepoSyncImportParameters) o;
+    return Objects.equals(this.repositoryBranch, repoSyncImportParameters.repositoryBranch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(childKeyIds);
+    return Objects.hash(repositoryBranch);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class KeyLinksCreateParameters {\n");
-    sb.append("    childKeyIds: ").append(toIndentedString(childKeyIds)).append("\n");
+    sb.append("class RepoSyncImportParameters {\n");
+    sb.append("    repositoryBranch: ").append(toIndentedString(repositoryBranch)).append("\n");
     sb.append("}");
     return sb.toString();
   }
