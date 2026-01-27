@@ -267,6 +267,9 @@ docs/TranslationsUnreviewParameters.md
 docs/TranslationsUnverifyParameters.md
 docs/TranslationsVerifyParameters.md
 docs/Upload.md
+docs/UploadBatch.md
+docs/UploadBatchesApi.md
+docs/UploadBatchesCreateParameters.md
 docs/UploadSummary.md
 docs/UploadsApi.md
 docs/User.md
@@ -355,6 +358,7 @@ src/main/java/com/phrase/client/api/StyleGuidesApi.java
 src/main/java/com/phrase/client/api/TagsApi.java
 src/main/java/com/phrase/client/api/TeamsApi.java
 src/main/java/com/phrase/client/api/TranslationsApi.java
+src/main/java/com/phrase/client/api/UploadBatchesApi.java
 src/main/java/com/phrase/client/api/UploadsApi.java
 src/main/java/com/phrase/client/api/UsersApi.java
 src/main/java/com/phrase/client/api/VariablesApi.java
@@ -577,6 +581,8 @@ src/main/java/com/phrase/client/model/TranslationsUnreviewParameters.java
 src/main/java/com/phrase/client/model/TranslationsUnverifyParameters.java
 src/main/java/com/phrase/client/model/TranslationsVerifyParameters.java
 src/main/java/com/phrase/client/model/Upload.java
+src/main/java/com/phrase/client/model/UploadBatch.java
+src/main/java/com/phrase/client/model/UploadBatchesCreateParameters.java
 src/main/java/com/phrase/client/model/UploadSummary.java
 src/main/java/com/phrase/client/model/User.java
 src/main/java/com/phrase/client/model/UserPreview.java
@@ -635,6 +641,7 @@ src/test/java/com/phrase/client/api/StyleGuidesApiTest.java
 src/test/java/com/phrase/client/api/TagsApiTest.java
 src/test/java/com/phrase/client/api/TeamsApiTest.java
 src/test/java/com/phrase/client/api/TranslationsApiTest.java
+src/test/java/com/phrase/client/api/UploadBatchesApiTest.java
 src/test/java/com/phrase/client/api/UsersApiTest.java
 src/test/java/com/phrase/client/api/VariablesApiTest.java
 src/test/java/com/phrase/client/api/VersionsHistoryApiTest.java
@@ -850,6 +857,8 @@ src/test/java/com/phrase/client/model/TranslationsSearchParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsUnreviewParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsUnverifyParametersTest.java
 src/test/java/com/phrase/client/model/TranslationsVerifyParametersTest.java
+src/test/java/com/phrase/client/model/UploadBatchTest.java
+src/test/java/com/phrase/client/model/UploadBatchesCreateParametersTest.java
 src/test/java/com/phrase/client/model/UploadSummaryTest.java
 src/test/java/com/phrase/client/model/UploadTest.java
 src/test/java/com/phrase/client/model/UserPreviewTest.java
