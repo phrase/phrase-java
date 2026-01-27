@@ -100,8 +100,9 @@ public class RepoSyncsApiTest {
         String accountId = null;
         String id = null;
         String xPhraseAppOTP = null;
+        String branch = null;
         RepoSyncImportParameters repoSyncImportParameters = null;
-        RepoSyncEvent response = api.repoSyncImport(accountId, id, xPhraseAppOTP, repoSyncImportParameters);
+        RepoSyncEvent response = api.repoSyncImport(accountId, id, xPhraseAppOTP, branch, repoSyncImportParameters);
 
         // TODO: test validations
     }
