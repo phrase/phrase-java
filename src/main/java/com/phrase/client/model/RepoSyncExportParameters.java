@@ -24,36 +24,36 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * OrderConfirmParameters
+ * RepoSyncExportParameters
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-06T14:07:12.603233715Z[Etc/UTC]")
-public class OrderConfirmParameters {
-  public static final String SERIALIZED_NAME_BRANCH = "branch";
-  @SerializedName(SERIALIZED_NAME_BRANCH)
-  private String branch;
+public class RepoSyncExportParameters {
+  public static final String SERIALIZED_NAME_PR_BRANCH = "pr_branch";
+  @SerializedName(SERIALIZED_NAME_PR_BRANCH)
+  private String prBranch;
 
-  public OrderConfirmParameters() {
+  public RepoSyncExportParameters() {
   }
 
-  public OrderConfirmParameters branch(String branch) {
+  public RepoSyncExportParameters prBranch(String prBranch) {
     
-    this.branch = branch;
+    this.prBranch = prBranch;
     return this;
   }
 
    /**
-   * specify the branch to use
-   * @return branch
+   * Source branch to open a pull request from
+   * @return prBranch
   **/
   @javax.annotation.Nullable
 
-  public String getBranch() {
-    return branch;
+  public String getPrBranch() {
+    return prBranch;
   }
 
 
-  public void setBranch(String branch) {
-    this.branch = branch;
+  public void setPrBranch(String prBranch) {
+    this.prBranch = prBranch;
   }
 
   @Override
@@ -64,20 +64,20 @@ public class OrderConfirmParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderConfirmParameters orderConfirmParameters = (OrderConfirmParameters) o;
-    return Objects.equals(this.branch, orderConfirmParameters.branch);
+    RepoSyncExportParameters repoSyncExportParameters = (RepoSyncExportParameters) o;
+    return Objects.equals(this.prBranch, repoSyncExportParameters.prBranch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch);
+    return Objects.hash(prBranch);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderConfirmParameters {\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("class RepoSyncExportParameters {\n");
+    sb.append("    prBranch: ").append(toIndentedString(prBranch)).append("\n");
     sb.append("}");
     return sb.toString();
   }

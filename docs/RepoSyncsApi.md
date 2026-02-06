@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncExport"></a>
 # **repoSyncExport**
-> RepoSyncEvent repoSyncExport(accountId, id, xPhraseAppOTP)
+> RepoSyncEvent repoSyncExport(accountId, id, xPhraseAppOTP, repoSyncExportParameters)
 
 Export to code repository
 
@@ -209,8 +209,9 @@ public class Example {
     String accountId = "accountId_example"; // String | Account ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    RepoSyncExportParameters repoSyncExportParameters = new RepoSyncExportParameters(); // RepoSyncExportParameters | 
     try {
-      RepoSyncEvent result = apiInstance.repoSyncExport(accountId, id, xPhraseAppOTP);
+      RepoSyncEvent result = apiInstance.repoSyncExport(accountId, id, xPhraseAppOTP, repoSyncExportParameters);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncExport");
@@ -230,6 +231,7 @@ Name | Type | Description  | Notes
  **accountId** | **String**| Account ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **repoSyncExportParameters** | [**RepoSyncExportParameters**](RepoSyncExportParameters.md)|  | [optional]
 
 ### Return type
 
@@ -241,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
