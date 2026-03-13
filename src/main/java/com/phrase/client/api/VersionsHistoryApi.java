@@ -26,7 +26,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.TranslationVersion;
 import com.phrase.client.model.TranslationVersionWithUser;
 
 import java.lang.reflect.Type;
@@ -221,6 +220,7 @@ public class VersionsHistoryApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
+     * @param onlyContentUpdates Indicates whether only content updates should be returned (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -233,7 +233,7 @@ public class VersionsHistoryApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call versionsListCall(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call versionsListCall(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, Boolean onlyContentUpdates, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -253,6 +253,10 @@ public class VersionsHistoryApi {
 
         if (branch != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        if (onlyContentUpdates != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("only_content_updates", onlyContentUpdates));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -281,7 +285,7 @@ public class VersionsHistoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call versionsListValidateBeforeCall(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call versionsListValidateBeforeCall(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, Boolean onlyContentUpdates, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -294,7 +298,7 @@ public class VersionsHistoryApi {
         }
         
 
-        okhttp3.Call localVarCall = versionsListCall(projectId, translationId, xPhraseAppOTP, page, perPage, branch, _callback);
+        okhttp3.Call localVarCall = versionsListCall(projectId, translationId, xPhraseAppOTP, page, perPage, branch, onlyContentUpdates, _callback);
         return localVarCall;
 
     }
@@ -308,7 +312,8 @@ public class VersionsHistoryApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
-     * @return List&lt;TranslationVersion&gt;
+     * @param onlyContentUpdates Indicates whether only content updates should be returned (optional, default to false)
+     * @return List&lt;TranslationVersionWithUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -319,8 +324,8 @@ public class VersionsHistoryApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<TranslationVersion> versionsList(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        ApiResponse<List<TranslationVersion>> localVarResp = versionsListWithHttpInfo(projectId, translationId, xPhraseAppOTP, page, perPage, branch);
+    public List<TranslationVersionWithUser> versionsList(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, Boolean onlyContentUpdates) throws ApiException {
+        ApiResponse<List<TranslationVersionWithUser>> localVarResp = versionsListWithHttpInfo(projectId, translationId, xPhraseAppOTP, page, perPage, branch, onlyContentUpdates);
         return localVarResp.getData();
     }
 
@@ -333,7 +338,8 @@ public class VersionsHistoryApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
-     * @return ApiResponse&lt;List&lt;TranslationVersion&gt;&gt;
+     * @param onlyContentUpdates Indicates whether only content updates should be returned (optional, default to false)
+     * @return ApiResponse&lt;List&lt;TranslationVersionWithUser&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -344,9 +350,9 @@ public class VersionsHistoryApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<TranslationVersion>> versionsListWithHttpInfo(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch) throws ApiException {
-        okhttp3.Call localVarCall = versionsListValidateBeforeCall(projectId, translationId, xPhraseAppOTP, page, perPage, branch, null);
-        Type localVarReturnType = new TypeToken<List<TranslationVersion>>(){}.getType();
+    public ApiResponse<List<TranslationVersionWithUser>> versionsListWithHttpInfo(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, Boolean onlyContentUpdates) throws ApiException {
+        okhttp3.Call localVarCall = versionsListValidateBeforeCall(projectId, translationId, xPhraseAppOTP, page, perPage, branch, onlyContentUpdates, null);
+        Type localVarReturnType = new TypeToken<List<TranslationVersionWithUser>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -359,6 +365,7 @@ public class VersionsHistoryApi {
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param branch specify the branch to use (optional)
+     * @param onlyContentUpdates Indicates whether only content updates should be returned (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -371,10 +378,10 @@ public class VersionsHistoryApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call versionsListAsync(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, final ApiCallback<List<TranslationVersion>> _callback) throws ApiException {
+    public okhttp3.Call versionsListAsync(String projectId, String translationId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, Boolean onlyContentUpdates, final ApiCallback<List<TranslationVersionWithUser>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = versionsListValidateBeforeCall(projectId, translationId, xPhraseAppOTP, page, perPage, branch, _callback);
-        Type localVarReturnType = new TypeToken<List<TranslationVersion>>(){}.getType();
+        okhttp3.Call localVarCall = versionsListValidateBeforeCall(projectId, translationId, xPhraseAppOTP, page, perPage, branch, onlyContentUpdates, _callback);
+        Type localVarReturnType = new TypeToken<List<TranslationVersionWithUser>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

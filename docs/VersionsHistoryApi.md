@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="versionsList"></a>
 # **versionsList**
-> List&lt;TranslationVersion&gt; versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch)
+> List&lt;TranslationVersionWithUser&gt; versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch, onlyContentUpdates)
 
 List all versions
 
@@ -132,8 +132,9 @@ public class Example {
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String branch = "my-feature-branch"; // String | specify the branch to use
+    Boolean onlyContentUpdates = false; // Boolean | Indicates whether only content updates should be returned
     try {
-      List<TranslationVersion> result = apiInstance.versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch);
+      List<TranslationVersionWithUser> result = apiInstance.versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch, onlyContentUpdates);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling VersionsHistoryApi#versionsList");
@@ -156,10 +157,11 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **branch** | **String**| specify the branch to use | [optional]
+ **onlyContentUpdates** | **Boolean**| Indicates whether only content updates should be returned | [optional] [default to false]
 
 ### Return type
 
-[**List&lt;TranslationVersion&gt;**](TranslationVersion.md)
+[**List&lt;TranslationVersionWithUser&gt;**](TranslationVersionWithUser.md)
 
 ### Authorization
 

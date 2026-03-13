@@ -13,7 +13,6 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
-import com.phrase.client.model.TranslationVersion;
 import com.phrase.client.model.TranslationVersionWithUser;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -68,7 +67,8 @@ public class VersionsHistoryApiTest {
         Integer page = null;
         Integer perPage = null;
         String branch = null;
-        List<TranslationVersion> response = api.versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch);
+        Boolean onlyContentUpdates = null;
+        List<TranslationVersionWithUser> response = api.versionsList(projectId, translationId, xPhraseAppOTP, page, perPage, branch, onlyContentUpdates);
 
         // TODO: test validations
     }
