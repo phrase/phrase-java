@@ -19,7 +19,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -221,6 +223,14 @@ public class ProjectCreateParametersTest {
     @Test
     public void autotranslateUseTranslationMemoryTest() {
         // TODO: test autotranslateUseTranslationMemory
+    }
+
+    /**
+     * Test the property 'placeholderStyles'
+     */
+    @Test
+    public void placeholderStylesTest() {
+        // TODO: test placeholderStyles
     }
 
 }

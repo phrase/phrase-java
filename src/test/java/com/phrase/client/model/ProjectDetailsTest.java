@@ -22,7 +22,9 @@ import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -248,6 +250,30 @@ public class ProjectDetailsTest {
     @Test
     public void defaultEncodingTest() {
         // TODO: test defaultEncoding
+    }
+
+    /**
+     * Test the property 'cldrVersion'
+     */
+    @Test
+    public void cldrVersionTest() {
+        // TODO: test cldrVersion
+    }
+
+    /**
+     * Test the property 'jobLockingEnabled'
+     */
+    @Test
+    public void jobLockingEnabledTest() {
+        // TODO: test jobLockingEnabled
+    }
+
+    /**
+     * Test the property 'placeholderStyles'
+     */
+    @Test
+    public void placeholderStylesTest() {
+        // TODO: test placeholderStyles
     }
 
 }

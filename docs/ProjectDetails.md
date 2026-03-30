@@ -32,6 +32,9 @@ Name | Type | Description | Notes
 **autotranslateUseMachineTranslation** | **Boolean** |  |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** |  |  [optional]
 **defaultEncoding** | **String** |  |  [optional]
+**cldrVersion** | **String** |  |  [optional]
+**jobLockingEnabled** | **Boolean** |  |  [optional]
+**placeholderStyles** | **List&lt;String&gt;** |  |  [optional]
 
 
 

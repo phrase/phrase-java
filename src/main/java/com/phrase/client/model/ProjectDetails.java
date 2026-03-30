@@ -23,14 +23,16 @@ import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T07:56:53.829428424Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T14:42:58.755140094Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -135,6 +137,18 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_DEFAULT_ENCODING = "default_encoding";
   @SerializedName(SERIALIZED_NAME_DEFAULT_ENCODING)
   private String defaultEncoding;
+
+  public static final String SERIALIZED_NAME_CLDR_VERSION = "cldr_version";
+  @SerializedName(SERIALIZED_NAME_CLDR_VERSION)
+  private String cldrVersion;
+
+  public static final String SERIALIZED_NAME_JOB_LOCKING_ENABLED = "job_locking_enabled";
+  @SerializedName(SERIALIZED_NAME_JOB_LOCKING_ENABLED)
+  private Boolean jobLockingEnabled;
+
+  public static final String SERIALIZED_NAME_PLACEHOLDER_STYLES = "placeholder_styles";
+  @SerializedName(SERIALIZED_NAME_PLACEHOLDER_STYLES)
+  private List<String> placeholderStyles;
 
   public ProjectDetails() {
   }
@@ -710,6 +724,80 @@ public class ProjectDetails {
     this.defaultEncoding = defaultEncoding;
   }
 
+
+  public ProjectDetails cldrVersion(String cldrVersion) {
+    
+    this.cldrVersion = cldrVersion;
+    return this;
+  }
+
+   /**
+   * Get cldrVersion
+   * @return cldrVersion
+  **/
+  @javax.annotation.Nullable
+
+  public String getCldrVersion() {
+    return cldrVersion;
+  }
+
+
+  public void setCldrVersion(String cldrVersion) {
+    this.cldrVersion = cldrVersion;
+  }
+
+
+  public ProjectDetails jobLockingEnabled(Boolean jobLockingEnabled) {
+    
+    this.jobLockingEnabled = jobLockingEnabled;
+    return this;
+  }
+
+   /**
+   * Get jobLockingEnabled
+   * @return jobLockingEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getJobLockingEnabled() {
+    return jobLockingEnabled;
+  }
+
+
+  public void setJobLockingEnabled(Boolean jobLockingEnabled) {
+    this.jobLockingEnabled = jobLockingEnabled;
+  }
+
+
+  public ProjectDetails placeholderStyles(List<String> placeholderStyles) {
+    
+    this.placeholderStyles = placeholderStyles;
+    return this;
+  }
+
+  public ProjectDetails addPlaceholderStylesItem(String placeholderStylesItem) {
+    if (this.placeholderStyles == null) {
+      this.placeholderStyles = new ArrayList<>();
+    }
+    this.placeholderStyles.add(placeholderStylesItem);
+    return this;
+  }
+
+   /**
+   * Get placeholderStyles
+   * @return placeholderStyles
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getPlaceholderStyles() {
+    return placeholderStyles;
+  }
+
+
+  public void setPlaceholderStyles(List<String> placeholderStyles) {
+    this.placeholderStyles = placeholderStyles;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -744,12 +832,15 @@ public class ProjectDetails {
         Objects.equals(this.autotranslateMarkAsUnverified, projectDetails.autotranslateMarkAsUnverified) &&
         Objects.equals(this.autotranslateUseMachineTranslation, projectDetails.autotranslateUseMachineTranslation) &&
         Objects.equals(this.autotranslateUseTranslationMemory, projectDetails.autotranslateUseTranslationMemory) &&
-        Objects.equals(this.defaultEncoding, projectDetails.defaultEncoding);
+        Objects.equals(this.defaultEncoding, projectDetails.defaultEncoding) &&
+        Objects.equals(this.cldrVersion, projectDetails.cldrVersion) &&
+        Objects.equals(this.jobLockingEnabled, projectDetails.jobLockingEnabled) &&
+        Objects.equals(this.placeholderStyles, projectDetails.placeholderStyles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding, cldrVersion, jobLockingEnabled, placeholderStyles);
   }
 
   @Override
@@ -782,6 +873,9 @@ public class ProjectDetails {
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
     sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
+    sb.append("    cldrVersion: ").append(toIndentedString(cldrVersion)).append("\n");
+    sb.append("    jobLockingEnabled: ").append(toIndentedString(jobLockingEnabled)).append("\n");
+    sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
     sb.append("}");
     return sb.toString();
   }

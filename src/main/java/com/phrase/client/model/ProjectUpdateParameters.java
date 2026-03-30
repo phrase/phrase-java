@@ -20,14 +20,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T07:56:53.829428424Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T14:42:58.755140094Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -173,6 +175,10 @@ public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_DEFAULT_ENCODING = "default_encoding";
   @SerializedName(SERIALIZED_NAME_DEFAULT_ENCODING)
   private DefaultEncodingEnum defaultEncoding;
+
+  public static final String SERIALIZED_NAME_PLACEHOLDER_STYLES = "placeholder_styles";
+  @SerializedName(SERIALIZED_NAME_PLACEHOLDER_STYLES)
+  private List<String> placeholderStyles;
 
   public ProjectUpdateParameters() {
   }
@@ -682,6 +688,36 @@ public class ProjectUpdateParameters {
     this.defaultEncoding = defaultEncoding;
   }
 
+
+  public ProjectUpdateParameters placeholderStyles(List<String> placeholderStyles) {
+    
+    this.placeholderStyles = placeholderStyles;
+    return this;
+  }
+
+  public ProjectUpdateParameters addPlaceholderStylesItem(String placeholderStylesItem) {
+    if (this.placeholderStyles == null) {
+      this.placeholderStyles = new ArrayList<>();
+    }
+    this.placeholderStyles.add(placeholderStylesItem);
+    return this;
+  }
+
+   /**
+   * (Optional) List of placeholder styles enabled for the project.
+   * @return placeholderStyles
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getPlaceholderStyles() {
+    return placeholderStyles;
+  }
+
+
+  public void setPlaceholderStyles(List<String> placeholderStyles) {
+    this.placeholderStyles = placeholderStyles;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -713,12 +749,13 @@ public class ProjectUpdateParameters {
         Objects.equals(this.autotranslateMarkAsUnverified, projectUpdateParameters.autotranslateMarkAsUnverified) &&
         Objects.equals(this.autotranslateUseMachineTranslation, projectUpdateParameters.autotranslateUseMachineTranslation) &&
         Objects.equals(this.autotranslateUseTranslationMemory, projectUpdateParameters.autotranslateUseTranslationMemory) &&
-        Objects.equals(this.defaultEncoding, projectUpdateParameters.defaultEncoding);
+        Objects.equals(this.defaultEncoding, projectUpdateParameters.defaultEncoding) &&
+        Objects.equals(this.placeholderStyles, projectUpdateParameters.placeholderStyles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding);
+    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding, placeholderStyles);
   }
 
   @Override
@@ -748,6 +785,7 @@ public class ProjectUpdateParameters {
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
     sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
+    sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
     sb.append("}");
     return sb.toString();
   }
