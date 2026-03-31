@@ -26,11 +26,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncImportParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T14:42:58.755140094Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T14:39:03.152759130Z[Etc/UTC]")
 public class RepoSyncImportParameters {
   public static final String SERIALIZED_NAME_REPOSITORY_BRANCH = "repository_branch";
   @SerializedName(SERIALIZED_NAME_REPOSITORY_BRANCH)
   private String repositoryBranch;
+
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
 
   public RepoSyncImportParameters() {
   }
@@ -56,6 +60,28 @@ public class RepoSyncImportParameters {
     this.repositoryBranch = repositoryBranch;
   }
 
+
+  public RepoSyncImportParameters branch(String branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * Strings branch to import to
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+
+  public String getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(String branch) {
+    this.branch = branch;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -65,12 +91,13 @@ public class RepoSyncImportParameters {
       return false;
     }
     RepoSyncImportParameters repoSyncImportParameters = (RepoSyncImportParameters) o;
-    return Objects.equals(this.repositoryBranch, repoSyncImportParameters.repositoryBranch);
+    return Objects.equals(this.repositoryBranch, repoSyncImportParameters.repositoryBranch) &&
+        Objects.equals(this.branch, repoSyncImportParameters.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(repositoryBranch);
+    return Objects.hash(repositoryBranch, branch);
   }
 
   @Override
@@ -78,6 +105,7 @@ public class RepoSyncImportParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class RepoSyncImportParameters {\n");
     sb.append("    repositoryBranch: ").append(toIndentedString(repositoryBranch)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();
   }

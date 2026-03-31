@@ -46,4 +46,12 @@ public class RepoSyncExportParametersTest {
         // TODO: test prBranch
     }
 
+    /**
+     * Test the property 'branch'
+     */
+    @Test
+    public void branchTest() {
+        // TODO: test branch
+    }
+
 }

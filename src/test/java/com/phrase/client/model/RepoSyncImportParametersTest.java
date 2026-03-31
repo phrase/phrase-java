@@ -46,4 +46,12 @@ public class RepoSyncImportParametersTest {
         // TODO: test repositoryBranch
     }
 
+    /**
+     * Test the property 'branch'
+     */
+    @Test
+    public void branchTest() {
+        // TODO: test branch
+    }
+
 }

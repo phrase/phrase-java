@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncImport"></a>
 # **repoSyncImport**
-> RepoSyncEvent repoSyncImport(accountId, id, xPhraseAppOTP, branch, repoSyncImportParameters)
+> RepoSyncEvent repoSyncImport(accountId, id, xPhraseAppOTP, repoSyncImportParameters)
 
 Import from code repository
 
@@ -291,10 +291,9 @@ public class Example {
     String accountId = "accountId_example"; // String | Account ID
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
-    String branch = "my-feature-branch"; // String | Branch to use
     RepoSyncImportParameters repoSyncImportParameters = new RepoSyncImportParameters(); // RepoSyncImportParameters | 
     try {
-      RepoSyncEvent result = apiInstance.repoSyncImport(accountId, id, xPhraseAppOTP, branch, repoSyncImportParameters);
+      RepoSyncEvent result = apiInstance.repoSyncImport(accountId, id, xPhraseAppOTP, repoSyncImportParameters);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncImport");
@@ -314,7 +313,6 @@ Name | Type | Description  | Notes
  **accountId** | **String**| Account ID |
  **id** | **String**| ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
- **branch** | **String**| Branch to use | [optional]
  **repoSyncImportParameters** | [**RepoSyncImportParameters**](RepoSyncImportParameters.md)|  | [optional]
 
 ### Return type

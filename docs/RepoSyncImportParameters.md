@@ -7,6 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **repositoryBranch** | **String** | Branch to import from |  [optional]
+**branch** | **String** | Strings branch to import to |  [optional]
 
 
 

@@ -26,11 +26,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncExportParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-30T14:42:58.755140094Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T14:39:03.152759130Z[Etc/UTC]")
 public class RepoSyncExportParameters {
   public static final String SERIALIZED_NAME_PR_BRANCH = "pr_branch";
   @SerializedName(SERIALIZED_NAME_PR_BRANCH)
   private String prBranch;
+
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private String branch;
 
   public RepoSyncExportParameters() {
   }
@@ -56,6 +60,28 @@ public class RepoSyncExportParameters {
     this.prBranch = prBranch;
   }
 
+
+  public RepoSyncExportParameters branch(String branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * Strings branch to export from
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+
+  public String getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(String branch) {
+    this.branch = branch;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -65,12 +91,13 @@ public class RepoSyncExportParameters {
       return false;
     }
     RepoSyncExportParameters repoSyncExportParameters = (RepoSyncExportParameters) o;
-    return Objects.equals(this.prBranch, repoSyncExportParameters.prBranch);
+    return Objects.equals(this.prBranch, repoSyncExportParameters.prBranch) &&
+        Objects.equals(this.branch, repoSyncExportParameters.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(prBranch);
+    return Objects.hash(prBranch, branch);
   }
 
   @Override
@@ -78,6 +105,7 @@ public class RepoSyncExportParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class RepoSyncExportParameters {\n");
     sb.append("    prBranch: ").append(toIndentedString(prBranch)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();
   }
