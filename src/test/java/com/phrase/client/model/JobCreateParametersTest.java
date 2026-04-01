@@ -114,4 +114,12 @@ public class JobCreateParametersTest {
         // TODO: test jobTemplateId
     }
 
+    /**
+     * Test the property 'autotranslate'
+     */
+    @Test
+    public void autotranslateTest() {
+        // TODO: test autotranslate
+    }
+
 }

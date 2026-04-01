@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T06:38:28.559112056Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T13:22:43.281245540Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -122,6 +122,10 @@ public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY = "autotranslate_use_translation_memory";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY)
   private Boolean autotranslateUseTranslationMemory;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS = "autotranslate_overwrite_unverified_translations";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS)
+  private Boolean autotranslateOverwriteUnverifiedTranslations;
 
   public static final String SERIALIZED_NAME_PLACEHOLDER_STYLES = "placeholder_styles";
   @SerializedName(SERIALIZED_NAME_PLACEHOLDER_STYLES)
@@ -636,6 +640,28 @@ public class ProjectCreateParameters {
   }
 
 
+  public ProjectCreateParameters autotranslateOverwriteUnverifiedTranslations(Boolean autotranslateOverwriteUnverifiedTranslations) {
+    
+    this.autotranslateOverwriteUnverifiedTranslations = autotranslateOverwriteUnverifiedTranslations;
+    return this;
+  }
+
+   /**
+   * (Optional) Requires autotranslate_enabled to be true
+   * @return autotranslateOverwriteUnverifiedTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateOverwriteUnverifiedTranslations() {
+    return autotranslateOverwriteUnverifiedTranslations;
+  }
+
+
+  public void setAutotranslateOverwriteUnverifiedTranslations(Boolean autotranslateOverwriteUnverifiedTranslations) {
+    this.autotranslateOverwriteUnverifiedTranslations = autotranslateOverwriteUnverifiedTranslations;
+  }
+
+
   public ProjectCreateParameters placeholderStyles(List<String> placeholderStyles) {
     
     this.placeholderStyles = placeholderStyles;
@@ -697,12 +723,13 @@ public class ProjectCreateParameters {
         Objects.equals(this.autotranslateMarkAsUnverified, projectCreateParameters.autotranslateMarkAsUnverified) &&
         Objects.equals(this.autotranslateUseMachineTranslation, projectCreateParameters.autotranslateUseMachineTranslation) &&
         Objects.equals(this.autotranslateUseTranslationMemory, projectCreateParameters.autotranslateUseTranslationMemory) &&
+        Objects.equals(this.autotranslateOverwriteUnverifiedTranslations, projectCreateParameters.autotranslateOverwriteUnverifiedTranslations) &&
         Objects.equals(this.placeholderStyles, projectCreateParameters.placeholderStyles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, placeholderStyles);
+    return Objects.hash(name, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, placeholderStyles);
   }
 
   @Override
@@ -732,6 +759,7 @@ public class ProjectCreateParameters {
     sb.append("    autotranslateMarkAsUnverified: ").append(toIndentedString(autotranslateMarkAsUnverified)).append("\n");
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
+    sb.append("    autotranslateOverwriteUnverifiedTranslations: ").append(toIndentedString(autotranslateOverwriteUnverifiedTranslations)).append("\n");
     sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
     sb.append("}");
     return sb.toString();

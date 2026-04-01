@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **autotranslateMarkAsUnverified** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseMachineTranslation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
+**autotranslateOverwriteUnverifiedTranslations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. |  [optional]
 
 

@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T06:38:28.559112056Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T13:22:43.281245540Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -118,6 +118,10 @@ public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY = "autotranslate_use_translation_memory";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY)
   private Boolean autotranslateUseTranslationMemory;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS = "autotranslate_overwrite_unverified_translations";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS)
+  private Boolean autotranslateOverwriteUnverifiedTranslations;
 
   /**
    * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
@@ -667,6 +671,28 @@ public class ProjectUpdateParameters {
   }
 
 
+  public ProjectUpdateParameters autotranslateOverwriteUnverifiedTranslations(Boolean autotranslateOverwriteUnverifiedTranslations) {
+    
+    this.autotranslateOverwriteUnverifiedTranslations = autotranslateOverwriteUnverifiedTranslations;
+    return this;
+  }
+
+   /**
+   * (Optional) Requires autotranslate_enabled to be true
+   * @return autotranslateOverwriteUnverifiedTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateOverwriteUnverifiedTranslations() {
+    return autotranslateOverwriteUnverifiedTranslations;
+  }
+
+
+  public void setAutotranslateOverwriteUnverifiedTranslations(Boolean autotranslateOverwriteUnverifiedTranslations) {
+    this.autotranslateOverwriteUnverifiedTranslations = autotranslateOverwriteUnverifiedTranslations;
+  }
+
+
   public ProjectUpdateParameters defaultEncoding(DefaultEncodingEnum defaultEncoding) {
     
     this.defaultEncoding = defaultEncoding;
@@ -749,13 +775,14 @@ public class ProjectUpdateParameters {
         Objects.equals(this.autotranslateMarkAsUnverified, projectUpdateParameters.autotranslateMarkAsUnverified) &&
         Objects.equals(this.autotranslateUseMachineTranslation, projectUpdateParameters.autotranslateUseMachineTranslation) &&
         Objects.equals(this.autotranslateUseTranslationMemory, projectUpdateParameters.autotranslateUseTranslationMemory) &&
+        Objects.equals(this.autotranslateOverwriteUnverifiedTranslations, projectUpdateParameters.autotranslateOverwriteUnverifiedTranslations) &&
         Objects.equals(this.defaultEncoding, projectUpdateParameters.defaultEncoding) &&
         Objects.equals(this.placeholderStyles, projectUpdateParameters.placeholderStyles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding, placeholderStyles);
+    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, defaultEncoding, placeholderStyles);
   }
 
   @Override
@@ -784,6 +811,7 @@ public class ProjectUpdateParameters {
     sb.append("    autotranslateMarkAsUnverified: ").append(toIndentedString(autotranslateMarkAsUnverified)).append("\n");
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
+    sb.append("    autotranslateOverwriteUnverifiedTranslations: ").append(toIndentedString(autotranslateOverwriteUnverifiedTranslations)).append("\n");
     sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
     sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
     sb.append("}");

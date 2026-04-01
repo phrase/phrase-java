@@ -33400,6 +33400,10 @@ components:
             attributes.
           example: abcd1234cdef1234abcd1234cdef1234
           type: string
+        autotranslate:
+          description: Automatically translate the job using machine translation.
+          example: true
+          type: boolean
       required:
       - name
       title: job/create/parameters
@@ -33427,6 +33431,10 @@ components:
           description: "URL to a ticket for this job (e.g. Jira, Trello)"
           example: https://example.atlassian.net/browse/FOO
           type: string
+        autotranslate:
+          description: Automatically translate the job using machine translation
+          example: true
+          type: boolean
       title: job/update/parameters
       type: object
     job_start_parameters:
@@ -33499,6 +33507,10 @@ components:
           description: Briefing for the translators
           example: text
           type: string
+        autotranslate:
+          description: Automatically translate the job using machine translation.
+          example: true
+          type: boolean
       required:
       - name
       title: job_template/create/parameters
@@ -33517,6 +33529,10 @@ components:
           description: Briefing for the translators
           example: text
           type: string
+        autotranslate:
+          description: Automatically translate the job using machine translation.
+          example: true
+          type: boolean
       required:
       - name
       title: job_template/update/parameters
@@ -34099,6 +34115,10 @@ components:
           description: (Optional) Requires autotranslate_enabled to be true
           example: true
           type: boolean
+        autotranslate_overwrite_unverified_translations:
+          description: (Optional) Requires autotranslate_enabled to be true
+          example: true
+          type: boolean
         placeholder_styles:
           description: (Optional) List of placeholder styles enabled for the project.
           example:
@@ -34220,6 +34240,10 @@ components:
           example: true
           type: boolean
         autotranslate_use_translation_memory:
+          description: (Optional) Requires autotranslate_enabled to be true
+          example: true
+          type: boolean
+        autotranslate_overwrite_unverified_translations:
           description: (Optional) Requires autotranslate_enabled to be true
           example: true
           type: boolean
@@ -35814,6 +35838,10 @@ components:
           description: Briefing for the translators
           example: text
           type: string
+        autotranslate:
+          description: Automatically translate the job using machine translation.
+          example: true
+          type: boolean
       required:
       - name
       title: organization_job_template/create/parameters
@@ -35828,6 +35856,10 @@ components:
           description: Briefing for the translators
           example: text
           type: string
+        autotranslate:
+          description: Automatically translate the job using machine translation.
+          example: true
+          type: boolean
       required:
       - name
       title: organization_job_template/update/parameters

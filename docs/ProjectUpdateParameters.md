@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **autotranslateMarkAsUnverified** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseMachineTranslation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
+**autotranslateOverwriteUnverifiedTranslations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **defaultEncoding** | [**DefaultEncodingEnum**](#DefaultEncodingEnum) | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads. |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. |  [optional]
 

@@ -54,4 +54,12 @@ public class OrganizationJobTemplateUpdateParametersTest {
         // TODO: test briefing
     }
 
+    /**
+     * Test the property 'autotranslate'
+     */
+    @Test
+    public void autotranslateTest() {
+        // TODO: test autotranslate
+    }
+
 }

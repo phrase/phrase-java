@@ -218,6 +218,14 @@ public class ProjectUpdateParametersTest {
     }
 
     /**
+     * Test the property 'autotranslateOverwriteUnverifiedTranslations'
+     */
+    @Test
+    public void autotranslateOverwriteUnverifiedTranslationsTest() {
+        // TODO: test autotranslateOverwriteUnverifiedTranslations
+    }
+
+    /**
      * Test the property 'defaultEncoding'
      */
     @Test

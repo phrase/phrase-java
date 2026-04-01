@@ -80,4 +80,12 @@ public class JobUpdateParametersTest {
         // TODO: test ticketUrl
     }
 
+    /**
+     * Test the property 'autotranslate'
+     */
+    @Test
+    public void autotranslateTest() {
+        // TODO: test autotranslate
+    }
+
 }

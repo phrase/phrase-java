@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T06:38:28.559112056Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T13:22:43.281245540Z[Etc/UTC]")
 public class JobCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -67,6 +67,10 @@ public class JobCreateParameters {
   public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
   private String jobTemplateId;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
+  private Boolean autotranslate;
 
   public JobCreateParameters() {
   }
@@ -284,6 +288,28 @@ public class JobCreateParameters {
     this.jobTemplateId = jobTemplateId;
   }
 
+
+  public JobCreateParameters autotranslate(Boolean autotranslate) {
+    
+    this.autotranslate = autotranslate;
+    return this;
+  }
+
+   /**
+   * Automatically translate the job using machine translation.
+   * @return autotranslate
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslate() {
+    return autotranslate;
+  }
+
+
+  public void setAutotranslate(Boolean autotranslate) {
+    this.autotranslate = autotranslate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -301,7 +327,8 @@ public class JobCreateParameters {
         Objects.equals(this.ticketUrl, jobCreateParameters.ticketUrl) &&
         Objects.equals(this.tags, jobCreateParameters.tags) &&
         Objects.equals(this.translationKeyIds, jobCreateParameters.translationKeyIds) &&
-        Objects.equals(this.jobTemplateId, jobCreateParameters.jobTemplateId);
+        Objects.equals(this.jobTemplateId, jobCreateParameters.jobTemplateId) &&
+        Objects.equals(this.autotranslate, jobCreateParameters.autotranslate);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -310,7 +337,7 @@ public class JobCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds, jobTemplateId);
+    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds, jobTemplateId, autotranslate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -333,6 +360,7 @@ public class JobCreateParameters {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    translationKeyIds: ").append(toIndentedString(translationKeyIds)).append("\n");
     sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
+    sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

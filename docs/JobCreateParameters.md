@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **tags** | **List&lt;String&gt;** | tags of keys that should be included within the job |  [optional]
 **translationKeyIds** | **List&lt;String&gt;** | ids of keys that should be included within the job |  [optional]
 **jobTemplateId** | **String** | id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes. |  [optional]
+**autotranslate** | **Boolean** | Automatically translate the job using machine translation. |  [optional]
 
 
 

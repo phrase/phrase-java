@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * OrganizationJobTemplateUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T06:38:28.559112056Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T13:22:43.281245540Z[Etc/UTC]")
 public class OrganizationJobTemplateUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -35,6 +35,10 @@ public class OrganizationJobTemplateUpdateParameters {
   public static final String SERIALIZED_NAME_BRIEFING = "briefing";
   @SerializedName(SERIALIZED_NAME_BRIEFING)
   private String briefing;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
+  private Boolean autotranslate;
 
   public OrganizationJobTemplateUpdateParameters() {
   }
@@ -82,6 +86,28 @@ public class OrganizationJobTemplateUpdateParameters {
     this.briefing = briefing;
   }
 
+
+  public OrganizationJobTemplateUpdateParameters autotranslate(Boolean autotranslate) {
+    
+    this.autotranslate = autotranslate;
+    return this;
+  }
+
+   /**
+   * Automatically translate the job using machine translation.
+   * @return autotranslate
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslate() {
+    return autotranslate;
+  }
+
+
+  public void setAutotranslate(Boolean autotranslate) {
+    this.autotranslate = autotranslate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -92,12 +118,13 @@ public class OrganizationJobTemplateUpdateParameters {
     }
     OrganizationJobTemplateUpdateParameters organizationJobTemplateUpdateParameters = (OrganizationJobTemplateUpdateParameters) o;
     return Objects.equals(this.name, organizationJobTemplateUpdateParameters.name) &&
-        Objects.equals(this.briefing, organizationJobTemplateUpdateParameters.briefing);
+        Objects.equals(this.briefing, organizationJobTemplateUpdateParameters.briefing) &&
+        Objects.equals(this.autotranslate, organizationJobTemplateUpdateParameters.autotranslate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, briefing);
+    return Objects.hash(name, briefing, autotranslate);
   }
 
   @Override
@@ -106,6 +133,7 @@ public class OrganizationJobTemplateUpdateParameters {
     sb.append("class OrganizationJobTemplateUpdateParameters {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
+    sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
