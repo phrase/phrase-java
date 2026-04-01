@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ReleaseCreateParameters1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T14:39:03.152759130Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-01T06:38:28.559112056Z[Etc/UTC]")
 public class ReleaseCreateParameters1 {
   public static final String SERIALIZED_NAME_CRON_SCHEDULE = "cron_schedule";
   @SerializedName(SERIALIZED_NAME_CRON_SCHEDULE)
