@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncImportParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T09:12:27.695316791Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T09:12:53.536210653Z[Etc/UTC]")
 public class RepoSyncImportParameters {
   public static final String SERIALIZED_NAME_REPOSITORY_BRANCH = "repository_branch";
   @SerializedName(SERIALIZED_NAME_REPOSITORY_BRANCH)
