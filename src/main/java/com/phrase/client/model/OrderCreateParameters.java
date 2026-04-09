@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * OrderCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T09:04:11.016788344Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T09:05:31.080951767Z[Etc/UTC]")
 public class OrderCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
