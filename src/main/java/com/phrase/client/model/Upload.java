@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UploadSummary;
+import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Upload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-08T08:19:58.962218277Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T07:54:02.546570855Z[Etc/UTC]")
 public class Upload {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -59,6 +60,10 @@ public class Upload {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   private String url;
+
+  public static final String SERIALIZED_NAME_USER = "user";
+  @SerializedName(SERIALIZED_NAME_USER)
+  private UserPreview user;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
@@ -237,6 +242,28 @@ public class Upload {
   }
 
 
+  public Upload user(UserPreview user) {
+    
+    this.user = user;
+    return this;
+  }
+
+   /**
+   * Get user
+   * @return user
+  **/
+  @javax.annotation.Nullable
+
+  public UserPreview getUser() {
+    return user;
+  }
+
+
+  public void setUser(UserPreview user) {
+    this.user = user;
+  }
+
+
   public Upload summary(UploadSummary summary) {
     
     this.summary = summary;
@@ -318,6 +345,7 @@ public class Upload {
         Objects.equals(this.tag, upload.tag) &&
         Objects.equals(this.tags, upload.tags) &&
         Objects.equals(this.url, upload.url) &&
+        Objects.equals(this.user, upload.user) &&
         Objects.equals(this.summary, upload.summary) &&
         Objects.equals(this.createdAt, upload.createdAt) &&
         Objects.equals(this.updatedAt, upload.updatedAt);
@@ -325,7 +353,7 @@ public class Upload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, filename, format, state, tag, tags, url, summary, createdAt, updatedAt);
+    return Objects.hash(id, filename, format, state, tag, tags, url, user, summary, createdAt, updatedAt);
   }
 
   @Override
@@ -339,6 +367,7 @@ public class Upload {
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

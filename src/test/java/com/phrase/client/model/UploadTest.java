@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.UploadSummary;
+import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -96,6 +97,14 @@ public class UploadTest {
     @Test
     public void urlTest() {
         // TODO: test url
+    }
+
+    /**
+     * Test the property 'user'
+     */
+    @Test
+    public void userTest() {
+        // TODO: test user
     }
 
     /**
