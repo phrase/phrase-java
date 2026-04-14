@@ -70,4 +70,12 @@ public class JobTemplateUpdateParametersTest {
         // TODO: test autotranslate
     }
 
+    /**
+     * Test the property 'sourceLocaleId'
+     */
+    @Test
+    public void sourceLocaleIdTest() {
+        // TODO: test sourceLocaleId
+    }
+
 }

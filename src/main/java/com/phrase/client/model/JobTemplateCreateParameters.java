@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobTemplateCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T10:49:16.661452057Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-14T12:40:35.648225573Z[Etc/UTC]")
 public class JobTemplateCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -43,6 +43,10 @@ public class JobTemplateCreateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
+
+  public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
+  @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
+  private String sourceLocaleId;
 
   public JobTemplateCreateParameters() {
   }
@@ -134,6 +138,28 @@ public class JobTemplateCreateParameters {
     this.autotranslate = autotranslate;
   }
 
+
+  public JobTemplateCreateParameters sourceLocaleId(String sourceLocaleId) {
+    
+    this.sourceLocaleId = sourceLocaleId;
+    return this;
+  }
+
+   /**
+   * The API id of the source language. This locale will be set as source locale for the job template. If not provided, the project default locale will be used.
+   * @return sourceLocaleId
+  **/
+  @javax.annotation.Nullable
+
+  public String getSourceLocaleId() {
+    return sourceLocaleId;
+  }
+
+
+  public void setSourceLocaleId(String sourceLocaleId) {
+    this.sourceLocaleId = sourceLocaleId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -146,12 +172,13 @@ public class JobTemplateCreateParameters {
     return Objects.equals(this.branch, jobTemplateCreateParameters.branch) &&
         Objects.equals(this.name, jobTemplateCreateParameters.name) &&
         Objects.equals(this.briefing, jobTemplateCreateParameters.briefing) &&
-        Objects.equals(this.autotranslate, jobTemplateCreateParameters.autotranslate);
+        Objects.equals(this.autotranslate, jobTemplateCreateParameters.autotranslate) &&
+        Objects.equals(this.sourceLocaleId, jobTemplateCreateParameters.sourceLocaleId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, briefing, autotranslate);
+    return Objects.hash(branch, name, briefing, autotranslate, sourceLocaleId);
   }
 
   @Override
@@ -162,6 +189,7 @@ public class JobTemplateCreateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
