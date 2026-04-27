@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ReleaseTrigger
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-27T07:11:38.877122790Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-27T07:33:16.708767134Z[Etc/UTC]")
 public class ReleaseTrigger {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
