@@ -107,6 +107,14 @@ public class JobCreateParametersTest {
     }
 
     /**
+     * Test the property 'targetLocaleIds'
+     */
+    @Test
+    public void targetLocaleIdsTest() {
+        // TODO: test targetLocaleIds
+    }
+
+    /**
      * Test the property 'jobTemplateId'
      */
     @Test

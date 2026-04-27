@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-27T07:33:16.708767134Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-27T08:47:01.572364287Z[Etc/UTC]")
 public class JobCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -63,6 +63,10 @@ public class JobCreateParameters {
   public static final String SERIALIZED_NAME_TRANSLATION_KEY_IDS = "translation_key_ids";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEY_IDS)
   private List<String> translationKeyIds;
+
+  public static final String SERIALIZED_NAME_TARGET_LOCALE_IDS = "target_locale_ids";
+  @SerializedName(SERIALIZED_NAME_TARGET_LOCALE_IDS)
+  private List<String> targetLocaleIds;
 
   public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
@@ -267,6 +271,36 @@ public class JobCreateParameters {
   }
 
 
+  public JobCreateParameters targetLocaleIds(List<String> targetLocaleIds) {
+    
+    this.targetLocaleIds = targetLocaleIds;
+    return this;
+  }
+
+  public JobCreateParameters addTargetLocaleIdsItem(String targetLocaleIdsItem) {
+    if (this.targetLocaleIds == null) {
+      this.targetLocaleIds = new ArrayList<>();
+    }
+    this.targetLocaleIds.add(targetLocaleIdsItem);
+    return this;
+  }
+
+   /**
+   * List of target locales for the job. Mutually exclusive with &#x60;job_template_id&#x60;.
+   * @return targetLocaleIds
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getTargetLocaleIds() {
+    return targetLocaleIds;
+  }
+
+
+  public void setTargetLocaleIds(List<String> targetLocaleIds) {
+    this.targetLocaleIds = targetLocaleIds;
+  }
+
+
   public JobCreateParameters jobTemplateId(String jobTemplateId) {
     
     this.jobTemplateId = jobTemplateId;
@@ -274,7 +308,7 @@ public class JobCreateParameters {
   }
 
    /**
-   * id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes.
+   * id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes. Mutually exclusive with &#x60;target_locale_ids&#x60;.
    * @return jobTemplateId
   **/
   @javax.annotation.Nullable
@@ -327,6 +361,7 @@ public class JobCreateParameters {
         Objects.equals(this.ticketUrl, jobCreateParameters.ticketUrl) &&
         Objects.equals(this.tags, jobCreateParameters.tags) &&
         Objects.equals(this.translationKeyIds, jobCreateParameters.translationKeyIds) &&
+        Objects.equals(this.targetLocaleIds, jobCreateParameters.targetLocaleIds) &&
         Objects.equals(this.jobTemplateId, jobCreateParameters.jobTemplateId) &&
         Objects.equals(this.autotranslate, jobCreateParameters.autotranslate);
   }
@@ -337,7 +372,7 @@ public class JobCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds, jobTemplateId, autotranslate);
+    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds, targetLocaleIds, jobTemplateId, autotranslate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -359,6 +394,7 @@ public class JobCreateParameters {
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    translationKeyIds: ").append(toIndentedString(translationKeyIds)).append("\n");
+    sb.append("    targetLocaleIds: ").append(toIndentedString(targetLocaleIds)).append("\n");
     sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("}");

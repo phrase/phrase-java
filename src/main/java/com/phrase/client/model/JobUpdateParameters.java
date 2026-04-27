@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-27T07:33:16.708767134Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-27T08:47:01.572364287Z[Etc/UTC]")
 public class JobUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -49,6 +51,10 @@ public class JobUpdateParameters {
   public static final String SERIALIZED_NAME_TICKET_URL = "ticket_url";
   @SerializedName(SERIALIZED_NAME_TICKET_URL)
   private String ticketUrl;
+
+  public static final String SERIALIZED_NAME_TARGET_LOCALE_IDS = "target_locale_ids";
+  @SerializedName(SERIALIZED_NAME_TARGET_LOCALE_IDS)
+  private List<String> targetLocaleIds;
 
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
@@ -167,6 +173,36 @@ public class JobUpdateParameters {
   }
 
 
+  public JobUpdateParameters targetLocaleIds(List<String> targetLocaleIds) {
+    
+    this.targetLocaleIds = targetLocaleIds;
+    return this;
+  }
+
+  public JobUpdateParameters addTargetLocaleIdsItem(String targetLocaleIdsItem) {
+    if (this.targetLocaleIds == null) {
+      this.targetLocaleIds = new ArrayList<>();
+    }
+    this.targetLocaleIds.add(targetLocaleIdsItem);
+    return this;
+  }
+
+   /**
+   * List of target locales for the job.
+   * @return targetLocaleIds
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getTargetLocaleIds() {
+    return targetLocaleIds;
+  }
+
+
+  public void setTargetLocaleIds(List<String> targetLocaleIds) {
+    this.targetLocaleIds = targetLocaleIds;
+  }
+
+
   public JobUpdateParameters autotranslate(Boolean autotranslate) {
     
     this.autotranslate = autotranslate;
@@ -202,6 +238,7 @@ public class JobUpdateParameters {
         Objects.equals(this.briefing, jobUpdateParameters.briefing) &&
         Objects.equals(this.dueDate, jobUpdateParameters.dueDate) &&
         Objects.equals(this.ticketUrl, jobUpdateParameters.ticketUrl) &&
+        Objects.equals(this.targetLocaleIds, jobUpdateParameters.targetLocaleIds) &&
         Objects.equals(this.autotranslate, jobUpdateParameters.autotranslate);
   }
 
@@ -211,7 +248,7 @@ public class JobUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, briefing, dueDate, ticketUrl, autotranslate);
+    return Objects.hash(branch, name, briefing, dueDate, ticketUrl, targetLocaleIds, autotranslate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -230,6 +267,7 @@ public class JobUpdateParameters {
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
+    sb.append("    targetLocaleIds: ").append(toIndentedString(targetLocaleIds)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("}");
     return sb.toString();
