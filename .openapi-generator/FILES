@@ -200,6 +200,7 @@ docs/ReleaseUpdateParameters.md
 docs/ReleaseUpdateParameters1.md
 docs/ReleasesApi.md
 docs/RepoSync.md
+docs/RepoSyncCreateParameters.md
 docs/RepoSyncEvent.md
 docs/RepoSyncEventsApi.md
 docs/RepoSyncExportParameters.md
@@ -526,6 +527,7 @@ src/main/java/com/phrase/client/model/ReleaseTrigger.java
 src/main/java/com/phrase/client/model/ReleaseUpdateParameters.java
 src/main/java/com/phrase/client/model/ReleaseUpdateParameters1.java
 src/main/java/com/phrase/client/model/RepoSync.java
+src/main/java/com/phrase/client/model/RepoSyncCreateParameters.java
 src/main/java/com/phrase/client/model/RepoSyncEvent.java
 src/main/java/com/phrase/client/model/RepoSyncExportParameters.java
 src/main/java/com/phrase/client/model/RepoSyncImportParameters.java
@@ -803,6 +805,7 @@ src/test/java/com/phrase/client/model/ReleaseTest.java
 src/test/java/com/phrase/client/model/ReleaseTriggerTest.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParameters1Test.java
 src/test/java/com/phrase/client/model/ReleaseUpdateParametersTest.java
+src/test/java/com/phrase/client/model/RepoSyncCreateParametersTest.java
 src/test/java/com/phrase/client/model/RepoSyncEventTest.java
 src/test/java/com/phrase/client/model/RepoSyncExportParametersTest.java
 src/test/java/com/phrase/client/model/RepoSyncImportParametersTest.java

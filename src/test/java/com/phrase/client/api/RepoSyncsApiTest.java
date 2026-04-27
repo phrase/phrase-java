@@ -13,7 +13,9 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
 import com.phrase.client.model.RepoSync;
+import com.phrase.client.model.RepoSyncCreateParameters;
 import com.phrase.client.model.RepoSyncEvent;
 import com.phrase.client.model.RepoSyncExportParameters;
 import com.phrase.client.model.RepoSyncImportParameters;
@@ -48,6 +50,24 @@ public class RepoSyncsApiTest {
         String id = null;
         String xPhraseAppOTP = null;
         RepoSync response = api.repoSyncActivate(accountId, id, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a Repo Sync
+     *
+     * Create a new Repo Sync.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void repoSyncCreateTest() throws ApiException {
+        String accountId = null;
+        RepoSyncCreateParameters repoSyncCreateParameters = null;
+        String xPhraseAppOTP = null;
+        RepoSync response = api.repoSyncCreate(accountId, repoSyncCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
