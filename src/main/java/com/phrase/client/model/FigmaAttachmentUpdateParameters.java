@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FigmaAttachmentUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T07:20:58.125334492Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T07:28:15.658965284Z[Etc/UTC]")
 public class FigmaAttachmentUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
