@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * CommentCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-15T13:52:04.183786627Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-15T13:52:45.599772195Z[Etc/UTC]")
 public class CommentCreateParameters {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
