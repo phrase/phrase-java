@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 <a name="localesList"></a>
 # **localesList**
-> List&lt;Locale&gt; localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch)
+> List&lt;Locale&gt; localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, q)
 
 List locales
 
@@ -584,8 +584,9 @@ public class Example {
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     String sortBy = "sortBy_example"; // String | Sort locales. Valid options are \"name_asc\", \"name_desc\", \"default_asc\", \"default_desc\".
     String branch = "my-feature-branch"; // String | specify the branch to use
+    String q = "name:en"; // String | Specify a query to filter locales. Currently supports `name` argument, filtering only locales with names starting with the given string.
     try {
-      List<Locale> result = apiInstance.localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch);
+      List<Locale> result = apiInstance.localesList(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, q);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LocalesApi#localesList");
@@ -608,6 +609,7 @@ Name | Type | Description  | Notes
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **sortBy** | **String**| Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. | [optional]
  **branch** | **String**| specify the branch to use | [optional]
+ **q** | **String**| Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string. | [optional]
 
 ### Return type
 

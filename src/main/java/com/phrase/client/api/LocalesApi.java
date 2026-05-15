@@ -1114,6 +1114,7 @@ public class LocalesApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
+     * @param q Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1126,7 +1127,7 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localesListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call localesListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, String q, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1149,6 +1150,10 @@ public class LocalesApi {
 
         if (branch != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
+        if (q != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("q", q));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -1177,7 +1182,7 @@ public class LocalesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call localesListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call localesListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, String q, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -1185,7 +1190,7 @@ public class LocalesApi {
         }
         
 
-        okhttp3.Call localVarCall = localesListCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, _callback);
+        okhttp3.Call localVarCall = localesListCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, q, _callback);
         return localVarCall;
 
     }
@@ -1199,6 +1204,7 @@ public class LocalesApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
+     * @param q Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string. (optional)
      * @return List&lt;Locale&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1210,8 +1216,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<Locale> localesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch) throws ApiException {
-        ApiResponse<List<Locale>> localVarResp = localesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, sortBy, branch);
+    public List<Locale> localesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, String q) throws ApiException {
+        ApiResponse<List<Locale>> localVarResp = localesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, q);
         return localVarResp.getData();
     }
 
@@ -1224,6 +1230,7 @@ public class LocalesApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
+     * @param q Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string. (optional)
      * @return ApiResponse&lt;List&lt;Locale&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1235,8 +1242,8 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<Locale>> localesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch) throws ApiException {
-        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, null);
+    public ApiResponse<List<Locale>> localesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, String q) throws ApiException {
+        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, q, null);
         Type localVarReturnType = new TypeToken<List<Locale>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1250,6 +1257,7 @@ public class LocalesApi {
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param sortBy Sort locales. Valid options are \&quot;name_asc\&quot;, \&quot;name_desc\&quot;, \&quot;default_asc\&quot;, \&quot;default_desc\&quot;. (optional)
      * @param branch specify the branch to use (optional)
+     * @param q Specify a query to filter locales. Currently supports &#x60;name&#x60; argument, filtering only locales with names starting with the given string. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1262,9 +1270,9 @@ public class LocalesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call localesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, final ApiCallback<List<Locale>> _callback) throws ApiException {
+    public okhttp3.Call localesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String sortBy, String branch, String q, final ApiCallback<List<Locale>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, _callback);
+        okhttp3.Call localVarCall = localesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, sortBy, branch, q, _callback);
         Type localVarReturnType = new TypeToken<List<Locale>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
