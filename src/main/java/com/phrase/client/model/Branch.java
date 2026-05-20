@@ -24,13 +24,14 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Branch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-19T11:10:10.166503517Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
 public class Branch {
   public static final String SERIALIZED_NAME_BASE_PROJECT_ID = "base_project_id";
   @SerializedName(SERIALIZED_NAME_BASE_PROJECT_ID)
@@ -43,6 +44,10 @@ public class Branch {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_BASE = "base";
+  @SerializedName(SERIALIZED_NAME_BASE)
+  private String base;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -64,9 +69,66 @@ public class Branch {
   @SerializedName(SERIALIZED_NAME_CREATED_BY)
   private UserPreview createdBy;
 
+  /**
+   * Gets or Sets state
+   */
+  @JsonAdapter(StateEnum.Adapter.class)
+  public enum StateEnum {
+    CREATING_BRANCH("creating_branch"),
+    
+    MERGING_BRANCH("merging_branch"),
+    
+    SYNCING_BRANCH("syncing_branch"),
+    
+    MERGED("merged"),
+    
+    SUCCESS("success"),
+    
+    BRANCH_ERROR("branch_error"),
+    
+    MERGE_CONFLICT("merge_conflict");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StateEnum fromValue(String value) {
+      for (StateEnum b : StateEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StateEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StateEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StateEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
-  private String state;
+  private StateEnum state;
 
   public static final String SERIALIZED_NAME_CHILD_BRANCHES = "child_branches";
   @SerializedName(SERIALIZED_NAME_CHILD_BRANCHES)
@@ -138,6 +200,28 @@ public class Branch {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public Branch base(String base) {
+    
+    this.base = base;
+    return this;
+  }
+
+   /**
+   * Name of the base branch this branch was created from. Only present for branches created with the newer branching system.
+   * @return base
+  **/
+  @javax.annotation.Nullable
+
+  public String getBase() {
+    return base;
+  }
+
+
+  public void setBase(String base) {
+    this.base = base;
   }
 
 
@@ -251,7 +335,7 @@ public class Branch {
   }
 
 
-  public Branch state(String state) {
+  public Branch state(StateEnum state) {
     
     this.state = state;
     return this;
@@ -263,12 +347,12 @@ public class Branch {
   **/
   @javax.annotation.Nullable
 
-  public String getState() {
+  public StateEnum getState() {
     return state;
   }
 
 
-  public void setState(String state) {
+  public void setState(StateEnum state) {
     this.state = state;
   }
 
@@ -314,6 +398,7 @@ public class Branch {
     return Objects.equals(this.baseProjectId, branch.baseProjectId) &&
         Objects.equals(this.branchProjectId, branch.branchProjectId) &&
         Objects.equals(this.name, branch.name) &&
+        Objects.equals(this.base, branch.base) &&
         Objects.equals(this.createdAt, branch.createdAt) &&
         Objects.equals(this.updatedAt, branch.updatedAt) &&
         Objects.equals(this.mergedAt, branch.mergedAt) &&
@@ -323,9 +408,20 @@ public class Branch {
         Objects.equals(this.childBranches, branch.childBranches);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(baseProjectId, branchProjectId, name, createdAt, updatedAt, mergedAt, mergedBy, createdBy, state, childBranches);
+    return Objects.hash(baseProjectId, branchProjectId, name, base, createdAt, updatedAt, mergedAt, mergedBy, createdBy, state, childBranches);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -335,6 +431,7 @@ public class Branch {
     sb.append("    baseProjectId: ").append(toIndentedString(baseProjectId)).append("\n");
     sb.append("    branchProjectId: ").append(toIndentedString(branchProjectId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    base: ").append(toIndentedString(base)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    mergedAt: ").append(toIndentedString(mergedAt)).append("\n");

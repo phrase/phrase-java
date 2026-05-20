@@ -46,4 +46,12 @@ public class BranchCreateParametersTest {
         // TODO: test name
     }
 
+    /**
+     * Test the property 'base'
+     */
+    @Test
+    public void baseTest() {
+        // TODO: test base
+    }
+
 }

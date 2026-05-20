@@ -26,11 +26,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BranchCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-19T11:10:10.166503517Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
 public class BranchCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_BASE = "base";
+  @SerializedName(SERIALIZED_NAME_BASE)
+  private String base;
 
   public BranchCreateParameters() {
   }
@@ -56,6 +60,28 @@ public class BranchCreateParameters {
     this.name = name;
   }
 
+
+  public BranchCreateParameters base(String base) {
+    
+    this.base = base;
+    return this;
+  }
+
+   /**
+   * Name of an existing branch to use as the base for the new branch.
+   * @return base
+  **/
+  @javax.annotation.Nullable
+
+  public String getBase() {
+    return base;
+  }
+
+
+  public void setBase(String base) {
+    this.base = base;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -65,12 +91,13 @@ public class BranchCreateParameters {
       return false;
     }
     BranchCreateParameters branchCreateParameters = (BranchCreateParameters) o;
-    return Objects.equals(this.name, branchCreateParameters.name);
+    return Objects.equals(this.name, branchCreateParameters.name) &&
+        Objects.equals(this.base, branchCreateParameters.base);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, base);
   }
 
   @Override
@@ -78,6 +105,7 @@ public class BranchCreateParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class BranchCreateParameters {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    base: ").append(toIndentedString(base)).append("\n");
     sb.append("}");
     return sb.toString();
   }

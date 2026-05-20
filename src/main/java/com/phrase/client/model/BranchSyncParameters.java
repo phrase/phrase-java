@@ -26,33 +26,80 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BranchSyncParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-19T11:10:10.166503517Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
 public class BranchSyncParameters {
+  /**
+   * Conflict resolution strategy applied when the branch and its base have diverged. &#x60;use_main&#x60; keeps the values from the base branch; &#x60;use_branch&#x60; keeps the values from this branch. 
+   */
+  @JsonAdapter(StrategyEnum.Adapter.class)
+  public enum StrategyEnum {
+    MAIN("use_main"),
+    
+    BRANCH("use_branch");
+
+    private String value;
+
+    StrategyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StrategyEnum fromValue(String value) {
+      for (StrategyEnum b : StrategyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StrategyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StrategyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StrategyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StrategyEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)
-  private String strategy;
+  private StrategyEnum strategy;
 
   public BranchSyncParameters() {
   }
 
-  public BranchSyncParameters strategy(String strategy) {
+  public BranchSyncParameters strategy(StrategyEnum strategy) {
     
     this.strategy = strategy;
     return this;
   }
 
    /**
-   * strategy used for conflicts, use_main or use_branch
+   * Conflict resolution strategy applied when the branch and its base have diverged. &#x60;use_main&#x60; keeps the values from the base branch; &#x60;use_branch&#x60; keeps the values from this branch. 
    * @return strategy
   **/
   @javax.annotation.Nullable
 
-  public String getStrategy() {
+  public StrategyEnum getStrategy() {
     return strategy;
   }
 
 
-  public void setStrategy(String strategy) {
+  public void setStrategy(StrategyEnum strategy) {
     this.strategy = strategy;
   }
 
