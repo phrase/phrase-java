@@ -19,14 +19,16 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * SearchInAccountParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class SearchInAccountParameters {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
@@ -43,6 +45,10 @@ public class SearchInAccountParameters {
   public static final String SERIALIZED_NAME_PER_PAGE = "per_page";
   @SerializedName(SERIALIZED_NAME_PER_PAGE)
   private Integer perPage;
+
+  public static final String SERIALIZED_NAME_PROJECT_IDS = "project_ids";
+  @SerializedName(SERIALIZED_NAME_PROJECT_IDS)
+  private List<String> projectIds;
 
   public SearchInAccountParameters() {
   }
@@ -134,6 +140,36 @@ public class SearchInAccountParameters {
     this.perPage = perPage;
   }
 
+
+  public SearchInAccountParameters projectIds(List<String> projectIds) {
+    
+    this.projectIds = projectIds;
+    return this;
+  }
+
+  public SearchInAccountParameters addProjectIdsItem(String projectIdsItem) {
+    if (this.projectIds == null) {
+      this.projectIds = new ArrayList<>();
+    }
+    this.projectIds.add(projectIdsItem);
+    return this;
+  }
+
+   /**
+   * Limit the search to the given project codes. When omitted, the search spans every project the user can access in this account. 
+   * @return projectIds
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getProjectIds() {
+    return projectIds;
+  }
+
+
+  public void setProjectIds(List<String> projectIds) {
+    this.projectIds = projectIds;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -146,12 +182,13 @@ public class SearchInAccountParameters {
     return Objects.equals(this.query, searchInAccountParameters.query) &&
         Objects.equals(this.localeCode, searchInAccountParameters.localeCode) &&
         Objects.equals(this.page, searchInAccountParameters.page) &&
-        Objects.equals(this.perPage, searchInAccountParameters.perPage);
+        Objects.equals(this.perPage, searchInAccountParameters.perPage) &&
+        Objects.equals(this.projectIds, searchInAccountParameters.projectIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, localeCode, page, perPage);
+    return Objects.hash(query, localeCode, page, perPage, projectIds);
   }
 
   @Override
@@ -162,6 +199,7 @@ public class SearchInAccountParameters {
     sb.append("    localeCode: ").append(toIndentedString(localeCode)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    perPage: ").append(toIndentedString(perPage)).append("\n");
+    sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

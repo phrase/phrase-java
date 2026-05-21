@@ -104,4 +104,20 @@ public class AutomationsCreateParametersTest {
         // TODO: test timeZone
     }
 
+    /**
+     * Test the property 'jobOwnerId'
+     */
+    @Test
+    public void jobOwnerIdTest() {
+        // TODO: test jobOwnerId
+    }
+
+    /**
+     * Test the property 'includeOnlyUpdatedLocales'
+     */
+    @Test
+    public void includeOnlyUpdatedLocalesTest() {
+        // TODO: test includeOnlyUpdatedLocales
+    }
+
 }

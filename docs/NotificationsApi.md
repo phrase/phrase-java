@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="notificationsList"></a>
 # **notificationsList**
-> List&lt;Notification&gt; notificationsList(xPhraseAppOTP, page, perPage, unseen)
+> List&lt;Notification&gt; notificationsList(xPhraseAppOTP, page, perPage, unseen, lastDays)
 
 List notifications
 
@@ -47,8 +47,9 @@ public class Example {
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     Boolean unseen = true; // Boolean | Include only unseen notifications
+    Integer lastDays = 7; // Integer | Restrict the results to notifications created within the last N days. Coerced to integer; non-numeric values resolve to 0 (returning nothing).
     try {
-      List<Notification> result = apiInstance.notificationsList(xPhraseAppOTP, page, perPage, unseen);
+      List<Notification> result = apiInstance.notificationsList(xPhraseAppOTP, page, perPage, unseen, lastDays);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationsApi#notificationsList");
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
  **unseen** | **Boolean**| Include only unseen notifications | [optional]
+ **lastDays** | **Integer**| Restrict the results to notifications created within the last N days. Coerced to integer; non-numeric values resolve to 0 (returning nothing). | [optional]
 
 ### Return type
 
@@ -88,6 +90,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
@@ -164,6 +168,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 

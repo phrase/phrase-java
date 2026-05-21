@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **tags** | **List&lt;String&gt;** | used to filter which keys are added to jobs |  [optional]
 **cronSchedule** | **String** | along with time_zone, specifies when the scheduled automation is supposed to run |  [optional]
 **timeZone** | **String** | along with cron_schedule, specifies when the scheduled automation is supposed to run |  [optional]
+**jobOwnerId** | **String** | User ID of the job owner that newly created jobs are assigned to.  |  [optional]
+**includeOnlyUpdatedLocales** | **Boolean** | When &#x60;true&#x60;, the automation only acts on locales that changed since its last run.  |  [optional]
 
 
 

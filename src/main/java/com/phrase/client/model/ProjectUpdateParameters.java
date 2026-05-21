@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -184,6 +184,34 @@ public class ProjectUpdateParameters {
   @SerializedName(SERIALIZED_NAME_PLACEHOLDER_STYLES)
   private List<String> placeholderStyles;
 
+  public static final String SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED = "autocomplete_job_enabled";
+  @SerializedName(SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED)
+  private Boolean autocompleteJobEnabled;
+
+  public static final String SERIALIZED_NAME_JOB_LOCKING_ENABLED = "job_locking_enabled";
+  @SerializedName(SERIALIZED_NAME_JOB_LOCKING_ENABLED)
+  private Boolean jobLockingEnabled;
+
+  public static final String SERIALIZED_NAME_SMART_SUGGEST_ENABLED = "smart_suggest_enabled";
+  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_ENABLED)
+  private Boolean smartSuggestEnabled;
+
+  public static final String SERIALIZED_NAME_SMART_SUGGEST_USE_GLOSSARY = "smart_suggest_use_glossary";
+  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_GLOSSARY)
+  private Boolean smartSuggestUseGlossary;
+
+  public static final String SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION = "smart_suggest_use_machine_translation";
+  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION)
+  private Boolean smartSuggestUseMachineTranslation;
+
+  public static final String SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION = "translation_keys_sort_collation";
+  @SerializedName(SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION)
+  private String translationKeysSortCollation;
+
+  public static final String SERIALIZED_NAME_CLDR_VERSION = "cldr_version";
+  @SerializedName(SERIALIZED_NAME_CLDR_VERSION)
+  private String cldrVersion;
+
   public ProjectUpdateParameters() {
   }
 
@@ -194,7 +222,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * Required if the requesting user is a member of multiple accounts. Account ID to specify the actual account the project should be created in.
+   * (Optional) ID of an account the requesting user belongs to. Used only to disambiguate the request context; the project itself cannot be moved between accounts through this endpoint. 
    * @return accountId
   **/
   @javax.annotation.Nullable
@@ -744,6 +772,160 @@ public class ProjectUpdateParameters {
     this.placeholderStyles = placeholderStyles;
   }
 
+
+  public ProjectUpdateParameters autocompleteJobEnabled(Boolean autocompleteJobEnabled) {
+    
+    this.autocompleteJobEnabled = autocompleteJobEnabled;
+    return this;
+  }
+
+   /**
+   * (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs.
+   * @return autocompleteJobEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutocompleteJobEnabled() {
+    return autocompleteJobEnabled;
+  }
+
+
+  public void setAutocompleteJobEnabled(Boolean autocompleteJobEnabled) {
+    this.autocompleteJobEnabled = autocompleteJobEnabled;
+  }
+
+
+  public ProjectUpdateParameters jobLockingEnabled(Boolean jobLockingEnabled) {
+    
+    this.jobLockingEnabled = jobLockingEnabled;
+    return this;
+  }
+
+   /**
+   * (Optional) When enabled, translations are locked once a job moves into review.
+   * @return jobLockingEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getJobLockingEnabled() {
+    return jobLockingEnabled;
+  }
+
+
+  public void setJobLockingEnabled(Boolean jobLockingEnabled) {
+    this.jobLockingEnabled = jobLockingEnabled;
+  }
+
+
+  public ProjectUpdateParameters smartSuggestEnabled(Boolean smartSuggestEnabled) {
+    
+    this.smartSuggestEnabled = smartSuggestEnabled;
+    return this;
+  }
+
+   /**
+   * (Optional) Enable Smart Suggest for the project.
+   * @return smartSuggestEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSmartSuggestEnabled() {
+    return smartSuggestEnabled;
+  }
+
+
+  public void setSmartSuggestEnabled(Boolean smartSuggestEnabled) {
+    this.smartSuggestEnabled = smartSuggestEnabled;
+  }
+
+
+  public ProjectUpdateParameters smartSuggestUseGlossary(Boolean smartSuggestUseGlossary) {
+    
+    this.smartSuggestUseGlossary = smartSuggestUseGlossary;
+    return this;
+  }
+
+   /**
+   * (Optional) Allow Smart Suggest to source suggestions from the project glossary.
+   * @return smartSuggestUseGlossary
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSmartSuggestUseGlossary() {
+    return smartSuggestUseGlossary;
+  }
+
+
+  public void setSmartSuggestUseGlossary(Boolean smartSuggestUseGlossary) {
+    this.smartSuggestUseGlossary = smartSuggestUseGlossary;
+  }
+
+
+  public ProjectUpdateParameters smartSuggestUseMachineTranslation(Boolean smartSuggestUseMachineTranslation) {
+    
+    this.smartSuggestUseMachineTranslation = smartSuggestUseMachineTranslation;
+    return this;
+  }
+
+   /**
+   * (Optional) Allow Smart Suggest to source suggestions from machine translation.
+   * @return smartSuggestUseMachineTranslation
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSmartSuggestUseMachineTranslation() {
+    return smartSuggestUseMachineTranslation;
+  }
+
+
+  public void setSmartSuggestUseMachineTranslation(Boolean smartSuggestUseMachineTranslation) {
+    this.smartSuggestUseMachineTranslation = smartSuggestUseMachineTranslation;
+  }
+
+
+  public ProjectUpdateParameters translationKeysSortCollation(String translationKeysSortCollation) {
+    
+    this.translationKeysSortCollation = translationKeysSortCollation;
+    return this;
+  }
+
+   /**
+   * (Optional) Collation used when sorting translation keys alphabetically.
+   * @return translationKeysSortCollation
+  **/
+  @javax.annotation.Nullable
+
+  public String getTranslationKeysSortCollation() {
+    return translationKeysSortCollation;
+  }
+
+
+  public void setTranslationKeysSortCollation(String translationKeysSortCollation) {
+    this.translationKeysSortCollation = translationKeysSortCollation;
+  }
+
+
+  public ProjectUpdateParameters cldrVersion(String cldrVersion) {
+    
+    this.cldrVersion = cldrVersion;
+    return this;
+  }
+
+   /**
+   * (Optional) CLDR plural-rule version used by the project.
+   * @return cldrVersion
+  **/
+  @javax.annotation.Nullable
+
+  public String getCldrVersion() {
+    return cldrVersion;
+  }
+
+
+  public void setCldrVersion(String cldrVersion) {
+    this.cldrVersion = cldrVersion;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -777,12 +959,19 @@ public class ProjectUpdateParameters {
         Objects.equals(this.autotranslateUseTranslationMemory, projectUpdateParameters.autotranslateUseTranslationMemory) &&
         Objects.equals(this.autotranslateOverwriteUnverifiedTranslations, projectUpdateParameters.autotranslateOverwriteUnverifiedTranslations) &&
         Objects.equals(this.defaultEncoding, projectUpdateParameters.defaultEncoding) &&
-        Objects.equals(this.placeholderStyles, projectUpdateParameters.placeholderStyles);
+        Objects.equals(this.placeholderStyles, projectUpdateParameters.placeholderStyles) &&
+        Objects.equals(this.autocompleteJobEnabled, projectUpdateParameters.autocompleteJobEnabled) &&
+        Objects.equals(this.jobLockingEnabled, projectUpdateParameters.jobLockingEnabled) &&
+        Objects.equals(this.smartSuggestEnabled, projectUpdateParameters.smartSuggestEnabled) &&
+        Objects.equals(this.smartSuggestUseGlossary, projectUpdateParameters.smartSuggestUseGlossary) &&
+        Objects.equals(this.smartSuggestUseMachineTranslation, projectUpdateParameters.smartSuggestUseMachineTranslation) &&
+        Objects.equals(this.translationKeysSortCollation, projectUpdateParameters.translationKeysSortCollation) &&
+        Objects.equals(this.cldrVersion, projectUpdateParameters.cldrVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, defaultEncoding, placeholderStyles);
+    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, defaultEncoding, placeholderStyles, autocompleteJobEnabled, jobLockingEnabled, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation, translationKeysSortCollation, cldrVersion);
   }
 
   @Override
@@ -814,6 +1003,13 @@ public class ProjectUpdateParameters {
     sb.append("    autotranslateOverwriteUnverifiedTranslations: ").append(toIndentedString(autotranslateOverwriteUnverifiedTranslations)).append("\n");
     sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
     sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
+    sb.append("    autocompleteJobEnabled: ").append(toIndentedString(autocompleteJobEnabled)).append("\n");
+    sb.append("    jobLockingEnabled: ").append(toIndentedString(jobLockingEnabled)).append("\n");
+    sb.append("    smartSuggestEnabled: ").append(toIndentedString(smartSuggestEnabled)).append("\n");
+    sb.append("    smartSuggestUseGlossary: ").append(toIndentedString(smartSuggestUseGlossary)).append("\n");
+    sb.append("    smartSuggestUseMachineTranslation: ").append(toIndentedString(smartSuggestUseMachineTranslation)).append("\n");
+    sb.append("    translationKeysSortCollation: ").append(toIndentedString(translationKeysSortCollation)).append("\n");
+    sb.append("    cldrVersion: ").append(toIndentedString(cldrVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

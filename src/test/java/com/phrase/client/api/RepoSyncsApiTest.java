@@ -13,7 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
-import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.RepoSync;
 import com.phrase.client.model.RepoSyncCreateParameters;
 import com.phrase.client.model.RepoSyncEvent;

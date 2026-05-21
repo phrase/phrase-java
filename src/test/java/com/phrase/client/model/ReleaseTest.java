@@ -116,6 +116,14 @@ public class ReleaseTest {
     }
 
     /**
+     * Test the property 'state'
+     */
+    @Test
+    public void stateTest() {
+        // TODO: test state
+    }
+
+    /**
      * Test the property 'project'
      */
     @Test

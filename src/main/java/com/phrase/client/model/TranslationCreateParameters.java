@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class TranslationCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -59,6 +59,14 @@ public class TranslationCreateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
+
+  public static final String SERIALIZED_NAME_MINOR_CHANGE = "minor_change";
+  @SerializedName(SERIALIZED_NAME_MINOR_CHANGE)
+  private Boolean minorChange;
+
+  public static final String SERIALIZED_NAME_REVIEWED = "reviewed";
+  @SerializedName(SERIALIZED_NAME_REVIEWED)
+  private Boolean reviewed;
 
   public TranslationCreateParameters() {
   }
@@ -238,6 +246,50 @@ public class TranslationCreateParameters {
     this.autotranslate = autotranslate;
   }
 
+
+  public TranslationCreateParameters minorChange(Boolean minorChange) {
+    
+    this.minorChange = minorChange;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, the translation is marked as a minor edit and does not trigger downstream re-verification on the linked locales&#39; translations. 
+   * @return minorChange
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getMinorChange() {
+    return minorChange;
+  }
+
+
+  public void setMinorChange(Boolean minorChange) {
+    this.minorChange = minorChange;
+  }
+
+
+  public TranslationCreateParameters reviewed(Boolean reviewed) {
+    
+    this.reviewed = reviewed;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60; and the project&#39;s review workflow is enabled, the translation is created in the &#x60;reviewed&#x60; state. 
+   * @return reviewed
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getReviewed() {
+    return reviewed;
+  }
+
+
+  public void setReviewed(Boolean reviewed) {
+    this.reviewed = reviewed;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -254,12 +306,14 @@ public class TranslationCreateParameters {
         Objects.equals(this.pluralSuffix, translationCreateParameters.pluralSuffix) &&
         Objects.equals(this.unverified, translationCreateParameters.unverified) &&
         Objects.equals(this.excluded, translationCreateParameters.excluded) &&
-        Objects.equals(this.autotranslate, translationCreateParameters.autotranslate);
+        Objects.equals(this.autotranslate, translationCreateParameters.autotranslate) &&
+        Objects.equals(this.minorChange, translationCreateParameters.minorChange) &&
+        Objects.equals(this.reviewed, translationCreateParameters.reviewed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, localeId, keyId, content, pluralSuffix, unverified, excluded, autotranslate);
+    return Objects.hash(branch, localeId, keyId, content, pluralSuffix, unverified, excluded, autotranslate, minorChange, reviewed);
   }
 
   @Override
@@ -274,6 +328,8 @@ public class TranslationCreateParameters {
     sb.append("    unverified: ").append(toIndentedString(unverified)).append("\n");
     sb.append("    excluded: ").append(toIndentedString(excluded)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    minorChange: ").append(toIndentedString(minorChange)).append("\n");
+    sb.append("    reviewed: ").append(toIndentedString(reviewed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

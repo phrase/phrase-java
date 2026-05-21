@@ -28,11 +28,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * IcuSkeletonParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
   private String content;
+
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
 
   public static final String SERIALIZED_NAME_LOCALE_CODES = "locale_codes";
   @SerializedName(SERIALIZED_NAME_LOCALE_CODES)
@@ -60,7 +64,7 @@ public class IcuSkeletonParameters {
   }
 
    /**
-   * Source content
+   * Source content to derive skeletons from. Mutually exclusive with &#x60;id&#x60;; exactly one of the two must be provided. 
    * @return content
   **/
   @javax.annotation.Nullable
@@ -72,6 +76,28 @@ public class IcuSkeletonParameters {
 
   public void setContent(String content) {
     this.content = content;
+  }
+
+
+  public IcuSkeletonParameters id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Translation code to source content from. Mutually exclusive with &#x60;content&#x60;; exactly one of the two must be provided. 
+   * @return id
+  **/
+  @javax.annotation.Nullable
+
+  public String getId() {
+    return id;
+  }
+
+
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -180,6 +206,7 @@ public class IcuSkeletonParameters {
     }
     IcuSkeletonParameters icuSkeletonParameters = (IcuSkeletonParameters) o;
     return Objects.equals(this.content, icuSkeletonParameters.content) &&
+        Objects.equals(this.id, icuSkeletonParameters.id) &&
         Objects.equals(this.localeCodes, icuSkeletonParameters.localeCodes) &&
         Objects.equals(this.keepContent, icuSkeletonParameters.keepContent) &&
         Objects.equals(this.zeroFormEnabled, icuSkeletonParameters.zeroFormEnabled) &&
@@ -188,7 +215,7 @@ public class IcuSkeletonParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(content, localeCodes, keepContent, zeroFormEnabled, cldrVersion);
+    return Objects.hash(content, id, localeCodes, keepContent, zeroFormEnabled, cldrVersion);
   }
 
   @Override
@@ -196,6 +223,7 @@ public class IcuSkeletonParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class IcuSkeletonParameters {\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    localeCodes: ").append(toIndentedString(localeCodes)).append("\n");
     sb.append("    keepContent: ").append(toIndentedString(keepContent)).append("\n");
     sb.append("    zeroFormEnabled: ").append(toIndentedString(zeroFormEnabled)).append("\n");

@@ -32,20 +32,20 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UploadBatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class UploadBatch {
   /**
    * Processing state of the upload batch
    */
-  @JsonAdapter(StateEnum.Adapter.class)
-  public enum StateEnum {
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
     STARTED("started"),
     
     DONE("done");
 
     private String value;
 
-    StateEnum(String value) {
+    StatusEnum(String value) {
       this.value = value;
     }
 
@@ -58,8 +58,8 @@ public class UploadBatch {
       return String.valueOf(value);
     }
 
-    public static StateEnum fromValue(String value) {
-      for (StateEnum b : StateEnum.values()) {
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -67,27 +67,31 @@ public class UploadBatch {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<StateEnum> {
+    public static class Adapter extends TypeAdapter<StatusEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public StateEnum read(final JsonReader jsonReader) throws IOException {
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return StateEnum.fromValue(value);
+        return StatusEnum.fromValue(value);
       }
     }
   }
 
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  private StateEnum state;
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  private StatusEnum status;
 
   public static final String SERIALIZED_NAME_DELETE_UNMENTIONED_KEYS = "delete_unmentioned_keys";
   @SerializedName(SERIALIZED_NAME_DELETE_UNMENTIONED_KEYS)
   private Boolean deleteUnmentionedKeys;
+
+  public static final String SERIALIZED_NAME_UPLOADS_COUNT = "uploads_count";
+  @SerializedName(SERIALIZED_NAME_UPLOADS_COUNT)
+  private Integer uploadsCount;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -112,25 +116,25 @@ public class UploadBatch {
   public UploadBatch() {
   }
 
-  public UploadBatch state(StateEnum state) {
+  public UploadBatch status(StatusEnum status) {
     
-    this.state = state;
+    this.status = status;
     return this;
   }
 
    /**
    * Processing state of the upload batch
-   * @return state
+   * @return status
   **/
   @javax.annotation.Nullable
 
-  public StateEnum getState() {
-    return state;
+  public StatusEnum getStatus() {
+    return status;
   }
 
 
-  public void setState(StateEnum state) {
-    this.state = state;
+  public void setStatus(StatusEnum status) {
+    this.status = status;
   }
 
 
@@ -153,6 +157,28 @@ public class UploadBatch {
 
   public void setDeleteUnmentionedKeys(Boolean deleteUnmentionedKeys) {
     this.deleteUnmentionedKeys = deleteUnmentionedKeys;
+  }
+
+
+  public UploadBatch uploadsCount(Integer uploadsCount) {
+    
+    this.uploadsCount = uploadsCount;
+    return this;
+  }
+
+   /**
+   * Number of uploads attached to this batch.
+   * @return uploadsCount
+  **/
+  @javax.annotation.Nullable
+
+  public Integer getUploadsCount() {
+    return uploadsCount;
+  }
+
+
+  public void setUploadsCount(Integer uploadsCount) {
+    this.uploadsCount = uploadsCount;
   }
 
 
@@ -282,8 +308,9 @@ public class UploadBatch {
       return false;
     }
     UploadBatch uploadBatch = (UploadBatch) o;
-    return Objects.equals(this.state, uploadBatch.state) &&
+    return Objects.equals(this.status, uploadBatch.status) &&
         Objects.equals(this.deleteUnmentionedKeys, uploadBatch.deleteUnmentionedKeys) &&
+        Objects.equals(this.uploadsCount, uploadBatch.uploadsCount) &&
         Objects.equals(this.createdAt, uploadBatch.createdAt) &&
         Objects.equals(this.updatedAt, uploadBatch.updatedAt) &&
         Objects.equals(this.project, uploadBatch.project) &&
@@ -293,15 +320,16 @@ public class UploadBatch {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, deleteUnmentionedKeys, createdAt, updatedAt, project, user, uploads);
+    return Objects.hash(status, deleteUnmentionedKeys, uploadsCount, createdAt, updatedAt, project, user, uploads);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UploadBatch {\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    deleteUnmentionedKeys: ").append(toIndentedString(deleteUnmentionedKeys)).append("\n");
+    sb.append("    uploadsCount: ").append(toIndentedString(uploadsCount)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");

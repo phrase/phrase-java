@@ -20,14 +20,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * KeyCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class KeyCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -104,6 +106,14 @@ public class KeyCreateParameters {
   public static final String SERIALIZED_NAME_CUSTOM_METADATA = "custom_metadata";
   @SerializedName(SERIALIZED_NAME_CUSTOM_METADATA)
   private Object customMetadata;
+
+  public static final String SERIALIZED_NAME_EXCLUDED_IN_LOCALES = "excluded_in_locales";
+  @SerializedName(SERIALIZED_NAME_EXCLUDED_IN_LOCALES)
+  private List<String> excludedInLocales;
+
+  public static final String SERIALIZED_NAME_FORMAT_VALUE_TYPE = "format_value_type";
+  @SerializedName(SERIALIZED_NAME_FORMAT_VALUE_TYPE)
+  private String formatValueType;
 
   public KeyCreateParameters() {
   }
@@ -529,6 +539,58 @@ public class KeyCreateParameters {
     this.customMetadata = customMetadata;
   }
 
+
+  public KeyCreateParameters excludedInLocales(List<String> excludedInLocales) {
+    
+    this.excludedInLocales = excludedInLocales;
+    return this;
+  }
+
+  public KeyCreateParameters addExcludedInLocalesItem(String excludedInLocalesItem) {
+    if (this.excludedInLocales == null) {
+      this.excludedInLocales = new ArrayList<>();
+    }
+    this.excludedInLocales.add(excludedInLocalesItem);
+    return this;
+  }
+
+   /**
+   * Locales for which translations of this key are excluded from exports. Pass an empty array to clear exclusions. 
+   * @return excludedInLocales
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getExcludedInLocales() {
+    return excludedInLocales;
+  }
+
+
+  public void setExcludedInLocales(List<String> excludedInLocales) {
+    this.excludedInLocales = excludedInLocales;
+  }
+
+
+  public KeyCreateParameters formatValueType(String formatValueType) {
+    
+    this.formatValueType = formatValueType;
+    return this;
+  }
+
+   /**
+   * Override of the value type for the key in the export. Most useful for formats like Android XML that distinguish string vs. plural resources. 
+   * @return formatValueType
+  **/
+  @javax.annotation.Nullable
+
+  public String getFormatValueType() {
+    return formatValueType;
+  }
+
+
+  public void setFormatValueType(String formatValueType) {
+    this.formatValueType = formatValueType;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -556,12 +618,14 @@ public class KeyCreateParameters {
         Objects.equals(this.originalFile, keyCreateParameters.originalFile) &&
         Objects.equals(this.localizedFormatString, keyCreateParameters.localizedFormatString) &&
         Objects.equals(this.localizedFormatKey, keyCreateParameters.localizedFormatKey) &&
-        Objects.equals(this.customMetadata, keyCreateParameters.customMetadata);
+        Objects.equals(this.customMetadata, keyCreateParameters.customMetadata) &&
+        Objects.equals(this.excludedInLocales, keyCreateParameters.excludedInLocales) &&
+        Objects.equals(this.formatValueType, keyCreateParameters.formatValueType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, description, plural, useOrdinalRules, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, defaultTranslationContent, autotranslate, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey, customMetadata);
+    return Objects.hash(branch, name, description, plural, useOrdinalRules, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, defaultTranslationContent, autotranslate, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey, customMetadata, excludedInLocales, formatValueType);
   }
 
   @Override
@@ -587,6 +651,8 @@ public class KeyCreateParameters {
     sb.append("    localizedFormatString: ").append(toIndentedString(localizedFormatString)).append("\n");
     sb.append("    localizedFormatKey: ").append(toIndentedString(localizedFormatKey)).append("\n");
     sb.append("    customMetadata: ").append(toIndentedString(customMetadata)).append("\n");
+    sb.append("    excludedInLocales: ").append(toIndentedString(excludedInLocales)).append("\n");
+    sb.append("    formatValueType: ").append(toIndentedString(formatValueType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

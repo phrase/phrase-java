@@ -17,6 +17,7 @@ import com.phrase.client.model.Comment;
 import com.phrase.client.model.CommentCreateParameters;
 import com.phrase.client.model.CommentMarkReadParameters;
 import com.phrase.client.model.CommentUpdateParameters;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

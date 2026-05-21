@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TagWithStats
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class TagWithStats {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -39,6 +39,10 @@ public class TagWithStats {
   public static final String SERIALIZED_NAME_KEYS_COUNT = "keys_count";
   @SerializedName(SERIALIZED_NAME_KEYS_COUNT)
   private Integer keysCount;
+
+  public static final String SERIALIZED_NAME_SYSTEM_TAG = "system_tag";
+  @SerializedName(SERIALIZED_NAME_SYSTEM_TAG)
+  private Boolean systemTag;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -96,6 +100,28 @@ public class TagWithStats {
 
   public void setKeysCount(Integer keysCount) {
     this.keysCount = keysCount;
+  }
+
+
+  public TagWithStats systemTag(Boolean systemTag) {
+    
+    this.systemTag = systemTag;
+    return this;
+  }
+
+   /**
+   * &#x60;true&#x60; when the tag was created automatically by the system (e.g. for jobs, uploads, or Figma attachments) rather than by a user. 
+   * @return systemTag
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSystemTag() {
+    return systemTag;
+  }
+
+
+  public void setSystemTag(Boolean systemTag) {
+    this.systemTag = systemTag;
   }
 
 
@@ -183,6 +209,7 @@ public class TagWithStats {
     TagWithStats tagWithStats = (TagWithStats) o;
     return Objects.equals(this.name, tagWithStats.name) &&
         Objects.equals(this.keysCount, tagWithStats.keysCount) &&
+        Objects.equals(this.systemTag, tagWithStats.systemTag) &&
         Objects.equals(this.createdAt, tagWithStats.createdAt) &&
         Objects.equals(this.updatedAt, tagWithStats.updatedAt) &&
         Objects.equals(this.statistics, tagWithStats.statistics);
@@ -190,7 +217,7 @@ public class TagWithStats {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, keysCount, createdAt, updatedAt, statistics);
+    return Objects.hash(name, keysCount, systemTag, createdAt, updatedAt, statistics);
   }
 
   @Override
@@ -199,6 +226,7 @@ public class TagWithStats {
     sb.append("class TagWithStats {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    keysCount: ").append(toIndentedString(keysCount)).append("\n");
+    sb.append("    systemTag: ").append(toIndentedString(systemTag)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");

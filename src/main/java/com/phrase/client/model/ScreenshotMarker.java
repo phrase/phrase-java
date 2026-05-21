@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.ScreenshotMarkerPresentation;
 import com.phrase.client.model.TranslationKey;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -28,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ScreenshotMarker
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class ScreenshotMarker {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -36,7 +37,7 @@ public class ScreenshotMarker {
 
   public static final String SERIALIZED_NAME_PRESENTATION = "presentation";
   @SerializedName(SERIALIZED_NAME_PRESENTATION)
-  private String presentation;
+  private ScreenshotMarkerPresentation presentation;
 
   public static final String SERIALIZED_NAME_PRESENTATION_TYPE = "presentation_type";
   @SerializedName(SERIALIZED_NAME_PRESENTATION_TYPE)
@@ -79,7 +80,7 @@ public class ScreenshotMarker {
   }
 
 
-  public ScreenshotMarker presentation(String presentation) {
+  public ScreenshotMarker presentation(ScreenshotMarkerPresentation presentation) {
     
     this.presentation = presentation;
     return this;
@@ -91,12 +92,12 @@ public class ScreenshotMarker {
   **/
   @javax.annotation.Nullable
 
-  public String getPresentation() {
+  public ScreenshotMarkerPresentation getPresentation() {
     return presentation;
   }
 
 
-  public void setPresentation(String presentation) {
+  public void setPresentation(ScreenshotMarkerPresentation presentation) {
     this.presentation = presentation;
   }
 
@@ -108,7 +109,7 @@ public class ScreenshotMarker {
   }
 
    /**
-   * Get presentationType
+   * Marker presentation style. The default value is &#x60;default&#x60;. 
    * @return presentationType
   **/
   @javax.annotation.Nullable

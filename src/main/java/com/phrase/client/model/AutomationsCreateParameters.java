@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * AutomationsCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class AutomationsCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -157,6 +157,14 @@ public class AutomationsCreateParameters {
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
   private String timeZone;
+
+  public static final String SERIALIZED_NAME_JOB_OWNER_ID = "job_owner_id";
+  @SerializedName(SERIALIZED_NAME_JOB_OWNER_ID)
+  private String jobOwnerId;
+
+  public static final String SERIALIZED_NAME_INCLUDE_ONLY_UPDATED_LOCALES = "include_only_updated_locales";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_ONLY_UPDATED_LOCALES)
+  private Boolean includeOnlyUpdatedLocales;
 
   public AutomationsCreateParameters() {
   }
@@ -360,6 +368,50 @@ public class AutomationsCreateParameters {
     this.timeZone = timeZone;
   }
 
+
+  public AutomationsCreateParameters jobOwnerId(String jobOwnerId) {
+    
+    this.jobOwnerId = jobOwnerId;
+    return this;
+  }
+
+   /**
+   * User ID of the job owner that newly created jobs are assigned to. 
+   * @return jobOwnerId
+  **/
+  @javax.annotation.Nullable
+
+  public String getJobOwnerId() {
+    return jobOwnerId;
+  }
+
+
+  public void setJobOwnerId(String jobOwnerId) {
+    this.jobOwnerId = jobOwnerId;
+  }
+
+
+  public AutomationsCreateParameters includeOnlyUpdatedLocales(Boolean includeOnlyUpdatedLocales) {
+    
+    this.includeOnlyUpdatedLocales = includeOnlyUpdatedLocales;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, the automation only acts on locales that changed since its last run. Defaults to &#x60;false&#x60;. 
+   * @return includeOnlyUpdatedLocales
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getIncludeOnlyUpdatedLocales() {
+    return includeOnlyUpdatedLocales;
+  }
+
+
+  public void setIncludeOnlyUpdatedLocales(Boolean includeOnlyUpdatedLocales) {
+    this.includeOnlyUpdatedLocales = includeOnlyUpdatedLocales;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -376,12 +428,14 @@ public class AutomationsCreateParameters {
         Objects.equals(this.statusFilters, automationsCreateParameters.statusFilters) &&
         Objects.equals(this.tags, automationsCreateParameters.tags) &&
         Objects.equals(this.cronSchedule, automationsCreateParameters.cronSchedule) &&
-        Objects.equals(this.timeZone, automationsCreateParameters.timeZone);
+        Objects.equals(this.timeZone, automationsCreateParameters.timeZone) &&
+        Objects.equals(this.jobOwnerId, automationsCreateParameters.jobOwnerId) &&
+        Objects.equals(this.includeOnlyUpdatedLocales, automationsCreateParameters.includeOnlyUpdatedLocales);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, trigger, projectIds, jobTemplateId, statusFilters, tags, cronSchedule, timeZone);
+    return Objects.hash(name, trigger, projectIds, jobTemplateId, statusFilters, tags, cronSchedule, timeZone, jobOwnerId, includeOnlyUpdatedLocales);
   }
 
   @Override
@@ -396,6 +450,8 @@ public class AutomationsCreateParameters {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    cronSchedule: ").append(toIndentedString(cronSchedule)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    sb.append("    jobOwnerId: ").append(toIndentedString(jobOwnerId)).append("\n");
+    sb.append("    includeOnlyUpdatedLocales: ").append(toIndentedString(includeOnlyUpdatedLocales)).append("\n");
     sb.append("}");
     return sb.toString();
   }

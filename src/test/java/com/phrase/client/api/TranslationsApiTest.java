@@ -14,6 +14,7 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.AffectedCount;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.Translation;
 import com.phrase.client.model.TranslationCreateParameters;
 import com.phrase.client.model.TranslationDetails;
@@ -319,10 +320,12 @@ public class TranslationsApiTest {
         Integer page = null;
         Integer perPage = null;
         String branch = null;
+        String keyId = null;
+        String localeId = null;
         String sort = null;
         String order = null;
         String q = null;
-        List<Translation> response = api.translationsList(projectId, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, page, perPage, branch, sort, order, q);
+        List<Translation> response = api.translationsList(projectId, xPhraseAppOTP, ifModifiedSince, ifNoneMatch, page, perPage, branch, keyId, localeId, sort, order, q);
 
         // TODO: test validations
     }

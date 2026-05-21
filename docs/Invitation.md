@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **acceptedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **spaces** | [**List&lt;Space&gt;**](Space.md) |  |  [optional]
-**projectRole** | [**List&lt;MemberProjectDetailProjectRolesInner&gt;**](MemberProjectDetailProjectRolesInner.md) |  |  [optional]
+**projectRoles** | [**List&lt;MemberProjectDetailProjectRolesInner&gt;**](MemberProjectDetailProjectRolesInner.md) | Per-project roles assigned to the invitee.  |  [optional]
 
 
 

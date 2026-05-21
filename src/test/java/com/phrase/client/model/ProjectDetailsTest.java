@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
+import com.phrase.client.model.Branch;
 import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
@@ -245,6 +246,22 @@ public class ProjectDetailsTest {
     }
 
     /**
+     * Test the property 'autotranslateOverwriteUnverifiedTranslations'
+     */
+    @Test
+    public void autotranslateOverwriteUnverifiedTranslationsTest() {
+        // TODO: test autotranslateOverwriteUnverifiedTranslations
+    }
+
+    /**
+     * Test the property 'autocompleteJobEnabled'
+     */
+    @Test
+    public void autocompleteJobEnabledTest() {
+        // TODO: test autocompleteJobEnabled
+    }
+
+    /**
      * Test the property 'defaultEncoding'
      */
     @Test
@@ -274,6 +291,14 @@ public class ProjectDetailsTest {
     @Test
     public void placeholderStylesTest() {
         // TODO: test placeholderStyles
+    }
+
+    /**
+     * Test the property 'branch'
+     */
+    @Test
+    public void branchTest() {
+        // TODO: test branch
     }
 
 }

@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * CustomMetadataPropertyCreate422ResponseErrorsInner
+ * DocumentDelete422ResponseErrorsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
-public class CustomMetadataPropertyCreate422ResponseErrorsInner {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
+public class DocumentDelete422ResponseErrorsInner {
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
   private String resource;
@@ -40,10 +40,10 @@ public class CustomMetadataPropertyCreate422ResponseErrorsInner {
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
-  public CustomMetadataPropertyCreate422ResponseErrorsInner() {
+  public DocumentDelete422ResponseErrorsInner() {
   }
 
-  public CustomMetadataPropertyCreate422ResponseErrorsInner resource(String resource) {
+  public DocumentDelete422ResponseErrorsInner resource(String resource) {
     
     this.resource = resource;
     return this;
@@ -65,7 +65,7 @@ public class CustomMetadataPropertyCreate422ResponseErrorsInner {
   }
 
 
-  public CustomMetadataPropertyCreate422ResponseErrorsInner field(String field) {
+  public DocumentDelete422ResponseErrorsInner field(String field) {
     
     this.field = field;
     return this;
@@ -87,7 +87,7 @@ public class CustomMetadataPropertyCreate422ResponseErrorsInner {
   }
 
 
-  public CustomMetadataPropertyCreate422ResponseErrorsInner message(String message) {
+  public DocumentDelete422ResponseErrorsInner message(String message) {
     
     this.message = message;
     return this;
@@ -116,10 +116,10 @@ public class CustomMetadataPropertyCreate422ResponseErrorsInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CustomMetadataPropertyCreate422ResponseErrorsInner customMetadataPropertyCreate422ResponseErrorsInner = (CustomMetadataPropertyCreate422ResponseErrorsInner) o;
-    return Objects.equals(this.resource, customMetadataPropertyCreate422ResponseErrorsInner.resource) &&
-        Objects.equals(this.field, customMetadataPropertyCreate422ResponseErrorsInner.field) &&
-        Objects.equals(this.message, customMetadataPropertyCreate422ResponseErrorsInner.message);
+    DocumentDelete422ResponseErrorsInner documentDelete422ResponseErrorsInner = (DocumentDelete422ResponseErrorsInner) o;
+    return Objects.equals(this.resource, documentDelete422ResponseErrorsInner.resource) &&
+        Objects.equals(this.field, documentDelete422ResponseErrorsInner.field) &&
+        Objects.equals(this.message, documentDelete422ResponseErrorsInner.message);
   }
 
   @Override
@@ -130,7 +130,7 @@ public class CustomMetadataPropertyCreate422ResponseErrorsInner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CustomMetadataPropertyCreate422ResponseErrorsInner {\n");
+    sb.append("class DocumentDelete422ResponseErrorsInner {\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    field: ").append(toIndentedString(field)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountId** | **String** | Required if the requesting user is a member of multiple accounts. Account ID to specify the actual account the project should be created in. |  [optional]
+**accountId** | **String** | (Optional) ID of an account the requesting user belongs to. Used only to disambiguate the request context; the project itself cannot be moved between accounts through this endpoint.  |  [optional]
 **name** | **String** | (Optional) Name of the project |  [optional]
 **pointOfContact** | **String** | (Optional) User ID of the point of contact for the project. Pass &#x60;null&#x60; to unset. |  [optional]
 **mainFormat** | **String** | (Optional) Main file format specified by its API Extension name. Used for locale downloads if no format is specified. For API Extension names of available file formats see [Format Guide](https://support.phrase.com/hc/en-us/sections/6111343326364) or our [Formats API Endpoint](#formats). |  [optional]
@@ -31,6 +31,13 @@ Name | Type | Description | Notes
 **autotranslateOverwriteUnverifiedTranslations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **defaultEncoding** | [**DefaultEncodingEnum**](#DefaultEncodingEnum) | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads. |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. |  [optional]
+**autocompleteJobEnabled** | **Boolean** | (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs. |  [optional]
+**jobLockingEnabled** | **Boolean** | (Optional) When enabled, translations are locked once a job moves into review. |  [optional]
+**smartSuggestEnabled** | **Boolean** | (Optional) Enable Smart Suggest for the project. |  [optional]
+**smartSuggestUseGlossary** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from the project glossary. |  [optional]
+**smartSuggestUseMachineTranslation** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from machine translation. |  [optional]
+**translationKeysSortCollation** | **String** | (Optional) Collation used when sorting translation keys alphabetically. |  [optional]
+**cldrVersion** | **String** | (Optional) CLDR plural-rule version used by the project. |  [optional]
 
 
 

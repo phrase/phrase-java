@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.JobTemplate;
 import com.phrase.client.model.JobTemplateCreateParameters;
 import com.phrase.client.model.JobTemplateDetails;

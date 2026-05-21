@@ -18,21 +18,20 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
-import com.phrase.client.model.ReleasePreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Distribution
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class Distribution {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -50,17 +49,17 @@ public class Distribution {
   @SerializedName(SERIALIZED_NAME_PLATFORMS)
   private List<String> platforms;
 
-  public static final String SERIALIZED_NAME_LOCALES = "locales";
-  @SerializedName(SERIALIZED_NAME_LOCALES)
-  private List<LocalePreview> locales;
-
-  public static final String SERIALIZED_NAME_RELEASES = "releases";
-  @SerializedName(SERIALIZED_NAME_RELEASES)
-  private List<ReleasePreview> releases;
+  public static final String SERIALIZED_NAME_RELEASE_COUNT = "release_count";
+  @SerializedName(SERIALIZED_NAME_RELEASE_COUNT)
+  private Integer releaseCount;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
   @SerializedName(SERIALIZED_NAME_DELETED_AT)
@@ -165,63 +164,25 @@ public class Distribution {
   }
 
 
-  public Distribution locales(List<LocalePreview> locales) {
+  public Distribution releaseCount(Integer releaseCount) {
     
-    this.locales = locales;
-    return this;
-  }
-
-  public Distribution addLocalesItem(LocalePreview localesItem) {
-    if (this.locales == null) {
-      this.locales = new ArrayList<>();
-    }
-    this.locales.add(localesItem);
+    this.releaseCount = releaseCount;
     return this;
   }
 
    /**
-   * Get locales
-   * @return locales
+   * Get releaseCount
+   * @return releaseCount
   **/
   @javax.annotation.Nullable
 
-  public List<LocalePreview> getLocales() {
-    return locales;
+  public Integer getReleaseCount() {
+    return releaseCount;
   }
 
 
-  public void setLocales(List<LocalePreview> locales) {
-    this.locales = locales;
-  }
-
-
-  public Distribution releases(List<ReleasePreview> releases) {
-    
-    this.releases = releases;
-    return this;
-  }
-
-  public Distribution addReleasesItem(ReleasePreview releasesItem) {
-    if (this.releases == null) {
-      this.releases = new ArrayList<>();
-    }
-    this.releases.add(releasesItem);
-    return this;
-  }
-
-   /**
-   * Get releases
-   * @return releases
-  **/
-  @javax.annotation.Nullable
-
-  public List<ReleasePreview> getReleases() {
-    return releases;
-  }
-
-
-  public void setReleases(List<ReleasePreview> releases) {
-    this.releases = releases;
+  public void setReleaseCount(Integer releaseCount) {
+    this.releaseCount = releaseCount;
   }
 
 
@@ -244,6 +205,28 @@ public class Distribution {
 
   public void setCreatedAt(OffsetDateTime createdAt) {
     this.createdAt = createdAt;
+  }
+
+
+  public Distribution updatedAt(OffsetDateTime updatedAt) {
+    
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+   /**
+   * Get updatedAt
+   * @return updatedAt
+  **/
+  @javax.annotation.Nullable
+
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  public void setUpdatedAt(OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
   }
 
 
@@ -281,15 +264,26 @@ public class Distribution {
         Objects.equals(this.name, distribution.name) &&
         Objects.equals(this.project, distribution.project) &&
         Objects.equals(this.platforms, distribution.platforms) &&
-        Objects.equals(this.locales, distribution.locales) &&
-        Objects.equals(this.releases, distribution.releases) &&
+        Objects.equals(this.releaseCount, distribution.releaseCount) &&
         Objects.equals(this.createdAt, distribution.createdAt) &&
+        Objects.equals(this.updatedAt, distribution.updatedAt) &&
         Objects.equals(this.deletedAt, distribution.deletedAt);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, project, platforms, locales, releases, createdAt, deletedAt);
+    return Objects.hash(id, name, project, platforms, releaseCount, createdAt, updatedAt, deletedAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -300,9 +294,9 @@ public class Distribution {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
-    sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
-    sb.append("    releases: ").append(toIndentedString(releases)).append("\n");
+    sb.append("    releaseCount: ").append(toIndentedString(releaseCount)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.Job;
 import com.phrase.client.model.JobCompleteParameters;
 import com.phrase.client.model.JobCreateParameters;
@@ -147,7 +148,7 @@ public class JobsApiTest {
         String id = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        api.jobLock(projectId, id, xPhraseAppOTP, branch);
+        JobDetails response = api.jobLock(projectId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -225,7 +226,7 @@ public class JobsApiTest {
         String id = null;
         String xPhraseAppOTP = null;
         String branch = null;
-        api.jobUnlock(projectId, id, xPhraseAppOTP, branch);
+        JobDetails response = api.jobUnlock(projectId, id, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }
@@ -290,8 +291,10 @@ public class JobsApiTest {
         String ownedBy = null;
         String assignedTo = null;
         String state = null;
+        List<String> states = null;
+        String keyId = null;
         String updatedSince = null;
-        List<Job> response = api.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, updatedSince);
+        List<Job> response = api.jobsList(projectId, xPhraseAppOTP, page, perPage, branch, ownedBy, assignedTo, state, states, keyId, updatedSince);
 
         // TODO: test validations
     }

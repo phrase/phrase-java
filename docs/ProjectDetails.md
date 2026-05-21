@@ -31,10 +31,13 @@ Name | Type | Description | Notes
 **autotranslateMarkAsUnverified** | **Boolean** |  |  [optional]
 **autotranslateUseMachineTranslation** | **Boolean** |  |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** |  |  [optional]
+**autotranslateOverwriteUnverifiedTranslations** | **Boolean** |  |  [optional]
+**autocompleteJobEnabled** | **Boolean** |  |  [optional]
 **defaultEncoding** | **String** |  |  [optional]
 **cldrVersion** | **String** |  |  [optional]
 **jobLockingEnabled** | **Boolean** |  |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** |  |  [optional]
+**branch** | [**Branch**](Branch.md) |  |  [optional]
 
 
 

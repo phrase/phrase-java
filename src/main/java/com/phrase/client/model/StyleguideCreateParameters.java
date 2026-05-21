@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * StyleguideCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class StyleguideCreateParameters {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -36,17 +36,184 @@ public class StyleguideCreateParameters {
   @SerializedName(SERIALIZED_NAME_AUDIENCE)
   private String audience;
 
+  /**
+   * Target audience for the translations.
+   */
+  @JsonAdapter(TargetAudienceEnum.Adapter.class)
+  public enum TargetAudienceEnum {
+    NOT_SPECIFIED("not_specified"),
+    
+    CHILDREN("children"),
+    
+    TEENAGER("teenager"),
+    
+    YOUNG_ADULTS("young_adults"),
+    
+    ADULTS("adults"),
+    
+    OLD_ADULTS("old_adults");
+
+    private String value;
+
+    TargetAudienceEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TargetAudienceEnum fromValue(String value) {
+      for (TargetAudienceEnum b : TargetAudienceEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<TargetAudienceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TargetAudienceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TargetAudienceEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TargetAudienceEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_TARGET_AUDIENCE = "target_audience";
   @SerializedName(SERIALIZED_NAME_TARGET_AUDIENCE)
-  private String targetAudience;
+  private TargetAudienceEnum targetAudience;
+
+  /**
+   * Preferred grammatical person.
+   */
+  @JsonAdapter(GrammaticalPersonEnum.Adapter.class)
+  public enum GrammaticalPersonEnum {
+    NOT_SPECIFIED("not_specified"),
+    
+    FIRST_PERSON_SINGULAR("first_person_singular"),
+    
+    SECOND_PERSON_SINGULAR("second_person_singular"),
+    
+    THIRD_PERSON_SINGULAR_MASCULINE("third_person_singular_masculine"),
+    
+    THIRD_PERSON_SINGULAR_FEMININE("third_person_singular_feminine"),
+    
+    THIRD_PERSON_SINGULAR_NEUTER("third_person_singular_neuter"),
+    
+    FIRST_PERSON_PLURAL("first_person_plural"),
+    
+    SECOND_PERSON_PLURAL("second_person_plural"),
+    
+    THIRD_PERSON_PLURAL("third_person_plural");
+
+    private String value;
+
+    GrammaticalPersonEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static GrammaticalPersonEnum fromValue(String value) {
+      for (GrammaticalPersonEnum b : GrammaticalPersonEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<GrammaticalPersonEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final GrammaticalPersonEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public GrammaticalPersonEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return GrammaticalPersonEnum.fromValue(value);
+      }
+    }
+  }
 
   public static final String SERIALIZED_NAME_GRAMMATICAL_PERSON = "grammatical_person";
   @SerializedName(SERIALIZED_NAME_GRAMMATICAL_PERSON)
-  private String grammaticalPerson;
+  private GrammaticalPersonEnum grammaticalPerson;
+
+  /**
+   * Vocabulary register the translations should use.
+   */
+  @JsonAdapter(VocabularyTypeEnum.Adapter.class)
+  public enum VocabularyTypeEnum {
+    NOT_SPECIFIED("not_specified"),
+    
+    POPULAR("popular"),
+    
+    TECHNICAL("technical"),
+    
+    FICTIONAL("fictional");
+
+    private String value;
+
+    VocabularyTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static VocabularyTypeEnum fromValue(String value) {
+      for (VocabularyTypeEnum b : VocabularyTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<VocabularyTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final VocabularyTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public VocabularyTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return VocabularyTypeEnum.fromValue(value);
+      }
+    }
+  }
 
   public static final String SERIALIZED_NAME_VOCABULARY_TYPE = "vocabulary_type";
   @SerializedName(SERIALIZED_NAME_VOCABULARY_TYPE)
-  private String vocabularyType;
+  private VocabularyTypeEnum vocabularyType;
 
   public static final String SERIALIZED_NAME_BUSINESS = "business";
   @SerializedName(SERIALIZED_NAME_BUSINESS)
@@ -127,68 +294,68 @@ public class StyleguideCreateParameters {
   }
 
 
-  public StyleguideCreateParameters targetAudience(String targetAudience) {
+  public StyleguideCreateParameters targetAudience(TargetAudienceEnum targetAudience) {
     
     this.targetAudience = targetAudience;
     return this;
   }
 
    /**
-   * Can be one of: not_specified, children, teenager, young_adults, adults, old_adults.
+   * Target audience for the translations.
    * @return targetAudience
   **/
   @javax.annotation.Nullable
 
-  public String getTargetAudience() {
+  public TargetAudienceEnum getTargetAudience() {
     return targetAudience;
   }
 
 
-  public void setTargetAudience(String targetAudience) {
+  public void setTargetAudience(TargetAudienceEnum targetAudience) {
     this.targetAudience = targetAudience;
   }
 
 
-  public StyleguideCreateParameters grammaticalPerson(String grammaticalPerson) {
+  public StyleguideCreateParameters grammaticalPerson(GrammaticalPersonEnum grammaticalPerson) {
     
     this.grammaticalPerson = grammaticalPerson;
     return this;
   }
 
    /**
-   * Can be one of: not_specified, first_person_singular, second_person_singular, third_person_singular_masculine, third_person_singular_feminine, third_person_singular_neuter, first_person_plural, second_person_plural, third_person_plural.
+   * Preferred grammatical person.
    * @return grammaticalPerson
   **/
   @javax.annotation.Nullable
 
-  public String getGrammaticalPerson() {
+  public GrammaticalPersonEnum getGrammaticalPerson() {
     return grammaticalPerson;
   }
 
 
-  public void setGrammaticalPerson(String grammaticalPerson) {
+  public void setGrammaticalPerson(GrammaticalPersonEnum grammaticalPerson) {
     this.grammaticalPerson = grammaticalPerson;
   }
 
 
-  public StyleguideCreateParameters vocabularyType(String vocabularyType) {
+  public StyleguideCreateParameters vocabularyType(VocabularyTypeEnum vocabularyType) {
     
     this.vocabularyType = vocabularyType;
     return this;
   }
 
    /**
-   * Can be one of: not_specified, popular, technical, fictional.
+   * Vocabulary register the translations should use.
    * @return vocabularyType
   **/
   @javax.annotation.Nullable
 
-  public String getVocabularyType() {
+  public VocabularyTypeEnum getVocabularyType() {
     return vocabularyType;
   }
 
 
-  public void setVocabularyType(String vocabularyType) {
+  public void setVocabularyType(VocabularyTypeEnum vocabularyType) {
     this.vocabularyType = vocabularyType;
   }
 

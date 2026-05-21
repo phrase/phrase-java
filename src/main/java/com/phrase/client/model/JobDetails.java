@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -105,6 +105,10 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_ANNOTATIONS = "annotations";
   @SerializedName(SERIALIZED_NAME_ANNOTATIONS)
   private List<JobAnnotationShort> annotations;
+
+  public static final String SERIALIZED_NAME_LOCKED = "locked";
+  @SerializedName(SERIALIZED_NAME_LOCKED)
+  private Boolean locked;
 
   public JobDetails() {
   }
@@ -492,7 +496,7 @@ public class JobDetails {
   }
 
    /**
-   * Get annotations
+   * Returned only when &#x60;include_annotations&#x3D;true&#x60; is supplied on the request.
    * @return annotations
   **/
   @javax.annotation.Nullable
@@ -504,6 +508,28 @@ public class JobDetails {
 
   public void setAnnotations(List<JobAnnotationShort> annotations) {
     this.annotations = annotations;
+  }
+
+
+  public JobDetails locked(Boolean locked) {
+    
+    this.locked = locked;
+    return this;
+  }
+
+   /**
+   * &#x60;true&#x60; if the job has been locked by the project&#39;s job-locking workflow (translations attached to the job are read-only until the job advances). 
+   * @return locked
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getLocked() {
+    return locked;
+  }
+
+
+  public void setLocked(Boolean locked) {
+    this.locked = locked;
   }
 
   @Override
@@ -531,7 +557,8 @@ public class JobDetails {
         Objects.equals(this.sourceLocale, jobDetails.sourceLocale) &&
         Objects.equals(this.locales, jobDetails.locales) &&
         Objects.equals(this.keys, jobDetails.keys) &&
-        Objects.equals(this.annotations, jobDetails.annotations);
+        Objects.equals(this.annotations, jobDetails.annotations) &&
+        Objects.equals(this.locked, jobDetails.locked);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -540,7 +567,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys, annotations);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys, annotations, locked);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -571,6 +598,7 @@ public class JobDetails {
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
     sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
+    sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
     sb.append("}");
     return sb.toString();
   }

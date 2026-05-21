@@ -22,7 +22,8 @@ Name | Type | Description | Notes
 **sourceLocale** | [**LocalePreview**](LocalePreview.md) |  |  [optional]
 **locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
 **keys** | [**List&lt;KeyPreview&gt;**](KeyPreview.md) |  |  [optional]
-**annotations** | [**List&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) |  |  [optional]
+**annotations** | [**List&lt;JobAnnotationShort&gt;**](JobAnnotationShort.md) | Returned only when &#x60;include_annotations&#x3D;true&#x60; is supplied on the request. |  [optional]
+**locked** | **Boolean** | &#x60;true&#x60; if the job has been locked by the project&#39;s job-locking workflow (translations attached to the job are read-only until the job advances).  |  [optional]
 
 
 

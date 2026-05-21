@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.Space;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Glossary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class Glossary {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -43,6 +44,10 @@ public class Glossary {
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
   private List<ProjectShort> projects;
+
+  public static final String SERIALIZED_NAME_SPACES = "spaces";
+  @SerializedName(SERIALIZED_NAME_SPACES)
+  private List<Space> spaces;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -129,6 +134,36 @@ public class Glossary {
   }
 
 
+  public Glossary spaces(List<Space> spaces) {
+    
+    this.spaces = spaces;
+    return this;
+  }
+
+  public Glossary addSpacesItem(Space spacesItem) {
+    if (this.spaces == null) {
+      this.spaces = new ArrayList<>();
+    }
+    this.spaces.add(spacesItem);
+    return this;
+  }
+
+   /**
+   * Get spaces
+   * @return spaces
+  **/
+  @javax.annotation.Nullable
+
+  public List<Space> getSpaces() {
+    return spaces;
+  }
+
+
+  public void setSpaces(List<Space> spaces) {
+    this.spaces = spaces;
+  }
+
+
   public Glossary createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -184,13 +219,14 @@ public class Glossary {
     return Objects.equals(this.id, glossary.id) &&
         Objects.equals(this.name, glossary.name) &&
         Objects.equals(this.projects, glossary.projects) &&
+        Objects.equals(this.spaces, glossary.spaces) &&
         Objects.equals(this.createdAt, glossary.createdAt) &&
         Objects.equals(this.updatedAt, glossary.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, projects, createdAt, updatedAt);
+    return Objects.hash(id, name, projects, spaces, createdAt, updatedAt);
   }
 
   @Override
@@ -200,6 +236,7 @@ public class Glossary {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
+    sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

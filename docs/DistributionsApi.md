@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="distributionCreate"></a>
 # **distributionCreate**
-> Distribution distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP)
+> DistributionDetails distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP)
 
 Create a distribution
 
@@ -49,7 +49,7 @@ public class Example {
     DistributionCreateParameters distributionCreateParameters = new DistributionCreateParameters(); // DistributionCreateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Distribution result = apiInstance.distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP);
+      DistributionDetails result = apiInstance.distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DistributionsApi#distributionCreate");
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Distribution**](Distribution.md)
+[**DistributionDetails**](DistributionDetails.md)
 
 ### Authorization
 
@@ -88,7 +88,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
 <a name="distributionDelete"></a>
@@ -160,19 +163,22 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | The resource was deleted successfully. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
 <a name="distributionShow"></a>
 # **distributionShow**
-> Distribution distributionShow(accountId, id, xPhraseAppOTP)
+> DistributionDetails distributionShow(accountId, id, xPhraseAppOTP)
 
 Get a single distribution
 
@@ -208,7 +214,7 @@ public class Example {
     String id = "id_example"; // String | ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Distribution result = apiInstance.distributionShow(accountId, id, xPhraseAppOTP);
+      DistributionDetails result = apiInstance.distributionShow(accountId, id, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DistributionsApi#distributionShow");
@@ -231,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Distribution**](Distribution.md)
+[**DistributionDetails**](DistributionDetails.md)
 
 ### Authorization
 
@@ -247,12 +253,14 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
 <a name="distributionUpdate"></a>
 # **distributionUpdate**
-> Distribution distributionUpdate(accountId, id, distributionUpdateParameters, xPhraseAppOTP)
+> DistributionDetails distributionUpdate(accountId, id, distributionUpdateParameters, xPhraseAppOTP)
 
 Update a distribution
 
@@ -289,7 +297,7 @@ public class Example {
     DistributionUpdateParameters distributionUpdateParameters = new DistributionUpdateParameters(); // DistributionUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      Distribution result = apiInstance.distributionUpdate(accountId, id, distributionUpdateParameters, xPhraseAppOTP);
+      DistributionDetails result = apiInstance.distributionUpdate(accountId, id, distributionUpdateParameters, xPhraseAppOTP);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DistributionsApi#distributionUpdate");
@@ -313,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Distribution**](Distribution.md)
+[**DistributionDetails**](DistributionDetails.md)
 
 ### Authorization
 
@@ -329,12 +337,15 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
 <a name="distributionsList"></a>
 # **distributionsList**
-> List&lt;DistributionPreview&gt; distributionsList(accountId, xPhraseAppOTP, page, perPage)
+> List&lt;Distribution&gt; distributionsList(accountId, xPhraseAppOTP, page, perPage)
 
 List distributions
 
@@ -371,7 +382,7 @@ public class Example {
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     try {
-      List<DistributionPreview> result = apiInstance.distributionsList(accountId, xPhraseAppOTP, page, perPage);
+      List<Distribution> result = apiInstance.distributionsList(accountId, xPhraseAppOTP, page, perPage);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DistributionsApi#distributionsList");
@@ -395,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;DistributionPreview&gt;**](DistributionPreview.md)
+[**List&lt;Distribution&gt;**](Distribution.md)
 
 ### Authorization
 
@@ -411,6 +422,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 

@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.Project;
 import com.phrase.client.model.ProjectCreateParameters;
 import com.phrase.client.model.ProjectDetails;
@@ -37,7 +38,7 @@ public class ProjectsApiTest {
     /**
      * Create a project
      *
-     * Create a new project.
+     * Create a new project in the given account.  When &#x60;source_project_id&#x60; is supplied, the new project is created as a clone of that project. All locales, keys, and translations are copied asynchronously after the response is returned, so they may not be available immediately. Settings from the source project are inherited unless explicitly overridden in the request; in clone mode, the &#x60;shares_translation_memory&#x60; field is ignored and inherited from the source.  &#x60;shares_translation_memory&#x60; defaults to &#x60;true&#x60; when omitted on a non-clone create. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -54,7 +55,7 @@ public class ProjectsApiTest {
     /**
      * Delete a project
      *
-     * Delete an existing project.
+     * Delete an existing project. Associated repository syncs and OTA distributions are removed. A &#x60;project:delete&#x60; event is dispatched. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -106,7 +107,7 @@ public class ProjectsApiTest {
     /**
      * List projects
      *
-     * List all projects the current user has access to.
+     * List all projects the current user has access to.  When the &#x60;account_id&#x60; query parameter is omitted, the response includes projects across every account the user is a member of. Pass &#x60;account_id&#x60; to scope the results to a single account. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -119,7 +120,8 @@ public class ProjectsApiTest {
         String accountId = null;
         String sortBy = null;
         List<String> filters = null;
-        List<Project> response = api.projectsList(xPhraseAppOTP, page, perPage, accountId, sortBy, filters);
+        String q = null;
+        List<Project> response = api.projectsList(xPhraseAppOTP, page, perPage, accountId, sortBy, filters, q);
 
         // TODO: test validations
     }

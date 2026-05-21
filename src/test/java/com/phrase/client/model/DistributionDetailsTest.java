@@ -17,29 +17,32 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.ReleasePreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for DistributionPreview
+ * Model tests for DistributionDetails
  */
-public class DistributionPreviewTest {
-    private final DistributionPreview model = new DistributionPreview();
+public class DistributionDetailsTest {
+    private final DistributionDetails model = new DistributionDetails();
 
     /**
-     * Model tests for DistributionPreview
+     * Model tests for DistributionDetails
      */
     @Test
-    public void testDistributionPreview() {
-        // TODO: test DistributionPreview
+    public void testDistributionDetails() {
+        // TODO: test DistributionDetails
     }
 
     /**
@@ -91,11 +94,35 @@ public class DistributionPreviewTest {
     }
 
     /**
+     * Test the property 'updatedAt'
+     */
+    @Test
+    public void updatedAtTest() {
+        // TODO: test updatedAt
+    }
+
+    /**
      * Test the property 'deletedAt'
      */
     @Test
     public void deletedAtTest() {
         // TODO: test deletedAt
+    }
+
+    /**
+     * Test the property 'locales'
+     */
+    @Test
+    public void localesTest() {
+        // TODO: test locales
+    }
+
+    /**
+     * Test the property 'releases'
+     */
+    @Test
+    public void releasesTest() {
+        // TODO: test releases
     }
 
 }

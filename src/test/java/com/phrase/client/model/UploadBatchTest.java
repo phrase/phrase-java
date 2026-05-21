@@ -45,11 +45,11 @@ public class UploadBatchTest {
     }
 
     /**
-     * Test the property 'state'
+     * Test the property 'status'
      */
     @Test
-    public void stateTest() {
-        // TODO: test state
+    public void statusTest() {
+        // TODO: test status
     }
 
     /**
@@ -58,6 +58,14 @@ public class UploadBatchTest {
     @Test
     public void deleteUnmentionedKeysTest() {
         // TODO: test deleteUnmentionedKeys
+    }
+
+    /**
+     * Test the property 'uploadsCount'
+     */
+    @Test
+    public void uploadsCountTest() {
+        // TODO: test uploadsCount
     }
 
     /**

@@ -59,6 +59,14 @@ public class TagWithStatsTest {
     }
 
     /**
+     * Test the property 'systemTag'
+     */
+    @Test
+    public void systemTagTest() {
+        // TODO: test systemTag
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

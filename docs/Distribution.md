@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **project** | [**ProjectShort**](ProjectShort.md) |  |  [optional]
 **platforms** | **List&lt;String&gt;** |  |  [optional]
-**locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
-**releases** | [**List&lt;ReleasePreview&gt;**](ReleasePreview.md) |  |  [optional]
+**releaseCount** | **Integer** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **deletedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 

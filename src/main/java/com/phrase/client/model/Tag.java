@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Tag
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class Tag {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -36,6 +36,10 @@ public class Tag {
   public static final String SERIALIZED_NAME_KEYS_COUNT = "keys_count";
   @SerializedName(SERIALIZED_NAME_KEYS_COUNT)
   private Integer keysCount;
+
+  public static final String SERIALIZED_NAME_SYSTEM_TAG = "system_tag";
+  @SerializedName(SERIALIZED_NAME_SYSTEM_TAG)
+  private Boolean systemTag;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -89,6 +93,28 @@ public class Tag {
 
   public void setKeysCount(Integer keysCount) {
     this.keysCount = keysCount;
+  }
+
+
+  public Tag systemTag(Boolean systemTag) {
+    
+    this.systemTag = systemTag;
+    return this;
+  }
+
+   /**
+   * &#x60;true&#x60; when the tag was created automatically by the system (e.g. for jobs, uploads, or Figma attachments) rather than by a user. 
+   * @return systemTag
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSystemTag() {
+    return systemTag;
+  }
+
+
+  public void setSystemTag(Boolean systemTag) {
+    this.systemTag = systemTag;
   }
 
 
@@ -146,13 +172,14 @@ public class Tag {
     Tag tag = (Tag) o;
     return Objects.equals(this.name, tag.name) &&
         Objects.equals(this.keysCount, tag.keysCount) &&
+        Objects.equals(this.systemTag, tag.systemTag) &&
         Objects.equals(this.createdAt, tag.createdAt) &&
         Objects.equals(this.updatedAt, tag.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, keysCount, createdAt, updatedAt);
+    return Objects.hash(name, keysCount, systemTag, createdAt, updatedAt);
   }
 
   @Override
@@ -161,6 +188,7 @@ public class Tag {
     sb.append("class Tag {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    keysCount: ").append(toIndentedString(keysCount)).append("\n");
+    sb.append("    systemTag: ").append(toIndentedString(systemTag)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

@@ -19,7 +19,7 @@ import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
 import com.phrase.client.model.BranchSyncParameters;
 import com.phrase.client.model.BranchUpdateParameters;
-import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

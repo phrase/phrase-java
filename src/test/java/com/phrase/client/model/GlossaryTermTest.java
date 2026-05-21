@@ -17,6 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.GlossaryTermGlossary;
 import com.phrase.client.model.GlossaryTermTranslation;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -88,6 +89,14 @@ public class GlossaryTermTest {
     @Test
     public void translationsTest() {
         // TODO: test translations
+    }
+
+    /**
+     * Test the property 'glossary'
+     */
+    @Test
+    public void glossaryTest() {
+        // TODO: test glossary
     }
 
     /**

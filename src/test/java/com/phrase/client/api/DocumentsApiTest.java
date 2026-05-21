@@ -14,6 +14,7 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.Document;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -63,7 +64,8 @@ public class DocumentsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Document> response = api.documentsList(projectId, xPhraseAppOTP, page, perPage);
+        String q = null;
+        List<Document> response = api.documentsList(projectId, xPhraseAppOTP, page, perPage, q);
 
         // TODO: test validations
     }

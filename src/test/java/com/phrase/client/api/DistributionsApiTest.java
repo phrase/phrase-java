@@ -15,8 +15,9 @@ package com.phrase.client.api;
 import com.phrase.client.ApiException;
 import com.phrase.client.model.Distribution;
 import com.phrase.client.model.DistributionCreateParameters;
-import com.phrase.client.model.DistributionPreview;
+import com.phrase.client.model.DistributionDetails;
 import com.phrase.client.model.DistributionUpdateParameters;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -47,7 +48,7 @@ public class DistributionsApiTest {
         String accountId = null;
         DistributionCreateParameters distributionCreateParameters = null;
         String xPhraseAppOTP = null;
-        Distribution response = api.distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP);
+        DistributionDetails response = api.distributionCreate(accountId, distributionCreateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -83,7 +84,7 @@ public class DistributionsApiTest {
         String accountId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        Distribution response = api.distributionShow(accountId, id, xPhraseAppOTP);
+        DistributionDetails response = api.distributionShow(accountId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -102,7 +103,7 @@ public class DistributionsApiTest {
         String id = null;
         DistributionUpdateParameters distributionUpdateParameters = null;
         String xPhraseAppOTP = null;
-        Distribution response = api.distributionUpdate(accountId, id, distributionUpdateParameters, xPhraseAppOTP);
+        DistributionDetails response = api.distributionUpdate(accountId, id, distributionUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }
@@ -121,7 +122,7 @@ public class DistributionsApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<DistributionPreview> response = api.distributionsList(accountId, xPhraseAppOTP, page, perPage);
+        List<Distribution> response = api.distributionsList(accountId, xPhraseAppOTP, page, perPage);
 
         // TODO: test validations
     }

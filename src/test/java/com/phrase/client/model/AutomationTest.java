@@ -23,6 +23,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -91,11 +92,35 @@ public class AutomationTest {
     }
 
     /**
+     * Test the property 'projectIds'
+     */
+    @Test
+    public void projectIdsTest() {
+        // TODO: test projectIds
+    }
+
+    /**
      * Test the property 'jobTemplateId'
      */
     @Test
     public void jobTemplateIdTest() {
         // TODO: test jobTemplateId
+    }
+
+    /**
+     * Test the property 'jobOwnerId'
+     */
+    @Test
+    public void jobOwnerIdTest() {
+        // TODO: test jobOwnerId
+    }
+
+    /**
+     * Test the property 'includeOnlyUpdatedLocales'
+     */
+    @Test
+    public void includeOnlyUpdatedLocalesTest() {
+        // TODO: test includeOnlyUpdatedLocales
     }
 
     /**

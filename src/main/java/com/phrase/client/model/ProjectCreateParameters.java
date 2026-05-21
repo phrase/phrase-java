@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -126,6 +126,91 @@ public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS = "autotranslate_overwrite_unverified_translations";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS)
   private Boolean autotranslateOverwriteUnverifiedTranslations;
+
+  public static final String SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED = "autocomplete_job_enabled";
+  @SerializedName(SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED)
+  private Boolean autocompleteJobEnabled;
+
+  public static final String SERIALIZED_NAME_JOB_LOCKING_ENABLED = "job_locking_enabled";
+  @SerializedName(SERIALIZED_NAME_JOB_LOCKING_ENABLED)
+  private Boolean jobLockingEnabled;
+
+  public static final String SERIALIZED_NAME_SMART_SUGGEST_ENABLED = "smart_suggest_enabled";
+  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_ENABLED)
+  private Boolean smartSuggestEnabled;
+
+  public static final String SERIALIZED_NAME_SMART_SUGGEST_USE_GLOSSARY = "smart_suggest_use_glossary";
+  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_GLOSSARY)
+  private Boolean smartSuggestUseGlossary;
+
+  public static final String SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION = "smart_suggest_use_machine_translation";
+  @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION)
+  private Boolean smartSuggestUseMachineTranslation;
+
+  public static final String SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION = "translation_keys_sort_collation";
+  @SerializedName(SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION)
+  private String translationKeysSortCollation;
+
+  /**
+   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
+   */
+  @JsonAdapter(DefaultEncodingEnum.Adapter.class)
+  public enum DefaultEncodingEnum {
+    UTF_8("UTF-8"),
+    
+    UTF_16("UTF-16"),
+    
+    UTF_16BE("UTF-16BE"),
+    
+    UTF_16LE("UTF-16LE"),
+    
+    ISO_8859_1("ISO-8859-1");
+
+    private String value;
+
+    DefaultEncodingEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DefaultEncodingEnum fromValue(String value) {
+      for (DefaultEncodingEnum b : DefaultEncodingEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DefaultEncodingEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DefaultEncodingEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DefaultEncodingEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DefaultEncodingEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DEFAULT_ENCODING = "default_encoding";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_ENCODING)
+  private DefaultEncodingEnum defaultEncoding;
+
+  public static final String SERIALIZED_NAME_CLDR_VERSION = "cldr_version";
+  @SerializedName(SERIALIZED_NAME_CLDR_VERSION)
+  private String cldrVersion;
 
   public static final String SERIALIZED_NAME_PLACEHOLDER_STYLES = "placeholder_styles";
   @SerializedName(SERIALIZED_NAME_PLACEHOLDER_STYLES)
@@ -662,6 +747,182 @@ public class ProjectCreateParameters {
   }
 
 
+  public ProjectCreateParameters autocompleteJobEnabled(Boolean autocompleteJobEnabled) {
+    
+    this.autocompleteJobEnabled = autocompleteJobEnabled;
+    return this;
+  }
+
+   /**
+   * (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs.
+   * @return autocompleteJobEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutocompleteJobEnabled() {
+    return autocompleteJobEnabled;
+  }
+
+
+  public void setAutocompleteJobEnabled(Boolean autocompleteJobEnabled) {
+    this.autocompleteJobEnabled = autocompleteJobEnabled;
+  }
+
+
+  public ProjectCreateParameters jobLockingEnabled(Boolean jobLockingEnabled) {
+    
+    this.jobLockingEnabled = jobLockingEnabled;
+    return this;
+  }
+
+   /**
+   * (Optional) When enabled, translations are locked once a job moves into review.
+   * @return jobLockingEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getJobLockingEnabled() {
+    return jobLockingEnabled;
+  }
+
+
+  public void setJobLockingEnabled(Boolean jobLockingEnabled) {
+    this.jobLockingEnabled = jobLockingEnabled;
+  }
+
+
+  public ProjectCreateParameters smartSuggestEnabled(Boolean smartSuggestEnabled) {
+    
+    this.smartSuggestEnabled = smartSuggestEnabled;
+    return this;
+  }
+
+   /**
+   * (Optional) Enable Smart Suggest for the project. Defaults to &#x60;true&#x60; when omitted.
+   * @return smartSuggestEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSmartSuggestEnabled() {
+    return smartSuggestEnabled;
+  }
+
+
+  public void setSmartSuggestEnabled(Boolean smartSuggestEnabled) {
+    this.smartSuggestEnabled = smartSuggestEnabled;
+  }
+
+
+  public ProjectCreateParameters smartSuggestUseGlossary(Boolean smartSuggestUseGlossary) {
+    
+    this.smartSuggestUseGlossary = smartSuggestUseGlossary;
+    return this;
+  }
+
+   /**
+   * (Optional) Allow Smart Suggest to source suggestions from the project glossary. Defaults to &#x60;true&#x60; when omitted.
+   * @return smartSuggestUseGlossary
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSmartSuggestUseGlossary() {
+    return smartSuggestUseGlossary;
+  }
+
+
+  public void setSmartSuggestUseGlossary(Boolean smartSuggestUseGlossary) {
+    this.smartSuggestUseGlossary = smartSuggestUseGlossary;
+  }
+
+
+  public ProjectCreateParameters smartSuggestUseMachineTranslation(Boolean smartSuggestUseMachineTranslation) {
+    
+    this.smartSuggestUseMachineTranslation = smartSuggestUseMachineTranslation;
+    return this;
+  }
+
+   /**
+   * (Optional) Allow Smart Suggest to source suggestions from machine translation. Defaults to &#x60;true&#x60; when omitted.
+   * @return smartSuggestUseMachineTranslation
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getSmartSuggestUseMachineTranslation() {
+    return smartSuggestUseMachineTranslation;
+  }
+
+
+  public void setSmartSuggestUseMachineTranslation(Boolean smartSuggestUseMachineTranslation) {
+    this.smartSuggestUseMachineTranslation = smartSuggestUseMachineTranslation;
+  }
+
+
+  public ProjectCreateParameters translationKeysSortCollation(String translationKeysSortCollation) {
+    
+    this.translationKeysSortCollation = translationKeysSortCollation;
+    return this;
+  }
+
+   /**
+   * (Optional) Collation used when sorting translation keys alphabetically. Defaults to &#x60;unicode_ci&#x60; when omitted.
+   * @return translationKeysSortCollation
+  **/
+  @javax.annotation.Nullable
+
+  public String getTranslationKeysSortCollation() {
+    return translationKeysSortCollation;
+  }
+
+
+  public void setTranslationKeysSortCollation(String translationKeysSortCollation) {
+    this.translationKeysSortCollation = translationKeysSortCollation;
+  }
+
+
+  public ProjectCreateParameters defaultEncoding(DefaultEncodingEnum defaultEncoding) {
+    
+    this.defaultEncoding = defaultEncoding;
+    return this;
+  }
+
+   /**
+   * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
+   * @return defaultEncoding
+  **/
+  @javax.annotation.Nullable
+
+  public DefaultEncodingEnum getDefaultEncoding() {
+    return defaultEncoding;
+  }
+
+
+  public void setDefaultEncoding(DefaultEncodingEnum defaultEncoding) {
+    this.defaultEncoding = defaultEncoding;
+  }
+
+
+  public ProjectCreateParameters cldrVersion(String cldrVersion) {
+    
+    this.cldrVersion = cldrVersion;
+    return this;
+  }
+
+   /**
+   * (Optional) CLDR plural-rule version used by the project.
+   * @return cldrVersion
+  **/
+  @javax.annotation.Nullable
+
+  public String getCldrVersion() {
+    return cldrVersion;
+  }
+
+
+  public void setCldrVersion(String cldrVersion) {
+    this.cldrVersion = cldrVersion;
+  }
+
+
   public ProjectCreateParameters placeholderStyles(List<String> placeholderStyles) {
     
     this.placeholderStyles = placeholderStyles;
@@ -724,12 +985,20 @@ public class ProjectCreateParameters {
         Objects.equals(this.autotranslateUseMachineTranslation, projectCreateParameters.autotranslateUseMachineTranslation) &&
         Objects.equals(this.autotranslateUseTranslationMemory, projectCreateParameters.autotranslateUseTranslationMemory) &&
         Objects.equals(this.autotranslateOverwriteUnverifiedTranslations, projectCreateParameters.autotranslateOverwriteUnverifiedTranslations) &&
+        Objects.equals(this.autocompleteJobEnabled, projectCreateParameters.autocompleteJobEnabled) &&
+        Objects.equals(this.jobLockingEnabled, projectCreateParameters.jobLockingEnabled) &&
+        Objects.equals(this.smartSuggestEnabled, projectCreateParameters.smartSuggestEnabled) &&
+        Objects.equals(this.smartSuggestUseGlossary, projectCreateParameters.smartSuggestUseGlossary) &&
+        Objects.equals(this.smartSuggestUseMachineTranslation, projectCreateParameters.smartSuggestUseMachineTranslation) &&
+        Objects.equals(this.translationKeysSortCollation, projectCreateParameters.translationKeysSortCollation) &&
+        Objects.equals(this.defaultEncoding, projectCreateParameters.defaultEncoding) &&
+        Objects.equals(this.cldrVersion, projectCreateParameters.cldrVersion) &&
         Objects.equals(this.placeholderStyles, projectCreateParameters.placeholderStyles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, placeholderStyles);
+    return Objects.hash(name, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, autocompleteJobEnabled, jobLockingEnabled, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation, translationKeysSortCollation, defaultEncoding, cldrVersion, placeholderStyles);
   }
 
   @Override
@@ -760,6 +1029,14 @@ public class ProjectCreateParameters {
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
     sb.append("    autotranslateOverwriteUnverifiedTranslations: ").append(toIndentedString(autotranslateOverwriteUnverifiedTranslations)).append("\n");
+    sb.append("    autocompleteJobEnabled: ").append(toIndentedString(autocompleteJobEnabled)).append("\n");
+    sb.append("    jobLockingEnabled: ").append(toIndentedString(jobLockingEnabled)).append("\n");
+    sb.append("    smartSuggestEnabled: ").append(toIndentedString(smartSuggestEnabled)).append("\n");
+    sb.append("    smartSuggestUseGlossary: ").append(toIndentedString(smartSuggestUseGlossary)).append("\n");
+    sb.append("    smartSuggestUseMachineTranslation: ").append(toIndentedString(smartSuggestUseMachineTranslation)).append("\n");
+    sb.append("    translationKeysSortCollation: ").append(toIndentedString(translationKeysSortCollation)).append("\n");
+    sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
+    sb.append("    cldrVersion: ").append(toIndentedString(cldrVersion)).append("\n");
     sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
     sb.append("}");
     return sb.toString();

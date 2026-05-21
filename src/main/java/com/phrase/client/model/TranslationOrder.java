@@ -31,7 +31,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class TranslationOrder {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -77,9 +77,9 @@ public class TranslationOrder {
   @SerializedName(SERIALIZED_NAME_TARGET_LOCALES)
   private List<LocalePreview> targetLocales;
 
-  public static final String SERIALIZED_NAME_TAG = "tag";
-  @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
+  public static final String SERIALIZED_NAME_TAG_NAME = "tag_name";
+  @SerializedName(SERIALIZED_NAME_TAG_NAME)
+  private String tagName;
 
   public static final String SERIALIZED_NAME_STYLEGUIDE = "styleguide";
   @SerializedName(SERIALIZED_NAME_STYLEGUIDE)
@@ -358,25 +358,25 @@ public class TranslationOrder {
   }
 
 
-  public TranslationOrder tag(String tag) {
+  public TranslationOrder tagName(String tagName) {
     
-    this.tag = tag;
+    this.tagName = tagName;
     return this;
   }
 
    /**
-   * Get tag
-   * @return tag
+   * Name of the tag whose keys are included in the order.
+   * @return tagName
   **/
   @javax.annotation.Nullable
 
-  public String getTag() {
-    return tag;
+  public String getTagName() {
+    return tagName;
   }
 
 
-  public void setTag(String tag) {
-    this.tag = tag;
+  public void setTagName(String tagName) {
+    this.tagName = tagName;
   }
 
 
@@ -531,7 +531,7 @@ public class TranslationOrder {
         Objects.equals(this.progressPercent, translationOrder.progressPercent) &&
         Objects.equals(this.sourceLocale, translationOrder.sourceLocale) &&
         Objects.equals(this.targetLocales, translationOrder.targetLocales) &&
-        Objects.equals(this.tag, translationOrder.tag) &&
+        Objects.equals(this.tagName, translationOrder.tagName) &&
         Objects.equals(this.styleguide, translationOrder.styleguide) &&
         Objects.equals(this.unverifyTranslationsUponDelivery, translationOrder.unverifyTranslationsUponDelivery) &&
         Objects.equals(this.quality, translationOrder.quality) &&
@@ -542,7 +542,7 @@ public class TranslationOrder {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, lsp, amountInCents, currency, message, state, translationType, progressPercent, sourceLocale, targetLocales, tag, styleguide, unverifyTranslationsUponDelivery, quality, priority, createdAt, updatedAt);
+    return Objects.hash(id, name, lsp, amountInCents, currency, message, state, translationType, progressPercent, sourceLocale, targetLocales, tagName, styleguide, unverifyTranslationsUponDelivery, quality, priority, createdAt, updatedAt);
   }
 
   @Override
@@ -560,7 +560,7 @@ public class TranslationOrder {
     sb.append("    progressPercent: ").append(toIndentedString(progressPercent)).append("\n");
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    targetLocales: ").append(toIndentedString(targetLocales)).append("\n");
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    tagName: ").append(toIndentedString(tagName)).append("\n");
     sb.append("    styleguide: ").append(toIndentedString(styleguide)).append("\n");
     sb.append("    unverifyTranslationsUponDelivery: ").append(toIndentedString(unverifyTranslationsUponDelivery)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");

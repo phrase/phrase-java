@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Invitation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class Invitation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -92,9 +92,9 @@ public class Invitation {
   @SerializedName(SERIALIZED_NAME_SPACES)
   private List<Space> spaces;
 
-  public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
-  @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
-  private List<MemberProjectDetailProjectRolesInner> projectRole;
+  public static final String SERIALIZED_NAME_PROJECT_ROLES = "project_roles";
+  @SerializedName(SERIALIZED_NAME_PROJECT_ROLES)
+  private List<MemberProjectDetailProjectRolesInner> projectRoles;
 
   public Invitation() {
   }
@@ -455,33 +455,33 @@ public class Invitation {
   }
 
 
-  public Invitation projectRole(List<MemberProjectDetailProjectRolesInner> projectRole) {
+  public Invitation projectRoles(List<MemberProjectDetailProjectRolesInner> projectRoles) {
     
-    this.projectRole = projectRole;
+    this.projectRoles = projectRoles;
     return this;
   }
 
-  public Invitation addProjectRoleItem(MemberProjectDetailProjectRolesInner projectRoleItem) {
-    if (this.projectRole == null) {
-      this.projectRole = new ArrayList<>();
+  public Invitation addProjectRolesItem(MemberProjectDetailProjectRolesInner projectRolesItem) {
+    if (this.projectRoles == null) {
+      this.projectRoles = new ArrayList<>();
     }
-    this.projectRole.add(projectRoleItem);
+    this.projectRoles.add(projectRolesItem);
     return this;
   }
 
    /**
-   * Get projectRole
-   * @return projectRole
+   * Per-project roles assigned to the invitee. 
+   * @return projectRoles
   **/
   @javax.annotation.Nullable
 
-  public List<MemberProjectDetailProjectRolesInner> getProjectRole() {
-    return projectRole;
+  public List<MemberProjectDetailProjectRolesInner> getProjectRoles() {
+    return projectRoles;
   }
 
 
-  public void setProjectRole(List<MemberProjectDetailProjectRolesInner> projectRole) {
-    this.projectRole = projectRole;
+  public void setProjectRoles(List<MemberProjectDetailProjectRolesInner> projectRoles) {
+    this.projectRoles = projectRoles;
   }
 
   @Override
@@ -507,12 +507,12 @@ public class Invitation {
         Objects.equals(this.updatedAt, invitation.updatedAt) &&
         Objects.equals(this.acceptedAt, invitation.acceptedAt) &&
         Objects.equals(this.spaces, invitation.spaces) &&
-        Objects.equals(this.projectRole, invitation.projectRole);
+        Objects.equals(this.projectRoles, invitation.projectRoles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, role, state, projects, locales, teams, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, projectRole);
+    return Objects.hash(id, email, role, state, projects, locales, teams, defaultLocaleCodes, permissions, localeIds, createdAt, updatedAt, acceptedAt, spaces, projectRoles);
   }
 
   @Override
@@ -533,7 +533,7 @@ public class Invitation {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    acceptedAt: ").append(toIndentedString(acceptedAt)).append("\n");
     sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
-    sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
+    sb.append("    projectRoles: ").append(toIndentedString(projectRoles)).append("\n");
     sb.append("}");
     return sb.toString();
   }

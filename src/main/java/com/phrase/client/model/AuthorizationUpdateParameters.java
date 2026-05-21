@@ -29,15 +29,66 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * AuthorizationUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class AuthorizationUpdateParameters {
   public static final String SERIALIZED_NAME_NOTE = "note";
   @SerializedName(SERIALIZED_NAME_NOTE)
   private String note;
 
+  /**
+   * Gets or Sets scopes
+   */
+  @JsonAdapter(ScopesEnum.Adapter.class)
+  public enum ScopesEnum {
+    READ("read"),
+    
+    WRITE("write"),
+    
+    ORDERS_CREATE("orders.create"),
+    
+    TEAM_MANAGE("team.manage");
+
+    private String value;
+
+    ScopesEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ScopesEnum fromValue(String value) {
+      for (ScopesEnum b : ScopesEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ScopesEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ScopesEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ScopesEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ScopesEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_SCOPES = "scopes";
   @SerializedName(SERIALIZED_NAME_SCOPES)
-  private List<String> scopes;
+  private List<ScopesEnum> scopes;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
@@ -68,13 +119,13 @@ public class AuthorizationUpdateParameters {
   }
 
 
-  public AuthorizationUpdateParameters scopes(List<String> scopes) {
+  public AuthorizationUpdateParameters scopes(List<ScopesEnum> scopes) {
     
     this.scopes = scopes;
     return this;
   }
 
-  public AuthorizationUpdateParameters addScopesItem(String scopesItem) {
+  public AuthorizationUpdateParameters addScopesItem(ScopesEnum scopesItem) {
     if (this.scopes == null) {
       this.scopes = new ArrayList<>();
     }
@@ -88,12 +139,12 @@ public class AuthorizationUpdateParameters {
   **/
   @javax.annotation.Nullable
 
-  public List<String> getScopes() {
+  public List<ScopesEnum> getScopes() {
     return scopes;
   }
 
 
-  public void setScopes(List<String> scopes) {
+  public void setScopes(List<ScopesEnum> scopes) {
     this.scopes = scopes;
   }
 

@@ -6,7 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | **String** | Source content |  [optional]
+**content** | **String** | Source content to derive skeletons from. Mutually exclusive with &#x60;id&#x60;; exactly one of the two must be provided.  |  [optional]
+**id** | **String** | Translation code to source content from. Mutually exclusive with &#x60;content&#x60;; exactly one of the two must be provided.  |  [optional]
 **localeCodes** | **List&lt;String&gt;** | Locale codes |  [optional]
 **keepContent** | **Boolean** | Keep the content and add missing plural forms for each locale |  [optional]
 **zeroFormEnabled** | **Boolean** | Indicates whether the zero form should be included or excluded in the returned skeletons |  [optional]

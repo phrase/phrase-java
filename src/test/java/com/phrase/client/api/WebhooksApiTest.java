@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.Webhook;
 import com.phrase.client.model.WebhookCreateParameters;
 import com.phrase.client.model.WebhookUpdateParameters;
@@ -90,7 +91,7 @@ public class WebhooksApiTest {
     /**
      * Test a webhook
      *
-     * Perform a test request for a webhook.
+     * Perform a test request for a webhook. Sends a synthetic &#x60;test:event&#x60; payload to the webhook&#39;s &#x60;callback_url&#x60; and returns the webhook resource. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -100,7 +101,7 @@ public class WebhooksApiTest {
         String projectId = null;
         String id = null;
         String xPhraseAppOTP = null;
-        api.webhookTest(projectId, id, xPhraseAppOTP);
+        Webhook response = api.webhookTest(projectId, id, xPhraseAppOTP);
 
         // TODO: test validations
     }

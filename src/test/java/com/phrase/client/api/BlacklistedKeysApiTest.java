@@ -16,6 +16,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.model.BlacklistedKey;
 import com.phrase.client.model.BlacklistedKeyCreateParameters;
 import com.phrase.client.model.BlacklistedKeyUpdateParameters;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

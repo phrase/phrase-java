@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.FigmaAttachment;
 import com.phrase.client.model.FigmaAttachmentCreateParameters;
 import com.phrase.client.model.FigmaAttachmentUpdateParameters;

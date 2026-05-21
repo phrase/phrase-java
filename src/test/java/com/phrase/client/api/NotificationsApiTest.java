@@ -45,7 +45,8 @@ public class NotificationsApiTest {
         Integer page = null;
         Integer perPage = null;
         Boolean unseen = null;
-        List<Notification> response = api.notificationsList(xPhraseAppOTP, page, perPage, unseen);
+        Integer lastDays = null;
+        List<Notification> response = api.notificationsList(xPhraseAppOTP, page, perPage, unseen, lastDays);
 
         // TODO: test validations
     }

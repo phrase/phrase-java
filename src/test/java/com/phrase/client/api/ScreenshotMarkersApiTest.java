@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.ScreenshotMarker;
 import com.phrase.client.model.ScreenshotMarkerCreateParameters;
 import com.phrase.client.model.ScreenshotMarkerUpdateParameters;

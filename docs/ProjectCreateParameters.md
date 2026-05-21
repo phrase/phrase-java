@@ -30,7 +30,27 @@ Name | Type | Description | Notes
 **autotranslateUseMachineTranslation** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
 **autotranslateOverwriteUnverifiedTranslations** | **Boolean** | (Optional) Requires autotranslate_enabled to be true |  [optional]
+**autocompleteJobEnabled** | **Boolean** | (Optional) Enable autocomplete-job behavior so that newly created keys and locales are automatically added to in-progress jobs. |  [optional]
+**jobLockingEnabled** | **Boolean** | (Optional) When enabled, translations are locked once a job moves into review. |  [optional]
+**smartSuggestEnabled** | **Boolean** | (Optional) Enable Smart Suggest for the project. Defaults to &#x60;true&#x60; when omitted. |  [optional]
+**smartSuggestUseGlossary** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from the project glossary. Defaults to &#x60;true&#x60; when omitted. |  [optional]
+**smartSuggestUseMachineTranslation** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from machine translation. Defaults to &#x60;true&#x60; when omitted. |  [optional]
+**translationKeysSortCollation** | **String** | (Optional) Collation used when sorting translation keys alphabetically. Defaults to &#x60;unicode_ci&#x60; when omitted. |  [optional]
+**defaultEncoding** | [**DefaultEncodingEnum**](#DefaultEncodingEnum) | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads. |  [optional]
+**cldrVersion** | **String** | (Optional) CLDR plural-rule version used by the project. |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. |  [optional]
+
+
+
+## Enum: DefaultEncodingEnum
+
+Name | Value
+---- | -----
+UTF_8 | &quot;UTF-8&quot;
+UTF_16 | &quot;UTF-16&quot;
+UTF_16BE | &quot;UTF-16BE&quot;
+UTF_16LE | &quot;UTF-16LE&quot;
+ISO_8859_1 | &quot;ISO-8859-1&quot;
 
 
 

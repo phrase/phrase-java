@@ -159,11 +159,11 @@ public class InvitationTest {
     }
 
     /**
-     * Test the property 'projectRole'
+     * Test the property 'projectRoles'
      */
     @Test
-    public void projectRoleTest() {
-        // TODO: test projectRole
+    public void projectRolesTest() {
+        // TODO: test projectRoles
     }
 
 }

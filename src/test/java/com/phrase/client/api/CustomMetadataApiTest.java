@@ -17,7 +17,7 @@ import com.phrase.client.model.CustomMetadataDataType;
 import com.phrase.client.model.CustomMetadataPropertiesCreateParameters;
 import com.phrase.client.model.CustomMetadataPropertiesUpdateParameters;
 import com.phrase.client.model.CustomMetadataProperty;
-import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

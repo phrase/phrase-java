@@ -31,7 +31,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Release
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class Release {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -68,6 +68,10 @@ public class Release {
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags;
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  private String state;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
@@ -314,6 +318,28 @@ public class Release {
   }
 
 
+  public Release state(String state) {
+    
+    this.state = state;
+    return this;
+  }
+
+   /**
+   * Get state
+   * @return state
+  **/
+  @javax.annotation.Nullable
+
+  public String getState() {
+    return state;
+  }
+
+
+  public void setState(String state) {
+    this.state = state;
+  }
+
+
   public Release project(ProjectShort project) {
     
     this.project = project;
@@ -397,6 +423,7 @@ public class Release {
         Objects.equals(this.environments, release.environments) &&
         Objects.equals(this.locales, release.locales) &&
         Objects.equals(this.tags, release.tags) &&
+        Objects.equals(this.state, release.state) &&
         Objects.equals(this.project, release.project) &&
         Objects.equals(this.createdAt, release.createdAt) &&
         Objects.equals(this.updatedAt, release.updatedAt);
@@ -404,7 +431,7 @@ public class Release {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, appMinVersion, appMaxVersion, description, platforms, environments, locales, tags, project, createdAt, updatedAt);
+    return Objects.hash(id, version, appMinVersion, appMaxVersion, description, platforms, environments, locales, tags, state, project, createdAt, updatedAt);
   }
 
   @Override
@@ -420,6 +447,7 @@ public class Release {
     sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

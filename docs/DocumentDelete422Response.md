@@ -1,14 +1,13 @@
 
 
-# CustomMetadataPropertyCreate422ResponseErrorsInner
+# DocumentDelete422Response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resource** | **String** |  |  [optional]
-**field** | **String** |  |  [optional]
 **message** | **String** |  |  [optional]
+**errors** | [**List&lt;DocumentDelete422ResponseErrorsInner&gt;**](DocumentDelete422ResponseErrorsInner.md) |  |  [optional]
 
 
 

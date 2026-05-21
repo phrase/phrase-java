@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.QualityPerformanceScoreList200Response;
 import com.phrase.client.model.QualityPerformanceScoreListRequest;
 

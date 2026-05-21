@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.Space;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -64,6 +65,14 @@ public class GlossaryTest {
     @Test
     public void projectsTest() {
         // TODO: test projects
+    }
+
+    /**
+     * Test the property 'spaces'
+     */
+    @Test
+    public void spacesTest() {
+        // TODO: test spaces
     }
 
     /**

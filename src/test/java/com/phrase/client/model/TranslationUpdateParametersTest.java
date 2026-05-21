@@ -94,4 +94,12 @@ public class TranslationUpdateParametersTest {
         // TODO: test reviewed
     }
 
+    /**
+     * Test the property 'minorChange'
+     */
+    @Test
+    public void minorChangeTest() {
+        // TODO: test minorChange
+    }
+
 }

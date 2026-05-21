@@ -17,14 +17,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
-import com.phrase.client.model.ReleasePreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -77,19 +76,11 @@ public class DistributionTest {
     }
 
     /**
-     * Test the property 'locales'
+     * Test the property 'releaseCount'
      */
     @Test
-    public void localesTest() {
-        // TODO: test locales
-    }
-
-    /**
-     * Test the property 'releases'
-     */
-    @Test
-    public void releasesTest() {
-        // TODO: test releases
+    public void releaseCountTest() {
+        // TODO: test releaseCount
     }
 
     /**
@@ -98,6 +89,14 @@ public class DistributionTest {
     @Test
     public void createdAtTest() {
         // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'updatedAt'
+     */
+    @Test
+    public void updatedAtTest() {
+        // TODO: test updatedAt
     }
 
     /**

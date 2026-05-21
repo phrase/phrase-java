@@ -24,13 +24,14 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Automation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class Automation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -201,9 +202,21 @@ public class Automation {
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
   private String projectId;
 
+  public static final String SERIALIZED_NAME_PROJECT_IDS = "project_ids";
+  @SerializedName(SERIALIZED_NAME_PROJECT_IDS)
+  private List<String> projectIds;
+
   public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
   private String jobTemplateId;
+
+  public static final String SERIALIZED_NAME_JOB_OWNER_ID = "job_owner_id";
+  @SerializedName(SERIALIZED_NAME_JOB_OWNER_ID)
+  private String jobOwnerId;
+
+  public static final String SERIALIZED_NAME_INCLUDE_ONLY_UPDATED_LOCALES = "include_only_updated_locales";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_ONLY_UPDATED_LOCALES)
+  private Boolean includeOnlyUpdatedLocales;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
@@ -372,6 +385,36 @@ public class Automation {
   }
 
 
+  public Automation projectIds(List<String> projectIds) {
+    
+    this.projectIds = projectIds;
+    return this;
+  }
+
+  public Automation addProjectIdsItem(String projectIdsItem) {
+    if (this.projectIds == null) {
+      this.projectIds = new ArrayList<>();
+    }
+    this.projectIds.add(projectIdsItem);
+    return this;
+  }
+
+   /**
+   * All project IDs the automation applies to. Returned alongside the singular &#x60;project_id&#x60; for backwards compatibility.
+   * @return projectIds
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getProjectIds() {
+    return projectIds;
+  }
+
+
+  public void setProjectIds(List<String> projectIds) {
+    this.projectIds = projectIds;
+  }
+
+
   public Automation jobTemplateId(String jobTemplateId) {
     
     this.jobTemplateId = jobTemplateId;
@@ -391,6 +434,50 @@ public class Automation {
 
   public void setJobTemplateId(String jobTemplateId) {
     this.jobTemplateId = jobTemplateId;
+  }
+
+
+  public Automation jobOwnerId(String jobOwnerId) {
+    
+    this.jobOwnerId = jobOwnerId;
+    return this;
+  }
+
+   /**
+   * User ID of the job owner that newly created jobs are assigned to.
+   * @return jobOwnerId
+  **/
+  @javax.annotation.Nullable
+
+  public String getJobOwnerId() {
+    return jobOwnerId;
+  }
+
+
+  public void setJobOwnerId(String jobOwnerId) {
+    this.jobOwnerId = jobOwnerId;
+  }
+
+
+  public Automation includeOnlyUpdatedLocales(Boolean includeOnlyUpdatedLocales) {
+    
+    this.includeOnlyUpdatedLocales = includeOnlyUpdatedLocales;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, the automation only acts on locales that changed since its last run.
+   * @return includeOnlyUpdatedLocales
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getIncludeOnlyUpdatedLocales() {
+    return includeOnlyUpdatedLocales;
+  }
+
+
+  public void setIncludeOnlyUpdatedLocales(Boolean includeOnlyUpdatedLocales) {
+    this.includeOnlyUpdatedLocales = includeOnlyUpdatedLocales;
   }
 
 
@@ -548,7 +635,10 @@ public class Automation {
         Objects.equals(this.trigger, automation.trigger) &&
         Objects.equals(this.statusFilters, automation.statusFilters) &&
         Objects.equals(this.projectId, automation.projectId) &&
+        Objects.equals(this.projectIds, automation.projectIds) &&
         Objects.equals(this.jobTemplateId, automation.jobTemplateId) &&
+        Objects.equals(this.jobOwnerId, automation.jobOwnerId) &&
+        Objects.equals(this.includeOnlyUpdatedLocales, automation.includeOnlyUpdatedLocales) &&
         Objects.equals(this.tags, automation.tags) &&
         Objects.equals(this.cronSchedule, automation.cronSchedule) &&
         Objects.equals(this.timeZone, automation.timeZone) &&
@@ -557,9 +647,20 @@ public class Automation {
         Objects.equals(this.updatedAt, automation.updatedAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, trigger, statusFilters, projectId, jobTemplateId, tags, cronSchedule, timeZone, account, createdAt, updatedAt);
+    return Objects.hash(id, name, status, trigger, statusFilters, projectId, projectIds, jobTemplateId, jobOwnerId, includeOnlyUpdatedLocales, tags, cronSchedule, timeZone, account, createdAt, updatedAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -572,7 +673,10 @@ public class Automation {
     sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n");
     sb.append("    statusFilters: ").append(toIndentedString(statusFilters)).append("\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+    sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
     sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
+    sb.append("    jobOwnerId: ").append(toIndentedString(jobOwnerId)).append("\n");
+    sb.append("    includeOnlyUpdatedLocales: ").append(toIndentedString(includeOnlyUpdatedLocales)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    cronSchedule: ").append(toIndentedString(cronSchedule)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");

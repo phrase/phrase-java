@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class TranslationUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -55,6 +55,10 @@ public class TranslationUpdateParameters {
   public static final String SERIALIZED_NAME_REVIEWED = "reviewed";
   @SerializedName(SERIALIZED_NAME_REVIEWED)
   private Boolean reviewed;
+
+  public static final String SERIALIZED_NAME_MINOR_CHANGE = "minor_change";
+  @SerializedName(SERIALIZED_NAME_MINOR_CHANGE)
+  private Boolean minorChange;
 
   public TranslationUpdateParameters() {
   }
@@ -212,6 +216,28 @@ public class TranslationUpdateParameters {
     this.reviewed = reviewed;
   }
 
+
+  public TranslationUpdateParameters minorChange(Boolean minorChange) {
+    
+    this.minorChange = minorChange;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, the update is treated as a minor edit and does not trigger downstream re-verification on the linked locales&#39; translations. 
+   * @return minorChange
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getMinorChange() {
+    return minorChange;
+  }
+
+
+  public void setMinorChange(Boolean minorChange) {
+    this.minorChange = minorChange;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -227,12 +253,13 @@ public class TranslationUpdateParameters {
         Objects.equals(this.unverified, translationUpdateParameters.unverified) &&
         Objects.equals(this.excluded, translationUpdateParameters.excluded) &&
         Objects.equals(this.autotranslate, translationUpdateParameters.autotranslate) &&
-        Objects.equals(this.reviewed, translationUpdateParameters.reviewed);
+        Objects.equals(this.reviewed, translationUpdateParameters.reviewed) &&
+        Objects.equals(this.minorChange, translationUpdateParameters.minorChange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, content, pluralSuffix, unverified, excluded, autotranslate, reviewed);
+    return Objects.hash(branch, content, pluralSuffix, unverified, excluded, autotranslate, reviewed, minorChange);
   }
 
   @Override
@@ -246,6 +273,7 @@ public class TranslationUpdateParameters {
     sb.append("    excluded: ").append(toIndentedString(excluded)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("    reviewed: ").append(toIndentedString(reviewed)).append("\n");
+    sb.append("    minorChange: ").append(toIndentedString(minorChange)).append("\n");
     sb.append("}");
     return sb.toString();
   }

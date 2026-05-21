@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.GlossaryTermGlossary;
 import com.phrase.client.model.GlossaryTermTranslation;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -30,7 +31,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GlossaryTerm
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class GlossaryTerm {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -55,6 +56,10 @@ public class GlossaryTerm {
   public static final String SERIALIZED_NAME_TRANSLATIONS = "translations";
   @SerializedName(SERIALIZED_NAME_TRANSLATIONS)
   private List<GlossaryTermTranslation> translations;
+
+  public static final String SERIALIZED_NAME_GLOSSARY = "glossary";
+  @SerializedName(SERIALIZED_NAME_GLOSSARY)
+  private GlossaryTermGlossary glossary;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -207,6 +212,28 @@ public class GlossaryTerm {
   }
 
 
+  public GlossaryTerm glossary(GlossaryTermGlossary glossary) {
+    
+    this.glossary = glossary;
+    return this;
+  }
+
+   /**
+   * Get glossary
+   * @return glossary
+  **/
+  @javax.annotation.Nullable
+
+  public GlossaryTermGlossary getGlossary() {
+    return glossary;
+  }
+
+
+  public void setGlossary(GlossaryTermGlossary glossary) {
+    this.glossary = glossary;
+  }
+
+
   public GlossaryTerm createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -265,13 +292,14 @@ public class GlossaryTerm {
         Objects.equals(this.translatable, glossaryTerm.translatable) &&
         Objects.equals(this.caseSensitive, glossaryTerm.caseSensitive) &&
         Objects.equals(this.translations, glossaryTerm.translations) &&
+        Objects.equals(this.glossary, glossaryTerm.glossary) &&
         Objects.equals(this.createdAt, glossaryTerm.createdAt) &&
         Objects.equals(this.updatedAt, glossaryTerm.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, term, description, translatable, caseSensitive, translations, createdAt, updatedAt);
+    return Objects.hash(id, term, description, translatable, caseSensitive, translations, glossary, createdAt, updatedAt);
   }
 
   @Override
@@ -284,6 +312,7 @@ public class GlossaryTerm {
     sb.append("    translatable: ").append(toIndentedString(translatable)).append("\n");
     sb.append("    caseSensitive: ").append(toIndentedString(caseSensitive)).append("\n");
     sb.append("    translations: ").append(toIndentedString(translations)).append("\n");
+    sb.append("    glossary: ").append(toIndentedString(glossary)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

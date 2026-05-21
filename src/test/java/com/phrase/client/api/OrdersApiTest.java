@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.OrderConfirmParameters;
 import com.phrase.client.model.OrderCreateParameters;
 import com.phrase.client.model.TranslationOrder;
@@ -123,7 +124,8 @@ public class OrdersApiTest {
         Integer page = null;
         Integer perPage = null;
         String branch = null;
-        List<TranslationOrder> response = api.ordersList(projectId, xPhraseAppOTP, page, perPage, branch);
+        String translationId = null;
+        List<TranslationOrder> response = api.ordersList(projectId, xPhraseAppOTP, page, perPage, branch, translationId);
 
         // TODO: test validations
     }

@@ -86,6 +86,14 @@ public class JobTemplateDetailsTest {
     }
 
     /**
+     * Test the property 'autotranslateEnabled'
+     */
+    @Test
+    public void autotranslateEnabledTest() {
+        // TODO: test autotranslateEnabled
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

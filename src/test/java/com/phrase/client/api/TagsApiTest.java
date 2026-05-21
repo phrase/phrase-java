@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.Tag;
 import com.phrase.client.model.TagCreateParameters;
 import com.phrase.client.model.TagWithStats;
@@ -105,9 +106,10 @@ public class TagsApiTest {
         Integer page = null;
         Integer perPage = null;
         Boolean excludeSystemTags = null;
+        Boolean onlySystemTags = null;
         String branch = null;
         String q = null;
-        List<Tag> response = api.tagsList(projectId, xPhraseAppOTP, page, perPage, excludeSystemTags, branch, q);
+        List<Tag> response = api.tagsList(projectId, xPhraseAppOTP, page, perPage, excludeSystemTags, onlySystemTags, branch, q);
 
         // TODO: test validations
     }

@@ -184,4 +184,12 @@ public class JobDetailsTest {
         // TODO: test annotations
     }
 
+    /**
+     * Test the property 'locked'
+     */
+    @Test
+    public void lockedTest() {
+        // TODO: test locked
+    }
+
 }

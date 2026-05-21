@@ -25,13 +25,14 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * OrganizationJobTemplateDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class OrganizationJobTemplateDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -44,6 +45,14 @@ public class OrganizationJobTemplateDetails {
   public static final String SERIALIZED_NAME_BRIEFING = "briefing";
   @SerializedName(SERIALIZED_NAME_BRIEFING)
   private String briefing;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_ENABLED = "autotranslate_enabled";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_ENABLED)
+  private Boolean autotranslateEnabled;
+
+  public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
+  @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
+  private String sourceLocaleId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -131,6 +140,50 @@ public class OrganizationJobTemplateDetails {
 
   public void setBriefing(String briefing) {
     this.briefing = briefing;
+  }
+
+
+  public OrganizationJobTemplateDetails autotranslateEnabled(Boolean autotranslateEnabled) {
+    
+    this.autotranslateEnabled = autotranslateEnabled;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, jobs created from this template are auto-translated on creation. Maps to the &#x60;autotranslate&#x60; field on the request body. 
+   * @return autotranslateEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateEnabled() {
+    return autotranslateEnabled;
+  }
+
+
+  public void setAutotranslateEnabled(Boolean autotranslateEnabled) {
+    this.autotranslateEnabled = autotranslateEnabled;
+  }
+
+
+  public OrganizationJobTemplateDetails sourceLocaleId(String sourceLocaleId) {
+    
+    this.sourceLocaleId = sourceLocaleId;
+    return this;
+  }
+
+   /**
+   * Optional. ID of the source locale used by jobs created from this template. When omitted, the project&#39;s default source locale is used. 
+   * @return sourceLocaleId
+  **/
+  @javax.annotation.Nullable
+
+  public String getSourceLocaleId() {
+    return sourceLocaleId;
+  }
+
+
+  public void setSourceLocaleId(String sourceLocaleId) {
+    this.sourceLocaleId = sourceLocaleId;
   }
 
 
@@ -263,6 +316,8 @@ public class OrganizationJobTemplateDetails {
     return Objects.equals(this.id, organizationJobTemplateDetails.id) &&
         Objects.equals(this.name, organizationJobTemplateDetails.name) &&
         Objects.equals(this.briefing, organizationJobTemplateDetails.briefing) &&
+        Objects.equals(this.autotranslateEnabled, organizationJobTemplateDetails.autotranslateEnabled) &&
+        Objects.equals(this.sourceLocaleId, organizationJobTemplateDetails.sourceLocaleId) &&
         Objects.equals(this.createdAt, organizationJobTemplateDetails.createdAt) &&
         Objects.equals(this.updatedAt, organizationJobTemplateDetails.updatedAt) &&
         Objects.equals(this.owner, organizationJobTemplateDetails.owner) &&
@@ -270,9 +325,20 @@ public class OrganizationJobTemplateDetails {
         Objects.equals(this.locales, organizationJobTemplateDetails.locales);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, createdAt, updatedAt, owner, creator, locales);
+    return Objects.hash(id, name, briefing, autotranslateEnabled, sourceLocaleId, createdAt, updatedAt, owner, creator, locales);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -282,6 +348,8 @@ public class OrganizationJobTemplateDetails {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
+    sb.append("    autotranslateEnabled: ").append(toIndentedString(autotranslateEnabled)).append("\n");
+    sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");

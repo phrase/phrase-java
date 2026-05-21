@@ -102,4 +102,20 @@ public class TranslationCreateParametersTest {
         // TODO: test autotranslate
     }
 
+    /**
+     * Test the property 'minorChange'
+     */
+    @Test
+    public void minorChangeTest() {
+        // TODO: test minorChange
+    }
+
+    /**
+     * Test the property 'reviewed'
+     */
+    @Test
+    public void reviewedTest() {
+        // TODO: test reviewed
+    }
+
 }

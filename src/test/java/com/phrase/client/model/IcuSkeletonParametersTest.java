@@ -49,6 +49,14 @@ public class IcuSkeletonParametersTest {
     }
 
     /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
      * Test the property 'localeCodes'
      */
     @Test

@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -61,6 +62,22 @@ public class OrganizationJobTemplateTest {
     @Test
     public void briefingTest() {
         // TODO: test briefing
+    }
+
+    /**
+     * Test the property 'autotranslateEnabled'
+     */
+    @Test
+    public void autotranslateEnabledTest() {
+        // TODO: test autotranslateEnabled
+    }
+
+    /**
+     * Test the property 'sourceLocaleId'
+     */
+    @Test
+    public void sourceLocaleIdTest() {
+        // TODO: test sourceLocaleId
     }
 
     /**

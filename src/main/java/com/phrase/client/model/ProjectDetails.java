@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
+import com.phrase.client.model.Branch;
 import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
@@ -32,7 +33,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -134,6 +135,14 @@ public class ProjectDetails {
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_USE_TRANSLATION_MEMORY)
   private Boolean autotranslateUseTranslationMemory;
 
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS = "autotranslate_overwrite_unverified_translations";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS)
+  private Boolean autotranslateOverwriteUnverifiedTranslations;
+
+  public static final String SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED = "autocomplete_job_enabled";
+  @SerializedName(SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED)
+  private Boolean autocompleteJobEnabled;
+
   public static final String SERIALIZED_NAME_DEFAULT_ENCODING = "default_encoding";
   @SerializedName(SERIALIZED_NAME_DEFAULT_ENCODING)
   private String defaultEncoding;
@@ -149,6 +158,10 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_PLACEHOLDER_STYLES = "placeholder_styles";
   @SerializedName(SERIALIZED_NAME_PLACEHOLDER_STYLES)
   private List<String> placeholderStyles;
+
+  public static final String SERIALIZED_NAME_BRANCH = "branch";
+  @SerializedName(SERIALIZED_NAME_BRANCH)
+  private Branch branch;
 
   public ProjectDetails() {
   }
@@ -703,6 +716,50 @@ public class ProjectDetails {
   }
 
 
+  public ProjectDetails autotranslateOverwriteUnverifiedTranslations(Boolean autotranslateOverwriteUnverifiedTranslations) {
+    
+    this.autotranslateOverwriteUnverifiedTranslations = autotranslateOverwriteUnverifiedTranslations;
+    return this;
+  }
+
+   /**
+   * Get autotranslateOverwriteUnverifiedTranslations
+   * @return autotranslateOverwriteUnverifiedTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateOverwriteUnverifiedTranslations() {
+    return autotranslateOverwriteUnverifiedTranslations;
+  }
+
+
+  public void setAutotranslateOverwriteUnverifiedTranslations(Boolean autotranslateOverwriteUnverifiedTranslations) {
+    this.autotranslateOverwriteUnverifiedTranslations = autotranslateOverwriteUnverifiedTranslations;
+  }
+
+
+  public ProjectDetails autocompleteJobEnabled(Boolean autocompleteJobEnabled) {
+    
+    this.autocompleteJobEnabled = autocompleteJobEnabled;
+    return this;
+  }
+
+   /**
+   * Get autocompleteJobEnabled
+   * @return autocompleteJobEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutocompleteJobEnabled() {
+    return autocompleteJobEnabled;
+  }
+
+
+  public void setAutocompleteJobEnabled(Boolean autocompleteJobEnabled) {
+    this.autocompleteJobEnabled = autocompleteJobEnabled;
+  }
+
+
   public ProjectDetails defaultEncoding(String defaultEncoding) {
     
     this.defaultEncoding = defaultEncoding;
@@ -798,6 +855,28 @@ public class ProjectDetails {
     this.placeholderStyles = placeholderStyles;
   }
 
+
+  public ProjectDetails branch(Branch branch) {
+    
+    this.branch = branch;
+    return this;
+  }
+
+   /**
+   * Get branch
+   * @return branch
+  **/
+  @javax.annotation.Nullable
+
+  public Branch getBranch() {
+    return branch;
+  }
+
+
+  public void setBranch(Branch branch) {
+    this.branch = branch;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -832,15 +911,18 @@ public class ProjectDetails {
         Objects.equals(this.autotranslateMarkAsUnverified, projectDetails.autotranslateMarkAsUnverified) &&
         Objects.equals(this.autotranslateUseMachineTranslation, projectDetails.autotranslateUseMachineTranslation) &&
         Objects.equals(this.autotranslateUseTranslationMemory, projectDetails.autotranslateUseTranslationMemory) &&
+        Objects.equals(this.autotranslateOverwriteUnverifiedTranslations, projectDetails.autotranslateOverwriteUnverifiedTranslations) &&
+        Objects.equals(this.autocompleteJobEnabled, projectDetails.autocompleteJobEnabled) &&
         Objects.equals(this.defaultEncoding, projectDetails.defaultEncoding) &&
         Objects.equals(this.cldrVersion, projectDetails.cldrVersion) &&
         Objects.equals(this.jobLockingEnabled, projectDetails.jobLockingEnabled) &&
-        Objects.equals(this.placeholderStyles, projectDetails.placeholderStyles);
+        Objects.equals(this.placeholderStyles, projectDetails.placeholderStyles) &&
+        Objects.equals(this.branch, projectDetails.branch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, defaultEncoding, cldrVersion, jobLockingEnabled, placeholderStyles);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, autocompleteJobEnabled, defaultEncoding, cldrVersion, jobLockingEnabled, placeholderStyles, branch);
   }
 
   @Override
@@ -872,10 +954,13 @@ public class ProjectDetails {
     sb.append("    autotranslateMarkAsUnverified: ").append(toIndentedString(autotranslateMarkAsUnverified)).append("\n");
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
+    sb.append("    autotranslateOverwriteUnverifiedTranslations: ").append(toIndentedString(autotranslateOverwriteUnverifiedTranslations)).append("\n");
+    sb.append("    autocompleteJobEnabled: ").append(toIndentedString(autocompleteJobEnabled)).append("\n");
     sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
     sb.append("    cldrVersion: ").append(toIndentedString(cldrVersion)).append("\n");
     sb.append("    jobLockingEnabled: ").append(toIndentedString(jobLockingEnabled)).append("\n");
     sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
+    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("}");
     return sb.toString();
   }

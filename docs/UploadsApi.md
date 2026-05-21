@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="uploadCreate"></a>
 # **uploadCreate**
-> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix)
+> Upload uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, skipAutomatedJobCreation)
 
 Upload a new file
 
@@ -67,8 +67,9 @@ public class Example {
     Boolean markReviewed = true; // Boolean | Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project.
     Boolean tagOnlyAffectedKeys = false; // Boolean | Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is `false`
     String translationKeyPrefix = "translationKeyPrefix_example"; // String | This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized.
+    Boolean skipAutomatedJobCreation = false; // Boolean | When `true`, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to `false`. 
     try {
-      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix);
+      Upload result = apiInstance.uploadCreate(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, skipAutomatedJobCreation);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadsApi#uploadCreate");
@@ -109,6 +110,7 @@ Name | Type | Description  | Notes
  **markReviewed** | **Boolean**| Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. | [optional]
  **tagOnlyAffectedKeys** | **Boolean**| Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; | [optional] [default to false]
  **translationKeyPrefix** | **String**| This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. | [optional]
+ **skipAutomatedJobCreation** | **Boolean**| When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;.  | [optional] [default to false]
 
 ### Return type
 
@@ -128,7 +130,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** | Created |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
 <a name="uploadShow"></a>
@@ -210,6 +215,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 
@@ -294,6 +301,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  |
 **400** | Bad request |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **404** | Not Found |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **429** | Rate Limiting |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 

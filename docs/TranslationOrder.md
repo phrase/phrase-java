@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **progressPercent** | **Integer** |  |  [optional]
 **sourceLocale** | [**LocalePreview**](LocalePreview.md) |  |  [optional]
 **targetLocales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
-**tag** | **String** |  |  [optional]
+**tagName** | **String** | Name of the tag whose keys are included in the order. |  [optional]
 **styleguide** | [**StyleguidePreview**](StyleguidePreview.md) |  |  [optional]
 **unverifyTranslationsUponDelivery** | **Boolean** |  |  [optional]
 **quality** | **Boolean** |  |  [optional]

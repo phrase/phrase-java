@@ -132,11 +132,11 @@ public class TranslationOrderTest {
     }
 
     /**
-     * Test the property 'tag'
+     * Test the property 'tagName'
      */
     @Test
-    public void tagTest() {
-        // TODO: test tag
+    public void tagNameTest() {
+        // TODO: test tagName
     }
 
     /**

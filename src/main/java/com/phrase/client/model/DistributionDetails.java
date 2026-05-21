@@ -18,20 +18,23 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.LocalePreview;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.ReleasePreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * DistributionPreview
+ * DistributionDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
-public class DistributionPreview {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
+public class DistributionDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
@@ -56,14 +59,26 @@ public class DistributionPreview {
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private OffsetDateTime createdAt;
 
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private OffsetDateTime updatedAt;
+
   public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
   @SerializedName(SERIALIZED_NAME_DELETED_AT)
   private OffsetDateTime deletedAt;
 
-  public DistributionPreview() {
+  public static final String SERIALIZED_NAME_LOCALES = "locales";
+  @SerializedName(SERIALIZED_NAME_LOCALES)
+  private List<LocalePreview> locales;
+
+  public static final String SERIALIZED_NAME_RELEASES = "releases";
+  @SerializedName(SERIALIZED_NAME_RELEASES)
+  private List<ReleasePreview> releases;
+
+  public DistributionDetails() {
   }
 
-  public DistributionPreview id(String id) {
+  public DistributionDetails id(String id) {
     
     this.id = id;
     return this;
@@ -85,7 +100,7 @@ public class DistributionPreview {
   }
 
 
-  public DistributionPreview name(String name) {
+  public DistributionDetails name(String name) {
     
     this.name = name;
     return this;
@@ -107,7 +122,7 @@ public class DistributionPreview {
   }
 
 
-  public DistributionPreview project(ProjectShort project) {
+  public DistributionDetails project(ProjectShort project) {
     
     this.project = project;
     return this;
@@ -129,13 +144,13 @@ public class DistributionPreview {
   }
 
 
-  public DistributionPreview platforms(List<String> platforms) {
+  public DistributionDetails platforms(List<String> platforms) {
     
     this.platforms = platforms;
     return this;
   }
 
-  public DistributionPreview addPlatformsItem(String platformsItem) {
+  public DistributionDetails addPlatformsItem(String platformsItem) {
     if (this.platforms == null) {
       this.platforms = new ArrayList<>();
     }
@@ -159,7 +174,7 @@ public class DistributionPreview {
   }
 
 
-  public DistributionPreview releaseCount(Integer releaseCount) {
+  public DistributionDetails releaseCount(Integer releaseCount) {
     
     this.releaseCount = releaseCount;
     return this;
@@ -181,7 +196,7 @@ public class DistributionPreview {
   }
 
 
-  public DistributionPreview createdAt(OffsetDateTime createdAt) {
+  public DistributionDetails createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -203,7 +218,29 @@ public class DistributionPreview {
   }
 
 
-  public DistributionPreview deletedAt(OffsetDateTime deletedAt) {
+  public DistributionDetails updatedAt(OffsetDateTime updatedAt) {
+    
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+   /**
+   * Get updatedAt
+   * @return updatedAt
+  **/
+  @javax.annotation.Nullable
+
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  public void setUpdatedAt(OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
+  public DistributionDetails deletedAt(OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -224,6 +261,66 @@ public class DistributionPreview {
     this.deletedAt = deletedAt;
   }
 
+
+  public DistributionDetails locales(List<LocalePreview> locales) {
+    
+    this.locales = locales;
+    return this;
+  }
+
+  public DistributionDetails addLocalesItem(LocalePreview localesItem) {
+    if (this.locales == null) {
+      this.locales = new ArrayList<>();
+    }
+    this.locales.add(localesItem);
+    return this;
+  }
+
+   /**
+   * Get locales
+   * @return locales
+  **/
+  @javax.annotation.Nullable
+
+  public List<LocalePreview> getLocales() {
+    return locales;
+  }
+
+
+  public void setLocales(List<LocalePreview> locales) {
+    this.locales = locales;
+  }
+
+
+  public DistributionDetails releases(List<ReleasePreview> releases) {
+    
+    this.releases = releases;
+    return this;
+  }
+
+  public DistributionDetails addReleasesItem(ReleasePreview releasesItem) {
+    if (this.releases == null) {
+      this.releases = new ArrayList<>();
+    }
+    this.releases.add(releasesItem);
+    return this;
+  }
+
+   /**
+   * Get releases
+   * @return releases
+  **/
+  @javax.annotation.Nullable
+
+  public List<ReleasePreview> getReleases() {
+    return releases;
+  }
+
+
+  public void setReleases(List<ReleasePreview> releases) {
+    this.releases = releases;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -232,32 +329,49 @@ public class DistributionPreview {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DistributionPreview distributionPreview = (DistributionPreview) o;
-    return Objects.equals(this.id, distributionPreview.id) &&
-        Objects.equals(this.name, distributionPreview.name) &&
-        Objects.equals(this.project, distributionPreview.project) &&
-        Objects.equals(this.platforms, distributionPreview.platforms) &&
-        Objects.equals(this.releaseCount, distributionPreview.releaseCount) &&
-        Objects.equals(this.createdAt, distributionPreview.createdAt) &&
-        Objects.equals(this.deletedAt, distributionPreview.deletedAt);
+    DistributionDetails distributionDetails = (DistributionDetails) o;
+    return Objects.equals(this.id, distributionDetails.id) &&
+        Objects.equals(this.name, distributionDetails.name) &&
+        Objects.equals(this.project, distributionDetails.project) &&
+        Objects.equals(this.platforms, distributionDetails.platforms) &&
+        Objects.equals(this.releaseCount, distributionDetails.releaseCount) &&
+        Objects.equals(this.createdAt, distributionDetails.createdAt) &&
+        Objects.equals(this.updatedAt, distributionDetails.updatedAt) &&
+        Objects.equals(this.deletedAt, distributionDetails.deletedAt) &&
+        Objects.equals(this.locales, distributionDetails.locales) &&
+        Objects.equals(this.releases, distributionDetails.releases);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, project, platforms, releaseCount, createdAt, deletedAt);
+    return Objects.hash(id, name, project, platforms, releaseCount, createdAt, updatedAt, deletedAt, locales, releases);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DistributionPreview {\n");
+    sb.append("class DistributionDetails {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    platforms: ").append(toIndentedString(platforms)).append("\n");
     sb.append("    releaseCount: ").append(toIndentedString(releaseCount)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
+    sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
+    sb.append("    releases: ").append(toIndentedString(releases)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.phrase.client.model.DocumentDelete422Response;
 import java.io.File;
 import com.phrase.client.model.Upload;
 
@@ -80,6 +81,7 @@ public class UploadsApi {
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @param tagOnlyAffectedKeys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (optional, default to false)
      * @param translationKeyPrefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. (optional)
+     * @param skipAutomatedJobCreation When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;.  (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -88,11 +90,14 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadCreateCall(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadCreateCall(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, Boolean skipAutomatedJobCreation, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -196,6 +201,10 @@ public class UploadsApi {
             localVarFormParams.put("translation_key_prefix", translationKeyPrefix);
         }
 
+        if (skipAutomatedJobCreation != null) {
+            localVarFormParams.put("skip_automated_job_creation", skipAutomatedJobCreation);
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -215,7 +224,7 @@ public class UploadsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadCreateValidateBeforeCall(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadCreateValidateBeforeCall(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, Boolean skipAutomatedJobCreation, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -238,7 +247,7 @@ public class UploadsApi {
         }
         
 
-        okhttp3.Call localVarCall = uploadCreateCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, _callback);
+        okhttp3.Call localVarCall = uploadCreateCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, skipAutomatedJobCreation, _callback);
         return localVarCall;
 
     }
@@ -270,6 +279,7 @@ public class UploadsApi {
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @param tagOnlyAffectedKeys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (optional, default to false)
      * @param translationKeyPrefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. (optional)
+     * @param skipAutomatedJobCreation When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;.  (optional, default to false)
      * @return Upload
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -277,12 +287,15 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Upload uploadCreate(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix) throws ApiException {
-        ApiResponse<Upload> localVarResp = uploadCreateWithHttpInfo(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix);
+    public Upload uploadCreate(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, Boolean skipAutomatedJobCreation) throws ApiException {
+        ApiResponse<Upload> localVarResp = uploadCreateWithHttpInfo(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, skipAutomatedJobCreation);
         return localVarResp.getData();
     }
 
@@ -313,6 +326,7 @@ public class UploadsApi {
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @param tagOnlyAffectedKeys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (optional, default to false)
      * @param translationKeyPrefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. (optional)
+     * @param skipAutomatedJobCreation When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;.  (optional, default to false)
      * @return ApiResponse&lt;Upload&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -320,12 +334,15 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Upload> uploadCreateWithHttpInfo(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix) throws ApiException {
-        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, null);
+    public ApiResponse<Upload> uploadCreateWithHttpInfo(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, Boolean skipAutomatedJobCreation) throws ApiException {
+        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, skipAutomatedJobCreation, null);
         Type localVarReturnType = new TypeToken<Upload>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -357,6 +374,7 @@ public class UploadsApi {
      * @param markReviewed Indicated whether the imported translations should be marked as reviewed. This setting is available if the review workflow is enabled for the project. (optional)
      * @param tagOnlyAffectedKeys Indicates whether only keys affected (created or updated) by the upload should be tagged. The default is &#x60;false&#x60; (optional, default to false)
      * @param translationKeyPrefix This prefix will be added to all uploaded translation key names to prevent collisions. Use a meaningful prefix related to your project or file to keep key names organized. (optional)
+     * @param skipAutomatedJobCreation When &#x60;true&#x60;, the automation rules for the project will not fire for this upload, so no jobs are created as a side effect of importing this file. Defaults to &#x60;false&#x60;.  (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -365,13 +383,16 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadCreateAsync(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, final ApiCallback<Upload> _callback) throws ApiException {
+    public okhttp3.Call uploadCreateAsync(String projectId, File _file, String fileFormat, String localeId, String xPhraseAppOTP, String branch, String tags, Boolean updateTranslations, Boolean updateCustomMetadata, Boolean updateTranslationKeys, Boolean updateTranslationsOnSourceMatch, String sourceLocaleId, Boolean updateDescriptions, Boolean convertEmoji, Boolean skipUploadTags, Boolean skipUnverification, String fileEncoding, Object localeMapping, Object formatOptions, Boolean autotranslate, Boolean verifyMentionedTranslations, Boolean markReviewed, Boolean tagOnlyAffectedKeys, String translationKeyPrefix, Boolean skipAutomatedJobCreation, final ApiCallback<Upload> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, _callback);
+        okhttp3.Call localVarCall = uploadCreateValidateBeforeCall(projectId, _file, fileFormat, localeId, xPhraseAppOTP, branch, tags, updateTranslations, updateCustomMetadata, updateTranslationKeys, updateTranslationsOnSourceMatch, sourceLocaleId, updateDescriptions, convertEmoji, skipUploadTags, skipUnverification, fileEncoding, localeMapping, formatOptions, autotranslate, verifyMentionedTranslations, markReviewed, tagOnlyAffectedKeys, translationKeyPrefix, skipAutomatedJobCreation, _callback);
         Type localVarReturnType = new TypeToken<Upload>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -390,6 +411,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
@@ -466,6 +489,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
@@ -489,6 +514,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
@@ -514,6 +541,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
@@ -540,6 +569,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
@@ -619,6 +650,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
@@ -643,6 +676,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
@@ -669,6 +704,8 @@ public class UploadsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  * Link -  <br>  * Pagination -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>

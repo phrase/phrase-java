@@ -16,7 +16,7 @@ import com.phrase.client.ApiException;
 import com.phrase.client.model.Automation;
 import com.phrase.client.model.AutomationsCreateParameters;
 import com.phrase.client.model.AutomationsCreateParameters1;
-import com.phrase.client.model.CustomMetadataPropertyCreate422Response;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

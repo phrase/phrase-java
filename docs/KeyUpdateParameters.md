@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **localizedFormatString** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. |  [optional]
 **localizedFormatKey** | **String** | NSStringLocalizedFormatKey attribute. Used in .stringsdict format. |  [optional]
 **customMetadata** | **Object** | Updates/Creates custom metadata property name and value pairs to be associated with key. If you want to delete a custom metadata property, you can set its value to null. If you want to update a custom metadata property, you can set its value to the new value. |  [optional]
+**excludedInLocales** | **List&lt;String&gt;** | Locales for which translations of this key are excluded from exports. Pass an empty array to clear exclusions.  |  [optional]
+**formatValueType** | **String** | Override of the value type for the key in the export. Most useful for formats like Android XML that distinguish string vs. plural resources.  |  [optional]
 
 
 

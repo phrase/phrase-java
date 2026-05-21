@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **translatable** | **Boolean** |  |  [optional]
 **caseSensitive** | **Boolean** |  |  [optional]
 **translations** | [**List&lt;GlossaryTermTranslation&gt;**](GlossaryTermTranslation.md) |  |  [optional]
+**glossary** | [**GlossaryTermGlossary**](GlossaryTermGlossary.md) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 

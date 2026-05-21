@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.CustomMetadataPropertyCreate422ResponseErrorsInner;
+import com.phrase.client.model.DocumentDelete422ResponseErrorsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,22 +27,22 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * CustomMetadataPropertyCreate422Response
+ * DocumentDelete422Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
-public class CustomMetadataPropertyCreate422Response {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
+public class DocumentDelete422Response {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<CustomMetadataPropertyCreate422ResponseErrorsInner> errors;
+  private List<DocumentDelete422ResponseErrorsInner> errors;
 
-  public CustomMetadataPropertyCreate422Response() {
+  public DocumentDelete422Response() {
   }
 
-  public CustomMetadataPropertyCreate422Response message(String message) {
+  public DocumentDelete422Response message(String message) {
     
     this.message = message;
     return this;
@@ -64,13 +64,13 @@ public class CustomMetadataPropertyCreate422Response {
   }
 
 
-  public CustomMetadataPropertyCreate422Response errors(List<CustomMetadataPropertyCreate422ResponseErrorsInner> errors) {
+  public DocumentDelete422Response errors(List<DocumentDelete422ResponseErrorsInner> errors) {
     
     this.errors = errors;
     return this;
   }
 
-  public CustomMetadataPropertyCreate422Response addErrorsItem(CustomMetadataPropertyCreate422ResponseErrorsInner errorsItem) {
+  public DocumentDelete422Response addErrorsItem(DocumentDelete422ResponseErrorsInner errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<>();
     }
@@ -84,12 +84,12 @@ public class CustomMetadataPropertyCreate422Response {
   **/
   @javax.annotation.Nullable
 
-  public List<CustomMetadataPropertyCreate422ResponseErrorsInner> getErrors() {
+  public List<DocumentDelete422ResponseErrorsInner> getErrors() {
     return errors;
   }
 
 
-  public void setErrors(List<CustomMetadataPropertyCreate422ResponseErrorsInner> errors) {
+  public void setErrors(List<DocumentDelete422ResponseErrorsInner> errors) {
     this.errors = errors;
   }
 
@@ -101,9 +101,9 @@ public class CustomMetadataPropertyCreate422Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CustomMetadataPropertyCreate422Response customMetadataPropertyCreate422Response = (CustomMetadataPropertyCreate422Response) o;
-    return Objects.equals(this.message, customMetadataPropertyCreate422Response.message) &&
-        Objects.equals(this.errors, customMetadataPropertyCreate422Response.errors);
+    DocumentDelete422Response documentDelete422Response = (DocumentDelete422Response) o;
+    return Objects.equals(this.message, documentDelete422Response.message) &&
+        Objects.equals(this.errors, documentDelete422Response.errors);
   }
 
   @Override
@@ -114,7 +114,7 @@ public class CustomMetadataPropertyCreate422Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CustomMetadataPropertyCreate422Response {\n");
+    sb.append("class DocumentDelete422Response {\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");

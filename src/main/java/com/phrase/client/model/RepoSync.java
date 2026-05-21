@@ -22,13 +22,14 @@ import com.phrase.client.model.ProjectShort;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * RepoSync
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class RepoSync {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -53,6 +54,10 @@ public class RepoSync {
   public static final String SERIALIZED_NAME_REPO_NAME = "repo_name";
   @SerializedName(SERIALIZED_NAME_REPO_NAME)
   private String repoName;
+
+  public static final String SERIALIZED_NAME_PR_BRANCH = "pr_branch";
+  @SerializedName(SERIALIZED_NAME_PR_BRANCH)
+  private String prBranch;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -201,6 +206,28 @@ public class RepoSync {
   }
 
 
+  public RepoSync prBranch(String prBranch) {
+    
+    this.prBranch = prBranch;
+    return this;
+  }
+
+   /**
+   * Branch used as the source of exports/PRs. May be &#x60;null&#x60; when the sync is configured to push directly to &#x60;base_branch&#x60;. 
+   * @return prBranch
+  **/
+  @javax.annotation.Nullable
+
+  public String getPrBranch() {
+    return prBranch;
+  }
+
+
+  public void setPrBranch(String prBranch) {
+    this.prBranch = prBranch;
+  }
+
+
   public RepoSync createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -281,14 +308,26 @@ public class RepoSync {
         Objects.equals(this.enabled, repoSync.enabled) &&
         Objects.equals(this.autoImport, repoSync.autoImport) &&
         Objects.equals(this.repoName, repoSync.repoName) &&
+        Objects.equals(this.prBranch, repoSync.prBranch) &&
         Objects.equals(this.createdAt, repoSync.createdAt) &&
         Objects.equals(this.lastImportAt, repoSync.lastImportAt) &&
         Objects.equals(this.lastExportAt, repoSync.lastExportAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, project, provider, enabled, autoImport, repoName, createdAt, lastImportAt, lastExportAt);
+    return Objects.hash(id, project, provider, enabled, autoImport, repoName, prBranch, createdAt, lastImportAt, lastExportAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -301,6 +340,7 @@ public class RepoSync {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    autoImport: ").append(toIndentedString(autoImport)).append("\n");
     sb.append("    repoName: ").append(toIndentedString(repoName)).append("\n");
+    sb.append("    prBranch: ").append(toIndentedString(prBranch)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    lastImportAt: ").append(toIndentedString(lastImportAt)).append("\n");
     sb.append("    lastExportAt: ").append(toIndentedString(lastExportAt)).append("\n");

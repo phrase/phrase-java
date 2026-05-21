@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.Glossary;
 import com.phrase.client.model.GlossaryCreateParameters;
 import com.phrase.client.model.GlossaryUpdateParameters;

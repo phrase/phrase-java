@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobTemplate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T11:19:57.777655149Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-21T07:59:09.755394127Z[Etc/UTC]")
 public class JobTemplate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -50,6 +50,10 @@ public class JobTemplate {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
   private Branch branch;
+
+  public static final String SERIALIZED_NAME_AUTOTRANSLATE_ENABLED = "autotranslate_enabled";
+  @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_ENABLED)
+  private Boolean autotranslateEnabled;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -172,6 +176,28 @@ public class JobTemplate {
   }
 
 
+  public JobTemplate autotranslateEnabled(Boolean autotranslateEnabled) {
+    
+    this.autotranslateEnabled = autotranslateEnabled;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, jobs created from this template are auto-translated on creation. 
+   * @return autotranslateEnabled
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutotranslateEnabled() {
+    return autotranslateEnabled;
+  }
+
+
+  public void setAutotranslateEnabled(Boolean autotranslateEnabled) {
+    this.autotranslateEnabled = autotranslateEnabled;
+  }
+
+
   public JobTemplate createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -229,13 +255,14 @@ public class JobTemplate {
         Objects.equals(this.briefing, jobTemplate.briefing) &&
         Objects.equals(this.project, jobTemplate.project) &&
         Objects.equals(this.branch, jobTemplate.branch) &&
+        Objects.equals(this.autotranslateEnabled, jobTemplate.autotranslateEnabled) &&
         Objects.equals(this.createdAt, jobTemplate.createdAt) &&
         Objects.equals(this.updatedAt, jobTemplate.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, project, branch, createdAt, updatedAt);
+    return Objects.hash(id, name, briefing, project, branch, autotranslateEnabled, createdAt, updatedAt);
   }
 
   @Override
@@ -247,6 +274,7 @@ public class JobTemplate {
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("    autotranslateEnabled: ").append(toIndentedString(autotranslateEnabled)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

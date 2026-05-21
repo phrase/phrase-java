@@ -241,4 +241,60 @@ public class ProjectUpdateParametersTest {
         // TODO: test placeholderStyles
     }
 
+    /**
+     * Test the property 'autocompleteJobEnabled'
+     */
+    @Test
+    public void autocompleteJobEnabledTest() {
+        // TODO: test autocompleteJobEnabled
+    }
+
+    /**
+     * Test the property 'jobLockingEnabled'
+     */
+    @Test
+    public void jobLockingEnabledTest() {
+        // TODO: test jobLockingEnabled
+    }
+
+    /**
+     * Test the property 'smartSuggestEnabled'
+     */
+    @Test
+    public void smartSuggestEnabledTest() {
+        // TODO: test smartSuggestEnabled
+    }
+
+    /**
+     * Test the property 'smartSuggestUseGlossary'
+     */
+    @Test
+    public void smartSuggestUseGlossaryTest() {
+        // TODO: test smartSuggestUseGlossary
+    }
+
+    /**
+     * Test the property 'smartSuggestUseMachineTranslation'
+     */
+    @Test
+    public void smartSuggestUseMachineTranslationTest() {
+        // TODO: test smartSuggestUseMachineTranslation
+    }
+
+    /**
+     * Test the property 'translationKeysSortCollation'
+     */
+    @Test
+    public void translationKeysSortCollationTest() {
+        // TODO: test translationKeysSortCollation
+    }
+
+    /**
+     * Test the property 'cldrVersion'
+     */
+    @Test
+    public void cldrVersionTest() {
+        // TODO: test cldrVersion
+    }
+
 }

@@ -17,6 +17,7 @@ import com.phrase.client.model.Authorization;
 import com.phrase.client.model.AuthorizationCreateParameters;
 import com.phrase.client.model.AuthorizationUpdateParameters;
 import com.phrase.client.model.AuthorizationWithToken;
+import com.phrase.client.model.DocumentDelete422Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

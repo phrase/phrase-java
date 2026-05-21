@@ -13,6 +13,7 @@
 package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
+import com.phrase.client.model.DocumentDelete422Response;
 import java.io.File;
 import com.phrase.client.model.Screenshot;
 import com.phrase.client.model.ScreenshotUpdateParameters;
