@@ -2560,8 +2560,8 @@ paths:
       - lang: Curl
         source: |-
           curl "https://api.phrase.com/v2/accounts/:account_id/custom_metadata/properties/:id" \
-            -u USERNAME_OR_ACCESS_TOKEN
-            -X DELETE
+            -u USERNAME_OR_ACCESS_TOKEN \
+            -X DELETE \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
@@ -3901,7 +3901,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:screenshot_id/markers" \
             -u USERNAME_OR_ACCESS_TOKEN \
-            -X DELETE
+            -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
@@ -19934,7 +19934,7 @@ paths:
         source: |-
           curl "https://api.phrase.com/v2/projects/:project_id/screenshots/:id" \
             -u USERNAME_OR_ACCESS_TOKEN \
-            -X DELETE
+            -X DELETE \
             -d '{"branch":"my-feature-branch"}' \
             -H 'Content-Type: application/json'
       - lang: CLI v2
@@ -22252,7 +22252,7 @@ paths:
             -F data_type=number \
             -F tags=awesome-feature,needs-proofreading \
             -F max_characters_allowed=140 \
-            -F screenshot=@/path/to/my/screenshot.png
+            -F screenshot=@/path/to/my/screenshot.png \
             -F custom_metadata[property]=value
       - lang: CLI v2
         source: |-
@@ -22727,7 +22727,7 @@ paths:
             -F data_type=number \
             -F tags=awesome-feature,needs-proofreading \
             -F max_characters_allowed=140 \
-            -F screenshot=@/path/to/my/screenshot.png
+            -F screenshot=@/path/to/my/screenshot.png \
             -F custom_metadata[property]=value
       - lang: CLI v2
         source: |-
@@ -32207,8 +32207,8 @@ paths:
       - lang: Curl
         source: |-
           curl "https://api.phrase.com/v2/accounts/:account_id/automations/:id" \
-            -u USERNAME_OR_ACCESS_TOKEN
-            -X DELETE
+            -u USERNAME_OR_ACCESS_TOKEN \
+            -X DELETE \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
@@ -32541,8 +32541,8 @@ paths:
       - lang: Curl
         source: |-
           curl "https://api.phrase.com/v2/accounts/:account_id/automations/:id/activate" \
-            -u USERNAME_OR_ACCESS_TOKEN
-            -X POST
+            -u USERNAME_OR_ACCESS_TOKEN \
+            -X POST \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
@@ -32655,8 +32655,8 @@ paths:
       - lang: Curl
         source: |-
           curl "https://api.phrase.com/v2/accounts/:account_id/automations/:id/deactivate" \
-            -u USERNAME_OR_ACCESS_TOKEN
-            -X POST
+            -u USERNAME_OR_ACCESS_TOKEN \
+            -X POST \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
@@ -32763,8 +32763,8 @@ paths:
       - lang: Curl
         source: |-
           curl "https://api.phrase.com/v2/accounts/:account_id/automations/:id/trigger" \
-            -u USERNAME_OR_ACCESS_TOKEN
-            -X POST
+            -u USERNAME_OR_ACCESS_TOKEN \
+            -X POST \
             -H 'Content-Type: application/json'
       - lang: CLI v2
         source: |-
