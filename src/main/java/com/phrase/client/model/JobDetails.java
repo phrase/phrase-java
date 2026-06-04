@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T11:30:43.112641354Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:37:32.807123346Z[Etc/UTC]")
 public class JobDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -77,6 +77,14 @@ public class JobDetails {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_AUTOMATION_ID = "automation_id";
+  @SerializedName(SERIALIZED_NAME_AUTOMATION_ID)
+  private String automationId;
+
+  public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
+  @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
+  private String jobTemplateId;
 
   public static final String SERIALIZED_NAME_OWNER = "owner";
   @SerializedName(SERIALIZED_NAME_OWNER)
@@ -333,6 +341,50 @@ public class JobDetails {
   }
 
 
+  public JobDetails automationId(String automationId) {
+    
+    this.automationId = automationId;
+    return this;
+  }
+
+   /**
+   * The ID of the automation that created this job, or null if the job was created manually.
+   * @return automationId
+  **/
+  @javax.annotation.Nullable
+
+  public String getAutomationId() {
+    return automationId;
+  }
+
+
+  public void setAutomationId(String automationId) {
+    this.automationId = automationId;
+  }
+
+
+  public JobDetails jobTemplateId(String jobTemplateId) {
+    
+    this.jobTemplateId = jobTemplateId;
+    return this;
+  }
+
+   /**
+   * The ID of the job template this job was created from, or null if no template was used.
+   * @return jobTemplateId
+  **/
+  @javax.annotation.Nullable
+
+  public String getJobTemplateId() {
+    return jobTemplateId;
+  }
+
+
+  public void setJobTemplateId(String jobTemplateId) {
+    this.jobTemplateId = jobTemplateId;
+  }
+
+
   public JobDetails owner(UserPreview owner) {
     
     this.owner = owner;
@@ -551,6 +603,8 @@ public class JobDetails {
         Objects.equals(this.branch, jobDetails.branch) &&
         Objects.equals(this.createdAt, jobDetails.createdAt) &&
         Objects.equals(this.updatedAt, jobDetails.updatedAt) &&
+        Objects.equals(this.automationId, jobDetails.automationId) &&
+        Objects.equals(this.jobTemplateId, jobDetails.jobTemplateId) &&
         Objects.equals(this.owner, jobDetails.owner) &&
         Objects.equals(this.jobTagName, jobDetails.jobTagName) &&
         Objects.equals(this.sourceTranslationsUpdatedAt, jobDetails.sourceTranslationsUpdatedAt) &&
@@ -567,7 +621,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys, annotations, locked);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, automationId, jobTemplateId, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys, annotations, locked);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -591,6 +645,8 @@ public class JobDetails {
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    automationId: ").append(toIndentedString(automationId)).append("\n");
+    sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    jobTagName: ").append(toIndentedString(jobTagName)).append("\n");
     sb.append("    sourceTranslationsUpdatedAt: ").append(toIndentedString(sourceTranslationsUpdatedAt)).append("\n");

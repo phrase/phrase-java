@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **branch** | [**BranchName**](BranchName.md) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**automationId** | **String** | The ID of the automation that created this job, or null if the job was created manually. |  [optional]
+**jobTemplateId** | **String** | The ID of the job template this job was created from, or null if no template was used. |  [optional]
 **owner** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **jobTagName** | **String** |  |  [optional]
 **sourceTranslationsUpdatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

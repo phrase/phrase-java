@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Job
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-22T11:30:43.112641354Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:37:32.807123346Z[Etc/UTC]")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -71,6 +71,14 @@ public class Job {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_AUTOMATION_ID = "automation_id";
+  @SerializedName(SERIALIZED_NAME_AUTOMATION_ID)
+  private String automationId;
+
+  public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
+  @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
+  private String jobTemplateId;
 
   public Job() {
   }
@@ -294,6 +302,50 @@ public class Job {
     this.updatedAt = updatedAt;
   }
 
+
+  public Job automationId(String automationId) {
+    
+    this.automationId = automationId;
+    return this;
+  }
+
+   /**
+   * The ID of the automation that created this job, or null if the job was created manually.
+   * @return automationId
+  **/
+  @javax.annotation.Nullable
+
+  public String getAutomationId() {
+    return automationId;
+  }
+
+
+  public void setAutomationId(String automationId) {
+    this.automationId = automationId;
+  }
+
+
+  public Job jobTemplateId(String jobTemplateId) {
+    
+    this.jobTemplateId = jobTemplateId;
+    return this;
+  }
+
+   /**
+   * The ID of the job template this job was created from, or null if no template was used.
+   * @return jobTemplateId
+  **/
+  @javax.annotation.Nullable
+
+  public String getJobTemplateId() {
+    return jobTemplateId;
+  }
+
+
+  public void setJobTemplateId(String jobTemplateId) {
+    this.jobTemplateId = jobTemplateId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -312,7 +364,9 @@ public class Job {
         Objects.equals(this.project, job.project) &&
         Objects.equals(this.branch, job.branch) &&
         Objects.equals(this.createdAt, job.createdAt) &&
-        Objects.equals(this.updatedAt, job.updatedAt);
+        Objects.equals(this.updatedAt, job.updatedAt) &&
+        Objects.equals(this.automationId, job.automationId) &&
+        Objects.equals(this.jobTemplateId, job.jobTemplateId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -321,7 +375,7 @@ public class Job {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, automationId, jobTemplateId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -345,6 +399,8 @@ public class Job {
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    automationId: ").append(toIndentedString(automationId)).append("\n");
+    sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

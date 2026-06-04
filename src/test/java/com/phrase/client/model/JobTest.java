@@ -122,4 +122,20 @@ public class JobTest {
         // TODO: test updatedAt
     }
 
+    /**
+     * Test the property 'automationId'
+     */
+    @Test
+    public void automationIdTest() {
+        // TODO: test automationId
+    }
+
+    /**
+     * Test the property 'jobTemplateId'
+     */
+    @Test
+    public void jobTemplateIdTest() {
+        // TODO: test jobTemplateId
+    }
+
 }
