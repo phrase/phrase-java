@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FigmaAttachment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:41:37.143559763Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:41:51.819211908Z[Etc/UTC]")
 public class FigmaAttachment {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
