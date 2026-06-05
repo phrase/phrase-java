@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleDownloadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:53:00.422715281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T07:02:45.417586782Z[Etc/UTC]")
 public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_FILE_FORMAT = "file_format";
   @SerializedName(SERIALIZED_NAME_FILE_FORMAT)
@@ -85,6 +85,10 @@ public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_USE_LOCALE_FALLBACK = "use_locale_fallback";
   @SerializedName(SERIALIZED_NAME_USE_LOCALE_FALLBACK)
   private Boolean useLocaleFallback;
+
+  public static final String SERIALIZED_NAME_FALLBACK_FOR_UNVERIFIED_TRANSLATIONS = "fallback_for_unverified_translations";
+  @SerializedName(SERIALIZED_NAME_FALLBACK_FOR_UNVERIFIED_TRANSLATIONS)
+  private Boolean fallbackForUnverifiedTranslations;
 
   public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
@@ -380,7 +384,7 @@ public class LocaleDownloadCreateParameters {
   }
 
    /**
-   * If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;use_locale_fallback&#x60;. 
+   * If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Provide the ID of the locale that should be used as the fallback. Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60; unless &#x60;fallback_for_unverified_translations&#x60; is also set to &#x60;true&#x60;. Mutually exclusive with &#x60;use_locale_fallback&#x60;. 
    * @return fallbackLocaleId
   **/
   @javax.annotation.Nullable
@@ -402,7 +406,7 @@ public class LocaleDownloadCreateParameters {
   }
 
    /**
-   * If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale&#39;s settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60;. Mutually exclusive with &#x60;fallback_locale_id&#x60;. 
+   * If a key has no translation in the locale being downloaded, the translation in the fallback locale will be used. Fallback locale is defined in [locale&#39;s settings](/en/api/strings/locales/update-a-locale#body-fallback-locale-id). Requires &#x60;include_empty_translations&#x60; to be set to &#x60;true&#x60; unless &#x60;fallback_for_unverified_translations&#x60; is also set to &#x60;true&#x60;. Mutually exclusive with &#x60;fallback_locale_id&#x60;. 
    * @return useLocaleFallback
   **/
   @javax.annotation.Nullable
@@ -414,6 +418,28 @@ public class LocaleDownloadCreateParameters {
 
   public void setUseLocaleFallback(Boolean useLocaleFallback) {
     this.useLocaleFallback = useLocaleFallback;
+  }
+
+
+  public LocaleDownloadCreateParameters fallbackForUnverifiedTranslations(Boolean fallbackForUnverifiedTranslations) {
+    
+    this.fallbackForUnverifiedTranslations = fallbackForUnverifiedTranslations;
+    return this;
+  }
+
+   /**
+   * If set to &#x60;true&#x60;, translations in a non-final state are replaced by the fallback locale&#39;s translation at export time. In the simple workflow, \&quot;non-final\&quot; means &#x60;unverified&#x60;. In the review workflow, it additionally includes &#x60;translated&#x60; (awaiting review). No stored translations are modified. Requires &#x60;fallback_locale_id&#x60; or &#x60;use_locale_fallback&#x60; to be set; a &#x60;422&#x60; validation error is returned otherwise. 
+   * @return fallbackForUnverifiedTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getFallbackForUnverifiedTranslations() {
+    return fallbackForUnverifiedTranslations;
+  }
+
+
+  public void setFallbackForUnverifiedTranslations(Boolean fallbackForUnverifiedTranslations) {
+    this.fallbackForUnverifiedTranslations = fallbackForUnverifiedTranslations;
   }
 
 
@@ -505,6 +531,7 @@ public class LocaleDownloadCreateParameters {
         Objects.equals(this.localeIds, localeDownloadCreateParameters.localeIds) &&
         Objects.equals(this.fallbackLocaleId, localeDownloadCreateParameters.fallbackLocaleId) &&
         Objects.equals(this.useLocaleFallback, localeDownloadCreateParameters.useLocaleFallback) &&
+        Objects.equals(this.fallbackForUnverifiedTranslations, localeDownloadCreateParameters.fallbackForUnverifiedTranslations) &&
         Objects.equals(this.sourceLocaleId, localeDownloadCreateParameters.sourceLocaleId) &&
         Objects.equals(this.customMetadataFilters, localeDownloadCreateParameters.customMetadataFilters) &&
         Objects.equals(this.updatedSince, localeDownloadCreateParameters.updatedSince);
@@ -512,7 +539,7 @@ public class LocaleDownloadCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, useLocaleFallback, sourceLocaleId, customMetadataFilters, updatedSince);
+    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, useLocaleFallback, fallbackForUnverifiedTranslations, sourceLocaleId, customMetadataFilters, updatedSince);
   }
 
   @Override
@@ -533,6 +560,7 @@ public class LocaleDownloadCreateParameters {
     sb.append("    localeIds: ").append(toIndentedString(localeIds)).append("\n");
     sb.append("    fallbackLocaleId: ").append(toIndentedString(fallbackLocaleId)).append("\n");
     sb.append("    useLocaleFallback: ").append(toIndentedString(useLocaleFallback)).append("\n");
+    sb.append("    fallbackForUnverifiedTranslations: ").append(toIndentedString(fallbackForUnverifiedTranslations)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    customMetadataFilters: ").append(toIndentedString(customMetadataFilters)).append("\n");
     sb.append("    updatedSince: ").append(toIndentedString(updatedSince)).append("\n");
