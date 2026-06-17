@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Format
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T12:22:03.402782462Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T13:13:40.976226726Z[Etc/UTC]")
 public class Format {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -78,10 +78,10 @@ public class Format {
   }
 
    /**
-   * Get name
+   * Human-readable display name of the format.
    * @return name
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getName() {
     return name;
@@ -100,10 +100,10 @@ public class Format {
   }
 
    /**
-   * Get apiName
+   * Identifier used to reference this format in API requests, such as the file_format parameter on the uploads and downloads endpoints.
    * @return apiName
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getApiName() {
     return apiName;
@@ -122,10 +122,10 @@ public class Format {
   }
 
    /**
-   * Get description
+   * Human-readable summary of the format and its typical use case.
    * @return description
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getDescription() {
     return description;
@@ -144,10 +144,10 @@ public class Format {
   }
 
    /**
-   * Get extension
+   * Default file extension associated with this format.
    * @return extension
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getExtension() {
     return extension;
@@ -166,10 +166,10 @@ public class Format {
   }
 
    /**
-   * Get defaultEncoding
+   * Default character encoding used when reading or writing files in this format.
    * @return defaultEncoding
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getDefaultEncoding() {
     return defaultEncoding;
@@ -188,10 +188,10 @@ public class Format {
   }
 
    /**
-   * Get importable
+   * Whether locale files can be imported using this format.
    * @return importable
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public Boolean getImportable() {
     return importable;
@@ -210,10 +210,10 @@ public class Format {
   }
 
    /**
-   * Get exportable
+   * Whether locale files can be exported using this format.
    * @return exportable
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public Boolean getExportable() {
     return exportable;
@@ -232,10 +232,10 @@ public class Format {
   }
 
    /**
-   * Get defaultFile
+   * Conventional file path pattern for this format. Contains locale_name as a placeholder for the locale identifier.
    * @return defaultFile
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public String getDefaultFile() {
     return defaultFile;
@@ -254,10 +254,10 @@ public class Format {
   }
 
    /**
-   * Get rendersDefaultLocale
+   * When true, exported files contain the default locale&#39;s content for any key that has no translation in the target locale.
    * @return rendersDefaultLocale
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public Boolean getRendersDefaultLocale() {
     return rendersDefaultLocale;
@@ -276,10 +276,10 @@ public class Format {
   }
 
    /**
-   * Get includesLocaleInformation
+   * When true, files in this format embed locale information so Phrase can detect the locale automatically on import.
    * @return includesLocaleInformation
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
   public Boolean getIncludesLocaleInformation() {
     return includesLocaleInformation;

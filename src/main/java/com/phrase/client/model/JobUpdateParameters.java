@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T12:22:03.402782462Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T13:13:40.976226726Z[Etc/UTC]")
 public class JobUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
