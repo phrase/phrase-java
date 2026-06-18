@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * OrganizationJobTemplateLocalesCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T13:13:40.976226726Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T13:40:01.303328542Z[Etc/UTC]")
 public class OrganizationJobTemplateLocalesCreateParameters {
   public static final String SERIALIZED_NAME_LOCALE_NAME = "locale_name";
   @SerializedName(SERIALIZED_NAME_LOCALE_NAME)

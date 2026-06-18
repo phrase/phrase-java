@@ -20,17 +20,22 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * RepoSyncCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T13:13:40.976226726Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T13:40:01.303328542Z[Etc/UTC]")
 public class RepoSyncCreateParameters {
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
   private String projectId;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   /**
    * The Git provider to use.
@@ -184,6 +189,28 @@ public class RepoSyncCreateParameters {
 
   public void setProjectId(String projectId) {
     this.projectId = projectId;
+  }
+
+
+  public RepoSyncCreateParameters name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Optional custom display name for this repo sync. Defaults to null; when null the project name is used as the display name. 
+   * @return name
+  **/
+  @javax.annotation.Nullable
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -372,6 +399,7 @@ public class RepoSyncCreateParameters {
     }
     RepoSyncCreateParameters repoSyncCreateParameters = (RepoSyncCreateParameters) o;
     return Objects.equals(this.projectId, repoSyncCreateParameters.projectId) &&
+        Objects.equals(this.name, repoSyncCreateParameters.name) &&
         Objects.equals(this.gitProvider, repoSyncCreateParameters.gitProvider) &&
         Objects.equals(this.connectionType, repoSyncCreateParameters.connectionType) &&
         Objects.equals(this.repoName, repoSyncCreateParameters.repoName) &&
@@ -382,9 +410,20 @@ public class RepoSyncCreateParameters {
         Objects.equals(this.customApiEndpoint, repoSyncCreateParameters.customApiEndpoint);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(projectId, gitProvider, connectionType, repoName, baseBranch, prBranch, autoImport, accessToken, customApiEndpoint);
+    return Objects.hash(projectId, name, gitProvider, connectionType, repoName, baseBranch, prBranch, autoImport, accessToken, customApiEndpoint);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -392,6 +431,7 @@ public class RepoSyncCreateParameters {
     StringBuilder sb = new StringBuilder();
     sb.append("class RepoSyncCreateParameters {\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    gitProvider: ").append(toIndentedString(gitProvider)).append("\n");
     sb.append("    connectionType: ").append(toIndentedString(connectionType)).append("\n");
     sb.append("    repoName: ").append(toIndentedString(repoName)).append("\n");

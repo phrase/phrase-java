@@ -29,11 +29,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSync
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-17T13:13:40.976226726Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T13:40:01.303328542Z[Etc/UTC]")
 public class RepoSync {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
@@ -93,6 +97,28 @@ public class RepoSync {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  public RepoSync name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Optional custom display name for this repo sync. When null or blank, the sync is displayed using the associated project name. 
+   * @return name
+  **/
+  @javax.annotation.Nullable
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -303,6 +329,7 @@ public class RepoSync {
     }
     RepoSync repoSync = (RepoSync) o;
     return Objects.equals(this.id, repoSync.id) &&
+        Objects.equals(this.name, repoSync.name) &&
         Objects.equals(this.project, repoSync.project) &&
         Objects.equals(this.provider, repoSync.provider) &&
         Objects.equals(this.enabled, repoSync.enabled) &&
@@ -320,7 +347,7 @@ public class RepoSync {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, project, provider, enabled, autoImport, repoName, prBranch, createdAt, lastImportAt, lastExportAt);
+    return Objects.hash(id, name, project, provider, enabled, autoImport, repoName, prBranch, createdAt, lastImportAt, lastExportAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -335,6 +362,7 @@ public class RepoSync {
     StringBuilder sb = new StringBuilder();
     sb.append("class RepoSync {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");

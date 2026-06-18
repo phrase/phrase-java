@@ -19,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -44,6 +45,14 @@ public class RepoSyncCreateParametersTest {
     @Test
     public void projectIdTest() {
         // TODO: test projectId
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
