@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Job
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-19T05:47:08.267700504Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-19T08:23:36.942478835Z[Etc/UTC]")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -79,6 +79,10 @@ public class Job {
   public static final String SERIALIZED_NAME_JOB_TEMPLATE_ID = "job_template_id";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE_ID)
   private String jobTemplateId;
+
+  public static final String SERIALIZED_NAME_REVIEW_DUE_DATE = "review_due_date";
+  @SerializedName(SERIALIZED_NAME_REVIEW_DUE_DATE)
+  private OffsetDateTime reviewDueDate;
 
   public Job() {
   }
@@ -346,6 +350,28 @@ public class Job {
     this.jobTemplateId = jobTemplateId;
   }
 
+
+  public Job reviewDueDate(OffsetDateTime reviewDueDate) {
+    
+    this.reviewDueDate = reviewDueDate;
+    return this;
+  }
+
+   /**
+   * The review due date for this job. Returns &#x60;null&#x60; when the project does not have review workflow enabled.
+   * @return reviewDueDate
+  **/
+  @javax.annotation.Nullable
+
+  public OffsetDateTime getReviewDueDate() {
+    return reviewDueDate;
+  }
+
+
+  public void setReviewDueDate(OffsetDateTime reviewDueDate) {
+    this.reviewDueDate = reviewDueDate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -366,7 +392,8 @@ public class Job {
         Objects.equals(this.createdAt, job.createdAt) &&
         Objects.equals(this.updatedAt, job.updatedAt) &&
         Objects.equals(this.automationId, job.automationId) &&
-        Objects.equals(this.jobTemplateId, job.jobTemplateId);
+        Objects.equals(this.jobTemplateId, job.jobTemplateId) &&
+        Objects.equals(this.reviewDueDate, job.reviewDueDate);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -375,7 +402,7 @@ public class Job {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, automationId, jobTemplateId);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, automationId, jobTemplateId, reviewDueDate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -401,6 +428,7 @@ public class Job {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    automationId: ").append(toIndentedString(automationId)).append("\n");
     sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
+    sb.append("    reviewDueDate: ").append(toIndentedString(reviewDueDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

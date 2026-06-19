@@ -138,4 +138,12 @@ public class JobTest {
         // TODO: test jobTemplateId
     }
 
+    /**
+     * Test the property 'reviewDueDate'
+     */
+    @Test
+    public void reviewDueDateTest() {
+        // TODO: test reviewDueDate
+    }
+
 }
