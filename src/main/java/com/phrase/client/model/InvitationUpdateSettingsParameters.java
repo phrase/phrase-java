@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * InvitationUpdateSettingsParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-18T13:40:01.303328542Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-19T05:47:08.267700504Z[Etc/UTC]")
 public class InvitationUpdateSettingsParameters {
   public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
   @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
