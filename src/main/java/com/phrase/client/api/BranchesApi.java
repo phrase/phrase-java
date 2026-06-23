@@ -27,6 +27,7 @@ import java.io.IOException;
 
 
 import com.phrase.client.model.Branch;
+import com.phrase.client.model.BranchComparison;
 import com.phrase.client.model.BranchCreateComparisonParameters;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
@@ -95,7 +96,7 @@ public class BranchesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -137,6 +138,7 @@ public class BranchesApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return BranchComparison
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -148,8 +150,9 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void branchCompare(String projectId, String name, String xPhraseAppOTP) throws ApiException {
-        branchCompareWithHttpInfo(projectId, name, xPhraseAppOTP);
+    public BranchComparison branchCompare(String projectId, String name, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<BranchComparison> localVarResp = branchCompareWithHttpInfo(projectId, name, xPhraseAppOTP);
+        return localVarResp.getData();
     }
 
     /**
@@ -158,7 +161,7 @@ public class BranchesApi {
      * @param projectId Project ID (required)
      * @param name name (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;BranchComparison&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -170,9 +173,10 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> branchCompareWithHttpInfo(String projectId, String name, String xPhraseAppOTP) throws ApiException {
+    public ApiResponse<BranchComparison> branchCompareWithHttpInfo(String projectId, String name, String xPhraseAppOTP) throws ApiException {
         okhttp3.Call localVarCall = branchCompareValidateBeforeCall(projectId, name, xPhraseAppOTP, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<BranchComparison>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -194,10 +198,11 @@ public class BranchesApi {
         <tr><td> 429 </td><td> Rate Limiting </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call branchCompareAsync(String projectId, String name, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call branchCompareAsync(String projectId, String name, String xPhraseAppOTP, final ApiCallback<BranchComparison> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = branchCompareValidateBeforeCall(projectId, name, xPhraseAppOTP, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<BranchComparison>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**

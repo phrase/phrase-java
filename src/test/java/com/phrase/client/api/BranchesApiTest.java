@@ -14,6 +14,7 @@ package com.phrase.client.api;
 
 import com.phrase.client.ApiException;
 import com.phrase.client.model.Branch;
+import com.phrase.client.model.BranchComparison;
 import com.phrase.client.model.BranchCreateComparisonParameters;
 import com.phrase.client.model.BranchCreateParameters;
 import com.phrase.client.model.BranchMergeParameters;
@@ -50,7 +51,7 @@ public class BranchesApiTest {
         String projectId = null;
         String name = null;
         String xPhraseAppOTP = null;
-        api.branchCompare(projectId, name, xPhraseAppOTP);
+        BranchComparison response = api.branchCompare(projectId, name, xPhraseAppOTP);
 
         // TODO: test validations
     }

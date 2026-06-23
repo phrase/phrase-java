@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="branchCompare"></a>
 # **branchCompare**
-> branchCompare(projectId, name, xPhraseAppOTP)
+> BranchComparison branchCompare(projectId, name, xPhraseAppOTP)
 
 Compare branches
 
@@ -53,7 +53,8 @@ public class Example {
     String name = "name_example"; // String | name
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
-      apiInstance.branchCompare(projectId, name, xPhraseAppOTP);
+      BranchComparison result = apiInstance.branchCompare(projectId, name, xPhraseAppOTP);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BranchesApi#branchCompare");
       System.err.println("Status code: " + e.getCode());
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**BranchComparison**](BranchComparison.md)
 
 ### Authorization
 
@@ -84,7 +85,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
