@@ -13,11 +13,11 @@ Method | HTTP request | Description
 
 <a name="screenshotCreate"></a>
 # **screenshotCreate**
-> Screenshot screenshotCreate(projectId, xPhraseAppOTP, branch, name, description, filename)
+> Screenshot screenshotCreate(projectId, filename, xPhraseAppOTP, branch, name, description)
 
 Create a screenshot
 
-Create a new screenshot.
+Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
 
 ### Example
 ```java
@@ -46,13 +46,13 @@ public class Example {
 
     ScreenshotsApi apiInstance = new ScreenshotsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
+    File filename = new File("/path/to/file"); // File | Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422.
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = "branch_example"; // String | specify the branch to use
-    String name = "name_example"; // String | Name of the screenshot
-    String description = "description_example"; // String | Description of the screenshot
-    File filename = new File("/path/to/file"); // File | Screenshot file
+    String name = "name_example"; // String | Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename.
+    String description = "description_example"; // String | Optional free-text description of the screenshot.
     try {
-      Screenshot result = apiInstance.screenshotCreate(projectId, xPhraseAppOTP, branch, name, description, filename);
+      Screenshot result = apiInstance.screenshotCreate(projectId, filename, xPhraseAppOTP, branch, name, description);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ScreenshotsApi#screenshotCreate");
@@ -70,11 +70,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
+ **filename** | **File**| Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422. |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
- **name** | **String**| Name of the screenshot | [optional]
- **description** | **String**| Description of the screenshot | [optional]
- **filename** | **File**| Screenshot file | [optional]
+ **name** | **String**| Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename. | [optional]
+ **description** | **String**| Optional free-text description of the screenshot. | [optional]
 
 ### Return type
 

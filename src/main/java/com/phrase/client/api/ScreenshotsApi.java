@@ -59,11 +59,11 @@ public class ScreenshotsApi {
     /**
      * Build call for screenshotCreate
      * @param projectId Project ID (required)
+     * @param filename Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param name Name of the screenshot (optional)
-     * @param description Description of the screenshot (optional)
-     * @param filename Screenshot file (optional)
+     * @param name Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename. (optional)
+     * @param description Optional free-text description of the screenshot. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -79,7 +79,7 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotCreateCall(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call screenshotCreateCall(String projectId, File filename, String xPhraseAppOTP, String branch, String name, String description, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -130,28 +130,33 @@ public class ScreenshotsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call screenshotCreateValidateBeforeCall(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call screenshotCreateValidateBeforeCall(String projectId, File filename, String xPhraseAppOTP, String branch, String name, String description, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
             throw new ApiException("Missing the required parameter 'projectId' when calling screenshotCreate(Async)");
         }
         
+        // verify the required parameter 'filename' is set
+        if (filename == null) {
+            throw new ApiException("Missing the required parameter 'filename' when calling screenshotCreate(Async)");
+        }
+        
 
-        okhttp3.Call localVarCall = screenshotCreateCall(projectId, xPhraseAppOTP, branch, name, description, filename, _callback);
+        okhttp3.Call localVarCall = screenshotCreateCall(projectId, filename, xPhraseAppOTP, branch, name, description, _callback);
         return localVarCall;
 
     }
 
     /**
      * Create a screenshot
-     * Create a new screenshot.
+     * Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
      * @param projectId Project ID (required)
+     * @param filename Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param name Name of the screenshot (optional)
-     * @param description Description of the screenshot (optional)
-     * @param filename Screenshot file (optional)
+     * @param name Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename. (optional)
+     * @param description Optional free-text description of the screenshot. (optional)
      * @return Screenshot
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -166,20 +171,20 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public Screenshot screenshotCreate(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename) throws ApiException {
-        ApiResponse<Screenshot> localVarResp = screenshotCreateWithHttpInfo(projectId, xPhraseAppOTP, branch, name, description, filename);
+    public Screenshot screenshotCreate(String projectId, File filename, String xPhraseAppOTP, String branch, String name, String description) throws ApiException {
+        ApiResponse<Screenshot> localVarResp = screenshotCreateWithHttpInfo(projectId, filename, xPhraseAppOTP, branch, name, description);
         return localVarResp.getData();
     }
 
     /**
      * Create a screenshot
-     * Create a new screenshot.
+     * Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
      * @param projectId Project ID (required)
+     * @param filename Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param name Name of the screenshot (optional)
-     * @param description Description of the screenshot (optional)
-     * @param filename Screenshot file (optional)
+     * @param name Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename. (optional)
+     * @param description Optional free-text description of the screenshot. (optional)
      * @return ApiResponse&lt;Screenshot&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -194,21 +199,21 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Screenshot> screenshotCreateWithHttpInfo(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename) throws ApiException {
-        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, name, description, filename, null);
+    public ApiResponse<Screenshot> screenshotCreateWithHttpInfo(String projectId, File filename, String xPhraseAppOTP, String branch, String name, String description) throws ApiException {
+        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, filename, xPhraseAppOTP, branch, name, description, null);
         Type localVarReturnType = new TypeToken<Screenshot>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Create a screenshot (asynchronously)
-     * Create a new screenshot.
+     * Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
      * @param projectId Project ID (required)
+     * @param filename Image file to upload. Accepted formats are JPEG (jpg/jpeg), GIF, and PNG. Maximum file size is 10 MB. Submitting an unsupported format or a file exceeding the size limit returns 422. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param branch specify the branch to use (optional)
-     * @param name Name of the screenshot (optional)
-     * @param description Description of the screenshot (optional)
-     * @param filename Screenshot file (optional)
+     * @param name Display name for the screenshot. Must be unique within the project (case-insensitive). When omitted, the name is derived from the uploaded filename. (optional)
+     * @param description Optional free-text description of the screenshot. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -224,9 +229,9 @@ public class ScreenshotsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call screenshotCreateAsync(String projectId, String xPhraseAppOTP, String branch, String name, String description, File filename, final ApiCallback<Screenshot> _callback) throws ApiException {
+    public okhttp3.Call screenshotCreateAsync(String projectId, File filename, String xPhraseAppOTP, String branch, String name, String description, final ApiCallback<Screenshot> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, xPhraseAppOTP, branch, name, description, filename, _callback);
+        okhttp3.Call localVarCall = screenshotCreateValidateBeforeCall(projectId, filename, xPhraseAppOTP, branch, name, description, _callback);
         Type localVarReturnType = new TypeToken<Screenshot>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

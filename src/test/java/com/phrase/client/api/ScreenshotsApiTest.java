@@ -37,7 +37,7 @@ public class ScreenshotsApiTest {
     /**
      * Create a screenshot
      *
-     * Create a new screenshot.
+     * Creates a screenshot in a project to provide visual context for in-context translation. Attach translation keys to regions of the uploaded image so translators can see where each string appears in your UI.  This endpoint accepts a multipart/form-data request with a binary file upload, unlike most Phrase API endpoints that use JSON. Use a multipart form client or the -F flag in curl rather than a JSON body.  The screenshot name must be unique within the project (case-insensitive). When name is omitted, it is derived from the uploaded filename. The account must have the Screenshots feature enabled; requests to projects on accounts without it return 403. Creating a screenshot requires a token with the write scope and manage access to the project. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -45,12 +45,12 @@ public class ScreenshotsApiTest {
     @Test
     public void screenshotCreateTest() throws ApiException {
         String projectId = null;
+        File filename = null;
         String xPhraseAppOTP = null;
         String branch = null;
         String name = null;
         String description = null;
-        File filename = null;
-        Screenshot response = api.screenshotCreate(projectId, xPhraseAppOTP, branch, name, description, filename);
+        Screenshot response = api.screenshotCreate(projectId, filename, xPhraseAppOTP, branch, name, description);
 
         // TODO: test validations
     }
