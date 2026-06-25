@@ -177,6 +177,22 @@ public class LocaleDownloadCreateParametersTest {
     }
 
     /**
+     * Test the property 'translationKeyPrefix'
+     */
+    @Test
+    public void translationKeyPrefixTest() {
+        // TODO: test translationKeyPrefix
+    }
+
+    /**
+     * Test the property 'filterByPrefix'
+     */
+    @Test
+    public void filterByPrefixTest() {
+        // TODO: test filterByPrefix
+    }
+
+    /**
      * Test the property 'updatedSince'
      */
     @Test

@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleDownloadCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T06:55:45.909369434Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T07:25:53.583538853Z[Etc/UTC]")
 public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_FILE_FORMAT = "file_format";
   @SerializedName(SERIALIZED_NAME_FILE_FORMAT)
@@ -97,6 +97,14 @@ public class LocaleDownloadCreateParameters {
   public static final String SERIALIZED_NAME_CUSTOM_METADATA_FILTERS = "custom_metadata_filters";
   @SerializedName(SERIALIZED_NAME_CUSTOM_METADATA_FILTERS)
   private Object customMetadataFilters;
+
+  public static final String SERIALIZED_NAME_TRANSLATION_KEY_PREFIX = "translation_key_prefix";
+  @SerializedName(SERIALIZED_NAME_TRANSLATION_KEY_PREFIX)
+  private String translationKeyPrefix;
+
+  public static final String SERIALIZED_NAME_FILTER_BY_PREFIX = "filter_by_prefix";
+  @SerializedName(SERIALIZED_NAME_FILTER_BY_PREFIX)
+  private Boolean filterByPrefix;
 
   public static final String SERIALIZED_NAME_UPDATED_SINCE = "updated_since";
   @SerializedName(SERIALIZED_NAME_UPDATED_SINCE)
@@ -487,6 +495,50 @@ public class LocaleDownloadCreateParameters {
   }
 
 
+  public LocaleDownloadCreateParameters translationKeyPrefix(String translationKeyPrefix) {
+    
+    this.translationKeyPrefix = translationKeyPrefix;
+    return this;
+  }
+
+   /**
+   * Download all translation keys, and remove the specified prefix where possible. Warning: this may create duplicate key names if other keys share the same name after the prefix is removed.
+   * @return translationKeyPrefix
+  **/
+  @javax.annotation.Nullable
+
+  public String getTranslationKeyPrefix() {
+    return translationKeyPrefix;
+  }
+
+
+  public void setTranslationKeyPrefix(String translationKeyPrefix) {
+    this.translationKeyPrefix = translationKeyPrefix;
+  }
+
+
+  public LocaleDownloadCreateParameters filterByPrefix(Boolean filterByPrefix) {
+    
+    this.filterByPrefix = filterByPrefix;
+    return this;
+  }
+
+   /**
+   * Only download translation keys containing the prefix specified by &#x60;translation_key_prefix&#x60;, and remove that prefix from the generated file. Requires &#x60;translation_key_prefix&#x60; to be set.
+   * @return filterByPrefix
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getFilterByPrefix() {
+    return filterByPrefix;
+  }
+
+
+  public void setFilterByPrefix(Boolean filterByPrefix) {
+    this.filterByPrefix = filterByPrefix;
+  }
+
+
   public LocaleDownloadCreateParameters updatedSince(String updatedSince) {
     
     this.updatedSince = updatedSince;
@@ -534,12 +586,14 @@ public class LocaleDownloadCreateParameters {
         Objects.equals(this.fallbackForUnverifiedTranslations, localeDownloadCreateParameters.fallbackForUnverifiedTranslations) &&
         Objects.equals(this.sourceLocaleId, localeDownloadCreateParameters.sourceLocaleId) &&
         Objects.equals(this.customMetadataFilters, localeDownloadCreateParameters.customMetadataFilters) &&
+        Objects.equals(this.translationKeyPrefix, localeDownloadCreateParameters.translationKeyPrefix) &&
+        Objects.equals(this.filterByPrefix, localeDownloadCreateParameters.filterByPrefix) &&
         Objects.equals(this.updatedSince, localeDownloadCreateParameters.updatedSince);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, useLocaleFallback, fallbackForUnverifiedTranslations, sourceLocaleId, customMetadataFilters, updatedSince);
+    return Objects.hash(fileFormat, branch, tags, includeEmptyTranslations, excludeEmptyZeroForms, includeTranslatedKeys, keepNotranslateTags, formatOptions, encoding, includeUnverifiedTranslations, useLastReviewedVersion, localeIds, fallbackLocaleId, useLocaleFallback, fallbackForUnverifiedTranslations, sourceLocaleId, customMetadataFilters, translationKeyPrefix, filterByPrefix, updatedSince);
   }
 
   @Override
@@ -563,6 +617,8 @@ public class LocaleDownloadCreateParameters {
     sb.append("    fallbackForUnverifiedTranslations: ").append(toIndentedString(fallbackForUnverifiedTranslations)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    customMetadataFilters: ").append(toIndentedString(customMetadataFilters)).append("\n");
+    sb.append("    translationKeyPrefix: ").append(toIndentedString(translationKeyPrefix)).append("\n");
+    sb.append("    filterByPrefix: ").append(toIndentedString(filterByPrefix)).append("\n");
     sb.append("    updatedSince: ").append(toIndentedString(updatedSince)).append("\n");
     sb.append("}");
     return sb.toString();
