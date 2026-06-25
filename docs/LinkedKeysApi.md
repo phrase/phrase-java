@@ -12,11 +12,11 @@ Method | HTTP request | Description
 
 <a name="keyLinksBatchDestroy"></a>
 # **keyLinksBatchDestroy**
-> keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP)
+> KeyLink keyLinksBatchDestroy(projectId, id, xPhraseAppOTP, keyLinksBatchDestroyParameters)
 
 Batch unlink child keys from a parent key
 
-Unlinks multiple child keys from a given parent key in a single operation.
+Removes one or more child keys from a parent key&#39;s linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent&#39;s current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in &#x60;child_key_ids&#x60; is not currently linked to the parent, or when a translation update fails while unlinking. 
 
 ### Example
 ```java
@@ -46,10 +46,11 @@ public class Example {
     LinkedKeysApi apiInstance = new LinkedKeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | Parent Translation Key ID
-    KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = new KeyLinksBatchDestroyParameters(); // KeyLinksBatchDestroyParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = new KeyLinksBatchDestroyParameters(); // KeyLinksBatchDestroyParameters | 
     try {
-      apiInstance.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP);
+      KeyLink result = apiInstance.keyLinksBatchDestroy(projectId, id, xPhraseAppOTP, keyLinksBatchDestroyParameters);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LinkedKeysApi#keyLinksBatchDestroy");
       System.err.println("Status code: " + e.getCode());
@@ -67,12 +68,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
  **id** | **String**| Parent Translation Key ID |
- **keyLinksBatchDestroyParameters** | [**KeyLinksBatchDestroyParameters**](KeyLinksBatchDestroyParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **keyLinksBatchDestroyParameters** | [**KeyLinksBatchDestroyParameters**](KeyLinksBatchDestroyParameters.md)|  | [optional]
 
 ### Return type
 
-null (empty response body)
+[**KeyLink**](KeyLink.md)
 
 ### Authorization
 
@@ -86,7 +87,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Updated linked-key group reference after the unlink operation. |  -  |
 **400** | Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **401** | Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. |  -  |
 **403** | Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLinksBatchDestroyParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T10:54:28.948677054Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T13:41:04.870242886Z[Etc/UTC]")
 public class KeyLinksBatchDestroyParameters {
   public static final String SERIALIZED_NAME_CHILD_KEY_IDS = "child_key_ids";
   @SerializedName(SERIALIZED_NAME_CHILD_KEY_IDS)
@@ -37,6 +37,57 @@ public class KeyLinksBatchDestroyParameters {
   public static final String SERIALIZED_NAME_UNLINK_PARENT = "unlink_parent";
   @SerializedName(SERIALIZED_NAME_UNLINK_PARENT)
   private Boolean unlinkParent = false;
+
+  /**
+   * Controls what happens to child key translation content after unlinking. keep_content (default) copies the parent translation into each child; remove_content clears each child translation.
+   */
+  @JsonAdapter(StrategyEnum.Adapter.class)
+  public enum StrategyEnum {
+    KEEP_CONTENT("keep_content"),
+    
+    REMOVE_CONTENT("remove_content");
+
+    private String value;
+
+    StrategyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StrategyEnum fromValue(String value) {
+      for (StrategyEnum b : StrategyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StrategyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StrategyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StrategyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StrategyEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_STRATEGY = "strategy";
+  @SerializedName(SERIALIZED_NAME_STRATEGY)
+  private StrategyEnum strategy = StrategyEnum.KEEP_CONTENT;
 
   public KeyLinksBatchDestroyParameters() {
   }
@@ -56,7 +107,7 @@ public class KeyLinksBatchDestroyParameters {
   }
 
    /**
-   * The IDs of the child keys to unlink from the parent key.
+   * Codes of the child keys to unlink. Required when unlink_parent is false or omitted. Ignored when unlink_parent is true.
    * @return childKeyIds
   **/
   @javax.annotation.Nonnull
@@ -78,7 +129,7 @@ public class KeyLinksBatchDestroyParameters {
   }
 
    /**
-   * Whether to unlink the parent key as well and unmark it as linked-key.
+   * When true, dissolves the entire linked-key group by unlinking all children and removing the group. The child_key_ids field is ignored when this is set to true.
    * @return unlinkParent
   **/
   @javax.annotation.Nullable
@@ -92,6 +143,28 @@ public class KeyLinksBatchDestroyParameters {
     this.unlinkParent = unlinkParent;
   }
 
+
+  public KeyLinksBatchDestroyParameters strategy(StrategyEnum strategy) {
+    
+    this.strategy = strategy;
+    return this;
+  }
+
+   /**
+   * Controls what happens to child key translation content after unlinking. keep_content (default) copies the parent translation into each child; remove_content clears each child translation.
+   * @return strategy
+  **/
+  @javax.annotation.Nullable
+
+  public StrategyEnum getStrategy() {
+    return strategy;
+  }
+
+
+  public void setStrategy(StrategyEnum strategy) {
+    this.strategy = strategy;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -102,12 +175,13 @@ public class KeyLinksBatchDestroyParameters {
     }
     KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = (KeyLinksBatchDestroyParameters) o;
     return Objects.equals(this.childKeyIds, keyLinksBatchDestroyParameters.childKeyIds) &&
-        Objects.equals(this.unlinkParent, keyLinksBatchDestroyParameters.unlinkParent);
+        Objects.equals(this.unlinkParent, keyLinksBatchDestroyParameters.unlinkParent) &&
+        Objects.equals(this.strategy, keyLinksBatchDestroyParameters.strategy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(childKeyIds, unlinkParent);
+    return Objects.hash(childKeyIds, unlinkParent, strategy);
   }
 
   @Override
@@ -116,6 +190,7 @@ public class KeyLinksBatchDestroyParameters {
     sb.append("class KeyLinksBatchDestroyParameters {\n");
     sb.append("    childKeyIds: ").append(toIndentedString(childKeyIds)).append("\n");
     sb.append("    unlinkParent: ").append(toIndentedString(unlinkParent)).append("\n");
+    sb.append("    strategy: ").append(toIndentedString(strategy)).append("\n");
     sb.append("}");
     return sb.toString();
   }

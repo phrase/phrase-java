@@ -38,7 +38,7 @@ public class LinkedKeysApiTest {
     /**
      * Batch unlink child keys from a parent key
      *
-     * Unlinks multiple child keys from a given parent key in a single operation.
+     * Removes one or more child keys from a parent key&#39;s linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent&#39;s current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in &#x60;child_key_ids&#x60; is not currently linked to the parent, or when a translation update fails while unlinking. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -47,9 +47,9 @@ public class LinkedKeysApiTest {
     public void keyLinksBatchDestroyTest() throws ApiException {
         String projectId = null;
         String id = null;
-        KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = null;
         String xPhraseAppOTP = null;
-        api.keyLinksBatchDestroy(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP);
+        KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters = null;
+        KeyLink response = api.keyLinksBatchDestroy(projectId, id, xPhraseAppOTP, keyLinksBatchDestroyParameters);
 
         // TODO: test validations
     }

@@ -56,4 +56,12 @@ public class KeyLinksBatchDestroyParametersTest {
         // TODO: test unlinkParent
     }
 
+    /**
+     * Test the property 'strategy'
+     */
+    @Test
+    public void strategyTest() {
+        // TODO: test strategy
+    }
+
 }

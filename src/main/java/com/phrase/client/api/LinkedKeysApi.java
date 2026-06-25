@@ -61,15 +61,15 @@ public class LinkedKeysApi {
      * Build call for keyLinksBatchDestroy
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param keyLinksBatchDestroyParameters  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated linked-key group reference after the unlink operation. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -78,7 +78,7 @@ public class LinkedKeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keyLinksBatchDestroyCall(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call keyLinksBatchDestroyCall(String projectId, String id, String xPhraseAppOTP, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = keyLinksBatchDestroyParameters;
 
         // create path and map variables
@@ -114,7 +114,7 @@ public class LinkedKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call keyLinksBatchDestroyValidateBeforeCall(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call keyLinksBatchDestroyValidateBeforeCall(String projectId, String id, String xPhraseAppOTP, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -126,29 +126,25 @@ public class LinkedKeysApi {
             throw new ApiException("Missing the required parameter 'id' when calling keyLinksBatchDestroy(Async)");
         }
         
-        // verify the required parameter 'keyLinksBatchDestroyParameters' is set
-        if (keyLinksBatchDestroyParameters == null) {
-            throw new ApiException("Missing the required parameter 'keyLinksBatchDestroyParameters' when calling keyLinksBatchDestroy(Async)");
-        }
-        
 
-        okhttp3.Call localVarCall = keyLinksBatchDestroyCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = keyLinksBatchDestroyCall(projectId, id, xPhraseAppOTP, keyLinksBatchDestroyParameters, _callback);
         return localVarCall;
 
     }
 
     /**
      * Batch unlink child keys from a parent key
-     * Unlinks multiple child keys from a given parent key in a single operation.
+     * Removes one or more child keys from a parent key&#39;s linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent&#39;s current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in &#x60;child_key_ids&#x60; is not currently linked to the parent, or when a translation update fails while unlinking. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param keyLinksBatchDestroyParameters  (optional)
+     * @return KeyLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated linked-key group reference after the unlink operation. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -157,23 +153,24 @@ public class LinkedKeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public void keyLinksBatchDestroy(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP) throws ApiException {
-        keyLinksBatchDestroyWithHttpInfo(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP);
+    public KeyLink keyLinksBatchDestroy(String projectId, String id, String xPhraseAppOTP, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters) throws ApiException {
+        ApiResponse<KeyLink> localVarResp = keyLinksBatchDestroyWithHttpInfo(projectId, id, xPhraseAppOTP, keyLinksBatchDestroyParameters);
+        return localVarResp.getData();
     }
 
     /**
      * Batch unlink child keys from a parent key
-     * Unlinks multiple child keys from a given parent key in a single operation.
+     * Removes one or more child keys from a parent key&#39;s linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent&#39;s current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in &#x60;child_key_ids&#x60; is not currently linked to the parent, or when a translation update fails while unlinking. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @param keyLinksBatchDestroyParameters  (optional)
+     * @return ApiResponse&lt;KeyLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated linked-key group reference after the unlink operation. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -182,25 +179,26 @@ public class LinkedKeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Void> keyLinksBatchDestroyWithHttpInfo(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<KeyLink> keyLinksBatchDestroyWithHttpInfo(String projectId, String id, String xPhraseAppOTP, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters) throws ApiException {
+        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, xPhraseAppOTP, keyLinksBatchDestroyParameters, null);
+        Type localVarReturnType = new TypeToken<KeyLink>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Batch unlink child keys from a parent key (asynchronously)
-     * Unlinks multiple child keys from a given parent key in a single operation.
+     * Removes one or more child keys from a parent key&#39;s linked-key group, or dissolves the entire group by setting unlink_parent to true.  Use this when you need to detach specific child keys from a shared translation source, or to fully break apart a linked-key group so each key manages its own translations independently. When child keys are unlinked, their translations are updated with a copy of the parent&#39;s current content (strategy keep_content, the default) or cleared (strategy remove_content).  This operation is only available on main projects. It returns 422 when a child key in &#x60;child_key_ids&#x60; is not currently linked to the parent, or when a translation update fails while unlinking. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param keyLinksBatchDestroyParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param keyLinksBatchDestroyParameters  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated linked-key group reference after the unlink operation. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -209,10 +207,11 @@ public class LinkedKeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keyLinksBatchDestroyAsync(String projectId, String id, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, String xPhraseAppOTP, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call keyLinksBatchDestroyAsync(String projectId, String id, String xPhraseAppOTP, KeyLinksBatchDestroyParameters keyLinksBatchDestroyParameters, final ApiCallback<KeyLink> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, keyLinksBatchDestroyParameters, xPhraseAppOTP, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = keyLinksBatchDestroyValidateBeforeCall(projectId, id, xPhraseAppOTP, keyLinksBatchDestroyParameters, _callback);
+        Type localVarReturnType = new TypeToken<KeyLink>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
