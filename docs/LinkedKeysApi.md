@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 Unlink a child key from a parent key
 
-Unlinks a single child key from a given parent key.
+Removes a single child key from a parent key&#39;s link group. A link group is the relationship model that keeps child keys synchronized with a parent: while linked, a child key&#39;s translations are derived from the parent&#39;s content. When you call this endpoint, the child key leaves the group and becomes independent — its existing translations are updated with the parent&#39;s current content and then marked unverified, signalling that reviewers should confirm the content is still appropriate for the child&#39;s context.  Use this endpoint when you need to detach one specific child key while keeping other children linked. To detach multiple children at once, use the batch unlink endpoint. This operation is only available on main projects.  It returns 422 when the child key is not currently linked to the specified parent key, or when a translation update fails during the unlink process. 
 
 ### Example
 ```java
@@ -215,7 +215,7 @@ public class Example {
     LinkedKeysApi apiInstance = new LinkedKeysApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     String id = "id_example"; // String | Parent Translation Key ID
-    String childKeyId = "childKeyId_example"; // String | The ID of the child key to unlink.
+    String childKeyId = "1234abcd1234cdef1234abcd1234cdef"; // String | The ID of the child translation key to unlink from the parent.
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     try {
       apiInstance.keyLinksDestroy(projectId, id, childKeyId, xPhraseAppOTP);
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
  **id** | **String**| Parent Translation Key ID |
- **childKeyId** | **String**| The ID of the child key to unlink. |
+ **childKeyId** | **String**| The ID of the child translation key to unlink from the parent. |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
 
 ### Return type
@@ -255,7 +255,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | The child key was successfully unlinked from the parent key. The response body is empty. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **400** | Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |
 **401** | Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. |  -  |
 **403** | Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. |  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  |

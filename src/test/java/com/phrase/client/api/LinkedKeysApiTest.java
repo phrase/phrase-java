@@ -76,7 +76,7 @@ public class LinkedKeysApiTest {
     /**
      * Unlink a child key from a parent key
      *
-     * Unlinks a single child key from a given parent key.
+     * Removes a single child key from a parent key&#39;s link group. A link group is the relationship model that keeps child keys synchronized with a parent: while linked, a child key&#39;s translations are derived from the parent&#39;s content. When you call this endpoint, the child key leaves the group and becomes independent — its existing translations are updated with the parent&#39;s current content and then marked unverified, signalling that reviewers should confirm the content is still appropriate for the child&#39;s context.  Use this endpoint when you need to detach one specific child key while keeping other children linked. To detach multiple children at once, use the batch unlink endpoint. This operation is only available on main projects.  It returns 422 when the child key is not currently linked to the specified parent key, or when a translation update fails during the unlink process. 
      *
      * @throws ApiException
      *          if the Api call fails

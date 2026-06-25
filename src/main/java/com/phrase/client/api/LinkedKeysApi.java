@@ -381,7 +381,7 @@ public class LinkedKeysApi {
      * Build call for keyLinksDestroy
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param childKeyId The ID of the child key to unlink. (required)
+     * @param childKeyId The ID of the child translation key to unlink from the parent. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -389,7 +389,7 @@ public class LinkedKeysApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The child key was successfully unlinked from the parent key. The response body is empty. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -460,16 +460,16 @@ public class LinkedKeysApi {
 
     /**
      * Unlink a child key from a parent key
-     * Unlinks a single child key from a given parent key.
+     * Removes a single child key from a parent key&#39;s link group. A link group is the relationship model that keeps child keys synchronized with a parent: while linked, a child key&#39;s translations are derived from the parent&#39;s content. When you call this endpoint, the child key leaves the group and becomes independent — its existing translations are updated with the parent&#39;s current content and then marked unverified, signalling that reviewers should confirm the content is still appropriate for the child&#39;s context.  Use this endpoint when you need to detach one specific child key while keeping other children linked. To detach multiple children at once, use the batch unlink endpoint. This operation is only available on main projects.  It returns 422 when the child key is not currently linked to the specified parent key, or when a translation update fails during the unlink process. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param childKeyId The ID of the child key to unlink. (required)
+     * @param childKeyId The ID of the child translation key to unlink from the parent. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The child key was successfully unlinked from the parent key. The response body is empty. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -484,17 +484,17 @@ public class LinkedKeysApi {
 
     /**
      * Unlink a child key from a parent key
-     * Unlinks a single child key from a given parent key.
+     * Removes a single child key from a parent key&#39;s link group. A link group is the relationship model that keeps child keys synchronized with a parent: while linked, a child key&#39;s translations are derived from the parent&#39;s content. When you call this endpoint, the child key leaves the group and becomes independent — its existing translations are updated with the parent&#39;s current content and then marked unverified, signalling that reviewers should confirm the content is still appropriate for the child&#39;s context.  Use this endpoint when you need to detach one specific child key while keeping other children linked. To detach multiple children at once, use the batch unlink endpoint. This operation is only available on main projects.  It returns 422 when the child key is not currently linked to the specified parent key, or when a translation update fails during the unlink process. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param childKeyId The ID of the child key to unlink. (required)
+     * @param childKeyId The ID of the child translation key to unlink from the parent. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The child key was successfully unlinked from the parent key. The response body is empty. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -510,10 +510,10 @@ public class LinkedKeysApi {
 
     /**
      * Unlink a child key from a parent key (asynchronously)
-     * Unlinks a single child key from a given parent key.
+     * Removes a single child key from a parent key&#39;s link group. A link group is the relationship model that keeps child keys synchronized with a parent: while linked, a child key&#39;s translations are derived from the parent&#39;s content. When you call this endpoint, the child key leaves the group and becomes independent — its existing translations are updated with the parent&#39;s current content and then marked unverified, signalling that reviewers should confirm the content is still appropriate for the child&#39;s context.  Use this endpoint when you need to detach one specific child key while keeping other children linked. To detach multiple children at once, use the batch unlink endpoint. This operation is only available on main projects.  It returns 422 when the child key is not currently linked to the specified parent key, or when a translation update fails during the unlink process. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
-     * @param childKeyId The ID of the child key to unlink. (required)
+     * @param childKeyId The ID of the child translation key to unlink from the parent. (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -521,7 +521,7 @@ public class LinkedKeysApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The child key was successfully unlinked from the parent key. The response body is empty. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
