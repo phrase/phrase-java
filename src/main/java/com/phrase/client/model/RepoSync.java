@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSync
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T08:48:31.015827452Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T09:00:09.942550572Z[Etc/UTC]")
 public class RepoSync {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
