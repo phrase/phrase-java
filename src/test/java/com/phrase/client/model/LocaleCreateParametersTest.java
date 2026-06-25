@@ -126,4 +126,12 @@ public class LocaleCreateParametersTest {
         // TODO: test autotranslate
     }
 
+    /**
+     * Test the property 'languageAiProfile'
+     */
+    @Test
+    public void languageAiProfileTest() {
+        // TODO: test languageAiProfile
+    }
+
 }

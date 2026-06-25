@@ -31,7 +31,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-24T08:13:01.333011972Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T06:55:45.909369434Z[Etc/UTC]")
 public class LocaleDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -72,6 +72,10 @@ public class LocaleDetails {
   public static final String SERIALIZED_NAME_FALLBACK_LOCALE = "fallback_locale";
   @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALE)
   private LocalePreview fallbackLocale;
+
+  public static final String SERIALIZED_NAME_LANGUAGE_AI_PROFILE = "language_ai_profile";
+  @SerializedName(SERIALIZED_NAME_LANGUAGE_AI_PROFILE)
+  private String languageAiProfile;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -324,6 +328,28 @@ public class LocaleDetails {
   }
 
 
+  public LocaleDetails languageAiProfile(String languageAiProfile) {
+    
+    this.languageAiProfile = languageAiProfile;
+    return this;
+  }
+
+   /**
+   * Get languageAiProfile
+   * @return languageAiProfile
+  **/
+  @javax.annotation.Nullable
+
+  public String getLanguageAiProfile() {
+    return languageAiProfile;
+  }
+
+
+  public void setLanguageAiProfile(String languageAiProfile) {
+    this.languageAiProfile = languageAiProfile;
+  }
+
+
   public LocaleDetails createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -408,6 +434,7 @@ public class LocaleDetails {
         Objects.equals(this.ordinalPluralForms, localeDetails.ordinalPluralForms) &&
         Objects.equals(this.sourceLocale, localeDetails.sourceLocale) &&
         Objects.equals(this.fallbackLocale, localeDetails.fallbackLocale) &&
+        Objects.equals(this.languageAiProfile, localeDetails.languageAiProfile) &&
         Objects.equals(this.createdAt, localeDetails.createdAt) &&
         Objects.equals(this.updatedAt, localeDetails.updatedAt) &&
         Objects.equals(this.statistics, localeDetails.statistics);
@@ -415,7 +442,7 @@ public class LocaleDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, ordinalPluralForms, sourceLocale, fallbackLocale, createdAt, updatedAt, statistics);
+    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, ordinalPluralForms, sourceLocale, fallbackLocale, languageAiProfile, createdAt, updatedAt, statistics);
   }
 
   @Override
@@ -432,6 +459,7 @@ public class LocaleDetails {
     sb.append("    ordinalPluralForms: ").append(toIndentedString(ordinalPluralForms)).append("\n");
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    fallbackLocale: ").append(toIndentedString(fallbackLocale)).append("\n");
+    sb.append("    languageAiProfile: ").append(toIndentedString(languageAiProfile)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");

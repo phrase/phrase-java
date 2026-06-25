@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **ordinalPluralForms** | **List&lt;String&gt;** |  |  [optional]
 **sourceLocale** | [**LocalePreview**](LocalePreview.md) |  |  [optional]
 **fallbackLocale** | [**LocalePreview**](LocalePreview.md) |  |  [optional]
+**languageAiProfile** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **statistics** | [**LocaleStatistics**](LocaleStatistics.md) |  |  [optional]

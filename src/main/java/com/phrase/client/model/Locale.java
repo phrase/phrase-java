@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Locale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-24T08:13:01.333011972Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T06:55:45.909369434Z[Etc/UTC]")
 public class Locale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -71,6 +71,10 @@ public class Locale {
   public static final String SERIALIZED_NAME_FALLBACK_LOCALE = "fallback_locale";
   @SerializedName(SERIALIZED_NAME_FALLBACK_LOCALE)
   private LocalePreview fallbackLocale;
+
+  public static final String SERIALIZED_NAME_LANGUAGE_AI_PROFILE = "language_ai_profile";
+  @SerializedName(SERIALIZED_NAME_LANGUAGE_AI_PROFILE)
+  private String languageAiProfile;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -319,6 +323,28 @@ public class Locale {
   }
 
 
+  public Locale languageAiProfile(String languageAiProfile) {
+    
+    this.languageAiProfile = languageAiProfile;
+    return this;
+  }
+
+   /**
+   * Get languageAiProfile
+   * @return languageAiProfile
+  **/
+  @javax.annotation.Nullable
+
+  public String getLanguageAiProfile() {
+    return languageAiProfile;
+  }
+
+
+  public void setLanguageAiProfile(String languageAiProfile) {
+    this.languageAiProfile = languageAiProfile;
+  }
+
+
   public Locale createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -381,13 +407,14 @@ public class Locale {
         Objects.equals(this.ordinalPluralForms, locale.ordinalPluralForms) &&
         Objects.equals(this.sourceLocale, locale.sourceLocale) &&
         Objects.equals(this.fallbackLocale, locale.fallbackLocale) &&
+        Objects.equals(this.languageAiProfile, locale.languageAiProfile) &&
         Objects.equals(this.createdAt, locale.createdAt) &&
         Objects.equals(this.updatedAt, locale.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, ordinalPluralForms, sourceLocale, fallbackLocale, createdAt, updatedAt);
+    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, ordinalPluralForms, sourceLocale, fallbackLocale, languageAiProfile, createdAt, updatedAt);
   }
 
   @Override
@@ -404,6 +431,7 @@ public class Locale {
     sb.append("    ordinalPluralForms: ").append(toIndentedString(ordinalPluralForms)).append("\n");
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    fallbackLocale: ").append(toIndentedString(fallbackLocale)).append("\n");
+    sb.append("    languageAiProfile: ").append(toIndentedString(languageAiProfile)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

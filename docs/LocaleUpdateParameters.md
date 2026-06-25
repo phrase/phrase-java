@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **unverifyNewTranslations** | **Boolean** | Indicates that new translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature. |  [optional]
 **unverifyUpdatedTranslations** | **Boolean** | Indicates that updated translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature. |  [optional]
 **autotranslate** | **Boolean** | If set, translations for this locale will be fetched automatically, right after creation. |  [optional]
+**languageAiProfile** | **String** | Identifier of the Language AI profile to use for this locale. |  [optional]
 
 
 

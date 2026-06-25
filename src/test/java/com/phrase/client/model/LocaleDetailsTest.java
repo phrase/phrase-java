@@ -124,6 +124,14 @@ public class LocaleDetailsTest {
     }
 
     /**
+     * Test the property 'languageAiProfile'
+     */
+    @Test
+    public void languageAiProfileTest() {
+        // TODO: test languageAiProfile
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

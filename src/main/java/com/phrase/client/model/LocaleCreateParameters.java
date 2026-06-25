@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-24T08:13:01.333011972Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T06:55:45.909369434Z[Etc/UTC]")
 public class LocaleCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -71,6 +71,10 @@ public class LocaleCreateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
+
+  public static final String SERIALIZED_NAME_LANGUAGE_AI_PROFILE = "language_ai_profile";
+  @SerializedName(SERIALIZED_NAME_LANGUAGE_AI_PROFILE)
+  private String languageAiProfile;
 
   public LocaleCreateParameters() {
   }
@@ -316,6 +320,28 @@ public class LocaleCreateParameters {
     this.autotranslate = autotranslate;
   }
 
+
+  public LocaleCreateParameters languageAiProfile(String languageAiProfile) {
+    
+    this.languageAiProfile = languageAiProfile;
+    return this;
+  }
+
+   /**
+   * Identifier of the Language AI profile to use for this locale.
+   * @return languageAiProfile
+  **/
+  @javax.annotation.Nullable
+
+  public String getLanguageAiProfile() {
+    return languageAiProfile;
+  }
+
+
+  public void setLanguageAiProfile(String languageAiProfile) {
+    this.languageAiProfile = languageAiProfile;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -335,12 +361,13 @@ public class LocaleCreateParameters {
         Objects.equals(this.fallbackLocaleId, localeCreateParameters.fallbackLocaleId) &&
         Objects.equals(this.unverifyNewTranslations, localeCreateParameters.unverifyNewTranslations) &&
         Objects.equals(this.unverifyUpdatedTranslations, localeCreateParameters.unverifyUpdatedTranslations) &&
-        Objects.equals(this.autotranslate, localeCreateParameters.autotranslate);
+        Objects.equals(this.autotranslate, localeCreateParameters.autotranslate) &&
+        Objects.equals(this.languageAiProfile, localeCreateParameters.languageAiProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, code, _default, main, rtl, sourceLocaleId, fallbackLocaleId, unverifyNewTranslations, unverifyUpdatedTranslations, autotranslate);
+    return Objects.hash(branch, name, code, _default, main, rtl, sourceLocaleId, fallbackLocaleId, unverifyNewTranslations, unverifyUpdatedTranslations, autotranslate, languageAiProfile);
   }
 
   @Override
@@ -358,6 +385,7 @@ public class LocaleCreateParameters {
     sb.append("    unverifyNewTranslations: ").append(toIndentedString(unverifyNewTranslations)).append("\n");
     sb.append("    unverifyUpdatedTranslations: ").append(toIndentedString(unverifyUpdatedTranslations)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    languageAiProfile: ").append(toIndentedString(languageAiProfile)).append("\n");
     sb.append("}");
     return sb.toString();
   }
