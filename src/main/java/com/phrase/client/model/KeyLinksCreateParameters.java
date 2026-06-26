@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * KeyLinksCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T13:41:04.870242886Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-26T10:57:49.089322498Z[Etc/UTC]")
 public class KeyLinksCreateParameters {
   public static final String SERIALIZED_NAME_CHILD_KEY_IDS = "child_key_ids";
   @SerializedName(SERIALIZED_NAME_CHILD_KEY_IDS)
@@ -52,7 +52,7 @@ public class KeyLinksCreateParameters {
   }
 
    /**
-   * The IDs of the child keys to link to the parent key. Can be left empty, to only mark the given translation-key as parent
+   * Codes of the keys to link as children. Pass an empty array to mark the parent key without linking any children.
    * @return childKeyIds
   **/
   @javax.annotation.Nonnull
