@@ -96,7 +96,7 @@ null (empty response body)
 
 List documents
 
-List all documents the current user has access to.
+Returns all documents in a project that the authenticated user has read access to. A Document is a source file — an HTML or DOCX file — that has been uploaded to Phrase Strings and whose content is segmented into translation keys for localization.  Use this endpoint to enumerate documents before downloading, previewing, or triggering translation workflows for individual files.  The q parameter performs a prefix match on the document name (case-insensitive). For example, passing q&#x3D;invoice returns documents whose names begin with \&quot;invoice\&quot; but not documents containing \&quot;invoice\&quot; elsewhere in the name. 
 
 ### Example
 ```java
@@ -128,7 +128,7 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
-    String q = "invoice"; // String | Search query. Filters documents by name (case-insensitive substring match).
+    String q = "invoice"; // String | Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive).
     try {
       List<Document> result = apiInstance.documentsList(projectId, xPhraseAppOTP, page, perPage, q);
       System.out.println(result);
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
- **q** | **String**| Search query. Filters documents by name (case-insensitive substring match). | [optional]
+ **q** | **String**| Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive). | [optional]
 
 ### Return type
 

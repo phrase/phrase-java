@@ -209,7 +209,7 @@ public class DocumentsApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param q Search query. Filters documents by name (case-insensitive substring match). (optional)
+     * @param q Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive). (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -286,12 +286,12 @@ public class DocumentsApi {
 
     /**
      * List documents
-     * List all documents the current user has access to.
+     * Returns all documents in a project that the authenticated user has read access to. A Document is a source file — an HTML or DOCX file — that has been uploaded to Phrase Strings and whose content is segmented into translation keys for localization.  Use this endpoint to enumerate documents before downloading, previewing, or triggering translation workflows for individual files.  The q parameter performs a prefix match on the document name (case-insensitive). For example, passing q&#x3D;invoice returns documents whose names begin with \&quot;invoice\&quot; but not documents containing \&quot;invoice\&quot; elsewhere in the name. 
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param q Search query. Filters documents by name (case-insensitive substring match). (optional)
+     * @param q Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive). (optional)
      * @return List&lt;Document&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -312,12 +312,12 @@ public class DocumentsApi {
 
     /**
      * List documents
-     * List all documents the current user has access to.
+     * Returns all documents in a project that the authenticated user has read access to. A Document is a source file — an HTML or DOCX file — that has been uploaded to Phrase Strings and whose content is segmented into translation keys for localization.  Use this endpoint to enumerate documents before downloading, previewing, or triggering translation workflows for individual files.  The q parameter performs a prefix match on the document name (case-insensitive). For example, passing q&#x3D;invoice returns documents whose names begin with \&quot;invoice\&quot; but not documents containing \&quot;invoice\&quot; elsewhere in the name. 
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param q Search query. Filters documents by name (case-insensitive substring match). (optional)
+     * @param q Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive). (optional)
      * @return ApiResponse&lt;List&lt;Document&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -339,12 +339,12 @@ public class DocumentsApi {
 
     /**
      * List documents (asynchronously)
-     * List all documents the current user has access to.
+     * Returns all documents in a project that the authenticated user has read access to. A Document is a source file — an HTML or DOCX file — that has been uploaded to Phrase Strings and whose content is segmented into translation keys for localization.  Use this endpoint to enumerate documents before downloading, previewing, or triggering translation workflows for individual files.  The q parameter performs a prefix match on the document name (case-insensitive). For example, passing q&#x3D;invoice returns documents whose names begin with \&quot;invoice\&quot; but not documents containing \&quot;invoice\&quot; elsewhere in the name. 
      * @param projectId Project ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
-     * @param q Search query. Filters documents by name (case-insensitive substring match). (optional)
+     * @param q Filter documents by name prefix. Returns documents whose name starts with the given value (case-insensitive). (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
