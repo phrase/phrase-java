@@ -30,7 +30,6 @@ import com.phrase.client.model.DocumentDelete422Response;
 import com.phrase.client.model.KeyLink;
 import com.phrase.client.model.KeyLinksBatchDestroyParameters;
 import com.phrase.client.model.KeyLinksCreateParameters;
-import com.phrase.client.model.KeyLinksIndex400Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -547,7 +546,7 @@ public class LinkedKeysApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -610,7 +609,7 @@ public class LinkedKeysApi {
 
     /**
      * List child keys of a parent key
-     * Returns detailed information about a parent key, including its linked child keys.
+     * Returns the key link record for a parent key, including all child keys associated with it. Key linking lets translation keys share translations — a child key inherits content from its designated parent. Use this endpoint to inspect which keys are linked under a given parent before unlinking them or auditing translation consistency across related keys.  The key identified by &#x60;id&#x60; must be designated as a parent key (it must have at least one child key linked to it). Listing the links of a key that is not a parent returns 400. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -620,7 +619,7 @@ public class LinkedKeysApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -634,7 +633,7 @@ public class LinkedKeysApi {
 
     /**
      * List child keys of a parent key
-     * Returns detailed information about a parent key, including its linked child keys.
+     * Returns the key link record for a parent key, including all child keys associated with it. Key linking lets translation keys share translations — a child key inherits content from its designated parent. Use this endpoint to inspect which keys are linked under a given parent before unlinking them or auditing translation consistency across related keys.  The key identified by &#x60;id&#x60; must be designated as a parent key (it must have at least one child key linked to it). Listing the links of a key that is not a parent returns 400. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -644,7 +643,7 @@ public class LinkedKeysApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
@@ -659,7 +658,7 @@ public class LinkedKeysApi {
 
     /**
      * List child keys of a parent key (asynchronously)
-     * Returns detailed information about a parent key, including its linked child keys.
+     * Returns the key link record for a parent key, including all child keys associated with it. Key linking lets translation keys share translations — a child key inherits content from its designated parent. Use this endpoint to inspect which keys are linked under a given parent before unlinking them or auditing translation consistency across related keys.  The key identified by &#x60;id&#x60; must be designated as a parent key (it must have at least one child key linked to it). Listing the links of a key that is not a parent returns 400. 
      * @param projectId Project ID (required)
      * @param id Parent Translation Key ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
@@ -670,7 +669,7 @@ public class LinkedKeysApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden. The credentials are valid but not permitted for this request: the access token may lack the required scope, the user may lack permission on the resource, or the account plan may not include the feature. Use a token with the required scope on an account and user that hold the necessary permissions. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
         <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
