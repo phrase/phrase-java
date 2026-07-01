@@ -18,26 +18,32 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for IcuSkeletonParameters
+ * Model tests for IcuSkeletonError
  */
-public class IcuSkeletonParametersTest {
-    private final IcuSkeletonParameters model = new IcuSkeletonParameters();
+public class IcuSkeletonErrorTest {
+    private final IcuSkeletonError model = new IcuSkeletonError();
 
     /**
-     * Model tests for IcuSkeletonParameters
+     * Model tests for IcuSkeletonError
      */
     @Test
-    public void testIcuSkeletonParameters() {
-        // TODO: test IcuSkeletonParameters
+    public void testIcuSkeletonError() {
+        // TODO: test IcuSkeletonError
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
     }
 
 }

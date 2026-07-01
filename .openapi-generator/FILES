@@ -84,6 +84,7 @@ docs/GlossaryTermsApi.md
 docs/GlossaryUpdateParameters.md
 docs/Icu.md
 docs/IcuApi.md
+docs/IcuSkeletonError.md
 docs/IcuSkeletonParameters.md
 docs/Invitation.md
 docs/InvitationCreateParameters.md
@@ -439,6 +440,7 @@ src/main/java/com/phrase/client/model/GlossaryTermTranslationUpdateParameters.ja
 src/main/java/com/phrase/client/model/GlossaryTermUpdateParameters.java
 src/main/java/com/phrase/client/model/GlossaryUpdateParameters.java
 src/main/java/com/phrase/client/model/Icu.java
+src/main/java/com/phrase/client/model/IcuSkeletonError.java
 src/main/java/com/phrase/client/model/IcuSkeletonParameters.java
 src/main/java/com/phrase/client/model/Invitation.java
 src/main/java/com/phrase/client/model/InvitationCreateParameters.java
@@ -723,6 +725,7 @@ src/test/java/com/phrase/client/model/GlossaryTermTranslationUpdateParametersTes
 src/test/java/com/phrase/client/model/GlossaryTermUpdateParametersTest.java
 src/test/java/com/phrase/client/model/GlossaryTest.java
 src/test/java/com/phrase/client/model/GlossaryUpdateParametersTest.java
+src/test/java/com/phrase/client/model/IcuSkeletonErrorTest.java
 src/test/java/com/phrase/client/model/IcuSkeletonParametersTest.java
 src/test/java/com/phrase/client/model/IcuTest.java
 src/test/java/com/phrase/client/model/InvitationCreateParametersTest.java

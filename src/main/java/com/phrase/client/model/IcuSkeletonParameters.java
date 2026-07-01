@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * IcuSkeletonParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-01T13:16:24.272596198Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-01T13:16:42.071184945Z[Etc/UTC]")
 public class IcuSkeletonParameters {
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -50,9 +50,56 @@ public class IcuSkeletonParameters {
   @SerializedName(SERIALIZED_NAME_ZERO_FORM_ENABLED)
   private Boolean zeroFormEnabled;
 
+  /**
+   * Pluralization rule set to apply when constructing skeletons. Accepted values are &#x60;legacy&#x60; and &#x60;cldr_41&#x60;. Defaults to &#x60;legacy&#x60; when omitted.
+   */
+  @JsonAdapter(CldrVersionEnum.Adapter.class)
+  public enum CldrVersionEnum {
+    LEGACY("legacy"),
+    
+    CLDR_41("cldr_41");
+
+    private String value;
+
+    CldrVersionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CldrVersionEnum fromValue(String value) {
+      for (CldrVersionEnum b : CldrVersionEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CldrVersionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CldrVersionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CldrVersionEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CldrVersionEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_CLDR_VERSION = "cldr_version";
   @SerializedName(SERIALIZED_NAME_CLDR_VERSION)
-  private String cldrVersion;
+  private CldrVersionEnum cldrVersion;
 
   public IcuSkeletonParameters() {
   }
@@ -64,7 +111,7 @@ public class IcuSkeletonParameters {
   }
 
    /**
-   * Source content to derive skeletons from. Mutually exclusive with &#x60;id&#x60;; exactly one of the two must be provided. 
+   * Source ICU message string to derive skeletons from. Mutually exclusive with &#x60;id&#x60;; exactly one of the two must be provided. 
    * @return content
   **/
   @javax.annotation.Nullable
@@ -86,7 +133,7 @@ public class IcuSkeletonParameters {
   }
 
    /**
-   * Translation code to source content from. Mutually exclusive with &#x60;content&#x60;; exactly one of the two must be provided. 
+   * Code of an existing translation to source content from. Mutually exclusive with &#x60;content&#x60;; exactly one of the two must be provided. Returns 404 when the translation does not exist. 
    * @return id
   **/
   @javax.annotation.Nullable
@@ -116,7 +163,7 @@ public class IcuSkeletonParameters {
   }
 
    /**
-   * Locale codes
+   * Locale codes for which to generate skeletons. The pluralization rules of each locale determine which plural forms appear in the output. 
    * @return localeCodes
   **/
   @javax.annotation.Nullable
@@ -138,7 +185,7 @@ public class IcuSkeletonParameters {
   }
 
    /**
-   * Keep the content and add missing plural forms for each locale
+   * When true, preserves the existing translation text in each plural form and adds any missing forms for the locale rather than stripping all literal content.
    * @return keepContent
   **/
   @javax.annotation.Nullable
@@ -160,7 +207,7 @@ public class IcuSkeletonParameters {
   }
 
    /**
-   * Indicates whether the zero form should be included or excluded in the returned skeletons
+   * When true, includes the zero plural form in the generated skeleton for locales that support it.
    * @return zeroFormEnabled
   **/
   @javax.annotation.Nullable
@@ -175,24 +222,24 @@ public class IcuSkeletonParameters {
   }
 
 
-  public IcuSkeletonParameters cldrVersion(String cldrVersion) {
+  public IcuSkeletonParameters cldrVersion(CldrVersionEnum cldrVersion) {
     
     this.cldrVersion = cldrVersion;
     return this;
   }
 
    /**
-   * Strings supports two CLDR variants, when it comes to pluralization rules. \\ You can choose which one you want to use when constructing the skeletons. Possible values \\ are &#x60;legacy&#x60; and &#x60;cldr_41&#x60;. Default value is &#x60;legacy&#x60;.
+   * Pluralization rule set to apply when constructing skeletons. Accepted values are &#x60;legacy&#x60; and &#x60;cldr_41&#x60;. Defaults to &#x60;legacy&#x60; when omitted.
    * @return cldrVersion
   **/
   @javax.annotation.Nullable
 
-  public String getCldrVersion() {
+  public CldrVersionEnum getCldrVersion() {
     return cldrVersion;
   }
 
 
-  public void setCldrVersion(String cldrVersion) {
+  public void setCldrVersion(CldrVersionEnum cldrVersion) {
     this.cldrVersion = cldrVersion;
   }
 

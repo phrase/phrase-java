@@ -24,62 +24,36 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * RepoSyncExportParameters
+ * IcuSkeletonError
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-01T13:16:42.071184945Z[Etc/UTC]")
-public class RepoSyncExportParameters {
-  public static final String SERIALIZED_NAME_PR_BRANCH = "pr_branch";
-  @SerializedName(SERIALIZED_NAME_PR_BRANCH)
-  private String prBranch;
+public class IcuSkeletonError {
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
+  private String error;
 
-  public static final String SERIALIZED_NAME_BRANCH = "branch";
-  @SerializedName(SERIALIZED_NAME_BRANCH)
-  private String branch;
-
-  public RepoSyncExportParameters() {
+  public IcuSkeletonError() {
   }
 
-  public RepoSyncExportParameters prBranch(String prBranch) {
+  public IcuSkeletonError error(String error) {
     
-    this.prBranch = prBranch;
+    this.error = error;
     return this;
   }
 
    /**
-   * Source branch to open a pull request from
-   * @return prBranch
+   * Human-readable description of the ICU message format parse failure.
+   * @return error
   **/
   @javax.annotation.Nullable
 
-  public String getPrBranch() {
-    return prBranch;
+  public String getError() {
+    return error;
   }
 
 
-  public void setPrBranch(String prBranch) {
-    this.prBranch = prBranch;
-  }
-
-
-  public RepoSyncExportParameters branch(String branch) {
-    
-    this.branch = branch;
-    return this;
-  }
-
-   /**
-   * Strings branch to export from
-   * @return branch
-  **/
-  @javax.annotation.Nullable
-
-  public String getBranch() {
-    return branch;
-  }
-
-
-  public void setBranch(String branch) {
-    this.branch = branch;
+  public void setError(String error) {
+    this.error = error;
   }
 
   @Override
@@ -90,22 +64,20 @@ public class RepoSyncExportParameters {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RepoSyncExportParameters repoSyncExportParameters = (RepoSyncExportParameters) o;
-    return Objects.equals(this.prBranch, repoSyncExportParameters.prBranch) &&
-        Objects.equals(this.branch, repoSyncExportParameters.branch);
+    IcuSkeletonError icuSkeletonError = (IcuSkeletonError) o;
+    return Objects.equals(this.error, icuSkeletonError.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(prBranch, branch);
+    return Objects.hash(error);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RepoSyncExportParameters {\n");
-    sb.append("    prBranch: ").append(toIndentedString(prBranch)).append("\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("class IcuSkeletonError {\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }
