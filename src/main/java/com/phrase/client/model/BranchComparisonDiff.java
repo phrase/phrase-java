@@ -32,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BranchComparisonDiff
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-01T13:16:49.835589565Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-01T13:16:59.383654691Z[Etc/UTC]")
 public class BranchComparisonDiff {
   public static final String SERIALIZED_NAME_BASE_CHANGES = "base_changes";
   @SerializedName(SERIALIZED_NAME_BASE_CHANGES)
