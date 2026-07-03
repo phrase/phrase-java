@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * AutomationsCreateParameters1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-01T13:16:59.383654691Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-03T06:44:32.278476559Z[Etc/UTC]")
 public class AutomationsCreateParameters1 {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -228,7 +228,7 @@ public class AutomationsCreateParameters1 {
   }
 
    /**
-   * List of project IDs to associate with the automation. Currently, only the first ID in the array is used. The array format leaves room for future support of multiple projects. 
+   * List of project IDs to associate with the automation. Providing more than one project ID requires the &#x60;advanced_job_automation&#x60; plan feature; accounts without this feature receive a 422 response with error field &#x60;project_ids&#x60;. 
    * @return projectIds
   **/
   @javax.annotation.Nonnull

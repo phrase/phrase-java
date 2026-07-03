@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | name of the automation | 
 **trigger** | [**TriggerEnum**](#TriggerEnum) |  | 
-**projectIds** | **List&lt;String&gt;** | List of project IDs to associate with the automation. Currently, only the first ID in the array is used. The array format leaves room for future support of multiple projects.  | 
+**projectIds** | **List&lt;String&gt;** | List of project IDs to associate with the automation. Providing more than one project ID requires the &#x60;advanced_job_automation&#x60; plan feature; accounts without this feature receive a 422 response with error field &#x60;project_ids&#x60;.  | 
 **jobTemplateId** | **String** | id of job template that the automation uses to create jobs from |  [optional]
 **statusFilters** | [**List&lt;StatusFiltersEnum&gt;**](#List&lt;StatusFiltersEnum&gt;) | translation key statuses used to filter keys that are added to jobs | 
 **tags** | **List&lt;String&gt;** | used to filter which keys are added to jobs |  [optional]
