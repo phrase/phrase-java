@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * OrganizationJobTemplate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-16T14:58:51.318634545Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-23T11:55:53.504549897Z[Etc/UTC]")
 public class OrganizationJobTemplate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
