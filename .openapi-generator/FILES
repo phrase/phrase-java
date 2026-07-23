@@ -128,6 +128,8 @@ docs/JobTemplatesApi.md
 docs/JobUpdateParameters.md
 docs/JobsApi.md
 docs/KeyCreateParameters.md
+docs/KeyFormatAnnotationsApi.md
+docs/KeyFormatAnnotationsList200ResponseInner.md
 docs/KeyLink.md
 docs/KeyLinksBatchDestroyParameters.md
 docs/KeyLinksCreateParameters.md
@@ -340,6 +342,7 @@ src/main/java/com/phrase/client/api/JobLocalesApi.java
 src/main/java/com/phrase/client/api/JobTemplateLocalesApi.java
 src/main/java/com/phrase/client/api/JobTemplatesApi.java
 src/main/java/com/phrase/client/api/JobsApi.java
+src/main/java/com/phrase/client/api/KeyFormatAnnotationsApi.java
 src/main/java/com/phrase/client/api/KeysApi.java
 src/main/java/com/phrase/client/api/KeysFigmaAttachmentsApi.java
 src/main/java/com/phrase/client/api/LinkedKeysApi.java
@@ -476,6 +479,7 @@ src/main/java/com/phrase/client/model/JobTemplatePreview.java
 src/main/java/com/phrase/client/model/JobTemplateUpdateParameters.java
 src/main/java/com/phrase/client/model/JobUpdateParameters.java
 src/main/java/com/phrase/client/model/KeyCreateParameters.java
+src/main/java/com/phrase/client/model/KeyFormatAnnotationsList200ResponseInner.java
 src/main/java/com/phrase/client/model/KeyLink.java
 src/main/java/com/phrase/client/model/KeyLinksBatchDestroyParameters.java
 src/main/java/com/phrase/client/model/KeyLinksCreateParameters.java
@@ -633,6 +637,7 @@ src/test/java/com/phrase/client/api/JobLocalesApiTest.java
 src/test/java/com/phrase/client/api/JobTemplateLocalesApiTest.java
 src/test/java/com/phrase/client/api/JobTemplatesApiTest.java
 src/test/java/com/phrase/client/api/JobsApiTest.java
+src/test/java/com/phrase/client/api/KeyFormatAnnotationsApiTest.java
 src/test/java/com/phrase/client/api/KeysFigmaAttachmentsApiTest.java
 src/test/java/com/phrase/client/api/LinkedKeysApiTest.java
 src/test/java/com/phrase/client/api/LocaleDownloadsApiTest.java
@@ -761,6 +766,7 @@ src/test/java/com/phrase/client/model/JobTemplateUpdateParametersTest.java
 src/test/java/com/phrase/client/model/JobTest.java
 src/test/java/com/phrase/client/model/JobUpdateParametersTest.java
 src/test/java/com/phrase/client/model/KeyCreateParametersTest.java
+src/test/java/com/phrase/client/model/KeyFormatAnnotationsList200ResponseInnerTest.java
 src/test/java/com/phrase/client/model/KeyLinkTest.java
 src/test/java/com/phrase/client/model/KeyLinksBatchDestroyParametersTest.java
 src/test/java/com/phrase/client/model/KeyLinksCreateParametersTest.java

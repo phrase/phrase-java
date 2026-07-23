@@ -239,6 +239,7 @@ Class | Method | HTTP request | Description
 *JobsApi* | [**jobUpdate**](docs/JobsApi.md#jobUpdate) | **PATCH** /projects/{project_id}/jobs/{id} | Update a job
 *JobsApi* | [**jobsByAccount**](docs/JobsApi.md#jobsByAccount) | **GET** /accounts/{account_id}/jobs | List account jobs
 *JobsApi* | [**jobsList**](docs/JobsApi.md#jobsList) | **GET** /projects/{project_id}/jobs | List jobs
+*KeyFormatAnnotationsApi* | [**keyFormatAnnotationsList**](docs/KeyFormatAnnotationsApi.md#keyFormatAnnotationsList) | **GET** /projects/{project_id}/keys/{id}/format_annotations | List format annotations for a key
 *KeysApi* | [**keyCreate**](docs/KeysApi.md#keyCreate) | **POST** /projects/{project_id}/keys | Create a key
 *KeysApi* | [**keyDelete**](docs/KeysApi.md#keyDelete) | **DELETE** /projects/{project_id}/keys/{id} | Delete a key
 *KeysApi* | [**keyShow**](docs/KeysApi.md#keyShow) | **GET** /projects/{project_id}/keys/{id} | Get a single key
@@ -500,6 +501,7 @@ Class | Method | HTTP request | Description
  - [JobTemplateUpdateParameters](docs/JobTemplateUpdateParameters.md)
  - [JobUpdateParameters](docs/JobUpdateParameters.md)
  - [KeyCreateParameters](docs/KeyCreateParameters.md)
+ - [KeyFormatAnnotationsList200ResponseInner](docs/KeyFormatAnnotationsList200ResponseInner.md)
  - [KeyLink](docs/KeyLink.md)
  - [KeyLinksBatchDestroyParameters](docs/KeyLinksBatchDestroyParameters.md)
  - [KeyLinksCreateParameters](docs/KeyLinksCreateParameters.md)
