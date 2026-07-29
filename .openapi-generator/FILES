@@ -182,6 +182,9 @@ docs/OrganizationJobTemplateLocalesApi.md
 docs/OrganizationJobTemplateLocalesCreateParameters.md
 docs/OrganizationJobTemplateUpdateParameters.md
 docs/OrganizationJobTemplatesApi.md
+docs/PreTranslation.md
+docs/PreTranslationCreateParameters.md
+docs/PreTranslationsApi.md
 docs/Project.md
 docs/ProjectCreateParameters.md
 docs/ProjectDetails.md
@@ -354,6 +357,7 @@ src/main/java/com/phrase/client/api/NotificationsApi.java
 src/main/java/com/phrase/client/api/OrdersApi.java
 src/main/java/com/phrase/client/api/OrganizationJobTemplateLocalesApi.java
 src/main/java/com/phrase/client/api/OrganizationJobTemplatesApi.java
+src/main/java/com/phrase/client/api/PreTranslationsApi.java
 src/main/java/com/phrase/client/api/ProjectsApi.java
 src/main/java/com/phrase/client/api/QualityPerformanceScoreApi.java
 src/main/java/com/phrase/client/api/ReleaseTriggersApi.java
@@ -521,6 +525,8 @@ src/main/java/com/phrase/client/model/OrganizationJobTemplateDetails.java
 src/main/java/com/phrase/client/model/OrganizationJobTemplateLocaleUpdateParameters.java
 src/main/java/com/phrase/client/model/OrganizationJobTemplateLocalesCreateParameters.java
 src/main/java/com/phrase/client/model/OrganizationJobTemplateUpdateParameters.java
+src/main/java/com/phrase/client/model/PreTranslation.java
+src/main/java/com/phrase/client/model/PreTranslationCreateParameters.java
 src/main/java/com/phrase/client/model/Project.java
 src/main/java/com/phrase/client/model/ProjectCreateParameters.java
 src/main/java/com/phrase/client/model/ProjectDetails.java
@@ -647,6 +653,7 @@ src/test/java/com/phrase/client/api/NotificationsApiTest.java
 src/test/java/com/phrase/client/api/OrdersApiTest.java
 src/test/java/com/phrase/client/api/OrganizationJobTemplateLocalesApiTest.java
 src/test/java/com/phrase/client/api/OrganizationJobTemplatesApiTest.java
+src/test/java/com/phrase/client/api/PreTranslationsApiTest.java
 src/test/java/com/phrase/client/api/ProjectsApiTest.java
 src/test/java/com/phrase/client/api/QualityPerformanceScoreApiTest.java
 src/test/java/com/phrase/client/api/ReleaseTriggersApiTest.java
@@ -808,6 +815,8 @@ src/test/java/com/phrase/client/model/OrganizationJobTemplateLocaleUpdateParamet
 src/test/java/com/phrase/client/model/OrganizationJobTemplateLocalesCreateParametersTest.java
 src/test/java/com/phrase/client/model/OrganizationJobTemplateTest.java
 src/test/java/com/phrase/client/model/OrganizationJobTemplateUpdateParametersTest.java
+src/test/java/com/phrase/client/model/PreTranslationCreateParametersTest.java
+src/test/java/com/phrase/client/model/PreTranslationTest.java
 src/test/java/com/phrase/client/model/ProjectCreateParametersTest.java
 src/test/java/com/phrase/client/model/ProjectDetailsTest.java
 src/test/java/com/phrase/client/model/ProjectLocalesTest.java
