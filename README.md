@@ -118,6 +118,8 @@ Class | Method | HTTP request | Description
 *AuthorizationsApi* | [**authorizationShow**](docs/AuthorizationsApi.md#authorizationShow) | **GET** /authorizations/{id} | Get a single authorization
 *AuthorizationsApi* | [**authorizationUpdate**](docs/AuthorizationsApi.md#authorizationUpdate) | **PATCH** /authorizations/{id} | Update an authorization
 *AuthorizationsApi* | [**authorizationsList**](docs/AuthorizationsApi.md#authorizationsList) | **GET** /authorizations | List authorizations
+*AutomationEventsApi* | [**accountAutomationEventsList**](docs/AutomationEventsApi.md#accountAutomationEventsList) | **GET** /accounts/{account_id}/automation_events | List automation events for an account
+*AutomationEventsApi* | [**automationEventsList**](docs/AutomationEventsApi.md#automationEventsList) | **GET** /accounts/{account_id}/automations/{automation_id}/events | List events for an automation
 *AutomationsApi* | [**automationActivate**](docs/AutomationsApi.md#automationActivate) | **POST** /accounts/{account_id}/automations/{automation_id}/activate | Activate an automation
 *AutomationsApi* | [**automationCreate**](docs/AutomationsApi.md#automationCreate) | **POST** /accounts/{account_id}/automations | Create an automation
 *AutomationsApi* | [**automationDeactivate**](docs/AutomationsApi.md#automationDeactivate) | **POST** /accounts/{account_id}/automations/{automation_id}/deactivate | Deactivate an automation
@@ -416,6 +418,8 @@ Class | Method | HTTP request | Description
  - [AuthorizationUpdateParameters](docs/AuthorizationUpdateParameters.md)
  - [AuthorizationWithToken](docs/AuthorizationWithToken.md)
  - [Automation](docs/Automation.md)
+ - [AutomationEvent](docs/AutomationEvent.md)
+ - [AutomationEventProject](docs/AutomationEventProject.md)
  - [AutomationsCreateParameters](docs/AutomationsCreateParameters.md)
  - [AutomationsCreateParameters1](docs/AutomationsCreateParameters1.md)
  - [BlacklistedKey](docs/BlacklistedKey.md)
