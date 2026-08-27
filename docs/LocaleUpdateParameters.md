@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **fallbackLocaleId** | **String** | Fallback locale for empty translations. Can be a locale name or id. |  [optional]
 **unverifyNewTranslations** | **Boolean** | Indicates that new translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature. |  [optional]
 **unverifyUpdatedTranslations** | **Boolean** | Indicates that updated translations for this locale should be marked as unverified. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature. |  [optional]
+**unverifyOnSourceChanges** | **Boolean** | Indicates that translations for this locale should be marked as unverified when the source language has been changed. |  [optional]
 **autotranslate** | **Boolean** | If set, translations for this locale will be fetched automatically, right after creation. |  [optional]
 **languageAiProfile** | **String** | Identifier of the Language AI profile to use for this locale. |  [optional]
 

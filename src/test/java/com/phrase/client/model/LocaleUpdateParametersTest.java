@@ -119,6 +119,14 @@ public class LocaleUpdateParametersTest {
     }
 
     /**
+     * Test the property 'unverifyOnSourceChanges'
+     */
+    @Test
+    public void unverifyOnSourceChangesTest() {
+        // TODO: test unverifyOnSourceChanges
+    }
+
+    /**
      * Test the property 'autotranslate'
      */
     @Test

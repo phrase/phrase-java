@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocaleUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T07:19:40.644810427Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-27T06:29:17.373412799Z[Etc/UTC]")
 public class LocaleUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -67,6 +67,10 @@ public class LocaleUpdateParameters {
   public static final String SERIALIZED_NAME_UNVERIFY_UPDATED_TRANSLATIONS = "unverify_updated_translations";
   @SerializedName(SERIALIZED_NAME_UNVERIFY_UPDATED_TRANSLATIONS)
   private Boolean unverifyUpdatedTranslations;
+
+  public static final String SERIALIZED_NAME_UNVERIFY_ON_SOURCE_CHANGES = "unverify_on_source_changes";
+  @SerializedName(SERIALIZED_NAME_UNVERIFY_ON_SOURCE_CHANGES)
+  private Boolean unverifyOnSourceChanges;
 
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
@@ -299,6 +303,28 @@ public class LocaleUpdateParameters {
   }
 
 
+  public LocaleUpdateParameters unverifyOnSourceChanges(Boolean unverifyOnSourceChanges) {
+    
+    this.unverifyOnSourceChanges = unverifyOnSourceChanges;
+    return this;
+  }
+
+   /**
+   * Indicates that translations for this locale should be marked as unverified when the source language has been changed.
+   * @return unverifyOnSourceChanges
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUnverifyOnSourceChanges() {
+    return unverifyOnSourceChanges;
+  }
+
+
+  public void setUnverifyOnSourceChanges(Boolean unverifyOnSourceChanges) {
+    this.unverifyOnSourceChanges = unverifyOnSourceChanges;
+  }
+
+
   public LocaleUpdateParameters autotranslate(Boolean autotranslate) {
     
     this.autotranslate = autotranslate;
@@ -361,13 +387,14 @@ public class LocaleUpdateParameters {
         Objects.equals(this.fallbackLocaleId, localeUpdateParameters.fallbackLocaleId) &&
         Objects.equals(this.unverifyNewTranslations, localeUpdateParameters.unverifyNewTranslations) &&
         Objects.equals(this.unverifyUpdatedTranslations, localeUpdateParameters.unverifyUpdatedTranslations) &&
+        Objects.equals(this.unverifyOnSourceChanges, localeUpdateParameters.unverifyOnSourceChanges) &&
         Objects.equals(this.autotranslate, localeUpdateParameters.autotranslate) &&
         Objects.equals(this.languageAiProfile, localeUpdateParameters.languageAiProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, code, _default, main, rtl, sourceLocaleId, fallbackLocaleId, unverifyNewTranslations, unverifyUpdatedTranslations, autotranslate, languageAiProfile);
+    return Objects.hash(branch, name, code, _default, main, rtl, sourceLocaleId, fallbackLocaleId, unverifyNewTranslations, unverifyUpdatedTranslations, unverifyOnSourceChanges, autotranslate, languageAiProfile);
   }
 
   @Override
@@ -384,6 +411,7 @@ public class LocaleUpdateParameters {
     sb.append("    fallbackLocaleId: ").append(toIndentedString(fallbackLocaleId)).append("\n");
     sb.append("    unverifyNewTranslations: ").append(toIndentedString(unverifyNewTranslations)).append("\n");
     sb.append("    unverifyUpdatedTranslations: ").append(toIndentedString(unverifyUpdatedTranslations)).append("\n");
+    sb.append("    unverifyOnSourceChanges: ").append(toIndentedString(unverifyOnSourceChanges)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("    languageAiProfile: ").append(toIndentedString(languageAiProfile)).append("\n");
     sb.append("}");

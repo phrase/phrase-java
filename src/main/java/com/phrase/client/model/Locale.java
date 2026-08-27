@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Locale
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-25T07:19:40.644810427Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-27T06:29:17.373412799Z[Etc/UTC]")
 public class Locale {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -75,6 +75,18 @@ public class Locale {
   public static final String SERIALIZED_NAME_LANGUAGE_AI_PROFILE = "language_ai_profile";
   @SerializedName(SERIALIZED_NAME_LANGUAGE_AI_PROFILE)
   private String languageAiProfile;
+
+  public static final String SERIALIZED_NAME_UNVERIFY_NEW_TRANSLATIONS = "unverify_new_translations";
+  @SerializedName(SERIALIZED_NAME_UNVERIFY_NEW_TRANSLATIONS)
+  private Boolean unverifyNewTranslations;
+
+  public static final String SERIALIZED_NAME_UNVERIFY_UPDATED_TRANSLATIONS = "unverify_updated_translations";
+  @SerializedName(SERIALIZED_NAME_UNVERIFY_UPDATED_TRANSLATIONS)
+  private Boolean unverifyUpdatedTranslations;
+
+  public static final String SERIALIZED_NAME_UNVERIFY_ON_SOURCE_CHANGES = "unverify_on_source_changes";
+  @SerializedName(SERIALIZED_NAME_UNVERIFY_ON_SOURCE_CHANGES)
+  private Boolean unverifyOnSourceChanges;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -345,6 +357,72 @@ public class Locale {
   }
 
 
+  public Locale unverifyNewTranslations(Boolean unverifyNewTranslations) {
+    
+    this.unverifyNewTranslations = unverifyNewTranslations;
+    return this;
+  }
+
+   /**
+   * Indicates that new translations for this locale are marked as unverified. Only applies to locales using the basic verification workflow. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature.
+   * @return unverifyNewTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUnverifyNewTranslations() {
+    return unverifyNewTranslations;
+  }
+
+
+  public void setUnverifyNewTranslations(Boolean unverifyNewTranslations) {
+    this.unverifyNewTranslations = unverifyNewTranslations;
+  }
+
+
+  public Locale unverifyUpdatedTranslations(Boolean unverifyUpdatedTranslations) {
+    
+    this.unverifyUpdatedTranslations = unverifyUpdatedTranslations;
+    return this;
+  }
+
+   /**
+   * Indicates that updated translations for this locale are marked as unverified. Only applies to locales using the basic verification workflow. Part of the [Advanced Workflows](https://support.phrase.com/hc/en-us/articles/5784094755484) feature.
+   * @return unverifyUpdatedTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUnverifyUpdatedTranslations() {
+    return unverifyUpdatedTranslations;
+  }
+
+
+  public void setUnverifyUpdatedTranslations(Boolean unverifyUpdatedTranslations) {
+    this.unverifyUpdatedTranslations = unverifyUpdatedTranslations;
+  }
+
+
+  public Locale unverifyOnSourceChanges(Boolean unverifyOnSourceChanges) {
+    
+    this.unverifyOnSourceChanges = unverifyOnSourceChanges;
+    return this;
+  }
+
+   /**
+   * Indicates that translations for this locale are marked as unverified when the source language has been changed.
+   * @return unverifyOnSourceChanges
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getUnverifyOnSourceChanges() {
+    return unverifyOnSourceChanges;
+  }
+
+
+  public void setUnverifyOnSourceChanges(Boolean unverifyOnSourceChanges) {
+    this.unverifyOnSourceChanges = unverifyOnSourceChanges;
+  }
+
+
   public Locale createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -408,13 +486,16 @@ public class Locale {
         Objects.equals(this.sourceLocale, locale.sourceLocale) &&
         Objects.equals(this.fallbackLocale, locale.fallbackLocale) &&
         Objects.equals(this.languageAiProfile, locale.languageAiProfile) &&
+        Objects.equals(this.unverifyNewTranslations, locale.unverifyNewTranslations) &&
+        Objects.equals(this.unverifyUpdatedTranslations, locale.unverifyUpdatedTranslations) &&
+        Objects.equals(this.unverifyOnSourceChanges, locale.unverifyOnSourceChanges) &&
         Objects.equals(this.createdAt, locale.createdAt) &&
         Objects.equals(this.updatedAt, locale.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, ordinalPluralForms, sourceLocale, fallbackLocale, languageAiProfile, createdAt, updatedAt);
+    return Objects.hash(id, name, code, _default, main, rtl, pluralForms, ordinalPluralForms, sourceLocale, fallbackLocale, languageAiProfile, unverifyNewTranslations, unverifyUpdatedTranslations, unverifyOnSourceChanges, createdAt, updatedAt);
   }
 
   @Override
@@ -432,6 +513,9 @@ public class Locale {
     sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
     sb.append("    fallbackLocale: ").append(toIndentedString(fallbackLocale)).append("\n");
     sb.append("    languageAiProfile: ").append(toIndentedString(languageAiProfile)).append("\n");
+    sb.append("    unverifyNewTranslations: ").append(toIndentedString(unverifyNewTranslations)).append("\n");
+    sb.append("    unverifyUpdatedTranslations: ").append(toIndentedString(unverifyUpdatedTranslations)).append("\n");
+    sb.append("    unverifyOnSourceChanges: ").append(toIndentedString(unverifyOnSourceChanges)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

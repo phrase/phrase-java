@@ -132,6 +132,30 @@ public class LocaleDetailsTest {
     }
 
     /**
+     * Test the property 'unverifyNewTranslations'
+     */
+    @Test
+    public void unverifyNewTranslationsTest() {
+        // TODO: test unverifyNewTranslations
+    }
+
+    /**
+     * Test the property 'unverifyUpdatedTranslations'
+     */
+    @Test
+    public void unverifyUpdatedTranslationsTest() {
+        // TODO: test unverifyUpdatedTranslations
+    }
+
+    /**
+     * Test the property 'unverifyOnSourceChanges'
+     */
+    @Test
+    public void unverifyOnSourceChangesTest() {
+        // TODO: test unverifyOnSourceChanges
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
