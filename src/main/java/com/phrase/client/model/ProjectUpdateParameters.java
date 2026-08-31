@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-27T06:29:17.373412799Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-31T11:45:46.409757348Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -54,6 +54,14 @@ public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY = "shares_translation_memory";
   @SerializedName(SERIALIZED_NAME_SHARES_TRANSLATION_MEMORY)
   private Boolean sharesTranslationMemory;
+
+  public static final String SERIALIZED_NAME_TM_IDS = "tm_ids";
+  @SerializedName(SERIALIZED_NAME_TM_IDS)
+  private List<String> tmIds;
+
+  public static final String SERIALIZED_NAME_TERM_BASE_IDS = "term_base_ids";
+  @SerializedName(SERIALIZED_NAME_TERM_BASE_IDS)
+  private List<String> termBaseIds;
 
   public static final String SERIALIZED_NAME_PROJECT_IMAGE = "project_image";
   @SerializedName(SERIALIZED_NAME_PROJECT_IMAGE)
@@ -344,6 +352,66 @@ public class ProjectUpdateParameters {
 
   public void setSharesTranslationMemory(Boolean sharesTranslationMemory) {
     this.sharesTranslationMemory = sharesTranslationMemory;
+  }
+
+
+  public ProjectUpdateParameters tmIds(List<String> tmIds) {
+    
+    this.tmIds = tmIds;
+    return this;
+  }
+
+  public ProjectUpdateParameters addTmIdsItem(String tmIdsItem) {
+    if (this.tmIds == null) {
+      this.tmIds = new ArrayList<>();
+    }
+    this.tmIds.add(tmIdsItem);
+    return this;
+  }
+
+   /**
+   * List of TMS translation memory IDs, used to provide reference translations for the AI translation agent.
+   * @return tmIds
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getTmIds() {
+    return tmIds;
+  }
+
+
+  public void setTmIds(List<String> tmIds) {
+    this.tmIds = tmIds;
+  }
+
+
+  public ProjectUpdateParameters termBaseIds(List<String> termBaseIds) {
+    
+    this.termBaseIds = termBaseIds;
+    return this;
+  }
+
+  public ProjectUpdateParameters addTermBaseIdsItem(String termBaseIdsItem) {
+    if (this.termBaseIds == null) {
+      this.termBaseIds = new ArrayList<>();
+    }
+    this.termBaseIds.add(termBaseIdsItem);
+    return this;
+  }
+
+   /**
+   * List of TMS term base IDs, used to ensure consistent terminology for the AI translation agent.
+   * @return termBaseIds
+  **/
+  @javax.annotation.Nullable
+
+  public List<String> getTermBaseIds() {
+    return termBaseIds;
+  }
+
+
+  public void setTermBaseIds(List<String> termBaseIds) {
+    this.termBaseIds = termBaseIds;
   }
 
 
@@ -941,6 +1009,8 @@ public class ProjectUpdateParameters {
         Objects.equals(this.mainFormat, projectUpdateParameters.mainFormat) &&
         Objects.equals(this.media, projectUpdateParameters.media) &&
         Objects.equals(this.sharesTranslationMemory, projectUpdateParameters.sharesTranslationMemory) &&
+        Objects.equals(this.tmIds, projectUpdateParameters.tmIds) &&
+        Objects.equals(this.termBaseIds, projectUpdateParameters.termBaseIds) &&
         Objects.equals(this.projectImage, projectUpdateParameters.projectImage) &&
         Objects.equals(this.removeProjectImage, projectUpdateParameters.removeProjectImage) &&
         Objects.equals(this.workflow, projectUpdateParameters.workflow) &&
@@ -971,7 +1041,7 @@ public class ProjectUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, defaultEncoding, placeholderStyles, autocompleteJobEnabled, jobLockingEnabled, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation, translationKeysSortCollation, cldrVersion);
+    return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, tmIds, termBaseIds, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, defaultEncoding, placeholderStyles, autocompleteJobEnabled, jobLockingEnabled, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation, translationKeysSortCollation, cldrVersion);
   }
 
   @Override
@@ -984,6 +1054,8 @@ public class ProjectUpdateParameters {
     sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    sharesTranslationMemory: ").append(toIndentedString(sharesTranslationMemory)).append("\n");
+    sb.append("    tmIds: ").append(toIndentedString(tmIds)).append("\n");
+    sb.append("    termBaseIds: ").append(toIndentedString(termBaseIds)).append("\n");
     sb.append("    projectImage: ").append(toIndentedString(projectImage)).append("\n");
     sb.append("    removeProjectImage: ").append(toIndentedString(removeProjectImage)).append("\n");
     sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");

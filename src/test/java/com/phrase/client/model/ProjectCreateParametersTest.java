@@ -74,6 +74,22 @@ public class ProjectCreateParametersTest {
     }
 
     /**
+     * Test the property 'tmIds'
+     */
+    @Test
+    public void tmIdsTest() {
+        // TODO: test tmIds
+    }
+
+    /**
+     * Test the property 'termBaseIds'
+     */
+    @Test
+    public void termBaseIdsTest() {
+        // TODO: test termBaseIds
+    }
+
+    /**
      * Test the property 'projectImage'
      */
     @Test

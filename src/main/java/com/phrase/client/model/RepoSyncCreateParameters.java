@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RepoSyncCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-27T06:29:17.373412799Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-31T11:45:46.409757348Z[Etc/UTC]")
 public class RepoSyncCreateParameters {
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
