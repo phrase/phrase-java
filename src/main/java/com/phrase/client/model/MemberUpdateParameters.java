@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-03T10:46:18.183136660Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-03T10:46:41.206895739Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)
