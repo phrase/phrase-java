@@ -40,6 +40,8 @@ docs/BranchName.md
 docs/BranchSyncParameters.md
 docs/BranchUpdateParameters.md
 docs/BranchesApi.md
+docs/CheckIssue.md
+docs/ChecksApi.md
 docs/Comment.md
 docs/CommentCreateParameters.md
 docs/CommentCreateParameters1.md
@@ -330,6 +332,7 @@ src/main/java/com/phrase/client/api/AutomationEventsApi.java
 src/main/java/com/phrase/client/api/AutomationsApi.java
 src/main/java/com/phrase/client/api/BlacklistedKeysApi.java
 src/main/java/com/phrase/client/api/BranchesApi.java
+src/main/java/com/phrase/client/api/ChecksApi.java
 src/main/java/com/phrase/client/api/CommentReactionsApi.java
 src/main/java/com/phrase/client/api/CommentRepliesApi.java
 src/main/java/com/phrase/client/api/CommentsApi.java
@@ -417,6 +420,7 @@ src/main/java/com/phrase/client/model/BranchMergeParameters.java
 src/main/java/com/phrase/client/model/BranchName.java
 src/main/java/com/phrase/client/model/BranchSyncParameters.java
 src/main/java/com/phrase/client/model/BranchUpdateParameters.java
+src/main/java/com/phrase/client/model/CheckIssue.java
 src/main/java/com/phrase/client/model/Comment.java
 src/main/java/com/phrase/client/model/CommentCreateParameters.java
 src/main/java/com/phrase/client/model/CommentCreateParameters1.java
@@ -631,6 +635,7 @@ src/test/java/com/phrase/client/api/AutomationEventsApiTest.java
 src/test/java/com/phrase/client/api/AutomationsApiTest.java
 src/test/java/com/phrase/client/api/BlacklistedKeysApiTest.java
 src/test/java/com/phrase/client/api/BranchesApiTest.java
+src/test/java/com/phrase/client/api/ChecksApiTest.java
 src/test/java/com/phrase/client/api/CommentReactionsApiTest.java
 src/test/java/com/phrase/client/api/CommentRepliesApiTest.java
 src/test/java/com/phrase/client/api/CommentsApiTest.java
@@ -710,6 +715,7 @@ src/test/java/com/phrase/client/model/BranchNameTest.java
 src/test/java/com/phrase/client/model/BranchSyncParametersTest.java
 src/test/java/com/phrase/client/model/BranchTest.java
 src/test/java/com/phrase/client/model/BranchUpdateParametersTest.java
+src/test/java/com/phrase/client/model/CheckIssueTest.java
 src/test/java/com/phrase/client/model/CommentCreateParameters1Test.java
 src/test/java/com/phrase/client/model/CommentCreateParametersTest.java
 src/test/java/com/phrase/client/model/CommentMarkReadParametersTest.java

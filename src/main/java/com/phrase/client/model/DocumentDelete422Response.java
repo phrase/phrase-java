@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * DocumentDelete422Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-03T10:46:41.206895739Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-03T12:10:51.278506575Z[Etc/UTC]")
 public class DocumentDelete422Response {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
