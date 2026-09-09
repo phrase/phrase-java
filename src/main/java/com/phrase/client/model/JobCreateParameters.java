@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-03T12:10:51.278506575Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T07:41:06.466155550Z[Etc/UTC]")
 public class JobCreateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -226,7 +226,7 @@ public class JobCreateParameters {
   }
 
    /**
-   * tags of keys that should be included within the job
+   * tags of keys that should be included within the job.  *Note: a tag matches every key currently carrying that tag, not just the ones you just tagged. For example, if hundreds of pre-existing keys already share the tag &#x60;myUploadTag&#x60;, adding it here pulls in every one of them, not only the key you just tagged. Use &#x60;translation_key_ids&#x60; to scope the job to specific keys instead.* 
    * @return tags
   **/
   @javax.annotation.Nullable
