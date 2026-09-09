@@ -164,6 +164,11 @@ docs/LocaleTeamPreview.md
 docs/LocaleUpdateParameters.md
 docs/LocaleUserPreview.md
 docs/LocalesApi.md
+docs/MachineTranslationApi.md
+docs/MachineTranslationLocaleProviderMapping.md
+docs/MachineTranslationLocaleProviderMappingsCreateParameters.md
+docs/MachineTranslationSettings.md
+docs/MachineTranslationSettingsUpdateParameters.md
 docs/Member.md
 docs/MemberProjectDetail.md
 docs/MemberProjectDetailProjectRolesInner.md
@@ -358,6 +363,7 @@ src/main/java/com/phrase/client/api/KeysFigmaAttachmentsApi.java
 src/main/java/com/phrase/client/api/LinkedKeysApi.java
 src/main/java/com/phrase/client/api/LocaleDownloadsApi.java
 src/main/java/com/phrase/client/api/LocalesApi.java
+src/main/java/com/phrase/client/api/MachineTranslationApi.java
 src/main/java/com/phrase/client/api/MembersApi.java
 src/main/java/com/phrase/client/api/NotificationGroupsApi.java
 src/main/java/com/phrase/client/api/NotificationsApi.java
@@ -518,6 +524,10 @@ src/main/java/com/phrase/client/model/LocaleStatistics.java
 src/main/java/com/phrase/client/model/LocaleTeamPreview.java
 src/main/java/com/phrase/client/model/LocaleUpdateParameters.java
 src/main/java/com/phrase/client/model/LocaleUserPreview.java
+src/main/java/com/phrase/client/model/MachineTranslationLocaleProviderMapping.java
+src/main/java/com/phrase/client/model/MachineTranslationLocaleProviderMappingsCreateParameters.java
+src/main/java/com/phrase/client/model/MachineTranslationSettings.java
+src/main/java/com/phrase/client/model/MachineTranslationSettingsUpdateParameters.java
 src/main/java/com/phrase/client/model/Member.java
 src/main/java/com/phrase/client/model/MemberProjectDetail.java
 src/main/java/com/phrase/client/model/MemberProjectDetailProjectRolesInner.java
@@ -659,6 +669,7 @@ src/test/java/com/phrase/client/api/KeyFormatAnnotationsApiTest.java
 src/test/java/com/phrase/client/api/KeysFigmaAttachmentsApiTest.java
 src/test/java/com/phrase/client/api/LinkedKeysApiTest.java
 src/test/java/com/phrase/client/api/LocaleDownloadsApiTest.java
+src/test/java/com/phrase/client/api/MachineTranslationApiTest.java
 src/test/java/com/phrase/client/api/MembersApiTest.java
 src/test/java/com/phrase/client/api/NotificationGroupsApiTest.java
 src/test/java/com/phrase/client/api/NotificationsApiTest.java
@@ -813,6 +824,10 @@ src/test/java/com/phrase/client/model/LocaleTeamPreviewTest.java
 src/test/java/com/phrase/client/model/LocaleTest.java
 src/test/java/com/phrase/client/model/LocaleUpdateParametersTest.java
 src/test/java/com/phrase/client/model/LocaleUserPreviewTest.java
+src/test/java/com/phrase/client/model/MachineTranslationLocaleProviderMappingTest.java
+src/test/java/com/phrase/client/model/MachineTranslationLocaleProviderMappingsCreateParametersTest.java
+src/test/java/com/phrase/client/model/MachineTranslationSettingsTest.java
+src/test/java/com/phrase/client/model/MachineTranslationSettingsUpdateParametersTest.java
 src/test/java/com/phrase/client/model/MemberProjectDetailProjectRolesInnerTest.java
 src/test/java/com/phrase/client/model/MemberProjectDetailTest.java
 src/test/java/com/phrase/client/model/MemberSpacesInnerTest.java
