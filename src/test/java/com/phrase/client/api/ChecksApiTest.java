@@ -67,7 +67,8 @@ public class ChecksApiTest {
         String state = null;
         List<String> localeIds = null;
         List<String> checkNames = null;
-        List<CheckIssue> response = api.checkIssuesList(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames);
+        String createdSince = null;
+        List<CheckIssue> response = api.checkIssuesList(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, createdSince);
 
         // TODO: test validations
     }

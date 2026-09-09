@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 <a name="checkIssuesList"></a>
 # **checkIssuesList**
-> List&lt;CheckIssue&gt; checkIssuesList(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames)
+> List&lt;CheckIssue&gt; checkIssuesList(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, createdSince)
 
 List check issues
 
@@ -132,8 +132,9 @@ public class Example {
     String state = "active"; // String | Filter by state of the check issue. Can be one of: `active`, `solved`, `dismissed`, `all`. Defaults to `active`.
     List<String> localeIds = Arrays.asList(); // List<String> | Filter by one or more locale IDs.
     List<String> checkNames = Arrays.asList(); // List<String> | Filter by one or more check names. Valid values are:  - `translation_content_length` — the translation exceeds the maximum character limit configured for the key. - `translation_placeholder_usage` — the translation is missing placeholders present in the source, or contains unexpected ones. - `translation_glossary_usage` — the translation does not follow the glossary term translations.
+    String createdSince = "2026-01-01T12:00:00Z"; // String | Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time.
     try {
-      List<CheckIssue> result = apiInstance.checkIssuesList(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames);
+      List<CheckIssue> result = apiInstance.checkIssuesList(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, createdSince);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ChecksApi#checkIssuesList");
@@ -157,6 +158,7 @@ Name | Type | Description  | Notes
  **state** | **String**| Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;. | [optional] [default to active] [enum: active, solved, dismissed, all]
  **localeIds** | [**List&lt;String&gt;**](String.md)| Filter by one or more locale IDs. | [optional]
  **checkNames** | [**List&lt;String&gt;**](String.md)| Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations. | [optional] [enum: translation_content_length, translation_placeholder_usage, translation_glossary_usage]
+ **createdSince** | **String**| Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time. | [optional]
 
 ### Return type
 

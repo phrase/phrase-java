@@ -216,6 +216,7 @@ public class ChecksApi {
      * @param state Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;. (optional, default to active)
      * @param localeIds Filter by one or more locale IDs. (optional)
      * @param checkNames Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations. (optional)
+     * @param createdSince Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -230,7 +231,7 @@ public class ChecksApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call checkIssuesListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call checkIssuesListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, String createdSince, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -259,6 +260,10 @@ public class ChecksApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "check_names", checkNames));
         }
 
+        if (createdSince != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("created_since", createdSince));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -285,7 +290,7 @@ public class ChecksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call checkIssuesListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call checkIssuesListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, String createdSince, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -293,7 +298,7 @@ public class ChecksApi {
         }
         
 
-        okhttp3.Call localVarCall = checkIssuesListCall(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, _callback);
+        okhttp3.Call localVarCall = checkIssuesListCall(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, createdSince, _callback);
         return localVarCall;
 
     }
@@ -308,6 +313,7 @@ public class ChecksApi {
      * @param state Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;. (optional, default to active)
      * @param localeIds Filter by one or more locale IDs. (optional)
      * @param checkNames Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations. (optional)
+     * @param createdSince Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time. (optional)
      * @return List&lt;CheckIssue&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -321,8 +327,8 @@ public class ChecksApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<CheckIssue> checkIssuesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames) throws ApiException {
-        ApiResponse<List<CheckIssue>> localVarResp = checkIssuesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames);
+    public List<CheckIssue> checkIssuesList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, String createdSince) throws ApiException {
+        ApiResponse<List<CheckIssue>> localVarResp = checkIssuesListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, createdSince);
         return localVarResp.getData();
     }
 
@@ -336,6 +342,7 @@ public class ChecksApi {
      * @param state Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;. (optional, default to active)
      * @param localeIds Filter by one or more locale IDs. (optional)
      * @param checkNames Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations. (optional)
+     * @param createdSince Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time. (optional)
      * @return ApiResponse&lt;List&lt;CheckIssue&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -349,8 +356,8 @@ public class ChecksApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<CheckIssue>> checkIssuesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames) throws ApiException {
-        okhttp3.Call localVarCall = checkIssuesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, null);
+    public ApiResponse<List<CheckIssue>> checkIssuesListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, String createdSince) throws ApiException {
+        okhttp3.Call localVarCall = checkIssuesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, createdSince, null);
         Type localVarReturnType = new TypeToken<List<CheckIssue>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -365,6 +372,7 @@ public class ChecksApi {
      * @param state Filter by state of the check issue. Can be one of: &#x60;active&#x60;, &#x60;solved&#x60;, &#x60;dismissed&#x60;, &#x60;all&#x60;. Defaults to &#x60;active&#x60;. (optional, default to active)
      * @param localeIds Filter by one or more locale IDs. (optional)
      * @param checkNames Filter by one or more check names. Valid values are:  - &#x60;translation_content_length&#x60; — the translation exceeds the maximum character limit configured for the key. - &#x60;translation_placeholder_usage&#x60; — the translation is missing placeholders present in the source, or contains unexpected ones. - &#x60;translation_glossary_usage&#x60; — the translation does not follow the glossary term translations. (optional)
+     * @param createdSince Return only check issues created on or after this ISO 8601 datetime. Returns 400 if the value is not a valid date-time. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -379,9 +387,9 @@ public class ChecksApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call checkIssuesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, final ApiCallback<List<CheckIssue>> _callback) throws ApiException {
+    public okhttp3.Call checkIssuesListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String state, List<String> localeIds, List<String> checkNames, String createdSince, final ApiCallback<List<CheckIssue>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = checkIssuesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, _callback);
+        okhttp3.Call localVarCall = checkIssuesListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, state, localeIds, checkNames, createdSince, _callback);
         Type localVarReturnType = new TypeToken<List<CheckIssue>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
