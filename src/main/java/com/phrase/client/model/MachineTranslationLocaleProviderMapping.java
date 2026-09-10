@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MachineTranslationLocaleProviderMapping
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T11:04:26.593304163Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T11:54:51.921162966Z[Etc/UTC]")
 public class MachineTranslationLocaleProviderMapping {
   public static final String SERIALIZED_NAME_SOURCE_LOCALE_CODE = "source_locale_code";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_CODE)
