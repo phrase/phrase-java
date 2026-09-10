@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-09T13:48:17.234658927Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T11:03:54.499671428Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -134,6 +134,10 @@ public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS = "autotranslate_overwrite_unverified_translations";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE_OVERWRITE_UNVERIFIED_TRANSLATIONS)
   private Boolean autotranslateOverwriteUnverifiedTranslations;
+
+  public static final String SERIALIZED_NAME_FALLBACK_FOR_UNVERIFIED_TRANSLATIONS = "fallback_for_unverified_translations";
+  @SerializedName(SERIALIZED_NAME_FALLBACK_FOR_UNVERIFIED_TRANSLATIONS)
+  private Boolean fallbackForUnverifiedTranslations;
 
   public static final String SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED = "autocomplete_job_enabled";
   @SerializedName(SERIALIZED_NAME_AUTOCOMPLETE_JOB_ENABLED)
@@ -815,6 +819,28 @@ public class ProjectCreateParameters {
   }
 
 
+  public ProjectCreateParameters fallbackForUnverifiedTranslations(Boolean fallbackForUnverifiedTranslations) {
+    
+    this.fallbackForUnverifiedTranslations = fallbackForUnverifiedTranslations;
+    return this;
+  }
+
+   /**
+   * (Optional) When enabled, the fallback locale&#39;s translation is used on export for unverified translations in addition to empty ones. Requires a fallback locale to be configured on the locale.
+   * @return fallbackForUnverifiedTranslations
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getFallbackForUnverifiedTranslations() {
+    return fallbackForUnverifiedTranslations;
+  }
+
+
+  public void setFallbackForUnverifiedTranslations(Boolean fallbackForUnverifiedTranslations) {
+    this.fallbackForUnverifiedTranslations = fallbackForUnverifiedTranslations;
+  }
+
+
   public ProjectCreateParameters autocompleteJobEnabled(Boolean autocompleteJobEnabled) {
     
     this.autocompleteJobEnabled = autocompleteJobEnabled;
@@ -1055,6 +1081,7 @@ public class ProjectCreateParameters {
         Objects.equals(this.autotranslateUseMachineTranslation, projectCreateParameters.autotranslateUseMachineTranslation) &&
         Objects.equals(this.autotranslateUseTranslationMemory, projectCreateParameters.autotranslateUseTranslationMemory) &&
         Objects.equals(this.autotranslateOverwriteUnverifiedTranslations, projectCreateParameters.autotranslateOverwriteUnverifiedTranslations) &&
+        Objects.equals(this.fallbackForUnverifiedTranslations, projectCreateParameters.fallbackForUnverifiedTranslations) &&
         Objects.equals(this.autocompleteJobEnabled, projectCreateParameters.autocompleteJobEnabled) &&
         Objects.equals(this.jobLockingEnabled, projectCreateParameters.jobLockingEnabled) &&
         Objects.equals(this.smartSuggestEnabled, projectCreateParameters.smartSuggestEnabled) &&
@@ -1068,7 +1095,7 @@ public class ProjectCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, mainFormat, media, sharesTranslationMemory, tmIds, termBaseIds, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, autocompleteJobEnabled, jobLockingEnabled, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation, translationKeysSortCollation, defaultEncoding, cldrVersion, placeholderStyles);
+    return Objects.hash(name, mainFormat, media, sharesTranslationMemory, tmIds, termBaseIds, projectImage, removeProjectImage, accountId, pointOfContact, sourceProjectId, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, fallbackForUnverifiedTranslations, autocompleteJobEnabled, jobLockingEnabled, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation, translationKeysSortCollation, defaultEncoding, cldrVersion, placeholderStyles);
   }
 
   @Override
@@ -1101,6 +1128,7 @@ public class ProjectCreateParameters {
     sb.append("    autotranslateUseMachineTranslation: ").append(toIndentedString(autotranslateUseMachineTranslation)).append("\n");
     sb.append("    autotranslateUseTranslationMemory: ").append(toIndentedString(autotranslateUseTranslationMemory)).append("\n");
     sb.append("    autotranslateOverwriteUnverifiedTranslations: ").append(toIndentedString(autotranslateOverwriteUnverifiedTranslations)).append("\n");
+    sb.append("    fallbackForUnverifiedTranslations: ").append(toIndentedString(fallbackForUnverifiedTranslations)).append("\n");
     sb.append("    autocompleteJobEnabled: ").append(toIndentedString(autocompleteJobEnabled)).append("\n");
     sb.append("    jobLockingEnabled: ").append(toIndentedString(jobLockingEnabled)).append("\n");
     sb.append("    smartSuggestEnabled: ").append(toIndentedString(smartSuggestEnabled)).append("\n");

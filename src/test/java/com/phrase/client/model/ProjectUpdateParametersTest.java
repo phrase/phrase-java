@@ -242,6 +242,14 @@ public class ProjectUpdateParametersTest {
     }
 
     /**
+     * Test the property 'fallbackForUnverifiedTranslations'
+     */
+    @Test
+    public void fallbackForUnverifiedTranslationsTest() {
+        // TODO: test fallbackForUnverifiedTranslations
+    }
+
+    /**
      * Test the property 'defaultEncoding'
      */
     @Test

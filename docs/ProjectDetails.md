@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **autotranslateUseMachineTranslation** | **Boolean** |  |  [optional]
 **autotranslateUseTranslationMemory** | **Boolean** |  |  [optional]
 **autotranslateOverwriteUnverifiedTranslations** | **Boolean** |  |  [optional]
+**fallbackForUnverifiedTranslations** | **Boolean** |  |  [optional]
 **autocompleteJobEnabled** | **Boolean** |  |  [optional]
 **defaultEncoding** | **String** |  |  [optional]
 **cldrVersion** | **String** |  |  [optional]

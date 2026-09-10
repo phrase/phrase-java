@@ -254,6 +254,14 @@ public class ProjectDetailsTest {
     }
 
     /**
+     * Test the property 'fallbackForUnverifiedTranslations'
+     */
+    @Test
+    public void fallbackForUnverifiedTranslationsTest() {
+        // TODO: test fallbackForUnverifiedTranslations
+    }
+
+    /**
      * Test the property 'autocompleteJobEnabled'
      */
     @Test
