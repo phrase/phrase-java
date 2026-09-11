@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * DistributionUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T11:11:06.552180239Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T12:31:16.760733738Z[Etc/UTC]")
 public class DistributionUpdateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

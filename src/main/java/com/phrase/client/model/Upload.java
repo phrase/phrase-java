@@ -32,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Upload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T11:11:06.552180239Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T12:31:16.760733738Z[Etc/UTC]")
 public class Upload {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -158,7 +158,7 @@ public class Upload {
   }
 
    /**
-   * Get state
+   * Processing state of the upload: &#x60;initialized&#x60;, &#x60;processing&#x60;, &#x60;success&#x60;, or &#x60;error&#x60;. &#x60;error&#x60; means processing failed — for example the file could not be parsed, or a provided &#x60;file_format&#x60; didn&#39;t match the file&#39;s actual content. Poll this field until it leaves &#x60;initialized&#x60;/&#x60;processing&#x60; to get the final outcome. 
    * @return state
   **/
   @javax.annotation.Nullable

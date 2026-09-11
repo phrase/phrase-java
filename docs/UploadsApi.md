@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 Upload a new file
 
-Upload a new language file. Creates necessary resources in your project.  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
+Upload a new language file. Creates necessary resources in your project.  The upload is processed asynchronously: this endpoint returns &#x60;201 Created&#x60; once the file has been accepted and enqueued, not once processing has finished. Poll &#x60;GET /projects/{project_id}/uploads/{id}&#x60; and check the &#x60;state&#x60; field — &#x60;error&#x60; means processing failed (for example, an unparseable file or a &#x60;file_format&#x60; that doesn&#39;t match the file&#39;s actual content).  Note: be aware of [upload limits](https://support.phrase.com/hc/en-us/articles/8548271212188-Phrase-Strings-Limits#file-size-upload-limits-0-0). 
 
 ### Example
 ```java
@@ -45,7 +45,7 @@ public class Example {
     UploadsApi apiInstance = new UploadsApi(defaultClient);
     String projectId = "projectId_example"; // String | Project ID
     File _file = new File("/path/to/file"); // File | File to be imported
-    String fileFormat = "fileFormat_example"; // String | File format. Auto-detected when possible and not specified.
+    String fileFormat = "fileFormat_example"; // String | File format of the uploaded file, given as a format's `api_name`. See our [Formats API Endpoint](/en/api/strings/formats/list-formats) for the full list of supported formats.  Optional. When omitted, Phrase tries to auto-detect the format from the file's content. This is not always possible for JSON files, since several JSON-based formats (e.g. `json`, `simple_json`, `nested_json`) share the same structure. 
     String localeId = "localeId_example"; // String | Locale of the file's content. Can be the name or id of the locale. Preferred is id.
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String branch = "branch_example"; // String | specify the branch to use
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID |
  **_file** | **File**| File to be imported |
- **fileFormat** | **String**| File format. Auto-detected when possible and not specified. |
+ **fileFormat** | **String**| File format of the uploaded file, given as a format&#39;s &#x60;api_name&#x60;. See our [Formats API Endpoint](/en/api/strings/formats/list-formats) for the full list of supported formats.  Optional. When omitted, Phrase tries to auto-detect the format from the file&#39;s content. This is not always possible for JSON files, since several JSON-based formats (e.g. &#x60;json&#x60;, &#x60;simple_json&#x60;, &#x60;nested_json&#x60;) share the same structure.  |
  **localeId** | **String**| Locale of the file&#39;s content. Can be the name or id of the locale. Preferred is id. |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **branch** | **String**| specify the branch to use | [optional]
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 Get a single upload
 
-View details and summary for a single upload.
+View details and summary for a single upload. Use this endpoint to poll for the outcome of an upload created via &#x60;POST /projects/{project_id}/uploads&#x60; — check the &#x60;state&#x60; field. 
 
 ### Example
 ```java
