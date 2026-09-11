@@ -25,13 +25,14 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Upload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-10T11:54:51.921162966Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T11:11:06.552180239Z[Etc/UTC]")
 public class Upload {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -48,6 +49,10 @@ public class Upload {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   private String state;
+
+  public static final String SERIALIZED_NAME_ERROR_MESSAGE = "error_message";
+  @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  private String errorMessage;
 
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
@@ -165,6 +170,28 @@ public class Upload {
 
   public void setState(String state) {
     this.state = state;
+  }
+
+
+  public Upload errorMessage(String errorMessage) {
+    
+    this.errorMessage = errorMessage;
+    return this;
+  }
+
+   /**
+   * A user-facing message explaining why the upload failed, or &#x60;null&#x60; if the upload did not fail.  This message is intended for display only. Its wording may change at any time and it should not be parsed or relied upon programmatically. 
+   * @return errorMessage
+  **/
+  @javax.annotation.Nullable
+
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+
+  public void setErrorMessage(String errorMessage) {
+    this.errorMessage = errorMessage;
   }
 
 
@@ -342,6 +369,7 @@ public class Upload {
         Objects.equals(this.filename, upload.filename) &&
         Objects.equals(this.format, upload.format) &&
         Objects.equals(this.state, upload.state) &&
+        Objects.equals(this.errorMessage, upload.errorMessage) &&
         Objects.equals(this.tag, upload.tag) &&
         Objects.equals(this.tags, upload.tags) &&
         Objects.equals(this.url, upload.url) &&
@@ -351,9 +379,20 @@ public class Upload {
         Objects.equals(this.updatedAt, upload.updatedAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, filename, format, state, tag, tags, url, user, summary, createdAt, updatedAt);
+    return Objects.hash(id, filename, format, state, errorMessage, tag, tags, url, user, summary, createdAt, updatedAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -364,6 +403,7 @@ public class Upload {
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
