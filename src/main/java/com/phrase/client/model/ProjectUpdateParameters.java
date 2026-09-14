@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T13:00:55.679918115Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T13:19:29.205338100Z[Etc/UTC]")
 public class ProjectUpdateParameters {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -1006,7 +1006,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) CLDR plural-rule version used by the project.
+   * (Optional) CLDR plural-rule version used by the project. Pass &#x60;legacy&#x60; for pre-CLDR pluralization behaviour, or a CLDR version string such as &#x60;cldr48&#x60;. Also used as the default version for the ICU skeleton endpoint (&#x60;POST /icu/skeleton&#x60;) when its own &#x60;cldr_version&#x60; parameter is omitted.
    * @return cldrVersion
   **/
   @javax.annotation.Nullable
