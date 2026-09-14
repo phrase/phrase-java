@@ -122,7 +122,8 @@ public class SpacesApiTest {
         String xPhraseAppOTP = null;
         Integer page = null;
         Integer perPage = null;
-        List<Space> response = api.spacesList(accountId, xPhraseAppOTP, page, perPage);
+        String q = null;
+        List<Space> response = api.spacesList(accountId, xPhraseAppOTP, page, perPage, q);
 
         // TODO: test validations
     }
