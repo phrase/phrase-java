@@ -89,7 +89,7 @@ public class ProjectsApiTest {
     /**
      * Update a project
      *
-     * Update an existing project.
+     * Update an existing project, including its review workflow, pre-translation/autotranslate rules, and machine-translation configuration (see workflow, machine_translation_enabled, and the autotranslate_* fields below).
      *
      * @throws ApiException
      *          if the Api call fails

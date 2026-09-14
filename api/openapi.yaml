@@ -16991,7 +16991,10 @@ paths:
       x-cli-version: "2.5"
       x-accepts: application/json
     patch:
-      description: Update an existing project.
+      description: |-
+        Update an existing project, including its review workflow, pre-translation/autotranslate
+        rules, and machine-translation configuration (see workflow, machine_translation_enabled,
+        and the autotranslate_* fields below).
       operationId: project/update
       parameters:
       - description: Two-Factor-Authentication token (optional)
