@@ -30,7 +30,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MemberUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T11:43:09.543912847Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T12:34:16.037866800Z[Etc/UTC]")
 public class MemberUpdateParameters {
   public static final String SERIALIZED_NAME_STRATEGY = "strategy";
   @SerializedName(SERIALIZED_NAME_STRATEGY)
@@ -136,7 +136,7 @@ public class MemberUpdateParameters {
   }
 
    /**
-   * List of locale ids the user has access to.
+   * List of locale ids the user has access to. This is project-scoped and must be paired with &#x60;project_ids&#x60; (and &#x60;strategy&#x60;) to take effect; it does not grant account-wide language access.
    * @return localeIds
   **/
   @javax.annotation.Nullable
@@ -166,7 +166,7 @@ public class MemberUpdateParameters {
   }
 
    /**
-   * List of default locales for the user.
+   * List of default locales for the user, applied across all of the user&#39;s projects. This is the account-level field corresponding to \&quot;Language access\&quot; in the translator profile UI.
    * @return defaultLocaleCodes
   **/
   @javax.annotation.Nullable
