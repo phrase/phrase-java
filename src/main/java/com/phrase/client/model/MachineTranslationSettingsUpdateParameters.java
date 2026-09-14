@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MachineTranslationSettingsUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T11:42:52.379807647Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T11:43:09.543912847Z[Etc/UTC]")
 public class MachineTranslationSettingsUpdateParameters {
   public static final String SERIALIZED_NAME_DEFAULT_SERVICE = "default_service";
   @SerializedName(SERIALIZED_NAME_DEFAULT_SERVICE)
@@ -43,7 +43,7 @@ public class MachineTranslationSettingsUpdateParameters {
   }
 
    /**
-   * The machine translation engine to use as the account default. Supported values: language_ai_translate, aita_translate, microsoft_translate, google_translate, amazon_translate. Pass null or an empty string to reset to the plan default. 
+   * The machine translation engine to use as the account default. Supported values: language_ai_translate, aita_translate, microsoft_translate, google_translate, amazon_translate, intento_translate, gpt_translate. Pass null or an empty string to reset to the plan default. 
    * @return defaultService
   **/
   @javax.annotation.Nullable
