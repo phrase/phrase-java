@@ -286,6 +286,14 @@ public class ProjectDetailsTest {
     }
 
     /**
+     * Test the property 'translationKeysSortCollation'
+     */
+    @Test
+    public void translationKeysSortCollationTest() {
+        // TODO: test translationKeysSortCollation
+    }
+
+    /**
      * Test the property 'jobLockingEnabled'
      */
     @Test

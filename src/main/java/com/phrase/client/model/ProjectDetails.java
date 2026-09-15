@@ -33,7 +33,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T13:19:29.205338100Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-15T14:02:25.158655877Z[Etc/UTC]")
 public class ProjectDetails {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -154,6 +154,57 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_CLDR_VERSION = "cldr_version";
   @SerializedName(SERIALIZED_NAME_CLDR_VERSION)
   private String cldrVersion;
+
+  /**
+   * Gets or Sets translationKeysSortCollation
+   */
+  @JsonAdapter(TranslationKeysSortCollationEnum.Adapter.class)
+  public enum TranslationKeysSortCollationEnum {
+    GENERAL_CI("general_ci"),
+    
+    UNICODE_CI("unicode_ci");
+
+    private String value;
+
+    TranslationKeysSortCollationEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TranslationKeysSortCollationEnum fromValue(String value) {
+      for (TranslationKeysSortCollationEnum b : TranslationKeysSortCollationEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<TranslationKeysSortCollationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TranslationKeysSortCollationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TranslationKeysSortCollationEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TranslationKeysSortCollationEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION = "translation_keys_sort_collation";
+  @SerializedName(SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION)
+  private TranslationKeysSortCollationEnum translationKeysSortCollation;
 
   public static final String SERIALIZED_NAME_JOB_LOCKING_ENABLED = "job_locking_enabled";
   @SerializedName(SERIALIZED_NAME_JOB_LOCKING_ENABLED)
@@ -830,6 +881,28 @@ public class ProjectDetails {
   }
 
 
+  public ProjectDetails translationKeysSortCollation(TranslationKeysSortCollationEnum translationKeysSortCollation) {
+    
+    this.translationKeysSortCollation = translationKeysSortCollation;
+    return this;
+  }
+
+   /**
+   * Get translationKeysSortCollation
+   * @return translationKeysSortCollation
+  **/
+  @javax.annotation.Nullable
+
+  public TranslationKeysSortCollationEnum getTranslationKeysSortCollation() {
+    return translationKeysSortCollation;
+  }
+
+
+  public void setTranslationKeysSortCollation(TranslationKeysSortCollationEnum translationKeysSortCollation) {
+    this.translationKeysSortCollation = translationKeysSortCollation;
+  }
+
+
   public ProjectDetails jobLockingEnabled(Boolean jobLockingEnabled) {
     
     this.jobLockingEnabled = jobLockingEnabled;
@@ -942,6 +1015,7 @@ public class ProjectDetails {
         Objects.equals(this.autocompleteJobEnabled, projectDetails.autocompleteJobEnabled) &&
         Objects.equals(this.defaultEncoding, projectDetails.defaultEncoding) &&
         Objects.equals(this.cldrVersion, projectDetails.cldrVersion) &&
+        Objects.equals(this.translationKeysSortCollation, projectDetails.translationKeysSortCollation) &&
         Objects.equals(this.jobLockingEnabled, projectDetails.jobLockingEnabled) &&
         Objects.equals(this.placeholderStyles, projectDetails.placeholderStyles) &&
         Objects.equals(this.branch, projectDetails.branch);
@@ -949,7 +1023,7 @@ public class ProjectDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, fallbackForUnverifiedTranslations, autocompleteJobEnabled, defaultEncoding, cldrVersion, jobLockingEnabled, placeholderStyles, branch);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, fallbackForUnverifiedTranslations, autocompleteJobEnabled, defaultEncoding, cldrVersion, translationKeysSortCollation, jobLockingEnabled, placeholderStyles, branch);
   }
 
   @Override
@@ -986,6 +1060,7 @@ public class ProjectDetails {
     sb.append("    autocompleteJobEnabled: ").append(toIndentedString(autocompleteJobEnabled)).append("\n");
     sb.append("    defaultEncoding: ").append(toIndentedString(defaultEncoding)).append("\n");
     sb.append("    cldrVersion: ").append(toIndentedString(cldrVersion)).append("\n");
+    sb.append("    translationKeysSortCollation: ").append(toIndentedString(translationKeysSortCollation)).append("\n");
     sb.append("    jobLockingEnabled: ").append(toIndentedString(jobLockingEnabled)).append("\n");
     sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");

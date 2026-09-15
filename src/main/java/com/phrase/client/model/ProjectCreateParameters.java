@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProjectCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-14T13:19:29.205338100Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-15T14:02:25.158655877Z[Etc/UTC]")
 public class ProjectCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -159,9 +159,56 @@ public class ProjectCreateParameters {
   @SerializedName(SERIALIZED_NAME_SMART_SUGGEST_USE_MACHINE_TRANSLATION)
   private Boolean smartSuggestUseMachineTranslation;
 
+  /**
+   * (Optional) Collation used when sorting translation keys alphabetically. Defaults to &#x60;unicode_ci&#x60; when omitted.
+   */
+  @JsonAdapter(TranslationKeysSortCollationEnum.Adapter.class)
+  public enum TranslationKeysSortCollationEnum {
+    GENERAL_CI("general_ci"),
+    
+    UNICODE_CI("unicode_ci");
+
+    private String value;
+
+    TranslationKeysSortCollationEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TranslationKeysSortCollationEnum fromValue(String value) {
+      for (TranslationKeysSortCollationEnum b : TranslationKeysSortCollationEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<TranslationKeysSortCollationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TranslationKeysSortCollationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TranslationKeysSortCollationEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TranslationKeysSortCollationEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION = "translation_keys_sort_collation";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEYS_SORT_COLLATION)
-  private String translationKeysSortCollation;
+  private TranslationKeysSortCollationEnum translationKeysSortCollation;
 
   /**
    * (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads.
@@ -951,7 +998,7 @@ public class ProjectCreateParameters {
   }
 
 
-  public ProjectCreateParameters translationKeysSortCollation(String translationKeysSortCollation) {
+  public ProjectCreateParameters translationKeysSortCollation(TranslationKeysSortCollationEnum translationKeysSortCollation) {
     
     this.translationKeysSortCollation = translationKeysSortCollation;
     return this;
@@ -963,12 +1010,12 @@ public class ProjectCreateParameters {
   **/
   @javax.annotation.Nullable
 
-  public String getTranslationKeysSortCollation() {
+  public TranslationKeysSortCollationEnum getTranslationKeysSortCollation() {
     return translationKeysSortCollation;
   }
 
 
-  public void setTranslationKeysSortCollation(String translationKeysSortCollation) {
+  public void setTranslationKeysSortCollation(TranslationKeysSortCollationEnum translationKeysSortCollation) {
     this.translationKeysSortCollation = translationKeysSortCollation;
   }
 

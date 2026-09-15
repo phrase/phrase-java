@@ -36,9 +36,19 @@ Name | Type | Description | Notes
 **autocompleteJobEnabled** | **Boolean** |  |  [optional]
 **defaultEncoding** | **String** |  |  [optional]
 **cldrVersion** | **String** |  |  [optional]
+**translationKeysSortCollation** | [**TranslationKeysSortCollationEnum**](#TranslationKeysSortCollationEnum) |  |  [optional]
 **jobLockingEnabled** | **Boolean** |  |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** |  |  [optional]
 **branch** | [**Branch**](Branch.md) |  |  [optional]
+
+
+
+## Enum: TranslationKeysSortCollationEnum
+
+Name | Value
+---- | -----
+GENERAL_CI | &quot;general_ci&quot;
+UNICODE_CI | &quot;unicode_ci&quot;
 
 
 

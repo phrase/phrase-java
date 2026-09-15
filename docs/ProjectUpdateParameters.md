@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **smartSuggestEnabled** | **Boolean** | (Optional) Enable Smart Suggest for the project. |  [optional]
 **smartSuggestUseGlossary** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from the project glossary. |  [optional]
 **smartSuggestUseMachineTranslation** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from machine translation. |  [optional]
-**translationKeysSortCollation** | **String** | (Optional) Collation used when sorting translation keys alphabetically. |  [optional]
+**translationKeysSortCollation** | [**TranslationKeysSortCollationEnum**](#TranslationKeysSortCollationEnum) | (Optional) Collation used when sorting translation keys alphabetically. |  [optional]
 **cldrVersion** | **String** | (Optional) CLDR plural-rule version used by the project. Pass &#x60;legacy&#x60; for pre-CLDR pluralization behaviour, or a CLDR version string such as &#x60;cldr48&#x60;. Also used as the default version for the ICU skeleton endpoint (&#x60;POST /icu/skeleton&#x60;) when its own &#x60;cldr_version&#x60; parameter is omitted. |  [optional]
 
 
@@ -53,6 +53,15 @@ UTF_16 | &quot;UTF-16&quot;
 UTF_16BE | &quot;UTF-16BE&quot;
 UTF_16LE | &quot;UTF-16LE&quot;
 ISO_8859_1 | &quot;ISO-8859-1&quot;
+
+
+
+## Enum: TranslationKeysSortCollationEnum
+
+Name | Value
+---- | -----
+GENERAL_CI | &quot;general_ci&quot;
+UNICODE_CI | &quot;unicode_ci&quot;
 
 
 

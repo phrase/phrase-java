@@ -38,10 +38,19 @@ Name | Type | Description | Notes
 **smartSuggestEnabled** | **Boolean** | (Optional) Enable Smart Suggest for the project. Defaults to &#x60;true&#x60; when omitted. |  [optional]
 **smartSuggestUseGlossary** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from the project glossary. Defaults to &#x60;true&#x60; when omitted. |  [optional]
 **smartSuggestUseMachineTranslation** | **Boolean** | (Optional) Allow Smart Suggest to source suggestions from machine translation. Defaults to &#x60;true&#x60; when omitted. |  [optional]
-**translationKeysSortCollation** | **String** | (Optional) Collation used when sorting translation keys alphabetically. Defaults to &#x60;unicode_ci&#x60; when omitted. |  [optional]
+**translationKeysSortCollation** | [**TranslationKeysSortCollationEnum**](#TranslationKeysSortCollationEnum) | (Optional) Collation used when sorting translation keys alphabetically. Defaults to &#x60;unicode_ci&#x60; when omitted. |  [optional]
 **defaultEncoding** | [**DefaultEncodingEnum**](#DefaultEncodingEnum) | (Optional) Sets the default encoding for Uploads. If you leave it empty, we will try to guess it automatically for you when you Upload a file. You can still override this value by setting the [&#x60;file_encoding&#x60;](/en/api/strings/uploads/upload-a-new-file) parameter for Uploads. |  [optional]
 **cldrVersion** | **String** | (Optional) CLDR plural-rule version used by the project. Pass &#x60;legacy&#x60; for pre-CLDR pluralization behaviour, or a CLDR version string such as &#x60;cldr48&#x60;. Also used as the default version for the ICU skeleton endpoint (&#x60;POST /icu/skeleton&#x60;) when its own &#x60;cldr_version&#x60; parameter is omitted. |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** | (Optional) List of placeholder styles enabled for the project. |  [optional]
+
+
+
+## Enum: TranslationKeysSortCollationEnum
+
+Name | Value
+---- | -----
+GENERAL_CI | &quot;general_ci&quot;
+UNICODE_CI | &quot;unicode_ci&quot;
 
 
 
