@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LocalePreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-15T14:02:25.158655877Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-16T09:51:23.045935027Z[Etc/UTC]")
 public class LocalePreview {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

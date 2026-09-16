@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BranchSyncParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-15T14:02:25.158655877Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-16T09:51:23.045935027Z[Etc/UTC]")
 public class BranchSyncParameters {
   /**
    * Conflict resolution strategy applied when the branch and its base have diverged. &#x60;use_main&#x60; keeps the values from the base branch; &#x60;use_branch&#x60; keeps the values from this branch. 
