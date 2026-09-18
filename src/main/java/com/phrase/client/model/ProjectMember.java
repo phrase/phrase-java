@@ -18,35 +18,32 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.phrase.client.model.LocalePreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ProjectLocales
+ * ProjectMember
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T06:38:16.191172616Z[Etc/UTC]")
-public class ProjectLocales {
+public class ProjectMember {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
+
+  public static final String SERIALIZED_NAME_USERNAME = "username";
+  @SerializedName(SERIALIZED_NAME_USERNAME)
+  private String username;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public static final String SERIALIZED_NAME_PROJECT_ROLE = "project_role";
-  @SerializedName(SERIALIZED_NAME_PROJECT_ROLE)
-  private String projectRole;
-
-  public static final String SERIALIZED_NAME_MAIN_FORMAT = "main_format";
-  @SerializedName(SERIALIZED_NAME_MAIN_FORMAT)
-  private String mainFormat;
+  public static final String SERIALIZED_NAME_POSITION = "position";
+  @SerializedName(SERIALIZED_NAME_POSITION)
+  private String position;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -56,14 +53,10 @@ public class ProjectLocales {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
-  public static final String SERIALIZED_NAME_LOCALES = "locales";
-  @SerializedName(SERIALIZED_NAME_LOCALES)
-  private List<LocalePreview> locales;
-
-  public ProjectLocales() {
+  public ProjectMember() {
   }
 
-  public ProjectLocales id(String id) {
+  public ProjectMember id(String id) {
     
     this.id = id;
     return this;
@@ -85,7 +78,29 @@ public class ProjectLocales {
   }
 
 
-  public ProjectLocales name(String name) {
+  public ProjectMember username(String username) {
+    
+    this.username = username;
+    return this;
+  }
+
+   /**
+   * Get username
+   * @return username
+  **/
+  @javax.annotation.Nullable
+
+  public String getUsername() {
+    return username;
+  }
+
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+
+  public ProjectMember name(String name) {
     
     this.name = name;
     return this;
@@ -107,51 +122,29 @@ public class ProjectLocales {
   }
 
 
-  public ProjectLocales projectRole(String projectRole) {
+  public ProjectMember position(String position) {
     
-    this.projectRole = projectRole;
+    this.position = position;
     return this;
   }
 
    /**
-   * Get projectRole
-   * @return projectRole
+   * Get position
+   * @return position
   **/
   @javax.annotation.Nullable
 
-  public String getProjectRole() {
-    return projectRole;
+  public String getPosition() {
+    return position;
   }
 
 
-  public void setProjectRole(String projectRole) {
-    this.projectRole = projectRole;
+  public void setPosition(String position) {
+    this.position = position;
   }
 
 
-  public ProjectLocales mainFormat(String mainFormat) {
-    
-    this.mainFormat = mainFormat;
-    return this;
-  }
-
-   /**
-   * Get mainFormat
-   * @return mainFormat
-  **/
-  @javax.annotation.Nullable
-
-  public String getMainFormat() {
-    return mainFormat;
-  }
-
-
-  public void setMainFormat(String mainFormat) {
-    this.mainFormat = mainFormat;
-  }
-
-
-  public ProjectLocales createdAt(OffsetDateTime createdAt) {
+  public ProjectMember createdAt(OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -173,7 +166,7 @@ public class ProjectLocales {
   }
 
 
-  public ProjectLocales updatedAt(OffsetDateTime updatedAt) {
+  public ProjectMember updatedAt(OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -194,36 +187,6 @@ public class ProjectLocales {
     this.updatedAt = updatedAt;
   }
 
-
-  public ProjectLocales locales(List<LocalePreview> locales) {
-    
-    this.locales = locales;
-    return this;
-  }
-
-  public ProjectLocales addLocalesItem(LocalePreview localesItem) {
-    if (this.locales == null) {
-      this.locales = new ArrayList<>();
-    }
-    this.locales.add(localesItem);
-    return this;
-  }
-
-   /**
-   * Get locales
-   * @return locales
-  **/
-  @javax.annotation.Nullable
-
-  public List<LocalePreview> getLocales() {
-    return locales;
-  }
-
-
-  public void setLocales(List<LocalePreview> locales) {
-    this.locales = locales;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -232,32 +195,30 @@ public class ProjectLocales {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProjectLocales projectLocales = (ProjectLocales) o;
-    return Objects.equals(this.id, projectLocales.id) &&
-        Objects.equals(this.name, projectLocales.name) &&
-        Objects.equals(this.projectRole, projectLocales.projectRole) &&
-        Objects.equals(this.mainFormat, projectLocales.mainFormat) &&
-        Objects.equals(this.createdAt, projectLocales.createdAt) &&
-        Objects.equals(this.updatedAt, projectLocales.updatedAt) &&
-        Objects.equals(this.locales, projectLocales.locales);
+    ProjectMember projectMember = (ProjectMember) o;
+    return Objects.equals(this.id, projectMember.id) &&
+        Objects.equals(this.username, projectMember.username) &&
+        Objects.equals(this.name, projectMember.name) &&
+        Objects.equals(this.position, projectMember.position) &&
+        Objects.equals(this.createdAt, projectMember.createdAt) &&
+        Objects.equals(this.updatedAt, projectMember.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, projectRole, mainFormat, createdAt, updatedAt, locales);
+    return Objects.hash(id, username, name, position, createdAt, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProjectLocales {\n");
+    sb.append("class ProjectMember {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    projectRole: ").append(toIndentedString(projectRole)).append("\n");
-    sb.append("    mainFormat: ").append(toIndentedString(mainFormat)).append("\n");
+    sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
     sb.append("}");
     return sb.toString();
   }

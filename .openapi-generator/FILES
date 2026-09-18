@@ -199,6 +199,7 @@ docs/Project.md
 docs/ProjectCreateParameters.md
 docs/ProjectDetails.md
 docs/ProjectLocales.md
+docs/ProjectMember.md
 docs/ProjectReport.md
 docs/ProjectShort.md
 docs/ProjectUpdateParameters.md
@@ -551,6 +552,7 @@ src/main/java/com/phrase/client/model/Project.java
 src/main/java/com/phrase/client/model/ProjectCreateParameters.java
 src/main/java/com/phrase/client/model/ProjectDetails.java
 src/main/java/com/phrase/client/model/ProjectLocales.java
+src/main/java/com/phrase/client/model/ProjectMember.java
 src/main/java/com/phrase/client/model/ProjectReport.java
 src/main/java/com/phrase/client/model/ProjectShort.java
 src/main/java/com/phrase/client/model/ProjectUpdateParameters.java
@@ -850,6 +852,7 @@ src/test/java/com/phrase/client/model/PreTranslationTest.java
 src/test/java/com/phrase/client/model/ProjectCreateParametersTest.java
 src/test/java/com/phrase/client/model/ProjectDetailsTest.java
 src/test/java/com/phrase/client/model/ProjectLocalesTest.java
+src/test/java/com/phrase/client/model/ProjectMemberTest.java
 src/test/java/com/phrase/client/model/ProjectReportTest.java
 src/test/java/com/phrase/client/model/ProjectShortTest.java
 src/test/java/com/phrase/client/model/ProjectTest.java

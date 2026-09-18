@@ -18,6 +18,7 @@ import com.phrase.client.model.Member;
 import com.phrase.client.model.MemberProjectDetail;
 import com.phrase.client.model.MemberUpdateParameters;
 import com.phrase.client.model.MemberUpdateSettingsParameters;
+import com.phrase.client.model.ProjectMember;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -105,6 +106,27 @@ public class MembersApiTest {
         MemberUpdateSettingsParameters memberUpdateSettingsParameters = null;
         String xPhraseAppOTP = null;
         MemberProjectDetail response = api.memberUpdateSettings(projectId, id, memberUpdateSettingsParameters, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List project members
+     *
+     * Get all members active in the project. Access token scope must include &#x60;read&#x60;.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void membersByProjectTest() throws ApiException {
+        String projectId = null;
+        String xPhraseAppOTP = null;
+        String q = null;
+        String jobId = null;
+        Integer page = null;
+        Integer perPage = null;
+        List<ProjectMember> response = api.membersByProject(projectId, xPhraseAppOTP, q, jobId, page, perPage);
 
         // TODO: test validations
     }
