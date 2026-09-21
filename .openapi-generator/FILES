@@ -251,6 +251,7 @@ docs/StyleguideDetails.md
 docs/StyleguidePreview.md
 docs/StyleguideUpdateParameters.md
 docs/Subscription.md
+docs/SupportedLanguagesApi.md
 docs/Tag.md
 docs/TagCreateParameters.md
 docs/TagWithStats.md
@@ -384,6 +385,7 @@ src/main/java/com/phrase/client/api/ScreenshotsApi.java
 src/main/java/com/phrase/client/api/SearchApi.java
 src/main/java/com/phrase/client/api/SpacesApi.java
 src/main/java/com/phrase/client/api/StyleGuidesApi.java
+src/main/java/com/phrase/client/api/SupportedLanguagesApi.java
 src/main/java/com/phrase/client/api/TagsApi.java
 src/main/java/com/phrase/client/api/TeamsApi.java
 src/main/java/com/phrase/client/api/TranslationsApi.java
@@ -691,6 +693,7 @@ src/test/java/com/phrase/client/api/ScreenshotsApiTest.java
 src/test/java/com/phrase/client/api/SearchApiTest.java
 src/test/java/com/phrase/client/api/SpacesApiTest.java
 src/test/java/com/phrase/client/api/StyleGuidesApiTest.java
+src/test/java/com/phrase/client/api/SupportedLanguagesApiTest.java
 src/test/java/com/phrase/client/api/TagsApiTest.java
 src/test/java/com/phrase/client/api/TeamsApiTest.java
 src/test/java/com/phrase/client/api/TranslationsApiTest.java

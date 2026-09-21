@@ -356,6 +356,7 @@ Class | Method | HTTP request | Description
 *StyleGuidesApi* | [**styleguideShow**](docs/StyleGuidesApi.md#styleguideShow) | **GET** /projects/{project_id}/styleguides/{id} | Get a single style guide
 *StyleGuidesApi* | [**styleguideUpdate**](docs/StyleGuidesApi.md#styleguideUpdate) | **PATCH** /projects/{project_id}/styleguides/{id} | Update a style guide
 *StyleGuidesApi* | [**styleguidesList**](docs/StyleGuidesApi.md#styleguidesList) | **GET** /projects/{project_id}/styleguides | List style guides
+*SupportedLanguagesApi* | [**languagesList**](docs/SupportedLanguagesApi.md#languagesList) | **GET** /languages | List supported languages
 *TagsApi* | [**tagCreate**](docs/TagsApi.md#tagCreate) | **POST** /projects/{project_id}/tags | Create a tag
 *TagsApi* | [**tagDelete**](docs/TagsApi.md#tagDelete) | **DELETE** /projects/{project_id}/tags/{name} | Delete a tag
 *TagsApi* | [**tagShow**](docs/TagsApi.md#tagShow) | **GET** /projects/{project_id}/tags/{name} | Get a single tag
