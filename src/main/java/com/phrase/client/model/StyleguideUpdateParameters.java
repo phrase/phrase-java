@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * StyleguideUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:12:29.966362376Z[Etc/UTC]")
+
 public class StyleguideUpdateParameters {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)

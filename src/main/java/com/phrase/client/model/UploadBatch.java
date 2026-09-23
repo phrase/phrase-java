@@ -32,7 +32,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UploadBatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:12:29.966362376Z[Etc/UTC]")
+
 public class UploadBatch {
   /**
    * Processing state of the upload batch
