@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TranslationsExcludeParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T12:44:23.937133705Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:00:40.696708579Z[Etc/UTC]")
 public class TranslationsExcludeParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
