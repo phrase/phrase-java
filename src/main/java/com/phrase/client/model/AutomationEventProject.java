@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * The project associated with this automation event. Null when no project is set.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-21T05:34:38.491753454Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T07:39:42.799212809Z[Etc/UTC]")
 public class AutomationEventProject {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

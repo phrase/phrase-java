@@ -393,6 +393,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -662,6 +664,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -778,6 +782,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -885,6 +891,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1036,6 +1044,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1174,6 +1184,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1305,6 +1317,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1438,6 +1452,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1558,6 +1574,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1698,6 +1716,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1808,6 +1828,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -1919,6 +1941,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2051,6 +2075,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2171,6 +2197,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2295,6 +2323,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2403,6 +2433,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2532,6 +2564,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2696,6 +2730,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2806,6 +2842,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2901,6 +2939,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -2994,6 +3034,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3091,6 +3133,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3226,6 +3270,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3348,6 +3394,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3473,6 +3521,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3582,6 +3632,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3713,6 +3765,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3843,6 +3897,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -3975,6 +4031,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -4124,6 +4182,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -4250,6 +4310,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -4381,6 +4443,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -4514,6 +4578,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -4648,6 +4714,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -4781,6 +4849,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -4935,6 +5005,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -5056,6 +5128,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -5189,6 +5263,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -5309,6 +5385,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -5439,6 +5517,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -5787,6 +5867,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -5940,6 +6022,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6086,6 +6170,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6214,6 +6300,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6334,6 +6422,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6458,6 +6548,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6566,6 +6658,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6695,6 +6789,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6835,6 +6931,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -6964,6 +7062,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7097,6 +7197,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7214,6 +7316,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7352,6 +7456,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7490,6 +7596,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7589,6 +7697,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7688,6 +7798,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7789,6 +7901,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7890,6 +8004,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -7996,6 +8112,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -8200,6 +8318,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -8324,6 +8444,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -8492,6 +8614,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -8623,6 +8747,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -8762,6 +8888,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -8892,6 +9020,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9027,6 +9157,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9162,6 +9294,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9297,6 +9431,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9435,6 +9571,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9573,6 +9711,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9671,6 +9811,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9773,6 +9915,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -9914,6 +10058,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10035,6 +10181,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10168,6 +10316,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10288,6 +10438,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10418,6 +10570,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10551,6 +10705,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10671,6 +10827,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10795,6 +10953,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -10903,6 +11063,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11032,6 +11194,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11156,6 +11320,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11265,6 +11431,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11380,6 +11548,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11478,6 +11648,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11597,6 +11769,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11796,6 +11970,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -11932,6 +12108,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -12074,6 +12252,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -12203,6 +12383,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -12342,6 +12524,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -12485,6 +12669,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -12611,6 +12797,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -12746,6 +12934,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -12901,6 +13091,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -13036,6 +13228,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -13167,6 +13361,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -13302,6 +13498,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -13488,6 +13686,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -13613,6 +13813,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -13745,6 +13947,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -13880,6 +14084,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14012,6 +14218,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14144,6 +14352,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14277,6 +14487,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14397,6 +14609,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14521,6 +14735,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14629,6 +14845,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14758,6 +14976,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -14888,6 +15108,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15037,6 +15259,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15151,6 +15375,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15268,6 +15494,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15392,6 +15620,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15518,6 +15748,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15649,6 +15881,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15774,6 +16008,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -15944,6 +16180,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -16071,6 +16309,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -16212,6 +16452,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -16355,6 +16597,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -16504,6 +16748,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -16684,6 +16930,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -16800,6 +17048,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -16917,6 +17167,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17016,6 +17268,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17139,6 +17393,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17281,6 +17537,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17379,6 +17637,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17489,6 +17749,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17611,6 +17873,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17718,6 +17982,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17830,6 +18096,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -17942,6 +18210,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18054,6 +18324,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18188,6 +18460,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18286,6 +18560,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18396,6 +18672,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18509,6 +18787,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18616,6 +18896,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18798,6 +19080,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -18906,6 +19190,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19105,6 +19391,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19223,6 +19511,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19357,6 +19647,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19477,6 +19769,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19601,6 +19895,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19709,6 +20005,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19838,6 +20136,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -19973,6 +20273,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20100,6 +20402,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20239,6 +20543,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20350,6 +20656,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20482,6 +20790,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20633,6 +20943,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20771,6 +21083,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20880,6 +21194,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -20985,6 +21301,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21107,6 +21425,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21205,6 +21525,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21296,6 +21618,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21423,6 +21747,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21543,6 +21869,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21652,6 +21980,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21784,6 +22114,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -21937,6 +22269,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -22067,6 +22401,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -22217,6 +22553,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -22351,6 +22689,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -22490,6 +22830,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -22606,6 +22948,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -22732,6 +23076,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -22875,6 +23221,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23004,6 +23352,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23137,6 +23487,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23254,6 +23606,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23392,6 +23746,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23563,6 +23919,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23684,6 +24042,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23817,6 +24177,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -23947,6 +24309,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -24084,6 +24448,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -24204,6 +24570,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -24328,6 +24696,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -24436,6 +24806,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -24565,6 +24937,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -24759,6 +25133,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -24884,6 +25260,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -25028,6 +25406,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -25220,6 +25600,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -25345,6 +25727,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -25487,6 +25871,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -25620,6 +26006,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -25740,6 +26128,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -25870,6 +26260,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26004,6 +26396,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26114,6 +26508,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26224,6 +26620,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26334,6 +26732,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26485,6 +26885,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26606,6 +27008,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26739,6 +27143,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26859,6 +27265,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -26991,6 +27399,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27106,6 +27516,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27218,6 +27630,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27338,6 +27752,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27456,6 +27872,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27590,6 +28008,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27727,6 +28147,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27830,6 +28252,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -27930,6 +28354,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28057,6 +28483,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28184,6 +28612,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28322,6 +28752,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28410,6 +28842,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28502,6 +28936,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28594,6 +29030,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28691,6 +29129,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28815,6 +29255,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -28908,6 +29350,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29009,6 +29453,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29122,6 +29568,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29210,6 +29658,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29302,6 +29752,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29394,6 +29846,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29491,6 +29945,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29590,6 +30046,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29691,6 +30149,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29787,6 +30247,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29888,6 +30350,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -29984,6 +30448,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -30085,6 +30551,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -30304,6 +30772,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -30428,6 +30898,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -30616,6 +31088,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -30802,6 +31276,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -30940,6 +31416,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -31061,6 +31539,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -31191,6 +31671,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -31326,6 +31808,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -31461,6 +31945,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -31596,6 +32082,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -31731,6 +32219,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -31866,6 +32356,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32001,6 +32493,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32128,6 +32622,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32254,6 +32750,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32380,6 +32878,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32506,6 +33006,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32616,6 +33118,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32726,6 +33230,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32868,6 +33374,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -32960,6 +33468,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33060,6 +33570,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33178,6 +33690,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33270,6 +33784,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33370,6 +33886,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33482,6 +34000,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33593,6 +34113,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33706,6 +34228,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33813,6 +34337,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -33935,6 +34461,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34034,6 +34562,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34145,6 +34675,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34248,6 +34780,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34353,6 +34887,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34481,6 +35017,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34601,6 +35139,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34725,6 +35265,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34834,6 +35376,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -34963,6 +35507,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35085,6 +35631,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35182,6 +35730,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35283,6 +35833,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35385,6 +35937,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35491,6 +36045,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35625,6 +36181,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35725,6 +36283,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35842,6 +36402,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -35974,6 +36536,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36095,6 +36659,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36214,6 +36780,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36338,6 +36906,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36448,6 +37018,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36559,6 +37131,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36690,6 +37264,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36821,6 +37397,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -36949,6 +37527,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37071,6 +37651,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37275,6 +37857,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37462,6 +38046,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37547,6 +38133,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37656,6 +38244,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37769,6 +38359,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37879,6 +38471,8 @@ paths:
             the time indicated by the `X-Rate-Limit-Reset` response header before
             retrying.
           headers:
+            X-Rate-Limit-Reason:
+              $ref: '#/components/headers/X-Rate-Limit-Reason'
             X-Rate-Limit-Limit:
               $ref: '#/components/headers/X-Rate-Limit-Limit'
             X-Rate-Limit-Remaining:
@@ -37920,6 +38514,17 @@ components:
       explode: false
       schema:
         type: integer
+      style: simple
+    X-Rate-Limit-Reason:
+      description: Indicates why the request was rate limited. Present only on 429
+        responses. `global-rate` means the per-user request-rate quota was exceeded;
+        `global-concurrency` means the concurrent-request limit was exceeded.
+      explode: false
+      schema:
+        enum:
+        - global-rate
+        - global-concurrency
+        type: string
       style: simple
     X-Rate-Limit-Remaining:
       description: The number of remaining requests in the current period
@@ -38482,6 +39087,8 @@ components:
       description: Too many requests. The rate limit has been exceeded. Wait until
         the time indicated by the `X-Rate-Limit-Reset` response header before retrying.
       headers:
+        X-Rate-Limit-Reason:
+          $ref: '#/components/headers/X-Rate-Limit-Reason'
         X-Rate-Limit-Limit:
           $ref: '#/components/headers/X-Rate-Limit-Limit'
         X-Rate-Limit-Remaining:
