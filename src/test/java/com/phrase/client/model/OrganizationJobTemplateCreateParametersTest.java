@@ -62,12 +62,4 @@ public class OrganizationJobTemplateCreateParametersTest {
         // TODO: test autotranslate
     }
 
-    /**
-     * Test the property 'ownerId'
-     */
-    @Test
-    public void ownerIdTest() {
-        // TODO: test ownerId
-    }
-
 }

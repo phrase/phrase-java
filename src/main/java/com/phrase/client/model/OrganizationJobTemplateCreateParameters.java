@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * OrganizationJobTemplateCreateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T12:09:27.407365974Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T12:09:40.342526738Z[Etc/UTC]")
 public class OrganizationJobTemplateCreateParameters {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -39,10 +39,6 @@ public class OrganizationJobTemplateCreateParameters {
   public static final String SERIALIZED_NAME_AUTOTRANSLATE = "autotranslate";
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
-
-  public static final String SERIALIZED_NAME_OWNER_ID = "owner_id";
-  @SerializedName(SERIALIZED_NAME_OWNER_ID)
-  private String ownerId;
 
   public OrganizationJobTemplateCreateParameters() {
   }
@@ -112,28 +108,6 @@ public class OrganizationJobTemplateCreateParameters {
     this.autotranslate = autotranslate;
   }
 
-
-  public OrganizationJobTemplateCreateParameters ownerId(String ownerId) {
-    
-    this.ownerId = ownerId;
-    return this;
-  }
-
-   /**
-   * Code of the account member to set as the job template owner. When omitted or blank, no owner is pre-set; the user who creates a job from this template is assigned as its owner at job-creation time. 
-   * @return ownerId
-  **/
-  @javax.annotation.Nullable
-
-  public String getOwnerId() {
-    return ownerId;
-  }
-
-
-  public void setOwnerId(String ownerId) {
-    this.ownerId = ownerId;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -145,13 +119,12 @@ public class OrganizationJobTemplateCreateParameters {
     OrganizationJobTemplateCreateParameters organizationJobTemplateCreateParameters = (OrganizationJobTemplateCreateParameters) o;
     return Objects.equals(this.name, organizationJobTemplateCreateParameters.name) &&
         Objects.equals(this.briefing, organizationJobTemplateCreateParameters.briefing) &&
-        Objects.equals(this.autotranslate, organizationJobTemplateCreateParameters.autotranslate) &&
-        Objects.equals(this.ownerId, organizationJobTemplateCreateParameters.ownerId);
+        Objects.equals(this.autotranslate, organizationJobTemplateCreateParameters.autotranslate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, briefing, autotranslate, ownerId);
+    return Objects.hash(name, briefing, autotranslate);
   }
 
   @Override
@@ -161,7 +134,6 @@ public class OrganizationJobTemplateCreateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
-    sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

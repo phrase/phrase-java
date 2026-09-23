@@ -78,12 +78,4 @@ public class JobTemplateUpdateParametersTest {
         // TODO: test sourceLocaleId
     }
 
-    /**
-     * Test the property 'ownerId'
-     */
-    @Test
-    public void ownerIdTest() {
-        // TODO: test ownerId
-    }
-
 }
