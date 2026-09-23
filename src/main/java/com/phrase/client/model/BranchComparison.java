@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Comparison result of a branch against its base branch. Top-level properties correspond to resource types. Each resource type lists changes made in the base branch (&#x60;base_changes&#x60;), changes made in the feature branch (&#x60;head_changes&#x60;), and conflicting entries (&#x60;conflicts&#x60;). 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:00:40.696708579Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T13:09:17.627623208Z[Etc/UTC]")
 public class BranchComparison {
   public static final String SERIALIZED_NAME_TRANSLATION_KEYS = "translation_keys";
   @SerializedName(SERIALIZED_NAME_TRANSLATION_KEYS)
