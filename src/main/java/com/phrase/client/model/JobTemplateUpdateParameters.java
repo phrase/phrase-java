@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobTemplateUpdateParameters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T12:09:40.342526738Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-23T12:38:04.205357905Z[Etc/UTC]")
 public class JobTemplateUpdateParameters {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -47,6 +47,10 @@ public class JobTemplateUpdateParameters {
   public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
   private String sourceLocaleId;
+
+  public static final String SERIALIZED_NAME_OWNER_ID = "owner_id";
+  @SerializedName(SERIALIZED_NAME_OWNER_ID)
+  private String ownerId;
 
   public JobTemplateUpdateParameters() {
   }
@@ -160,6 +164,28 @@ public class JobTemplateUpdateParameters {
     this.sourceLocaleId = sourceLocaleId;
   }
 
+
+  public JobTemplateUpdateParameters ownerId(String ownerId) {
+    
+    this.ownerId = ownerId;
+    return this;
+  }
+
+   /**
+   * Code of the account member to set as the job template owner. The referenced user must also be a member of the project; passing the code of an account member who is not a project member returns a 404. Pass an empty string to clear a previously set owner; when blank, jobs created from this template will default to assigning the job creator as owner. 
+   * @return ownerId
+  **/
+  @javax.annotation.Nullable
+
+  public String getOwnerId() {
+    return ownerId;
+  }
+
+
+  public void setOwnerId(String ownerId) {
+    this.ownerId = ownerId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -173,12 +199,13 @@ public class JobTemplateUpdateParameters {
         Objects.equals(this.name, jobTemplateUpdateParameters.name) &&
         Objects.equals(this.briefing, jobTemplateUpdateParameters.briefing) &&
         Objects.equals(this.autotranslate, jobTemplateUpdateParameters.autotranslate) &&
-        Objects.equals(this.sourceLocaleId, jobTemplateUpdateParameters.sourceLocaleId);
+        Objects.equals(this.sourceLocaleId, jobTemplateUpdateParameters.sourceLocaleId) &&
+        Objects.equals(this.ownerId, jobTemplateUpdateParameters.ownerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, briefing, autotranslate, sourceLocaleId);
+    return Objects.hash(branch, name, briefing, autotranslate, sourceLocaleId, ownerId);
   }
 
   @Override
@@ -190,6 +217,7 @@ public class JobTemplateUpdateParameters {
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
+    sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
