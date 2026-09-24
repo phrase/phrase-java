@@ -140,7 +140,9 @@ public class RepoSyncsApiTest {
     public void repoSyncListTest() throws ApiException {
         String accountId = null;
         String xPhraseAppOTP = null;
-        List<RepoSync> response = api.repoSyncList(accountId, xPhraseAppOTP);
+        Integer page = null;
+        Integer perPage = null;
+        List<RepoSync> response = api.repoSyncList(accountId, xPhraseAppOTP, page, perPage);
 
         // TODO: test validations
     }

@@ -434,7 +434,7 @@ Name | Type | Description  | Notes
 
 <a name="repoSyncList"></a>
 # **repoSyncList**
-> List&lt;RepoSync&gt; repoSyncList(accountId, xPhraseAppOTP)
+> List&lt;RepoSync&gt; repoSyncList(accountId, xPhraseAppOTP, page, perPage)
 
 Get Repo Syncs
 
@@ -468,8 +468,10 @@ public class Example {
     RepoSyncsApi apiInstance = new RepoSyncsApi(defaultClient);
     String accountId = "accountId_example"; // String | Account ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    Integer page = 1; // Integer | Page number
+    Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
     try {
-      List<RepoSync> result = apiInstance.repoSyncList(accountId, xPhraseAppOTP);
+      List<RepoSync> result = apiInstance.repoSyncList(accountId, xPhraseAppOTP, page, perPage);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RepoSyncsApi#repoSyncList");
@@ -488,6 +490,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Account ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **page** | **Integer**| Page number | [optional]
+ **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
 
 ### Return type
 

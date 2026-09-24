@@ -834,6 +834,8 @@ public class RepoSyncsApi {
      * Build call for repoSyncList
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -848,7 +850,7 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call repoSyncListCall(String accountId, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call repoSyncListCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -857,6 +859,14 @@ public class RepoSyncsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (perPage != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -883,7 +893,7 @@ public class RepoSyncsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call repoSyncListValidateBeforeCall(String accountId, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call repoSyncListValidateBeforeCall(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
@@ -891,7 +901,7 @@ public class RepoSyncsApi {
         }
         
 
-        okhttp3.Call localVarCall = repoSyncListCall(accountId, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = repoSyncListCall(accountId, xPhraseAppOTP, page, perPage, _callback);
         return localVarCall;
 
     }
@@ -901,6 +911,8 @@ public class RepoSyncsApi {
      * Lists all Repo Syncs from an account
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @return List&lt;RepoSync&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -914,8 +926,8 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<RepoSync> repoSyncList(String accountId, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<List<RepoSync>> localVarResp = repoSyncListWithHttpInfo(accountId, xPhraseAppOTP);
+    public List<RepoSync> repoSyncList(String accountId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        ApiResponse<List<RepoSync>> localVarResp = repoSyncListWithHttpInfo(accountId, xPhraseAppOTP, page, perPage);
         return localVarResp.getData();
     }
 
@@ -924,6 +936,8 @@ public class RepoSyncsApi {
      * Lists all Repo Syncs from an account
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @return ApiResponse&lt;List&lt;RepoSync&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -937,8 +951,8 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<RepoSync>> repoSyncListWithHttpInfo(String accountId, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = repoSyncListValidateBeforeCall(accountId, xPhraseAppOTP, null);
+    public ApiResponse<List<RepoSync>> repoSyncListWithHttpInfo(String accountId, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
+        okhttp3.Call localVarCall = repoSyncListValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, null);
         Type localVarReturnType = new TypeToken<List<RepoSync>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -948,6 +962,8 @@ public class RepoSyncsApi {
      * Lists all Repo Syncs from an account
      * @param accountId Account ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param page Page number (optional)
+     * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -962,9 +978,9 @@ public class RepoSyncsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call repoSyncListAsync(String accountId, String xPhraseAppOTP, final ApiCallback<List<RepoSync>> _callback) throws ApiException {
+    public okhttp3.Call repoSyncListAsync(String accountId, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<RepoSync>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = repoSyncListValidateBeforeCall(accountId, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = repoSyncListValidateBeforeCall(accountId, xPhraseAppOTP, page, perPage, _callback);
         Type localVarReturnType = new TypeToken<List<RepoSync>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
