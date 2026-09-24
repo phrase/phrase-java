@@ -112,7 +112,7 @@ public class LocaleCreateParameters {
   }
 
    /**
-   * Locale name
+   * Locale name. Must be unique per project.
    * @return name
   **/
   @javax.annotation.Nonnull
@@ -134,7 +134,7 @@ public class LocaleCreateParameters {
   }
 
    /**
-   * Locale ISO code
+   * Locale ISO code. Unlike &#x60;name&#x60;, &#x60;code&#x60; is not required to be unique per project - creating a locale whose &#x60;code&#x60; duplicates an existing locale&#39;s &#x60;code&#x60; in the same project will succeed rather than error, resulting in two locales that share the same code.
    * @return code
   **/
   @javax.annotation.Nonnull
