@@ -4,7 +4,7 @@ All URIs are relative to *https://api.phrase.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**reportLocalesList**](ReportsApi.md#reportLocalesList) | **GET** /projects/{project_id}/report/locales | List Locale Reports
+[**reportLocalesList**](ReportsApi.md#reportLocalesList) | **GET** /projects/{project_id}/report/locales | List Locale Reports (word count, character count, translation statistics)
 [**reportShow**](ReportsApi.md#reportShow) | **GET** /projects/{project_id}/report | Get Project Report
 
 
@@ -12,9 +12,9 @@ Method | HTTP request | Description
 # **reportLocalesList**
 > List&lt;LocaleReport&gt; reportLocalesList(projectId, xPhraseAppOTP, page, perPage, localeCodes, tag, branch)
 
-List Locale Reports
+List Locale Reports (word count, character count, translation statistics)
 
-List all locale reports for the given project
+List all locale reports for the given project. Each report includes translation statistics per locale, including word count and character count fields (&#x60;source_word_count&#x60;, &#x60;word_count&#x60;, &#x60;word_count_unverified&#x60;, &#x60;word_count_missing&#x60;) as well as translation completion statistics (&#x60;keys_count&#x60;, &#x60;completed_translations_count&#x60;, &#x60;untranslated_keys_count&#x60;, &#x60;unverified_translations_count&#x60;, &#x60;reviewed_translations_count&#x60;, and their percentages). Use the &#x60;tag&#x60; parameter to scope the report to a specific job (e.g. its job tag) to get job-scoped word count statistics.
 
 ### Example
 ```java
