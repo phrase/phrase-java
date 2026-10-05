@@ -32,10 +32,6 @@ import io.swagger.annotations.ApiModelProperty;
  */
 
 public class JobUpdateParameters {
-  public static final String SERIALIZED_NAME_BRANCH = "branch";
-  @SerializedName(SERIALIZED_NAME_BRANCH)
-  private String branch;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -62,28 +58,6 @@ public class JobUpdateParameters {
 
   public JobUpdateParameters() {
   }
-
-  public JobUpdateParameters branch(String branch) {
-    
-    this.branch = branch;
-    return this;
-  }
-
-   /**
-   * specify the branch to use
-   * @return branch
-  **/
-  @javax.annotation.Nullable
-
-  public String getBranch() {
-    return branch;
-  }
-
-
-  public void setBranch(String branch) {
-    this.branch = branch;
-  }
-
 
   public JobUpdateParameters name(String name) {
     
@@ -233,8 +207,7 @@ public class JobUpdateParameters {
       return false;
     }
     JobUpdateParameters jobUpdateParameters = (JobUpdateParameters) o;
-    return Objects.equals(this.branch, jobUpdateParameters.branch) &&
-        Objects.equals(this.name, jobUpdateParameters.name) &&
+    return Objects.equals(this.name, jobUpdateParameters.name) &&
         Objects.equals(this.briefing, jobUpdateParameters.briefing) &&
         Objects.equals(this.dueDate, jobUpdateParameters.dueDate) &&
         Objects.equals(this.ticketUrl, jobUpdateParameters.ticketUrl) &&
@@ -248,7 +221,7 @@ public class JobUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, briefing, dueDate, ticketUrl, targetLocaleIds, autotranslate);
+    return Objects.hash(name, briefing, dueDate, ticketUrl, targetLocaleIds, autotranslate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -262,7 +235,6 @@ public class JobUpdateParameters {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class JobUpdateParameters {\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");

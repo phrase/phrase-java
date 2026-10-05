@@ -245,7 +245,8 @@ public class JobsApiTest {
         String id = null;
         JobUpdateParameters jobUpdateParameters = null;
         String xPhraseAppOTP = null;
-        JobDetails response = api.jobUpdate(projectId, id, jobUpdateParameters, xPhraseAppOTP);
+        String branch = null;
+        JobDetails response = api.jobUpdate(projectId, id, jobUpdateParameters, xPhraseAppOTP, branch);
 
         // TODO: test validations
     }

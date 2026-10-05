@@ -1654,6 +1654,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param jobUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch Branch to use (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1669,7 +1670,7 @@ public class JobsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobUpdateCall(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call jobUpdateCall(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = jobUpdateParameters;
 
         // create path and map variables
@@ -1679,6 +1680,10 @@ public class JobsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (branch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("branch", branch));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -1705,7 +1710,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jobUpdateValidateBeforeCall(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jobUpdateValidateBeforeCall(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, String branch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -1723,7 +1728,7 @@ public class JobsApi {
         }
         
 
-        okhttp3.Call localVarCall = jobUpdateCall(projectId, id, jobUpdateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = jobUpdateCall(projectId, id, jobUpdateParameters, xPhraseAppOTP, branch, _callback);
         return localVarCall;
 
     }
@@ -1735,6 +1740,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param jobUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch Branch to use (optional)
      * @return JobDetails
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1749,8 +1755,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public JobDetails jobUpdate(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        ApiResponse<JobDetails> localVarResp = jobUpdateWithHttpInfo(projectId, id, jobUpdateParameters, xPhraseAppOTP);
+    public JobDetails jobUpdate(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, String branch) throws ApiException {
+        ApiResponse<JobDetails> localVarResp = jobUpdateWithHttpInfo(projectId, id, jobUpdateParameters, xPhraseAppOTP, branch);
         return localVarResp.getData();
     }
 
@@ -1761,6 +1767,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param jobUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch Branch to use (optional)
      * @return ApiResponse&lt;JobDetails&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1775,8 +1782,8 @@ public class JobsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<JobDetails> jobUpdateWithHttpInfo(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP) throws ApiException {
-        okhttp3.Call localVarCall = jobUpdateValidateBeforeCall(projectId, id, jobUpdateParameters, xPhraseAppOTP, null);
+    public ApiResponse<JobDetails> jobUpdateWithHttpInfo(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, String branch) throws ApiException {
+        okhttp3.Call localVarCall = jobUpdateValidateBeforeCall(projectId, id, jobUpdateParameters, xPhraseAppOTP, branch, null);
         Type localVarReturnType = new TypeToken<JobDetails>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1788,6 +1795,7 @@ public class JobsApi {
      * @param id ID (required)
      * @param jobUpdateParameters  (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param branch Branch to use (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1803,9 +1811,9 @@ public class JobsApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call jobUpdateAsync(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, final ApiCallback<JobDetails> _callback) throws ApiException {
+    public okhttp3.Call jobUpdateAsync(String projectId, String id, JobUpdateParameters jobUpdateParameters, String xPhraseAppOTP, String branch, final ApiCallback<JobDetails> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = jobUpdateValidateBeforeCall(projectId, id, jobUpdateParameters, xPhraseAppOTP, _callback);
+        okhttp3.Call localVarCall = jobUpdateValidateBeforeCall(projectId, id, jobUpdateParameters, xPhraseAppOTP, branch, _callback);
         Type localVarReturnType = new TypeToken<JobDetails>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

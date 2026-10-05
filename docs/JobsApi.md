@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 
 <a name="jobUpdate"></a>
 # **jobUpdate**
-> JobDetails jobUpdate(projectId, id, jobUpdateParameters, xPhraseAppOTP)
+> JobDetails jobUpdate(projectId, id, jobUpdateParameters, xPhraseAppOTP, branch)
 
 Update a job
 
@@ -900,8 +900,9 @@ public class Example {
     String id = "id_example"; // String | ID
     JobUpdateParameters jobUpdateParameters = new JobUpdateParameters(); // JobUpdateParameters | 
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
+    String branch = "my-feature-branch"; // String | Branch to use
     try {
-      JobDetails result = apiInstance.jobUpdate(projectId, id, jobUpdateParameters, xPhraseAppOTP);
+      JobDetails result = apiInstance.jobUpdate(projectId, id, jobUpdateParameters, xPhraseAppOTP, branch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JobsApi#jobUpdate");
@@ -922,6 +923,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID |
  **jobUpdateParameters** | [**JobUpdateParameters**](JobUpdateParameters.md)|  |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
+ **branch** | **String**| Branch to use | [optional]
 
 ### Return type
 
