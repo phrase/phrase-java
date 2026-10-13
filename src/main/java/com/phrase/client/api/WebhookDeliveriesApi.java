@@ -59,6 +59,7 @@ public class WebhookDeliveriesApi {
      * @param webhookId Webhook ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param responseStatusCodes List of Response Status Codes (optional)
+     * @param status Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code.  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -71,7 +72,7 @@ public class WebhookDeliveriesApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookDeliveriesListCall(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webhookDeliveriesListCall(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, String status, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -83,6 +84,10 @@ public class WebhookDeliveriesApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (responseStatusCodes != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("response_status_codes", responseStatusCodes));
+        }
+
+        if (status != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("status", status));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -111,7 +116,7 @@ public class WebhookDeliveriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webhookDeliveriesListValidateBeforeCall(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webhookDeliveriesListValidateBeforeCall(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, String status, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -124,7 +129,7 @@ public class WebhookDeliveriesApi {
         }
         
 
-        okhttp3.Call localVarCall = webhookDeliveriesListCall(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, _callback);
+        okhttp3.Call localVarCall = webhookDeliveriesListCall(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, status, _callback);
         return localVarCall;
 
     }
@@ -136,6 +141,7 @@ public class WebhookDeliveriesApi {
      * @param webhookId Webhook ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param responseStatusCodes List of Response Status Codes (optional)
+     * @param status Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code.  (optional)
      * @return List&lt;WebhookDelivery&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -147,8 +153,8 @@ public class WebhookDeliveriesApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<WebhookDelivery> webhookDeliveriesList(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes) throws ApiException {
-        ApiResponse<List<WebhookDelivery>> localVarResp = webhookDeliveriesListWithHttpInfo(projectId, webhookId, xPhraseAppOTP, responseStatusCodes);
+    public List<WebhookDelivery> webhookDeliveriesList(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, String status) throws ApiException {
+        ApiResponse<List<WebhookDelivery>> localVarResp = webhookDeliveriesListWithHttpInfo(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, status);
         return localVarResp.getData();
     }
 
@@ -159,6 +165,7 @@ public class WebhookDeliveriesApi {
      * @param webhookId Webhook ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param responseStatusCodes List of Response Status Codes (optional)
+     * @param status Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code.  (optional)
      * @return ApiResponse&lt;List&lt;WebhookDelivery&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -170,8 +177,8 @@ public class WebhookDeliveriesApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<WebhookDelivery>> webhookDeliveriesListWithHttpInfo(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes) throws ApiException {
-        okhttp3.Call localVarCall = webhookDeliveriesListValidateBeforeCall(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, null);
+    public ApiResponse<List<WebhookDelivery>> webhookDeliveriesListWithHttpInfo(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, String status) throws ApiException {
+        okhttp3.Call localVarCall = webhookDeliveriesListValidateBeforeCall(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, status, null);
         Type localVarReturnType = new TypeToken<List<WebhookDelivery>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -183,6 +190,7 @@ public class WebhookDeliveriesApi {
      * @param webhookId Webhook ID (required)
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param responseStatusCodes List of Response Status Codes (optional)
+     * @param status Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code.  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -195,9 +203,9 @@ public class WebhookDeliveriesApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call webhookDeliveriesListAsync(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, final ApiCallback<List<WebhookDelivery>> _callback) throws ApiException {
+    public okhttp3.Call webhookDeliveriesListAsync(String projectId, String webhookId, String xPhraseAppOTP, String responseStatusCodes, String status, final ApiCallback<List<WebhookDelivery>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = webhookDeliveriesListValidateBeforeCall(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, _callback);
+        okhttp3.Call localVarCall = webhookDeliveriesListValidateBeforeCall(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, status, _callback);
         Type localVarReturnType = new TypeToken<List<WebhookDelivery>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

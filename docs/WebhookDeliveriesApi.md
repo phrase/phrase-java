@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="webhookDeliveriesList"></a>
 # **webhookDeliveriesList**
-> List&lt;WebhookDelivery&gt; webhookDeliveriesList(projectId, webhookId, xPhraseAppOTP, responseStatusCodes)
+> List&lt;WebhookDelivery&gt; webhookDeliveriesList(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, status)
 
 List webhook deliveries
 
@@ -47,8 +47,9 @@ public class Example {
     String webhookId = "webhookId_example"; // String | Webhook ID
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     String responseStatusCodes = "responseStatusCodes_example"; // String | List of Response Status Codes
+    String status = "success"; // String | Filter deliveries by outcome. `success` returns deliveries with a 2xx response code or a soft error. `failed` returns all other deliveries, including exceptions and timeouts without a response code. 
     try {
-      List<WebhookDelivery> result = apiInstance.webhookDeliveriesList(projectId, webhookId, xPhraseAppOTP, responseStatusCodes);
+      List<WebhookDelivery> result = apiInstance.webhookDeliveriesList(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, status);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookDeliveriesApi#webhookDeliveriesList");
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
  **webhookId** | **String**| Webhook ID |
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **responseStatusCodes** | **String**| List of Response Status Codes | [optional]
+ **status** | **String**| Filter deliveries by outcome. &#x60;success&#x60; returns deliveries with a 2xx response code or a soft error. &#x60;failed&#x60; returns all other deliveries, including exceptions and timeouts without a response code.  | [optional] [enum: success, failed]
 
 ### Return type
 

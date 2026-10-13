@@ -45,7 +45,8 @@ public class WebhookDeliveriesApiTest {
         String webhookId = null;
         String xPhraseAppOTP = null;
         String responseStatusCodes = null;
-        List<WebhookDelivery> response = api.webhookDeliveriesList(projectId, webhookId, xPhraseAppOTP, responseStatusCodes);
+        String status = null;
+        List<WebhookDelivery> response = api.webhookDeliveriesList(projectId, webhookId, xPhraseAppOTP, responseStatusCodes, status);
 
         // TODO: test validations
     }
