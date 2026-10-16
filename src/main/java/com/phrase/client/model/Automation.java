@@ -218,6 +218,10 @@ public class Automation {
   @SerializedName(SERIALIZED_NAME_INCLUDE_ONLY_UPDATED_LOCALES)
   private Boolean includeOnlyUpdatedLocales;
 
+  public static final String SERIALIZED_NAME_INCLUDE_BRANCHES = "include_branches";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_BRANCHES)
+  private Boolean includeBranches;
+
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<String> tags;
@@ -481,6 +485,28 @@ public class Automation {
   }
 
 
+  public Automation includeBranches(Boolean includeBranches) {
+    
+    this.includeBranches = includeBranches;
+    return this;
+  }
+
+   /**
+   * When true, the automation targets branches of the configured projects in addition to the main project. Requires the designated job owner to have permission to create jobs in branches for every configured project. 
+   * @return includeBranches
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getIncludeBranches() {
+    return includeBranches;
+  }
+
+
+  public void setIncludeBranches(Boolean includeBranches) {
+    this.includeBranches = includeBranches;
+  }
+
+
   public Automation tags(List<String> tags) {
     
     this.tags = tags;
@@ -639,6 +665,7 @@ public class Automation {
         Objects.equals(this.jobTemplateId, automation.jobTemplateId) &&
         Objects.equals(this.jobOwnerId, automation.jobOwnerId) &&
         Objects.equals(this.includeOnlyUpdatedLocales, automation.includeOnlyUpdatedLocales) &&
+        Objects.equals(this.includeBranches, automation.includeBranches) &&
         Objects.equals(this.tags, automation.tags) &&
         Objects.equals(this.cronSchedule, automation.cronSchedule) &&
         Objects.equals(this.timeZone, automation.timeZone) &&
@@ -653,7 +680,7 @@ public class Automation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, trigger, statusFilters, projectId, projectIds, jobTemplateId, jobOwnerId, includeOnlyUpdatedLocales, tags, cronSchedule, timeZone, account, createdAt, updatedAt);
+    return Objects.hash(id, name, status, trigger, statusFilters, projectId, projectIds, jobTemplateId, jobOwnerId, includeOnlyUpdatedLocales, includeBranches, tags, cronSchedule, timeZone, account, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -677,6 +704,7 @@ public class Automation {
     sb.append("    jobTemplateId: ").append(toIndentedString(jobTemplateId)).append("\n");
     sb.append("    jobOwnerId: ").append(toIndentedString(jobOwnerId)).append("\n");
     sb.append("    includeOnlyUpdatedLocales: ").append(toIndentedString(includeOnlyUpdatedLocales)).append("\n");
+    sb.append("    includeBranches: ").append(toIndentedString(includeBranches)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    cronSchedule: ").append(toIndentedString(cronSchedule)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");

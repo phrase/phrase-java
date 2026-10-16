@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **timeZone** | **String** | along with cron_schedule, specifies when the scheduled automation is supposed to run |  [optional]
 **jobOwnerId** | **String** | User ID of the job owner that newly created jobs are assigned to.  |  [optional]
 **includeOnlyUpdatedLocales** | **Boolean** | When &#x60;true&#x60;, the automation only acts on locales that changed since its last run. Defaults to &#x60;false&#x60;.  |  [optional]
+**includeBranches** | **Boolean** | When true, the automation also runs against branches of the configured projects. The designated job owner must have permission to create jobs in branches for every configured project; otherwise the request is rejected with 403.  |  [optional]
 
 
 

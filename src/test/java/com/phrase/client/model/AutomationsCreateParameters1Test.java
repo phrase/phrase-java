@@ -120,4 +120,12 @@ public class AutomationsCreateParameters1Test {
         // TODO: test includeOnlyUpdatedLocales
     }
 
+    /**
+     * Test the property 'includeBranches'
+     */
+    @Test
+    public void includeBranchesTest() {
+        // TODO: test includeBranches
+    }
+
 }

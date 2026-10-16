@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **jobTemplateId** | **String** |  |  [optional]
 **jobOwnerId** | **String** | User ID of the job owner that newly created jobs are assigned to. |  [optional]
 **includeOnlyUpdatedLocales** | **Boolean** | When &#x60;true&#x60;, the automation only acts on locales that changed since its last run. |  [optional]
+**includeBranches** | **Boolean** | When true, the automation targets branches of the configured projects in addition to the main project. Requires the designated job owner to have permission to create jobs in branches for every configured project.  |  [optional]
 **tags** | **List&lt;String&gt;** |  |  [optional]
 **cronSchedule** | **String** |  |  [optional]
 **timeZone** | **String** |  |  [optional]

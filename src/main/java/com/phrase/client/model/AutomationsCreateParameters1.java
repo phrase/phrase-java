@@ -166,6 +166,10 @@ public class AutomationsCreateParameters1 {
   @SerializedName(SERIALIZED_NAME_INCLUDE_ONLY_UPDATED_LOCALES)
   private Boolean includeOnlyUpdatedLocales;
 
+  public static final String SERIALIZED_NAME_INCLUDE_BRANCHES = "include_branches";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_BRANCHES)
+  private Boolean includeBranches;
+
   public AutomationsCreateParameters1() {
   }
 
@@ -412,6 +416,28 @@ public class AutomationsCreateParameters1 {
     this.includeOnlyUpdatedLocales = includeOnlyUpdatedLocales;
   }
 
+
+  public AutomationsCreateParameters1 includeBranches(Boolean includeBranches) {
+    
+    this.includeBranches = includeBranches;
+    return this;
+  }
+
+   /**
+   * When true, the automation also runs against branches of the configured projects. The designated job owner must have permission to create jobs in branches for every configured project; otherwise the request is rejected with 403. 
+   * @return includeBranches
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getIncludeBranches() {
+    return includeBranches;
+  }
+
+
+  public void setIncludeBranches(Boolean includeBranches) {
+    this.includeBranches = includeBranches;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -430,12 +456,13 @@ public class AutomationsCreateParameters1 {
         Objects.equals(this.cronSchedule, automationsCreateParameters1.cronSchedule) &&
         Objects.equals(this.timeZone, automationsCreateParameters1.timeZone) &&
         Objects.equals(this.jobOwnerId, automationsCreateParameters1.jobOwnerId) &&
-        Objects.equals(this.includeOnlyUpdatedLocales, automationsCreateParameters1.includeOnlyUpdatedLocales);
+        Objects.equals(this.includeOnlyUpdatedLocales, automationsCreateParameters1.includeOnlyUpdatedLocales) &&
+        Objects.equals(this.includeBranches, automationsCreateParameters1.includeBranches);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, trigger, projectIds, jobTemplateId, statusFilters, tags, cronSchedule, timeZone, jobOwnerId, includeOnlyUpdatedLocales);
+    return Objects.hash(name, trigger, projectIds, jobTemplateId, statusFilters, tags, cronSchedule, timeZone, jobOwnerId, includeOnlyUpdatedLocales, includeBranches);
   }
 
   @Override
@@ -452,6 +479,7 @@ public class AutomationsCreateParameters1 {
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    jobOwnerId: ").append(toIndentedString(jobOwnerId)).append("\n");
     sb.append("    includeOnlyUpdatedLocales: ").append(toIndentedString(includeOnlyUpdatedLocales)).append("\n");
+    sb.append("    includeBranches: ").append(toIndentedString(includeBranches)).append("\n");
     sb.append("}");
     return sb.toString();
   }
