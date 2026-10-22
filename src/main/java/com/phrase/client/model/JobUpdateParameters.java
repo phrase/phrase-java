@@ -44,6 +44,10 @@ public class JobUpdateParameters {
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
   private OffsetDateTime dueDate;
 
+  public static final String SERIALIZED_NAME_REVIEW_DUE_DATE = "review_due_date";
+  @SerializedName(SERIALIZED_NAME_REVIEW_DUE_DATE)
+  private OffsetDateTime reviewDueDate;
+
   public static final String SERIALIZED_NAME_TICKET_URL = "ticket_url";
   @SerializedName(SERIALIZED_NAME_TICKET_URL)
   private String ticketUrl;
@@ -122,6 +126,28 @@ public class JobUpdateParameters {
 
   public void setDueDate(OffsetDateTime dueDate) {
     this.dueDate = dueDate;
+  }
+
+
+  public JobUpdateParameters reviewDueDate(OffsetDateTime reviewDueDate) {
+    
+    this.reviewDueDate = reviewDueDate;
+    return this;
+  }
+
+   /**
+   * Date the review of the job should be finished. Must not be before &#x60;due_date&#x60;.
+   * @return reviewDueDate
+  **/
+  @javax.annotation.Nullable
+
+  public OffsetDateTime getReviewDueDate() {
+    return reviewDueDate;
+  }
+
+
+  public void setReviewDueDate(OffsetDateTime reviewDueDate) {
+    this.reviewDueDate = reviewDueDate;
   }
 
 
@@ -210,6 +236,7 @@ public class JobUpdateParameters {
     return Objects.equals(this.name, jobUpdateParameters.name) &&
         Objects.equals(this.briefing, jobUpdateParameters.briefing) &&
         Objects.equals(this.dueDate, jobUpdateParameters.dueDate) &&
+        Objects.equals(this.reviewDueDate, jobUpdateParameters.reviewDueDate) &&
         Objects.equals(this.ticketUrl, jobUpdateParameters.ticketUrl) &&
         Objects.equals(this.targetLocaleIds, jobUpdateParameters.targetLocaleIds) &&
         Objects.equals(this.autotranslate, jobUpdateParameters.autotranslate);
@@ -221,7 +248,7 @@ public class JobUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, briefing, dueDate, ticketUrl, targetLocaleIds, autotranslate);
+    return Objects.hash(name, briefing, dueDate, reviewDueDate, ticketUrl, targetLocaleIds, autotranslate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -238,6 +265,7 @@ public class JobUpdateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    sb.append("    reviewDueDate: ").append(toIndentedString(reviewDueDate)).append("\n");
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    targetLocaleIds: ").append(toIndentedString(targetLocaleIds)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");

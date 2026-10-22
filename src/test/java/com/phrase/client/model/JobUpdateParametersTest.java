@@ -67,6 +67,14 @@ public class JobUpdateParametersTest {
     }
 
     /**
+     * Test the property 'reviewDueDate'
+     */
+    @Test
+    public void reviewDueDateTest() {
+        // TODO: test reviewDueDate
+    }
+
+    /**
      * Test the property 'ticketUrl'
      */
     @Test

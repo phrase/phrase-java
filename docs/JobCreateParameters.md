@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **sourceLocaleId** | **String** | The API id of the source language |  [optional]
 **briefing** | **String** | Briefing for the translators |  [optional]
 **dueDate** | [**OffsetDateTime**](OffsetDateTime.md) | Date the job should be finished |  [optional]
+**reviewDueDate** | [**OffsetDateTime**](OffsetDateTime.md) | Date the review of the job should be finished. Must not be before &#x60;due_date&#x60;. |  [optional]
 **ticketUrl** | **String** | URL to a ticket for this job (e.g. Jira, Trello) |  [optional]
 **tags** | **List&lt;String&gt;** | tags of keys that should be included within the job.  *Note: a tag matches every key currently carrying that tag, not just the ones you just tagged. For example, if hundreds of pre-existing keys already share the tag &#x60;myUploadTag&#x60;, adding it here pulls in every one of them, not only the key you just tagged. Use &#x60;translation_key_ids&#x60; to scope the job to specific keys instead.*  |  [optional]
 **translationKeyIds** | **List&lt;String&gt;** | ids of keys that should be included within the job |  [optional]

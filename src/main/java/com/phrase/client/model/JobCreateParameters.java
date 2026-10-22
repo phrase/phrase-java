@@ -52,6 +52,10 @@ public class JobCreateParameters {
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
   private OffsetDateTime dueDate;
 
+  public static final String SERIALIZED_NAME_REVIEW_DUE_DATE = "review_due_date";
+  @SerializedName(SERIALIZED_NAME_REVIEW_DUE_DATE)
+  private OffsetDateTime reviewDueDate;
+
   public static final String SERIALIZED_NAME_TICKET_URL = "ticket_url";
   @SerializedName(SERIALIZED_NAME_TICKET_URL)
   private String ticketUrl;
@@ -186,6 +190,28 @@ public class JobCreateParameters {
 
   public void setDueDate(OffsetDateTime dueDate) {
     this.dueDate = dueDate;
+  }
+
+
+  public JobCreateParameters reviewDueDate(OffsetDateTime reviewDueDate) {
+    
+    this.reviewDueDate = reviewDueDate;
+    return this;
+  }
+
+   /**
+   * Date the review of the job should be finished. Must not be before &#x60;due_date&#x60;.
+   * @return reviewDueDate
+  **/
+  @javax.annotation.Nullable
+
+  public OffsetDateTime getReviewDueDate() {
+    return reviewDueDate;
+  }
+
+
+  public void setReviewDueDate(OffsetDateTime reviewDueDate) {
+    this.reviewDueDate = reviewDueDate;
   }
 
 
@@ -358,6 +384,7 @@ public class JobCreateParameters {
         Objects.equals(this.sourceLocaleId, jobCreateParameters.sourceLocaleId) &&
         Objects.equals(this.briefing, jobCreateParameters.briefing) &&
         Objects.equals(this.dueDate, jobCreateParameters.dueDate) &&
+        Objects.equals(this.reviewDueDate, jobCreateParameters.reviewDueDate) &&
         Objects.equals(this.ticketUrl, jobCreateParameters.ticketUrl) &&
         Objects.equals(this.tags, jobCreateParameters.tags) &&
         Objects.equals(this.translationKeyIds, jobCreateParameters.translationKeyIds) &&
@@ -372,7 +399,7 @@ public class JobCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, ticketUrl, tags, translationKeyIds, targetLocaleIds, jobTemplateId, autotranslate);
+    return Objects.hash(branch, name, sourceLocaleId, briefing, dueDate, reviewDueDate, ticketUrl, tags, translationKeyIds, targetLocaleIds, jobTemplateId, autotranslate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -391,6 +418,7 @@ public class JobCreateParameters {
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    sb.append("    reviewDueDate: ").append(toIndentedString(reviewDueDate)).append("\n");
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    translationKeyIds: ").append(toIndentedString(translationKeyIds)).append("\n");
