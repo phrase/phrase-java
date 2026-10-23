@@ -18,11 +18,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.RepoSyncEventUploadsInner;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -154,6 +156,10 @@ public class RepoSyncEvent {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
   private List<String> errors;
+
+  public static final String SERIALIZED_NAME_UPLOADS = "uploads";
+  @SerializedName(SERIALIZED_NAME_UPLOADS)
+  private List<RepoSyncEventUploadsInner> uploads;
 
   public RepoSyncEvent() {
   }
@@ -319,6 +325,36 @@ public class RepoSyncEvent {
     this.errors = errors;
   }
 
+
+  public RepoSyncEvent uploads(List<RepoSyncEventUploadsInner> uploads) {
+    
+    this.uploads = uploads;
+    return this;
+  }
+
+  public RepoSyncEvent addUploadsItem(RepoSyncEventUploadsInner uploadsItem) {
+    if (this.uploads == null) {
+      this.uploads = new ArrayList<>();
+    }
+    this.uploads.add(uploadsItem);
+    return this;
+  }
+
+   /**
+   * The uploads associated with this import event, or &#x60;null&#x60; if no upload batch has been created yet. Each entry identifies a single file upload by its public code (&#x60;id&#x60;) and its current public state (&#x60;state&#x60;). Present on show responses only; absent from list responses. Possible &#x60;state&#x60; values: &#x60;initialized&#x60;, &#x60;waiting_for_preview&#x60;, &#x60;processing&#x60;, &#x60;success&#x60;, &#x60;error&#x60;. 
+   * @return uploads
+  **/
+  @javax.annotation.Nullable
+
+  public List<RepoSyncEventUploadsInner> getUploads() {
+    return uploads;
+  }
+
+
+  public void setUploads(List<RepoSyncEventUploadsInner> uploads) {
+    this.uploads = uploads;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -334,12 +370,24 @@ public class RepoSyncEvent {
         Objects.equals(this.status, repoSyncEvent.status) &&
         Objects.equals(this.pullRequestUrl, repoSyncEvent.pullRequestUrl) &&
         Objects.equals(this.autoImport, repoSyncEvent.autoImport) &&
-        Objects.equals(this.errors, repoSyncEvent.errors);
+        Objects.equals(this.errors, repoSyncEvent.errors) &&
+        Objects.equals(this.uploads, repoSyncEvent.uploads);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, createdAt, status, pullRequestUrl, autoImport, errors);
+    return Objects.hash(id, type, createdAt, status, pullRequestUrl, autoImport, errors, uploads);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -353,6 +401,7 @@ public class RepoSyncEvent {
     sb.append("    pullRequestUrl: ").append(toIndentedString(pullRequestUrl)).append("\n");
     sb.append("    autoImport: ").append(toIndentedString(autoImport)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    uploads: ").append(toIndentedString(uploads)).append("\n");
     sb.append("}");
     return sb.toString();
   }
