@@ -92,7 +92,7 @@ public class JobUpdateParameters {
   }
 
    /**
-   * Briefing for the translators
+   * Briefing for the translators. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return briefing
   **/
   @javax.annotation.Nullable
@@ -158,7 +158,7 @@ public class JobUpdateParameters {
   }
 
    /**
-   * URL to a ticket for this job (e.g. Jira, Trello)
+   * URL to a ticket for this job (e.g. Jira, Trello) Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return ticketUrl
   **/
   @javax.annotation.Nullable

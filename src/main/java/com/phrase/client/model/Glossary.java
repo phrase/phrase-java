@@ -41,6 +41,10 @@ public class Glossary {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_TERMS_COUNT = "terms_count";
+  @SerializedName(SERIALIZED_NAME_TERMS_COUNT)
+  private Integer termsCount;
+
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
   private List<ProjectShort> projects;
@@ -101,6 +105,28 @@ public class Glossary {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public Glossary termsCount(Integer termsCount) {
+    
+    this.termsCount = termsCount;
+    return this;
+  }
+
+   /**
+   * Number of terms in the glossary.
+   * @return termsCount
+  **/
+  @javax.annotation.Nullable
+
+  public Integer getTermsCount() {
+    return termsCount;
+  }
+
+
+  public void setTermsCount(Integer termsCount) {
+    this.termsCount = termsCount;
   }
 
 
@@ -218,6 +244,7 @@ public class Glossary {
     Glossary glossary = (Glossary) o;
     return Objects.equals(this.id, glossary.id) &&
         Objects.equals(this.name, glossary.name) &&
+        Objects.equals(this.termsCount, glossary.termsCount) &&
         Objects.equals(this.projects, glossary.projects) &&
         Objects.equals(this.spaces, glossary.spaces) &&
         Objects.equals(this.createdAt, glossary.createdAt) &&
@@ -226,7 +253,7 @@ public class Glossary {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, projects, spaces, createdAt, updatedAt);
+    return Objects.hash(id, name, termsCount, projects, spaces, createdAt, updatedAt);
   }
 
   @Override
@@ -235,6 +262,7 @@ public class Glossary {
     sb.append("class Glossary {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    termsCount: ").append(toIndentedString(termsCount)).append("\n");
     sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
     sb.append("    spaces: ").append(toIndentedString(spaces)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

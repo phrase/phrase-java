@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
+**termsCount** | **Integer** | Number of terms in the glossary. |  [optional]
 **projects** | [**List&lt;ProjectShort&gt;**](ProjectShort.md) |  |  [optional]
 **spaces** | [**List&lt;Space&gt;**](Space.md) |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

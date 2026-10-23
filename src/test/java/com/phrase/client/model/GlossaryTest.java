@@ -60,6 +60,14 @@ public class GlossaryTest {
     }
 
     /**
+     * Test the property 'termsCount'
+     */
+    @Test
+    public void termsCountTest() {
+        // TODO: test termsCount
+    }
+
+    /**
      * Test the property 'projects'
      */
     @Test

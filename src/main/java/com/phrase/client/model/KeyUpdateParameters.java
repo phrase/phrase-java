@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -161,7 +162,7 @@ public class KeyUpdateParameters {
   }
 
    /**
-   * Key description (usually includes contextual information for translators)
+   * Key description (usually includes contextual information for translators). Send an empty string or &#x60;null&#x60; to clear the description; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return description
   **/
   @javax.annotation.Nullable
@@ -227,7 +228,7 @@ public class KeyUpdateParameters {
   }
 
    /**
-   * Plural name for the key (used in some file formats, e.g. Gettext)
+   * Plural name for the key (used in some file formats, e.g. Gettext) Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return namePlural
   **/
   @javax.annotation.Nullable
@@ -407,7 +408,7 @@ public class KeyUpdateParameters {
   }
 
    /**
-   * Original file attribute. Used in some formats, e.g. XLIFF.
+   * Original file attribute. Used in some formats, e.g. XLIFF. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return originalFile
   **/
   @javax.annotation.Nullable
@@ -429,7 +430,7 @@ public class KeyUpdateParameters {
   }
 
    /**
-   * NSStringLocalizedFormatKey attribute. Used in .stringsdict format.
+   * NSStringLocalizedFormatKey attribute. Used in .stringsdict format. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return localizedFormatString
   **/
   @javax.annotation.Nullable
@@ -451,7 +452,7 @@ public class KeyUpdateParameters {
   }
 
    /**
-   * NSStringLocalizedFormatKey attribute. Used in .stringsdict format.
+   * NSStringLocalizedFormatKey attribute. Used in .stringsdict format. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return localizedFormatKey
   **/
   @javax.annotation.Nullable
@@ -569,9 +570,20 @@ public class KeyUpdateParameters {
         Objects.equals(this.formatValueType, keyUpdateParameters.formatValueType);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(branch, name, description, plural, useOrdinalRules, namePlural, dataType, tags, maxCharactersAllowed, screenshot, removeScreenshot, unformatted, xmlSpacePreserve, originalFile, localizedFormatString, localizedFormatKey, customMetadata, excludedInLocales, formatValueType);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

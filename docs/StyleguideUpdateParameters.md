@@ -7,18 +7,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **String** | Style guide title |  [optional]
-**audience** | **String** | Audience description |  [optional]
+**audience** | **String** | Audience description. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
 **targetAudience** | [**TargetAudienceEnum**](#TargetAudienceEnum) | Target audience for the translations. |  [optional]
 **grammaticalPerson** | [**GrammaticalPersonEnum**](#GrammaticalPersonEnum) | Preferred grammatical person. |  [optional]
 **vocabularyType** | [**VocabularyTypeEnum**](#VocabularyTypeEnum) | Vocabulary register the translations should use. |  [optional]
-**business** | **String** | Description of the business |  [optional]
-**companyBranding** | **String** | Company branding to remain consistent. |  [optional]
-**formatting** | **String** | Formatting requirements and character limitations. |  [optional]
-**glossaryTerms** | **String** | List of terms and/or phrases that need to be translated consistently. |  [optional]
-**grammarConsistency** | **String** | Formal or informal pronouns, consistent conjugation, grammatical gender |  [optional]
-**literalTranslation** | **String** | Can be one of: Cultural/Conversational, Literal, Neutral. |  [optional]
-**overallTone** | **String** | Tone requirement descriptions |  [optional]
-**samples** | **String** | Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency. |  [optional]
+**business** | **String** | Description of the business. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
+**companyBranding** | **String** | Company branding to remain consistent. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
+**formatting** | **String** | Formatting requirements and character limitations. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
+**glossaryTerms** | **String** | List of terms and/or phrases that need to be translated consistently. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
+**grammarConsistency** | **String** | Formal or informal pronouns, consistent conjugation, grammatical gender. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
+**literalTranslation** | **String** | Can be one of: Cultural/Conversational, Literal, Neutral. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
+**overallTone** | **String** | Tone requirement descriptions. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
+**samples** | **String** | Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there. |  [optional]
 
 
 

@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -60,7 +61,7 @@ public class ReleaseUpdateParameters {
   }
 
    /**
-   * Description of the release
+   * Description of the release. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return description
   **/
   @javax.annotation.Nullable
@@ -112,7 +113,7 @@ public class ReleaseUpdateParameters {
   }
 
    /**
-   * Minimum version of the app that the release supports in semver format
+   * Minimum version of the app that the release supports in semver format. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return appMinVersion
   **/
   @javax.annotation.Nullable
@@ -134,7 +135,7 @@ public class ReleaseUpdateParameters {
   }
 
    /**
-   * Maximum version of the app that the release supports in semver format
+   * Maximum version of the app that the release supports in semver format. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return appMaxVersion
   **/
   @javax.annotation.Nullable
@@ -186,9 +187,20 @@ public class ReleaseUpdateParameters {
         Objects.equals(this.branch, releaseUpdateParameters.branch);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(description, platforms, appMinVersion, appMaxVersion, branch);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

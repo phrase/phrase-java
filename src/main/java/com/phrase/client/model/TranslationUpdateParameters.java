@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -92,7 +93,7 @@ public class TranslationUpdateParameters {
   }
 
    /**
-   * Translation content
+   * Translation content. Send an empty string or &#x60;null&#x60; to clear the translation&#39;s content; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return content
   **/
   @javax.annotation.Nullable
@@ -257,9 +258,20 @@ public class TranslationUpdateParameters {
         Objects.equals(this.minorChange, translationUpdateParameters.minorChange);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(branch, content, pluralSuffix, unverified, excluded, autotranslate, reviewed, minorChange);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

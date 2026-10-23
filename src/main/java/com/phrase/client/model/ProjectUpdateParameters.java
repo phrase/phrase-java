@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -325,7 +326,7 @@ public class ProjectUpdateParameters {
   }
 
    /**
-   * (Optional) User ID of the point of contact for the project. Pass &#x60;null&#x60; to unset.
+   * (Optional) User ID of the point of contact for the project. Pass &#x60;null&#x60; or an empty string to unset. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return pointOfContact
   **/
   @javax.annotation.Nullable
@@ -1113,9 +1114,20 @@ public class ProjectUpdateParameters {
         Objects.equals(this.cldrVersion, projectUpdateParameters.cldrVersion);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(accountId, name, pointOfContact, mainFormat, media, sharesTranslationMemory, tmIds, termBaseIds, projectImage, removeProjectImage, workflow, machineTranslationEnabled, enableBranching, protectMasterBranch, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, zeroPluralFormEnabled, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, fallbackForUnverifiedTranslations, defaultEncoding, placeholderStyles, autocompleteJobEnabled, jobLockingEnabled, smartSuggestEnabled, smartSuggestUseGlossary, smartSuggestUseMachineTranslation, translationKeysSortCollation, cldrVersion);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -279,7 +280,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Audience description
+   * Audience description. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return audience
   **/
   @javax.annotation.Nullable
@@ -367,7 +368,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Description of the business
+   * Description of the business. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return business
   **/
   @javax.annotation.Nullable
@@ -389,7 +390,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Company branding to remain consistent.
+   * Company branding to remain consistent. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return companyBranding
   **/
   @javax.annotation.Nullable
@@ -411,7 +412,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Formatting requirements and character limitations.
+   * Formatting requirements and character limitations. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return formatting
   **/
   @javax.annotation.Nullable
@@ -433,7 +434,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * List of terms and/or phrases that need to be translated consistently.
+   * List of terms and/or phrases that need to be translated consistently. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return glossaryTerms
   **/
   @javax.annotation.Nullable
@@ -455,7 +456,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Formal or informal pronouns, consistent conjugation, grammatical gender
+   * Formal or informal pronouns, consistent conjugation, grammatical gender. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return grammarConsistency
   **/
   @javax.annotation.Nullable
@@ -477,7 +478,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Can be one of: Cultural/Conversational, Literal, Neutral.
+   * Can be one of: Cultural/Conversational, Literal, Neutral. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return literalTranslation
   **/
   @javax.annotation.Nullable
@@ -499,7 +500,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Tone requirement descriptions
+   * Tone requirement descriptions. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return overallTone
   **/
   @javax.annotation.Nullable
@@ -521,7 +522,7 @@ public class StyleguideUpdateParameters {
   }
 
    /**
-   * Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency.
+   * Provide links to sample product pages, FAQ pages, etc. to give the translator a point of reference. You can also provide past translations. Even snippets or short paragraphs are helpful for maintaining consistency. Send an empty string or &#x60;null&#x60; to clear the value; omit the field to leave it unchanged. The Phrase CLI drops &#x60;null&#x60; values before sending, so use an empty string there.
    * @return samples
   **/
   @javax.annotation.Nullable
@@ -559,9 +560,20 @@ public class StyleguideUpdateParameters {
         Objects.equals(this.samples, styleguideUpdateParameters.samples);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(title, audience, targetAudience, grammaticalPerson, vocabularyType, business, companyBranding, formatting, glossaryTerms, grammarConsistency, literalTranslation, overallTone, samples);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
