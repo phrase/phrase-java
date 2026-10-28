@@ -334,7 +334,7 @@ public class JobCreateParameters {
   }
 
    /**
-   * id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes. Mutually exclusive with &#x60;target_locale_ids&#x60;.
+   * id of a job template you would like to model the created job after. Any manually added parameters will take preference over template attributes. Mutually exclusive with &#x60;target_locale_ids&#x60;. The calling user must have read access to the template; if the template exists but is not accessible, the request returns 404. 
    * @return jobTemplateId
   **/
   @javax.annotation.Nullable
