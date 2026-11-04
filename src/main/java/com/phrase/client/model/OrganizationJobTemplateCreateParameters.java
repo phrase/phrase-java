@@ -40,6 +40,10 @@ public class OrganizationJobTemplateCreateParameters {
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS = "exclude_linked_child_keys";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS)
+  private Boolean excludeLinkedChildKeys;
+
   public static final String SERIALIZED_NAME_OWNER_ID = "owner_id";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
   private String ownerId;
@@ -113,6 +117,28 @@ public class OrganizationJobTemplateCreateParameters {
   }
 
 
+  public OrganizationJobTemplateCreateParameters excludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+    return this;
+  }
+
+   /**
+   * Exclude linked child keys from jobs created from this template. Defaults to &#x60;false&#x60;.
+   * @return excludeLinkedChildKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getExcludeLinkedChildKeys() {
+    return excludeLinkedChildKeys;
+  }
+
+
+  public void setExcludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+  }
+
+
   public OrganizationJobTemplateCreateParameters ownerId(String ownerId) {
     
     this.ownerId = ownerId;
@@ -146,12 +172,13 @@ public class OrganizationJobTemplateCreateParameters {
     return Objects.equals(this.name, organizationJobTemplateCreateParameters.name) &&
         Objects.equals(this.briefing, organizationJobTemplateCreateParameters.briefing) &&
         Objects.equals(this.autotranslate, organizationJobTemplateCreateParameters.autotranslate) &&
+        Objects.equals(this.excludeLinkedChildKeys, organizationJobTemplateCreateParameters.excludeLinkedChildKeys) &&
         Objects.equals(this.ownerId, organizationJobTemplateCreateParameters.ownerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, briefing, autotranslate, ownerId);
+    return Objects.hash(name, briefing, autotranslate, excludeLinkedChildKeys, ownerId);
   }
 
   @Override
@@ -161,6 +188,7 @@ public class OrganizationJobTemplateCreateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    excludeLinkedChildKeys: ").append(toIndentedString(excludeLinkedChildKeys)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("}");
     return sb.toString();

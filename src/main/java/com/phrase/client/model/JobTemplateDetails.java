@@ -79,6 +79,10 @@ public class JobTemplateDetails {
   @SerializedName(SERIALIZED_NAME_LOCALES)
   private List<LocalePreview> locales;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS = "exclude_linked_child_keys";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS)
+  private Boolean excludeLinkedChildKeys;
+
   public JobTemplateDetails() {
   }
 
@@ -331,6 +335,28 @@ public class JobTemplateDetails {
     this.locales = locales;
   }
 
+
+  public JobTemplateDetails excludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+    return this;
+  }
+
+   /**
+   * &#x60;true&#x60; if jobs created from this template exclude linked child keys. 
+   * @return excludeLinkedChildKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getExcludeLinkedChildKeys() {
+    return excludeLinkedChildKeys;
+  }
+
+
+  public void setExcludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -350,12 +376,13 @@ public class JobTemplateDetails {
         Objects.equals(this.updatedAt, jobTemplateDetails.updatedAt) &&
         Objects.equals(this.owner, jobTemplateDetails.owner) &&
         Objects.equals(this.creator, jobTemplateDetails.creator) &&
-        Objects.equals(this.locales, jobTemplateDetails.locales);
+        Objects.equals(this.locales, jobTemplateDetails.locales) &&
+        Objects.equals(this.excludeLinkedChildKeys, jobTemplateDetails.excludeLinkedChildKeys);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, project, branch, autotranslateEnabled, createdAt, updatedAt, owner, creator, locales);
+    return Objects.hash(id, name, briefing, project, branch, autotranslateEnabled, createdAt, updatedAt, owner, creator, locales, excludeLinkedChildKeys);
   }
 
   @Override
@@ -373,6 +400,7 @@ public class JobTemplateDetails {
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
+    sb.append("    excludeLinkedChildKeys: ").append(toIndentedString(excludeLinkedChildKeys)).append("\n");
     sb.append("}");
     return sb.toString();
   }

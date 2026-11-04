@@ -133,4 +133,12 @@ public class JobTemplateDetailsTest {
         // TODO: test locales
     }
 
+    /**
+     * Test the property 'excludeLinkedChildKeys'
+     */
+    @Test
+    public void excludeLinkedChildKeysTest() {
+        // TODO: test excludeLinkedChildKeys
+    }
+
 }

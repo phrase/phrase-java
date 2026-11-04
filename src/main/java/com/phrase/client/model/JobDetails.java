@@ -122,6 +122,10 @@ public class JobDetails {
   @SerializedName(SERIALIZED_NAME_LOCKED)
   private Boolean locked;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS = "exclude_linked_child_keys";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS)
+  private Boolean excludeLinkedChildKeys;
+
   public JobDetails() {
   }
 
@@ -610,6 +614,28 @@ public class JobDetails {
     this.locked = locked;
   }
 
+
+  public JobDetails excludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+    return this;
+  }
+
+   /**
+   * &#x60;true&#x60; if linked child keys are excluded from this job. While enabled, linked child keys cannot be added to the job. 
+   * @return excludeLinkedChildKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getExcludeLinkedChildKeys() {
+    return excludeLinkedChildKeys;
+  }
+
+
+  public void setExcludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -639,7 +665,8 @@ public class JobDetails {
         Objects.equals(this.locales, jobDetails.locales) &&
         Objects.equals(this.keys, jobDetails.keys) &&
         Objects.equals(this.annotations, jobDetails.annotations) &&
-        Objects.equals(this.locked, jobDetails.locked);
+        Objects.equals(this.locked, jobDetails.locked) &&
+        Objects.equals(this.excludeLinkedChildKeys, jobDetails.excludeLinkedChildKeys);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -648,7 +675,7 @@ public class JobDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, automationId, jobTemplateId, reviewDueDate, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys, annotations, locked);
+    return Objects.hash(id, name, briefing, dueDate, state, ticketUrl, project, branch, createdAt, updatedAt, automationId, jobTemplateId, reviewDueDate, owner, jobTagName, sourceTranslationsUpdatedAt, sourceLocale, locales, keys, annotations, locked, excludeLinkedChildKeys);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -683,6 +710,7 @@ public class JobDetails {
     sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
     sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
     sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+    sb.append("    excludeLinkedChildKeys: ").append(toIndentedString(excludeLinkedChildKeys)).append("\n");
     sb.append("}");
     return sb.toString();
   }

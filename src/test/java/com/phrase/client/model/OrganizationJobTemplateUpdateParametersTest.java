@@ -64,6 +64,14 @@ public class OrganizationJobTemplateUpdateParametersTest {
     }
 
     /**
+     * Test the property 'excludeLinkedChildKeys'
+     */
+    @Test
+    public void excludeLinkedChildKeysTest() {
+        // TODO: test excludeLinkedChildKeys
+    }
+
+    /**
      * Test the property 'ownerId'
      */
     @Test

@@ -216,4 +216,12 @@ public class JobDetailsTest {
         // TODO: test locked
     }
 
+    /**
+     * Test the property 'excludeLinkedChildKeys'
+     */
+    @Test
+    public void excludeLinkedChildKeysTest() {
+        // TODO: test excludeLinkedChildKeys
+    }
+
 }

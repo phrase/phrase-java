@@ -74,6 +74,10 @@ public class OrganizationJobTemplateDetails {
   @SerializedName(SERIALIZED_NAME_LOCALES)
   private List<LocalePreview> locales;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS = "exclude_linked_child_keys";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS)
+  private Boolean excludeLinkedChildKeys;
+
   public OrganizationJobTemplateDetails() {
   }
 
@@ -304,6 +308,28 @@ public class OrganizationJobTemplateDetails {
     this.locales = locales;
   }
 
+
+  public OrganizationJobTemplateDetails excludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+    return this;
+  }
+
+   /**
+   * &#x60;true&#x60; if jobs created from this template exclude linked child keys. 
+   * @return excludeLinkedChildKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getExcludeLinkedChildKeys() {
+    return excludeLinkedChildKeys;
+  }
+
+
+  public void setExcludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -322,7 +348,8 @@ public class OrganizationJobTemplateDetails {
         Objects.equals(this.updatedAt, organizationJobTemplateDetails.updatedAt) &&
         Objects.equals(this.owner, organizationJobTemplateDetails.owner) &&
         Objects.equals(this.creator, organizationJobTemplateDetails.creator) &&
-        Objects.equals(this.locales, organizationJobTemplateDetails.locales);
+        Objects.equals(this.locales, organizationJobTemplateDetails.locales) &&
+        Objects.equals(this.excludeLinkedChildKeys, organizationJobTemplateDetails.excludeLinkedChildKeys);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -331,7 +358,7 @@ public class OrganizationJobTemplateDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, briefing, autotranslateEnabled, sourceLocaleId, createdAt, updatedAt, owner, creator, locales);
+    return Objects.hash(id, name, briefing, autotranslateEnabled, sourceLocaleId, createdAt, updatedAt, owner, creator, locales, excludeLinkedChildKeys);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -355,6 +382,7 @@ public class OrganizationJobTemplateDetails {
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
+    sb.append("    excludeLinkedChildKeys: ").append(toIndentedString(excludeLinkedChildKeys)).append("\n");
     sb.append("}");
     return sb.toString();
   }

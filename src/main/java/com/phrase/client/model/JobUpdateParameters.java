@@ -60,6 +60,10 @@ public class JobUpdateParameters {
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS = "exclude_linked_child_keys";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS)
+  private Boolean excludeLinkedChildKeys;
+
   public JobUpdateParameters() {
   }
 
@@ -224,6 +228,28 @@ public class JobUpdateParameters {
     this.autotranslate = autotranslate;
   }
 
+
+  public JobUpdateParameters excludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+    return this;
+  }
+
+   /**
+   * Exclude linked child keys from the job. When set to &#x60;true&#x60;, linked child keys already in the job are removed and none can be added while the option is enabled.
+   * @return excludeLinkedChildKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getExcludeLinkedChildKeys() {
+    return excludeLinkedChildKeys;
+  }
+
+
+  public void setExcludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -239,7 +265,8 @@ public class JobUpdateParameters {
         Objects.equals(this.reviewDueDate, jobUpdateParameters.reviewDueDate) &&
         Objects.equals(this.ticketUrl, jobUpdateParameters.ticketUrl) &&
         Objects.equals(this.targetLocaleIds, jobUpdateParameters.targetLocaleIds) &&
-        Objects.equals(this.autotranslate, jobUpdateParameters.autotranslate);
+        Objects.equals(this.autotranslate, jobUpdateParameters.autotranslate) &&
+        Objects.equals(this.excludeLinkedChildKeys, jobUpdateParameters.excludeLinkedChildKeys);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -248,7 +275,7 @@ public class JobUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, briefing, dueDate, reviewDueDate, ticketUrl, targetLocaleIds, autotranslate);
+    return Objects.hash(name, briefing, dueDate, reviewDueDate, ticketUrl, targetLocaleIds, autotranslate, excludeLinkedChildKeys);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -269,6 +296,7 @@ public class JobUpdateParameters {
     sb.append("    ticketUrl: ").append(toIndentedString(ticketUrl)).append("\n");
     sb.append("    targetLocaleIds: ").append(toIndentedString(targetLocaleIds)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    excludeLinkedChildKeys: ").append(toIndentedString(excludeLinkedChildKeys)).append("\n");
     sb.append("}");
     return sb.toString();
   }

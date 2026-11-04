@@ -72,6 +72,14 @@ public class JobTemplateUpdateParametersTest {
     }
 
     /**
+     * Test the property 'excludeLinkedChildKeys'
+     */
+    @Test
+    public void excludeLinkedChildKeysTest() {
+        // TODO: test excludeLinkedChildKeys
+    }
+
+    /**
      * Test the property 'sourceLocaleId'
      */
     @Test

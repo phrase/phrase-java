@@ -41,6 +41,10 @@ public class OrganizationJobTemplateUpdateParameters {
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS = "exclude_linked_child_keys";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS)
+  private Boolean excludeLinkedChildKeys;
+
   public static final String SERIALIZED_NAME_OWNER_ID = "owner_id";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
   private String ownerId;
@@ -114,6 +118,28 @@ public class OrganizationJobTemplateUpdateParameters {
   }
 
 
+  public OrganizationJobTemplateUpdateParameters excludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+    return this;
+  }
+
+   /**
+   * Exclude linked child keys from jobs created from this template.
+   * @return excludeLinkedChildKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getExcludeLinkedChildKeys() {
+    return excludeLinkedChildKeys;
+  }
+
+
+  public void setExcludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+  }
+
+
   public OrganizationJobTemplateUpdateParameters ownerId(String ownerId) {
     
     this.ownerId = ownerId;
@@ -147,6 +173,7 @@ public class OrganizationJobTemplateUpdateParameters {
     return Objects.equals(this.name, organizationJobTemplateUpdateParameters.name) &&
         Objects.equals(this.briefing, organizationJobTemplateUpdateParameters.briefing) &&
         Objects.equals(this.autotranslate, organizationJobTemplateUpdateParameters.autotranslate) &&
+        Objects.equals(this.excludeLinkedChildKeys, organizationJobTemplateUpdateParameters.excludeLinkedChildKeys) &&
         Objects.equals(this.ownerId, organizationJobTemplateUpdateParameters.ownerId);
   }
 
@@ -156,7 +183,7 @@ public class OrganizationJobTemplateUpdateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, briefing, autotranslate, ownerId);
+    return Objects.hash(name, briefing, autotranslate, excludeLinkedChildKeys, ownerId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -173,6 +200,7 @@ public class OrganizationJobTemplateUpdateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    excludeLinkedChildKeys: ").append(toIndentedString(excludeLinkedChildKeys)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("}");
     return sb.toString();

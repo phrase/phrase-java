@@ -44,6 +44,10 @@ public class JobTemplateCreateParameters {
   @SerializedName(SERIALIZED_NAME_AUTOTRANSLATE)
   private Boolean autotranslate;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS = "exclude_linked_child_keys";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_LINKED_CHILD_KEYS)
+  private Boolean excludeLinkedChildKeys;
+
   public static final String SERIALIZED_NAME_SOURCE_LOCALE_ID = "source_locale_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_LOCALE_ID)
   private String sourceLocaleId;
@@ -143,6 +147,28 @@ public class JobTemplateCreateParameters {
   }
 
 
+  public JobTemplateCreateParameters excludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+    return this;
+  }
+
+   /**
+   * Exclude linked child keys from jobs created from this template. Defaults to &#x60;false&#x60;.
+   * @return excludeLinkedChildKeys
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getExcludeLinkedChildKeys() {
+    return excludeLinkedChildKeys;
+  }
+
+
+  public void setExcludeLinkedChildKeys(Boolean excludeLinkedChildKeys) {
+    this.excludeLinkedChildKeys = excludeLinkedChildKeys;
+  }
+
+
   public JobTemplateCreateParameters sourceLocaleId(String sourceLocaleId) {
     
     this.sourceLocaleId = sourceLocaleId;
@@ -199,13 +225,14 @@ public class JobTemplateCreateParameters {
         Objects.equals(this.name, jobTemplateCreateParameters.name) &&
         Objects.equals(this.briefing, jobTemplateCreateParameters.briefing) &&
         Objects.equals(this.autotranslate, jobTemplateCreateParameters.autotranslate) &&
+        Objects.equals(this.excludeLinkedChildKeys, jobTemplateCreateParameters.excludeLinkedChildKeys) &&
         Objects.equals(this.sourceLocaleId, jobTemplateCreateParameters.sourceLocaleId) &&
         Objects.equals(this.ownerId, jobTemplateCreateParameters.ownerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(branch, name, briefing, autotranslate, sourceLocaleId, ownerId);
+    return Objects.hash(branch, name, briefing, autotranslate, excludeLinkedChildKeys, sourceLocaleId, ownerId);
   }
 
   @Override
@@ -216,6 +243,7 @@ public class JobTemplateCreateParameters {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    briefing: ").append(toIndentedString(briefing)).append("\n");
     sb.append("    autotranslate: ").append(toIndentedString(autotranslate)).append("\n");
+    sb.append("    excludeLinkedChildKeys: ").append(toIndentedString(excludeLinkedChildKeys)).append("\n");
     sb.append("    sourceLocaleId: ").append(toIndentedString(sourceLocaleId)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("}");

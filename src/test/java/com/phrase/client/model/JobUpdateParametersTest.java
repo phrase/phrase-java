@@ -98,4 +98,12 @@ public class JobUpdateParametersTest {
         // TODO: test autotranslate
     }
 
+    /**
+     * Test the property 'excludeLinkedChildKeys'
+     */
+    @Test
+    public void excludeLinkedChildKeysTest() {
+        // TODO: test excludeLinkedChildKeys
+    }
+
 }

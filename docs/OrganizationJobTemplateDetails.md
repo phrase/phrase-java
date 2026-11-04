@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **owner** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **creator** | [**UserPreview**](UserPreview.md) |  |  [optional]
 **locales** | [**List&lt;LocalePreview&gt;**](LocalePreview.md) |  |  [optional]
+**excludeLinkedChildKeys** | **Boolean** | &#x60;true&#x60; if jobs created from this template exclude linked child keys.  |  [optional]
 
 
 
