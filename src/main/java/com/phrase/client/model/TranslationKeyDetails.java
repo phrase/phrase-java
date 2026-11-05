@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.TranslationKeyLinkedKey;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -26,6 +27,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -73,6 +75,10 @@ public class TranslationKeyDetails {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
+
+  public static final String SERIALIZED_NAME_LINKED_KEY = "linked_key";
+  @SerializedName(SERIALIZED_NAME_LINKED_KEY)
+  private TranslationKeyLinkedKey linkedKey;
 
   public static final String SERIALIZED_NAME_NAME_PLURAL = "name_plural";
   @SerializedName(SERIALIZED_NAME_NAME_PLURAL)
@@ -345,6 +351,28 @@ public class TranslationKeyDetails {
   }
 
 
+  public TranslationKeyDetails linkedKey(TranslationKeyLinkedKey linkedKey) {
+    
+    this.linkedKey = linkedKey;
+    return this;
+  }
+
+   /**
+   * Get linkedKey
+   * @return linkedKey
+  **/
+  @javax.annotation.Nullable
+
+  public TranslationKeyLinkedKey getLinkedKey() {
+    return linkedKey;
+  }
+
+
+  public void setLinkedKey(TranslationKeyLinkedKey linkedKey) {
+    this.linkedKey = linkedKey;
+  }
+
+
   public TranslationKeyDetails namePlural(String namePlural) {
     
     this.namePlural = namePlural;
@@ -591,6 +619,7 @@ public class TranslationKeyDetails {
         Objects.equals(this.dataType, translationKeyDetails.dataType) &&
         Objects.equals(this.createdAt, translationKeyDetails.createdAt) &&
         Objects.equals(this.updatedAt, translationKeyDetails.updatedAt) &&
+        Objects.equals(this.linkedKey, translationKeyDetails.linkedKey) &&
         Objects.equals(this.namePlural, translationKeyDetails.namePlural) &&
         Objects.equals(this.commentsCount, translationKeyDetails.commentsCount) &&
         Objects.equals(this.maxCharactersAllowed, translationKeyDetails.maxCharactersAllowed) &&
@@ -603,9 +632,20 @@ public class TranslationKeyDetails {
         Objects.equals(this.customMetadata, translationKeyDetails.customMetadata);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, nameHash, plural, useOrdinalRules, tags, dataType, createdAt, updatedAt, namePlural, commentsCount, maxCharactersAllowed, screenshotUrl, unformatted, xmlSpacePreserve, originalFile, formatValueType, creator, customMetadata);
+    return Objects.hash(id, name, description, nameHash, plural, useOrdinalRules, tags, dataType, createdAt, updatedAt, linkedKey, namePlural, commentsCount, maxCharactersAllowed, screenshotUrl, unformatted, xmlSpacePreserve, originalFile, formatValueType, creator, customMetadata);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -622,6 +662,7 @@ public class TranslationKeyDetails {
     sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    linkedKey: ").append(toIndentedString(linkedKey)).append("\n");
     sb.append("    namePlural: ").append(toIndentedString(namePlural)).append("\n");
     sb.append("    commentsCount: ").append(toIndentedString(commentsCount)).append("\n");
     sb.append("    maxCharactersAllowed: ").append(toIndentedString(maxCharactersAllowed)).append("\n");

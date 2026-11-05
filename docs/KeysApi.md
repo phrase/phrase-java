@@ -605,7 +605,7 @@ Name | Type | Description  | Notes
 
 <a name="keysList"></a>
 # **keysList**
-> List&lt;TranslationKey&gt; keysList(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId)
+> List&lt;TranslationKey&gt; keysList(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, includeLinkedKeys)
 
 List keys
 
@@ -646,8 +646,9 @@ public class Example {
     String order = "desc"; // String | Order direction. Can be one of: asc, desc.
     String q = "mykey* translated:true"; // String | Specify a query to do broad search for keys by name (including wildcards).  The following qualifiers are also supported in the search term:  - `ids:key_id,...` for queries on a comma-separated list of ids - `name:key_name` for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes - `tags:tag_name` to filter for keys with certain tags - `translated:{true|false}` for translation status (also requires `locale_id` to be specified) - `updated_at:{>=|<=}2013-02-21T00:00:00Z` for date range queries - `unmentioned_in_upload:upload_id,...` to filter keys unmentioned within upload. When multiple upload IDs provided, matches only keys not mentioned in **all** uploads  **Caution:** Query parameters with empty values will be treated as though they are not included in the request and will be ignored.  Find more examples [here](/en/api/strings/usage-examples). 
     String localeId = "abcd1234abcd1234abcd1234abcd1234"; // String | Locale used to determine the translation state of a key when filtering for untranslated or translated keys.
+    Boolean includeLinkedKeys = true; // Boolean | When set to `true`, each key object in the response includes a `linked_key` field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent's id and name (for child keys). Keys with no active link return `linked_key: null`. Omit this parameter or set it to `false` to leave the `linked_key` field out of the response entirely. 
     try {
-      List<TranslationKey> result = apiInstance.keysList(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId);
+      List<TranslationKey> result = apiInstance.keysList(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, includeLinkedKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KeysApi#keysList");
@@ -673,6 +674,7 @@ Name | Type | Description  | Notes
  **order** | **String**| Order direction. Can be one of: asc, desc. | [optional]
  **q** | **String**| Specify a query to do broad search for keys by name (including wildcards).  The following qualifiers are also supported in the search term:  - &#x60;ids:key_id,...&#x60; for queries on a comma-separated list of ids - &#x60;name:key_name&#x60; for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes - &#x60;tags:tag_name&#x60; to filter for keys with certain tags - &#x60;translated:{true|false}&#x60; for translation status (also requires &#x60;locale_id&#x60; to be specified) - &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries - &#x60;unmentioned_in_upload:upload_id,...&#x60; to filter keys unmentioned within upload. When multiple upload IDs provided, matches only keys not mentioned in **all** uploads  **Caution:** Query parameters with empty values will be treated as though they are not included in the request and will be ignored.  Find more examples [here](/en/api/strings/usage-examples).  | [optional]
  **localeId** | **String**| Locale used to determine the translation state of a key when filtering for untranslated or translated keys. | [optional]
+ **includeLinkedKeys** | **Boolean**| When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  | [optional]
 
 ### Return type
 
@@ -699,7 +701,7 @@ Name | Type | Description  | Notes
 
 <a name="keysSearch"></a>
 # **keysSearch**
-> List&lt;TranslationKey&gt; keysSearch(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage)
+> List&lt;TranslationKey&gt; keysSearch(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, includeLinkedKeys)
 
 Search keys
 
@@ -736,8 +738,9 @@ public class Example {
     String xPhraseAppOTP = "xPhraseAppOTP_example"; // String | Two-Factor-Authentication token (optional)
     Integer page = 1; // Integer | Page number
     Integer perPage = 25; // Integer | Limit on the number of objects to be returned, between 1 and 100. 25 by default
+    Boolean includeLinkedKeys = true; // Boolean | When set to `true`, each key object in the response includes a `linked_key` field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent's id and name (for child keys). Keys with no active link return `linked_key: null`. Omit this parameter or set it to `false` to leave the `linked_key` field out of the response entirely. 
     try {
-      List<TranslationKey> result = apiInstance.keysSearch(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage);
+      List<TranslationKey> result = apiInstance.keysSearch(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, includeLinkedKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KeysApi#keysSearch");
@@ -759,6 +762,7 @@ Name | Type | Description  | Notes
  **xPhraseAppOTP** | **String**| Two-Factor-Authentication token (optional) | [optional]
  **page** | **Integer**| Page number | [optional]
  **perPage** | **Integer**| Limit on the number of objects to be returned, between 1 and 100. 25 by default | [optional]
+ **includeLinkedKeys** | **Boolean**| When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  | [optional]
 
 ### Return type
 

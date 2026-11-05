@@ -275,6 +275,8 @@ docs/TranslationExcludeParameters.md
 docs/TranslationIncludeParameters.md
 docs/TranslationKey.md
 docs/TranslationKeyDetails.md
+docs/TranslationKeyLinkedKey.md
+docs/TranslationKeyLinkedKeyParent.md
 docs/TranslationOrder.md
 docs/TranslationParent.md
 docs/TranslationReviewParameters.md
@@ -616,6 +618,8 @@ src/main/java/com/phrase/client/model/TranslationExcludeParameters.java
 src/main/java/com/phrase/client/model/TranslationIncludeParameters.java
 src/main/java/com/phrase/client/model/TranslationKey.java
 src/main/java/com/phrase/client/model/TranslationKeyDetails.java
+src/main/java/com/phrase/client/model/TranslationKeyLinkedKey.java
+src/main/java/com/phrase/client/model/TranslationKeyLinkedKeyParent.java
 src/main/java/com/phrase/client/model/TranslationOrder.java
 src/main/java/com/phrase/client/model/TranslationParent.java
 src/main/java/com/phrase/client/model/TranslationReviewParameters.java
@@ -917,6 +921,8 @@ src/test/java/com/phrase/client/model/TranslationDetailsTest.java
 src/test/java/com/phrase/client/model/TranslationExcludeParametersTest.java
 src/test/java/com/phrase/client/model/TranslationIncludeParametersTest.java
 src/test/java/com/phrase/client/model/TranslationKeyDetailsTest.java
+src/test/java/com/phrase/client/model/TranslationKeyLinkedKeyParentTest.java
+src/test/java/com/phrase/client/model/TranslationKeyLinkedKeyTest.java
 src/test/java/com/phrase/client/model/TranslationKeyTest.java
 src/test/java/com/phrase/client/model/TranslationOrderTest.java
 src/test/java/com/phrase/client/model/TranslationParentTest.java

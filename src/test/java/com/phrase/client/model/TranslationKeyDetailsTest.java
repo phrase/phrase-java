@@ -17,6 +17,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.TranslationKeyLinkedKey;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -25,6 +26,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -122,6 +124,14 @@ public class TranslationKeyDetailsTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
+    }
+
+    /**
+     * Test the property 'linkedKey'
+     */
+    @Test
+    public void linkedKeyTest() {
+        // TODO: test linkedKey
     }
 
     /**

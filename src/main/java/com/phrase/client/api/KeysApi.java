@@ -1161,6 +1161,7 @@ public class KeysApi {
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param q Specify a query to do broad search for keys by name (including wildcards).  The following qualifiers are also supported in the search term:  - &#x60;ids:key_id,...&#x60; for queries on a comma-separated list of ids - &#x60;name:key_name&#x60; for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes - &#x60;tags:tag_name&#x60; to filter for keys with certain tags - &#x60;translated:{true|false}&#x60; for translation status (also requires &#x60;locale_id&#x60; to be specified) - &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries - &#x60;unmentioned_in_upload:upload_id,...&#x60; to filter keys unmentioned within upload. When multiple upload IDs provided, matches only keys not mentioned in **all** uploads  **Caution:** Query parameters with empty values will be treated as though they are not included in the request and will be ignored.  Find more examples [here](/en/api/strings/usage-examples).  (optional)
      * @param localeId Locale used to determine the translation state of a key when filtering for untranslated or translated keys. (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1175,7 +1176,7 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keysListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call keysListCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, Boolean includeLinkedKeys, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1212,6 +1213,10 @@ public class KeysApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("locale_id", localeId));
         }
 
+        if (includeLinkedKeys != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_linked_keys", includeLinkedKeys));
+        }
+
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (xPhraseAppOTP != null) {
             localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
@@ -1238,7 +1243,7 @@ public class KeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call keysListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call keysListValidateBeforeCall(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, Boolean includeLinkedKeys, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -1246,7 +1251,7 @@ public class KeysApi {
         }
         
 
-        okhttp3.Call localVarCall = keysListCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, _callback);
+        okhttp3.Call localVarCall = keysListCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, includeLinkedKeys, _callback);
         return localVarCall;
 
     }
@@ -1263,6 +1268,7 @@ public class KeysApi {
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param q Specify a query to do broad search for keys by name (including wildcards).  The following qualifiers are also supported in the search term:  - &#x60;ids:key_id,...&#x60; for queries on a comma-separated list of ids - &#x60;name:key_name&#x60; for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes - &#x60;tags:tag_name&#x60; to filter for keys with certain tags - &#x60;translated:{true|false}&#x60; for translation status (also requires &#x60;locale_id&#x60; to be specified) - &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries - &#x60;unmentioned_in_upload:upload_id,...&#x60; to filter keys unmentioned within upload. When multiple upload IDs provided, matches only keys not mentioned in **all** uploads  **Caution:** Query parameters with empty values will be treated as though they are not included in the request and will be ignored.  Find more examples [here](/en/api/strings/usage-examples).  (optional)
      * @param localeId Locale used to determine the translation state of a key when filtering for untranslated or translated keys. (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @return List&lt;TranslationKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1276,8 +1282,8 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<TranslationKey> keysList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId) throws ApiException {
-        ApiResponse<List<TranslationKey>> localVarResp = keysListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId);
+    public List<TranslationKey> keysList(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, Boolean includeLinkedKeys) throws ApiException {
+        ApiResponse<List<TranslationKey>> localVarResp = keysListWithHttpInfo(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, includeLinkedKeys);
         return localVarResp.getData();
     }
 
@@ -1293,6 +1299,7 @@ public class KeysApi {
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param q Specify a query to do broad search for keys by name (including wildcards).  The following qualifiers are also supported in the search term:  - &#x60;ids:key_id,...&#x60; for queries on a comma-separated list of ids - &#x60;name:key_name&#x60; for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes - &#x60;tags:tag_name&#x60; to filter for keys with certain tags - &#x60;translated:{true|false}&#x60; for translation status (also requires &#x60;locale_id&#x60; to be specified) - &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries - &#x60;unmentioned_in_upload:upload_id,...&#x60; to filter keys unmentioned within upload. When multiple upload IDs provided, matches only keys not mentioned in **all** uploads  **Caution:** Query parameters with empty values will be treated as though they are not included in the request and will be ignored.  Find more examples [here](/en/api/strings/usage-examples).  (optional)
      * @param localeId Locale used to determine the translation state of a key when filtering for untranslated or translated keys. (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @return ApiResponse&lt;List&lt;TranslationKey&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1306,8 +1313,8 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<TranslationKey>> keysListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId) throws ApiException {
-        okhttp3.Call localVarCall = keysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, null);
+    public ApiResponse<List<TranslationKey>> keysListWithHttpInfo(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, Boolean includeLinkedKeys) throws ApiException {
+        okhttp3.Call localVarCall = keysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, includeLinkedKeys, null);
         Type localVarReturnType = new TypeToken<List<TranslationKey>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1324,6 +1331,7 @@ public class KeysApi {
      * @param order Order direction. Can be one of: asc, desc. (optional)
      * @param q Specify a query to do broad search for keys by name (including wildcards).  The following qualifiers are also supported in the search term:  - &#x60;ids:key_id,...&#x60; for queries on a comma-separated list of ids - &#x60;name:key_name&#x60; for text queries on exact key names - spaces, commas, and colons  need to be escaped with double backslashes - &#x60;tags:tag_name&#x60; to filter for keys with certain tags - &#x60;translated:{true|false}&#x60; for translation status (also requires &#x60;locale_id&#x60; to be specified) - &#x60;updated_at:{&gt;&#x3D;|&lt;&#x3D;}2013-02-21T00:00:00Z&#x60; for date range queries - &#x60;unmentioned_in_upload:upload_id,...&#x60; to filter keys unmentioned within upload. When multiple upload IDs provided, matches only keys not mentioned in **all** uploads  **Caution:** Query parameters with empty values will be treated as though they are not included in the request and will be ignored.  Find more examples [here](/en/api/strings/usage-examples).  (optional)
      * @param localeId Locale used to determine the translation state of a key when filtering for untranslated or translated keys. (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1338,9 +1346,9 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keysListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, final ApiCallback<List<TranslationKey>> _callback) throws ApiException {
+    public okhttp3.Call keysListAsync(String projectId, String xPhraseAppOTP, Integer page, Integer perPage, String branch, String sort, String order, String q, String localeId, Boolean includeLinkedKeys, final ApiCallback<List<TranslationKey>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = keysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, _callback);
+        okhttp3.Call localVarCall = keysListValidateBeforeCall(projectId, xPhraseAppOTP, page, perPage, branch, sort, order, q, localeId, includeLinkedKeys, _callback);
         Type localVarReturnType = new TypeToken<List<TranslationKey>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1352,6 +1360,7 @@ public class KeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1366,7 +1375,7 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keysSearchCall(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call keysSearchCall(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, Boolean includeLinkedKeys, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = keysSearchParameters;
 
         // create path and map variables
@@ -1381,6 +1390,10 @@ public class KeysApi {
 
         if (perPage != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("per_page", perPage));
+        }
+
+        if (includeLinkedKeys != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_linked_keys", includeLinkedKeys));
         }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -1409,7 +1422,7 @@ public class KeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call keysSearchValidateBeforeCall(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call keysSearchValidateBeforeCall(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, Boolean includeLinkedKeys, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'projectId' is set
         if (projectId == null) {
@@ -1422,7 +1435,7 @@ public class KeysApi {
         }
         
 
-        okhttp3.Call localVarCall = keysSearchCall(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = keysSearchCall(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, includeLinkedKeys, _callback);
         return localVarCall;
 
     }
@@ -1435,6 +1448,7 @@ public class KeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @return List&lt;TranslationKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1448,8 +1462,8 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public List<TranslationKey> keysSearch(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        ApiResponse<List<TranslationKey>> localVarResp = keysSearchWithHttpInfo(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage);
+    public List<TranslationKey> keysSearch(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, Boolean includeLinkedKeys) throws ApiException {
+        ApiResponse<List<TranslationKey>> localVarResp = keysSearchWithHttpInfo(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, includeLinkedKeys);
         return localVarResp.getData();
     }
 
@@ -1461,6 +1475,7 @@ public class KeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @return ApiResponse&lt;List&lt;TranslationKey&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1474,8 +1489,8 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<List<TranslationKey>> keysSearchWithHttpInfo(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage) throws ApiException {
-        okhttp3.Call localVarCall = keysSearchValidateBeforeCall(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, null);
+    public ApiResponse<List<TranslationKey>> keysSearchWithHttpInfo(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, Boolean includeLinkedKeys) throws ApiException {
+        okhttp3.Call localVarCall = keysSearchValidateBeforeCall(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, includeLinkedKeys, null);
         Type localVarReturnType = new TypeToken<List<TranslationKey>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1488,6 +1503,7 @@ public class KeysApi {
      * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
      * @param page Page number (optional)
      * @param perPage Limit on the number of objects to be returned, between 1 and 100. 25 by default (optional)
+     * @param includeLinkedKeys When set to &#x60;true&#x60;, each key object in the response includes a &#x60;linked_key&#x60; field describing whether the key is a parent or child in a key-link relationship, and the number of children (for parent keys) or the parent&#39;s id and name (for child keys). Keys with no active link return &#x60;linked_key: null&#x60;. Omit this parameter or set it to &#x60;false&#x60; to leave the &#x60;linked_key&#x60; field out of the response entirely.  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1502,9 +1518,9 @@ public class KeysApi {
         <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call keysSearchAsync(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, final ApiCallback<List<TranslationKey>> _callback) throws ApiException {
+    public okhttp3.Call keysSearchAsync(String projectId, KeysSearchParameters keysSearchParameters, String xPhraseAppOTP, Integer page, Integer perPage, Boolean includeLinkedKeys, final ApiCallback<List<TranslationKey>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = keysSearchValidateBeforeCall(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, _callback);
+        okhttp3.Call localVarCall = keysSearchValidateBeforeCall(projectId, keysSearchParameters, xPhraseAppOTP, page, perPage, includeLinkedKeys, _callback);
         Type localVarReturnType = new TypeToken<List<TranslationKey>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **dataType** | **String** |  |  [optional]
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**linkedKey** | [**TranslationKeyLinkedKey**](TranslationKeyLinkedKey.md) |  |  [optional]
 **namePlural** | **String** |  |  [optional]
 **commentsCount** | **Integer** |  |  [optional]
 **maxCharactersAllowed** | **Integer** |  |  [optional]
