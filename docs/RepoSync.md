@@ -17,6 +17,19 @@ Name | Type | Description | Notes
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **lastImportAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **lastExportAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**owner** | [**UserShort**](UserShort.md) |  |  [optional]
+**exportTriggers** | [**List&lt;ExportTriggersEnum&gt;**](#List&lt;ExportTriggersEnum&gt;) | Events that trigger an automatic export. Only present when the automatic export feature is enabled for the account. Possible values: &#x60;schedule&#x60; (runs on the configured schedule), &#x60;branch_merged&#x60; (runs when a branch is merged in the connected repository), &#x60;job_completed&#x60; (runs when a translation job completes in the project).  |  [optional]
+**exportSchedule** | [**RepoSyncExportSchedule**](RepoSyncExportSchedule.md) |  |  [optional]
+
+
+
+## Enum: List&lt;ExportTriggersEnum&gt;
+
+Name | Value
+---- | -----
+SCHEDULE | &quot;schedule&quot;
+BRANCH_MERGED | &quot;branch_merged&quot;
+JOB_COMPLETED | &quot;job_completed&quot;
 
 
 

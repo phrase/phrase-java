@@ -18,9 +18,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.RepoSyncExportSchedule;
+import com.phrase.client.model.UserShort;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -127,6 +131,30 @@ public class RepoSyncTest {
     @Test
     public void lastExportAtTest() {
         // TODO: test lastExportAt
+    }
+
+    /**
+     * Test the property 'owner'
+     */
+    @Test
+    public void ownerTest() {
+        // TODO: test owner
+    }
+
+    /**
+     * Test the property 'exportTriggers'
+     */
+    @Test
+    public void exportTriggersTest() {
+        // TODO: test exportTriggers
+    }
+
+    /**
+     * Test the property 'exportSchedule'
+     */
+    @Test
+    public void exportScheduleTest() {
+        // TODO: test exportSchedule
     }
 
 }

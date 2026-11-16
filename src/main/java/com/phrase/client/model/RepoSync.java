@@ -19,9 +19,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.ProjectShort;
+import com.phrase.client.model.RepoSyncExportSchedule;
+import com.phrase.client.model.UserShort;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -74,6 +78,67 @@ public class RepoSync {
   public static final String SERIALIZED_NAME_LAST_EXPORT_AT = "last_export_at";
   @SerializedName(SERIALIZED_NAME_LAST_EXPORT_AT)
   private OffsetDateTime lastExportAt;
+
+  public static final String SERIALIZED_NAME_OWNER = "owner";
+  @SerializedName(SERIALIZED_NAME_OWNER)
+  private UserShort owner;
+
+  /**
+   * Gets or Sets exportTriggers
+   */
+  @JsonAdapter(ExportTriggersEnum.Adapter.class)
+  public enum ExportTriggersEnum {
+    SCHEDULE("schedule"),
+    
+    BRANCH_MERGED("branch_merged"),
+    
+    JOB_COMPLETED("job_completed");
+
+    private String value;
+
+    ExportTriggersEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ExportTriggersEnum fromValue(String value) {
+      for (ExportTriggersEnum b : ExportTriggersEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ExportTriggersEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ExportTriggersEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ExportTriggersEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ExportTriggersEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_EXPORT_TRIGGERS = "export_triggers";
+  @SerializedName(SERIALIZED_NAME_EXPORT_TRIGGERS)
+  private List<ExportTriggersEnum> exportTriggers;
+
+  public static final String SERIALIZED_NAME_EXPORT_SCHEDULE = "export_schedule";
+  @SerializedName(SERIALIZED_NAME_EXPORT_SCHEDULE)
+  private RepoSyncExportSchedule exportSchedule;
 
   public RepoSync() {
   }
@@ -319,6 +384,80 @@ public class RepoSync {
     this.lastExportAt = lastExportAt;
   }
 
+
+  public RepoSync owner(UserShort owner) {
+    
+    this.owner = owner;
+    return this;
+  }
+
+   /**
+   * Get owner
+   * @return owner
+  **/
+  @javax.annotation.Nullable
+
+  public UserShort getOwner() {
+    return owner;
+  }
+
+
+  public void setOwner(UserShort owner) {
+    this.owner = owner;
+  }
+
+
+  public RepoSync exportTriggers(List<ExportTriggersEnum> exportTriggers) {
+    
+    this.exportTriggers = exportTriggers;
+    return this;
+  }
+
+  public RepoSync addExportTriggersItem(ExportTriggersEnum exportTriggersItem) {
+    if (this.exportTriggers == null) {
+      this.exportTriggers = new ArrayList<>();
+    }
+    this.exportTriggers.add(exportTriggersItem);
+    return this;
+  }
+
+   /**
+   * Events that trigger an automatic export. Only present when the automatic export feature is enabled for the account. Possible values: &#x60;schedule&#x60; (runs on the configured schedule), &#x60;branch_merged&#x60; (runs when a branch is merged in the connected repository), &#x60;job_completed&#x60; (runs when a translation job completes in the project). 
+   * @return exportTriggers
+  **/
+  @javax.annotation.Nullable
+
+  public List<ExportTriggersEnum> getExportTriggers() {
+    return exportTriggers;
+  }
+
+
+  public void setExportTriggers(List<ExportTriggersEnum> exportTriggers) {
+    this.exportTriggers = exportTriggers;
+  }
+
+
+  public RepoSync exportSchedule(RepoSyncExportSchedule exportSchedule) {
+    
+    this.exportSchedule = exportSchedule;
+    return this;
+  }
+
+   /**
+   * Get exportSchedule
+   * @return exportSchedule
+  **/
+  @javax.annotation.Nullable
+
+  public RepoSyncExportSchedule getExportSchedule() {
+    return exportSchedule;
+  }
+
+
+  public void setExportSchedule(RepoSyncExportSchedule exportSchedule) {
+    this.exportSchedule = exportSchedule;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -338,7 +477,10 @@ public class RepoSync {
         Objects.equals(this.prBranch, repoSync.prBranch) &&
         Objects.equals(this.createdAt, repoSync.createdAt) &&
         Objects.equals(this.lastImportAt, repoSync.lastImportAt) &&
-        Objects.equals(this.lastExportAt, repoSync.lastExportAt);
+        Objects.equals(this.lastExportAt, repoSync.lastExportAt) &&
+        Objects.equals(this.owner, repoSync.owner) &&
+        Objects.equals(this.exportTriggers, repoSync.exportTriggers) &&
+        Objects.equals(this.exportSchedule, repoSync.exportSchedule);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -347,7 +489,7 @@ public class RepoSync {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, project, provider, enabled, autoImport, repoName, prBranch, createdAt, lastImportAt, lastExportAt);
+    return Objects.hash(id, name, project, provider, enabled, autoImport, repoName, prBranch, createdAt, lastImportAt, lastExportAt, owner, exportTriggers, exportSchedule);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -372,6 +514,9 @@ public class RepoSync {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    lastImportAt: ").append(toIndentedString(lastImportAt)).append("\n");
     sb.append("    lastExportAt: ").append(toIndentedString(lastExportAt)).append("\n");
+    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+    sb.append("    exportTriggers: ").append(toIndentedString(exportTriggers)).append("\n");
+    sb.append("    exportSchedule: ").append(toIndentedString(exportSchedule)).append("\n");
     sb.append("}");
     return sb.toString();
   }

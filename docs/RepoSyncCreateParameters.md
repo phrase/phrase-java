@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **autoImport** | **Boolean** | Enable automatic import of translations triggered by pushes to the repository. |  [optional]
 **accessToken** | **String** | Personal access token for the Git provider. Required when &#x60;connection_type&#x60; is &#x60;token&#x60; or &#x60;self_hosted&#x60;. Not used for &#x60;github_app&#x60;. |  [optional]
 **customApiEndpoint** | **String** | Custom API endpoint URL for self-hosted Git instances. Required when &#x60;connection_type&#x60; is &#x60;self_hosted&#x60;. |  [optional]
+**ownerId** | **String** | Code of the user who will own this repo sync. Automated actions run as this user. Defaults to the account owner when not set.  |  [optional]
+**exportTriggers** | [**List&lt;ExportTriggersEnum&gt;**](#List&lt;ExportTriggersEnum&gt;) | Events that should trigger an automatic export. Requires the automatic export feature to be enabled for the account; returns &#x60;422&#x60; otherwise. Accepted values: &#x60;schedule&#x60;, &#x60;branch_merged&#x60;, &#x60;job_completed&#x60;.  |  [optional]
+**exportSchedule** | [**RepoSyncCreateParametersExportSchedule**](RepoSyncCreateParametersExportSchedule.md) |  |  [optional]
 
 
 
@@ -36,6 +39,16 @@ Name | Value
 TOKEN | &quot;token&quot;
 GITHUB_APP | &quot;github_app&quot;
 SELF_HOSTED | &quot;self_hosted&quot;
+
+
+
+## Enum: List&lt;ExportTriggersEnum&gt;
+
+Name | Value
+---- | -----
+SCHEDULE | &quot;schedule&quot;
+BRANCH_MERGED | &quot;branch_merged&quot;
+JOB_COMPLETED | &quot;job_completed&quot;
 
 
 

@@ -19,6 +19,7 @@ import com.phrase.client.model.RepoSyncCreateParameters;
 import com.phrase.client.model.RepoSyncEvent;
 import com.phrase.client.model.RepoSyncExportParameters;
 import com.phrase.client.model.RepoSyncImportParameters;
+import com.phrase.client.model.RepoSyncUpdateParameters;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -161,6 +162,25 @@ public class RepoSyncsApiTest {
         String id = null;
         String xPhraseAppOTP = null;
         RepoSync response = api.repoSyncShow(accountId, id, xPhraseAppOTP);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a repo sync
+     *
+     * Update settings for an existing Repo Sync. Sending &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; requires the caller to have &#x60;manage_github_sync?&#x60; permission on the project (returns &#x60;403&#x60; otherwise). Sending &#x60;export_triggers&#x60; or &#x60;export_schedule&#x60; when the automatic export feature is not enabled for the account returns &#x60;422&#x60;. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void repoSyncUpdateTest() throws ApiException {
+        String accountId = null;
+        String id = null;
+        RepoSyncUpdateParameters repoSyncUpdateParameters = null;
+        String xPhraseAppOTP = null;
+        RepoSync response = api.repoSyncUpdate(accountId, id, repoSyncUpdateParameters, xPhraseAppOTP);
 
         // TODO: test validations
     }

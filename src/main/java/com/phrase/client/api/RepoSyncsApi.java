@@ -32,6 +32,7 @@ import com.phrase.client.model.RepoSyncCreateParameters;
 import com.phrase.client.model.RepoSyncEvent;
 import com.phrase.client.model.RepoSyncExportParameters;
 import com.phrase.client.model.RepoSyncImportParameters;
+import com.phrase.client.model.RepoSyncUpdateParameters;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -1130,6 +1131,168 @@ public class RepoSyncsApi {
     public okhttp3.Call repoSyncShowAsync(String accountId, String id, String xPhraseAppOTP, final ApiCallback<RepoSync> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = repoSyncShowValidateBeforeCall(accountId, id, xPhraseAppOTP, _callback);
+        Type localVarReturnType = new TypeToken<RepoSync>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for repoSyncUpdate
+     * @param accountId Account ID (required)
+     * @param id ID (required)
+     * @param repoSyncUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden. Possible causes: insufficient OAuth scope (requires &#x60;write&#x60;); caller does not have &#x60;manage_git_syncs?&#x60; permission on the account; or &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; was provided but the caller does not have &#x60;manage_github_sync?&#x60; permission on the project.  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity. The request was well-formed but failed validation. The response body lists each offending field in the &#x60;errors&#x60; array, with its resource, field, and a human-readable message. Correct the listed fields and retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call repoSyncUpdateCall(String accountId, String id, RepoSyncUpdateParameters repoSyncUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = repoSyncUpdateParameters;
+
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/repo_syncs/{id}"
+            .replaceAll("\\{" + "account_id" + "\\}", localVarApiClient.escapeString(accountId.toString()))
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (xPhraseAppOTP != null) {
+            localVarHeaderParams.put("X-PhraseApp-OTP", localVarApiClient.parameterToString(xPhraseAppOTP));
+        }
+
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Basic", "Token" };
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call repoSyncUpdateValidateBeforeCall(String accountId, String id, RepoSyncUpdateParameters repoSyncUpdateParameters, String xPhraseAppOTP, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling repoSyncUpdate(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling repoSyncUpdate(Async)");
+        }
+        
+        // verify the required parameter 'repoSyncUpdateParameters' is set
+        if (repoSyncUpdateParameters == null) {
+            throw new ApiException("Missing the required parameter 'repoSyncUpdateParameters' when calling repoSyncUpdate(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = repoSyncUpdateCall(accountId, id, repoSyncUpdateParameters, xPhraseAppOTP, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Update a repo sync
+     * Update settings for an existing Repo Sync. Sending &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; requires the caller to have &#x60;manage_github_sync?&#x60; permission on the project (returns &#x60;403&#x60; otherwise). Sending &#x60;export_triggers&#x60; or &#x60;export_schedule&#x60; when the automatic export feature is not enabled for the account returns &#x60;422&#x60;. 
+     * @param accountId Account ID (required)
+     * @param id ID (required)
+     * @param repoSyncUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return RepoSync
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden. Possible causes: insufficient OAuth scope (requires &#x60;write&#x60;); caller does not have &#x60;manage_git_syncs?&#x60; permission on the account; or &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; was provided but the caller does not have &#x60;manage_github_sync?&#x60; permission on the project.  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity. The request was well-formed but failed validation. The response body lists each offending field in the &#x60;errors&#x60; array, with its resource, field, and a human-readable message. Correct the listed fields and retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public RepoSync repoSyncUpdate(String accountId, String id, RepoSyncUpdateParameters repoSyncUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        ApiResponse<RepoSync> localVarResp = repoSyncUpdateWithHttpInfo(accountId, id, repoSyncUpdateParameters, xPhraseAppOTP);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update a repo sync
+     * Update settings for an existing Repo Sync. Sending &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; requires the caller to have &#x60;manage_github_sync?&#x60; permission on the project (returns &#x60;403&#x60; otherwise). Sending &#x60;export_triggers&#x60; or &#x60;export_schedule&#x60; when the automatic export feature is not enabled for the account returns &#x60;422&#x60;. 
+     * @param accountId Account ID (required)
+     * @param id ID (required)
+     * @param repoSyncUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @return ApiResponse&lt;RepoSync&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden. Possible causes: insufficient OAuth scope (requires &#x60;write&#x60;); caller does not have &#x60;manage_git_syncs?&#x60; permission on the account; or &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; was provided but the caller does not have &#x60;manage_github_sync?&#x60; permission on the project.  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity. The request was well-formed but failed validation. The response body lists each offending field in the &#x60;errors&#x60; array, with its resource, field, and a human-readable message. Correct the listed fields and retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<RepoSync> repoSyncUpdateWithHttpInfo(String accountId, String id, RepoSyncUpdateParameters repoSyncUpdateParameters, String xPhraseAppOTP) throws ApiException {
+        okhttp3.Call localVarCall = repoSyncUpdateValidateBeforeCall(accountId, id, repoSyncUpdateParameters, xPhraseAppOTP, null);
+        Type localVarReturnType = new TypeToken<RepoSync>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update a repo sync (asynchronously)
+     * Update settings for an existing Repo Sync. Sending &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; requires the caller to have &#x60;manage_github_sync?&#x60; permission on the project (returns &#x60;403&#x60; otherwise). Sending &#x60;export_triggers&#x60; or &#x60;export_schedule&#x60; when the automatic export feature is not enabled for the account returns &#x60;422&#x60;. 
+     * @param accountId Account ID (required)
+     * @param id ID (required)
+     * @param repoSyncUpdateParameters  (required)
+     * @param xPhraseAppOTP Two-Factor-Authentication token (optional) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Bad request. The request could not be parsed or a parameter failed validation. Verify the request body, the content type, and the parameter types, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized. Authentication failed because the access token is missing, expired, or invalid. Supply a valid access token and retry. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden. Possible causes: insufficient OAuth scope (requires &#x60;write&#x60;); caller does not have &#x60;manage_git_syncs?&#x60; permission on the account; or &#x60;owner_id&#x60;, &#x60;export_triggers&#x60;, or &#x60;export_schedule&#x60; was provided but the caller does not have &#x60;manage_github_sync?&#x60; permission on the project.  </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. The requested resource does not exist or is not visible to the authenticated user. Verify the identifiers in the request path and that the token has access to them, then retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Unprocessable entity. The request was well-formed but failed validation. The response body lists each offending field in the &#x60;errors&#x60; array, with its resource, field, and a human-readable message. Correct the listed fields and retry. </td><td>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. The rate limit has been exceeded. Wait until the time indicated by the &#x60;X-Rate-Limit-Reset&#x60; response header before retrying. </td><td>  * X-Rate-Limit-Reason -  <br>  * X-Rate-Limit-Limit -  <br>  * X-Rate-Limit-Remaining -  <br>  * X-Rate-Limit-Reset -  <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call repoSyncUpdateAsync(String accountId, String id, RepoSyncUpdateParameters repoSyncUpdateParameters, String xPhraseAppOTP, final ApiCallback<RepoSync> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = repoSyncUpdateValidateBeforeCall(accountId, id, repoSyncUpdateParameters, xPhraseAppOTP, _callback);
         Type localVarReturnType = new TypeToken<RepoSync>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

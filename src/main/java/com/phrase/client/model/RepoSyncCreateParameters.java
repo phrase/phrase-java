@@ -18,8 +18,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.phrase.client.model.RepoSyncCreateParametersExportSchedule;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -166,6 +169,67 @@ public class RepoSyncCreateParameters {
   public static final String SERIALIZED_NAME_CUSTOM_API_ENDPOINT = "custom_api_endpoint";
   @SerializedName(SERIALIZED_NAME_CUSTOM_API_ENDPOINT)
   private String customApiEndpoint;
+
+  public static final String SERIALIZED_NAME_OWNER_ID = "owner_id";
+  @SerializedName(SERIALIZED_NAME_OWNER_ID)
+  private String ownerId;
+
+  /**
+   * Gets or Sets exportTriggers
+   */
+  @JsonAdapter(ExportTriggersEnum.Adapter.class)
+  public enum ExportTriggersEnum {
+    SCHEDULE("schedule"),
+    
+    BRANCH_MERGED("branch_merged"),
+    
+    JOB_COMPLETED("job_completed");
+
+    private String value;
+
+    ExportTriggersEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ExportTriggersEnum fromValue(String value) {
+      for (ExportTriggersEnum b : ExportTriggersEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ExportTriggersEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ExportTriggersEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ExportTriggersEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ExportTriggersEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_EXPORT_TRIGGERS = "export_triggers";
+  @SerializedName(SERIALIZED_NAME_EXPORT_TRIGGERS)
+  private List<ExportTriggersEnum> exportTriggers;
+
+  public static final String SERIALIZED_NAME_EXPORT_SCHEDULE = "export_schedule";
+  @SerializedName(SERIALIZED_NAME_EXPORT_SCHEDULE)
+  private RepoSyncCreateParametersExportSchedule exportSchedule;
 
   public RepoSyncCreateParameters() {
   }
@@ -389,6 +453,80 @@ public class RepoSyncCreateParameters {
     this.customApiEndpoint = customApiEndpoint;
   }
 
+
+  public RepoSyncCreateParameters ownerId(String ownerId) {
+    
+    this.ownerId = ownerId;
+    return this;
+  }
+
+   /**
+   * Code of the user who will own this repo sync. Automated actions run as this user. Defaults to the account owner when not set. 
+   * @return ownerId
+  **/
+  @javax.annotation.Nullable
+
+  public String getOwnerId() {
+    return ownerId;
+  }
+
+
+  public void setOwnerId(String ownerId) {
+    this.ownerId = ownerId;
+  }
+
+
+  public RepoSyncCreateParameters exportTriggers(List<ExportTriggersEnum> exportTriggers) {
+    
+    this.exportTriggers = exportTriggers;
+    return this;
+  }
+
+  public RepoSyncCreateParameters addExportTriggersItem(ExportTriggersEnum exportTriggersItem) {
+    if (this.exportTriggers == null) {
+      this.exportTriggers = new ArrayList<>();
+    }
+    this.exportTriggers.add(exportTriggersItem);
+    return this;
+  }
+
+   /**
+   * Events that should trigger an automatic export. Requires the automatic export feature to be enabled for the account; returns &#x60;422&#x60; otherwise. Accepted values: &#x60;schedule&#x60;, &#x60;branch_merged&#x60;, &#x60;job_completed&#x60;. 
+   * @return exportTriggers
+  **/
+  @javax.annotation.Nullable
+
+  public List<ExportTriggersEnum> getExportTriggers() {
+    return exportTriggers;
+  }
+
+
+  public void setExportTriggers(List<ExportTriggersEnum> exportTriggers) {
+    this.exportTriggers = exportTriggers;
+  }
+
+
+  public RepoSyncCreateParameters exportSchedule(RepoSyncCreateParametersExportSchedule exportSchedule) {
+    
+    this.exportSchedule = exportSchedule;
+    return this;
+  }
+
+   /**
+   * Get exportSchedule
+   * @return exportSchedule
+  **/
+  @javax.annotation.Nullable
+
+  public RepoSyncCreateParametersExportSchedule getExportSchedule() {
+    return exportSchedule;
+  }
+
+
+  public void setExportSchedule(RepoSyncCreateParametersExportSchedule exportSchedule) {
+    this.exportSchedule = exportSchedule;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -407,7 +545,10 @@ public class RepoSyncCreateParameters {
         Objects.equals(this.prBranch, repoSyncCreateParameters.prBranch) &&
         Objects.equals(this.autoImport, repoSyncCreateParameters.autoImport) &&
         Objects.equals(this.accessToken, repoSyncCreateParameters.accessToken) &&
-        Objects.equals(this.customApiEndpoint, repoSyncCreateParameters.customApiEndpoint);
+        Objects.equals(this.customApiEndpoint, repoSyncCreateParameters.customApiEndpoint) &&
+        Objects.equals(this.ownerId, repoSyncCreateParameters.ownerId) &&
+        Objects.equals(this.exportTriggers, repoSyncCreateParameters.exportTriggers) &&
+        Objects.equals(this.exportSchedule, repoSyncCreateParameters.exportSchedule);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -416,7 +557,7 @@ public class RepoSyncCreateParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(projectId, name, gitProvider, connectionType, repoName, baseBranch, prBranch, autoImport, accessToken, customApiEndpoint);
+    return Objects.hash(projectId, name, gitProvider, connectionType, repoName, baseBranch, prBranch, autoImport, accessToken, customApiEndpoint, ownerId, exportTriggers, exportSchedule);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -440,6 +581,9 @@ public class RepoSyncCreateParameters {
     sb.append("    autoImport: ").append(toIndentedString(autoImport)).append("\n");
     sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
     sb.append("    customApiEndpoint: ").append(toIndentedString(customApiEndpoint)).append("\n");
+    sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
+    sb.append("    exportTriggers: ").append(toIndentedString(exportTriggers)).append("\n");
+    sb.append("    exportSchedule: ").append(toIndentedString(exportSchedule)).append("\n");
     sb.append("}");
     return sb.toString();
   }
