@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
 import com.phrase.client.model.Branch;
+import com.phrase.client.model.Note;
 import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
@@ -217,6 +218,10 @@ public class ProjectDetails {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
   private Branch branch;
+
+  public static final String SERIALIZED_NAME_NOTE = "note";
+  @SerializedName(SERIALIZED_NAME_NOTE)
+  private Note note;
 
   public ProjectDetails() {
   }
@@ -976,6 +981,28 @@ public class ProjectDetails {
     this.branch = branch;
   }
 
+
+  public ProjectDetails note(Note note) {
+    
+    this.note = note;
+    return this;
+  }
+
+   /**
+   * Get note
+   * @return note
+  **/
+  @javax.annotation.Nullable
+
+  public Note getNote() {
+    return note;
+  }
+
+
+  public void setNote(Note note) {
+    this.note = note;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1018,12 +1045,13 @@ public class ProjectDetails {
         Objects.equals(this.translationKeysSortCollation, projectDetails.translationKeysSortCollation) &&
         Objects.equals(this.jobLockingEnabled, projectDetails.jobLockingEnabled) &&
         Objects.equals(this.placeholderStyles, projectDetails.placeholderStyles) &&
-        Objects.equals(this.branch, projectDetails.branch);
+        Objects.equals(this.branch, projectDetails.branch) &&
+        Objects.equals(this.note, projectDetails.note);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, fallbackForUnverifiedTranslations, autocompleteJobEnabled, defaultEncoding, cldrVersion, translationKeysSortCollation, jobLockingEnabled, placeholderStyles, branch);
+    return Objects.hash(id, name, slug, mainFormat, projectImageUrl, media, account, space, pointOfContact, createdAt, updatedAt, sharesTranslationMemory, machineTranslationEnabled, zeroPluralFormEnabled, enableAllDataTypeTranslationKeysForTranslators, enableIcuMessageFormat, enableBranching, protectMasterBranch, autotranslateEnabled, autotranslateCheckNewTranslationKeys, autotranslateCheckNewUploads, autotranslateCheckNewLocales, autotranslateMarkAsUnverified, autotranslateUseMachineTranslation, autotranslateUseTranslationMemory, autotranslateOverwriteUnverifiedTranslations, fallbackForUnverifiedTranslations, autocompleteJobEnabled, defaultEncoding, cldrVersion, translationKeysSortCollation, jobLockingEnabled, placeholderStyles, branch, note);
   }
 
   @Override
@@ -1064,6 +1092,7 @@ public class ProjectDetails {
     sb.append("    jobLockingEnabled: ").append(toIndentedString(jobLockingEnabled)).append("\n");
     sb.append("    placeholderStyles: ").append(toIndentedString(placeholderStyles)).append("\n");
     sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
+    sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("}");
     return sb.toString();
   }

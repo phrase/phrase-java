@@ -19,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.phrase.client.model.Account;
 import com.phrase.client.model.Branch;
+import com.phrase.client.model.Note;
 import com.phrase.client.model.Space1;
 import com.phrase.client.model.UserPreview;
 import java.io.IOException;
@@ -315,6 +316,14 @@ public class ProjectDetailsTest {
     @Test
     public void branchTest() {
         // TODO: test branch
+    }
+
+    /**
+     * Test the property 'note'
+     */
+    @Test
+    public void noteTest() {
+        // TODO: test note
     }
 
 }

@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **jobLockingEnabled** | **Boolean** |  |  [optional]
 **placeholderStyles** | **List&lt;String&gt;** |  |  [optional]
 **branch** | [**Branch**](Branch.md) |  |  [optional]
+**note** | [**Note**](Note.md) |  |  [optional]
 
 
 
