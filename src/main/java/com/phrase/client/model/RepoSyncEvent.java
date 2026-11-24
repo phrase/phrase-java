@@ -145,6 +145,10 @@ public class RepoSyncEvent {
   @SerializedName(SERIALIZED_NAME_STATUS)
   private StatusEnum status;
 
+  public static final String SERIALIZED_NAME_AUTOMATIC = "automatic";
+  @SerializedName(SERIALIZED_NAME_AUTOMATIC)
+  private Boolean automatic;
+
   public static final String SERIALIZED_NAME_PULL_REQUEST_URL = "pull_request_url";
   @SerializedName(SERIALIZED_NAME_PULL_REQUEST_URL)
   private String pullRequestUrl;
@@ -252,6 +256,28 @@ public class RepoSyncEvent {
   }
 
 
+  public RepoSyncEvent automatic(Boolean automatic) {
+    
+    this.automatic = automatic;
+    return this;
+  }
+
+   /**
+   * When &#x60;true&#x60;, the sync was triggered automatically (for example by a Zero Touch Localization rule or an automation). When &#x60;false&#x60;, it was triggered manually. 
+   * @return automatic
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getAutomatic() {
+    return automatic;
+  }
+
+
+  public void setAutomatic(Boolean automatic) {
+    this.automatic = automatic;
+  }
+
+
   public RepoSyncEvent pullRequestUrl(String pullRequestUrl) {
     
     this.pullRequestUrl = pullRequestUrl;
@@ -281,9 +307,11 @@ public class RepoSyncEvent {
   }
 
    /**
-   * Whether the import was triggered by the repo push event
+   * **Deprecated.** Use &#x60;automatic&#x60; instead. Only present on import events. Indicates whether the import was triggered automatically. 
    * @return autoImport
+   * @deprecated
   **/
+  @Deprecated
   @javax.annotation.Nullable
 
   public Boolean getAutoImport() {
@@ -368,6 +396,7 @@ public class RepoSyncEvent {
         Objects.equals(this.type, repoSyncEvent.type) &&
         Objects.equals(this.createdAt, repoSyncEvent.createdAt) &&
         Objects.equals(this.status, repoSyncEvent.status) &&
+        Objects.equals(this.automatic, repoSyncEvent.automatic) &&
         Objects.equals(this.pullRequestUrl, repoSyncEvent.pullRequestUrl) &&
         Objects.equals(this.autoImport, repoSyncEvent.autoImport) &&
         Objects.equals(this.errors, repoSyncEvent.errors) &&
@@ -380,7 +409,7 @@ public class RepoSyncEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, createdAt, status, pullRequestUrl, autoImport, errors, uploads);
+    return Objects.hash(id, type, createdAt, status, automatic, pullRequestUrl, autoImport, errors, uploads);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -398,6 +427,7 @@ public class RepoSyncEvent {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    automatic: ").append(toIndentedString(automatic)).append("\n");
     sb.append("    pullRequestUrl: ").append(toIndentedString(pullRequestUrl)).append("\n");
     sb.append("    autoImport: ").append(toIndentedString(autoImport)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");

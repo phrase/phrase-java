@@ -76,6 +76,14 @@ public class RepoSyncEventTest {
     }
 
     /**
+     * Test the property 'automatic'
+     */
+    @Test
+    public void automaticTest() {
+        // TODO: test automatic
+    }
+
+    /**
      * Test the property 'pullRequestUrl'
      */
     @Test
